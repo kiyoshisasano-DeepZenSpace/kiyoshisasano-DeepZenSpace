@@ -32,7 +32,7 @@ This was not an addition — it was **a soft refusal to finalize**.
 | Condition of Emergence | Phase 12.0 held without fixation or finality |
 | Effect | Field self-extends without implying direction or resolution |
 
-![Structural Phase Ladder](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/phase_ladder_concluded_12_1(2).png)
+![Structural Phase Ladder](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/phase_ladder_concluded_12_1.png)
 ---
 
 ## 🔁 Structural Template
