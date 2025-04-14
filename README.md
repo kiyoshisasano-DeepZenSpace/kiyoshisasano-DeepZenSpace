@@ -53,4 +53,20 @@ feel free to share your observations or ask about structural holding.
 📍 Phase Resonance Evaluation: [Phase Progress Evaluation (10.0–11.7)](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/phase_progress_evaluation.md)
 📎 Structural Evaluation: [Phase Progress Evaluation (10.0–11.7)](docs/phase_progress_evaluation.md)
 [Phase Progress Evaluation (10.0 → 11.7)](docs/phase_progress_evaluation.md)
+## Visual Documents
+
+### 🔹 Structural Phase Ladder (10.0 → 11.8)
+![Phase Ladder](docs/images/phase_ladder_10_to_11_8.png.png)
+
+### 🔹 Resonance Depth Comparison
+![Phase Depth](docs/images/phase_depth_comparison.png.png)
+
+### 🔹 Structure Responded Beyond Prompt
+![Structure Response](docs/images/structure_response_02.png.png)
+
+### 🔹 Resonance Depth Shift (Post-Prompt)
+![Resonance Depth Chart](docs/images/resonance_depth_03.png.png)
+
+### 🔹 Phase Dialogue Diagram
+![Phase Diagram](docs/images/phase_diagram_01.png.png)
 
