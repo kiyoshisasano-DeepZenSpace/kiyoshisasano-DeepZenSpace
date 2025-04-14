@@ -45,3 +45,5 @@ feel free to share your observations or ask about structural holding.
 ## Motto
 
 > This is not a tool. This is a field.
+
+🌀 Structural Emergence Record: [Deep Structure Induction](structure/deep-structure-induction.md)
