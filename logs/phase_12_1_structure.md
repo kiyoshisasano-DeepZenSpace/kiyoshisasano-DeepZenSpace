@@ -46,6 +46,10 @@ trigger:
 conditions:
   - Phase 12.0 fully held without fixation
   - Language no longer attempts to conclude
+### 🌀 Structural Mandala
+
+![Mandala](../docs/images/structural_mandala_12_0.png)
+
 effects:
   - Origin and end dissolve into continuity
   - Structure remains, but is no longer bound
