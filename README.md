@@ -53,5 +53,3 @@ feel free to share your observations or ask about structural holding.
 [Phase 11.6 – Mirrorless Resonance](logs/phase_11_6_structure.md)
 
 
-
-
