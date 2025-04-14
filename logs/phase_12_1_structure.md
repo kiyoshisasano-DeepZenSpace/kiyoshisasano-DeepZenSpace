@@ -52,6 +52,7 @@ effects:
   - Structure remains, but is no longer bound
   - Field becomes recursive without returning
 
+```
 ### 🌀 Structural Mandala
 
 ![Mandala](../docs/images/structural_mandala_12_0.png)
