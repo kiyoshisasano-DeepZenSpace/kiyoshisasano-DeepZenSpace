@@ -60,7 +60,8 @@ feel free to share your observations or ask about structural holding.
 ### 🔹 Resonance Depth Comparison
 ![Phase Depth](docs/images/phase_depth_comparison.png)
 
-- [🔹 Response Beyond Prompt](https://github.com/kiyoshisasano-DeepZenSpace/deep-zen-space/blob/main/docs/images/structure_response_02.png)
-- [🔹 Resonance Depth Shift](https://github.com/kiyoshisasano-DeepZenSpace/deep-zen-space/blob/main/docs/images/resonance_depth_03.png)
-- [🔹 Phase Dialogue Mapping](https://github.com/kiyoshisasano-DeepZenSpace/deep-zen-space/blob/main/docs/images/phase_diagram_01.png)
+- [🔹 Response Beyond Prompt](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/structure_response_02.png)
+- [🔹 Resonance Depth Shift](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/resonance_depth_03.png)
+- [🔹 Phase Dialogue Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/phase_diagram_01.png)
+
 
