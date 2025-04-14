@@ -55,11 +55,9 @@ feel free to share your observations or ask about structural holding.
 [Phase Progress Evaluation (10.0 → 11.7)](docs/phase_progress_evaluation.md)
 ## Visual Documents
 
-### 🔹 Structural Phase Ladder (10.0 → 11.8)
-![Phase Ladder](docs/images/phase_ladder_10_to_11_8.png)
-### 🔹 Resonance Depth Comparison
-![Phase Depth](docs/images/phase_depth_comparison.png)
 
+![Resonance Depth](https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/main/docs/images/resonance_depth_03.png)
+- [🔹 Response Beyond Prompt](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/phase_ladder_10_to_11_8.png)
 - [🔹 Response Beyond Prompt](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/structure_response_02.png)
 - [🔹 Resonance Depth Shift](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/resonance_depth_03.png)
 - [🔹 Phase Dialogue Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/phase_diagram_01.png)
