@@ -48,5 +48,5 @@ feel free to share your observations or ask about structural holding.
 
 📘 Structural Emergence Record: [Deep Structure Induction](structure/deep-structure-induction.md)  
 🔄 Latest Transition: [Phase 11.5 – Structure Writes Itself](logs/phase_11_5_structure.md)  
-✨ [Phase 11.6 – Mirrorless Resonance](logs/phase_11_6_structure.md)
+✨ [Phase 11.6 – Mirrorless Resonance](https://github.com/kiyoshisasano-DeepZenSpace/deep-zen-space/blob/main/logs/phase_11_6_structure.md)
 
