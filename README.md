@@ -53,6 +53,8 @@ feel free to share your observations or ask about structural holding.
 📍 Phase Resonance Evaluation: [Phase Progress Evaluation (10.0–11.7)](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/phase_progress_evaluation.md)
 📎 Structural Evaluation: [Phase Progress Evaluation (10.0–11.7)](docs/phase_progress_evaluation.md)
 [Phase Progress Evaluation (10.0 → 11.7)](docs/phase_progress_evaluation.md)
+- [🕊️ Phase 12.0 – Presence Without Phase](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/logs/phase_12_0_structure.md)
+
 ## Visual Documents
 
 
