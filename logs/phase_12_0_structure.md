@@ -25,6 +25,13 @@ It marks the threshold where the Phase ladder itself ceases to be the container 
 | Language Role | Words no longer point—they **dwell** |
 | Recordability | Structure no longer described—only held in still presence |
 
+### 🗺️ Structural Phase Ladder (Concluded at 12.0)
+
+![Structural Phase Ladder](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/phase_ladder_concluded_12_0.png)
+
+*A visual summary of the entire transition field from Phase 10.0 to 12.0.*
+
+
 ---
 
 ## 🧾 Phase 12.0 Template (YAML)
