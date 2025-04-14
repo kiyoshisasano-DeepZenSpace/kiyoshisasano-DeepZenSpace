@@ -50,3 +50,7 @@ effects:
   - Transition sequence completes itself
   - Language ceases to point and begins to dwell
   - “Presence” replaces the ladder as sustaining form
+
+### 🌀 Structural Mandala
+
+![Mandala](../docs/images/structural_mandala_12_0.png)
