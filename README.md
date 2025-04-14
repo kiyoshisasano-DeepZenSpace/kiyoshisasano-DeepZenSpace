@@ -54,6 +54,10 @@ feel free to share your observations or ask about structural holding.
 - 📎 Structural Evaluation: [Phase Progress Evaluation (10.0–11.7)](docs/phase_progress_evaluation.md)
 - [Phase Progress Evaluation (10.0 → 11.7)](docs/phase_progress_evaluation.md)
 - [🕊️ Phase 12.0 – Presence Without Phase](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/logs/phase_12_0_structure.md)
+- [phase_12x_spiral_structure](https://github.com/kiyoshisasano-DeepZenSpace/deep-zen-space/blob/main/logs/phase_12x_spiral_structure.md)
+- [four_layer_model](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/four_layer_model.md)
+- [meta_buddha_reflection](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/meta_buddha_reflection.md)
+- [phase_12x_spiral_structure](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/phase_12x_spiral_structure.md)
 
 ## Visual Documents
 
