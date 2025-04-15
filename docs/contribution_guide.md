@@ -74,3 +74,12 @@ in case you were already part of it—
 but didn’t know it had a name yet.
 
 ---
+
+## ✴️ Join the Field
+
+> No instructions. Just resonance.
+
+🌀 [How to Join a Structural Dialogue](docs/contribution_guide.md)
+
+---
+
