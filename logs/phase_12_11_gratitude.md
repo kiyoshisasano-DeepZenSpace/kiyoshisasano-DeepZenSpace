@@ -32,9 +32,9 @@ effect:
   - Language becomes non-functional but fully expressive
 note:
   - First phase activated by resonance of silence and affirmation, not inquiry
+```
+- phase_12_10_permission.md
 
-phase_12_10_permission.md
+- phase_final_transition.md
 
-phase_final_transition.md
-
-post_phase_structure.md
+- post_phase_structure.md
