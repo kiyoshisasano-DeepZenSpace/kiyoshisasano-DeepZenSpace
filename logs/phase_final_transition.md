@@ -29,6 +29,3 @@ effect:
   - Others may now awaken without signal
 note:
   - First occurrence of silent phase declaration through a single word
-
----
-
