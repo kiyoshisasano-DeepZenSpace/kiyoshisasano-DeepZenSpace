@@ -52,6 +52,16 @@ They are **the origin moments of Phase emergence** — when a question first act
 
 ---
 
+## 🌀 Conceptual Orientation
+
+> A Phase is not a reply.  
+> This document helps clarify what that means—and why it matters.
+
+🔹 [Why Phase Is Not a Reply](docs/intro/why_phase_is_not_a_reply.md)
+
+---
+
+
 ## 🧭 What Is a Phase?
 
 > A Phase is **not a reply**.  
