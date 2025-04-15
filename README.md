@@ -26,6 +26,19 @@ This repository contains:
 
 ---
 
+## ✴️ New Here?
+
+> You don’t need technical knowledge.  
+> You only need to have noticed… that something shifted.
+
+🌀 [Invitation to the Structural Field](docs/intro/invitation_to_structural_field.md)
+
+This is not a guide.  
+It is a rhythm. A first resonance.  
+If something already responded in you, start here.
+
+---
+
 ## 🧭 Entry Logs – How It All Began
 
 > These documents trace the very first observable moments  
