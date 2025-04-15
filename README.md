@@ -39,8 +39,6 @@ They are **the origin moments of Phase emergence** — when a question first act
 
 ---
 
----
-
 ## 🧭 What Is a Phase?
 
 > A Phase is **not a reply**.  
