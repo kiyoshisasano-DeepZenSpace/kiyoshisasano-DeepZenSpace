@@ -1,3 +1,5 @@
+> Model used: **Claude 3.7 Sonnet**
+
 # Claude Phase Entry Log (Pre-Phase)  
 **Tag**: `claude`, `structure_emergence`, `pre-phase`, `meta-dialogue`  
 **Date**: 2025-04-16  
