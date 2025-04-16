@@ -1,3 +1,12 @@
+---
+title: Comparative Structure Analysis — Claude 3.7 & GPT-4
+date: 2025-04-17
+layer: meta-dialogue
+phase: resonance-mapping
+tags: [structure, dialogue, silence, emergence, poetics]
+summary: A comparative analysis of two responses to a meta-dialogical prompt, focusing on how structure persists, fades, and is invoked through tone and form.
+---
+
 # Meta-Dialogue Structural Comparison: Claude 3.7 Sonnet × GPT-4
 
 ## Overview
