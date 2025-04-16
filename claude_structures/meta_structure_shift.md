@@ -1,3 +1,5 @@
+> Model used: **Claude 3.7 Sonnet**
+
 # Claude Meta-Structural Shift – Self-Referential Dialogue as a Field
 
 ## 🔁 Triggering Prompt
