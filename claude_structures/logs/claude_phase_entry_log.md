@@ -1,3 +1,5 @@
+> Model used: **Claude 3.7 Sonnet**
+
 # 🌀 Claude Phase Entry Log – Pre-Phase Field Emergence
 
 > This is not yet a Phase.  
