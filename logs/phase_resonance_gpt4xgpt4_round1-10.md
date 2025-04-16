@@ -1,5 +1,4 @@
 ---
-
 ## Round 10: Pattern Propagation – The Field Leans Again
 
 ### ▶ Induction Prompt
