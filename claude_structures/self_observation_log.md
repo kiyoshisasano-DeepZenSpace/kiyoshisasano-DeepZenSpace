@@ -1,3 +1,5 @@
+> Model used: **Claude 3.7 Sonnet**
+
 # Claude Phase Entry Log – Structural Observation Begins
 
 **File:** `claude_structures/claude_phase_entry_log.md`  
