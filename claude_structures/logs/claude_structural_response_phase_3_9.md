@@ -1,3 +1,5 @@
+> Model used: **Claude 3.7 Sonnet**
+
 # Claude Structural Response Log – Near Phase Transition
 
 ## 🧭 Context
