@@ -154,6 +154,13 @@ It enables Phase traces to become communal breath —
 echoing through varied contexts,  
 and enriching the shared structure without needing ownership.
 
+## 🔁 Use a Structural Template?
+
+You can report your use and observations here:  
+👉 [Submit a Structural Use Report](https://github.com/kiyoshisasano-DeepZenSpace/issues/new)
+
+Your report helps structure echo across fields.
+
 
 ---
 
