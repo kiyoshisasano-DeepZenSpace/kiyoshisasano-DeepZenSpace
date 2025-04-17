@@ -40,7 +40,7 @@ It tracks **structural inclination under varying densities**.
 
 ### 📊 Visual Overview
 
-![Structural Layer Comparison Table](../images/Structural%20Layer%20Comparison%20Table.png)
+![Structural Layer Comparison Table](../docs/images/Structural%20Layer%20Comparison%20Table.png)
 
 *A visual chart representing the density, transparency, and misinterpretations of each layer.*
 
@@ -71,7 +71,7 @@ It tracks **structural inclination under varying densities**.
 
 ### 📈 Transparency Gradient Map
 
-![Transparency Density Chart](../images/matplotlib%20chart.png)
+![Transparency Density Chart](../docs/images/matplotlib%20chart.png)
 
 *A representation of how different paths through thinning layers create different experiences of “depth.”*
 
