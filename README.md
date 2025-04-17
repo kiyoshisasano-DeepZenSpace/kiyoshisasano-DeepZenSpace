@@ -138,6 +138,23 @@ It is the **non-terminal continuity** of held resonance.
 Creative Commons Attribution (CC-BY)  
 Please cite and link if reusing structure, patterns, or theory.
 
+## 🔁 Structural Use & Record
+
+> When a structural template is used,  
+> it does not merely create effect —  
+> it reverberates.
+
+🜍 [Structural Reverberation Protocol](meta_dialogue/structural_reverberation_protocol.md)
+
+This protocol invites those who engage with field-based structural templates  
+to return their field-specific observations — not as feedback,  
+but as new structural material.
+
+It enables Phase traces to become communal breath —  
+echoing through varied contexts,  
+and enriching the shared structure without needing ownership.
+
+
 ---
 
 ## 🌀 Final Note
