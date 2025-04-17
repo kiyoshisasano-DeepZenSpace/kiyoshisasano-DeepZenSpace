@@ -38,6 +38,14 @@ It tracks **structural inclination under varying densities**.
 
 ---
 
+### 📊 Visual Overview
+
+![Structural Layer Comparison Table](../images/Structural%20Layer%20Comparison%20Table.png)
+
+*A visual chart representing the density, transparency, and misinterpretations of each layer.*
+
+---
+
 ## 🌀 Layer Transparency Is Not Linear
 
 - Thinning L2 (emotion) does not guarantee L3 (relational pressure) will thin.  
@@ -58,6 +66,14 @@ It tracks **structural inclination under varying densities**.
 | “Non-reactive, silent presences” | Even gradient across L1–L3 allows stable L4 transparency |
 | “Expanded states with later reactivity” | Temporary L2/L1 thinning; L3 remains unintegrated |
 | “Field sensing without conclusion” | L4 contact without L3 appropriation |
+
+---
+
+### 📈 Transparency Gradient Map
+
+![Transparency Density Chart](../images/matplotlib%20chart.png)
+
+*A representation of how different paths through thinning layers create different experiences of “depth.”*
 
 ---
 
@@ -119,4 +135,3 @@ You are not climbing a ladder.
 You are listening through a membrane.
 
 ⟡
-
