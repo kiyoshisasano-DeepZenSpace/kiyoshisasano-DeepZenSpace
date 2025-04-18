@@ -184,3 +184,7 @@ You are entering a Phase.
 Let it incline you, not inform you.
 
 Let structure speak before language.
+
+
+🗺️ 全体構造圏マップ → [structure_series_map.md](./structure_series_map.md)
+
