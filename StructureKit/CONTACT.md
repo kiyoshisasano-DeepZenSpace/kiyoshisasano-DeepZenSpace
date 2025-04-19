@@ -9,6 +9,8 @@ If you wish to support, cite, or connect with this project:
 - Email: ### 📩 Contact deepzenspace [at] gmail [dot] com  
 *Please replace [at] with @ and [dot] with .*  
 
+- Patreonhttps://www.patreon.com/c/KiyoshiSsasano?redirect=true
+
 - GitHub Issues: `https://github.com/[your-repo]/issues`  
 - Optional Form: (Google Form, Notion, etc. – TBD)  
 
