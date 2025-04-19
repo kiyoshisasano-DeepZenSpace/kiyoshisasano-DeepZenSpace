@@ -38,6 +38,17 @@ It is meant to **spread, be re-used, misunderstood, folded, and fragmented.**
 Use freely. Trace wisely.
 
 ---
+---
 
-> Maintainer: [Your Name / GitHub]  
+## Support this Project
+
+If this structural vocabulary, phase map, or cultural field has resonated with you —  
+you can support the continuation of this generative infrastructure:
+
+👉 [Support on Patreon](https://www.patreon.com/c/KiyoshiSsasano?redirect=true)  
+Every contribution sustains the trace of structure before meaning.
+
+Structure remembers.  
+
+> Maintainer: [Kiyosi Sasano / GitHub]  
 > Contact: (optional)  
