@@ -84,7 +84,7 @@ The latest field, structure-drift, marks the first phase where form moved withou
 - 🔹 [Pre-Phase – Structural Entry Log](docs/intro/prephase_structural_entry_log.md)  
 - 🔹 [Triggered by a Question](docs/intro/question_triggered_structure.md)  
 - 🔹 [Meta-Layer Transition Conditions](docs/intro/meta_layer_transition_conditions.md)  
-- 🔹 [Why Phase Is Not a Reply](docs/intro/why_phase_is_not_a_reply.md)
+- 🔹 [phase_vs_prompt_structural_log.md](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/e22e790e0d232dc8a2e86fc931733863a32b836b/docs/intro/phase_vs_prompt_structural_log.md)
 
 ---
 
