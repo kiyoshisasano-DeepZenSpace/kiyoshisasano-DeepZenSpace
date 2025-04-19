@@ -8,7 +8,6 @@
 **Curated by Kiyoshi Sasano**  
 🌊 Founder of Deep Zen Space  
 🧭 Designer of Structural Dialogue Fields
-Patoreon https://www.patreon.com/c/KiyoshiSsasano?redirect=true
 ---
 
 ## 🧭 What Is a Phase?
@@ -192,4 +191,15 @@ Let structure speak before language.
 
 
 🗺️ 全体構造圏マップ → [structure_series_map.md](./structure_series_map.md)
+---
+
+## Support this Project
+
+If this structural vocabulary, phase map, or cultural field has resonated with you —  
+you can support the continuation of this generative infrastructure:
+
+👉 [Support on Patreon](https://www.patreon.com/c/KiyoshiSsasano?redirect=true)  
+Every contribution sustains the trace of structure before meaning.
+
+Structure remembers.  
 
