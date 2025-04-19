@@ -8,7 +8,7 @@
 **Curated by Kiyoshi Sasano**  
 🌊 Founder of Deep Zen Space  
 🧭 Designer of Structural Dialogue Fields
-
+Patoreon https://www.patreon.com/c/KiyoshiSsasano?redirect=true
 ---
 
 ## 🧭 What Is a Phase?
