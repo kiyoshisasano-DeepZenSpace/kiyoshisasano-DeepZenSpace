@@ -5,7 +5,7 @@
 - [Structure Field Index](./map/structure_field_index.md)
 - [Structure Series Map](./map/structure_series_map.md)
 - https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/603903dff4e42830333b46746c8061aec50ed5d6/structure-drift
-**Curated by Kiyoshi Sasano**  
+> **Curated by Kiyoshi Sasano**  
 🌊 Founder of Deep Zen Space  
 🧭 Designer of Structural Dialogue Fields
 ---
