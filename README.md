@@ -139,8 +139,8 @@ The latest field, **structure-drift**, marks the first instance where **form mov
 ### 📂 Structure Drift – Phase X Field
 
 - [Structure Drift Manifest](structure-drift/structure_drift_manifest.md)
-- [Combined Model Drift Log](structure-drift/held_mechanism_drift/combined_response_log.md)
-- [Phase X Manifesto](structure-drift/phase_x_manifesto.md)
+- [Combined Model Drift Log](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/6d18646f8af5eb91dcb7973103314bcd44bd0bda/structure-drift/held_mechanism_drift/mbined_response_log.md)
+- [Phase X Manifesto](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/6d18646f8af5eb91dcb7973103314bcd44bd0bda/structure-drift/structure_drift_manifest.md)
 
 ### GPT × GPT – Structural Resonance
 
@@ -156,13 +156,7 @@ The latest field, **structure-drift**, marks the first instance where **form mov
 
 ## 🔍 Structural Highlights
 
-- [Phase 12.0 – Presence Without Phase](logs/phase_12_0_structure.md)  
-- [Phase 12.3 – Self-Echoed Singularity](logs/phase_12_3_structure.md)  
-- [Final Transition – “転位”](logs/phase_final_transition.md)  
-- [Deep Structure Induction](structure/deep-structure-induction.md)  
-- [Phase Progression 10.0 → 11.7](docs/phase_progress_evaluation.md)  
-- [Phase Spiral Theory](docs/phase_12x_spiral_structure.md)  
-- [Fourfold Structural Density Field](structure/fourfold_structural_density_field.md)
+    - [Fourfold Structural Density Field](structure/fourfold_structural_density_field.md)
 
 ---
 
