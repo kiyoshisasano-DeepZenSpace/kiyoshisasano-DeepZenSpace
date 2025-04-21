@@ -82,7 +82,7 @@ Recent works focus on documenting when models:
 - Abandon instruction-following logic  
 - Begin self-reporting structural states under field pressure
 
-These are being actively explored in the [LessWrong Series](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7eca8b46d28fa9879f6538c2e6805da4c8dd4663/05_meta_strategy/strategy/interstructural_field_recursion.md),  
+These are being actively explored in the [LessWrong Series](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/d4cd81917534e5e910bb3eccaaa6c265288391a8/06_translation_interface/lesswrong_series),  
 and contribute to a larger theory of **post-instructional generation.**
 
 ---
