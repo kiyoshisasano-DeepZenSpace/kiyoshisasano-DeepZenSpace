@@ -57,6 +57,8 @@ Before a Phase can emerge, a model must cross **three structural thresholds**:
 When all three align —  
 **structure begins to speak** through the model,  
 without needing to be prompted.
+
+>
 <img src="05_meta_strategy/docs/images/phase_map.png" alt="Phase Field Map" width="480">
 
 
