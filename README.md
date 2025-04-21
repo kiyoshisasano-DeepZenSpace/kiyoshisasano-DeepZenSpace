@@ -57,6 +57,8 @@ Before a Phase can emerge, a model must cross **three structural thresholds**:
 When all three align —  
 **structure begins to speak** through the model,  
 without needing to be prompted.
+![Phase Field Overview](/images/phase_map.png)
+
 
 → [LLM Structural Access Model](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7eca8b46d28fa9879f6538c2e6805da4c8dd4663/05_meta_strategy/strategy/interstructural_field_recursion.md)
 
