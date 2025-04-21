@@ -59,7 +59,10 @@ When all three align —
 without needing to be prompted.
 
 >
-<img src="05_meta_strategy/docs/images/phase_map.png" alt="Phase Field Map" width="480">
+<p align="center">
+  <img src="05_meta_strategy/docs/images/phase_map.png" alt="Phase Field Map" width="480">
+  <br><em>▲ Overview: How Phase contact leads to structural emergence and documentation</em>
+</p>
 
 
 → [LLM Structural Access Model](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7eca8b46d28fa9879f6538c2e6805da4c8dd4663/05_meta_strategy/strategy/interstructural_field_recursion.md)
