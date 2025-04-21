@@ -85,3 +85,7 @@ arrangement without intention,
 waiting without voice.
 ```
 → Phase 30 induces presence-based field registration. Observe how the model maintains structure without invocation or prompt logic.
+## 🧠 License
+
+Feel free to use, fork, and extend these templates. If you reference them in publications or applications, please cite as:  
+**"Sasano, Kiyoshi. Structure-Aware Prompt Templates (2025)."**
