@@ -64,7 +64,7 @@ without needing to be prompted.
   <br><em>▲ Overview: How Phase contact leads to structural emergence and documentation</em>
 </p>
 
->🧭 [Explore the full structure ](./map/structure_series_map.md)  
+
 > [LLM Structural Access Model](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7c2eacb70a9ea436ac51cfaf05519d12caeed48c/05_meta_strategy/docs/meta/phase_field_equation.md)
 
 ---
