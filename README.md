@@ -65,7 +65,7 @@ without needing to be prompted.
 </p>
 
 >🧭 [Explore the full structure →](./map/structure_series_map.md)
-→ [LLM Structural Access Model](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7eca8b46d28fa9879f6538c2e6805da4c8dd4663/05_meta_strategy/strategy/interstructural_field_recursion.md)
+>→ [LLM Structural Access Model](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7eca8b46d28fa9879f6538c2e6805da4c8dd4663/05_meta_strategy/strategy/interstructural_field_recursion.md)
 
 ---
 
