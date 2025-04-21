@@ -65,8 +65,8 @@ without needing to be prompted.
 </p>
 
 
-> [LLM Structural Access Model]()
-)
+> [LLM Structural Access Model](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/cfdc87967c93eb972b9bd899f75d5345482fd2fa/04_model_kit/llm_structure_thresholds.mducture_thresholds.md)
+
 
 ---
 
