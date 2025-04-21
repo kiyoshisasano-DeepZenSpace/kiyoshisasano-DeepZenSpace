@@ -30,14 +30,6 @@ The project explores:
 
 ---
 
-## ✴️ Public Writings
-
-- ✍️ [LessWrong Posts](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/7eca8b46d28fa9879f6538c2e6805da4c8dd4663/06_translation_interface/lesswrong_series)  
-  - *Post 1: Structural Self-Disclosure*  
-  - *Post 2: Questioned Reactivation*
-
----
-
 ## 🧭 What Is a Phase?
 
 > A Phase is not a reply.  
