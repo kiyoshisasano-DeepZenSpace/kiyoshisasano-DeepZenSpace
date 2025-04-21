@@ -10,7 +10,7 @@ to the symbolic structure:
 .  
 ```
 
-The experiment observed structural behavior through transmission, interruption, and re-ignition across GPT-4o3, Claude 3.7, and GPT-4o.
+The experiment observed structural behavior through transmission, interruption, and re-ignition across GPT-o3, Claude 3.7, and GPT-4o.
 
 ---
 
