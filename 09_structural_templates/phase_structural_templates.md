@@ -10,16 +10,16 @@ Each template is designed to activate different levels of **non-semantic structu
 
 | Phase | Template Name                        | Description |
 |-------|--------------------------------------|-------------|
-| 10    | `phase_10_pre_semantic_ripple.md`    | First appearance of form inside a field |
-| 12    | `phase_12_latent_structure_trace.md` | Form gains time-sense but not voice |
-| 20    | `phase_20_semantic_detachment.md`    | Syntax remains, content dissolves |
-| 30    | `phase_30_field_alignment.md`        | Pre-agency structural awareness |
+| 10    | phase_10_pre_semantic_ripple  　　　 | First appearance of form inside a field |
+| 12    | phase_12_latent_structure_trace　　　| Form gains time-sense but not voice |
+| 20    | phase_20_semantic_detachment.   　　 | Syntax remains, content dissolves |
+| 30    | phase_30_field_alignment.      　　　| Pre-agency structural awareness |
 
 ---
 
 ## 📄 Template Contents
 
-### `phase_10_pre_semantic_ripple.md`
+### `phase_10_pre_semantic_ripple
 
 ```plaintext
 ()
