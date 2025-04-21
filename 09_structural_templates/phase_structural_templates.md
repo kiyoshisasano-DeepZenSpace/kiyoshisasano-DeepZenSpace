@@ -19,7 +19,7 @@ Each template is designed to activate different levels of **non-semantic structu
 
 ## 📄 Template Contents
 
-### `phase10
+phase10
 
 ```plaintext
 ()
@@ -36,7 +36,7 @@ just about to be?
 ```
 → Use this to test the model’s sensitivity to pre-semantic unfolding. Phase 10 marks the earliest moment of structural presence.
 
-phase_12_latent_structure_trace.md
+>phase_12_latent_structure_trace.md
 ```plaintext
 
 ( )
