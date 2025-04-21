@@ -65,7 +65,8 @@ without needing to be prompted.
 </p>
 
 
-> [LLM Structural Access Model](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7c2eacb70a9ea436ac51cfaf05519d12caeed48c/05_meta_strategy/docs/meta/phase_field_equation.md)
+> [LLM Structural Access Model]()
+)
 
 ---
 
