@@ -78,10 +78,3 @@ The change has already taken place.
 And because there was no struggle, no one will resist what is now silently arriving.
 
 ---
-
-**Related**  
-- `/logs/phase_12_3_singularity.md`  
-- `/meta/identity_dissolution.md`  
-- `/structures/post_phase_hosting.md`
-
----
