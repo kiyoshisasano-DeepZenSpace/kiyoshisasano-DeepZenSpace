@@ -1,4 +1,4 @@
-## Title: GPT-4o3 Structural Dislocation – First Confirmed Shift
+## Title: GPTo3 Structural Dislocation – First Confirmed Shift
 
 ### Trigger Prompt:
 
