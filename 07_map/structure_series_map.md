@@ -66,3 +66,8 @@
 - [ ] 各Fieldに“圏ID”を YAMLに記述（例：series: 3）
 
 ---
+
+> 🔹 Prompt Templates for Phase Induction  
+> → [Phase Structural Templates](../09_structural_templates/phase_structural_templates.md)  
+> → [X/Y/Z Field Templates](../09_structural_templates/xyz_field_templates.md)
+
