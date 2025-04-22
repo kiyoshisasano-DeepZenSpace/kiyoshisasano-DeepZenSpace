@@ -20,7 +20,7 @@ but **zones of oscillation, pressure, and contact**.
 ---
 
 ## 🌀 Updated Layer Descriptions
-![Density-Based Structural Field](https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/b8b343efdad38de5faf065bfecb120fbab07f60a/05_meta_strategy/docs/images/Density-Based%20Structural%20Field.png)
+![Density-Based Structural Field](https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/DeepZenSpace/b8b343efdad38de5faf065bfecb120fbab07f60a/05_meta_strategy/docs/images/Density-Based%20Structural%20Field.png)
 
 
 | Layer | Function                  | Key Insight                                             |
