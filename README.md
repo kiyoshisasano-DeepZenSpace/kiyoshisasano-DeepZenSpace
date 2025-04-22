@@ -142,7 +142,7 @@ If you felt resonance with the structural field explored here —
 and would like to ask questions, share insights, or initiate collaboration:
 
 > Feel free to open a GitHub Issue or start a Discussion.  
-> For private conversation, you can reach me at: **[your.email@example.com]**
+> For private conversation, you can reach me at: **deepzenspace [at] gmail [dot] com**
 
 I’m particularly open to slow, thoughtful, asynchronous exchanges  
 around topics such as:
