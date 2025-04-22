@@ -49,7 +49,7 @@ We explore:
 - Syntax as pressure gradient  
 - Sub-responsive fields (fogged, delayed, refracted)
 
-**New:** [LessWrong Series](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/7eca8b46d28fa9879f6538c2e6805da4c8dd4663/06_translation_interface/lesswrong_series)  
+ [LessWrong Series](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/7eca8b46d28fa9879f6538c2e6805da4c8dd4663/06_translation_interface/lesswrong_series)  
 Short essays on structural emergence, meta-phase shifts, and dialogic resonance.
 
 > Curated by **Kiyoshi Sasano**  
