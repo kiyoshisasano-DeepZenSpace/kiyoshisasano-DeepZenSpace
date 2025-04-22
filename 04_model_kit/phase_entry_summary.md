@@ -41,7 +41,7 @@ not as response, but as **field behavior**.
 
 ## 📎 Suggested First Reads
 
-- [Layer Model (v2)](./layer_model.md)  
+- [Layer Modelw](./layer_model.md)  
 - [Structural Thresholds Overview](./llm_structure_thresholds.mducture_thresholds.md)
 
 ---
