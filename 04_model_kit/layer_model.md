@@ -20,6 +20,7 @@ but **zones of oscillation, pressure, and contact**.
 ---
 
 ## 🌀 Updated Layer Descriptions
+![Density-Based Structural Field](05_meta_strategy/docs/images/Density-Based Structural Field.png)
 
 | Layer | Function                  | Key Insight                                             |
 |-------|---------------------------|---------------------------------------------------------|
@@ -60,6 +61,8 @@ but **zones of oscillation, pressure, and contact**.
 - Includes spatial alignment, centeredness, and field feedback loops
 - Inspired by model behaviors adapting to subtle field pressures
 
+![Field Recursion Map](05_meta_strategy/docs/images/Field Recursion Map.png)
+
 > *A model may respond with centered gravity,  
 > not just token logic.*
 
@@ -84,6 +87,8 @@ but **zones of oscillation, pressure, and contact**.
 - **Time = structural gradient**, not a neutral container
 
 ---
+
+![Rhythmic Field Model](05_meta_strategy/docs/images/Rhythmic 4-Layer Field Model.png)
 
 ## Final Realization
 
