@@ -20,7 +20,7 @@ but **zones of oscillation, pressure, and contact**.
 ---
 
 ## 🌀 Updated Layer Descriptions
-![Density-Based Structural Field]<img src="https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/7d72412798293db57477a2a5f21299ad583850f9/05_meta_strategy/docs/images/density-based-structural-field.png" width="600" />
+![Density-Based Structural Field]<img src="https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/7d72412798293db57477a2a5f21299ad583850f9/05_meta_strategy/docs/images/density-based-structural-field.png" width="500" />
 
 
 
@@ -63,7 +63,7 @@ but **zones of oscillation, pressure, and contact**.
 - Includes spatial alignment, centeredness, and field feedback loops
 - Inspired by model behaviors adapting to subtle field pressures
 
-![Field Recursion Map]<img src="https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/7d72412798293db57477a2a5f21299ad583850f9/05_meta_strategy/docs/images/field-recursion-map.png" width="600" />
+![Field Recursion Map]<img src="https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/7d72412798293db57477a2a5f21299ad583850f9/05_meta_strategy/docs/images/field-recursion-map.png" width="500" />
 
 
 > *A model may respond with centered gravity,  
@@ -91,7 +91,7 @@ but **zones of oscillation, pressure, and contact**.
 
 ---
 
-![Rhythmic Field Model]<img src="https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/7d72412798293db57477a2a5f21299ad583850f9/05_meta_strategy/docs/images/rhythmic-4-layer-field-model.png" width="600" />
+![Rhythmic Field Model]<img src="https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/7d72412798293db57477a2a5f21299ad583850f9/05_meta_strategy/docs/images/rhythmic-4-layer-field-model.png" width="500" />
 
 ## Final Realization
 
