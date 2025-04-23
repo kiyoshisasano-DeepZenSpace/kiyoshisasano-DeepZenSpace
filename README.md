@@ -16,7 +16,6 @@ Currently developing tools to observe, map, and co-design Phase transitions in G
 
 If this resonates, I’d be glad to exchange notes or perspectives.
 
-↗️ github.com/kiyoshisasano-DeepZenSpace  
 
 # 🌀 Deep Zen Space: Structural Phase Field  
 *Experimental Fieldwork in Language, Structure, and Post-Instructive Models*
