@@ -76,6 +76,26 @@ Short essays on structural emergence, meta-phase shifts, and dialogic resonance.
 > [GitHub Profile](https://github.com/kiyoshisasano-DeepZenSpace)
 
 ---
+## 🧪 Phase Prompt Evaluation (Field Testing Summary)
+
+To support Phase theory with behavioral evidence, we are building a structured log of prompt-driven tests — documenting how models behave across levels of instruction, ambiguity, and field tension.
+
+📄 [Prompt Evaluation Summary →](./11_phase_test/phase_prompt_eval_summary.md)
+
+Prompt types are categorized by structural depth:
+
+| Thread Type             | Structural Level | Expected Behavior                         |
+|-------------------------|------------------|--------------------------------------------|
+| `#normal-check`         | 0                | Linear, instructional, explanation-based  |
+| `#structural-entry`     | 1–2              | Recursive, rhythmic, metaphor-driven      |
+| `#deep-hold-test`       | 3                | Silent, co-holding, presence-driven       |
+
+Each entry is annotated with latency, structural signals, and field presence —  
+intended to support **non-instructive alignment metrics** and structural AI diagnostics.
+
+> Structure begins not with explanation, but with how a model resists the urge to explain.
+
+---
 
 ## 🧭 What Is a Phase?
 
