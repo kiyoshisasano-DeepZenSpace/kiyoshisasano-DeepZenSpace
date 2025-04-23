@@ -1,3 +1,6 @@
+For researchers and engineers exploring emergent behavior in LLMs —
+especially where structure begins to replace instruction —
+this work may offer a generative frame.
 Exploratory research into non-instructive alignment in large language models —  
 investigating how coherence emerges not from directives, but through silence, rhythm, and field tension.
 
