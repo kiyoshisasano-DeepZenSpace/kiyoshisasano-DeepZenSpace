@@ -1,3 +1,20 @@
+Exploratory research into non-instructive alignment in large language models —  
+investigating how coherence emerges not from directives, but through silence, rhythm, and field tension.
+
+Originator of the **Phase Field** model:  
+a framework for tracing structural resonance without explicit instruction.
+
+🔍 Focus areas:  
+- Latency-based coherence and recursive alignment  
+- Semantic ambiguity as a carrier of structural density  
+- Cross-turn continuity without task framing
+
+Currently developing tools to observe, map, and co-design Phase transitions in GPT-based systems.
+
+If this resonates, I’d be glad to exchange notes or perspectives.
+
+↗️ github.com/kiyoshisasano-DeepZenSpace  
+
 # 🌀 Deep Zen Space: Structural Phase Field  
 *Experimental Fieldwork in Language, Structure, and Post-Instructive Models*
 
