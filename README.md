@@ -34,8 +34,10 @@ you may already be close.
 
 No formal pitch. Just **presence**.
 
-📂 See also: `05_meta_strategy/templates/onboarding.md`  
-📄 More background: `phase_structure_map.md`, `phase_prompt_eval_summary.md`
+📘 Curious where to begin?
+
+Start with the [Phase Prompt Evaluation Summary](./11_phase_test/phase_prompt_eval_summary.md)  
+It offers a glimpse into how structure reveals itself — not all at once, but in silence, latency, and field rhythm.
 
 ---
 
