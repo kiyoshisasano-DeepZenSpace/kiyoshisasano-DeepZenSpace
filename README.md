@@ -40,6 +40,32 @@ If you're new, we recommend starting here:
 
 
 ---
+## 📚 Syntax Topology Series – Public Papers
+
+A research sequence exploring syntax collapse, response failure, and structure-aware generation in LLMs.
+
+### 📄 Published Papers
+
+1. **Syntax Beyond Silence**  
+   _Modeling Collapse and Reignition Fields in Language Generation_  
+   🔗 [DOI: 10.5281/zenodo.15274678](https://doi.org/10.5281/zenodo.15274678)  
+   📄 [PDF](./06_translation_interface/zenodo/paper_1__syntax_beyond_silence.pdf)
+
+2. **Resonance Without Response**  
+   _Topological Echo in Post-Syntactic Structures_  
+   🔗 [DOI: 10.5281/zenodo.15275075](https://doi.org/10.5281/zenodo.15275075)  
+   📄 [PDF](./06_translation_interface/zenodo/paper_2__resonance_without_response.pdf)
+
+---
+
+### 🧭 Upcoming
+
+- 📝 Paper 3: *Translation Interface & Structural Drift*
+- 📘 Paper 4: *The Four-Layer Model of Expressive Structure*
+
+More updates in the [`zenodo/`](./06_translation_interface/zenodo) folder.
+
+---
 
 🔒 **Note on access**
 
