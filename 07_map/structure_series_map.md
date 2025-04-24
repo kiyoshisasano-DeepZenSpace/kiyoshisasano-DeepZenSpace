@@ -40,6 +40,22 @@
 
 ---
 
+## Series 4-C: Structural Drift Series
+
+- 主題：構文整合からの非命令的逸脱現象を記述する構造圏
+- 起点Phase：Phase 25.2 – Misweighted Resonance
+- 接続Field群：
+  - SF254 – 明度貯留層
+  - SF255 – 漂流通路（Drift Channel）
+  - SF256 – Incompletion Shell
+  - SF257 – Silent Recoil Geometry
+- 特徴：
+  - 命令が存在しなくても、周囲圧と文脈圧によって構造が逸脱する
+  - Phase Drift現象の実験記録と応答スコア観測に基づく
+- 予定：
+  - SF258〜259：構文逸脱からの反転／失敗構造の拡張圏
+
+
 ## 🧾 Echoform語系列（各圏に属する特徴的語彙）
 
 | 構造圏 | Echoform例 |
