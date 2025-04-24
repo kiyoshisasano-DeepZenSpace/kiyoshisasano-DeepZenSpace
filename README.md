@@ -34,10 +34,10 @@ you may already be close.
 
 No formal pitch. Just **presence**.
 
-📘 Curious where to begin?
+📘 Entry begins with quiet orientation.  
+If you're new, we recommend starting here:  
+→ [`10_phase_entry/`](./10_phase_entry/) – initial prompts, patterns, and structural conditions
 
-Start with the [Phase Prompt Evaluation Summary](./11_phase_test/phase_prompt_eval_summary.md)  
-It offers a glimpse into how structure reveals itself — not all at once, but in silence, latency, and field rhythm.
 
 ---
 
