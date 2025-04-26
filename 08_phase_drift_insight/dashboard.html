@@ -1,23 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>Phase Drift Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Phase & Feedback Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .phase-box {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feedback-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .feedback-card {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        .timestamp {
+            font-size: 0.8em;
+            color: #666;
+        }
+        .feedback-type {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
 </head>
 <body>
-  <h1>Phase Drift Insight Dashboard</h1>
+    <h1>Phase & Feedback Dashboard</h1>
 
-  <div id="phase-status"></div>
+    <div class="phase-box" id="phaseInfo">
+        Loading phase info...
+    </div>
+    <div style="margin: 20px 0;">
+        <button onclick="sendFeedback('positive')" style="background-color:#4CAF50; color:white; padding:10px 20px; margin-right:10px; border:none; border-radius:5px; font-size:16px; cursor:pointer;">
+            👍 Positive
+        </button>
+        <button onclick="sendFeedback('negative')" style="background-color:#f44336; color:white; padding:10px 20px; border:none; border-radius:5px; font-size:16px; cursor:pointer;">
+            👎 Negative
+        </button>
+    </div>
+    
 
-  <div>
-    <button onclick="sendFeedback('Positive')">👍 Positive</button>
-    <button onclick="sendFeedback('Negative')">👎 Negative</button>
-  </div>
+    <h2>Feedback Logs</h2>
+    <div class="feedback-list" id="feedbackList">
+        Loading feedback logs...
+    </div>
 
-  <h2>Feedback Log</h2>
-  <div id="feedback-log"></div>
+    <script>
+async function fetchPhaseInfo() {
+    try {
+        const response = await fetch('/current_phase');
+        const data = await response.json();
+        const phaseDiv = document.getElementById('phaseInfo');
 
-  <script src="script.js"></script>
+        if (data && data.phase_name) {
+            phaseDiv.innerHTML = `
+                <div><strong>Phase Name:</strong> ${data.phase_name}</div>
+                <div><strong>Drift Value:</strong> ${data.drift_value}</div>
+                <div><strong>Timestamp:</strong> ${data.timestamp}</div>
+                <div><strong>Additional Info:</strong> ${Object.keys(data.additional_info).length > 0 ? JSON.stringify(data.additional_info) : 'N/A'}</div>
+            `;
+        } else {
+            phaseDiv.innerHTML = '<div>No current phase data available.</div>';
+        }
+
+    } catch (error) {
+        console.error('Error fetching phase info:', error);
+        document.getElementById('phaseInfo').innerText = 'Error loading phase info.';
+    }
+}
+
+
+async function fetchFeedbackLog() {
+    try {
+        const response = await fetch('/feedback_log');
+        const data = await response.json();
+        const listDiv = document.getElementById('feedbackList');
+
+        if (Array.isArray(data)) {
+            // ★ここで並び替え：timestampの降順（新しい順）
+            data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+            listDiv.innerHTML = data.map(item => `
+                <div class="feedback-card" style="border-left: 5px solid ${item.feedback_type === 'positive' ? '#4CAF50' : '#f44336'};">
+                    <div class="timestamp">${item.timestamp}</div>
+                    <div class="feedback-type">${item.feedback_type}</div>
+                    <div>${item.details}</div>
+                </div>
+            `).join('');
+        } else {
+            listDiv.innerText = 'No feedback available.';
+        }
+    } catch (error) {
+        console.error('Error fetching feedback log:', error);
+        document.getElementById('feedbackList').innerText = 'Error loading feedback logs.';
+    }
+}
+
+
+        async function sendFeedback(feedbackType) {
+    const feedback = {
+        feedback_type: feedbackType,
+        details: feedbackType === 'positive' ? 'Positive feedback from dashboard' : 'Negative feedback from dashboard',
+        timestamp: new Date().toISOString()
+    };
+
+    try {
+        const response = await fetch('/feedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(feedback)
+        });
+
+        if (response.ok) {
+            console.log('Feedback submitted successfully!');
+        } else {
+            console.error('Failed to submit feedback.');
+        }
+    } catch (error) {
+        console.error('Error submitting feedback:', error);
+    }
+}
+
+        setInterval(() => {
+            fetchPhaseInfo();
+            fetchFeedbackLog();
+        }, 2000);
+
+        fetchPhaseInfo();
+        fetchFeedbackLog();
+    </script>
 </body>
 </html>
