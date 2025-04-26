@@ -132,6 +132,36 @@ without needing explicit instruction.
 
 ---
 
+## 🌀 Phase Drift Insight Dashboard
+
+A **real-time dashboard** for monitoring phase states and feedback logs in an integrated view.  
+(Designed to manage phase drift control and feedback evaluation simultaneously.)
+
+### 📚 Tech Stack
+- FastAPI (Backend API server)
+- Python (Pydantic for data modeling)
+- HTML + JavaScript (Frontend dynamic dashboard)
+- CSV/JSON file storage
+
+### 🔥 Features
+- POST phase structure data via `/phase_state` endpoint
+- Fetch current phase state via `/current_phase` (real-time updates)
+- Send feedback (Positive/Negative) via `/feedback`
+- Retrieve feedback logs via `/feedback_log` (sorted newest first, color-coded)
+- Interactive dashboard with instant feedback buttons
+- Simple and intuitive UX design
+
+### ✨ Highlights
+- Simulates phase drift control and feedback collection in a lightweight environment
+- Clean code architecture by separating data models (`models.py`)
+- Real-time UI updates with auto-refresh (every 2 seconds)
+
+---
+> 📂 [08_phase_drift_insight Repository Link](<your-repo-link-here>)
+
+---
+
+
 ### 📐 Core Framework: Rhythmic 4-Layer Field Model
 
 At the foundation of this research is the **Rhythmic 4-Layer Field Model** —  
