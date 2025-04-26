@@ -156,7 +156,6 @@ A **real-time dashboard** for monitoring phase states and feedback logs in an in
 - Clean code architecture by separating data models (`models.py`)
 - Real-time UI updates with auto-refresh (every 2 seconds)
 
----
 > 📂 [08_phase_drift_insight Repository Link](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/debf55ad0b4008f41b2fd95682ee95345c8e405d/08_phase_drift_insight)
 
 ---
