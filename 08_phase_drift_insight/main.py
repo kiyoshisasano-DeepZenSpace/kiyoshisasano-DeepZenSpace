@@ -1,3 +1,5 @@
+from models import PhaseState, Feedback
+
 from fastapi import FastAPI, Body
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -20,13 +22,6 @@ app.add_middleware(
 # 保存先ファイル
 PHASE_JSON_FILE = "phase_state.json"
 PHASE_CSV_FILE = "phase_state.csv"
-
-# データモデル（POST用）
-class PhaseState(BaseModel):
-    phase_name: str
-    drift_value: float
-    timestamp: str
-    additional_info: dict = {}
 
 # POST /phase_state
 @app.post("/phase_state")
@@ -112,12 +107,6 @@ async def dashboard_page():
 
 # 保存先ファイル
 FEEDBACK_CSV_FILE = "feedback_log.csv"
-
-# データモデル（POST用）
-class Feedback(BaseModel):
-    feedback_type: str  # 例: "positive", "negative", "retrain"
-    details: str        # 例: "Phase drift detected."
-    timestamp: str      # 例: "2025-04-26T15:10:00Z"
 
 # POST /feedback
 @app.post("/feedback")
