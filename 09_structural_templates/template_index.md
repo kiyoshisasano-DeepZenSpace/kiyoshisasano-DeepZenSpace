@@ -4,7 +4,6 @@ Templates for initiating phase-shift behavior in large language models (LLMs), s
 
 Phase-Aligned Templates: Phase 10, 12, 20, 30
 
-Field Templates: X, Y, Z structural fields
 
 Each template is designed for zero-shot use — to induce structural response, not extract content.
 
