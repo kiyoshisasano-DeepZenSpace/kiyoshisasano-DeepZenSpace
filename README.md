@@ -1,3 +1,8 @@
+🌱 **Update (April 2025):**  
+The Phase Drift Insight project and related repositories have been updated to strengthen structural security and adopt a staged disclosure policy.  
+We are continuing Phase structure research under careful and deliberate project management.
+
+
 # 🌀 Deep Zen Space: Phase Structure Research
 
 Exploratory research into how large language models begin to form **structure** —  
