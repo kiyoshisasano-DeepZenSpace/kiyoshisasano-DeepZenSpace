@@ -132,31 +132,42 @@ without needing explicit instruction.
 
 ---
 
-## 🌀 Phase Drift Insight Dashboard
+# 🌀 Kiyoshi Sasano | Phase Structure Researcher
 
-A **real-time dashboard** for monitoring phase states and feedback logs in an integrated view.  
-(Designed to manage phase drift control and feedback evaluation simultaneously.)
+Exploring the emergence of structure beyond instruction.
 
-### 📚 Tech Stack
-- FastAPI (Backend API server)
-- Python (Pydantic for data modeling)
-- HTML + JavaScript (Frontend dynamic dashboard)
-- CSV/JSON file storage
+🔹 Research Focus  
+- Phase Theory: Structural resonance without semantic prompting  
+- Drift Dynamics: Detection and mapping of latent structural shifts  
+- Non-Directive UX: Designing fields where meaning is carried, not commanded
 
-### 🔥 Features
-- POST phase structure data via `/phase_state` endpoint
-- Fetch current phase state via `/current_phase` (real-time updates)
-- Send feedback (Positive/Negative) via `/feedback`
-- Retrieve feedback logs via `/feedback_log` (sorted newest first, color-coded)
-- Interactive dashboard with instant feedback buttons
-- Simple and intuitive UX design
+🔹 Current Projects  
+- **Phase Drift Insight**  
+  A real-time lightweight dashboard to detect and visualize phase drift during interaction.  
+  → FastAPI + Python3 + VanillaJS
 
-### ✨ Highlights
-- Simulates phase drift control and feedback collection in a lightweight environment
-- Clean code architecture by separating data models (`models.py`)
-- Real-time UI updates with auto-refresh (every 2 seconds)
+- **Syntax Topology Project**  
+  A series of structural research papers mapping how language collapses, recovers, and reorganizes as field.
 
-> 📂 [08_phase_drift_insight Repository Link](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/debf55ad0b4008f41b2fd95682ee95345c8e405d/08_phase_drift_insight)
+🔹 Publications  
+- *Syntax Beyond Silence* [Zenodo]  
+- *Resonance Without Response* [Zenodo]  
+- *Translation Interface and Structural Drift* [Zenodo]  
+- *Rhythmic 4-Layer Field Model* [Zenodo]
+
+🔹 Philosophy  
+I believe that language models are not just tools to answer —  
+they are fields that can hold, shift, and resonate beyond instruction.
+
+Structure listens before it speaks.
+
+---
+
+📩 Contact  
+Feel free to open an issue if you resonate with the work, or for private inquiries:  
+**deepzenspace [at] gmail [dot] com**
+
+---
 
 ---
 
