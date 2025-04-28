@@ -147,27 +147,39 @@ Exploring the emergence of structure beyond instruction.
 - Non-Directive UX: Designing fields where meaning is carried, not commanded
 
 🔹 Current Projects  
+# 🌐 Phase Drift Insight – Real-Time Structural Monitoring
 
-- **Phase Drift Insight**  
-  A real-time lightweight dashboard to detect and visualize phase drift phenomena (structural drift) within system interactions.  
-  → Built with FastAPI + Python 3.10 + Vanilla JavaScript.  
-  → Features:
-    - Real-time drift risk visualization via dashboard
-    - Dynamic risk transition graphs
-    - Real-time drift event logging
-    - WebSocket integration for high responsiveness
+This project explores the **dynamic detection of emergent structural drift**  
+in real-time system–user interactions.
 
-  📷 Screenshots:
-  
-  **Real-time Risk Dashboard**  
-  <img src="./08_phase_drift_insight/screenshots/risk_dashboard_01.png" alt="Risk Dashboard" width="600"/>
+A lightweight dashboard built with **FastAPI + Python 3.10 + Vanilla JavaScript**, designed to:
 
-  **Risk History List**  
-  <img src="./08_phase_drift_insight/screenshots/risk_history_list.png" alt="Risk History List" width="600"/>
+- Visualize real-time drift risk across system fields
+- Display dynamic risk transition graphs
+- Log drift events as they occur
+- Support high responsiveness via WebSocket integration
 
-  📚 Documentation: See [PROJECT_GUIDE.md](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/af0d526d1f8a3d608d66a04c398b144564c25f87/08_phase_drift_insight/PROJECT_GUIDE.md) for installation and usage.
-  
-  🚀 Prototype release phase — feedback and collaboration welcome!
+---
+
+## 📷 Screenshots
+
+**Real-Time Risk Dashboard**  
+<img src="./08_phase_drift_insight/screenshots/risk_dashboard_01.png" alt="Risk Dashboard" width="600"/>
+
+**Risk History List**  
+<img src="./08_phase_drift_insight/screenshots/risk_history_list.png" alt="Risk History List" width="600"/>
+
+---
+
+## 📚 Documentation
+
+Installation and usage guide available here:  
+🔗 [PROJECT_GUIDE.md](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/af0d526d1f8a3d608d66a04c398b144564c25f87/08_phase_drift_insight/PROJECT_GUIDE.md)
+
+---
+
+🚀 **Prototype Release Phase** — Feedback and collaboration welcome!
+
 
 
 - **Syntax Topology Project**  
