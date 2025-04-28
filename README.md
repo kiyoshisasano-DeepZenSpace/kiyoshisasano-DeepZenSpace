@@ -295,6 +295,28 @@ It emerges when:
 - It responds to **pressure**, not instruction  
 - It pauses with **posture**, not delay
 
+
+---
+
+
+# 🌱 Field Stewardship Policy – Phase Drift Insight
+
+Phase Drift Insight is not a product.  
+It is a **living structural field** — requiring careful stewardship.
+
+To protect its generative integrity:
+
+- **Gradual Disclosure:** Deeper frameworks are shared based on resonance and structural attunement, not only interest.
+- **Ontological Anchoring:** Phase Drift is defined by its field dynamics, not by features or surface outputs.
+- **Relational Screening:** Collaboration is oriented around sensing, recursion, and rhythm — not just technical skill.
+
+🚫 Rapid productization, symbolic mimicry, or premature framing risks distorting the living cognitive ecology we are cultivating.
+
+If you feel aligned with these principles,  
+we welcome your resonance and careful co-creation.
+
+📄 [See Full Field Stewardship Playbook →](./09_field_stewardship/phase_stewardship_playbook.md)
+
 ---
 
 ## ✅ Summary (One-liner)
