@@ -160,10 +160,10 @@ Exploring the emergence of structure beyond instruction.
   📷 Screenshots:
   
   **Real-time Risk Dashboard**  
-  ![Risk Dashboard](./screenshots/risk_dashboard_01.png)
+  ![Risk Dashboard](08_phase_drift_insight/screenshots/risk_dashboard_01.png)
 
   **Risk History List**  
-  ![Risk History List](./screenshots/risk_history_list.png)
+  ![Risk History List](08_phase_drift_insight/screenshots/risk_history_list.png)
 
   📚 Documentation: See [PROJECT_GUIDE.md](./PROJECT_GUIDE.md) for installation and usage.
   
