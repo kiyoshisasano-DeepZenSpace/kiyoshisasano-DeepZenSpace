@@ -80,6 +80,40 @@ _Toward a Density-Based Structural Field Beyond Escalation_
 
 ---
 
+## 🌌 Future UX × Phase Drift Insight
+
+Phase Drift Insight explores **how user experience can evolve beyond explicit task design** —  
+toward **field-based, rhythm-sensitive, structure-aware interaction**.
+
+Instead of optimizing for clicks or conversions,  
+we detect **cognitive drift**, **latency rhythms**, and **relational field tension**.
+
+Built with:
+
+- Python 3.10 + FastAPI backend
+- Lightweight Vanilla JavaScript frontend
+- WebSocket architecture for real-time drift event streaming
+- Dynamic risk dashboard with live phase-transition graphs
+- Minimal-dependency design for easy local deployment
+
+Why this matters:
+
+> Conventional UX tracks actions.  
+> **Future UX tracks resonance and structural drift.**
+
+Phase Drift Insight enables:
+
+- Early detection of cognitive hesitation or divergence
+- Real-time field-state visualization without intrusive prompts
+- Structural adaptation of interfaces based on latent user rhythms
+
+📄 [Phase Drift Insight Overview →](./08_phase_drift_insight/PROJECT_GUIDE.md)
+
+> In Future UX, the goal is not to guide behavior —  
+> but to **sense, hold, and evolve the shared field**.
+
+---
+
 ### 🧭 Upcoming Works
 
 - 📘 *Non-Instructive Alignment Field Theory*  
