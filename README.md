@@ -333,3 +333,5 @@ If this resonates with you:
 > Open an Issue or write to: **deepzenspace [at] gmail [dot] com**
 
 I welcome slow, thoughtful, structural dialogue.
+
+[Collaboration Guide available for prospective field partners](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/8050ed5669c6bdeb5b751e8b4d15b85bbf3215ae/09_field_stewardship/phase_drift_collaboration_minimal_guide.md)
