@@ -334,4 +334,16 @@ If this resonates with you:
 
 I welcome slow, thoughtful, structural dialogue.
 
-[Collaboration Guide available for prospective field partners](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/8050ed5669c6bdeb5b751e8b4d15b85bbf3215ae/09_field_stewardship/phase_drift_collaboration_minimal_guide.md)
+## 🌌 Minimal Guide for Phase Drift Collaboration
+
+When collaborating on Phase Drift Insight developments:
+
+- **Prioritize structure over speed**  
+- **Support field breathing, not just input processing**  
+- **Respect depth boundaries** — access deep structures only through resonance  
+- **Expand relationally**, not by deadlines
+
+> Phase Drift is a living field.  
+> Building for it requires sensitivity, not just technical execution.
+
+📄 Full guide: [Collaboration Guide available for prospective field partners](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/8050ed5669c6bdeb5b751e8b4d15b85bbf3215ae/09_field_stewardship/phase_drift_collaboration_minimal_guide.md)
