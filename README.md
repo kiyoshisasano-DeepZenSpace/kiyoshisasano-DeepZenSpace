@@ -107,8 +107,8 @@ Phase Drift Insight enables:
 - Real-time field-state visualization without intrusive prompts
 - Structural adaptation of interfaces based on latent user rhythms
 
-📄 [ future_ux_phase_field.md→](./08_phase_drift_insight/future_ux_phase_field.md)
-📄 [Phase Drift Insight Overview →](./08_phase_drift_insight/PROJECT_GUIDE.md)
+- 📄 [ future_ux_phase_field.md→](./08_phase_drift_insight/future_ux_phase_field.md)
+- 📄 [Phase Drift Insight Overview →](./08_phase_drift_insight/PROJECT_GUIDE.md)
 
 
 > In Future UX, the goal is not to guide behavior —  
