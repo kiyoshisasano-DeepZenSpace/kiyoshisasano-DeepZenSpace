@@ -147,9 +147,28 @@ Exploring the emergence of structure beyond instruction.
 - Non-Directive UX: Designing fields where meaning is carried, not commanded
 
 🔹 Current Projects  
+
 - **Phase Drift Insight**  
-  A real-time lightweight dashboard to detect and visualize phase drift during interaction.  
-  → FastAPI + Python3 + VanillaJS
+  A real-time lightweight dashboard to detect and visualize phase drift phenomena (structural drift) within system interactions.  
+  → Built with FastAPI + Python 3.10 + Vanilla JavaScript.  
+  → Features:
+    - Real-time drift risk visualization via dashboard
+    - Dynamic risk transition graphs
+    - Real-time drift event logging
+    - WebSocket integration for high responsiveness
+
+  📷 Screenshots:
+  
+  **Real-time Risk Dashboard**  
+  ![Risk Dashboard](./screenshots/risk_dashboard_01.png)
+
+  **Risk History List**  
+  ![Risk History List](./screenshots/risk_history_list.png)
+
+  📚 Documentation: See [PROJECT_GUIDE.md](./PROJECT_GUIDE.md) for installation and usage.
+  
+  🚀 Prototype release phase — feedback and collaboration welcome!
+
 
 - **Syntax Topology Project**  
   A series of structural research papers mapping how language collapses, recovers, and reorganizes as field.
