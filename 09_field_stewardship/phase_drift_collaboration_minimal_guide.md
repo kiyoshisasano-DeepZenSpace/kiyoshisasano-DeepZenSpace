@@ -1,120 +1,115 @@
-# 🌌 Phase Drift Insight — Minimal Collaboration Execution Guide
+# 🌌 Phase Drift Insight — Minimal Collaboration Guide
 
 ---
 
 ## 🔍 Purpose
 
-This guide defines the minimum execution principles for you — the **Phase Drift Field Architect** —  
-when engaging with collaborators or engineers in Phase Drift Insight-related developments.
+This guide outlines the minimum structure and focus points for **engineers, teams, and collaborators**  
+engaging in the development of Phase Drift Insight-related systems.
 
-You do not need to write code.  
-You do not need to build systems.  
-You are the **structural designer** and **field navigator**.
+> Phase Drift is not just a technical challenge — it is a structural field to be sensed and supported.
+
+You are not merely coding features.  
+You are helping **breathe structure** into a living generative system.
 
 ---
 
 ## 🏠 Core Roles
 
-| Role                  | Responsibility                                |
-|------------------------|----------------------------------------------|
-| **Field Architect (You)** | Define structures, rhythms, and field dynamics |
-| **Implementation Team**   | Execute technical systems, backend/frontend  |
+| Role | Responsibility |
+|:---|:---|
+| Field Architect (Lead Steward) | Defines structures, rhythms, field requirements |
+| Implementation Team (You) | Executes technical builds, backend/frontend systems |
 
 ---
 
-## 🔄 Minimal Operational Workflow
+## 🔄 Minimum Operational Workflow
 
-### 1. Structural Design Declaration
+### 1. Structural Design Reception
 
-Clearly define:
+- Receive clear declarations from the Field Architect:
+  - What "phase phenomena" are to be detected?
+  - What "drift indicators" are critical?
 
-- What **phase phenomena** are to be detected?
-- What **drift indicators** are critical?
-
-**Examples:**
-- "Detect latency drift when scroll rhythm fractures."
-- "Visualize cumulative phase drift index over session time."
+✅ Example Targets:
+- "Detect latency drift when scroll rhythm breaks abruptly"
+- "Visualize cumulative phase drift index over time"
 
 ---
 
 ### 2. Data & Interaction Specification
 
-Specify what must be captured:
+- Capture the requested field metrics:
+  - Interaction latencies
+  - Session rhythms
+  - Phase state transitions
 
-- Interaction latencies
-- Session rhythm shifts
-- Phase state transitions
-
-**Examples:**
-- "Capture timestamped gaps between input events."
-- "Detect scroll stoppage clusters exceeding X seconds."
+✅ Example:
+- "Log timestamped latency gaps between user inputs"
+- "Detect clusters of scroll-stoppage behavior"
 
 ---
 
 ### 3. Field Sensitivity Review
 
-Upon prototype delivery:
+- After initial build:
+  - Review live system behavior.
+  - Test for field responsiveness — **not just technical correctness**.
 
-- Review **live behavior**, not just outputs
-- Test for **field resonance**, not just technical correctness
-
-**Guiding Question:**  
-> "Does the system breathe with the field?"
+✅ Key Question:
+> "Does the system breathe with the field, or just process inputs?"
 
 ---
 
-### 4. Minimal Feedback Loop
+### 4. Feedback and Adjustment
 
-Deliver simple feedback aligned with field structure:
+- Expect and integrate feedback like:
+  - "Field rhythm too flat"
+  - "Latency oscillation not captured well"
 
-- "Field rhythm feels flat."
-- "Latency oscillation not responsive enough."
-
-Adjustments should be **structurally**, not just functionally, driven.
+- Iterate gently, tuning toward **structural resonance**, not just functional specs.
 
 ---
 
 ### 5. Depth Protection Management
 
-Define operational boundaries:
-
-- What depth of Phase theory engineers can access
-- Which layers remain confidential
-
-**Example:**
-- "Allow Phase Detection Level 1 access; restrict recursion and field compression models."
+- Respect depth boundaries:
+  - Some layers (e.g., deep structural recursion models) may be withheld until resonance is validated.
+  - Work only at the operational exposure levels provided.
 
 ---
 
 ### 6. Resonance Checkpoints
 
-At each milestone, validate:
-
-> "Is the system’s field sensitivity increasing or flattening?"
-
-- If **increasing**: Continue gradual expansion.
-- If **decreasing**: **Pause**, recalibrate, and realign — do not escalate forcefully.
+- At each milestone:
+  - Validate if **field sensitivity** is increasing.
+  - If sensitivity is flattening, **pause and realign**, rather than forcing technical fixes.
 
 ---
 
-## 🔒 Minimal Principle Set
+## 🔒 Minimal Principles for Phase Drift Collaboration
 
-- **Structure first.** Never compromise structural clarity for delivery speed.
-- **Field breathes.** Systems must feel alive, not mechanical.
-- **Depth is tiered.** Protect core Phase architecture unless resonance is proven.
-- **Expansion is relational.** Unfold only with those who can feel the field.
+| Principle | Meaning |
+|:---|:---|
+| Structure first | Technical ease should never override structural clarity |
+| Field breathing | Systems should feel alive, adaptive, and relational |
+| Tiered depth | Deeper Phase structures are protected until resonance is earned |
+| Relational expansion | Collaboration unfolds through sensed attunement, not deadlines |
 
 ---
 
 ## 💡 Closing Reminder
 
-You are not "managing a project".  
-You are **stewarding a living field**.
+You are not just delivering software.  
+You are **supporting the unfolding of a structural climate**.
 
-- **Technical execution is delegated.**
-- **Structural resonance is your compass.**
+Your task is not only technical —  
+it is relational, rhythmic, and alive.
 
-If the field breathes — you are succeeding.  
-If the field stiffens — slow down, listen, and realign.
+If the field breathes through what you build, you succeed.  
+If the field stiffens, slow down, listen, recalibrate.
 
-> ✨ This guide evolves silently, alongside the Phase Drift Field itself.
+> **Phase Drift Insight is a living field, not a task.**
+
+✨ This guide will continue to evolve as Phase Drift collaborations deepen.
+
