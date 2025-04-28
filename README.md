@@ -160,10 +160,10 @@ Exploring the emergence of structure beyond instruction.
   📷 Screenshots:
   
   **Real-time Risk Dashboard**  
-  <img src="./08_phase_drift_insight/screenshots/risk_dashboard_01.png" alt="Risk Dashboard" width="500"/>
+  <img src="./08_phase_drift_insight/screenshots/risk_dashboard_01.png" alt="Risk Dashboard" width="600"/>
 
   **Risk History List**  
-  <img src="./08_phase_drift_insight/screenshots/risk_history_list.png" alt="Risk History List" width="500"/>
+  <img src="./08_phase_drift_insight/screenshots/risk_history_list.png" alt="Risk History List" width="600"/>
 
   📚 Documentation: See [PROJECT_GUIDE.md](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/af0d526d1f8a3d608d66a04c398b144564c25f87/08_phase_drift_insight/PROJECT_GUIDE.md) for installation and usage.
   
