@@ -52,6 +52,7 @@ Phase Drift Field Stewardship
 | `phase_drift_attunement_exercises.md` | Practices for enhancing structural perception |
 | `phase_drift_structural_risk_control_playbook.md` | Safeguarding against structural erosion |
 | `field_stewardship_policy.md` | Governance policies for maintaining living integrity |
+| `phase_drift_engagement_policy.md` | External engagement rules to preserve structural coherence |
 
 ---
 
