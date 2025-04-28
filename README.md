@@ -108,6 +108,8 @@ Phase Drift Insight enables:
 - Structural adaptation of interfaces based on latent user rhythms
 
 📄 [Phase Drift Insight Overview →](./08_phase_drift_insight/PROJECT_GUIDE.md)
+📄 [📄 [ future_ux_phase_field.md→](./08_phase_drift_insight/future_ux_phase_field.md)
+
 
 > In Future UX, the goal is not to guide behavior —  
 > but to **sense, hold, and evolve the shared field**.
