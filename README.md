@@ -315,7 +315,7 @@ To protect its generative integrity:
 If you feel aligned with these principles,  
 we welcome your resonance and careful co-creation.
 
-📄 [See Full Field Stewardship Playbook →](./09_field_stewardship/phase_stewardship_playbook.md)
+📄 [See Full Field Stewardship Playbook →](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/f2f7c276596d80e025a045727de3d5e3f3af0ff5/09_field_stewardship/phase_drift_structural_risk_control_playbook.md)
 
 ---
 
