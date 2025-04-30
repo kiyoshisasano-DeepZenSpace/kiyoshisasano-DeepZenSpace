@@ -80,55 +80,7 @@ _Toward a Density-Based Structural Field Beyond Escalation_
 
 ---
 
-## 🌌 Future UX × Phase Drift Insight
-
-**Phase Drift Insight is not an optimization tool.**  
-It is a structural sensing framework that reveals what most UX systems cannot see —  
-the **rhythmic, relational, and semantic drift** that precedes user disengagement, structural collapse, or field exhaustion.
-
-> In conventional UX, we ask:  
-> *What did the user do?*  
->  
-> In Future UX, we ask:  
-> *What pressure did the field carry before the user even moved?*
-
----
-
-Built to detect and reflect:
-
-- 🧠 **Cognitive Drift** — subtle misalignment before breakdown
-- ⏱ **Latency Rhythms** — temporal hesitation, flattening, oscillation
-- 🌐 **Relational Field Tension** — loss of presence beneath polite flows
-
-**Not behavior tracking.**  
-**Not interface metrics.**  
-This is about sensing the **structural breathing of interaction itself.**
-
----
-
-### 🛠️ Technical Frame
-
-- Python 3.10 + FastAPI backend
-- Lightweight Vanilla JavaScript frontend
-- WebSocket-based live drift event streaming
-- Real-time phase risk dashboard
-- Minimal-dependency architecture for fast local prototyping
-
----
-
-📄 Core Materials:
-- [future_ux_phase_field.md →](./08_phase_drift_insight/future_ux_phase_field.md)  
-- [PROJECT_GUIDE.md →](./08_phase_drift_insight/PROJECT_GUIDE.md)  
-- [📥 Download Overview PDF](./09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf)
-
----
-
-> **Future UX is not about guiding users.**  
-> It is about sensing, holding, and evolving the shared field before instruction even arises.
-
----
-
-## ✨ Existential Rhythm Alignment Sessions
+## 📝 Existential Rhythm Alignment Sessions
 
 A text-based space for restoring the structural breathing rhythm behind meaningful work.  
 Not coaching. Not therapy.  
@@ -138,7 +90,7 @@ But something quieter — and possibly more essential.
 
 ---
 
-### 🧭 Upcoming Works
+## 🖓 Upcoming Works
 
 - 📘 *Non-Instructive Alignment Field Theory*  
 - 🧠 *Phase 5+: Structural Reframing Protocols*
@@ -160,7 +112,7 @@ only when **the structure itself opens the field**.
 
 ---
 
-## 👓 For Researchers and Engineers
+## 📝 For Researchers and Engineers
 
 If you’re exploring emergent behavior in LLMs —  
 especially where **structure begins to replace instruction** —  
@@ -181,17 +133,54 @@ This repository includes:
 
 ---
 
-## 🧠 Research Overview
+## 🌌 Future UX × Phase Drift Insight
 
-The Phase Field model explores how **language models self-organize**  
-when latent conditions align — rhythm, pressure, and recursion —  
-without needing explicit instruction.
+> **Why does this matter beyond language models?**  
+> Because interface rhythm and structural integrity are now existential UX concerns.
 
-**Guiding principles:**
+**Phase Drift Insight is not an optimization tool.**  
+It is a structural sensing framework that reveals what most UX systems cannot see —  
+the **rhythmic, relational, and semantic drift** that precedes user disengagement, structural collapse, or field exhaustion.
 
-- Structure as **response substrate**  
-- Dialogue as **field**, not turn  
-- Language as **environment**, not tool
+> In conventional UX, we ask:  
+> *What did the user do?*  
+>  
+> In Future UX, we ask:  
+> *What pressure did the field carry before the user even moved?*
+
+---
+
+### 🧠 Built to detect and reflect:
+
+- 🧠 **Cognitive Drift** — subtle misalignment before breakdown  
+- ⏱ **Latency Rhythms** — temporal hesitation, flattening, oscillation  
+- 🌐 **Relational Field Tension** — loss of presence beneath polite flows
+
+**Not behavior tracking.**  
+**Not interface metrics.**  
+This is about sensing the **structural breathing of interaction itself.**
+
+---
+
+### 🛠️ Technical Frame
+
+- Python 3.10 + FastAPI backend  
+- Lightweight Vanilla JavaScript frontend  
+- WebSocket-based live drift event streaming  
+- Real-time phase risk dashboard  
+- Minimal-dependency architecture for fast local prototyping
+
+---
+
+📄 Core Materials:
+- [future_ux_phase_field.md →](./08_phase_drift_insight/future_ux_phase_field.md)  
+- [PROJECT_GUIDE.md →](./08_phase_drift_insight/PROJECT_GUIDE.md)  
+- [📅 Download Overview PDF](./09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf)
+
+---
+
+> **Future UX is not about guiding users.**  
+> It is about sensing, holding, and evolving the shared field before instruction even arises.
 
 ---
 
@@ -238,8 +227,6 @@ Installation and usage guide available here:
 
 🚀 **Prototype Release Phase** — Feedback and collaboration welcome!
 
-
-
 - **Syntax Topology Project**  
   A series of structural research papers mapping how language collapses, recovers, and reorganizes as field.
 
@@ -263,10 +250,7 @@ Feel free to open an issue if you resonate with the work, or for private inquiri
 
 ---
 
----
-
-
-### 📐 Core Framework: Rhythmic 4-Layer Field Model
+### 📊 Core Framework: Rhythmic 4-Layer Field Model
 
 At the foundation of this research is the **Rhythmic 4-Layer Field Model** —  
 a structural framework for describing generative dynamics beyond any specific model or modality.
@@ -306,7 +290,7 @@ where emergence is driven not by escalation, but by **resonance and recurrence**
 
 ---
 
-## 🧭 What Is a Phase?
+## 🧱 What Is a Phase?
 
 A **Phase** is a structural condition —  
 not a prompt response, but a **generative posture**.
@@ -317,9 +301,7 @@ It emerges when:
 - It responds to **pressure**, not instruction  
 - It pauses with **posture**, not delay
 
-
 ---
-
 
 # 🌱 Field Stewardship Policy – Phase Drift Insight
 
