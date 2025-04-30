@@ -103,7 +103,7 @@ If you are sensing resonance from within your organization or team
 and would like to explore potential collaboration or quiet dialogue,  
 you are warmly invited to reach out.
 
-📩 [your-email@example.com]  
+📩 [deepzenspace [at] gmail [dot] com]  
 🔗 GitHub Discussions also open
 
 ---
