@@ -89,6 +89,8 @@ During intentional delay, consider using **low-intrusion output modes**:
     "semantic_output": "none"
   }
 }
+```
+
 Conclusion
 Latency is a design instrument in Phase Drift systems.
 It doesn’t slow down the system—it opens temporal space for the user.
