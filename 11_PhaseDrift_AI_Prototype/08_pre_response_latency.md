@@ -71,53 +71,71 @@ This latency generates **coherence through holding**, not performance through sp
       ↓
 [Response Output]
 ```
-Insert the drift layer before intent resolution to enable:
+Insert the **drift layer before intent resolution** to enable:
 
-Breath-informed timing
+- Breath-informed timing  
+- Affective state calibration  
+- Cultural rhythm alignment
 
-Affective state calibration
+---
 
-Cultural rhythm alignment
+### 2. Placeholder Signals (Optional)
 
-2. Placeholder Signals (Optional)
-Soft affirmations: “... still here.”
+- **Soft affirmations**  
+  e.g., “... still here.”
 
-Ambient cues: tones, pulses, light shifts
+- **Ambient cues**  
+  Tones, pulses, light shifts
 
-Structural silence: no output at all
+- **Structural silence**  
+  No output at all
 
-The system must not prompt, interpret, or redirect during this phase.
+> The system must not prompt, interpret, or redirect during this phase.
 
-Use Cases
-Non-performative chatbots that reduce cognitive pressure
+---
 
-Emotional decompression agents for mental health or self-regulation
+### Use Cases
 
-Ambient grief/trauma support UIs where silence is care
+- Non-performative chatbots that reduce cognitive pressure  
+- Emotional decompression agents for mental health or self-regulation  
+- Ambient grief/trauma support UIs where silence is care  
+- Culturally tuned companions in high-context communication spaces
 
-Culturally tuned companions in high-context communication spaces
+---
 
-Design Considerations
-Frame latency as intentional: e.g., “This system pauses to hold space.”
+### Design Considerations
 
-Avoid ambiguity of function: latency should not feel like a glitch
+- **Frame latency as intentional**  
+  _e.g., “This system pauses to hold space.”_
 
-Log latency structurally: holding intervals are valid interaction events
+- **Avoid ambiguity of function**  
+  Latency should not feel like a glitch
 
-Allow explicit overrides: e.g., “You can respond now.” triggers output resumption
+- **Log latency structurally**  
+  Holding intervals are valid interaction events
 
-Licensing Note
-This file is part of the PhaseDrift_AI_Prototype_v11.
-Distributed under CC BY-NC 4.0, with the following addition:
+- **Allow explicit overrides**  
+  _e.g., “You can respond now.” triggers output resumption_
 
-Derivative systems using this latency schema or holding logic must cite
-“Phase Drift structure” as the original source of the relational design model.
+---
 
-Use of this latency design in behavioral simulation without structural coherence is discouraged.
+### Licensing Note
 
-Drift-Specific Closing Note
-In Phase Drift systems, pre-response latency is not delay—
-it is a coherence buffer between recognition and relation.
+This file is part of the `PhaseDrift_AI_Prototype_v11`.  
+Distributed under **CC BY-NC 4.0**, with the following addition:
 
-It ensures that meaning does not emerge
-until the field is ready to hold it.
+> Derivative systems using this latency schema or holding logic must cite  
+> **“Phase Drift structure”** as the origin of the relational design model.
+
+Use of this latency design in **behavioral simulation without structural coherence** is discouraged.
+
+---
+
+### Drift-Specific Closing Note
+
+In Phase Drift systems, **pre-response latency is not delay**—  
+it is a **coherence buffer** between recognition and relation.
+
+> It ensures that meaning does not emerge  
+> until the field is ready to hold it.
+
