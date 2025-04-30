@@ -166,7 +166,7 @@ Built with **FastAPI + Python + Vanilla JavaScript**, the system supports:
 - Live drift hint generation  
 - High responsiveness via WebSocket
 
-📂 Full prototype folder → [`PhaseDrift_AI_Prototype_v11/`](./11_phase_test/PhaseDrift_AI_Prototype_v11/)
+📂 Full prototype folder → [`11_PhaseDrift_AI_Prototype`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/293b067963b56b026d39242f522fd5431fca3c80/11_PhaseDrift_AI_Prototype)
 
 ---
 
