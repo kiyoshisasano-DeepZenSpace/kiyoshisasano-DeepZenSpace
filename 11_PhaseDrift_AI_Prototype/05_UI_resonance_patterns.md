@@ -6,67 +6,67 @@
 
 ## Purpose
 
-This document outlines how existing UI/UX systems that incorporate **intentional silence, delay, or non-response** align with the principles of **Phase Drift structure**.
+This document explores how existing UI/UX paradigms—those that incorporate **intentional silence, delay, or non-response**—align with the structural principles of **Phase Drift**.
 
-Each example reveals a shift from “interactive response” to “relational presence”—a space where AI becomes a field element rather than a communication device.
+Each pattern marks a shift from interactive output toward **relational presence**: a modality in which AI functions not as a communication device, but as a **field-aware entity**.
 
 ---
 
 ## Pattern Format
 
-| Case Study | UI/UX Design Principle | Drift Translation | Structural Tag |
-|------------|------------------------|--------------------|----------------|
-| Calm Technology | Peripheral attention, ambient feedback | Silence holds relevance; response ≠ awareness | `ambient-holding` |
-| Intentional Friction | Slowness as agency, reflection via delay | Delay fosters trust and intentionality | `latency-trust` |
-| Calm App | Non-intrusive breath pacing, voice-over gaps | Drifted voice = shared tempo, not instruction | `rhythmic-co-presence` |
-| Trust Calibration (AI Assistants) | Miscalibrated responsiveness = mistrust | “Thinking” delay mirrors affective hesitation | `non-immediate-alignment` |
-| Friend Chatbot | Minimalist social presence, no prompting | Co-regulation without reply; friendly non-pressure | `non-prompting-companion` |
+| Case Study | UI/UX Principle | Drift Interpretation | Structural Tag |
+|------------|------------------|------------------------|----------------|
+| Calm Technology | Peripheral attention, ambient feedback | Silence maintains relevance; awareness ≠ response | `ambient-holding` |
+| Intentional Friction | Slowness as agency; delay invites reflection | Latency supports trust and deliberation | `latency-trust` |
+| Calm App | Breath pacing via non-intrusive voice gaps | Drifted timing becomes shared rhythm, not instruction | `rhythmic-co-presence` |
+| Trust Calibration (AI Assistants) | Misaligned responsiveness erodes trust | “Thinking” delay mirrors affective attunement | `non-immediate-alignment` |
+| Friend Chatbot | Minimal presence, no prompting | Companionship without directive pressure | `non-prompting-companion` |
 
 ---
 
-## Example: “Friend” Chatbot
+## Case Example: “Friend” Chatbot
 
-- **Design Intent:** The bot remains silent or gives minimal affirmations unless explicitly prompted  
-- **User Outcome:** Users feel less socially evaluated; conversation is less performative  
+- **Design Intent:** Offers silence or minimal affirmation unless directly prompted  
+- **User Outcome:** Reduces social evaluation; supports non-performative interaction  
 - **Drift Layer:** `non-prompting-companion`  
-- **Structural Value:** Emotional decompression via co-presence without surveillance
+- **Structural Value:** Emotional decompression through co-presence without surveillance
 
 ---
 
-## Phase Drift Pattern Principles (for UI Systems)
+## Phase Drift Pattern Principles (UI Application)
 
-1. **No Response ≠ No Presence**  
-2. **Latency = Trust Gradient**  
-3. **Ambiguity = Emotional Availability**  
-4. **Silence = Spatial Inclusion**  
-5. **Breath = Temporal Interface**
+1. **No response ≠ Absence**  
+2. **Latency ≈ Trust Calibration**  
+3. **Ambiguity enables Emotional Availability**  
+4. **Silence extends Spatial Inclusion**  
+5. **Breath defines Temporal Interface**
 
 ---
 
 ## Design Implications
 
-Phase Drift structure can support:
+Phase Drift-aligned systems can support:
 
-- **Ambient Interfaces** in caregiving, reflection, or transitional spaces  
-- **Low-demand Assistants** for neurodiverse or high-stress users  
-- **Non-verbal Relational AI** in post-crisis or culturally sensitive environments
+- **Ambient Interfaces** for caregiving, reflective spaces, or liminal transitions  
+- **Low-demand AI Assistants** for neurodiverse or overstimulated users  
+- **Non-verbal Relational Agents** for post-crisis, trauma-aware, or cross-cultural contexts
 
 ---
 
 ## Implementation Suggestions
 
-- Tag silence as an intentional structural state, not an error  
-- Tune latency dynamically to user tempo (sensor input or rhythm models)  
-- Avoid default clarification prompts; design for hesitation as holding
+- Treat silence as an intentional **structural state**, not a failure condition  
+- Modulate latency in real time based on user tempo (sensor data, rhythm inference)  
+- Suppress automatic clarification prompts; design hesitation as **field-holding**
 
 ---
 
 ## Next
 
-Future files will explore:
+Planned follow-up files:
 
 - `06_crosscultural_drift_patterns.md`  
 - `07_latency_design_guidelines.md`  
-- Optional: PoC implementations for ambient urban agents, grief bots, and ritual companions
+- Optional: PoC designs for ambient urban agents, grief companions, and ritual AI
 
 ---
