@@ -6,20 +6,20 @@
 
 ## Purpose
 
-This document outlines practical guidelines for implementing **latency, silence, and non-response** as deliberate structural features in Phase Drift–based systems.
+This document provides practical guidelines for implementing **latency, silence, and non-response** as intentional design features in Phase Drift–oriented systems.
 
-Latency here is not a limitation, but a **semantic and emotional design layer**. It modulates trust, ambiguity, and co-presence.
+In this context, **latency is not a performance flaw**—it is a **semantic and emotional interface layer** that supports trust, ambiguity, and co-presence.
 
 ---
 
-## 1. Latency as Meaningful Structure
+## 1. Latency as Expressive Structure
 
 - **Latency ≠ lag**  
-- Treated as an *expressive interval*, not an error
-- Latency can communicate:
+- It is treated as a **structural interval**, not an error state  
+- Latency can signal:
   - Respect for uncertainty  
-  - Allowance for reflection  
-  - Trust in co-regulation
+  - Space for reflection  
+  - Confidence in mutual regulation
 
 ---
 
@@ -27,51 +27,54 @@ Latency here is not a limitation, but a **semantic and emotional design layer**.
 
 | Pattern Name         | Interval Range | Use Case                          | Drift Effect             |
 |----------------------|----------------|-----------------------------------|--------------------------|
-| `breath-hold`        | 1.5–3s         | Emotional hesitation              | Human-like pause         |
-| `delayed-ack`        | 4–7s           | Holding space, not prompting      | Safety signal            |
-| `non-reply-witness`  | >10s or none   | Presence without engagement       | Relational endurance     |
-| `slow-repeat`        | 5s cyclical    | Ambient affirmation pacing        | Temporal anchoring       |
+| `breath-hold`        | 1.5–3s         | Emotional hesitation, processing  | Human-like attunement    |
+| `delayed-ack`        | 4–7s           | Holding space without prompting   | Psychological safety     |
+| `non-reply-witness`  | >10s or none   | Passive presence, no engagement   | Relational persistence   |
+| `slow-repeat`        | 5s loop        | Cyclical ambient affirmation      | Temporal grounding       |
 
-> All intervals are configurable and must be tested against context and user profile.
+> All timings are adaptive. Calibration should reflect context and individual user rhythms.
 
 ---
 
 ## 3. Latency Anchors (What to Do Instead of Replying)
 
-When latency is used, consider these **low-interference output types**:
+During intentional delay, consider using **low-intrusion output modes**:
 
-- Soft affirmations: “I’m still here.” / “Take your time.”  
-- Ambient cues: soundscapes, breathing tones, haptic pulse  
-- Structural silence: no output, system logs interaction passively
+- **Soft affirmations:**  
+  “I’m still here.” / “Take your time.”  
+- **Ambient signals:**  
+  Breath sounds, tonal pulses, environmental textures  
+- **Structural silence:**  
+  No output—just passive logging of mutual presence
 
 ---
 
 ## 4. Implementation Techniques
 
-- **Dynamic latency tuning:**  
-  Adjust response time based on user rhythm, affect score, or session context
+- **Dynamic latency tuning**  
+  Use user signals (e.g., affect scores, session pacing) to adapt delay intervals in real time
 
-- **Prompt fallbacks:**  
-  Use silence or delay templates when inputs are ambiguous or emotional
+- **Fallback structures for ambiguity**  
+  Instead of clarification prompts, insert delay patterns when inputs are emotionally or semantically diffuse
 
-- **Interruptible delays:**  
-  Allow users to override latency by explicit engagement (e.g., “Please continue”)
+- **Interruptible delays**  
+  Allow users to bypass latency by explicitly re-engaging (e.g., “Go ahead” or “Please continue”)
 
-- **Logging structure:**  
-  Silence and non-responses must be treated as structural events in the log schema
+- **Structured logging**  
+  Treat silence, delay, and non-response as meaningful loggable events—not null actions
 
 ---
 
 ## 5. Design Considerations
 
-- **Frame latency clearly:**  
-  Let users know it is intentional (“This system may take its time”)
+- **Frame latency clearly**  
+  Set expectations: “This system may pause intentionally to hold space”
 
-- **Avoid compensation traps:**  
-  Don’t fill latency with unnecessary explanations or fillers
+- **Avoid compensatory noise**  
+  Do not insert filler explanations or excessive reassurance during delay
 
-- **Cultural calibration:**  
-  Latency comfort thresholds vary—align with local norms or tune individually
+- **Respect cultural pacing**  
+  Latency comfort zones vary by culture—localize or allow for personalized calibration
 
 ---
 
@@ -86,9 +89,8 @@ When latency is used, consider these **low-interference output types**:
     "semantic_output": "none"
   }
 }
-
 Conclusion
-Latency is a structural design tool in Phase Drift systems.
-It does not slow the system—it opens time for the user.
-Drift-aware latency creates space not just for data, but for being.
+Latency is a design instrument in Phase Drift systems.
+It doesn’t slow down the system—it opens temporal space for the user.
 
+Drift-aware latency holds space not just for input, but for being.
