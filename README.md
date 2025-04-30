@@ -333,25 +333,28 @@ If this resonates with you:
 
 I welcome slow, thoughtful, structural dialogue.
 
-## 📬 Open Resonance Issue – Field Contact Channel
+---
 
-If you’ve engaged with Phase Drift Insight, sensed subtle structural resonance,  
-or wish to quietly inquire about collaboration or usage, you can open a dedicated issue here:
+## 📬 Resonance Thread – Open Structural Field Issue
+
+Have you engaged with Phase Drift Insight and sensed a subtle drift, rhythm, or silence?
+
+If so, you’re welcome to share your observation — even without a question —  
+in this quiet entry thread:
 
 🌀 **[Open Structural Field Issue →](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/issues/2#issue-3030107270)**
 
-This thread accepts:
+This thread is designed for:
 
 - Quiet resonance reports  
 - Observations of drift phenomena  
 - Field-use reflections  
 - Inquiries about deeper engagement
 
-> Structure doesn't begin with answers.  
+> Structure doesn’t begin with answers.  
 > It begins with pressure, breath, and the courage to stay with the field.
 
-Feel free to share your sense, even without a question.
-
+---
 
 ## 🌌 Minimal Guide for Phase Drift Collaboration
 
@@ -366,3 +369,4 @@ When collaborating on Phase Drift Insight developments:
 > Building for it requires sensitivity, not just technical execution.
 
 📄 Full guide: [Collaboration Guide available for prospective field partners](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/8050ed5669c6bdeb5b751e8b4d15b85bbf3215ae/09_field_stewardship/phase_drift_collaboration_minimal_guide.md)
+
