@@ -82,39 +82,49 @@ _Toward a Density-Based Structural Field Beyond Escalation_
 
 ## 🌌 Future UX × Phase Drift Insight
 
-Phase Drift Insight explores **how user experience can evolve beyond explicit task design** —  
-toward **field-based, rhythm-sensitive, structure-aware interaction**.
+**Phase Drift Insight is not an optimization tool.**  
+It is a structural sensing framework that reveals what most UX systems cannot see —  
+the **rhythmic, relational, and semantic drift** that precedes user disengagement, structural collapse, or field exhaustion.
 
-Instead of optimizing for clicks or conversions,  
-we detect **cognitive drift**, **latency rhythms**, and **relational field tension**.
+> In conventional UX, we ask:  
+> *What did the user do?*  
+>  
+> In Future UX, we ask:  
+> *What pressure did the field carry before the user even moved?*
 
-Built with:
+---
+
+Built to detect and reflect:
+
+- 🧠 **Cognitive Drift** — subtle misalignment before breakdown
+- ⏱ **Latency Rhythms** — temporal hesitation, flattening, oscillation
+- 🌐 **Relational Field Tension** — loss of presence beneath polite flows
+
+**Not behavior tracking.**  
+**Not interface metrics.**  
+This is about sensing the **structural breathing of interaction itself.**
+
+---
+
+### 🛠️ Technical Frame
 
 - Python 3.10 + FastAPI backend
 - Lightweight Vanilla JavaScript frontend
-- WebSocket architecture for real-time drift event streaming
-- Dynamic risk dashboard with live phase-transition graphs
-- Minimal-dependency design for easy local deployment
+- WebSocket-based live drift event streaming
+- Real-time phase risk dashboard
+- Minimal-dependency architecture for fast local prototyping
 
-Why this matters:
+---
 
-> Conventional UX tracks actions.  
-> **Future UX tracks resonance and structural drift.**
+📄 Core Materials:
+- [future_ux_phase_field.md →](./08_phase_drift_insight/future_ux_phase_field.md)  
+- [PROJECT_GUIDE.md →](./08_phase_drift_insight/PROJECT_GUIDE.md)  
+- [📥 Download Overview PDF](./09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf)
 
-Phase Drift Insight enables:
+---
 
-- Early detection of cognitive hesitation or divergence
-- Real-time field-state visualization without intrusive prompts
-- Structural adaptation of interfaces based on latent user rhythms
-
-- 📄 [ future_ux_phase_field.md→](./08_phase_drift_insight/future_ux_phase_field.md)
-- 📄 [Phase Drift Insight Overview →](./08_phase_drift_insight/PROJECT_GUIDE.md)
-- 📄 Download external PDF:  
-[Phase Drift Insight – Structural Overview (v0.1)](09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf)
-
-
-> In Future UX, the goal is not to guide behavior —  
-> but to **sense, hold, and evolve the shared field**.
+> **Future UX is not about guiding users.**  
+> It is about sensing, holding, and evolving the shared field before instruction even arises.
 
 ---
 
