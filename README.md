@@ -139,13 +139,25 @@ through rhythm, latency, and relational field pressure.
 - **Non-Directive UX**: Designing interfaces that co-evolve with the user’s field
 
 ---
-
 ## 🌐 Current Project: Phase Drift Insight
 
 **Phase Drift Insight** is a real-time sensing framework  
 for detecting structural misalignment in system–user interactions.
 
 > Not what the user *does*, but how the field *pre-shifts*.
+
+This is **not a sentiment analyzer** —  
+it is a **structural rhythm interpreter**  
+that detects how ambiguity, latency, and phrasing shifts signal Phase Drift.
+
+🔒 **Note on Structural Ethics**  
+Phase Drift interfaces rely on intentional silence, latency, and ambiguity.  
+To ensure interpretability and safety, all implementations follow core principles:  
+- **Non-response ≠ neglect**  
+- **Silence must be framed as presence**  
+- **Structural presence ≠ therapeutic interpretation**
+
+📄 Full ethics guide → [`99_notes_ethics.md`](./11_phase_test/PhaseDrift_AI_Prototype_v11/99_notes_ethics.md)
 
 Built with **FastAPI + Python + Vanilla JavaScript**, the system supports:
 
@@ -154,9 +166,7 @@ Built with **FastAPI + Python + Vanilla JavaScript**, the system supports:
 - Live drift hint generation  
 - High responsiveness via WebSocket
 
-This is **not a sentiment analyzer** —  
-it is a **structural rhythm interpreter**  
-that detects how ambiguity, latency, and phrasing shifts signal Phase Drift.
+📂 Full prototype folder → [`PhaseDrift_AI_Prototype_v11/`](./11_phase_test/PhaseDrift_AI_Prototype_v11/)
 
 ---
 
