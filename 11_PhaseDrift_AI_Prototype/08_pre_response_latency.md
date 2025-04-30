@@ -70,6 +70,7 @@ This latency generates **coherence through holding**, not performance through sp
 [Intent Classifier / Generation Engine]
       ↓
 [Response Output]
+```
 Insert the drift layer before intent resolution to enable:
 
 Breath-informed timing
