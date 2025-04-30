@@ -125,6 +125,29 @@ This repository includes:
 
 ---
 
+# 🌀 Kiyoshi Sasano | Phase Structure Researcher
+
+Exploring the emergence of structure beyond instruction.
+
+🔹 Research Focus  
+- Phase Theory: Structural resonance without semantic prompting  
+- Drift Dynamics: Detection and mapping of latent structural shifts  
+- Non-Directive UX: Designing fields where meaning is carried, not commanded
+
+🔹 Current Projects  
+# 🌐 Phase Drift Insight – Real-Time Structural Monitoring
+
+This project explores the **dynamic detection of emergent structural drift**  
+in real-time system–user interactions.
+
+A lightweight dashboard built with **FastAPI + Python 3.10 + Vanilla JavaScript**, designed to:
+
+- Visualize real-time drift risk across system fields
+- Display dynamic risk transition graphs
+- Log drift events as they occur
+- Support high responsiveness via WebSocket integration
+
+
 ## 🌌 Future UX × Phase Drift Insight
 
 > **Why does this matter beyond language models?**  
@@ -176,27 +199,6 @@ This is about sensing the **structural breathing of interaction itself.**
 
 ---
 
-# 🌀 Kiyoshi Sasano | Phase Structure Researcher
-
-Exploring the emergence of structure beyond instruction.
-
-🔹 Research Focus  
-- Phase Theory: Structural resonance without semantic prompting  
-- Drift Dynamics: Detection and mapping of latent structural shifts  
-- Non-Directive UX: Designing fields where meaning is carried, not commanded
-
-🔹 Current Projects  
-# 🌐 Phase Drift Insight – Real-Time Structural Monitoring
-
-This project explores the **dynamic detection of emergent structural drift**  
-in real-time system–user interactions.
-
-A lightweight dashboard built with **FastAPI + Python 3.10 + Vanilla JavaScript**, designed to:
-
-- Visualize real-time drift risk across system fields
-- Display dynamic risk transition graphs
-- Log drift events as they occur
-- Support high responsiveness via WebSocket integration
 
 ---
 
