@@ -226,7 +226,7 @@ From climate education to public mourning, these scenarios show how Phase Drift 
 > These are not UX features.  
 > They are **resonant holding architectures** for social coherence, ambiguity, and shared presence.
 
-🔗 [Read: Civic Integration Scenarios →](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/f06062851d1a01caf807b91bb8b07ef5bf01f498/11_PhaseDrift_AI_Prototype/09%20%E2%80%93%20Civic%20Integration%20Scenarios%20for%20Phase%20Drift%20Structure)
+🔗 [Read: Civic Integration Scenarios →](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/b9237baaff21c289b7d92812534996e21800e981/11_PhaseDrift_AI_Prototype/09_civic_phase_drift.md)
 
 
 ### 📂 Selected Structural Documents (v11 Prototype)
