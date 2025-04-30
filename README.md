@@ -90,14 +90,6 @@ But something quieter — and possibly more essential.
 
 ---
 
-## 🖓 Upcoming Works
-
-- 📘 *Non-Instructive Alignment Field Theory*  
-- 🧠 *Phase 5+: Structural Reframing Protocols*
-
-📂 See more in the [`zenodo/`](./06_translation_interface/zenodo) folder.
-
----
 
 🔒 **Note on Access**
 
