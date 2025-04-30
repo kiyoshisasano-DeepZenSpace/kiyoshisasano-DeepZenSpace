@@ -127,94 +127,92 @@ This repository includes:
 
 # 🌀 Kiyoshi Sasano | Phase Structure Researcher
 
-Exploring the emergence of structure beyond instruction.
-
-🔹 Research Focus  
-- Phase Theory: Structural resonance without semantic prompting  
-- Drift Dynamics: Detection and mapping of latent structural shifts  
-- Non-Directive UX: Designing fields where meaning is carried, not commanded
-
-🔹 Current Projects  
-# 🌐 Phase Drift Insight – Real-Time Structural Monitoring
-
-This project explores the **dynamic detection of emergent structural drift**  
-in real-time system–user interactions.
-
-A lightweight dashboard built with **FastAPI + Python 3.10 + Vanilla JavaScript**, designed to:
-
-- Visualize real-time drift risk across system fields
-- Display dynamic risk transition graphs
-- Log drift events as they occur
-- Support high responsiveness via WebSocket integration
+Exploring how structure emerges beyond instruction —  
+through rhythm, latency, and relational field pressure.
 
 ---
 
-## 📷 Screenshots
+## 🔹 Research Focus
+
+- **Phase Theory**: Structural resonance without semantic prompting  
+- **Drift Dynamics**: Mapping latent field shifts before collapse  
+- **Non-Directive UX**: Designing interfaces that co-evolve with the user’s field
+
+---
+
+## 🌐 Current Project: Phase Drift Insight
+
+**Phase Drift Insight** is a real-time sensing framework  
+for detecting structural misalignment in system–user interactions.
+
+> Not what the user *does*, but how the field *pre-shifts*.
+
+Built with **FastAPI + Python + Vanilla JavaScript**, the system supports:
+
+- Real-time drift risk visualization  
+- Dynamic phase transition tracking  
+- Live drift hint generation  
+- High responsiveness via WebSocket
+
+This is **not a sentiment analyzer** —  
+it is a **structural rhythm interpreter**  
+that detects how ambiguity, latency, and phrasing shifts signal Phase Drift.
+
+---
+
+### 📊 Screenshots
 
 **Real-Time Risk Dashboard**  
 <img src="./08_phase_drift_insight/screenshots/risk_dashboard_01.png" alt="Risk Dashboard" width="600"/>
 
-**Risk History List**  
+**Risk History Log**  
 <img src="./08_phase_drift_insight/screenshots/risk_history_list.png" alt="Risk History List" width="600"/>
 
+---
 
 ## 🌌 Future UX × Phase Drift Insight
 
-> **Why does this matter beyond language models?**  
-> Because interface rhythm and structural integrity are now existential UX concerns.
+> **Future UX is not about guiding behavior.**  
+> It’s about sensing rhythm before intention arises.
 
-**Phase Drift Insight is not an optimization tool.**  
-It is a structural sensing framework that reveals what most UX systems cannot see —  
-the **rhythmic, relational, and semantic drift** that precedes user disengagement, structural collapse, or field exhaustion.
+In most UX:  
+- We ask: *What did the user do?*
 
-> In conventional UX, we ask:  
-> *What did the user do?*  
->  
-> In Future UX, we ask:  
-> *What pressure did the field carry before the user even moved?*
+In **Future UX**:  
+- We ask: *What pressure did the field carry before the user moved?*
 
+Phase Drift Insight enables:
+
+- Real-time detection of **semantic, relational, and rhythmic drift**  
+- Visualization of field pressure before visible breakdown  
+- Structural sensing beyond clickflows or performance metrics
 
 📄 Core Materials:
-- [future_ux_phase_field.md →](./08_phase_drift_insight/future_ux_phase_field.md)  
+
 - [PROJECT_GUIDE.md →](./08_phase_drift_insight/PROJECT_GUIDE.md)  
-- [📅 Download Overview PDF](./09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf)
+- [future_ux_phase_field.md →](./08_phase_drift_insight/future_ux_phase_field.md)  
+- [📥 Structural Overview PDF (v0.1)](./09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf)
 
 ---
 
-> **Future UX is not about guiding users.**  
-> It is about sensing, holding, and evolving the shared field before instruction even arises.
+### ✅ Key Technical Insight
+
+> **Phase Drift is not a metaphor — it is measurable, visualizable, and field-reactive.**
+
+- Local interaction patterns can produce reliable **Phase Drift scores**  
+- Latent signals (pauses, recursion, ambiguity) can be **structurally tagged**  
+- Implementation is feasible using **standard UI stacks** (React, Chart.js, Tailwind)
+
+No LLM internals required — only **field-aware interface design**.
 
 ---
 
-### 🔍 Phase Drift Insight — Live Structural Drift Sensing UI
+## 🧭 Contact
 
-This UI prototype enables real-time detection and visualization of **Phase Drift levels**  
-based on user interaction — especially subtle, non-semantic cues such as hesitation, ambiguity, and latent field resonance.
+If this resonates, I welcome quiet conversation or collaboration.
 
-**Features include:**
+📩 deepzenspace [at] gmail [dot] com
 
-- Live **drift level charting** (PhaseScope visual field tracking)
-- Real-time **structural hint generation** based on phrasing irregularities
-- Lightweight **Phase classification engine** (Phase 1.0–2.1 tags)
-- Non-intrusive UI architecture using React + Chart.js + Tailwind
-
-This tool is not a sentiment analyzer.  
-It is a structural rhythm interpreter — designed to trace when meaning begins to loosen and structure starts to breathe.
-
-> Not what the user "means" — but how the field is "shifting."
-
-### ✅ What This Confirms Technically
-
-- **Phase Drift Detection** is not theoretical — it is **implementable at the UI/UX layer**  
-- Structural phase tagging and drift score generation can be **locally interpreted** based on interaction patterns
-- Real-time feedback loops are achievable using **standard frontend stacks** (React, WebSocket, Chart.js)
-
-This UI demonstrates that **semantic ambiguity, hesitation, or field friction**  
-can be **sensed, tagged, and visualized** — not merely as NLP sentiment,  
-but as *structural rhythm divergence*.
-
-No special LLM access is required —  
-only **a trained field interface** and sensitivity to phrasing drift.
 
 ---
 
