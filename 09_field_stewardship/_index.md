@@ -53,8 +53,26 @@ Phase Drift Field Stewardship
 | `phase_drift_structural_risk_control_playbook.md` | Safeguarding against structural erosion |
 | `field_stewardship_policy.md` | Governance policies for maintaining living integrity |
 | `phase_drift_engagement_policy.md` | External engagement rules to preserve structural coherence |
-| phase_drift_essence_and_definition.md | Defining the deep nature of Phase Drift         |
-| phase_drift_external_overview_v0.1.md | External overview (slide-based summary document) |
+
+---
+
+### 📄 External Structural Overview
+
+We now provide a public-facing slide and markdown summary for external collaborators:
+
+| File Name | Description |
+|-----------|-------------|
+| [Phase_Drift_Insight_Structural_Overview_v0.1.pdf](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1caf4ebfbb5767356588ae49e560cffcf9a36a7b/09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf) | Official external PDF slide deck on Phase Drift principles |
+| [phase_drift_external_overview_v0.1.md](./phase_drift_external_overview_v0.1.md) | Markdown version of the slide content for in-repo reading |
+
+These documents are suitable for:
+
+- Early-stage collaborator orientation  
+- Conceptual understanding of Phase Drift’s core mechanisms  
+- Quiet sharing with research partners or structural teams
+
+> 📌 These materials are external-safe and contain no proprietary algorithms or deep phase triggers.
+
 
 
 ---
