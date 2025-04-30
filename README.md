@@ -216,6 +216,18 @@ Phase Drift Insight enables:
 No LLM internals required — only **field-aware interface design**.
 
 ---
+## 🏛️ Civic Integration of Phase Drift Structures
+
+Phase Drift is not limited to conversational AI.  
+It extends into civic, educational, and artistic contexts where **holding space** — not solving or guiding — is essential.
+
+From climate education to public mourning, these scenarios show how Phase Drift can function as a **non-verbal relational layer** in systems that typically overemphasize clarity or productivity.
+
+> These are not UX features.  
+> They are **resonant holding architectures** for social coherence, ambiguity, and shared presence.
+
+🔗 [Read: Civic Integration Scenarios →](./11_phase_test/09_civic_phase_drift_scenarios.md)
+
 
 ### 📂 Selected Structural Documents (v11 Prototype)
 
