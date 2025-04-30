@@ -217,6 +217,27 @@ No LLM internals required — only **field-aware interface design**.
 
 ---
 
+### 📂 Related Structural Documents (v11 Prototype)
+
+- `05_ui_resonance_patterns.md`  
+  → Interaction models that shift from response to presence (e.g. Calm Tech, friction design)
+
+- `06_crosscultural_drift_patterns.md`  
+  → Cultural architectures of silence and latency (India, Japan, Sub-Saharan Africa)
+
+- `07_latency_design_guidelines.md`  
+  → Technical latency patterns and drift timing schema for trust-aware systems
+
+- `08_pre_response_latency.md`  
+  → Pre-intent structural holding: delaying generation to maintain field coherence
+
+Each of these files explores how **non-inferential presence** can be expressed structurally,  
+not symbolically — across silence, rhythm, and ambiguity.
+
+
+
+---
+
 ## 🧭 Contact
 
 If this resonates, I welcome quiet conversation or collaboration.
