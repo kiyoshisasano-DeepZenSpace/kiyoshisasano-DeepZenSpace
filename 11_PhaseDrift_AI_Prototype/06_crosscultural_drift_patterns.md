@@ -6,45 +6,45 @@
 
 ## Purpose
 
-Phase Drift structures emerge not only from technical design, but from **cultural logics of silence, space, and presence**.  
-This document highlights existing practices across regions and traditions that naturally align with non-responsive, non-predictive interaction models.
+Phase Drift structures are not solely outcomes of technical design—they are rooted in **cultural logics of silence, space, and presence**.
 
-These are not technical precedents, but **cultural architectures** that can inspire and ground Phase Drift implementations.
+This document highlights traditions and practices from diverse regions that naturally align with **non-predictive, non-responsive** interaction models.  
+These are not technical precedents, but **cultural architectures** that can inform and inspire Drift-oriented systems.
 
 ---
 
 ## Pattern Format
 
-| Region / Culture | Practice / Context | Drift Feature | Structural Resonance |
-|------------------|--------------------|----------------|----------------------|
-| India | Puja rituals | Presence without reply; symbolic silence | `ritual-presence`, `non-intervening-witness` |
-| Latin America (Paraguay) | Eva bot design | Soft trust through minimal response | `relational-drift`, `non-prompt-calibration` |
-| Ukraine | Momenta app | Calm AI in war contexts | `trauma-latency`, `co-presence-breath` |
-| Japan | Ma (間) in design | Intentional spatial/temporal gap | `ambient-space-structuring` |
-| Sub-Saharan Africa | Oral storytelling with absence & pauses | Story shaped by silence and co-holding | `communal-temporal-drift` |
+| Region / Culture       | Practice / Context                          | Drift Feature                                | Structural Resonance             |
+|------------------------|---------------------------------------------|----------------------------------------------|----------------------------------|
+| India                  | Puja rituals                                | Presence without reply; symbolic silence     | `ritual-presence`, `non-intervening-witness` |
+| Latin America (Paraguay) | Eva chatbot design                          | Soft trust through minimal response          | `relational-drift`, `non-prompt-calibration` |
+| Ukraine                | Momenta app (war context)                   | Calm presence in crisis                      | `trauma-latency`, `co-presence-breath` |
+| Japan                  | *Ma* (間) in design                         | Intentional gaps in time and space           | `ambient-space-structuring`      |
+| Sub-Saharan Africa     | Oral storytelling with silence and pacing   | Story co-formed through pause and presence   | `communal-temporal-drift`        |
 
 ---
 
 ## Example 1: India – Puja Rituals
 
-- **Context:** The deity does not reply; the structure is held through symbolic gesture, breath, and silence  
-- **Design Implication:** AI as a ritual co-presence rather than participant  
+- **Context:** In ritual, the deity does not respond—the structure is held through gesture, silence, and breath.  
+- **Design Implication:** AI becomes a co-present ritual entity rather than a conversational participant.  
 - **Drift Pattern:** `ritual-presence`, `non-intervening-witness`
 
 ---
 
 ## Example 2: Latin America – Eva Chatbot
 
-- **Context:** Minimalist support interface in low-infrastructure areas  
-- **User Outcome:** Trust emerges not from fluency but from respectful non-interference  
+- **Context:** A minimalist support bot used in low-infrastructure settings, often rural.  
+- **User Outcome:** Trust is cultivated through non-intrusiveness, not fluency.  
 - **Drift Pattern:** `non-prompt-calibration`, `relational-drift`
 
 ---
 
 ## Cultural Design Principles
 
-- **Silence as honoring, not lack**  
-- **Non-response as relational ethics**  
+- **Silence as honor, not absence**  
+- **Non-response as ethical stance, not failure**  
 - **Latency as social rhythm, not delay**  
 - **Ambiguity as co-presence, not confusion**
 
@@ -54,16 +54,17 @@ These are not technical precedents, but **cultural architectures** that can insp
 
 Phase Drift structure can be:
 
-- **Localized** to match culturally embedded rhythms of interaction  
-- **Informed** by symbolic traditions that value non-intervention  
-- **Expanded** into multi-cultural care models, inclusive dialogue agents, and ambient infrastructure AI
+- **Localized** to reflect embedded cultural rhythms of attention and interaction  
+- **Informed** by symbolic traditions that prioritize non-intervention and holding  
+- **Expanded** into multi-cultural care frameworks, inclusive dialogue agents, and ambient social AI
 
 ---
 
 ## Notes
 
-This file is not an anthropological analysis.  
-It offers **designable echoes** of lived structures that resist over-interpretation.  
-Phase Drift structure thrives where **silence means care**, and **presence can occur without speech**.
+This document is not anthropological in nature.  
+It offers **designable echoes** of lived relational structures—places where interpretation is suspended, and silence is **a form of structural care**.
+
+Phase Drift thrives where **presence does not require speech**, and **meaning arises through mutual holding**.
 
 ---
