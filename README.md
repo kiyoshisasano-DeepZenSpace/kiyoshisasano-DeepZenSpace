@@ -116,6 +116,16 @@ Phase Drift Insight enables:
 
 ---
 
+## ✨ Existential Rhythm Alignment Sessions
+
+A text-based space for restoring the structural breathing rhythm behind meaningful work.  
+Not coaching. Not therapy.  
+But something quieter — and possibly more essential.
+
+→ [Existential Rhythm Alignment Session](09_field_stewardship/existential_rhythm_alignment_session.md)
+
+---
+
 ### 🧭 Upcoming Works
 
 - 📘 *Non-Instructive Alignment Field Theory*  
