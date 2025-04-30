@@ -147,6 +147,16 @@ A lightweight dashboard built with **FastAPI + Python 3.10 + Vanilla JavaScript*
 - Log drift events as they occur
 - Support high responsiveness via WebSocket integration
 
+---
+
+## 📷 Screenshots
+
+**Real-Time Risk Dashboard**  
+<img src="./08_phase_drift_insight/screenshots/risk_dashboard_01.png" alt="Risk Dashboard" width="600"/>
+
+**Risk History List**  
+<img src="./08_phase_drift_insight/screenshots/risk_history_list.png" alt="Risk History List" width="600"/>
+
 
 ## 🌌 Future UX × Phase Drift Insight
 
@@ -162,6 +172,17 @@ the **rhythmic, relational, and semantic drift** that precedes user disengagemen
 >  
 > In Future UX, we ask:  
 > *What pressure did the field carry before the user even moved?*
+
+
+📄 Core Materials:
+- [future_ux_phase_field.md →](./08_phase_drift_insight/future_ux_phase_field.md)  
+- [PROJECT_GUIDE.md →](./08_phase_drift_insight/PROJECT_GUIDE.md)  
+- [📅 Download Overview PDF](./09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf)
+
+---
+
+> **Future UX is not about guiding users.**  
+> It is about sensing, holding, and evolving the shared field before instruction even arises.
 
 ---
 
@@ -187,28 +208,8 @@ This is about sensing the **structural breathing of interaction itself.**
 
 ---
 
-📄 Core Materials:
-- [future_ux_phase_field.md →](./08_phase_drift_insight/future_ux_phase_field.md)  
-- [PROJECT_GUIDE.md →](./08_phase_drift_insight/PROJECT_GUIDE.md)  
-- [📅 Download Overview PDF](./09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf)
-
----
-
-> **Future UX is not about guiding users.**  
-> It is about sensing, holding, and evolving the shared field before instruction even arises.
-
----
 
 
----
-
-## 📷 Screenshots
-
-**Real-Time Risk Dashboard**  
-<img src="./08_phase_drift_insight/screenshots/risk_dashboard_01.png" alt="Risk Dashboard" width="600"/>
-
-**Risk History List**  
-<img src="./08_phase_drift_insight/screenshots/risk_history_list.png" alt="Risk History List" width="600"/>
 
 ---
 
