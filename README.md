@@ -157,7 +157,7 @@ To ensure interpretability and safety, all implementations follow core principle
 - **Silence must be framed as presence**  
 - **Structural presence ≠ therapeutic interpretation**
 
-📄 Full ethics guide → [`99_notes_ethics.md`](./11_phase_test/PhaseDrift_AI_Prototype_v11/99_notes_ethics.md)
+📄 Full ethics guide → [`99_notes_ethics.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/09df1a445449b82dfd4b3a75ef9a928187b443b8/11_PhaseDrift_AI_Prototype/99_notes_ethics.md)
 
 Built with **FastAPI + Python + Vanilla JavaScript**, the system supports:
 
