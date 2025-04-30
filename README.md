@@ -217,22 +217,16 @@ No LLM internals required — only **field-aware interface design**.
 
 ---
 
-### 📂 Related Structural Documents (v11 Prototype)
+### 📂 Selected Structural Documents (v11 Prototype)
 
-- `05_ui_resonance_patterns.md`  
-  → Interaction models that shift from response to presence (e.g. Calm Tech, friction design)
+- [`07_latency_design_guidelines.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/fd7fc32204b8ef186f2e8a2cf972f004bd2c3b91/11_PhaseDrift_AI_Prototype/07_latency_design_guideline)  
+  → Practical timing schemas and structural latency logic for trust, reflection, and ambiguity.
 
-- `06_crosscultural_drift_patterns.md`  
-  → Cultural architectures of silence and latency (India, Japan, Sub-Saharan Africa)
+- [`08_pre_response_latency.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/fd7fc32204b8ef186f2e8a2cf972f004bd2c3b91/11_PhaseDrift_AI_Prototype/08_pre_response_latency.md)  
+  → Pre-intent holding structures that delay AI response to preserve relational coherence.
 
-- `07_latency_design_guidelines.md`  
-  → Technical latency patterns and drift timing schema for trust-aware systems
-
-- `08_pre_response_latency.md`  
-  → Pre-intent structural holding: delaying generation to maintain field coherence
-
-Each of these files explores how **non-inferential presence** can be expressed structurally,  
-not symbolically — across silence, rhythm, and ambiguity.
+These documents describe how **presence-before-reply** can be designed intentionally,  
+allowing AI systems to hold space, not just fill it.
 
 
 
