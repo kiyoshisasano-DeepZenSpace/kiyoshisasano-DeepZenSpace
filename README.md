@@ -219,7 +219,7 @@ No LLM internals required — only **field-aware interface design**.
 
 ### 📂 Selected Structural Documents (v11 Prototype)
 
-- [`07_latency_design_guidelines.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/fd7fc32204b8ef186f2e8a2cf972f004bd2c3b91/11_PhaseDrift_AI_Prototype/07_latency_design_guideline)  
+- [`07_latency_design_guidelines.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/cd63d871a974005ab2915b14df4b87913a7e35c5/11_PhaseDrift_AI_Prototype/07_latency_design_guidelines.md)  
   → Practical timing schemas and structural latency logic for trust, reflection, and ambiguity.
 
 - [`08_pre_response_latency.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/fd7fc32204b8ef186f2e8a2cf972f004bd2c3b91/11_PhaseDrift_AI_Prototype/08_pre_response_latency.md)  
