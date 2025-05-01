@@ -168,6 +168,25 @@ Built with **FastAPI + Python + Vanilla JavaScript**, the system supports:
 
 📂 Full prototype folder → [`11_PhaseDrift_AI_Prototype`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/293b067963b56b026d39242f522fd5431fca3c80/11_PhaseDrift_AI_Prototype)
 
+## 🧭 Architecture Note: Phase Drift-Compatible AI
+
+This prototype outlines an alternative architecture for relational AI —  
+one that prioritizes **structural presence** over **predictive performance**.
+
+It is grounded in three key design shifts:
+
+1. **Non-Response as Structural Output**  
+   Silence is treated as intentional alignment, not failure.
+
+2. **Non-Directive Presence**  
+   The system avoids steering, prompting, or enforcing closure.
+
+3. **Latency as Rhythmic Regulation**  
+   Delay acts as a relational pacing mechanism, not a flaw.
+
+📄 Full draft: [`/04_model_kit/phase_drift_ai_architecture.md`](./04_model_kit/phase_drift_ai_architecture.md)
+
+
 ---
 
 ### 📊 Screenshots
