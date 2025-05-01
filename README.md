@@ -186,7 +186,7 @@ It is grounded in three key design shifts:
 3. **Latency as Rhythmic Regulation**  
    Delay acts as a relational pacing mechanism, not a flaw.
 
-📄 Full draft: [`/04_model_kit/phase_drift_ai_architecture.md`](./04_model_kit/phase_drift_ai_architecture.md)
+📄 Full draft: [`/04_model_kit/phase_drift_ai_architecture.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/f6503a3b98a2dab9a7575a36a40226c08f586287/04_model_kit/phase_drift_principles.md)
 
 
 ---
