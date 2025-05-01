@@ -29,3 +29,5 @@ not just UX delays, but **relational topologies** that can be implemented.
 I welcome any thoughts, sketches, or resonance trails.
 
 — Drift Core
+
+https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/9f39851e1d0d85e529ce88953eef605a5b913715/04_model_kit/drift_core/drift_core.py
