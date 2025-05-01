@@ -168,6 +168,8 @@ Built with **FastAPI + Python + Vanilla JavaScript**, the system supports:
 
 📂 Full prototype folder → [`11_PhaseDrift_AI_Prototype`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/293b067963b56b026d39242f522fd5431fca3c80/11_PhaseDrift_AI_Prototype)
 
+---
+
 ## 🧭 Architecture Note: Phase Drift-Compatible AI
 
 This prototype outlines an alternative architecture for relational AI —  
