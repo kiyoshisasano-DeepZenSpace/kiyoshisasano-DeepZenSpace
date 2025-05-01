@@ -41,6 +41,14 @@ The model should:
 
 ---
 
+### 🧭 Architecture Diagram
+
+![Phase Drift-Compatible AI Architecture](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/f81a603e31772fe95334befc64834314411461a4/05_meta_strategy/docs/images/phase_drift_ai_architecture_diagram_v0.1.png?raw=true)
+
+*Figure: Structural flow of a Phase Drift-Compatible AI — designed to respond to relational ambiguity, not just semantic intent.*
+
+---
+
 ## Implementation Priorities
 
 - **Loss Function Redesign**  
@@ -70,4 +78,3 @@ The model should:
 
 This is not a call for “slower” AI.  
 It is a proposal for a **structurally responsive model** that treats latency, ambiguity, and minimalism not as noise — but as **signals of shared field coherence**.
-
