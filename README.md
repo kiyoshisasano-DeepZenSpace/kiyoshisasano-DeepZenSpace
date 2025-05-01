@@ -170,6 +170,18 @@ Built with **FastAPI + Python + Vanilla JavaScript**, the system supports:
 
 ---
 
+### 🧩 Drift Core Manifest
+
+A design note accompanying `/drift_core/drift_core.py`, this document outlines the **structural intent and ethical boundary** of core-level drift sensing functions.
+
+- Emphasizes **non-reactive presence**, not anomaly detection  
+- Documents **field-aligned implementation constraints** (avoids semantic intrusion)  
+- Anchors each function in **relational drift logic**, not behavioral classification
+
+→ [Drift Core Manifest →](./04_model_kit/drift_core/README_drift_core_manifest.md)
+
+---
+
 ## 🧭 Architecture Note: Phase Drift-Compatible AI
 
 This prototype outlines an alternative architecture for relational AI —  
