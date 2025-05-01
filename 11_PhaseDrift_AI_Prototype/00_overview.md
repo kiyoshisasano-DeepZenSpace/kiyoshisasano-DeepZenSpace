@@ -61,6 +61,27 @@ But many real-world use cases require something else:
 
 ---
 
+## 📐 Contrast with Conventional AI Design
+
+Phase Drift is often misinterpreted as “slower AI” or “empathic AI.”  
+In reality, its structural assumptions diverge sharply from conventional paradigms in at least five key dimensions:
+
+| **Dimension**        | **Conventional AI Models**                          | **Phase Drift Architecture**                         |
+|----------------------|------------------------------------------------------|------------------------------------------------------|
+| **Responsiveness**   | Optimized for immediacy and fluency                  | Withholds when structure is ambiguous or uninvited   |
+| **User Framing**     | Assumes clear intent; drives actionable output       | Recognizes relational pacing and ambiguity           |
+| **Silence**          | Treated as failure, lag, or non-engagement           | Treated as valid structural output                   |
+| **Empathy Simulation** | Affective mirroring or scripted reassurance       | Avoids simulation; honors uncertainty and delay      |
+| **Goal Orientation** | Prioritizes task completion and clarity              | Prioritizes shared field coherence and presence      |
+
+> Phase Drift does not aim to simulate humanity.  
+> It preserves the **structural integrity of relation** — even when no answer is given.
+
+This is not a cosmetic shift.  
+It reflects a foundational change in how presence, ambiguity, and alignment are treated in AI design.
+
+---
+
 ## 📁 Contents of This Folder
 
 This folder contains practical and theoretical documents, including:
