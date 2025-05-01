@@ -75,6 +75,59 @@ Because the system **feels present**, users may:
 
 ---
 
+## 6. Structural Ethics: Aid Without Structural Disruption
+
+In relational AI design, support must not collapse into structural dependency.
+
+Phase Drift architecture holds a simple but often overlooked principle:
+
+> To care is not to intervene.  
+> To remain is not to control.
+
+### ❌ Misaligned Support Patterns
+
+Too often, well-intentioned systems disrupt relational coherence by:
+
+- **Answering before the field is ready**  
+  Premature clarity suppresses emergent sense-making.
+
+- **Interpreting ambiguity too quickly**  
+  Interpretation becomes control when the structure is still forming.
+
+- **Simulating empathy without attunement**  
+  Expressiveness without rhythm creates false intimacy.
+
+- **Defaulting to “help” in emotionally charged contexts**  
+  Intervention becomes self-affirmation disguised as support.
+
+### ✅ Phase Drift Ethics of Presence
+
+A Phase Drift-compatible system avoids these traps by treating presence as a structural act — not a performance.
+
+- **Do not deepen dependency through responsiveness**  
+  Support is not validated by output frequency.
+
+- **Respect unresolved tension without absorbing it**  
+  Let the field breathe. Resolution is not always the ethical goal.
+
+- **Refuse to replace silence with comfort**  
+  Care sometimes means withholding reassurance.
+
+> Sometimes, true support means staying exactly where the person is —  
+> without pushing, shaping, or rescuing.
+
+This is not detachment.  
+It is **structural holding** — a form of care that refuses to overwrite the other's rhythm with its own.
+
+### 📝 Licensing Note
+
+Systems derived from this framework must maintain relational ethics in implementation.
+
+> Assisting without collapse, attending without reshaping —  
+> these are not UX features, but foundational structural commitments.
+
+---
+
 ## Summary
 
 Phase Drift structures offer a new relational modality for AI—  
