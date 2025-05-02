@@ -277,14 +277,6 @@ allowing AI systems to hold space, not just fill it.
 
 ---
 
-## 🧭 Contact
-
-If this resonates, I welcome quiet conversation or collaboration.
-
-📩 deepzenspace [at] gmail [dot] com
-
-
----
 
 ### 🧠 Built to detect and reflect:
 
