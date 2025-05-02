@@ -470,3 +470,34 @@ When collaborating on Phase Drift Insight developments:
 
 📄 Full guide: [Collaboration Guide available for prospective field partners](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/8050ed5669c6bdeb5b751e8b4d15b85bbf3215ae/09_field_stewardship/phase_drift_collaboration_minimal_guide.md)
 
+
+---
+
+## 🌀 Phase Drift Field Protocols (2025)
+
+A new sub-architecture focused on **silence, latency, and non-response as structural design principles**.
+
+This series expands the Phase Drift framework from interaction logging and alignment modeling  
+into **environmental, civic, and presence-centered design systems**.
+
+📂 Folder: [`12_phase_drift_field_protocol/`](./12_phase_drift_field_protocol/)
+
+Key documents:
+
+- `01_latency_design_principles.md`  
+  → Latency not as delay, but as field pacing
+
+- `02_residual_emitter_sketch.py`  
+  → Code sketch for non-verbal expressive silence
+
+- `03_phase_drift_ethics.md`  
+  → Ethics of structural withholding and non-closure
+
+- `LICENSE_APPEND.md`  
+  → Extended structural license for drift-aware implementations
+
+🌱 Purpose:  
+To support AI and UX developers in building **non-inferential systems**  
+that can hold space — not interpret it.
+
+
