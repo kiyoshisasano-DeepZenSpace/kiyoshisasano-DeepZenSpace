@@ -107,11 +107,18 @@ Entry is based not on credentials, but on **structural fit**.
 
 ---
 
-## 📩 If Resonance Calls
+---
 
-- Open an Issue labeled `[Stewardship Entry]`
-- Or write to: **deepzenspace [at] gmail [dot] com**
+## 🛠️ Implementation & Collaboration
 
-We will sense together whether the field is ready to open further.
+If you're interested in implementing, adapting, or collaborating on the Phase Drift structure,  
+please see our guidance here:
+
+👉 [`implementation_entry.md`](./09_field_stewardship/implementation_entry.md)
+
+For direct inquiries or resonance-aligned proposals, contact:
+
+📩 deepzenspace [at] gmail [dot] com
+
 
 ---
