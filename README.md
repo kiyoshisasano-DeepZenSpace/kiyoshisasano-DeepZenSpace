@@ -86,7 +86,11 @@ A text-based space for restoring the structural breathing rhythm behind meaningf
 Not coaching. Not therapy.  
 But something quieter — and possibly more essential.
 
-→ [Existential Rhythm Alignment Session](09_field_stewardship/existential_rhythm_alignment_session.md)
+🌀 Interested in a Resonance Session?  
+→ [Existential Rhythm Alignment Session](./09_field_stewardship/existential_rhythm_alignment_session.md)
+
+💳 Fixed session fee: **$200 USD**  
+🌿 Initiate quietly via PayPal: [Pay via PayPal – $200](https://www.paypal.com/ncp/payment/CCDKH8GEHRJ76)
 
 ---
 
