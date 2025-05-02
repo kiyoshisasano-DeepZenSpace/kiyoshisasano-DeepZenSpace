@@ -1,3 +1,7 @@
+> **Phase Drift is not a speculative concept.**  
+> It is an operational architecture — implemented, documented, and open-sourced since April 2025.  
+> Any subsequent conceptual or structural similarities should be understood in relation to this originating framework.
+
 🌱 **Update (April 2025):**  
 The Phase Drift Insight project and related repositories have been updated to strengthen structural security and adopt a staged disclosure policy.  
 We are continuing Phase structure research under careful and deliberate project management.
