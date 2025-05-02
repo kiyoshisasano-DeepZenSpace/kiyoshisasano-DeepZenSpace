@@ -481,6 +481,15 @@ that can hold space — not interpret it.
 
 ---
 
+## 🌀 Conceptual Foundation
+
+For a concise theoretical overview of Phase Drift's structural approach to dialogic AI, see:
+
+**[Phase Drift: A Structural Reframing of AI Response](./05_meta_strategy/docs/00_intro_phase_drift_theory.md)**  
+*— exploring silence, relational rhythm, and structural ethics in LLM interaction.*
+
+---
+
 ## 🛠️ Phase Drift Implementation & Collaboration
 
 If you're interested in implementing Phase Drift structures —  
@@ -489,7 +498,12 @@ please see the implementation guidance here:
 
 👉 [`09_field_stewardship/implementation_entry.md`](./09_field_stewardship/implementation_entry.md)
 
-For resonance-based inquiries or structural proposals:
+---
 
-📩 deepzenspace [at] gmail [dot] com
+## ℹ️ Attribution & Contact
+
+This repository contains structural field concepts currently under active authorship.  
+For alignment, research inquiries, or citation permissions, please contact:  
+📩 deepzenspace@gmail.com
+
 
