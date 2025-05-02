@@ -52,9 +52,11 @@ If you're interested in:
 - Contributing to SDK implementation  
 - Launching a joint research or prototyping project
 
-→ Please fill out the form below and we will reach out if structural fit is sensed:
+→ Please send a short message outlining your interest to:
 
-**[🔗 Phase Drift Collaboration Interest Form](https://forms.gle/your_form_link_here)**
+**📩 deepzenspace [at] gmail [dot] com**
+
+We will respond if structural resonance or alignment is sensed.
 
 ---
 
@@ -67,17 +69,3 @@ We welcome structural co-designers who listen through latency.
 
 —
 Phase Drift Stewardship Team
-
-
-
-
-1. Your Name  
-2. Affiliation / Organization (if any)  
-3. Contact Email  
-4. Which part of the Phase Drift structure are you most drawn to?  
-   (e.g., latency systems, silence-based UX, Drift scoring, civic installations...)  
-5. Have you worked with ambiguity- or latency-sensitive systems before?  
-   (Briefly describe)  
-6. What kind of prototype or research direction are you imagining?  
-7. What would you hope to gain or contribute through collaboration?  
-8. Any other thoughts, intuitions, or reflections you’d like to share?
