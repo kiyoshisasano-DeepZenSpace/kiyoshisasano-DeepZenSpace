@@ -339,11 +339,6 @@ Structure listens before it speaks.
 
 ---
 
-📩 Contact  
-Feel free to open an issue if you resonate with the work, or for private inquiries:  
-**deepzenspace [at] gmail [dot] com**
-
----
 
 ### 📊 Core Framework: Rhythmic 4-Layer Field Model
 
