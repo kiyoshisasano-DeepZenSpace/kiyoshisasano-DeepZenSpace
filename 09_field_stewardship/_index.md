@@ -114,7 +114,7 @@ Entry is based not on credentials, but on **structural fit**.
 If you're interested in implementing, adapting, or collaborating on the Phase Drift structure,  
 please see our guidance here:
 
-👉 [`implementation_entry.md`](./09_field_stewardship/implementation_entry.md)
+👉 [`implementation_entry.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/c047044374e2fc09777393a72b2e89d1db4c0af0/09_field_stewardship/implementation_entry.md)
 
 For direct inquiries or resonance-aligned proposals, contact:
 
