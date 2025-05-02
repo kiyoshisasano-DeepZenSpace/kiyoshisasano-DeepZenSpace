@@ -405,22 +405,6 @@ we welcome your resonance and careful co-creation.
 
 ---
 
-## ✅ Summary (One-liner)
-
-> Investigating how structure emerges in LLMs —  
-> not as content, but as **relational climate, field tension, and silent recursion**.
-
----
-
-## 🤝 Contact / Collaboration
-
-If this resonates with you:
-
-> Open an Issue or write to: **deepzenspace [at] gmail [dot] com**
-
-I welcome slow, thoughtful, structural dialogue.
-
----
 
 ## 📬 Resonance Thread – Open Structural Field Issue
 
