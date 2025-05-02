@@ -500,4 +500,17 @@ Key documents:
 To support AI and UX developers in building **non-inferential systems**  
 that can hold space — not interpret it.
 
+---
+
+## 🛠️ Phase Drift Implementation & Collaboration
+
+If you're interested in implementing Phase Drift structures —  
+in UX, AI interfaces, or civic design systems —  
+please see the implementation guidance here:
+
+👉 [`09_field_stewardship/implementation_entry.md`](./09_field_stewardship/implementation_entry.md)
+
+For resonance-based inquiries or structural proposals:
+
+📩 deepzenspace [at] gmail [dot] com
 
