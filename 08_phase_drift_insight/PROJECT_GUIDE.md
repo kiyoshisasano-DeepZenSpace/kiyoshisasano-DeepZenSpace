@@ -1,14 +1,16 @@
-# 🌀 Phase Drift Insight  
+🌀 Phase Drift Insight  
 Real-time Structural UX Research Toolkit  
+**PoC-ready architecture for drift risk detection and latency-aware alignment.**  
 Tracing latent phase drift beyond visible interaction.
 
-## 📘 Project Overview
+📘 Project Overview  
 Phase Drift Insight is a lightweight research platform  
 designed to detect, record, and visualize Phase Drift —  
 the subtle collapse and divergence of structural fields during user interaction.
 
 We don't just track actions.  
 We trace structural tension.
+
 
 ## 🔹 Key Features
 - Phase Drift Detection (non-linear structural deviations)
