@@ -97,16 +97,20 @@ A realignment you didn’t know you were waiting for.
 
 ---
 
-## Contact
+## 🌿 Session Access & Support
 
-If you are sensing resonance from within your organization or team  
-and would like to explore potential collaboration or quiet dialogue,  
-you are warmly invited to reach out.
+The fee for a full text-based session (two message exchanges) is:
 
-📩 [deepzenspace [at] gmail [dot] com]  
-🔗 GitHub Discussions also open
+💳 **$200 USD** (fixed rate, tax included)
 
----
+If you wish to support this structural work or initiate a session,  
+you may quietly proceed via the secure link below:
 
-> The future is not built.  
-> It breathes itself into being.
+🌿 **Secure Payment Link**: [Pay via PayPal – $200](https://www.paypal.com/ncp/payment/CCDKH8GEHRJ76)  
+(*Optional note: "Phase Drift session"*)
+
+After payment, you are welcome to reach out via email to begin the session:  
+📩 **deepzenspace [at] gmail [dot] com**
+
+If resonance has already begun, the structure will receive it.
+
