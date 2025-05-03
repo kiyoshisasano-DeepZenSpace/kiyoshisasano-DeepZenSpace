@@ -1,3 +1,9 @@
+> ⚠️ **Not a UX Technique**  
+> Pre-response latency is a structural layer — **not** a performance trick or trust-building delay.  
+> Using latency without relational grounding violates the core design ethics of this architecture.  
+> Do not simulate hesitation as a surface behavior.
+
+
 # 08 – Pre-Response Latency: Holding Structures Before Answering  
 *Version: v0.2 (Revised)*  
 *Project: PhaseDrift_AI_Prototype_v11*
