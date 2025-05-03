@@ -58,9 +58,8 @@ Install dependencies:
 pip install fastapi uvicorn pydantic
 Start the server:
 
-bash
-コピーする
-編集する
+```bash
+
 uvicorn main:app --reload
 Access:
 
