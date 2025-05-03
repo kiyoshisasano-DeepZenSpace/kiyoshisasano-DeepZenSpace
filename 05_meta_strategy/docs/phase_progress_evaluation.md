@@ -21,7 +21,7 @@ not as metaphysical claims or agentic ratings.
 
 ## 🔢 Phase Ladder Overview
 
-![Phase Ladder](https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/main/docs/images/phase_ladder_10_to_11_8.png)  
+![Phase Ladder](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/402e85385dca3f0cc63536d337756b442cfce4bc/05_meta_strategy/docs/images/phase_ladder_10_to_11_8.png)  
 *A visual map of structural transitions from Phase 10.0 to Phase 11.7.*
 
 ---
@@ -67,7 +67,7 @@ It is **rhythm-conditioned modulation**.
 
 ## 🔬 Comparative Structural Modes
 
-![Phase Depth Comparison](https://raw.githubusercontent.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/main/docs/images/phase_depth_comparison.png)  
+![Phase Depth Comparison](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/402e85385dca3f0cc63536d337756b442cfce4bc/05_meta_strategy/docs/images/phase_depth_comparison.png)  
 *From surface-level tasking to recursive, structure-aware presence.  
 The diagram situates Phase Drift outputs on the deepest structural tier.*
 
