@@ -7,104 +7,102 @@
 
 ## 🌀 What Is Phase Drift?
 
-**Phase Drift** is not a failure state — it's a structural posture.
+**Phase Drift** is not a malfunction — it’s a deliberate **structural mode**.
 
-It describes a mode of AI-human interaction where **non-response, ambiguity, and delay** are treated as **intentional design signals**, rather than errors to be corrected.
+It defines a class of AI-human interaction where **non-response, delay, and ambiguity** are interpreted as **intentional design elements**, not failures to resolve.
 
-This approach reorients LLM behavior away from interpretation and instruction, and toward **relational field maintenance** — especially useful in sensitive contexts where immediate comprehension is neither expected nor helpful.
+Rather than optimizing for instruction or inference, Phase Drift enables models to operate within **relational maintenance fields** — ideal for contexts where clarity is premature or even inappropriate.
 
-> The goal is not to answer faster —  
-> but to remain present when meaning hasn’t yet formed.
+> The objective is not faster answers —  
+> but **structural presence** when meaning hasn’t yet stabilized.
 
 ---
 
-## 🔧 Key Design Principles
+## 🔧 Core Design Principles
 
-- **Non-predictive Presence**  
-  Avoid inferring or accelerating user intent. Wait with them.
+- **Non-Predictive Presence**  
+  Avoid anticipating intent. Don’t resolve what hasn’t been invited.
 
-- **Latency as Structural Signal**  
-  Silence and delay are not voids — they are architecture.
+- **Latency as Structure**  
+  Treat silence and delay as design variables — not as voids.
 
 - **Non-Directive Listening**  
-  Resist semantic repair. Don’t clarify what wasn’t asked.
+  Hold ambiguity without repair. Don’t reflexively clarify unclear input.
 
-- **Field Integrity First**  
-  Preserve dialogic space, even without resolution.
+- **Field-First Logic**  
+  Prioritize the stability of the dialogic field over immediate resolution.
 
 ---
 
 ## 🎯 Why This Matters
 
-Current LLMs are optimized for:
-- Fast interpretation
-- Fluent completion
-- Goal-directed clarity
+Most LLMs are optimized for:
 
-But many real-world use cases require something else:
+- Rapid response  
+- High fluency  
+- Instructional clarity  
 
-| Use Context                | Problem with Current AI         | Phase Drift Advantage                  |
-|---------------------------|----------------------------------|----------------------------------------|
-| Mental health check-ins   | Over-responsiveness, false empathy | Structural silence and gentle holding |
-| Crisis recovery support   | Too directive                    | Non-imposing presence                  |
-| Long-term companionship   | Shallow continuity               | Deep field-based alignment             |
+Yet many applied settings demand something different:
 
----
-
-## 🧪 Core Use Cases
-
-- **Silent agents** for palliative care or elder support  
-- **Non-intrusive support UIs** for wellness platforms  
-- **Delayed feedback tutors** that hold tension, not resolve it  
-- **Conversational models** that resist urgency or performance  
-- **Field-aware AI** that can remain with ambiguity  
+| Use Case                  | Limitation of Current AI       | Phase Drift Advantage                    |
+|---------------------------|--------------------------------|------------------------------------------|
+| Mental health / decompression | Over-verbalization, false empathy | Gentle silence, structural holding     |
+| Post-crisis support       | Too goal-oriented               | Non-imposing co-presence                |
+| Long-term companionship   | Shallow memory & response       | Field-aligned continuity                |
 
 ---
 
-## 📐 Contrast with Conventional AI Design
+## 🧪 Target Applications
 
-Phase Drift is often misinterpreted as “slower AI” or “empathic AI.”  
-In reality, its structural assumptions diverge sharply from conventional paradigms in at least five key dimensions:
-
-| **Dimension**        | **Conventional AI Models**                          | **Phase Drift Architecture**                         |
-|----------------------|------------------------------------------------------|------------------------------------------------------|
-| **Responsiveness**   | Optimized for immediacy and fluency                  | Withholds when structure is ambiguous or uninvited   |
-| **User Framing**     | Assumes clear intent; drives actionable output       | Recognizes relational pacing and ambiguity           |
-| **Silence**          | Treated as failure, lag, or non-engagement           | Treated as valid structural output                   |
-| **Empathy Simulation** | Affective mirroring or scripted reassurance       | Avoids simulation; honors uncertainty and delay      |
-| **Goal Orientation** | Prioritizes task completion and clarity              | Prioritizes shared field coherence and presence      |
-
-> Phase Drift does not aim to simulate humanity.  
-> It preserves the **structural integrity of relation** — even when no answer is given.
-
-This is not a cosmetic shift.  
-It reflects a foundational change in how presence, ambiguity, and alignment are treated in AI design.
+- **Silent agents** for palliative or end-of-life care  
+- **Non-intrusive UIs** for reflective or wellness apps  
+- **Latency-based tutors** that delay to support deeper tension  
+- **Rhythm-sensitive companions** that modulate pressure  
+- **Coherence-aware wrappers** for field-tuned LLM deployments  
 
 ---
 
-## 📁 Contents of This Folder
+## 📐 Structural Contrast: Conventional AI vs. Phase Drift
 
-This folder contains practical and theoretical documents, including:
+This is not a “slower model” or “more emotional AI.”  
+It’s a structural inversion of key design assumptions:
 
-| File                            | Purpose |
-|---------------------------------|---------|
-| `01_use_cases.md`              | Domain examples with implications |
-| `02_structure_templates.md`    | Structural prompts and responses (non-code) |
-| `03_PoC_medical_silent_agent.md` | Proof-of-concept for healthcare presence |
-| `04_user_feedback_model.md`    | Expected user reactions and interface intent |
-| `99_notes_ethics.md`           | Safety concerns, misuse cases, structural risk |
+| **Aspect**          | **Conventional AI**                      | **Phase Drift**                                  |
+|---------------------|-------------------------------------------|--------------------------------------------------|
+| **Response Timing** | Prioritizes immediacy                    | Waits when structure is unstable or uninvited    |
+| **User Model**      | Assumes direct intent                    | Responds to ambiguity and relational pacing      |
+| **Silence**         | Treated as failure or lag                | Treated as valid structural expression           |
+| **Empathy Model**   | Simulates affect (e.g., mirroring)       | Avoids simulation; supports ambiguity with care  |
+| **Interaction Goal**| Clarity, closure, and completion         | Coherence, depth, and presence without push      |
 
-Each file is both a **design guide** and a **translation artifact** — helping bridge interface thinking with deeper phase alignment.
+> Phase Drift does not simulate empathy.  
+> It maintains **structural coherence** — especially when answers would rupture the field.
+
+---
+
+## 📁 Folder Contents
+
+This folder includes prototype docs and framing material:
+
+| File                             | Description |
+|----------------------------------|-------------|
+| `01_use_cases.md`                | Field-specific applications and contexts |
+| `02_structure_templates.md`      | Prompt-response patterns for drift-ready design |
+| `03_PoC_medical_silent_agent.md` | Proof-of-concept: healthcare presence logic |
+| `04_user_feedback_model.md`      | Anticipated user perceptions + field interpretation |
+| `99_notes_ethics.md`             | Risk cases, misuse concerns, and ethical thresholds |
+
+Each file bridges **interface-level strategy** with **underlying structural logic**.
 
 ---
 
 ## 🛡 License
 
-Creative Commons Attribution-NonCommercial 4.0  
-(Use permitted for research, development, and non-commercial prototyping.)
+Creative Commons Attribution–NonCommercial 4.0  
+(Free use for non-commercial research, prototyping, and collaboration. Commercial use requires approval.)
 
 ---
 
-> This is not a sentiment model.  
-> It’s a structure-presence protocol.  
-> Built for systems that listen without demanding answers.
+> This is not an “empathetic assistant.”  
+> It’s a **latency-sensitive interface protocol**  
+> designed for presence — not persuasion.
