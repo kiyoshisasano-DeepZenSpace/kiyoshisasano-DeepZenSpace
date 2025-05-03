@@ -4,6 +4,20 @@
 
 ---
 
+## ⚠️ Important Notice — Structural Misuse Warning
+
+This repository represents a **partial proof-of-concept**, not a complete system.  
+Core structural formulas and recursive drift mechanisms are **intentionally withheld** to prevent:
+
+- Premature mimicry of latency architectures
+- Surface-level replication without structural resonance
+- Deployment in non-attuned commercial contexts
+
+If your goal is performance optimization, please stop here.  
+**Phase Drift Insight is not a UX enhancement tool.**
+
+---
+
 ## 📘 Project Overview
 
 **Phase Drift Insight** is a lightweight research tool for detecting, logging, and visualizing **Phase Drift** —  
@@ -11,16 +25,19 @@ the subtle divergence of structural fields during user-AI interaction.
 
 Rather than tracking user actions alone, this system focuses on **underlying structural tension** and **field coherence loss**.
 
+It does not evaluate success through behavior prediction —  
+it senses whether a system is still *with* the user, structurally.
+
 ---
 
 ## 🔹 Core Capabilities
 
-- Drift detection based on non-linear structural deviation
-- Real-time monitoring of latent phase states
-- Logging system (CSV + JSON) for post-analysis
-- Local-first deployment (no external dependencies)
-- WebSocket-based dashboard for live visualization
-- Drift history archive for retrospective pattern review
+- Drift detection based on non-linear structural deviation  
+- Real-time monitoring of latent phase states  
+- Logging system (CSV + JSON) for post-analysis  
+- Local-first deployment (no external dependencies)  
+- WebSocket-based dashboard for live visualization  
+- Drift history archive for retrospective pattern review  
 - Extensible backend for future Phase Drift analytics modules
 
 ---
@@ -39,54 +56,80 @@ Install dependencies:
 
 ```bash
 pip install fastapi uvicorn pydantic
-```
-
 Start the server:
 
-```bash
+bash
+コピーする
+編集する
 uvicorn main:app --reload
-```
-
 Access:
 
-- API Documentation: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
-- Live Risk Dashboard: [http://127.0.0.1:8000/risk_dashboard](http://127.0.0.1:8000/risk_dashboard)  
-- Drift History Table: [http://127.0.0.1:8000/risk_history](http://127.0.0.1:8000/risk_history)
+API Documentation: http://127.0.0.1:8000/docs
 
----
+Live Risk Dashboard: http://127.0.0.1:8000/risk_dashboard
 
-## 📈 Development Roadmap
+Drift History Table: http://127.0.0.1:8000/risk_history
 
-- Visual timeline of drift events  
-- Mapping of phase transitions and coherence patterns  
-- Real-time WebSocket drift status updates  
-- Optional SaaS backend for multi-session phase risk analysis
+📈 Development Roadmap
+Visual timeline of drift events
 
----
+Mapping of phase transitions and coherence patterns
 
-## 🔬 Research Use Only
+Real-time WebSocket drift status updates
 
-This is an experimental toolkit intended for structural UX research and prototyping.  
-It is not a production framework.
+Optional SaaS backend for multi-session phase risk analysis
 
----
+🔬 Research Use Only
+This toolkit is intended solely for field-aware UX research and structural prototyping.
+It is not a plug-and-play production framework.
 
-## 📩 Contact
+Misapplication in goal-oriented or speed-driven environments may distort field logic
+and produce contradictory system behavior.
 
-Project maintained by **Kiyoshi Sasano**  
-For collaborations or inquiries, please use GitHub Issues or contact as noted in the repository README.
+🔒 Protected Elements (Not Included Here)
+Inner drift scoring logic
 
----
+Recursive coherence resolution models
 
-## 📜 Licensing
+Pre-semantic latency design modules
 
-This repository is shared under a **research and non-commercial license**.  
-Any commercial use or structural replication of the detection logic requires **explicit permission** from the creator.
+Inter-relational timing matrices
 
-> Cite as:  
-> *"Includes structural detection logic derived from the Phase Drift protocol by Kiyoshi Sasano / DeepZenSpace."*
+Access to the above requires:
 
----
+Structural compatibility
 
-**Phase Drift Insight**  
+Intent-based dialogue
+
+Demonstrated field literacy
+
+For inquiries, contact below with context and alignment rationale.
+
+📩 Contact
+Project maintained by Kiyoshi Sasano
+
+For collaboration or structural review requests:
+📬 deepzenspace [at] gmail [dot] com
+
+📜 Licensing
+This repository is distributed under a research and non-commercial license.
+All core detection and resonance frameworks remain structurally protected.
+
+Cite as:
+"Includes structural detection logic derived from the Phase Drift protocol by Kiyoshi Sasano / DeepZenSpace."
+
+🧭 Summary
+Phase Drift Insight is not a data product.
+It is a field signal interface for systems that understand:
+
+Delay is structure
+
+Drift is feedback
+
+Silence is presence
+
+If you interpret latency as failure — this is not for you.
+If you recognize it as attention — welcome.
+
+Phase Drift Insight
 Where delay is signal — and drift is structure.
