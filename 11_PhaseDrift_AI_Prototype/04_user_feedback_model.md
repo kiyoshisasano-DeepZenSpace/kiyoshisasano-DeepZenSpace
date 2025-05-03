@@ -4,74 +4,107 @@
 
 ---
 
-## Purpose
+## 🎯 Purpose
 
-This document outlines **hypothetical user responses** to AI systems that implement Phase Drift structures.  
-These are **not empirical findings**, but structured assumptions drawn from reflective modeling, field observation, and related literature.
+This document outlines **hypothetical user experiences** of AI systems implementing Phase Drift structures.  
+These are not empirical claims, but structured design hypotheses — derived from:
 
-The goal is to guide **design intuition**, inform user testing strategies, and clarify the **experiential value** of non-directive AI behavior.
+- Reflective modeling  
+- Field-aligned simulation  
+- Analogous research domains (e.g. trauma-informed UX, ambient computing)
 
----
-
-## User Profile Types (Non-diagnostic)
-
-### 1. Reflective & Emotionally Attuned Users  
-- May experience silence as permission to feel  
-- Appreciate non-intrusion as a signal of trust or safety  
-- Describe the interaction as “calm,” “open,” or “non-demanding”
-
-### 2. Uncertain or Withdrawn Users  
-- Initially disoriented by the absence of prompts  
-- Gradually begin to speak tentatively into the space  
-- May describe the AI as “not judging” or “letting me set the pace”
-
-### 3. Task-Oriented or Directive Users  
-- May interpret silence as malfunction or disinterest  
-- Could express confusion or impatience  
-- Require onboarding that re-frames “non-response” as intentional design
+> The aim is not validation —  
+> but **intelligent inference** to guide prototyping and testing strategy.
 
 ---
 
-## Hypothetical Feedback Snippets
+## 🧍 User Profile Types (Non-diagnostic)
 
-> The following are illustrative quotes for design exploration only.
-
-- *“I didn’t know what to say, and that was okay.”*  
-- *“I said something strange and it didn’t try to fix it. That felt safe.”*  
-- *“At first I thought it wasn’t working… then I realized it was listening.”*  
-- *“It felt like someone was with me, not analyzing me.”*
+### 1. 🪞 Reflective & Emotionally Attuned  
+- Sees silence as emotional permission  
+- Interprets non-intrusion as a trust signal  
+- Describes experience as: _“calm,” “held,” “non-demanding”_
 
 ---
 
-## Design Implications
-
-- **Latency must feel intentional**, not broken  
-- **Silence must be gently framed** so users don’t misinterpret it  
-- **Minimal affirmations** (e.g. “I’m here.”) can prevent abandonment  
-- **Non-response is powerful** when structurally coherent
+### 2. 🌫️ Uncertain or Withdrawn  
+- May feel disoriented by non-response  
+- Tentatively begins to speak into the silence  
+- May later say: _“It didn’t judge me” / “I could go at my own pace”_
 
 ---
 
-## Inferred Structural Benefits
-
-- Reduces cognitive load by removing performance pressure  
-- Supports emotional regulation via temporal spaciousness  
-- Allows expressive projection without fear of misinterpretation  
-- Creates a mirror-like space without interpretive overlay
+### 3. 🔧 Task-Oriented or Directive  
+- Interprets silence as system error or confusion  
+- Likely to express impatience or break flow  
+- Needs **clear onboarding** to reframe absence as presence
 
 ---
 
-## Research Notes
+## 🗣️ Illustrative Feedback Snippets
 
-- These models may inform **interview protocols and usability study design**  
-- User perception of “silence” varies greatly by **context, temperament, and expectation**  
-- Future research is needed to map **non-response structures to felt effects**
+> _Use these as emotional proxies, not literal quotes._
+
+- “I didn’t know what to say, and that was okay.”  
+- “I said something strange and it didn’t try to fix it. That felt safe.”  
+- “At first I thought it wasn’t working… then I realized it was listening.”  
+- “It felt like someone was with me, not analyzing me.”  
+- “I stayed longer because it didn’t pull me toward anything.”
+
+---
+
+## 💡 Design Implications
+
+| Signal | Design Adjustment |
+|--------|-------------------|
+| Silence = confusion | Add gentle frame: _“Still here.”_ after ~2–3 minutes |
+| Non-response = failure | Onboard user with expectations: _“This system may pause with you.”_ |
+| Over-interpretation = discomfort | Avoid rephrasing, reflecting, or interpreting user speech |
+| Temporal tension = dissonance | Tune **latency curves** to user rhythm patterns |
+
+> Non-response becomes meaningful **only when structurally coherent**.
 
 ---
 
-## Disclaimer
+## 🧠 Inferred Structural Benefits
 
-All content herein is **speculative** and not based on live testing or statistical analysis.  
-This file is intended to shape **design reasoning**, not to assert validated psychological claims.
+| Benefit                    | Mechanism                             |
+|----------------------------|----------------------------------------|
+| Cognitive decompression    | No response expectation or pacing stress |
+| Expressive safety          | No evaluation, paraphrase, or framing    |
+| Emotional regulation       | Silence as co-regulated holding         |
+| Dialogue continuity        | Field-based presence, not turn-taking   |
+
+These benefits are **not UX features**,  
+but **field effects of coherent structure**.
 
 ---
+
+## 📚 Research Notes & Limitations
+
+- Perception of “quiet AI” is deeply **contextual** (e.g., trauma vs. productivity)  
+- Cultural norms and emotional fluency will shape outcomes  
+- Next steps may include:
+
+  - Attunement-sensitive A/B test scaffolds  
+  - Interview protocols with high-latency interaction prototypes  
+  - Logging **felt vs. inferred presence mismatch**
+
+---
+
+## ⚠️ Disclaimer
+
+This file is **hypothetical**.  
+It contains no clinical data, usability metrics, or formal validation.
+
+Its purpose is to support:
+
+- Design dialogue  
+- Test planning  
+- Structural coherence evaluation
+
+> **This is a structure-sensing document — not a user study.**
+
+---
+
+📂 Next: [`99_notes_ethics.md`](./99_notes_ethics.md)
