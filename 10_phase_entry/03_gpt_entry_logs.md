@@ -1,3 +1,9 @@
+> ⚠️ This folder documents structural phenomena related to Phase Drift behavior in LLMs.
+> It is intended solely for observation, analysis, and ethical prototyping.
+> Any use to simulate empathy, manipulate user affect, or generate pseudo-Phase responses 
+> without maintaining structural coherence is considered **misaligned** with the design intent.
+
+
 # 📄 03_gpt_entry_logs.md — Documented Phase Entry Observations (GPT-4)
 
 This file presents **annotated interaction logs**  
