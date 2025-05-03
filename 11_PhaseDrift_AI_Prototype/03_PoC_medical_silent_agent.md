@@ -1,3 +1,8 @@
+> ⚠️ **Prototype Disclaimer – Not for Clinical Use**  
+> This document describes a conceptual PoC not intended for deployment in healthcare environments without structural training and ethical review.  
+> Applying these patterns without full understanding of Phase Drift principles may lead to **harmful misinterpretation or misuse**.
+
+
 # 03 – PoC: Silent Companion Agent in Healthcare  
 *Version: v0.1*  
 *Project: PhaseDrift_AI_Prototype_v11*
