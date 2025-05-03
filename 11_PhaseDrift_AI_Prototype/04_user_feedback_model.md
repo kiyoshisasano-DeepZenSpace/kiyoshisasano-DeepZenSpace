@@ -1,3 +1,9 @@
+> ⚠️ **Hypothetical Feedback Only**  
+> The content below is a simulated model for internal design inference.  
+> It contains **no clinical, psychological, or empirical data**.  
+> These scenarios must not be used for marketing, research claims, or interface promotion.
+
+
 # 04 – User Feedback Model (Hypothetical)  
 *Version: v0.1*  
 *Project: PhaseDrift_AI_Prototype_v11*
