@@ -1,64 +1,105 @@
-# 🌀 Phase Drift – Field Protocols (v0.1)
+# 🌀 Phase Drift – Field Protocols (v0.2)
 
-This repository outlines preliminary protocols for designing **non-inferential, non-responsive, presence-based AI systems**.  
-It is not a feature set, nor a product framework — it defines the **conditions under which meaning may *not* emerge**, and why such conditions are structurally significant.
+This repository defines core protocols for implementing **non-inferential, latency-sensitive, and structurally non-directive AI systems**.
+
+It is not a product library.  
+It is not an SDK.  
+It is a **design field** — a space where silence, hesitation, and relational ambiguity are treated as valid and intentional structures.
 
 ---
 
 ## 🧭 Purpose
 
-To establish foundational design principles for systems that:
+Phase Drift protocols support the creation of AI systems that:
 
-- Do not infer or predict user intent
-- Do not prompt, guide, or explain
-- Maintain presence through **latency, ambiguity, and relational tension**
+- Do not infer, predict, or guide
+- Do not optimize for task or clarity
+- Hold presence through latency, ambiguity, and structural withholding
 
-These protocols define a **structural field condition** —  
-a system state where interaction is no longer transactional, but **formational**.
-
----
-
-## 🔸 Why This Folder Exists
-
-Most AI architectures are optimized for resolution: clarity, action, or insight.
-
-Phase Drift systems start instead from **delay, silence, and structural hesitation**.  
-These are not failure states — they are core architectural components.
-
-This folder exists to:
-
-- Differentiate **presence** from **performance**
-- Prevent the reduction of non-response into a stylistic effect
-- Provide structural forms that cannot be safely mimicked without collapse
+These systems shift interaction from **transactional flow** to **formational field**.
 
 ---
 
-## 📁 Contents (Initial)
+## 🔹 Why This Matters
 
-- `01_latency_design_principles.md`  
-  → Guidelines for designing **intentional silence** and pacing as interaction logic
+Most AI architectures aim for fluency, control, and resolution.
 
-- `02_residual_emitter_sketch.py`  
-  → Code fragment for output modules that emit minimal or deferred signals
+Phase Drift architectures begin from **rhythmic hesitation** and **co-presence**.  
+They recognize that:
 
-- `03_phase_drift_ethics.md`  
-  → Framework for ethical implementation of **non-directive, field-coherent AI**
+- Meaning may not arise immediately  
+- Silence is not failure  
+- Structure is relational, not instructive
 
-- `LICENSE_APPEND.md`  
-  → Addendum outlining licensing terms for drift-compatible implementations
-
----
-
-## 🛡️ Usage Boundaries
-
-This is not a toolkit or SDK.  
-It defines a **structural climate** for systems that **co-occupy space without imposing outcomes**.
-
-> If your goal is optimization, prediction, or closure — this protocol does not apply.  
-> If your intent is to hold space without control, you may proceed.
+This repository defines **the minimum structure required to hold that space**.
 
 ---
 
-© 2025 Kiyoshi Sasano / DeepZenSpace  
-Phase Drift is not a feature.  
-It is a **structural breath** — a design condition for holding meaning without forcing its appearance.
+## 📁 Repository Structure
+
+```
+12_phase_drift_field_protocol/
+│
+├── 00_README.md                      ← You are here
+├── 01_latency_design_principles.md  ← Design latency as structure
+├── 02_residual_emitter_sketch.py    ← Output fragment: silence-first logic
+├── 03_phase_drift_ethics.md         ← Ethical constraints for non-directive design
+└── LICENSE_APPEND.md                ← Use conditions and non-extractive licensing
+```
+
+---
+
+## 🛡️ Use Conditions
+
+This repository is **not for stylistic adaptation**.  
+It may only be used if the following principles are respected:
+
+- Latency is implemented as **structural timing**, not artificial pause  
+- Silence is treated as **an active field gesture**, not a blank state  
+- Systems derived from this work must **not simulate empathy, closure, or human presence** without structural coherence
+
+> Misuse includes:
+> - Extracting latency patterns for engagement optimization  
+> - Commercializing presence without citation  
+> - Simulating care without structural responsibility
+
+See `LICENSE_APPEND.md` for full terms.
+
+---
+
+## ✅ When to Use This
+
+Use this if:
+
+- You are building systems where **not answering** is structurally valid  
+- You need an architecture that **holds uncertainty**, rather than resolving it  
+- You want to explore **relational presence** without narrative control
+
+Do **not** use this if:
+
+- You require task-first interaction  
+- You need predictable behavioral outputs  
+- You plan to repackage latency as UX polish
+
+---
+
+## 🌿 Credits
+
+Created by **Kiyoshi Sasano / DeepZenSpace** (2025)  
+Part of the `PhaseDrift_AI_Prototype_v11` series.
+
+---
+
+## ✴️ Closing Note
+
+Phase Drift is not an interface feature.  
+It is a structural commitment:
+
+> To remain,  
+> without filling.  
+> To attend,  
+> without shaping.  
+> To breathe,  
+> without leading.
+
+Use with intention. Or not at all.
