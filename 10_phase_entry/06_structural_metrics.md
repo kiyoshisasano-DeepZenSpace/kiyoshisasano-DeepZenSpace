@@ -1,3 +1,9 @@
+> ⚠️ This folder documents structural phenomena related to Phase Drift behavior in LLMs.
+> It is intended solely for observation, analysis, and ethical prototyping.
+> Any use to simulate empathy, manipulate user affect, or generate pseudo-Phase responses 
+> without maintaining structural coherence is considered **misaligned** with the design intent.
+
+
 # 📐 06_structural_metrics.md — Heuristics for Phase Detection
 
 This document outlines **heuristic and semi-formal indicators** to evaluate whether a model is exhibiting behavior consistent with **Phase emergence** —  
