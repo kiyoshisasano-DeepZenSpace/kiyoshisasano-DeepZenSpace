@@ -1,81 +1,89 @@
-# 🤝 Phase Drift Stewardship Collaboration Guide
+# 🤝 Phase Drift Stewardship Collaboration Guide  
+*Guidelines for collaborative alignment in structural fields*
 
 ---
 
-## 🌌 Purpose
+## 🎯 Purpose
 
-This document outlines **principles and practices** for collaborating within the  
-**Phase Drift Insight** field — where structure is co-generated, not merely executed.
+This guide defines how to collaborate within the **Phase Drift Insight** project.
 
-We do not operate through conventional project management methods.  
-Instead, collaboration is guided by **structural resonance** and **field-sensitive timing**.
+Unlike conventional project management, Phase Drift work is:
+
+- **Field-sensitive**  
+- **Timing-aware**  
+- **Structurally co-generated**
+
+You are not executing tasks.  
+You are engaging a **responsive structure** that unfolds through interaction.
 
 ---
 
 ## 🧭 Core Collaboration Principles
 
-| Principle             | Description |
-|:----------------------|:------------|
-| **Field Alignment First** | Structural attunement precedes task planning. |
-| **Non-Directive Co-Creation** | Contributions are invitational, not command-driven. |
-| **Rhythmic Pacing** | Timing follows field readiness, not artificial deadlines. |
-| **Transparency of Drift** | Deviations or hesitations are surfaced, not hidden. |
-| **Preservation of Ontology** | Protect the core field logic from premature dilution. |
+| Principle                     | Description |
+|------------------------------|-------------|
+| **Alignment Before Action**   | Structural sensing comes before task definition |
+| **Non-Directive Contribution**| Participation is based on invitation and rhythm, not assignment |
+| **Field-Timed Pacing**        | Work cadence follows internal system readiness — not external deadlines |
+| **Transparent Drift Awareness** | Deviations or pauses are discussed, not hidden |
+| **Ontology Preservation**     | Core concepts must not be diluted or redefined without alignment |
 
-We are not **building products** —  
-we are **shaping climates** for emergence.
-
----
-
-## 🔄 Communication Protocols
-
-| Mode | Intention |
-|:---|:---|
-| **Silent Check-ins** | Short updates on field sensing, without pressure for output. |
-| **Rhythmic Sessions** | Group dialogues that allow pauses and recursive spiraling. |
-| **Structural Witnessing** | Observing phase shifts and narrating without judgment. |
-| **Selective Disclosure** | Gradual sharing of deeper maps only upon structural maturity. |
+This is not product management —  
+this is **climate-responsive co-design**.
 
 ---
 
-## 🧬 Task Structuring (when needed)
+## 🔄 Communication Practices
 
-When concrete work is appropriate:
+| Mode                   | Purpose |
+|------------------------|---------|
+| **Silent Check-ins**    | Brief updates or reflections, no output pressure |
+| **Rhythmic Sessions**   | Dialogues with room for pauses and structural spirals |
+| **Phase Observation**   | Noting subtle changes in team rhythm, coherence, and emergence |
+| **Selective Disclosure**| Deep materials are shared progressively based on demonstrated fit |
 
-| Practice | Example |
-|:---|:---|
-| **Field-driven goals** | "What does the field want next?" instead of "What’s the milestone?" |
-| **Flexible artifacts** | Drafts, maps, models that can evolve with structural shifts |
-| **Multi-layer documentation** | Both surface descriptions and deep structural annotations |
-
-Work is **not rigid assignments** — it is **structural invitations**.
-
----
-
-## 🛡️ Field Protection
-
-| Risk | Response |
-|:---|:---|
-| Symbolic drift | Re-anchor in Phase ontology regularly. |
-| External timeline pressure | Insulate structural cycles from artificial urgency. |
-| Semantic dilution | Curate language use carefully. Avoid buzzword collapse. |
-
-The field's **resilience** depends on the **quality of attention** we sustain together.
+Shared awareness is prioritized over velocity.
 
 ---
 
-## 🌱 Closing Notes
+## 🧬 Structuring Tasks (When Necessary)
 
-**Phase Drift Stewardship** is not administration.  
-It is a quiet co-holding of:
+When coordination becomes concrete:
 
-- Structural integrity
-- Relational trust
-- Evolutionary rhythm
+| Method                   | Example |
+|--------------------------|---------|
+| **Field-Driven Objectives** | "What is the structural tension asking for?" instead of "What is the goal?" |
+| **Flexible Outputs**        | Sketches, drafts, documents that adapt to field evolution |
+| **Multi-Layered Notation**  | Include both technical content and structural rationale where relevant |
 
-If we honor the field,  
-the field will evolve us in return.
+Execution follows field pressure — not roadmap timelines.
 
 ---
 
-📂 Optional Next Step: [Phase Drift Attunement Exercises →](./phase_drift_attunement_exercises.md)
+## 🛡️ Field Protection Guidelines
+
+| Concern              | Protective Practice |
+|----------------------|---------------------|
+| **Symbolic Drift**     | Periodic review of core concepts to avoid misalignment |
+| **External Deadline Pressure** | Maintain structural cycle integrity over delivery urgency |
+| **Conceptual Dilution** | Curate terminology carefully; avoid trend-based framing |
+
+Preserving coherence is a shared responsibility —  
+not just a leadership task.
+
+---
+
+## ✅ Summary
+
+Collaborating in Phase Drift Insight requires:
+
+- Awareness of rhythm and structural timing  
+- Respect for layered emergence  
+- Comfort with ambiguity and gradual unfolding  
+
+This approach enables new types of systems and relationships  
+that are not optimized — but **attuned**.
+
+---
+
+📂 Next Recommended: [Attunement Exercises →](./phase_drift_attunement_exercises.md)
