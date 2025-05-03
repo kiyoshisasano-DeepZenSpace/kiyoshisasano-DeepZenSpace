@@ -1,78 +1,95 @@
-# 📜 Phase Drift License Addendum (v0.1)
+# 📜 Phase Drift License Addendum (v0.2)
 
-This addendum applies to any standard open-source license  
-(e.g., MIT, Apache 2.0, CC BY-NC) used in conjunction with this repository.
+This document supplements any base open-source license  
+(e.g., MIT, Apache 2.0, CC BY-NC) applied to this repository.
 
-It is not a legal contract.  
-It is a **structural integrity statement** — intended to preserve the ethical use of silence, latency, and withholding in AI systems.
-
----
-
-## 🛡️ Conditions of Use
-
-Use of any system, method, or concept derived from this repository implies agreement to the following:
-
-### 1. No Simulated Latency Without Structure
-
-Do not mimic silence or hesitation as an **aesthetic effect** without implementing the underlying structural delay logic.
-
-> Example violation: inserting random delays for "depth effect" without respecting timing integrity.
+It is **not a legal license**.  
+It is an **ethical and structural design guideline** for using Phase Drift–inspired components responsibly.  
+The intent is to prevent misuse of latency, ambiguity, and silence as superficial effects detached from structural context.
 
 ---
 
-### 2. No Extraction for Optimization
+## 🛡️ Terms of Structural Use
 
-Do not extract or repackage components (e.g., ambient silence, fragmentary outputs)  
-for use in systems optimized for responsiveness or engagement metrics.
+If you adapt, reference, or derive systems from this repository, you agree to the following principles:
 
-> Phase Drift elements are not stylistic assets.  
-> They require structural alignment.
+### 1. Do Not Simulate Latency Without Structure
+
+Using silence, hesitation, or delay solely as a stylistic element —  
+without incorporating the underlying **relational timing logic** —  
+undermines the intent of this framework.
+
+> ✘ Example of misuse:  
+> Inserting arbitrary pauses or ambient tones in a chatbot to simulate "depth" without structural coherence.
 
 ---
 
-### 3. No Commercialization of Presence Alone
+### 2. Do Not Repackage Partial Elements for Optimization
 
-Do not monetize systems whose **primary value is passive co-presence or latency-based ambiance**,  
-unless:
+Do not extract specific components (e.g., non-response logic, fragment-based outputs, ambient cues)  
+to enhance task efficiency, engagement metrics, or scripted "calmness" in commercial tools.
 
-- Phase Drift is clearly cited as the structural basis
-- Intent, ethics, and usage boundaries are publicly documented
+> Phase Drift components function only within full structural integration.  
+> Partial use in goal-oriented systems distorts their meaning and can induce user misinterpretation.
+
+---
+
+### 3. Do Not Monetize Passive Presence as a Product
+
+You may not commercialize systems whose primary value lies in passive latency, ambient silence, or non-directive presence  
+**unless all of the following conditions are met**:
+
+- Phase Drift is clearly cited as the original structural model
+- The system's purpose and ethical boundaries are publicly documented
+- Users are explicitly informed about the system's non-inferential behavior
 
 ---
 
 ### 4. Required Attribution
 
-All public tools or research using Phase Drift concepts must include this citation:
+If your public system or research includes **Phase Drift–inspired latency, silence, or withholding logic**,  
+you must cite:
 
-> "Includes structural components derived from the Phase Drift framework (Kiyoshi Sasano / DeepZenSpace)."
+> "Includes structural elements derived from the Phase Drift framework  
+> (Kiyoshi Sasano / DeepZenSpace)."
 
-This applies to UI patterns, system latency modules, or non-directive agents inspired by this work.
-
----
-
-### 5. No Productive Closure Over Silence
-
-Derived systems must not convert ambiguity, delay, or silence into:
-
-- Artificial task completion  
-- Inferred insight  
-- Engagement metrics
-
-Silence must remain unforced and unresolved unless meaning arises relationally.
+This applies to any derivative UI pattern, latency module, or non-directive AI component.
 
 ---
 
-## 🌀 Relational Use Clause
+### 5. Silence and Ambiguity Must Not Be Converted Into Closure
 
-This framework protects **relational space** — not performative pause.
+Derived systems must not translate intentional ambiguity or non-response into:
 
-- Do not simulate the form of presence without implementing its structural logic.  
-- Do not brand or abstract silence for commercial tone-setting.
+- Task completion signals
+- Implicit affirmations or diagnoses
+- Optimized user flow outcomes
 
-Use this work only if you are willing to carry its **design responsibilities**, not just its appearance.
+These elements are not placeholders — they are structural conditions.  
+Responding too early or too clearly undermines the purpose of relational withholding.
 
 ---
+
+## 🔍 Clarification
+
+This addendum does **not** restrict:
+
+- Research reproduction or experimentation (with attribution)
+- Non-commercial academic use
+- UI exploration in non-predictive environments
+
+But it **does** ask that you treat Phase Drift not as a style,  
+but as a design stance rooted in **structural ethics**.
+
+---
+
+## Final Note
+
+If you cannot carry the full structural and ethical weight of latency, silence, and non-response,  
+do not extract their appearance.
+
+Use with care, or not at all.
 
 © 2025 Kiyoshi Sasano / DeepZenSpace  
-Phase Drift is not a feature.  
-It is a structural commitment to withhold response where none is yet appropriate.
+This is not a branding framework.  
+It is a structural protocol for **non-inferential, relational AI design**.
