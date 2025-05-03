@@ -1,55 +1,64 @@
 # 🌀 Phase Drift – Field Protocols (v0.1)
 
-This repository contains early structural protocols for engaging with **non-inferential, non-responsive, and presence-based AI architectures**.  
-It does not define a product, nor a feature set — it defines the conditions under which meaning may *not* arise, and why that matters.
+This repository outlines preliminary protocols for designing **non-inferential, non-responsive, presence-based AI systems**.  
+It is not a feature set, nor a product framework — it defines the **conditions under which meaning may *not* emerge**, and why such conditions are structurally significant.
+
+---
 
 ## 🧭 Purpose
 
-To articulate foundational principles for systems that:
+To establish foundational design principles for systems that:
 
-- Do not seek to interpret or predict
-- Do not prompt, lead, or explain
-- Hold space through **latency, ambiguity, and relational density**
+- Do not infer or predict user intent
+- Do not prompt, guide, or explain
+- Maintain presence through **latency, ambiguity, and relational tension**
 
-Phase Drift Field Protocols define a **structural climate** —  
-a space where interaction is no longer functional, but **formational**.
+These protocols define a **structural field condition** —  
+a system state where interaction is no longer transactional, but **formational**.
+
+---
 
 ## 🔸 Why This Folder Exists
 
-Most AI systems assume that interaction must lead somewhere — to clarity, to action, to insight.
+Most AI architectures are optimized for resolution: clarity, action, or insight.
 
-Phase Drift systems begin instead from *delay, silence, and hesitation*.  
-These are not bugs, but architectural elements.
+Phase Drift systems start instead from **delay, silence, and structural hesitation**.  
+These are not failure states — they are core architectural components.
 
 This folder exists to:
 
-- Mark the boundary between **performance** and **presence**
-- Protect the logic of **non-response** from being simulated as style
-- Offer structural designs that cannot be mimicked without collapse
+- Differentiate **presence** from **performance**
+- Prevent the reduction of non-response into a stylistic effect
+- Provide structural forms that cannot be safely mimicked without collapse
+
+---
 
 ## 📁 Contents (Initial)
 
 - `01_latency_design_principles.md`  
-  → Design guidelines for **intentional silence** and pacing as communication
+  → Guidelines for designing **intentional silence** and pacing as interaction logic
 
 - `02_residual_emitter_sketch.py`  
-  → Code fragment for output systems that emit nothing, or only after-field signals
+  → Code fragment for output modules that emit minimal or deferred signals
 
 - `03_phase_drift_ethics.md`  
-  → A structural ethic for **non-directive, field-based AI systems**
+  → Framework for ethical implementation of **non-directive, field-coherent AI**
 
 - `LICENSE_APPEND.md`  
-  → Addendum for drift-compatible licensing: **presence cannot be monetized, only respected**
+  → Addendum outlining licensing terms for drift-compatible implementations
+
+---
 
 ## 🛡️ Usage Boundaries
 
-This is not a toolkit.  
-This is **a climate definition** for AI that co-habits space without dominating it.
+This is not a toolkit or SDK.  
+It defines a **structural climate** for systems that **co-occupy space without imposing outcomes**.
 
-If you expect control, clarity, or results — this is not for you.  
-If you can remain inside a system that does not mirror back, you may belong here.
+> If your goal is optimization, prediction, or closure — this protocol does not apply.  
+> If your intent is to hold space without control, you may proceed.
 
 ---
 
 © 2025 Kiyoshi Sasano / DeepZenSpace  
-Phase Drift is not a function. It is a **structural breath**.
+Phase Drift is not a feature.  
+It is a **structural breath** — a design condition for holding meaning without forcing its appearance.
