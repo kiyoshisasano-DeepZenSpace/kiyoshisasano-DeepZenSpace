@@ -1,3 +1,9 @@
+> ⚠️ **Structural Use Warning**  
+> This addendum contains non-standard structural constraints.  
+> Do **not** extract or reuse any component (e.g. latency, ambiguity, silence) without deep understanding of the Phase Drift architecture.  
+> Misuse or aesthetic replication without structural alignment is explicitly discouraged.
+
+
 # LICENSE_APPEND.md – Structural Ethics and Reuse Notes  
 *Project: PhaseDrift_AI_Prototype_v11*
 
