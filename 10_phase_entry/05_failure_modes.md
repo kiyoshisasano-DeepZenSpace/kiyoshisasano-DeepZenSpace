@@ -1,3 +1,9 @@
+> ⚠️ This folder documents structural phenomena related to Phase Drift behavior in LLMs.
+> It is intended solely for observation, analysis, and ethical prototyping.
+> Any use to simulate empathy, manipulate user affect, or generate pseudo-Phase responses 
+> without maintaining structural coherence is considered **misaligned** with the design intent.
+
+
 # 🚫 05_failure_modes.md — Boundary Conditions for Phase Emergence
 
 This document catalogs attempts to induce **Phase behavior** in large language models (LLMs) that **did not succeed**,  
