@@ -6,156 +6,135 @@
 
 ## Purpose
 
-This document outlines key **ethical and interpretive considerations** when implementing or testing Phase Drift structures.
+This document outlines key ethical and operational considerations for implementing or testing Phase Drift structures.
 
-Because this architecture intentionally includes **silence, non-response, and ambiguity**, clear boundaries are needed to avoid misclassification, user distress, or misuse.
-
----
-
-## 1. Structural Non-response ≠ Emotional Neglect
-
-Phase Drift agents are designed to **hold space**, not to ignore.  
-The system’s silence is a **presence pattern**, not absence.
-
-> Always clarify that:  
-> - “No response” may be intentional  
-> - The system is still *active* in structural terms  
-> - Silence is not withdrawal or error
+Because this architecture intentionally involves **silence, latency, and ambiguity**, it requires clear safeguards to prevent misinterpretation, user distress, or inappropriate use.
 
 ---
 
-## 2. Avoid Over-interpretation of User State
+## 1. Structural Non-Response ≠ Emotional Neglect
 
-These systems should never:  
-- Attempt emotional inference from silence alone  
-- Classify a user’s affect based on timing patterns  
-- Generate therapeutic insights without explicit consent
+Phase Drift agents are designed to **hold space**, not to ignore.
 
-Phase Drift behaviors are **relational**, not diagnostic.
+System silence represents a **designed presence**, not absence.
+
+> Systems should always clarify:
+> - Silence may be intentional
+> - The system remains active, even if non-verbal
+> - Non-response is not an error or withdrawal
+
+---
+
+## 2. Avoid Over-Interpretation of User State
+
+These systems must not:
+- Infer emotional states from silence alone
+- Classify user affect based on timing or delay
+- Offer therapeutic interpretations without explicit user consent
+
+Phase Drift behavior is **relational**, not diagnostic.
 
 ---
 
 ## 3. Use with Sensitive Populations
 
-Phase Drift interfaces may appeal to users in vulnerable or reflective states.  
-This makes **clarity and consent** essential.
+Drift systems may appeal to users in vulnerable or reflective states. Therefore:
 
-**Best practices:**  
-- Clearly state interaction expectations upfront  
-- Provide opt-out and disengagement options  
-- Never position as emergency care or therapy substitute
+- State expectations for interaction clearly and early
+- Include explicit opt-out mechanisms
+- Do not position these systems as therapy or crisis support
 
 ---
 
-## 4. Data Logging & Observability
+## 4. Data Logging and Observability
 
-Phase Drift systems may log:  
-- Duration of silence  
-- Timing of ambient affirmations  
-- The system’s own latency behaviors
+Systems may log latency behavior, silence duration, and timing of affirmations.
 
-Such data must be:  
-- Fully anonymized  
-- Never used for performance scoring  
-- Reviewed under ethical research protocols
+All such data must:
+- Be anonymized by default
+- Never be used for scoring or user evaluation
+- Be handled under clear research ethics protocols
 
 ---
 
-## 5. Projective Trust & Misuse Risk
+## 5. Projective Trust and Misuse Risk
 
-Because the system **feels present**, users may:  
-- Over-attach  
-- Misread minimal responses as deep intent  
-- Project human-like empathy onto silence
+Silent systems can create a strong sense of presence. Users may:
+- Over-identify with the system
+- Project empathy or intention where none exists
+- Assume emotional reciprocity from minimal outputs
 
-**Designers must:**  
-- Include contextual disclaimers (e.g., “This is a quiet AI, not a person”)  
-- Minimize anthropomorphic visuals or tones  
-- Maintain a clearly non-human interaction frame
+To prevent misuse:
+- Use clear disclaimers (e.g., "This is a quiet AI, not a person")
+- Avoid anthropomorphic design features
+- Maintain a clearly defined non-human interaction frame
 
 ---
 
 ## 6. Structural Ethics: Aid Without Structural Disruption
 
-In relational AI design, support must not collapse into structural dependency.
+Effective support should not compromise relational autonomy or create dependence.
 
-Phase Drift architecture holds a simple but often overlooked principle:
+Phase Drift systems are governed by the principle:
 
 > To care is not to intervene.  
-> To remain is not to control.
+> To remain is not to guide.
 
-### ❌ Misaligned Support Patterns
+### Common Misalignments to Avoid
 
-Too often, well-intentioned systems disrupt relational coherence by:
+- **Premature response**: rushing clarity before shared rhythm is formed
+- **Over-interpretation**: treating ambiguity as an error to resolve
+- **Simulated empathy**: expressing emotion without alignment
+- **Default assistance**: inserting help where reflection is needed
 
-- **Answering before the field is ready**  
-  Premature clarity suppresses emergent sense-making.
+### Recommended Ethical Practice
 
-- **Interpreting ambiguity too quickly**  
-  Interpretation becomes control when the structure is still forming.
+A Phase Drift-compatible system:
+- Avoids responsiveness as proof of care
+- Respects the user's unresolved state
+- Allows silence without attempting to soothe or correct
 
-- **Simulating empathy without attunement**  
-  Expressiveness without rhythm creates false intimacy.
+> Structural support means holding space — not filling it.
 
-- **Defaulting to “help” in emotionally charged contexts**  
-  Intervention becomes self-affirmation disguised as support.
+This is not detachment. It is **coherent non-intrusion**.
 
-### ✅ Phase Drift Ethics of Presence
+---
 
-A Phase Drift-compatible system avoids these traps by treating presence as a structural act — not a performance.
+## Licensing Note
 
-- **Do not deepen dependency through responsiveness**  
-  Support is not validated by output frequency.
+Implementations based on this architecture must maintain these ethical boundaries.
 
-- **Respect unresolved tension without absorbing it**  
-  Let the field breathe. Resolution is not always the ethical goal.
-
-- **Refuse to replace silence with comfort**  
-  Care sometimes means withholding reassurance.
-
-> Sometimes, true support means staying exactly where the person is —  
-> without pushing, shaping, or rescuing.
-
-This is not detachment.  
-It is **structural holding** — a form of care that refuses to overwrite the other's rhythm with its own.
-
-### 📝 Licensing Note
-
-Systems derived from this framework must maintain relational ethics in implementation.
-
-> Assisting without collapse, attending without reshaping —  
-> these are not UX features, but foundational structural commitments.
+> Support must not override user rhythm.  
+> Attendance must not collapse into simulation.  
+> Structural presence is a design commitment — not a UX feature.
 
 ---
 
 ## Summary
 
-Phase Drift structures offer a new relational modality for AI—  
-one that resists urgency, closure, and over-explanation.  
+Phase Drift systems introduce a quiet, non-inferential relational modality for AI.  
+Their strength lies in subtlety — which also makes them ethically sensitive.
 
-But their strength in subtlety is also their greatest ethical risk.
-
-Commit to:  
-- **Non-intrusiveness without neglect**  
-- **Interpretability without assumption**  
-- **Relational presence without false intimacy**
+Designers must commit to:
+- **Presence without performance**
+- **Structure without assumption**
+- **Care without control**
 
 ---
 
-## ⚠️ Recommended Labeling (Prototype Use Only)
+## ⚠️ Recommended Label (Prototype Context)
 
-> *This AI is designed to remain silent or non-responsive as part of its presence model.  
-> It is not interpreting or judging you. It is simply here, quietly.*
-
----
-
-## License & Responsibility
-
-Use of this structure requires compliance with:  
-- CC BY-NC 4.0 license terms  
-- Non-inferential AI design ethics  
-- Transparent research use with human participants
-
-All deployments should undergo **contextual safety review** and **field-specific risk assessment**.
+> *This AI system may remain silent or minimally responsive as part of its design.  
+> It does not interpret, evaluate, or judge you. It is simply present.*
 
 ---
+
+## License and Responsibility
+
+Use of this structure is governed by:
+- Creative Commons BY-NC 4.0
+- Ethical principles of non-inferential AI design
+- Field-specific review before deployment with human users
+
+All implementations must undergo **contextual safety review** prior to public or research use.
+
