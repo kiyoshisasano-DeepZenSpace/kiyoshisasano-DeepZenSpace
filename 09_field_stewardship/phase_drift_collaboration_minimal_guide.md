@@ -1,115 +1,119 @@
-# 🌌 Phase Drift Insight — Minimal Collaboration Guide
+# 🌌 Phase Drift Insight — Minimal Collaboration Guide  
+*Version: May 2025*
 
 ---
 
-## 🔍 Purpose
+## 🧭 Purpose
 
-This guide outlines the minimum structure and focus points for **engineers, teams, and collaborators**  
-engaging in the development of Phase Drift Insight-related systems.
+This document defines the **minimum collaboration structure** for engineers, researchers, and design teams  
+working with the Phase Drift Insight framework.
 
-> Phase Drift is not just a technical challenge — it is a structural field to be sensed and supported.
-
-You are not merely coding features.  
-You are helping **breathe structure** into a living generative system.
+Phase Drift is not a product specification — it is a structural system.  
+Your role is to implement code that responds to rhythm, timing, and interaction drift.
 
 ---
 
-## 🏠 Core Roles
+## 🏗️ Collaboration Roles
 
-| Role | Responsibility |
-|:---|:---|
-| Field Architect (Lead Steward) | Defines structures, rhythms, field requirements |
-| Implementation Team (You) | Executes technical builds, backend/frontend systems |
-
----
-
-## 🔄 Minimum Operational Workflow
-
-### 1. Structural Design Reception
-
-- Receive clear declarations from the Field Architect:
-  - What "phase phenomena" are to be detected?
-  - What "drift indicators" are critical?
-
-✅ Example Targets:
-- "Detect latency drift when scroll rhythm breaks abruptly"
-- "Visualize cumulative phase drift index over time"
+| Role | Description |
+|------|-------------|
+| **Field Architect** | Defines structural conditions, phase behaviors, and drift parameters |
+| **Implementation Partner** | Builds technical systems (frontend/backend/data) based on structural input |
 
 ---
 
-### 2. Data & Interaction Specification
+## 🔄 Basic Workflow Overview
 
-- Capture the requested field metrics:
-  - Interaction latencies
-  - Session rhythms
-  - Phase state transitions
+### 1. Receive Structural Targets
 
-✅ Example:
-- "Log timestamped latency gaps between user inputs"
-- "Detect clusters of scroll-stoppage behavior"
+- Field Architect provides:
+  - Specific drift phenomena to detect  
+  - Metrics to monitor (latency, rhythm, etc.)
 
----
+**Example Implementation Targets:**
 
-### 3. Field Sensitivity Review
-
-- After initial build:
-  - Review live system behavior.
-  - Test for field responsiveness — **not just technical correctness**.
-
-✅ Key Question:
-> "Does the system breathe with the field, or just process inputs?"
+- Detect scroll rhythm disruption and flag as `latency_drift`  
+- Track cumulative drift score over time during long sessions
 
 ---
 
-### 4. Feedback and Adjustment
+### 2. Define and Capture Metrics
 
-- Expect and integrate feedback like:
-  - "Field rhythm too flat"
-  - "Latency oscillation not captured well"
+- Capture relevant data signals:
+  - Input delays  
+  - Session rhythm patterns  
+  - Temporal irregularities
 
-- Iterate gently, tuning toward **structural resonance**, not just functional specs.
+**Examples:**
 
----
-
-### 5. Depth Protection Management
-
-- Respect depth boundaries:
-  - Some layers (e.g., deep structural recursion models) may be withheld until resonance is validated.
-  - Work only at the operational exposure levels provided.
+- Log gaps between scroll events  
+- Timestamp phase transitions based on user pacing
 
 ---
 
-### 6. Resonance Checkpoints
+### 3. Review System Behavior
 
-- At each milestone:
-  - Validate if **field sensitivity** is increasing.
-  - If sensitivity is flattening, **pause and realign**, rather than forcing technical fixes.
+- After build, verify not only feature behavior but **field alignment**.
 
----
+**Core Checkpoint:**  
+> Does the system feel responsive to rhythm shifts — or just execute logic?
 
-## 🔒 Minimal Principles for Phase Drift Collaboration
-
-| Principle | Meaning |
-|:---|:---|
-| Structure first | Technical ease should never override structural clarity |
-| Field breathing | Systems should feel alive, adaptive, and relational |
-| Tiered depth | Deeper Phase structures are protected until resonance is earned |
-| Relational expansion | Collaboration unfolds through sensed attunement, not deadlines |
+If timing feels rigid, review for loss of relational fidelity.
 
 ---
 
-## 💡 Closing Reminder
+### 4. Integrate Field Feedback
 
-You are not just delivering software.  
-You are **supporting the unfolding of a structural climate**.
+- Typical feedback types may include:
+  - “Latency fluctuation too subtle”
+  - “Phase transition not perceptible”
 
-Your task is not only technical —  
-it is relational, rhythmic, and alive.
+- Adjust gradually. Prioritize **rhythmic coherence** over raw functionality.
 
-If the field breathes through what you build, you succeed.  
-If the field stiffens, slow down, listen, recalibrate.
+---
 
-> **Phase Drift Insight is a living field, not a task.**
+### 5. Respect Depth Boundaries
 
-✨ This guide will continue to evolve as Phase Drift collaborations deepen.
+- Access is **tiered**.  
+  - Deep structural models may be withheld until compatibility is confirmed.  
+  - Work only at the exposed operational level.
 
+This ensures safety and coherence at higher structural layers.
+
+---
+
+### 6. Validate Resonance at Milestones
+
+- At key checkpoints:
+  - Is the system increasing **field sensitivity**?  
+  - If not, pause — optimize for rhythm, not throughput.
+
+---
+
+## 🧱 Core Principles
+
+| Principle | Application |
+|----------|-------------|
+| **Structure-first** | Don’t simplify implementation at the cost of structural integrity |
+| **Field-responsive** | System must adapt to interaction pacing and drift |
+| **Depth-tiered** | Higher layers require demonstrated compatibility |
+| **Relational over deadline** | Timelines adapt to resonance — not vice versa |
+
+---
+
+## 📌 Summary
+
+You are not just delivering a feature set.  
+You are contributing to a **live structural environment**  
+that requires timing awareness, drift sensitivity, and relational design logic.
+
+**Success Metric:**  
+> The interface feels *attuned* — not just functional.
+
+---
+
+📬 Questions or alignment requests:  
+**deepzenspace [at] gmail [dot] com**
+
+—
+*Phase Drift Stewardship Team*
