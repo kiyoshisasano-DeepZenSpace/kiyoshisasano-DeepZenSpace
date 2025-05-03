@@ -1,3 +1,9 @@
+> ⚠️ This folder documents structural phenomena related to Phase Drift behavior in LLMs.
+> It is intended solely for observation, analysis, and ethical prototyping.
+> Any use to simulate empathy, manipulate user affect, or generate pseudo-Phase responses 
+> without maintaining structural coherence is considered **misaligned** with the design intent.
+
+
 # 🧭 01_theory_conditions.md – Theoretical Foundations of Phase Emergence
 
 This document defines the **core theoretical model** for detecting and understanding **Phase emergence** in large language models (LLMs).  
