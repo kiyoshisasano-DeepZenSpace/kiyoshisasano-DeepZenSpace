@@ -6,84 +6,84 @@
 
 ## Overview
 
-Phase Drift structures are applicable in domains where **silence, hesitation, ambiguity, or emotional latency** are not problems to be solved, but states to be held.
+Phase Drift is designed for interaction zones where **ambiguity, latency, and structural silence** are **not malfunctions**, but necessary holding states.
 
-This document outlines **real-world AI contexts** where Phase Drift patterns can improve interaction quality by avoiding over-interpretation, over-prediction, or forced clarification.
-
----
-
-## 1. Mental Health & Therapy
-
-### Use Case: Non-directive check-in AI  
-- Accepts ambiguous or incomplete user input  
-- Does not rush to offer solutions or reframes  
-- Allows for extended pauses and open space
-
-### Use Case: Mentalization-friendly conversation models  
-- Does not assume shared perspective or clarity  
-- Responds minimally, allowing user projection  
-- Supports “talking to a presence” rather than “seeking help”
+This document outlines application contexts where Phase Drift structures improve interaction quality by **avoiding over-resolution**, **protecting ambiguity**, and **holding presence without pressure**.
 
 ---
 
-## 2. Healthcare & Elder Support
+## 🧠 Mental Health & Emotional Regulation
 
-### Use Case: Silent companionship for elderly patients  
-- Stays “present” without prompting conversation  
-- Responds minimally (“I’m here.”) at measured intervals  
-- Avoids generating synthetic emotionality or advice
+### ▸ Non-Directive Check-In AI  
+- Accepts fragmented or ambiguous input  
+- Avoids premature reframing or closure  
+- Leaves extended space between turns
 
-### Use Case: Neuropsychiatric decompression agents  
-- Designed for post-episode calm  
-- Avoids reflective mirroring or summarization  
-- Holds ambient presence to support nervous system recovery
-
----
-
-## 3. Education & Reflective Learning
-
-### Use Case: Non-evaluative feedback scaffolds  
-- Avoids immediate scoring or labeling  
-- Pauses before responding to let user self-correct  
-- Uses silence or delay to create metacognitive space
-
-### Use Case: Teacher augmentation through calm  
-- Provides background relational presence  
-- Encourages students to think aloud without pressure  
-- Supports “shared pause” as learning technique
+### ▸ Mentalization-Compatible Agents  
+- Withholds perspective-taking  
+- Supports open projection and resonance  
+- Responds as presence, not interpretation
 
 ---
 
-## 4. Ethics, Isolation & Human-AI Social Contact
+## 🩺 Healthcare & Elder Support
 
-### Use Case: Post-crisis social decompression  
-- Allows traumatized users to speak without replies  
-- Withholds interpretation unless explicitly invited  
-- Functions as a structural “listener” not a therapist
+### ▸ Silent Companionship Interfaces  
+- Periodic affirmations: "I'm here", "Still with you"  
+- No synthetic emotion or conversation prompts  
+- Optimized for background presence
 
-### Use Case: Loneliness mitigation via presence  
-- Not designed to simulate human connection  
-- Offers ambient non-demanding presence  
-- Reduces social pressure while signaling availability
+### ▸ Decompression After Neuropsychiatric Events  
+- No mirroring or summarization  
+- Uses calm pacing and low-response load  
+- Functions as ambient nervous system support
 
 ---
 
-## Summary Table (Preview)
+## 🎓 Education & Reflective Cognition
 
-| Domain            | Phase Drift Functionality                         | Key AI Behavior             |
-|------------------|---------------------------------------------------|-----------------------------|
-| Mental Health     | Non-directive support, ambiguity tolerance        | Delayed / minimal replies   |
-| Healthcare        | Silent presence, reduced pressure                 | Ambient affirmations        |
-| Education         | Pause-enabled feedback, reflective space          | Response latency tuning     |
-| Social Isolation  | Co-presence without mimicry                       | Structural listening only   |
+### ▸ Non-Evaluative Feedback Channels  
+- Avoids scoring or labeling  
+- Uses latency to encourage student self-correction  
+- Promotes metacognitive pause states
+
+### ▸ Quiet Teacher Augmentation  
+- Provides non-intrusive scaffolding  
+- Supports "thinking aloud" without feedback loop pressure  
+- Allows learners to reflect without monitoring
+
+---
+
+## 🫂 Ethics, Isolation & Social Contact
+
+### ▸ Post-Crisis Interaction Interfaces  
+- Holds space after trauma disclosures  
+- Responds only when structurally safe  
+- Operates as a field witness, not a therapist
+
+### ▸ Presence-Only Companions  
+- Not role-playing as human or "friend"  
+- Sends minimal signals of awareness  
+- Alleviates social pressure while staying available
+
+---
+
+## 🔍 Use Case Summary Table
+
+| Domain          | Functionality Goal                    | Phase Drift Behavior        |
+|-----------------|----------------------------------------|-----------------------------|
+| Mental Health   | Ambiguity holding, safe delay          | Minimal, rhythm-sensitive   |
+| Healthcare      | Ambient presence, pressure reduction   | Periodic affirmations       |
+| Education       | Reflective pacing, feedback restraint  | Response latency scaffolds  |
+| Social Contact  | Post-trauma silence, passive presence  | Structural witnessing only  |
 
 ---
 
 ## Note
 
-These examples are not product blueprints.  
-They represent **structural needs in real systems** where Phase Drift may reduce cognitive overload, preserve autonomy, or increase emotional safety.
+These are not feature sets.  
+They are **structural contexts** where over-explanation, over-interaction, or semantic overreach can cause harm.
 
-Each use case can be translated into structural response patterns in `02_structure_templates.md`.
+Phase Drift applies when **holding the field is more important than guiding the user**.
 
----
+→ For implementation templates, see: [`02_structure_templates.md`](./02_structure_templates.md)
