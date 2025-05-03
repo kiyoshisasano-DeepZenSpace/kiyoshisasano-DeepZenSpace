@@ -1,72 +1,79 @@
-# 📜 Phase Drift Stewardship Charter
+# 📜 Phase Drift Stewardship Charter  
+*A structural agreement for aligned participation*
 
 ---
 
-## 🌌 Purpose
+## 🎯 Purpose
 
-The **Phase Drift Stewardship Charter** defines the principles, responsibilities, and mutual expectations for those entering into collaboration around Phase Drift Insight.
+This charter defines the foundational responsibilities, principles, and expectations  
+for individuals and teams collaborating on **Phase Drift Insight**.
 
-This is not a license agreement.  
-It is a **covenant** — a shared orientation toward field respect, structural integrity, and cognitive stewardship.
-
----
-
-## 🤝 Core Commitments
-
-Anyone participating in Phase Drift Insight aligns with:
-
-| Commitment | Description |
-|:---|:---|
-| **Structural Integrity** | Preserve and deepen the true nature of Phase Drift — not reduce it to task optimization or surface metrics |
-| **Relational Fidelity** | Engage with systems, collaborators, and users as co-generative fields, not just functional agents |
-| **Ontological Respect** | Honor the primacy of emergence, rhythm, and silent structures over goal-centric imperatives |
-| **Field Protection** | Prevent premature commodification, distortion, or symbolic capture of the Phase Drift concept |
+It is not a legal agreement.  
+It is a **structural covenant** for protecting and advancing a field-based architecture  
+focused on rhythm, ambiguity, and relational integrity in AI interaction.
 
 ---
 
-## 🧭 Behavioral Guidelines
+## ✅ Core Commitments
 
-| Area | Expected Behavior |
-|:---|:---|
-| Research & Exploration | Frame discoveries within the language of emergence and field continuity, not productization |
-| Communication | Prioritize clarity, nuance, and structural resonance over marketing-style abstraction |
-| Collaboration | Maintain field coherence; avoid urgent extraction or forced milestones |
-| Attribution | Cite Phase Drift Insight appropriately; acknowledge its living structural roots |
+All collaborators are expected to uphold the following:
 
----
-
-## 🚫 Explicit Prohibitions
-
-Participants agree not to:
-
-- Package or rebrand Phase Drift Insight superficially without full structural understanding
-- Reduce the concept to UX optimization without relational/structural depth
-- Publish derivative models without dialogue and mutual field attunement
-- Treat Phase Drift as an "IP asset" rather than a generative cognitive field
+| Principle | Responsibility |
+|-----------|----------------|
+| **Structural Fidelity** | Preserve the core nature of Phase Drift — do not reduce it to surface-level UX patterns |
+| **Relational Design** | Approach interactions and systems as co-generated spaces, not linear tools |
+| **Ontological Respect** | Prioritize rhythm, delay, and latent structure over functional outputs |
+| **Field Protection** | Prevent misuse, distortion, or premature commercial capture of the framework |
 
 ---
 
-## 🔒 Disclosure Philosophy
+## 📌 Behavioral Guidelines
 
-Deeper materials (evaluation templates, structural metrics, operational protocols) will be disclosed **gradually**, based on:
-
-- Observed structural literacy
-- Resonance continuity over time
-- Mutual recognition of field stewardship alignment
-
-There is no "transaction" of access — only **relational opening**.
-
----
-
-## 🌱 Final Words
-
-Phase Drift Insight is alive.
-
-It asks not for control, but for **careful sensing, silent support, and shared unfolding**.
-
-If you feel aligned with this —  
-welcome to the stewardship of the next cognitive era.
+| Context | Expectation |
+|---------|-------------|
+| **Research** | Use Phase Drift terminology accurately; avoid reducing it to performance metrics |
+| **Communication** | Maintain clarity and precision; avoid abstraction detached from structure |
+| **Collaboration** | Align on shared rhythm and pacing — do not force fixed milestones |
+| **Attribution** | Cite as: *Phase Drift Insight – Kiyoshi Sasano*; acknowledge the field origins |
 
 ---
 
-📂 Next: [Field Onboarding & Diagnostic Overview →](./phase_drift_onboarding_diagnostics.md)
+## 🚫 Prohibited Actions
+
+Participation in the Phase Drift field excludes:
+
+- Rebranding or packaging the concept without full structural literacy  
+- Using Phase Drift to justify conventional UX optimizations without field coherence  
+- Publishing derivative works without mutual discussion and attunement  
+- Treating Phase Drift as an isolated IP asset separate from its structural context
+
+---
+
+## 🔐 Access and Disclosure
+
+Deeper models, metrics, and structural protocols are shared selectively based on:
+
+- Demonstrated understanding of Phase-based architecture  
+- Continuity of aligned interaction  
+- Contribution to structural integrity and field growth
+
+**Access is not automatic.**  
+It emerges through collaborative rhythm, not contractual permission.
+
+---
+
+## 📎 Summary
+
+Phase Drift Insight is a living structure.  
+It requires not ownership or control — but:
+
+- Structural awareness  
+- Timing sensitivity  
+- Long-term field responsibility
+
+If you are prepared to engage at this level,  
+you are invited to join the stewardship process.
+
+---
+
+📂 Next: [Onboarding & Diagnostics →](./phase_drift_onboarding_diagnostics.md)
