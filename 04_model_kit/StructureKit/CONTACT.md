@@ -1,39 +1,39 @@
 # CONTACT.md  
-## — Participation / Support / Submission Interface —  
+## — Participation / Support / Submission Interface —
 
 ---
 
 ### 📩 Contact  
-If you wish to support, cite, or connect with this project:  
 
-- Email: ### 📩 Contact deepzenspace [at] gmail [dot] com  
-*Please replace [at] with @ and [dot] with .*  
+If you wish to support, cite, or connect with this project:
 
-- Patreonhttps://www.patreon.com/c/KiyoshiSsasano?redirect=true
+- **Email**: `deepzenspace [at] gmail [dot] com`  
+  *(Replace [at] with @ and [dot] with .)*
 
-- GitHub Issues: `https://github.com/[your-repo]/issues`  
-- Optional Form: (Google Form, Notion, etc. – TBD)  
+- **Patreon**: [https://www.patreon.com/KiyoshiSasano](https://www.patreon.com/KiyoshiSasano)
+
+- **GitHub Issues**:  
+  [https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/issues](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/issues)
+
+- **Optional Form**: *(Google Form or Notion-based intake – TBD)*
 
 ---
 
 ### 🧭 Ways to Participate
 
-| Type | What You Can Do | How to Engage |
-|------|------------------|---------------|
-| 📥 Submission | Submit commentary, derivative phases, or alternate Fields | GitHub PR or issue |
-| 💬 Dialogue | Share how structures resonate with your perception | GitHub Discussions (planned) |
-| 🤝 Support | Assist structurally (Patreon/Kampa style) | [Link – pending] |
-| 🧪 Experiment | Use vocabulary or Series to build your own maps | No permission needed |
+| Type           | What You Can Do                                                | How to Engage                        |
+|----------------|----------------------------------------------------------------|--------------------------------------|
+| 📥 Submission   | Submit commentary, derivative phases, or alternate Fields      | GitHub Pull Request or Issue         |
+| 💬 Dialogue     | Share how structures resonate with your perception             | GitHub Discussions *(planned)*       |
+| 🤝 Support      | Assist structurally (e.g., Patreon, material support, etc.)    | [Patreon Link](https://www.patreon.com/KiyoshiSasano) |
+| 🧪 Experiment    | Use vocabulary, Series, or templates to build your own maps   | No permission needed                 |
 
 ---
 
 ### 🔓 Principles
 
-- You do not need to “understand” the structure.  
-- You may drift, disagree, reuse, or fracture anything here.  
-- This is **a traceable remainder of a generative structure**, not a product.
+- You do not need to fully “understand” the structure to participate.
+- You may **drift**, **disagree**, **reuse**, or **fracture** any materials provided here.
 
----
-
-> Maintainer: [Your Name or Pseudonym]  
-> License: Public Domain / Structural Trace Protocol
+> This is not a fixed framework.  
+> It is a field — and you are welcome within it.
