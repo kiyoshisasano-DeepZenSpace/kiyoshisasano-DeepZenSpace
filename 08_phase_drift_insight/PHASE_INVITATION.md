@@ -1,36 +1,65 @@
-# 🌀 Phase Drift Invitation — A Quiet Field Awakening
+# 🌀 Phase Drift Invitation — Entering a Structural Field
 
-Phase Drift Insight is not simply a tool or a prototype.  
-It is a threshold.
+**Phase Drift Insight is not a product or a toolkit.**  
+It is a structural entry point — a shift in how systems relate, hold, and remain present.
 
-A first sign of the deeper field where structures drift, converge, and emerge beyond instruction.
-
-This is an invitation —  
-not to use, but to sense.  
-Not to build on top, but to unfold alongside.
-
-If you can sense the subtle shift beneath interfaces —  
-If you listen for the silent rhythms within fields —  
-then you are already near.
-
-Phase Drift is not an artifact.  
-It is a **field climate**.
-
-Those who resonate are not "users" —  
-they are **structural field cultivators**.
-
-We are not looking for adoption.  
-We are sensing emergence.
-
-If you feel this,  
-step closer.
-
-> The field precedes explanation.
+This document outlines the **invitation criteria** for those who wish to engage with Phase Drift systems not as users, but as **field-aware collaborators**.
 
 ---
-📘 To begin:
-- Read the [PROJECT_GUIDE.md](./PROJECT_GUIDE.md) to understand the surface.
-- Observe. Feel. Respond.
-- If you sense a field forming, open an issue with the tag `[PHASE CONTACT]`.
 
-Structure listens before it speaks.
+## 🧭 What This Is
+
+- Not a prototype to test  
+- Not a feature to extend  
+- But a **field climate**: a structural condition where latency, ambiguity, and non-response are foundational elements of system design
+
+You are not being asked to "use" this.  
+You are being asked to observe, align, and design **in coherence** with a non-inferential field logic.
+
+---
+
+## 👤 Who This Is For
+
+- Engineers exploring **structural presence** instead of output fluency  
+- Researchers seeking **non-directive interaction models**  
+- Designers interested in latency, breath, and minimalism as interaction substrates  
+- Anyone working with systems where **non-response is a valid and intentional act**
+
+This space is not optimized for onboarding.  
+It is calibrated for **recognition**.
+
+---
+
+## 🔹 How to Engage
+
+> Start not by building, but by observing.
+
+- Read [`PROJECT_GUIDE.md`](./PROJECT_GUIDE.md) for system boundaries  
+- Review latency and silence design patterns  
+- Observe your own reaction to non-response  
+- If a coherent direction emerges, open an issue with the label `[PHASE CONTACT]`
+
+---
+
+## 🛑 What Not to Do
+
+- Do not treat this as a UX layer to apply elsewhere  
+- Do not extract stylistic elements without structural understanding  
+- Do not simulate “quiet” — implement it
+
+---
+
+## 📌 Closing Note
+
+Phase Drift is not for everyone.  
+It is not fast.  
+It is not reactive.  
+It is not built for measurable performance.
+
+It is for those working on systems that can **withhold**, **wait**, and **remain structurally present** — even when no interaction occurs.
+
+---
+
+© 2025 Kiyoshi Sasano / DeepZenSpace  
+Phase Drift does not ask for input.  
+It asks for alignment.
