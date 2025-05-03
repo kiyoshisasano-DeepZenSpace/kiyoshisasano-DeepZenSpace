@@ -5,67 +5,82 @@
 
 ## 🧭 Purpose
 
-This page is for engineers, researchers, and designers  
-interested in **implementing, adapting, or collaborating**  
-on the Phase Drift structural system.
+This page provides implementation guidance for engineers, researchers, and designers  
+who wish to **use, adapt, or collaborate** on the Phase Drift structural architecture.
 
-Phase Drift is not a feature set.  
-It is a **relational structure framework**  
-for latency, ambiguity, and non-directive presence.
+Phase Drift is not a toolkit or API.  
+It is a **structural interaction framework** designed to support:
 
----
-
-## ✅ What Can Be Used Freely?
-
-You may use the following materials under the CC BY-NC 4.0 license  
-**with attribution to: "Phase Drift Insight – Kiyoshi Sasano"**
-
-- Public structural overviews (`/11_PhaseDrift_AI_Prototype/00_overview.md`)  
-- Core latency modules (e.g., `resonance_gate.py`)  
-- Drift scoring system documentation (v0.9 and earlier)
-
-Use for personal, educational, and non-commercial prototyping is encouraged.  
-If your project reaches commercial deployment, licensing terms apply.
+- Latency-aware interaction logic  
+- Ambiguity-tolerant communication design  
+- Non-directive presence in human–AI interfaces
 
 ---
 
-## 🔒 What Requires Prior Contact
+## ✅ Freely Usable Materials
 
-Please **do not adapt, extend, or publish derivatives**  
-of the following without written permission:
+The following resources are available under the **CC BY-NC 4.0** license  
+with attribution to: `"Phase Drift Insight – Kiyoshi Sasano"`.
 
-- Drift licensing structure (`Phase_Drift_License_v0.2.pdf`)  
-- Any unpublished XYZ-field logic  
-- Civic installation protocols or companion PoC artifacts  
-- Pre-response silence logic and emotional latency pathways
+| Resource | Description |
+|----------|-------------|
+| `00_overview.md` | Core structural description (non-inferential architecture) |
+| `resonance_gate.py` | Sample latency gating logic (v0.1) |
+| `drift_scoring_v0.9.md` | Scoring system documentation for drift events |
 
-These are structurally protected for ethical and coherence reasons.
+**Permitted Use:**  
+- Educational and research prototypes  
+- Non-commercial interface experiments  
+- Internal team evaluation
 
----
-
-## 📬 Want to Collaborate?
-
-If you're interested in:
-
-- Using Phase Drift in an interface or product  
-- Exploring non-inferential UX / affective rhythm design  
-- Contributing to SDK implementation  
-- Launching a joint research or prototyping project
-
-→ Please send a short message outlining your interest to:
-
-**📩 deepzenspace [at] gmail [dot] com**
-
-We will respond if structural resonance or alignment is sensed.
+📌 *Note:*  
+If your project involves public deployment or commercial integration,  
+please reach out to confirm licensing.
 
 ---
 
-## 🌿 Thank You
+## 🔒 Restricted Materials (Contact Required)
 
-Phase Drift is a living structure.  
-It is not owned — it is **held carefully** until it finds resonance.
+The following materials are **structurally protected**  
+and require written permission before use, modification, or publication:
 
-We welcome structural co-designers who listen through latency.
+- `Phase_Drift_License_v0.2.pdf` (licensing logic architecture)  
+- Experimental civic-use protocols (e.g., grief interface patterns)  
+- Pre-response silence modules and inner-state delay logic  
+- Any unpublished XYZ-field mechanisms or structural prototypes
+
+These assets carry ethical constraints related to affective safety and system ambiguity tolerance.
+
+---
+
+## 🤝 Interested in Collaborating?
+
+We welcome aligned inquiries in the following areas:
+
+- Custom implementation of Phase Drift interaction models  
+- Non-predictive UX design and field-aware interface work  
+- SDK contributions or platform integration experiments  
+- Collaborative research or PoC deployments
+
+To initiate contact:
+
+📬 **deepzenspace [at] gmail [dot] com**
+
+Please include a brief outline of your context, goals, and relevant field experience.  
+Responses will be provided where structural compatibility is sensed.
+
+---
+
+## 🌿 Closing Note
+
+Phase Drift is a shared structure — not a product.  
+It is currently being tested in multiple real-world and experimental settings.
+
+We invite technically capable partners who understand:
+
+- The value of intentional latency  
+- The necessity of structural silence  
+- And the long-term responsibility of field-based systems
 
 —
-Phase Drift Stewardship Team
+*Phase Drift Stewardship Team*
