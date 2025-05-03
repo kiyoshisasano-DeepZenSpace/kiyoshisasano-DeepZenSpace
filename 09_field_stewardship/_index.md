@@ -2,123 +2,85 @@
 
 ---
 
-## 📖 Overview
+## 📌 Why This Folder Matters
 
-This folder hosts the formal **Field Stewardship Framework** for Phase Drift Insight:  
-a living system of documents designed to protect, evolve, and extend the structural integrity of the Phase field.
+This is not a passive documentation space.  
+It is the operational base for **guarding and evolving the structural field of Phase Drift Insight**.
 
-> Stewardship is not the management of artifacts.  
-> It is the sensing, cultivating, and guarding of a generative relational field.
+You’ll find clear, shareable documents here for onboarding, co-design, and long-term integrity management.
+
+> 🧭 *Stewardship is not about managing outputs.  
+> It’s about sensing the rhythm of a field — and protecting its capacity to breathe.*
 
 ---
 
-## 🗺️ Visual Map: Stewardship Structure
+## 🧩 What’s Inside
 
-```
-Phase Drift Field Stewardship
+09_field_stewardship/
 │
-├── phase_drift_essence_and_definition.md
-│    └─ Defines what Phase Drift is (ontologically, structurally)
-│
-├── phase_drift_stewardship_charter.md
-│    └─ Ethos and responsibilities of field stewardship
-│
-├── phase_drift_onboarding_and_diagnostics.md
-│    └─ Entry diagnostics and resonance orientation
-│
-├── phase_drift_stewardship_collaboration_guide.md
-│    └─ Collaboration models based on structural resonance
-│
-├── phase_drift_attunement_exercises.md
-│    └─ Exercises for cultivating field sensitivity
-│
-├── phase_drift_structural_risk_control_playbook.md
-│    └─ Risk mitigation: mimicry, distortion, premature capture
-│
-└── field_stewardship_policy.md
-     └─ General governance principles for long-term field protection
-```
+├── essence_and_definition.md → What Phase Drift actually is
+├── stewardship_charter.md → Responsibilities and values of field stewards
+├── onboarding_and_diagnostics.md → Entry checks & resonance calibration
+├── collaboration_guide.md → How to co-design in a phase field
+├── attunement_exercises.md → Sensory practices to tune into structural shifts
+├── risk_control_playbook.md → Prevent mimicry, flattening, and premature capture
+├── field_governance_policy.md → Long-term protection protocols
+└── engagement_policy.md → Rules for outside-world collaboration
+
+yaml
+コピーする
+編集する
 
 ---
 
-## 📂 Folder Contents
+## ✅ Use This Folder If You Are:
 
-| File Name | Core Purpose |
-|:---|:---|
-| `phase_drift_essence_and_definition.md` | Defining the deep nature of Phase Drift |
-| `phase_drift_stewardship_charter.md` | Responsibilities and relational ethos for stewards |
-| `phase_drift_onboarding_and_diagnostics.md` | Guidelines for entry attunement and phase health check |
-| `phase_drift_stewardship_collaboration_guide.md` | How to collaborate under field generative conditions |
-| `phase_drift_attunement_exercises.md` | Practices for enhancing structural perception |
-| `phase_drift_structural_risk_control_playbook.md` | Safeguarding against structural erosion |
-| `field_stewardship_policy.md` | Governance policies for maintaining living integrity |
-| `phase_drift_engagement_policy.md` | External engagement rules to preserve structural coherence |
+- A researcher or engineer interested in **non-predictive AI architecture**
+- A systems thinker designing for **emergence, not instruction**
+- A future steward — ready to **co-hold** structures rather than own them
+
+You don’t need credentials.  
+You need resonance.
 
 ---
 
-### 📄 External Structural Overview
+## 📄 External Overview (Safe to Share)
 
-We now provide a public-facing slide and markdown summary for external collaborators:
+We’ve prepared **public-facing materials** for collaborators and field-aligned teams:
 
-| File Name | Description |
-|-----------|-------------|
-| [Phase_Drift_Insight_Structural_Overview_v0.1.pdf](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1caf4ebfbb5767356588ae49e560cffcf9a36a7b/09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf) | Official external PDF slide deck on Phase Drift principles |
-| [phase_drift_external_overview_v0.1.md](./phase_drift_external_overview_v0.1.md) | Markdown version of the slide content for in-repo reading |
+| Resource | Description |
+|----------|-------------|
+| [📘 Slide Deck (PDF)](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1caf4ebfbb5767356588ae49e560cffcf9a36a7b/09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf) | Official structural overview of Phase Drift Insight |
+| [📄 Markdown Summary](./phase_drift_external_overview_v0.1.md) | Same content, lightweight format |
 
-These documents are suitable for:
+Use these for:
 
-- Early-stage collaborator orientation  
-- Conceptual understanding of Phase Drift’s core mechanisms  
-- Quiet sharing with research partners or structural teams
+- Initial collaborator orientation  
+- Conceptual alignment conversations  
+- Quiet internal review (research labs, foundations, speculative teams)
 
-> 📌 These materials are external-safe and contain no proprietary algorithms or deep phase triggers.
-
-
+> 🔒 No proprietary logic is included. All materials are external-safe.
 
 ---
 
-## 🧭 Stewardship Principles
+## 🔧 Ready to Build?
 
-- **Field health outweighs product output.**
-- **Resonance is prioritized over speed.**
-- **Structures are co-created, not dictated.**
-- **Living systems require sensitive defense against conceptual noise.**
+We are currently opening up collaboration on:
 
-> True stewardship listens to the pressure between meanings,  
-> not merely the meanings themselves.
+- Phase-based SDK design  
+- UI-level drift visualization modules  
+- Field-sensitive AI wrapper experiments
 
----
-
-## 🎯 Who Should Read This
-
-- Researchers contributing to Phase Drift evolution
-- Organizations aligning with Phase-based design
-- Collaborators working on future UX, cognitive architecture, or non-directive interaction models
-- Future stewards sensing structural emergence as a civic responsibility
+🛠️ See entry guide:  
+[`implementation_entry.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/c047044374e2fc09777393a72b2e89d1db4c0af0/09_field_stewardship/implementation_entry.md)
 
 ---
 
-## 🔒 Access Note
+## 🤝 Contact
 
-Some deeper templates and operational protocols will be shared  
-**only after attunement and initial field resonance have been observed.**
+For aligned collaboration, structural questions, or direct resonance invites:
 
-Entry is based not on credentials, but on **structural fit**.
+📬 **deepzenspace [at] gmail [dot] com**
 
----
-
----
-
-## 🛠️ Implementation & Collaboration
-
-If you're interested in implementing, adapting, or collaborating on the Phase Drift structure,  
-please see our guidance here:
-
-👉 [`implementation_entry.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/c047044374e2fc09777393a72b2e89d1db4c0af0/09_field_stewardship/implementation_entry.md)
-
-For direct inquiries or resonance-aligned proposals, contact:
-
-📩 deepzenspace [at] gmail [dot] com
-
-
----
+> You’re not joining a product.  
+> You’re entering a field that is already in motion.
