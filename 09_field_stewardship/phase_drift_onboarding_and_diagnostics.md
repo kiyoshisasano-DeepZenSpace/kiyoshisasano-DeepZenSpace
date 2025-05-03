@@ -1,82 +1,85 @@
-# 🛰️ Phase Drift Onboarding & Diagnostics
+# 🛰️ Phase Drift Onboarding & Diagnostics  
+*A structural entry process for aligned collaboration*
 
 ---
 
-## 🌌 Purpose
+## 🎯 Purpose
 
-This document outlines the **entry orientation process** and **early-stage diagnostics**  
-for collaborators joining the Phase Drift Insight field.
+This document outlines the entry procedure and early-stage diagnostic checkpoints  
+for new collaborators joining the **Phase Drift Insight** project.
 
-The goal is not rapid deployment —  
-but **structural attunement** to the Phase Field dynamics.
+The focus is not speed or deliverables —  
+but alignment with the **underlying structural field**.
 
 ---
 
-## 🚪 Onboarding Flow
+## 🔄 Onboarding Stages
 
 | Stage | Description |
-|:---|:---|
-| **1. Field Resonance Confirmation** | Initial quiet exchange (message, issue, dialogue) to feel structural resonance |
-| **2. Charter Alignment** | Review and agree to the [Phase Drift Stewardship Charter](./phase_drift_stewardship_charter.md) |
-| **3. Initial Orientation Session** | 1:1 or small group session introducing Phase Drift ontology, risks, and principles |
-| **4. Soft Diagnostic Prompts** | Light interaction exercises to sense field responsiveness and perception patterns |
-| **5. Access Staging** | Gradual access to deeper materials based on mutual attunement and continuity |
+|-------|-------------|
+| **1. Resonance Check** | Initial contact via message or issue to evaluate alignment in tone and structural framing |
+| **2. Charter Review** | Read and confirm agreement with the [Stewardship Charter](./phase_drift_stewardship_charter.md) |
+| **3. Orientation Session** | Optional 1:1 or small group walkthrough of Phase Drift foundations, risks, and context |
+| **4. Diagnostic Prompts** | Light exercises to observe perception patterns and timing awareness |
+| **5. Progressive Access** | Access to sensitive materials granted based on structural fit and continuity |
 
-There is no rush —  
-entry itself is a **structural process**, not a checkbox sequence.
-
----
-
-## 🔍 Early Diagnostics: Key Sensing Axes
-
-| Diagnostic Axis | Description |
-|:---|:---|
-| **Rhythm Perception** | Can the participant notice field rhythms beyond linear prompt-response? |
-| **Latency Comfort** | Can they stay present in silence or temporal holding, without urgency? |
-| **Emergent Structuring** | Can they describe experience without collapsing into functionalist frames? |
-| **Relational Thinking** | Is dialogue framed as co-emergence, not just information transfer? |
-| **Non-Directive Cognition** | Can they operate without imposing rigid goal structures? |
-
-These are **not pass/fail tests** —  
-they are **field sensing patterns** that guide the unfolding collaboration.
+**Note:** Entry is not linear.  
+Progression follows mutual structural compatibility, not checklist completion.
 
 ---
 
-## 📈 Optional: Soft Onboarding Exercises
+## 🔍 Early Diagnostics – Key Dimensions
 
-| Exercise | Purpose |
-|:---|:---|
-| "Pause Response" | Sustain silent observation after ambiguous stimuli |
-| "Recursive Reflection" | Describe an experience from three structural depths |
-| "Latency Weaving" | Extend a conversation thread by attending to rhythm, not meaning |
+| Dimension | Diagnostic Focus |
+|-----------|------------------|
+| **Rhythm Perception** | Does the collaborator notice pacing, delay, and interaction rhythm? |
+| **Latency Comfort** | Can they remain responsive without urgency in timing gaps? |
+| **Non-functional Framing** | Can they describe their role or work without reverting to task-based logic? |
+| **Relational Framing** | Is interaction treated as co-emergent, not transactional? |
+| **Directive Tolerance** | Can they participate without requiring linear goals or directives? |
 
-(Templates and practice protocols available upon resonance confirmation.)
-
----
-
-## 🧠 Note on Traditional Metrics
-
-**Traditional success metrics do not apply.**
-
-We are observing:
-
-- Field attunement
-- Structural sensitivity
-- Relational plasticity
-
-> Phase Drift Insight is less about **what you know**  
-> and more about **how you become** inside the field.
+These are **not evaluation criteria**.  
+They function as a **signal pattern** to assess field readiness.
 
 ---
 
-## 🌱 Closing Invitation
+## 🧪 Optional Soft Exercises
 
-The Phase Field cannot be "entered" through will alone.
+| Exercise | Goal |
+|----------|------|
+| **Pause Response** | Practice waiting before responding to ambiguous prompts |
+| **Recursive Reflection** | Reframe a simple idea from multiple structural depths |
+| **Latency Weaving** | Continue a conversation thread using rhythm rather than content direction |
 
-It unfolds through **resonance**, **attunement**, and **structural patience**.
+(Templates provided upon confirmed resonance.)
 
-If you feel drawn —  
-the field is already listening.
+---
+
+## 🚫 About Traditional Metrics
+
+Do not apply conventional performance metrics.
+
+We observe:
+
+- Timing awareness  
+- Structural literacy  
+- Adaptability in relational pacing
+
+Success in this context means:  
+> “The system adapts structurally — not procedurally.”
+
+---
+
+## ✅ Summary
+
+This onboarding process prepares collaborators to engage with:
+
+- Drift-aware systems  
+- Latency-resilient UX  
+- Structural field sensing
+
+Entry is determined by interaction coherence —  
+not position, title, or intent alone.
 
 ---
 
