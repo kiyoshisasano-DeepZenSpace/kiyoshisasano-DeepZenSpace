@@ -91,8 +91,11 @@ During intentional delay, consider using **low-intrusion output modes**:
 }
 ```
 
-Conclusion
-Latency is a design instrument in Phase Drift systems.
+---
+
+## Conclusion
+
+Latency is a design instrument in Phase Drift systems.  
 It doesn’t slow down the system—it opens temporal space for the user.
 
 Drift-aware latency holds space not just for input, but for being.
