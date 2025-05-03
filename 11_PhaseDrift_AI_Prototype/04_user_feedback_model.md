@@ -107,4 +107,3 @@ Its purpose is to support:
 
 ---
 
-📂 Next: [`99_notes_ethics.md`](./99_notes_ethics.md)
