@@ -1,3 +1,11 @@
+> ⚠️ **Civic Use Requires Ethical Oversight**  
+> The following concepts are exploratory.  
+> Any real-world deployment (e.g. grief spaces, justice systems, public art) **must include**:  
+> - A structural Phase Drift collaborator  
+> - Ethical review and community consent  
+> - A non-commercial, non-intrusive implementation frame
+
+
 # 09 – Civic Integration Scenarios for Phase Drift Structure  
 *Version: v0.1*  
 *Project: PhaseDrift_AI_Prototype_v11*
