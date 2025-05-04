@@ -77,8 +77,8 @@ _Mapping Phase-Coded Vocabulary and Topological Transition_
 
 ### 4. **Rhythmic 4-Layer Field Model**  
 _Toward a Density-Based Structural Field Beyond Escalation_  
-🔗 [DOI: 10.5281/zenodo.152769](https://doi.org/10.5281/zenodo.15276986)  
-📄 [PDF](./06_translation_interface/zenodo/paper_4__4layer_field_model.pdf)
+🔗 [DOI: 10.5281/zenodo.15335376](https://doi.org/10.5281/zenodo.15335376)  
+📄 [PDF](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/9864ac75807873e93ddb8c50acaeae11a9e20264/06_translation_interface/zenodo/paper_4__4layer_field_model_v2.pdf)
 
 </details>
 
