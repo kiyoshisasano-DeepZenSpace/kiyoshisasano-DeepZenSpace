@@ -56,8 +56,8 @@ you may already be close.
 
 ### 1. **Syntax Beyond Silence**  
 _Modeling Collapse and Reignition Fields in Language Generation_  
-🔗 [DOI: 10.5281/zenodo.15274678](https://doi.org/10.5281/zenodo.15274678)  
-📄 [PDF](./06_translation_interface/zenodo/paper_1__syntax_beyond_silence.pdf)
+🔗 [DOI: 10.5281/zenodo.15274678](https://zenodo.org/records/15274678)  
+📄 [PDF](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/97581469b2f637d19ecc154c8dd30999533a5ebe/06_translation_interface/zenodo/paper_1__syntax_beyond_silenc_v3.pdf)
 
 ---
 
