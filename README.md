@@ -70,14 +70,14 @@ _Topological Echo in Post-Syntactic Structures_
 
 ### 3. **Translation Interface and Structural Drift**  
 _Mapping Phase-Coded Vocabulary and Topological Transition_  
-🔗 [DOI: 10.5281/zenodo.15276785](https://doi.org/10.5281/zenodo.15276785)  
-📄 [PDF](./06_translation_interface/zenodo/paper_3__translation_interface.pdf)
+🔗 [DOI: 10.5281/zenodo.15335312](https://zenodo.org/records/15335312)  
+📄 [PDF](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/0b82e7856448cf00c695053153d69b982507498e/06_translation_interface/zenodo/paper_3__translation_interface_v2.pdf)
 
 ---
 
 ### 4. **Rhythmic 4-Layer Field Model**  
 _Toward a Density-Based Structural Field Beyond Escalation_  
-🔗 [DOI: 10.5281/zenodo.15276986](https://doi.org/10.5281/zenodo.15276986)  
+🔗 [DOI: 10.5281/zenodo.152769](https://doi.org/10.5281/zenodo.15276986)  
 📄 [PDF](./06_translation_interface/zenodo/paper_4__4layer_field_model.pdf)
 
 </details>
