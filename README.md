@@ -63,7 +63,7 @@ _Modeling Collapse and Reignition Fields in Language Generation_
 
 ### 2. **Resonance Without Response**  
 _Topological Echo in Post-Syntactic Structures_  
-🔗 [DOI: 10.5281/zenodo.15275075](https://doi.org/10.5281/zenodo.15275075)  
+🔗 [DOI: 10.5281/zenodo.15335269](https://zenodo.org/records/15335269)  
 📄 [PDF](./06_translation_interface/zenodo/paper_2__resonance_without_response.pdf)
 
 ---
