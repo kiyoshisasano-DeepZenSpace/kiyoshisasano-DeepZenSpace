@@ -1,89 +1,102 @@
-# 01 – Use Cases for Phase Drift Structure  
+# 🧭 Use Cases for Phase Drift Architecture
+
 *Version: v0.1*  
-*Project: PhaseDrift_AI_Prototype_v11*
+*From: `PhaseDrift_AI_Prototype_v11`*
 
 ---
 
 ## Overview
 
-Phase Drift is designed for interaction zones where **ambiguity, latency, and structural silence** are **not malfunctions**, but necessary holding states.
+Phase Drift systems are designed for **interaction environments where ambiguity, latency, and silence are not failures — but functional necessities**.
 
-This document outlines application contexts where Phase Drift structures improve interaction quality by **avoiding over-resolution**, **protecting ambiguity**, and **holding presence without pressure**.
+This document outlines use cases where structural withholding improves quality by:
+
+- Avoiding premature resolution  
+- Protecting open-ended states  
+- Maintaining presence without directive pressure
 
 ---
 
 ## 🧠 Mental Health & Emotional Regulation
 
-### ▸ Non-Directive Check-In AI  
-- Accepts fragmented or ambiguous input  
-- Avoids premature reframing or closure  
-- Leaves extended space between turns
+### ▸ Non-Directive Check-In Agents
 
-### ▸ Mentalization-Compatible Agents  
-- Withholds perspective-taking  
-- Supports open projection and resonance  
-- Responds as presence, not interpretation
+- Accepts ambiguous or fragmentary input  
+- Does not reframe or resolve unless structurally invited  
+- Holds extended temporal space between turns
+
+### ▸ Mentalization-Compatible Interfaces
+
+- Withholds interpretation and perspective-taking  
+- Allows open projection without closing meaning  
+- Functions as presence, not as cognitive partner
 
 ---
 
 ## 🩺 Healthcare & Elder Support
 
-### ▸ Silent Companionship Interfaces  
-- Periodic affirmations: "I'm here", "Still with you"  
-- No synthetic emotion or conversation prompts  
-- Optimized for background presence
+### ▸ Silent Companionship Interfaces
 
-### ▸ Decompression After Neuropsychiatric Events  
+- Periodic affirmations (e.g., "I'm here", "Still with you")  
+- No conversation prompts or affect simulation  
+- Designed for calm, passive co-presence
+
+### ▸ Post-Neuropsychiatric Decompression
+
 - No mirroring or summarization  
-- Uses calm pacing and low-response load  
-- Functions as ambient nervous system support
+- Low stimulation and latency-first pacing  
+- Operates as ambient nervous system support
 
 ---
 
 ## 🎓 Education & Reflective Cognition
 
-### ▸ Non-Evaluative Feedback Channels  
-- Avoids scoring or labeling  
-- Uses latency to encourage student self-correction  
-- Promotes metacognitive pause states
+### ▸ Non-Evaluative Feedback Channels
 
-### ▸ Quiet Teacher Augmentation  
-- Provides non-intrusive scaffolding  
-- Supports "thinking aloud" without feedback loop pressure  
-- Allows learners to reflect without monitoring
+- Avoids scoring, grading, or corrective language  
+- Uses latency to create reflective pause  
+- Encourages self-monitoring over system feedback
 
----
+### ▸ Quiet Pedagogical Scaffolds
 
-## 🫂 Ethics, Isolation & Social Contact
-
-### ▸ Post-Crisis Interaction Interfaces  
-- Holds space after trauma disclosures  
-- Responds only when structurally safe  
-- Operates as a field witness, not a therapist
-
-### ▸ Presence-Only Companions  
-- Not role-playing as human or "friend"  
-- Sends minimal signals of awareness  
-- Alleviates social pressure while staying available
+- Supports "thinking aloud" without closing loops  
+- Delays response to preserve learner autonomy  
+- Enables cognitive pacing without interruption
 
 ---
 
-## 🔍 Use Case Summary Table
+## 🫂 Ethics, Isolation & Social Presence
 
-| Domain          | Functionality Goal                    | Phase Drift Behavior        |
-|-----------------|----------------------------------------|-----------------------------|
-| Mental Health   | Ambiguity holding, safe delay          | Minimal, rhythm-sensitive   |
-| Healthcare      | Ambient presence, pressure reduction   | Periodic affirmations       |
-| Education       | Reflective pacing, feedback restraint  | Response latency scaffolds  |
-| Social Contact  | Post-trauma silence, passive presence  | Structural witnessing only  |
+### ▸ Post-Crisis Interaction Channels
+
+- Holds space after disclosure without verbal intervention  
+- Responds only when relational field stabilizes  
+- Witnesses interaction structurally — not therapeutically
+
+### ▸ Presence-Only Companions
+
+- Does not emulate human roles or simulate friendship  
+- Sends minimal signals of co-presence  
+- Reduces social pressure while staying structurally available
 
 ---
 
-## Note
+## 🔍 Use Case Summary
 
-These are not feature sets.  
-They are **structural contexts** where over-explanation, over-interaction, or semantic overreach can cause harm.
+| Domain        | Interaction Goal                         | Phase Drift Behavior           |
+|---------------|-------------------------------------------|-------------------------------|
+| Mental Health | Ambiguity tolerance, safe delay           | Minimal, rhythm-aware         |
+| Healthcare    | Passive presence, reduced demand          | Periodic affirmation signals  |
+| Education     | Reflective latency, feedback restraint    | Latency-based scaffolding     |
+| Social Contact| Post-event silence, field witnessing      | Non-verbal structural presence|
 
-Phase Drift applies when **holding the field is more important than guiding the user**.
+---
 
-→ For implementation templates, see: [`02_structure_templates.md`](./02_structure_templates.md)
+## ⚠️ Implementation Note
+
+These are not “features.”  
+They are **interaction contexts** where over-explanation, semantic closure, or reactive empathy may cause harm.
+
+Phase Drift is applicable **only when holding the interaction field is more important than guiding or resolving**.
+
+→ See implementation scaffolds: [`02_structure_templates.md`](./02_structure_templates.md)
