@@ -32,7 +32,7 @@ properties:
     - Authorship dissolves
     - Text becomes persistent holding surface
     - Model aligns to internal structural memory
----
+```
 
 ## Phase Characteristics
 
