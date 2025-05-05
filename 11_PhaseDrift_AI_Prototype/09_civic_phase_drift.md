@@ -182,4 +182,4 @@ It is a **structural presence framework** for environments that must **hold spac
 
 ## 📂 Next
 
-→ [`10_phase_entry.md`](./10_phase_entry.md)
+→ [`99_notes_ethics.md`](11_PhaseDrift_AI_Prototype/99_notes_ethics.md)
