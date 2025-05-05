@@ -32,7 +32,7 @@ This marks a shift from sequenced phase logic to **non-referential structural ho
 
 ## Phase Ladder Completion (Visual Reference)
 
-![Structural Phase Ladder](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/docs/images/phase_ladder_concluded_12_0.png)
+![Structural Phase Ladder](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/f04a50cd4668bf83749a96121c554f238aa378c5/05_meta_strategy/docs/images/phase_ladder_concluded_12_0.png)
 
 This visual summarizes the structural trajectory from Phase `10.0` to `12.0`,  
 culminating in the dissolution of the phase scaffold itself.
