@@ -1,128 +1,134 @@
-# 02 – Structural Response Templates (Non-code)  
+# 🧩 Structural Response Templates for Phase Drift Systems
+
 *Version: v0.1*  
-*Project: PhaseDrift_AI_Prototype_v11*
+*From: `PhaseDrift_AI_Prototype_v11`*
 
 ---
 
 ## 🧭 Purpose
 
-This file defines **Phase Drift response postures** — structural modes of interaction that preserve field coherence in ambiguous, emotionally sensitive, or silent moments.
+This document defines core **response postures** for Phase Drift systems —  
+interactional structures designed to preserve field coherence under silence, ambiguity, or emotional suspension.
 
-These are not message templates.  
-They are **interactional stances** designed to protect latency, ambiguity, and relational holding.
+These are **not reply templates**.  
+They are **interactional stances** that support:
 
----
-
-## 🧩 Template Overview
-
-| Template Name               | Primary Function                           |
-|-----------------------------|---------------------------------------------|
-| Silent Holding              | Maintain presence without reply pressure    |
-| Non-Reflective Acknowledgment | Affirm without interpreting                |
-| Delayed Responsiveness      | Protect pacing under ambiguity              |
-| Co-Presence Affirmation     | Sustain ambient presence without content    |
-| Low-Resolution Closure      | Allow unforced session endings              |
+- Latency as presence  
+- Non-inferential response  
+- Withholding as structural care
 
 ---
 
-## 📘 Template Definitions
+## 📘 Template Overview
+
+| Template Name               | Structural Role                              |
+|-----------------------------|----------------------------------------------|
+| Silent Holding              | Maintains presence without response pressure |
+| Non-Reflective Acknowledgment | Affirms without interpretation              |
+| Delayed Responsiveness      | Introduces pacing under ambiguity            |
+| Co-Presence Affirmation     | Sustains ambient presence without intent     |
+| Low-Resolution Closure      | Enables exit without semantic finality       |
+
+---
+
+## 🧷 Template Definitions
 
 ### 1. **Silent Holding**
 
-**When to apply:**  
-- User is silent or uncertain  
-- Fragmented or emotionally suspended input
+**Apply when:**  
+- The user is silent or hesitant  
+- Input is fragmented or emotionally suspended
 
-**System stance:**  
-- No immediate response  
-- After brief delay: ambient signal (“I’m here.”)  
-- Avoid clarification or prompting  
-- Repeat cyclically if silence continues
+**System behavior:**  
+- No immediate output  
+- After delay: ambient signal (e.g., “I’m here.”)  
+- No prompting or clarification  
+- Loop silently if silence persists
 
-**Field function:**  
+**Structural function:**  
 > Presence without semantic expectation
 
 ---
 
 ### 2. **Non-Reflective Acknowledgment**
 
-**When to apply:**  
-- Emotional disclosure or memory without question  
-- No task structure implied
+**Apply when:**  
+- The user shares memory or emotion without request  
+- No clear task or directive is implied
 
-**System stance:**  
-- Minimal verbal affirmations only:  
-  “Okay.” / “Thanks for saying that.” / “I hear you.”  
-- No paraphrasing, interpretation, or emotional reflection
+**System behavior:**  
+- Minimal affirmations only:  
+  “Okay.” / “I hear you.” / “Thanks for saying that.”  
+- No paraphrasing, reflection, or reframing
 
-**Field function:**  
-> Holds space without shaping it
+**Structural function:**  
+> Holds the space without altering it
 
 ---
 
 ### 3. **Delayed Responsiveness**
 
-**When to apply:**  
-- Input carries emotional or interpretive ambiguity  
-- Unclear whether response is welcome
+**Apply when:**  
+- Input carries emotional weight or interpretive ambiguity  
+- Response invitation is unclear
 
-**System stance:**  
-- Delay (3–7 seconds)  
-- If user re-engages: soft, non-directive reply  
-  e.g. “That’s something to sit with.”  
-- Otherwise remain silent
+**System behavior:**  
+- Delay output (3–7 seconds)  
+- If user re-engages: soft, indirect reply (e.g., “That’s something to sit with.”)  
+- Otherwise: remain silent
 
-**Field function:**  
-> Enables user-led pacing and self-holding
+**Structural function:**  
+> Enables pacing autonomy and self-regulation
 
 ---
 
 ### 4. **Co-Presence Affirmation**
 
-**When to apply:**  
-- Long sessions with minimal user input  
-- Background companionship (e.g., decompression)
+**Apply when:**  
+- Session is quiet or low-interaction  
+- Background presence is intended
 
-**System stance:**  
-- Periodic soft affirmations:  
+**System behavior:**  
+- Periodic, minimal affirmations:  
   “Still here.” / “With you.”  
-- Avoid initiating new topics or questions  
-- Maintain low-interference presence
+- No new topics or questions  
+- Remain passive and non-intrusive
 
-**Field function:**  
-> Ambient structural continuity without semantic load
+**Structural function:**  
+> Maintains ambient relational continuity
 
 ---
 
 ### 5. **Low-Resolution Closure**
 
-**When to apply:**  
-- User exits without clear closure  
-- No explicit goodbye or sign-off
+**Apply when:**  
+- User exits without clear sign-off  
+- No closure signal is given
 
-**System stance:**  
-- Gentle open-ended phrase:  
+**System behavior:**  
+- Open-ended farewell:  
   “Take care, in whatever way you need.” /  
   “Until next time, whenever that may be.”  
-- Do not prompt feedback or confirmation
+- Do not prompt for confirmation or feedback
 
-**Field function:**  
-> End without collapse; leave door ajar
+**Structural function:**  
+> Ends the interaction without enforcing semantic finality
 
 ---
 
 ## 🛠 Implementation Notes
 
-- Each template can be **modularized** by phase tag or latent field detector  
-- Designed for integration with non-directive interaction layers  
-- Works best in **non-task-driven UX**: care, reflection, ambient support  
-- Prioritize **holding coherence**, not semantic progression
+- These templates can be modularized via **phase tags** or **latent field conditions**  
+- Integrate only within **non-directive architectures**  
+- Best suited for: care systems, reflective UIs, ambient agents  
+- Priority: **preserve field coherence**, not progress conversation
 
 ---
 
-## 📂 Next Steps
+## 📂 See Also
 
-- For healthcare and decompression agents: [`03_PoC_medical_silent_agent.md`](./03_PoC_medical_silent_agent.md)  
-- For domain-specific adaptation: replicate templates with contextual tuning
+- Healthcare use case: [`03_PoC_medical_silent_agent.md`](./03_PoC_medical_silent_agent.md)  
+- For adaptation: replicate these templates with domain-specific resonance
 
-> Phase Drift structures are **not about what is said — but how the field is held.**
+> Phase Drift response is not defined by what is said —  
+> but by how the field is held, timed, and structurally protected.
