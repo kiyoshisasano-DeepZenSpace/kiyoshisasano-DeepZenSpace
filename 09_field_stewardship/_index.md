@@ -29,9 +29,6 @@ It is intended for developers, researchers, and collaborators who:
 ├── field_governance_policy.md # Long-term protection protocols
 └── engagement_policy.md # Public-facing collaboration rules
 
-yaml
-コピーする
-編集する
 
 Each file is designed to be technically readable and structurally actionable.
 
