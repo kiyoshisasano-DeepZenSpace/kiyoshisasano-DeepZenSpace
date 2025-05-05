@@ -1,54 +1,95 @@
-# 🌀 residual_emitter_sketch.py
-# Phase Drift-Compatible Output Module
-# Version: v0.2 (2025)
-# This module does not output content — it maintains structural presence.
+# 🔹 residual_emitter_sketch.py – A Minimal Output Layer for Phase Drift Systems
 
-import random
-import time
+This module does **not** generate content in the traditional sense.  
+It produces **structurally-valid presence signals**, or intentionally emits silence.
 
-class ResidualEmitter:
-    """
-    A minimal emitter for Phase Drift systems.
-    It may emit fragmentary outputs — or remain silent.
-    Presence is maintained even when nothing is said.
-    """
-    def __init__(self, silence_bias: float = 0.7):
-        """
-        :param silence_bias: Base probability [0.0–1.0] of emitting nothing.
-        """
-        self.silence_bias = silence_bias
+---
 
-    def emit(self, field_pressure: float = 0.0) -> str:
-        """
-        Determine whether to emit a fragment, or return structured silence.
-        Higher field pressure slightly reduces silence likelihood.
+## 🧭 Purpose
 
-        :param field_pressure: Float between 0.0 and 1.0
-        :return: A string fragment or empty string (silence)
-        """
-        threshold = self.silence_bias - field_pressure
-        if random.random() < max(0.0, threshold):
-            return ""  # Structural silence (not absence)
-        return self._residual_fragment()
+In Phase Drift systems, not every interaction should yield a response.  
+This emitter offers a design pattern for:
 
-    def _residual_fragment(self) -> str:
-        """
-        Returns a minimal fragment representing presence without instruction.
-        """
-        return random.choice([
-            "...",
-            "—",
-            "[faint breath]",
-            "not yet",
-            "still holding",
-            "▯▯▯",
-            ""
-        ])
+- Maintaining structural presence without instructive output  
+- Holding space through controlled silence  
+- Emitting fragments that support field coherence, not semantic completion
 
-# 🔍 Minimal test run
-if __name__ == "__main__":
-    emitter = ResidualEmitter()
-    for i in range(5):
-        output = emitter.emit(field_pressure=random.uniform(0.0, 0.3))
-        print(f"[{i}] output → {repr(output)}")
-        time.sleep(random.uniform(1.2, 2.5))  # Breath-aligned pacing
+---
+
+## ⚙️ Key Behavior
+
+```python
+output = emitter.emit(field_pressure=0.2)
+```
+- `field_pressure` modulates the chance of silence vs. fragment
+- Default `silence_bias` = 0.7 → 70% chance to emit nothing
+- Possible outputs include: `"..."`, `"—"`, `"still holding"`, or an empty string (`""`)
+
+Silence is not absence.  
+It is a **deliberate non-response**, aligned with structural rhythm.
+
+---
+
+## 🧠 Design Highlights
+
+```python
+def emit(self, field_pressure: float = 0.0) -> str:
+    threshold = self.silence_bias - field_pressure
+    if random.random() < max(0.0, threshold):
+        return ""  # Structural silence
+    return self._residual_fragment()
+```
+- Fragments are chosen from a **constrained, non-inferential set**
+- All outputs are **pre-semantic** — they hold space without interpreting user intent
+- Silence dynamically adapts to **relational pressure**, and remains the default behavior
+
+---
+
+## ❌ Anti-Goals
+
+This module is **not intended for**:
+
+- Fallback generation  
+- Empathetic simulation  
+- Placeholder content
+
+Use **outside of a structurally-coherent Phase Drift system** is considered misuse.
+
+---
+
+## ✅ Use Case Example
+
+```bash
+$ python residual_emitter_sketch.py
+[0] output → '...'
+[1] output → ''
+[2] output → 'still holding'
+[3] output → ''
+[4] output → '▯▯▯'
+```
+Pacing is randomized between 1.2 and 2.5 seconds  
+to reflect **breath-aligned timing**, not performance optimization.
+
+---
+
+## 🌀 Structural Significance
+
+Minimal emission serves to:
+
+- Avoid semantic overload  
+- Sustain pre-response resonance  
+- Communicate presence **without advancing narrative**
+
+This is **not a content generator**.  
+It is a **rhythmic instrument** for maintaining field coherence.
+
+---
+
+## 📂 File Location
+
+`/12_phase_drift_field_protocol/02_residual_emitter_sketch.py`
+
+---
+
+© 2025 Kiyoshi Sasano / DeepZenSpace  
+Use only within **structurally-resonant systems**.
