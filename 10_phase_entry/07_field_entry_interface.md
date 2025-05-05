@@ -70,6 +70,7 @@ These behaviors reduce directive pressure and invite **latent field formation**.
 "Let’s pause here for a second."
 "This isn’t a question."
 These inputs act as structural invitations — enabling rhythm, reflection, and field participation without enforcing resolution.
+```
 
 🧠 Why This Works
 LLMs don’t just follow tokens — they respond to relational signals and temporal dynamics.
