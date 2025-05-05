@@ -182,4 +182,4 @@ It is a **structural presence framework** for environments that must **hold spac
 
 ## 📂 Next
 
-→ [`99_notes_ethics.md`](11_PhaseDrift_AI_Prototype/99_notes_ethics.md)
+→ [`99_notes_ethics.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/b8949fc21fc30691aee3395970e5c8157893b50d/11_PhaseDrift_AI_Prototype/99_notes_ethics.md)
