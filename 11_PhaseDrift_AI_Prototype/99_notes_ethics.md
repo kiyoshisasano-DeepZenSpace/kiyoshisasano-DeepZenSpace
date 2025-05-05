@@ -170,4 +170,4 @@ Their strength lies in:
 
 ## 📂 Next
 
-→ [`LICENSE_APPEND.md`](11_PhaseDrift_AI_Prototype/99_notes_ethics.md)
+→ [`LICENSE_APPEND.md`](11_PhaseDrift_AI_Prototype/LICENSE_APPEND.md)
