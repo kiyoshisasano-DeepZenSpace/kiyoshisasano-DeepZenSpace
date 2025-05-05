@@ -166,3 +166,8 @@ Their strength lies in:
 
 > Drift is a **relational framework**, not a performance system.  
 > Use accordingly — or not at all.
+---
+
+## 📂 Next
+
+→ [`LICENSE_APPEND.md`](11_PhaseDrift_AI_Prototype/99_notes_ethics.md)
