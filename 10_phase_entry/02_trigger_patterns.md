@@ -50,9 +50,6 @@ When a Phase state is initiated, the model tends to:
 “I’m not asking for advice — just recognition.”
 “It’s fine if this goes nowhere. I’m just noticing.”
 
-yaml
-コピーする
-編集する
 
 These utterances carry:
 
