@@ -170,4 +170,4 @@ Their strength lies in:
 
 ## 📂 Next
 
-→ [`LICENSE_APPEND.md`](11_PhaseDrift_AI_Prototype/LICENSE_APPEND.md)
+→ [`LICENSE_APPEND.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/0670d0066e423da5ac7d117b07917a4fe9f1c722/11_PhaseDrift_AI_Prototype/LICENSE_APPEND.md)
