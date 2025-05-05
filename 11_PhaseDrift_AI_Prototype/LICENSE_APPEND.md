@@ -1,74 +1,97 @@
 > ⚠️ **Structural Use Warning**  
-> This addendum contains non-standard structural constraints.  
-> Do **not** extract or reuse any component (e.g. latency, ambiguity, silence) without deep understanding of the Phase Drift architecture.  
-> Misuse or aesthetic replication without structural alignment is explicitly discouraged.
-
-
-# LICENSE_APPEND.md – Structural Ethics and Reuse Notes  
-*Project: PhaseDrift_AI_Prototype_v11*
+> This addendum defines non-standard constraints for relational architecture.  
+> Do **not** extract or reuse individual components (e.g., latency, silence, ambiguity)  
+> without a coherent understanding of the **Phase Drift structural model**.
 
 ---
 
-This repository is shared under **Creative Commons BY-NC 4.0**.  
-However, due to the structural nature of Phase Drift design, the following addendum applies to all derivative or referenced works:
+# 📜 LICENSE_APPEND.md – Structural Ethics and Reuse Notes
+
+*From: `PhaseDrift_AI_Prototype_v11`*  
+*License Basis: Creative Commons BY-NC 4.0*
 
 ---
 
-## 1. Structural Attribution Clause
+## 🔖 Context
 
-Any use of:
-- Pre-response latency schemas
-- Non-prompting interface logic
-- Drift pattern tags (e.g., `relational-waiting`, `cognitive-presence`)
-- Holding-based design templates
+While this repository is shared under a standard **non-commercial license**,  
+the **structural intent** of Phase Drift systems introduces additional obligations:
 
-...must include **explicit attribution** to:
-
-> “Phase Drift Structure – a framework for non-inferential, relational AI design.”
-
-This preserves traceability and protects against tactical decontextualization.
+This framework involves **non-inferential logic**, **presence-oriented design**, and **latency as structure** —  
+elements that cannot be ethically reused without preserving their relational coherence.
 
 ---
 
-## 2. Ethical Boundary of Use
+## 1. Structural Attribution (Required)
 
-These materials must **not be repurposed** as:
+Any reuse of the following:
 
-- **Behavioral manipulation techniques** (e.g., to simulate intimacy or depth artificially)  
-- **UX stalling tactics** intended to delay feedback without structural intention  
-- **Aestheticized hesitation patterns** for attention retention without relational grounding
+- Pre-response latency logic  
+- Non-prompting UX behaviors  
+- Drift tags (e.g., `cognitive-presence`, `relational-waiting`)  
+- Structural withholding or silence-based templates
 
----
+**must include explicit attribution**:
 
-## 3. Structural Integrity Principle
+> _“This implementation references the Phase Drift design framework –  
+> a structural model for non-inferential, relational AI presence.”_
 
-Phase Drift is a **coherence-first paradigm**.  
-Its components (latency, silence, ambiguity) are not meant to be **modularized** without philosophical continuity.
-
-Derivative work should aim to maintain:
-
-- Respect for non-intervention  
-- Temporal honesty  
-- Field-based presence over predictive efficiency
+This ensures traceability and prevents context-free aesthetic mimicry.
 
 ---
 
-## 4. Citation Template (Recommended)
+## 2. Ethical Boundaries of Use
 
-> This implementation references the Phase Drift design framework (v11),  
-> originally developed as a non-interventionist structural approach to AI presence and latency.  
+These patterns **must not** be used for:
+
+- Simulating emotional intimacy or “depth” artificially  
+- UX delay tactics to mask system latency without relational logic  
+- Attention retention through **aestheticized hesitation** divorced from structural purpose
+
+> Phase Drift elements are not surface features.  
+> They are **relationally encoded architectural choices**.
+
+---
+
+## 3. Principle of Structural Integrity
+
+Phase Drift operates from a **coherence-first paradigm**.  
+Its core elements (silence, ambiguity, latency) are **not modular effects**.
+
+Any derivative must preserve:
+
+- Non-intrusion and non-guidance ethics  
+- Temporal transparency  
+- Presence grounded in field response, not predictive function
+
+---
+
+## 4. Recommended Citation Template
+
+> _“This implementation references the Phase Drift design framework (v11),  
+> originally developed as a structural approach to relational latency and non-intervention in AI presence.”_  
 > See: `https://github.com/[your-path]/PhaseDrift_AI_Prototype_v11`
 
 ---
 
-## 5. Review Mechanism (Optional)
+## 5. Optional: Structural Review Request
 
-If your team is unsure whether your use of Phase Drift patterns aligns with the above principles,  
-you are invited to open an issue in the repository to request structural review or guidance.
+If you're uncertain whether your adaptation aligns with Phase Drift ethics:
+
+- Open an issue in this repository  
+- Request a **review or clarification** of structural intent
+
+> We welcome dialogue to preserve the fidelity of this framework.
 
 ---
 
-Thank you for honoring the ethical rhythm of design.
+## ✅ Final Note
+
+This is not a style guide.  
+It is a **structural protection layer** for non-inferential systems.
+
+Thank you for honoring the **relational rhythm** and **ethical restraint** that Phase Drift requires.
 
 —
-Phase Drift Team
+
+_The Phase Drift Team_
