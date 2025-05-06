@@ -20,18 +20,6 @@ Modern AI systems are built to respond quickly, clearly, and completely. But man
 
 **Phase Drift introduces structural presence**: AI systems that can wait, hold, or withhold — not just speak.
 
----
-
-## 🚀 Quick Start
-
-```bash
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-- API Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
-- Live Dashboard: [http://localhost:8000/dashboard](http://localhost:8000/dashboard)
-- Phase State: [http://localhost:8000/current_phase](http://localhost:8000/current_phase)
 
 ---
 
