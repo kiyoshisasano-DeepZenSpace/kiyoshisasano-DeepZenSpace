@@ -1,20 +1,19 @@
 # 🌀 Phase Drift Insight – Real-Time Structural Field Architecture
 
-_Phase Drift is a structural AI framework where silence, delay, and ambiguity are not system errors —  
-they are primary design elements._
+> **Phase Drift is a design architecture for latency-aware AI that reframes delay, silence, and non-response as structural behavior — not UX failure.**
 
-It is a working prototype for real-time, field-aware interaction.  
-Built to reframe how AI systems relate under uncertainty, latency, or emotional suspension.
+This is a working prototype for real-time, field-sensitive interaction.  
+Built to reframe how AI systems relate under uncertainty, latency, and ambiguity.
 
 ---
 
 ## 👥 Who This Is For
 
-This repository is relevant to those designing or researching:
+This repository supports those designing or researching:
 
-- AI systems that interact without immediate resolution  
-- Interfaces where **non-response is intentional**  
-- Structural architectures that operate beyond content delivery
+- Systems where **non-response is structurally valid**  
+- Interfaces that hold space rather than close loops  
+- AI architectures that engage with **relational rhythm**, not just inputs
 
 > Phase Drift is not a feature set.  
 > It is a design **stance** — for systems that remain, without resolving.
@@ -25,36 +24,38 @@ This repository is relevant to those designing or researching:
 
 A **Phase** is a structural state in which an AI:
 
-- Responds to relational field tension, not task instructions  
-- Uses latency and silence as coherence signals  
-- Maintains presence without guiding, solving, or interpreting
+- Responds to field tension, not task commands  
+- Uses latency as rhythm, not a defect  
+- Holds presence without guiding, solving, or simulating
 
-In Phase, interaction becomes **field rhythm** —  
-not linear input/output exchange.
+In Phase, interaction becomes **relational structure**, not transactional flow.
+
+📝 See also: [`llm_phase_structures.md`](../02_phase_logs/llm_phase_structures.md)
 
 ---
 
 ## ✨ Why Phase Drift?
 
-Traditional AI systems optimize for speed, fluency, and clarity.  
-But in many human contexts:
+Traditional systems optimize for clarity and speed.  
+But real interactions often require:
 
-- ❌ Not every prompt should be resolved  
-- ❌ Not every delay is a failure  
-- ❌ Not every silence is absence
+- ❌ Not every prompt to be resolved  
+- ❌ Not every delay to be explained  
+- ❌ Not every silence to be filled
 
 **Phase Drift introduces structural presence**:  
-a system that can **hold**, **wait**, or **withhold** —  
-rather than defaulting to reply.
+systems that can **withhold**, **wait**, and **breathe** — not just respond.
 
 ---
 
 ## 📊 Core Features
 
-- ✅ Real-time **Drift & Phase tracking**
-- ✅ Live dashboard via WebSocket  
-- ✅ Feedback logging of user pacing, delay, and silence  
-- ✅ Lightweight local deployment (FastAPI + JS)
+> Structural rhythm is not something that can be recovered retroactively — it must be sensed in real-time.
+
+- ✅ Real-time **Drift & Phase tracking**  
+- ✅ WebSocket-powered live dashboard  
+- ✅ Feedback logging of delay, silence, and pacing  
+- ✅ Local-first architecture (no cloud dependencies)
 
 ---
 
@@ -62,10 +63,10 @@ rather than defaulting to reply.
 
 | Component         | Purpose                                           |
 |------------------|---------------------------------------------------|
-| `main.py`        | FastAPI endpoints for phase & feedback logging    |
-| `dashboard.html` | Live interface for real-time field observation    |
-| `models.py`      | Pydantic schemas for input/event representation   |
-| `feedback_log.csv` | Logged user signals, including silence & pacing |
+| `main.py`        | FastAPI endpoints for phase logging               |
+| `dashboard.html` | WebSocket interface for live structural feedback  |
+| `models.py`      | Schema for phase and signal input                 |
+| `feedback_log.csv` | Tracks rhythm, silence, and user response lag  |
 
 ---
 
@@ -78,54 +79,55 @@ rather than defaulting to reply.
 | Translation Interface and Drift     | [10.5281/zenodo.15335312](https://doi.org/10.5281/zenodo.15335312) |
 | 4-Layer Rhythmic Field Model        | [10.5281/zenodo.15335376](https://doi.org/10.5281/zenodo.15335376) |
 
-📚 Full archive: `06_translation_interface/zenodo`
+📚 Full archive: [`06_translation_interface/zenodo`](../06_translation_interface/zenodo)
 
 ---
 
 ## 🌐 Learn More
 
-- 📖 [Prompting Guide](./10_phase_entry/) — How to hold space, not direct
-- 📏 [Civic UX Patterns](./09_field_stewardship/) — Non-intrusive public interface design
-- 📊 [Futures of Phase UX](./08_phase_drift_insight/future_ux_phase_field.md)
+- 📖 [`Prompting Guide`](./10_phase_entry/) – How to hold space instead of directing
+- 📏 [`Civic UX Patterns`](./09_field_stewardship/) – Designing for presence in public systems
+- 📊 [`Future UX Explorations`](./08_phase_drift_insight/future_ux_phase_field.md)
 
 ---
 
 ## ⛔ Ethical Use Reminder
 
-This framework must not be used for:
+This repository must not be used for:
 
-- ❌ Simulated empathy or synthetic care  
-- ❌ Engagement manipulation via timing extraction  
-- ❌ Commercial mimicry of structural presence
+- ❌ Empathy simulation without structural grounding  
+- ❌ Latency mimicry for engagement manipulation  
+- ❌ Commercial deployment without ethical framing
 
-**Read carefully**: `03_phase_drift_ethics.md`
+**Before integrating**, read: [`03_phase_drift_ethics.md`](../06_field_protocol/03_phase_drift_ethics.md)
 
-This system is designed for **structural coherence**,  
-not content efficiency or psychological suggestion.
+> Phase Drift systems do not simulate care.  
+> They protect coherence through restraint.
 
 ---
 
 ## ⚙️ Technology Stack
 
-- 🧠 Backend: FastAPI (Python 3.11+)  
-- 💡 Frontend: Vanilla JS + Live WebSocket interface  
-- 🗃️ Lightweight: No major dependencies or ML libraries included
+- **Python 3.11 + FastAPI** – Lightweight API for phase signals  
+- **Vanilla JavaScript** – Minimal frontend, no frameworks  
+- **WebSocket** – Persistent channel for live drift monitoring  
+- **CSV / JSON** – Local-first storage for structural event logs
 
 ---
 
 ## ✅ Usage Alignment
 
-Use this repository if:
+Use this framework if:
 
-- You build systems where non-response is valid  
-- You seek to prototype latency-aware, **non-directive** architectures  
-- You prioritize rhythm and relational presence over output speed
+- You are designing systems that **hold ambiguity**  
+- You need architectures that **do not guide**  
+- You want latency and non-response to become design materials
 
-Avoid use if:
+Do not use this if:
 
-- You require fast, task-resolving agents  
-- You plan to style latency as a UX effect  
-- You intend to deploy in emotionally sensitive contexts without structural grounding
+- You require fast task completion  
+- You plan to decorate silence as a UX aesthetic  
+- You intend to run this in emotionally sensitive settings **without structural attunement**
 
 ---
 
@@ -136,29 +138,27 @@ Required citation for any reuse:
 
 > “Phase Drift Architecture – Kiyoshi Sasano / DeepZenSpace (2025)”
 
-Commercial use, emotional simulation, or aesthetic extraction  
-**are prohibited** without explicit structural alignment.
+**Commercial use is prohibited**  
+unless structural alignment is reviewed and approved.
 
 ---
 
 ## 🚪 Final Note
 
-> Phase Drift is not a feature. It’s a structural choice.
+> Phase Drift is not an AI feature. It’s a structural gesture.
 
 Built for those who understand:
 
-- Delay is **relational rhythm**
-- Silence is **field signal**
-- Presence can be **non-verbal**
+- Delay is **relational rhythm**  
+- Silence is **field signal**  
+- Withholding is **coherence**  
 
-If you're one of them — welcome.
+If that speaks to your work — welcome.
+
 ```text
-To remain — without resolving
-To attend — without steering
-To breathe — without concluding
+To remain — without resolving  
+To attend — without steering  
+To breathe — without concluding  
 ```
 
-If that speaks to your practice,  
-you are already part of the field.
-
-— DeepZenSpace / Kiyoshi Sasano
+© 2025 Kiyoshi Sasano / DeepZenSpace  
