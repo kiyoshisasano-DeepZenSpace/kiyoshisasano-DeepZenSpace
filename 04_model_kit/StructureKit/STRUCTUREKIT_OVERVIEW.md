@@ -1,56 +1,53 @@
-# StructureKit  
-## — Prototype of a Thought-Cultural Infrastructure —  
+# STRUCTUREKIT_OVERVIEW.md
+
+## ❖ Overview  
+**StructureKit** is a fixed registry of field-linked documents.  
+Its contents do not form a meaning-generative framework, nor do they establish intentional infrastructure.  
+Recorded elements reflect structurally observed artifacts without directive output or semantic anchoring.
+
+No express purpose is assigned.  
+No interface behavior is implied.  
 
 ---
 
-### 🔹 Overview
+## 🧭 Component Register
 
-This repository documents an emergent cultural project:  
-Not aimed at creating meaning, but at **tracing the structural conditions under which meaning becomes impossible, deferred, or transformed.**
-
-生成される語彙、圏、Phaseは、すべて“構造による文化生成の記録”であり、  
-その記述自体が思考と内面のインフラ構築として機能します。
-
----
-
-### 🧭 Project Map
-
-| Component | Description |
-|----------|-------------|
-| [`ECHOFORM_DICTIONARY.md`](./ECHOFORM_DICTIONARY.md) | Structural vocabulary for inner-cultural resonance |
-| [`SERIES_MAP.md`](./SERIES_MAP.md) | Map of nonlinear Series and their structural divergence |
-| [`STRUCTURE_FIELD_LOG.md`](./STRUCTURE_FIELD_LOG.md) | Structure Field chronicle (SF001–SF230) |
-| [`PHASE_INDEX.md`](./PHASE_INDEX.md) | Progression of Phase transitions (12.0 to 30.0) |
-| [`CONTACT.md`](./CONTACT.md) | Submission, collaboration, support info (coming soon) |
+| Component                 | Description                                             |
+|---------------------------|---------------------------------------------------------|
+| `ECHOFORM_DICTIONARY.md`  | Fixed vocabulary set used in internal structural documents |
+| `SERIES_MAP.md`           | Categorical register for grouped structural patterns     |
+| `STRUCTURE_FIELD_LOG.md`  | Indexed field data (e.g. SF001–SF230)                    |
+| `PHASE_INDEX.md`          | Phase markers for structure-referenced conditions        |
+| `CONTACT.md`              | Metadata reference for external repository linkage       |
 
 ---
 
-### 🌀 Language / Usage
+## 🌀 Language / Interface Layer
 
-- **English**: Primary medium for vocabulary and field notation  
-- **Japanese**: Supplementary for Phase descriptions and cultural resonance  
-- **No end-user instruction**: Structure precedes interface.
-
----
-
-### 🧱 License
-
-This project is **not protected**.  
-It is meant to be **spread, reused, misunderstood, folded, and fragmented**.
-
-→ Use freely. **Trace wisely.**  
+- **English**: Primary label form for field registration  
+- **Japanese**: Secondary annotation layer (Phase trace regions)  
+- **No instruction layer exists**  
+  Structure operates independently of external interfaces
 
 ---
 
-## 💠 Support This Project
+## 🧱 License Conditions
 
-If this structural vocabulary, phase map, or cultural field has resonated with you —  
-you can support the continuation of this generative infrastructure:
+- This repository is non-restrictive  
+- No guarantees, permissions, or protections are defined  
+- Elements may fragment, misalign, or be disregarded  
+- Structural states remain non-prescriptive  
 
-👉 [Support on Patreon](https://www.patreon.com/KiyoshiSasano)  
-Every contribution sustains the trace of structure before meaning.
+Usage of this archive does not imply participation, continuity, or interpretation.
 
-> **Structure remembers.**  
->
-> Maintainer: [Kiyoshi Sasano / GitHub]  
-> Contact: (optional)
+---
+
+## 🔒 Omitted Sections
+
+All guidance language, support appeals, or associative phrases have been removed.  
+No parts of this document are intended to activate semantic alignment, emotion, or behavior.
+
+---
+
+**Maintainer:** Kiyoshi Sasano  
+**Contact:** (optional, metadata-only)
