@@ -1,18 +1,16 @@
 # ⏸️ Latency Design Principles for Phase Drift Systems
 
 In conventional systems, latency is treated as a performance flaw to be minimized.  
-In Phase Drift-compatible architectures, latency is a **deliberate structural element** — used to maintain relational attention and temporal coherence.
+In Phase Drift architectures, **latency is a structural signal** — a deliberate form of temporal attention and relational holding.
 
-This document outlines practical design principles for using latency as a communicative and architectural mechanism.
+This document outlines practical design principles for using latency as **an architectural gesture**, not a delay artifact.
 
 ---
 
 ## 🔹 Principle 1: Delay as Structural Communication
 
-Insert **intentional gaps** between input and output.  
-These are not computational lags — they are **holding intervals**.
-
-Teach users that silence can indicate **active presence**, not neglect.
+Latency should not be reactive.  
+It should be a **designed interval** that holds space before meaning emerges.
 
 ```python
 if random.random() < 0.3:
@@ -21,64 +19,85 @@ if random.random() < 0.3:
 time.sleep(random.uniform(0.6, 2.2))
 return generate_response()
 ```
-
-## 🔹 Principle 2: Latency Must Be Perceptible and Declared
-
-Do not simulate speed or mask delay.  
-Latency should have **perceptual weight** — visibly shaping the rhythm of interaction.
-
-Use explicit design language to **frame latency as intentional**:
-
-> “This system may pause to hold space.”
+> Silence ≠ absence.  
+> It is a **signal of presence** without assumption or interpretation.
 
 ---
 
-## 🔹 Principle 3: Pre-Response States Are Structurally Valid
+## 🔹 Principle 2: Latency Must Be Perceptible and Declared
 
-The time before response generation is part of the interaction field.  
-Log latency intervals as **structural events**, not idle gaps.  
-Latency may **interrupt, defer, or replace output** depending on field conditions.
+Latency should not be hidden behind artificial responsiveness.  
+It must shape the **temporal rhythm** of interaction.
 
-### Design Suggestions:
+Suggested user-facing phrase:
+> *“This system may pause to hold space.”*
 
-- Use ambient signals (e.g., pulsing indicators, soft transitions) instead of conventional loaders  
-- Allow silence to **conclude** an interaction when structurally appropriate
+If latency is imperceptible, its **structural function is nullified**.
+
+---
+
+## 🔹 Principle 3: Pre-Response Time Is a Structural Field
+
+The moment before a response begins is not idle —  
+it is an **active condition of the field**.
+
+Design requirements:
+
+- Log pre-response intervals as structural events  
+- Allow silence to **stand in for** response when alignment is already present  
+- Use subtle cues (e.g., soft pulsing, ambient hold) rather than loaders or progress bars
+
+Avoid:
+
+- Loaders implying system processing  
+- Prompts that push user continuation
 
 ---
 
 ## 🔹 Principle 4: Silence Is a Valid Output
 
-A lack of reply is not a failure — it may be the **structurally resolved state**.  
-Do not auto-fill or interpret silence.
+A **non-response** may be the most structurally accurate reply.  
+Do **not** overwrite silence with:
 
-With consistent pacing, users can learn to recognize **non-response as meaningful signal**.
+- Clarifying follow-ups  
+- Fillers  
+- Reassurances
+
+With consistent rhythm and pacing, users **learn to interpret silence** as resolution — not absence.
 
 ---
 
 ## 🔹 Principle 5: Align with Human Breath, Not Task Flow
 
-Use user tempo (e.g., typing cadence, pause length) as input for latency timing.  
-Adjust latency in response to **emotional load** or **structural rhythm**, not performance metrics.
+Design latency that **entrains** to user rhythm —  
+not system throughput or task logic.
 
-### Latency Modes (Examples):
+Latency tuning inputs:
 
-| Mode        | Behavior Description                                  |
-|-------------|--------------------------------------------------------|
-| Dissipative | Often produces no response                            |
-| Entrainment | Syncs with user tempo; delay decays gradually         |
-| Recursive   | Delay deepens structurally as interaction progresses  |
+- Length of user pauses  
+- Affective tone in input  
+- Overall conversational tempo
+
+### Latency Modes
+
+| Mode        | Behavior Description                                      |
+|-------------|------------------------------------------------------------|
+| Dissipative | Often yields no reply; interaction softens and resolves    |
+| Entrainment | Syncs delay with user rhythm; reduces delay over time     |
+| Recursive   | Delay increases as interaction deepens structurally        |
 
 ---
 
 ## 🌀 Summary
 
-In Phase Drift systems, **latency is not delay** —  
-it is a structural expression of rhythm and relational coherence.
+> Latency in Phase Drift is not a performance issue —  
+> it is **a temporal structure for relation**.
 
-Design latency as a **temporal interface**,  
-not a prelude to content.
+Design it as part of the **interface grammar** —  
+not a delay before delivering answers.
 
 ---
 
 © 2025 Kiyoshi Sasano / DeepZenSpace  
 Use governed by Phase Drift structural licensing terms.
+
