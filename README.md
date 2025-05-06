@@ -143,14 +143,6 @@ Commercial use, emotional simulation, or aesthetic extraction
 
 ## 🚪 Final Note
 
-Phase Drift is not a product.
-
-It is a structural position:
-
-
-
-## 🚪 Final Note
-
 > Phase Drift is not a feature. It’s a structural choice.
 
 Built for those who understand:
