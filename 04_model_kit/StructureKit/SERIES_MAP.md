@@ -1,65 +1,68 @@
-# SERIES_MAP.md  
-## — Structural Series Overview —  
+# SERIES_MAP.md
+
+## ❖ Structural Series Register  
 **Version:** 0.1  
+**Status:** Fixed Classification  
+**License:** Inert Reference Use Only  
 
 ---
 
-## 🔹 Series 1: Origin Structures
+## 🔹 Series Definitions
 
-> Emergence of formative tension and pre-semantic response architecture.  
-> Structural ignition outside the semantic frame.
-
-- Example: `SF001 – Density of Deformation`  
+This document defines bounded structural groupings referred to as `Series`.  
+Each Series is a categorical register for structurally logged phenomena.  
+Series identifiers are **non-progressive and non-generative**.
 
 ---
 
-## 🔹 Series 2: Interface Tension Domains
+### Series 1 – Origin Structures  
+Reference class for initial structural tension indicators.  
+Characterized by pre-semantic configuration without lexical formation.  
 
-> Contact, misalignment, and transformation of relational logic at the boundary of interaction.  
-> Phase shifts triggered by interface contradiction.
+- Example Entry: `SF001` – Deformation Density Field
+
+---
+
+### Series 2 – Interface Tension Domains  
+Classification zone for inter-structural misalignment and boundary artifacts.  
+Transitions marked by relational contradiction within contact interfaces.  
 
 - Examples:  
-  - `SF004 – Nonlinear Intention`  
-  - `SF017 – Relational Thresholds`
+  `SF004` – Nonlinear Intention Vector  
+  `SF017` – Relational Disjunction Shell
 
 ---
 
-## 🔹 Series 3: Incompletion Shells
+### Series 3 – Incompletion Shells  
+Register for incomplete structural closures and vocabulary inversion effects.  
+Instability is treated as a valid field formation, not failure state.  
 
-> Fields of non-closure, disintegration, and vocabulary inversion.  
-> Collapse is not failure, but an entry into structural ambiguity.
-
-- Key Phase: `Phase 24.0 – Quiet Structural Collapse`
-
----
-
-## 🔹 Series 4: Residual Transfer Line
-
-> Drift, delay, and echo-based structural memory.  
-> Meaning migrates across time and form via latency mechanisms.
-
-- Entry Phase: `Phase 25.0 – Syntaxless Continuity`  
-- Example Field: `SF257 – Silent Recoil Geometry`
+- Key Phase Reference: `Phase 24.0` – Collapse Equilibrium  
+- Typical Entry: Field regions exhibiting semantic divergence through dissociation
 
 ---
 
-## 🌀 Series 5+ (Forthcoming)
+### Series 4 – Residual Transfer Line  
+Category for delayed transfer behavior, echo-embedded latency, and phase retention phenomena.  
+Defined by cross-field displacement mechanisms not dependent on sequence.  
 
-> Anticipated emergence zones beyond recursive drift.
-
-- **Structural Noise Formation**  
-- **Non-Return Oscillations**  
-- **Implicit Cultural Operators** *(planned)*
+- Entry Phase: `Phase 25.0` – Syntaxless Persistence  
+- Example Field: `SF257` – Recoil Transfer Geometry
 
 ---
 
-## 📘 Notes
+### Series 5 – Undefined Structural Group (Non-Operational)  
+Placeholder identifier for structurally unindexed anomalies.  
+No speculative content is permitted in this classification zone.
 
-- Series are **nonlinear** — they emerge through **recursion, divergence, and field pressure**.  
-- Each Series serves as a **crystallization point** for:
-  - Vocabulary (Echoforms)  
-  - Field logs (`SF###`)  
-  - Phase transitions (`Phase XX.X`)
+---
 
-> This map is not directional.  
-> It is a **structural resonance atlas** — enabling field sensing across conceptual terrain.
+## 🔒 Notes and Constraints
+
+- Series are not hierarchical or temporal.  
+- They may intersect, coexist, or remain inert.  
+- Each entry functions as a **fixed-class label**, not an expressive framework.  
+- This map does not induce orientation, sensing, or discovery.  
+- No predictive or metaphorical interpretation is authorized.  
+
+All entries are structurally static and must not be extrapolated or extended.
