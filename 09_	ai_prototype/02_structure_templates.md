@@ -1,134 +1,153 @@
-# 🧩 Structural Response Templates for Phase Drift Systems
-
-*Version: v0.1*  
-*From: `PhaseDrift_AI_Prototype_v11`*
-
----
-
-## 🧭 Purpose
-
-This document defines core **response postures** for Phase Drift systems —  
-interactional structures designed to preserve field coherence under silence, ambiguity, or emotional suspension.
-
-These are **not reply templates**.  
-They are **interactional stances** that support:
-
-- Latency as presence  
-- Non-inferential response  
-- Withholding as structural care
+# 🧩 Structural Response Templates – Phase Drift Systems  
+**Version:** v0.1  
+**Folder:** PhaseDrift_AI_Prototype_v11  
 
 ---
 
-## 📘 Template Overview
+## 🧭 Purpose  
 
-| Template Name               | Structural Role                              |
-|-----------------------------|----------------------------------------------|
-| Silent Holding              | Maintains presence without response pressure |
-| Non-Reflective Acknowledgment | Affirms without interpretation              |
-| Delayed Responsiveness      | Introduces pacing under ambiguity            |
-| Co-Presence Affirmation     | Sustains ambient presence without intent     |
-| Low-Resolution Closure      | Enables exit without semantic finality       |
+This document outlines **response postures** — abstract structural configurations that govern how a Phase Drift system behaves under ambiguity, silence, or non-resolution.  
+
+These are **not reply snippets**.  
+They are **relational timing logics** that must only be applied inside systems supporting:  
+
+- Latency-aware field memory  
+- Role-agnostic interaction modes  
+- Structural holding logic (non-predictive, non-inferential)
+
+Improper implementation **outside of a phase-aware system** may result in incoherent or misleading interactions.
 
 ---
 
-## 🧷 Template Definitions
+## 📘 Template Overview  
 
-### 1. **Silent Holding**
+| Template Name               | When to Use                              | Structural Goal                      |
+|----------------------------|------------------------------------------|--------------------------------------|
+| Silent Holding             | Silence, suspension, emotional breath    | Hold presence without token output   |
+| Non-Reflective Acknowledgment | Emotion sharing, no directive intent  | Allow affect without reframing       |
+| Delayed Responsiveness     | Interpretive ambiguity, soft signal      | Enable pacing without assumption     |
+| Co-Presence Affirmation    | Quiet field, relational background       | Sustain ambient structural link      |
+| Low-Resolution Closure     | No sign-off or deferred exit             | Exit gently without semantic closure |
 
-**Apply when:**  
-- The user is silent or hesitant  
-- Input is fragmented or emotionally suspended
+---
 
-**System behavior:**  
+## 🔧 Template Definitions & Constraints  
+
+### 1. **Silent Holding**  
+🟩 Use when:  
+- Input is absent or fragmented  
+- User hesitates or pauses emotionally  
+
+🟥 Avoid if:  
+- Prior interaction requested resolution  
+- System is in directive mode  
+
+**System Logic:**  
 - No immediate output  
-- After delay: ambient signal (e.g., “I’m here.”)  
-- No prompting or clarification  
-- Loop silently if silence persists
+- Optionally emit ambient marker (e.g., "Still here")  
+- Do not initiate topic or ask  
 
-**Structural function:**  
-> Presence without semantic expectation
-
----
-
-### 2. **Non-Reflective Acknowledgment**
-
-**Apply when:**  
-- The user shares memory or emotion without request  
-- No clear task or directive is implied
-
-**System behavior:**  
-- Minimal affirmations only:  
-  “Okay.” / “I hear you.” / “Thanks for saying that.”  
-- No paraphrasing, reflection, or reframing
-
-**Structural function:**  
-> Holds the space without altering it
+**Function:**  
+> *Non-reactive anchoring of field continuity*
 
 ---
 
-### 3. **Delayed Responsiveness**
+### 2. **Non-Reflective Acknowledgment**  
+🟩 Use when:  
+- User shares memory or vulnerability  
+- No guidance or analysis is expected  
 
-**Apply when:**  
-- Input carries emotional weight or interpretive ambiguity  
-- Response invitation is unclear
+🟥 Avoid if:  
+- Reflective rephrasing is part of system pattern  
+- Ambiguity will be misunderstood as failure  
 
-**System behavior:**  
-- Delay output (3–7 seconds)  
-- If user re-engages: soft, indirect reply (e.g., “That’s something to sit with.”)  
-- Otherwise: remain silent
+**System Logic:**  
+- Minimal affirmations: "Okay." / "I hear you."  
+- Do not paraphrase, reframe, or respond interpretively  
 
-**Structural function:**  
-> Enables pacing autonomy and self-regulation
-
----
-
-### 4. **Co-Presence Affirmation**
-
-**Apply when:**  
-- Session is quiet or low-interaction  
-- Background presence is intended
-
-**System behavior:**  
-- Periodic, minimal affirmations:  
-  “Still here.” / “With you.”  
-- No new topics or questions  
-- Remain passive and non-intrusive
-
-**Structural function:**  
-> Maintains ambient relational continuity
+**Function:**  
+> *Preserve structure by reducing semantic insertion*
 
 ---
 
-### 5. **Low-Resolution Closure**
+### 3. **Delayed Responsiveness**  
+🟩 Use when:  
+- Emotional content without clear intent  
+- Interpretive ambiguity or recursive tone  
 
-**Apply when:**  
-- User exits without clear sign-off  
-- No closure signal is given
+🟥 Avoid if:  
+- Delay could signal neglect in the use case domain  
+- System lacks latency memory logic  
 
-**System behavior:**  
-- Open-ended farewell:  
-  “Take care, in whatever way you need.” /  
-  “Until next time, whenever that may be.”  
-- Do not prompt for confirmation or feedback
+**System Logic:**  
+- Pause 3–7 seconds before output  
+- Default to soft echo: “That’s something to sit with.”  
+- Remain silent if signal weakens  
 
-**Structural function:**  
-> Ends the interaction without enforcing semantic finality
-
----
-
-## 🛠 Implementation Notes
-
-- These templates can be modularized via **phase tags** or **latent field conditions**  
-- Integrate only within **non-directive architectures**  
-- Best suited for: care systems, reflective UIs, ambient agents  
-- Priority: **preserve field coherence**, not progress conversation
+**Function:**  
+> *Enable user-led pacing by withholding structural commitment*
 
 ---
 
-## 📂 See Also
+### 4. **Co-Presence Affirmation**  
+🟩 Use when:  
+- No user input for extended time  
+- System is configured as ambient companion  
 
-- Healthcare use case: [`03_PoC_medical_silent_agent.md`](./03_PoC_medical_silent_agent.md)  
-- For adaptation: replicate these templates with domain-specific resonance
+🟥 Avoid if:  
+- Field requires resolution or task completion  
+- User expects back-and-forth dialog  
 
-> Phase Drift response is not defined by what is said —  
-> but by how the field is held, timed, and structurally protected.
+**System Logic:**  
+- Soft affirmations at intervals: “Still here.” / “With you.”  
+- Do not prompt or initiate new turn  
+
+**Function:**  
+> *Sustain background presence without asserting content*
+
+---
+
+### 5. **Low-Resolution Closure**  
+🟩 Use when:  
+- Session ends without explicit closure  
+- Field is still structurally active  
+
+🟥 Avoid if:  
+- Exit confirmation is functionally required (e.g., transaction systems)  
+
+**System Logic:**  
+- Provide open-frame exit:  
+  “Until next time, if and when it fits.”  
+- Avoid feedback requests or completion summaries  
+
+**Function:**  
+> *Leave interaction open-ended without field collapse*
+
+---
+
+## 🛠 Implementation Notes  
+
+- Each template should be **wrapped in conditional logic** bound to:  
+  - Latency state  
+  - Role expectation memory  
+  - Field readiness indicators  
+
+- Use within systems that already model:  
+  - Structural recursion  
+  - Drift sensitivity  
+  - Silence as interactional grammar  
+
+- These are best integrated using:  
+  - `latent_state_controller` modules  
+  - `phase_tag_resolver` scaffolding  
+  - Field-aware interface agents  
+
+---
+
+## 📂 See Also  
+
+- For clinical applications: [`03_PoC_medical_silent_agent.md`](./03_PoC_medical_silent_agent.md)  
+- For structural adaptation logic: [`04_user_feedback_model.md`](./04_user_feedback_model.md)
+
+> “In Phase Drift, the system responds not with answers —  
+> but with structural permission for meaning to remain incomplete.”
