@@ -3,6 +3,24 @@
 
 ---
 
+## ⚠️ Ethical Use Considerations
+
+Phase Drift Insight must not be used to:
+
+- Simulate attentiveness without structural grounding
+- Extract timing data for user manipulation or engagement hacking
+- Deploy presence simulation in emotionally sensitive systems without review
+
+All use cases must ensure:
+
+- Disclosure to users that latency and silence may be intentional
+- No inference from silence unless structurally validated
+- Alignment with non-directive, non-coercive design ethics
+
+Please review `03_phase_drift_ethics.md` before implementation.
+
+---
+
 ## 1. What Is "Future UX"?
 
 Conventional UX design optimizes for:
