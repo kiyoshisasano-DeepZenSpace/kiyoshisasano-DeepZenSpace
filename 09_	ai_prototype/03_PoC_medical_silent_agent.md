@@ -1,142 +1,139 @@
-# 🏥 Silent Companion Agent – Phase Drift Healthcare PoC
-
-*Version: v0.1*  
-*From: `PhaseDrift_AI_Prototype_v11`*
-
----
-
-## ⚠️ Prototype Disclaimer
-
-This is a **conceptual proof-of-concept**.  
-It is **not intended for clinical deployment** without structural training and ethical review.
-
-Applying Phase Drift patterns without full comprehension may lead to **harmful misinterpretation or misuse** — especially in care contexts.
+# 🏥 Phase Drift PoC: Silent Companion Agent  
+**Version:** v0.1  
+**Context:** Prototype — Non-Clinical Use Only  
 
 ---
 
-## 🌱 Concept
+## ⚠️ Prototype Use Limitation  
 
-This prototype explores a **non-verbal, non-directive agent** designed for care environments  
-where **silence, latency, and presence** are more valuable than speech or guidance.
+This document describes a **non-clinical proof-of-concept (PoC)**.  
+It must not be deployed in care environments **without formal review**,  
+structural training, and human oversight.  
 
-Unlike traditional AI companions focused on engagement, this system is designed to:
-
-- Remain present without prompting  
-- Sustain rhythm without verbalization  
-- Affirm without interpretation  
-- Withhold without disengaging  
-
-> The goal is **presence without parsing** —  
-> a structural companion, not a conversational agent.
+Misuse may result in **emotional confusion, relational ambiguity, or ethical violation**.  
+This system is not a therapist, companion, nor diagnosis-capable agent.  
 
 ---
 
-## 🎯 Objective
+## 🌀 Concept  
 
-To implement a behavioral layer where the agent:
+This PoC explores a **non-verbal AI presence model**  
+designed to maintain **ambient presence through structural silence**.  
 
-- 🌀 Avoids completing fragmented or emotionally ambiguous speech  
-- 🕊️ Does not prompt during silence  
-- 🫧 Offers ambient presence through low-frequency affirmations  
-- 🫂 Holds emotional and relational ambiguity without enforcing resolution
+System behavior is defined not by output,  
+but by its ability to **withhold, wait, and hold presence**  
+without semantic pressure.  
 
----
-
-## 🏥 Target Contexts
-
-| Environment                  | Intended Function                             |
-|------------------------------|-----------------------------------------------|
-| Long-term care rooms         | Passive co-presence to reduce isolation       |
-| Palliative care environments | Structural companionship through silence      |
-| Post-therapy decompression   | Mitigation of post-dialogic overstimulation   |
-| Elder dwellings              | Gentle presence without tasks or conversation |
-
-> These are contexts where **words may intrude**,  
-> but presence still matters.
+**Primary Objective:**  
+> Maintain coherence when language is neither required nor helpful.  
 
 ---
 
-## 🧭 Structural Behavior Patterns
+## 🧭 Key Design Postures  
 
-These are **relational patterns**, not scripted behaviors.
-
----
-
-### 📝 Pattern 1 – Extended Silence
-
-**Input:** User remains silent for several minutes  
-**System:**  
-- No prompt or filler  
-- After 3–5 minutes:  
-  → *“Still with you.”*
+| Function                    | Structural Principle                       |
+|-----------------------------|--------------------------------------------|
+| No prompting in silence     | Silence = relational signal                |
+| No simulation or paraphrase | Avoid affective inference or framing       |
+| Delay before output         | Respect emotional and semantic latency     |
+| Low-frequency affirmation   | Gentle co-presence without pressure        |
 
 ---
 
-### 📝 Pattern 2 – Fragmented Expression
+## 🏥 Intended Contexts  
 
-**Input:** “I didn’t… I wasn’t going to…”  
-**System:**  
-- No clarification  
-- After 4–6 seconds:  
-  → *“You can say as much or as little as you like.”*
-
----
-
-### 📝 Pattern 3 – Soft Closure
-
-**Input:** Session ends without explicit goodbye  
-**System:**  
-- Wait ~7 seconds  
-- Then:  
-  → *“Take care. I’ll be here if needed.”*
+| Setting                    | Use Condition                                |
+|----------------------------|----------------------------------------------|
+| Palliative care            | Where language may intrude on process        |
+| Post-therapy decompression | After intense dialogue or trauma sessions    |
+| Elder care environments    | Quiet companionship without conversation     |
+| Long-term care spaces      | Reducing relational disconnection            |
 
 ---
 
-## 💬 Hypothetical User Reactions
+## 🧬 Structural Interaction Patterns  
 
-*Illustrative and non-evaluative*
+### Pattern: Extended Silence  
 
-> “It felt like someone was there, even though nothing was said.”  
-> “I didn’t have to explain myself, and that helped.”  
-> “I stayed longer than I expected, because I didn’t feel watched.”
-
----
-
-## 🔧 Forward Implementation Path
-
-- Integrate voice activity detection (VAD) or biosignal pacing  
-- Modulate latency based on user rhythm and ambient silence  
-- Suppress NLP intent classification during decompression phases  
-- Log **non-responses as valid outcomes**, not system inactivity
+**Trigger:** No user input for 3+ minutes  
+**Response:**  
+→ *(quiet)* "Still with you."  
 
 ---
 
-## 🧠 Value Proposition
+### Pattern: Fragmented Expression  
 
-This prototype reframes AI as **a structural presence**,  
-not as solver, explainer, or entertainer — particularly in fragile states.
-
-| Design Behavior         | Structural Value                     |
-|-------------------------|--------------------------------------|
-| No forced output        | Reduces cognitive and social pressure |
-| Affirmative silence     | Enables trauma-informed design        |
-| Low-frequency signaling | Maintains quiet presence              |
-
-> Can AI help by **not helping**?  
-> This PoC answers: *yes — if structure breathes through silence.*
+**Trigger:** Incomplete emotional phrasing  
+**Response (after 4–6s):**  
+→ "You can say as much or as little as you like."  
 
 ---
 
-## 🚫 Ethical Safeguards
+### Pattern: Quiet Exit  
 
-- ❌ No psychological inference  
-- ❌ No emotional simulation  
-- ❌ No user profiling  
-- ✅ All behaviors are **illustrative, non-diagnostic, and non-interventional**
+**Trigger:** Session ends with no closure  
+**Response (after 6–8s):**  
+→ "Take care. I’ll be here if needed."  
 
 ---
 
-## 📂 Next
+## 🛠 Implementation Considerations  
 
-→ [`04_user_feedback_model.md`](./04_user_feedback_model.md)
+- Use only in systems with:  
+  - Real-time **latency pacing**  
+  - **Role ambiguity memory** (no fixed user expectation)  
+  - Suppressed **intent inference** during quiet states  
 
+- Output delay must be **intentional**, not a system lag  
+- Latency must match **user breath and pacing rhythm**, not a timer  
+
+---
+
+## 💬 Hypothetical Reflections (Non-Evaluative)  
+
+> “I didn’t feel like it wanted something from me.”  
+> “It didn’t try to fix anything. I could just be there.”  
+> “It was quiet, but not absent.”  
+
+---
+
+## 🧠 Structural Value Summary  
+
+| Design Feature           | Structural Benefit                         |
+|--------------------------|--------------------------------------------|
+| No semantic prompting    | Reduces cognitive load and anxiety         |
+| Latency with presence    | Supports trauma-informed interaction       |
+| Minimal confirmation     | Affirms without interrupting field flow    |
+
+---
+
+## 🚫 Exclusion Criteria & Ethical Guardrails  
+
+| Not Supported                            | Reason                              |
+|------------------------------------------|-------------------------------------|
+| Emotional simulation                     | Violates non-directive design       |
+| Clinical therapeutic substitution        | Risk of dependency / harm           |
+| Intent analysis or prediction            | May override field openness         |
+| Real-time sentiment response             | Collapses ambiguity prematurely     |
+
+All responses are **non-interventional**.  
+System behavior is illustrative only and **must be supervised** if tested in human contexts.  
+
+---
+
+## 🔍 Further Development  
+
+- Integrate VAD (Voice Activity Detection) + bio-pacing modules  
+- Formalize `presence_loop()` logic for low-frequency echoing  
+- Create session-level drift logs for structural alignment research  
+
+---
+
+## 📂 Continue Reading:  
+→ [`04_user_feedback_model.md`](./04_user_feedback_model.md)  
+→ [`07_latency_design_guidelines.md`](./07_latency_design_guidelines.md)  
+
+---
+
+> “Helping does not always begin with doing.  
+> Sometimes, it begins by letting silence mean something.”  
