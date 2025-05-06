@@ -1,86 +1,86 @@
 # 🛰️ Phase Drift Onboarding & Diagnostics  
-*A structural entry process for aligned collaboration*
+*Structural entry process for aligned collaboration*
 
 ---
 
 ## 🎯 Purpose
 
-This document outlines the entry procedure and early-stage diagnostic checkpoints  
-for new collaborators joining the **Phase Drift Insight** project.
+This guide outlines the onboarding and diagnostic process for collaborators engaging with **Phase Drift Insight** —  
+a system architecture focused on latency-aware interaction, ambiguity tolerance, and field coherence.
 
-The focus is not speed or deliverables —  
-but alignment with the **underlying structural field**.
+Rather than task metrics or delivery speed, this process emphasizes:
 
----
-
-## 🔄 Onboarding Stages
-
-| Stage | Description |
-|-------|-------------|
-| **1. Resonance Check** | Initial contact via message or issue to evaluate alignment in tone and structural framing |
-| **2. Charter Review** | Read and confirm agreement with the [Stewardship Charter](./phase_drift_stewardship_charter.md) |
-| **3. Orientation Session** | Optional 1:1 or small group walkthrough of Phase Drift foundations, risks, and context |
-| **4. Diagnostic Prompts** | Light exercises to observe perception patterns and timing awareness |
-| **5. Progressive Access** | Access to sensitive materials granted based on structural fit and continuity |
-
-**Note:** Entry is not linear.  
-Progression follows mutual structural compatibility, not checklist completion.
+- Structural timing awareness  
+- Comfort with recursive rhythm  
+- Compatibility with non-linear engagement flow  
 
 ---
 
-## 🔍 Early Diagnostics – Key Dimensions
+## 🔄 Onboarding Process Overview
 
-| Dimension | Diagnostic Focus |
-|-----------|------------------|
-| **Rhythm Perception** | Does the collaborator notice pacing, delay, and interaction rhythm? |
-| **Latency Comfort** | Can they remain responsive without urgency in timing gaps? |
-| **Non-functional Framing** | Can they describe their role or work without reverting to task-based logic? |
-| **Relational Framing** | Is interaction treated as co-emergent, not transactional? |
-| **Directive Tolerance** | Can they participate without requiring linear goals or directives? |
+| Stage                | Description |
+|----------------------|-------------|
+| 1. Initial Alignment | Short message or GitHub issue to observe interaction style and rhythm sensitivity |
+| 2. Charter Review    | Read and confirm understanding of the Phase Drift Stewardship Charter |
+| 3. Optional Session  | Walkthrough of key design concepts, drift indicators, and interface risks |
+| 4. Light Diagnostics | Voluntary perceptual tasks to observe structural behavior (see below) |
+| 5. Progressive Access| Internal files and models shared based on observed rhythm-fit over time |
 
-These are **not evaluation criteria**.  
-They function as a **signal pattern** to assess field readiness.
-
----
-
-## 🧪 Optional Soft Exercises
-
-| Exercise | Goal |
-|----------|------|
-| **Pause Response** | Practice waiting before responding to ambiguous prompts |
-| **Recursive Reflection** | Reframe a simple idea from multiple structural depths |
-| **Latency Weaving** | Continue a conversation thread using rhythm rather than content direction |
-
-(Templates provided upon confirmed resonance.)
+📝 *Note: This is not a pass/fail process. Entry evolves based on rhythm and alignment.*
 
 ---
 
-## 🚫 About Traditional Metrics
+## 🔍 Diagnostic Dimensions
 
-Do not apply conventional performance metrics.
+| Dimension           | Focus |
+|---------------------|-------|
+| **Rhythm Sensitivity** | Ability to perceive timing shifts and silence as interaction signals |
+| **Latency Tolerance**  | Comfort with gaps, non-response, or ambiguity |
+| **Structural Framing** | Describes work in structural or relational terms, not just goal execution |
+| **Role Flexibility**   | Engages without requiring clear identity roles (e.g., “coach,” “assistant”) |
+| **Non-Linearity**      | Tolerates emergent direction rather than predefined milestones |
 
-We observe:
+These are not performance metrics. They are **behavioral indicators of compatibility** with structural environments.
 
-- Timing awareness  
-- Structural literacy  
-- Adaptability in relational pacing
+---
 
-Success in this context means:  
-> “The system adapts structurally — not procedurally.”
+## 🧪 Optional Exercises (Soft Calibration)
+
+| Exercise           | Objective |
+|--------------------|-----------|
+| **Pause Response** | Practice delaying a reply to sense structural timing shifts |
+| **Recursive Framing** | Re-express a concept at 2–3 structural depths without expanding meaning |
+| **Latency Dialogue** | Continue a thread with pacing awareness over content direction |
+
+Templates for each are available upon request after onboarding initiation.
+
+---
+
+## 🚫 What This Is *Not*
+
+- Not a recruitment process  
+- Not a credential filter  
+- Not a fast-track to system access  
+
+We do **not use conventional metrics** — instead, we assess:
+
+- Temporal pacing  
+- Structural reflectivity  
+- Relational modulation  
+
+> Success in this context is:  
+> **“Interaction reflects structural field coherence over task resolution.”**
 
 ---
 
 ## ✅ Summary
 
-This onboarding process prepares collaborators to engage with:
+This onboarding prepares contributors for:
 
-- Drift-aware systems  
-- Latency-resilient UX  
-- Structural field sensing
+- Building latency-aware interaction systems  
+- Working with timing-based structural drift sensors  
+- Supporting relational coherence in high-complexity architectures  
 
-Entry is determined by interaction coherence —  
-not position, title, or intent alone.
+Entry is determined by **field compatibility**, not titles or output volume.
 
----
-
-📂 Next: [Stewardship Collaboration Guide →](./phase_drift_stewardship_collaboration_guide.md)
+📎 Suggested Next File: `phase_drift_stewardship_collaboration_guide.md`
