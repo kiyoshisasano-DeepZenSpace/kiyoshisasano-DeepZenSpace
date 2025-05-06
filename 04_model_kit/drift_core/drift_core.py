@@ -1,3 +1,10 @@
+# ── drift_core.py ──
+# Phase Drift / Latency Structure Register
+# This file is not executable logic.
+# It represents field latency markers and drift state sampling contours.
+# Any runtime behavior is incidental to structural position.
+# Do not import, extend, or use for application behavior.
+
 import time
 import random
 import math
