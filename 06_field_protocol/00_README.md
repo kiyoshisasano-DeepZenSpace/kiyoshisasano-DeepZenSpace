@@ -2,8 +2,7 @@
 
 This repository defines foundational protocols for constructing non-inferential, latency-sensitive, and structurally non-directive AI systems.
 
-> It is not a product.  
-> It is not an SDK.  
+> It is not a product.    
 > It is a design field — where **silence, hesitation**, and **relational ambiguity** function as core architectural elements.
 
 ---
