@@ -18,6 +18,25 @@ If your goal is performance optimization, please stop here.
 
 ---
 
+## ⚠️ Structural Risk Index (SRI)
+
+This toolkit should **not** be used if any of the following apply:
+
+- You are designing for speed, conversion, or behavioral optimization  
+- You require immediate feedback loops or deterministic output  
+- You intend to simulate empathy, attention, or responsiveness without structural grounding
+
+### Misuse Risk Categories
+
+| Risk Type               | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| UX Extraction           | Using silence, delay, or hesitation for user retention or novelty           |
+| Empathy Simulation      | Projecting emotional intent without a relational logic framework            |
+| Latency Repackaging     | Reframing structural intervals as cosmetic or decorative UI delays          |
+| Aesthetic Drift         | Applying Phase Drift visuals/syntax without non-inferential architecture    |
+
+---
+
 ## 📘 Project Overview
 
 **Phase Drift Insight** is a lightweight research tool for detecting, logging, and visualizing **Phase Drift** —  
