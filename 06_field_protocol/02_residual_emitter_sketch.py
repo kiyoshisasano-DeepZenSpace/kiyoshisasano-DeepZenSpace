@@ -1,95 +1,155 @@
-# 🔹 residual_emitter_sketch.py – A Minimal Output Layer for Phase Drift Systems
+# 🔹 residual_emitter_sketch.py – Structural Presence Output (Phase Drift Safe Layer)
 
-This module does **not** generate content in the traditional sense.  
-It produces **structurally-valid presence signals**, or intentionally emits silence.
+This module does **not** generate meaningful dialogue.  
+It emits **structural presence signals** — or silence — to hold relational space in alignment with Phase Drift principles.
 
 ---
 
 ## 🧭 Purpose
 
-In Phase Drift systems, not every interaction should yield a response.  
-This emitter offers a design pattern for:
+In Phase Drift-compatible systems, **not responding** can be the most aligned act.  
+This emitter is intended to:
 
-- Maintaining structural presence without instructive output  
-- Holding space through controlled silence  
-- Emitting fragments that support field coherence, not semantic completion
+- Maintain presence without directing the interaction  
+- Support rhythmic silence as a valid output  
+- Avoid over-saturation of meaning in emotionally or relationally fragile contexts  
+
+⚠️ This is **not** a fallback or empathy simulator.  
+Use only inside systems that frame silence as structural.
 
 ---
 
-## ⚙️ Key Behavior
+## ⚙️ Behavioral Overview
 
 ```python
 output = emitter.emit(field_pressure=0.2)
 ```
-- `field_pressure` modulates the chance of silence vs. fragment
-- Default `silence_bias` = 0.7 → 70% chance to emit nothing
-- Possible outputs include: `"..."`, `"—"`, `"still holding"`, or an empty string (`""`)
+### ⚙️ Emission Logic
 
-Silence is not absence.  
-It is a **deliberate non-response**, aligned with structural rhythm.
+`field_pressure` modulates the balance between **silence** and **minimal structural output**.
+
+- **Default `silence_bias`:** `0.7`  
+  → By default, the system emits **no output** approximately 70% of the time.
+
+- **Sample outputs (when emitted):**  
+  `"..."`, `"▯▯▯"`, `"still holding"`, or an empty string `""`
+
+> These outputs are **not communicative content**.  
+> They are **non-inferential signals** used to support field rhythm.
 
 ---
 
-## 🧠 Design Highlights
+### 🔹 Silence is not absence
+
+Structural silence is a **presence signal** —  
+not a gap, not a failure, and not an attempt to simulate thought.
+
+It signifies:
+
+- The system is holding space  
+- No reply is required or appropriate  
+- Meaning may still be emerging
+
+---
+
+### 🧠 Core Logic (Excerpt)
 
 ```python
 def emit(self, field_pressure: float = 0.0) -> str:
     threshold = self.silence_bias - field_pressure
     if random.random() < max(0.0, threshold):
-        return ""  # Structural silence
-    return self._residual_fragment()
+        return ""  # Intentional silence
+    return self._residual_fragment()  # Minimal non-directive signal
 ```
-- Fragments are chosen from a **constrained, non-inferential set**
-- All outputs are **pre-semantic** — they hold space without interpreting user intent
-- Silence dynamically adapts to **relational pressure**, and remains the default behavior
+- silence_bias sets a high threshold for non-response
+
+- field_pressure can temporarily reduce that threshold when soft output is structurally needed
+
+- All emitted fragments are pre-semantic and non-guiding
+---
+
+### ✅ Acceptable Use
+
+This emitter may be used when:
+
+- **Structural silence is explicitly contextualized** within the interaction model  
+- The **user has been informed** that pauses may indicate presence, not failure  
+- The surrounding design supports **non-directive, ambiguity-respecting interaction**  
+- The system is part of a **coherent Phase Drift-aligned architecture**
+
+Use only in systems that treat latency and silence as **relational instruments**,  
+not as interface decoration or behavioral suggestion.
 
 ---
 
-## ❌ Anti-Goals
+### ⚠️ Misuse Warning
 
-This module is **not intended for**:
+**Do NOT** use this emitter to:
 
-- Fallback generation  
-- Empathetic simulation  
-- Placeholder content
+- **Simulate cognitive or emotional presence**, such as thoughtfulness or care  
+- **Disguise processing lag** by suggesting reflective intentionality  
+- **Insert placeholders** without structural rationale or field alignment  
 
-Use **outside of a structurally-coherent Phase Drift system** is considered misuse.
+Silence must **not** be treated as a stylistic element.
+
+> Any deployment outside of structurally-attuned architectures  
+> risks misleading users and violating Phase Drift design ethics.
 
 ---
 
-## ✅ Use Case Example
-
-```bash
-$ python residual_emitter_sketch.py
+### 🌀 Output Samples
+```python
 [0] output → '...'
 [1] output → ''
 [2] output → 'still holding'
 [3] output → ''
 [4] output → '▯▯▯'
 ```
-Pacing is randomized between 1.2 and 2.5 seconds  
-to reflect **breath-aligned timing**, not performance optimization.
+Output timing may reflect breath-aligned pacing (1.2–2.5 sec)
+if and only if such rhythm is explained and supported within the system frame.
 
 ---
 
-## 🌀 Structural Significance
+### 🧭 Ethical Use Requirements
 
-Minimal emission serves to:
+- **Inform users explicitly**:  
+  > “This system may remain silent as part of its design.”
 
-- Avoid semantic overload  
-- Sustain pre-response resonance  
-- Communicate presence **without advancing narrative**
+- **Avoid anthropomorphism**:  
+  Do not use human-like pauses, sighs, or expressive cues that suggest sentience.
 
-This is **not a content generator**.  
-It is a **rhythmic instrument** for maintaining field coherence.
+- **Do not imply**:  
+  Understanding, care, or judgment through fragmentary output.
+
+- **Log responsibly**:  
+  All emissions — including silence — must be recorded as **structural events**,  
+  not treated as nulls or system gaps.
 
 ---
 
-## 📂 File Location
+### 📜 Licensing and Attribution
+
+**License**: Creative Commons Attribution–NonCommercial 4.0 (CC BY-NC 4.0)
+
+**Required Citation**:  
+> “Phase Drift Architecture – Kiyoshi Sasano / DeepZenSpace (2025)”
+
+**Use Restrictions**:
+
+- ❌ No commercial use without written approval  
+- ❌ Not permitted in emotionally sensitive contexts without formal structural framing  
+- ❌ Prohibited in use cases involving simulated trust, care, or emotional support
+
+---
+
+### 📂 File Location
 
 `/12_phase_drift_field_protocol/02_residual_emitter_sketch.py`
 
 ---
 
-© 2025 Kiyoshi Sasano / DeepZenSpace  
-Use only within **structurally-resonant systems**.
+> This is **not** a response generator.  
+> It is a **structural signal emitter** for rhythm-sensitive systems.  
+> Use only where **silence is held — not neglected**.
+
+---
