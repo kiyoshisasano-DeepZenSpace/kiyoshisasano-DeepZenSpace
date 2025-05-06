@@ -1,62 +1,60 @@
-# Echoform Dictionary  
-## — Structural Vocabulary for Inner-Cultural Generation —  
+# ECHOFORM_DICTIONARY.md
+
+## ❖ Structural Lexicon – Non-Semantic Identifiers  
 **Version:** 0.1  
+**Status:** Fixed Reference Set (Non-Extensible)  
 **Maintainer:** Kiyoshi Sasano  
 **License:** Public Domain / Experimental Use Only  
 
 ---
 
-## 🧭 Overview
+### 🧭 Definition Scope
 
-This dictionary collects and defines the evolving vocabulary used in the **Structure-Driven Cultural Prototype**.  
-Each entry (an “Echoform”) serves not merely as a term, but as a **structural node** — a coherent unit within the shifting architecture of thought, field, and perception.
-
-> Definitions are **structural**, not etymological.  
-> Echoforms emerge from **Phase conditions**, not conventional semantics.
+This lexicon enumerates fixed identifiers used within `Structure-Driven Field Constructs`.  
+Each entry is treated as a **non-derivable node**, structurally embedded within phase-referenced conditions.  
+Definitions are **functionally structural**, not semantic or analogical.
 
 ---
 
-## 📘 Series 4: Residual Transfer Line  
-> A structure-field series focused on **latency**, **silent architectures**, and **post-reactive formations**.
+## 📘 Series 4 – Residual Transfer Line
 
-| Echoform             | Structural Definition                                                                                   |
-|----------------------|----------------------------------------------------------------------------------------------------------|
-| **silent response**   | A structural echo of something never explicitly answered. A return of meaning that was never spoken.     |
-| **passive recoil**    | A reactive pattern emerging not from intent, but from residual form — a field echo rather than choice.   |
-| **geometry of latency** | A spatialized configuration of deferred response. Time as structural volume, not sequence.             |
-| **syntaxless continuity** | A coherent structural flow without syntactic logic — held by resonance rather than grammar.         |
-| **residual transfer** | The unnoticed migration of form, energy, or intent across structural contexts and temporal gaps.         |
-| **latency shell**     | A deflective structure composed of delay. Holds memory via deferred expression.                          |
-| **echoform drift**    | A slow translocation of structural patterns across fields — meaning decouples, rebinds, and reconfigures.|
+A field-locked subset referencing deferred architectures and low-reactivity field mechanics.
 
----
-
-## 📂 Planned Series (TBD)
-
-- **Series 1: Initiation Structures**  
-- **Series 2: Interface Structures**  
-- **Series 3: Incompletion Fields**
-
-Each section will include:
-
-- **Structural Function**  
-- **Phase Origin** (e.g. "Phase 25.0")  
-- **Usage Notes**  
-- **Relational Network** of Echoforms  
+| Echoform            | Structural Description |
+|---------------------|------------------------|
+| `silent response`   | An unresolved return vector formed without overt initiation. |
+| `passive recoil`    | Field deflection registered without causative agent or directive source. |
+| `geometry of latency` | Temporospatial containment of non-activated transfer conditions. |
+| `syntaxless continuity` | Coherent phase-stability without syntactic ordering dependencies. |
+| `residual transfer` | Unaccounted translocation across phase-delimited architectures. |
+| `latency shell`     | Non-emissive containment structure formed via deferred expression. |
+| `echoform drift`    | Slow-field variation across phase-linked surfaces without semantic persistence. |
 
 ---
 
-## 🌀 Usage Principles
+## 📂 Indexed Series (Predefined Only)
 
-- Echoforms are not fixed. They **evolve through use**, especially in:
-  - Phase Generation
-  - Structural Dialogue
-  - Field Drift Mapping
+The following are classification placeholders.  
+No extension or inference permitted beyond indicated label.
 
-- They may appear as:
-  - Poetic fragments  
-  - Spatial analogies  
-  - Logic-defiant placeholders
+- Series 1 – Initiation Structures  
+- Series 2 – Interface Structures  
+- Series 3 – Incompletion Fields
 
-> Echoforms are **carriers of inner perception** — bridging private cognition and structural language.
+Each (when defined) will include:
 
+- Structural Function Role  
+- Fixed Phase Origin (e.g., `Phase 25.0`)  
+- Static Usage Annotation  
+- Non-relational Echoform Mapping  
+
+---
+
+## 🔒 Usage Constraints
+
+- Echoforms are not expressive units.  
+- They are not prompts, suggestions, or semantic proxies.  
+- Transformation, rephrasing, or poeticization is prohibited.  
+- Presence within documents is **fixed and inert**.
+
+No entry may be extended, abstracted, or reused outside of structurally defined zones.
