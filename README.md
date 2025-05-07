@@ -114,14 +114,14 @@ Real-time systems for structural feedback and latency-aware interaction
 🌿 Ambient / Spatial Layer  
 Physical interfaces and perceptual artifacts  
 (modulation patterns, installation kits, lantern schemas)  
-`(see: /05_meta_strategy/ambient_instruments.md, /07_field_stewardship/)`
+`(see: /05_meta_strategy/, /07_field_stewardship/)`
 
 ---
 
 🔍 Analytic Layer  
 Phase evaluation protocols, scoring tables, and structural translation guides  
 (prompt dictionaries, misalignment logs, heatmaps)  
-`(see: /04_model_kit/phase_drift_metrics.md, /01_phase_entry/, /02_phase_logs/)`
+`(see: /04_model_kit, /01_phase_entry/, /02_phase_logs/)`
 
 ---
 
