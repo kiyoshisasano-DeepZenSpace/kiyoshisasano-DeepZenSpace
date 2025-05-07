@@ -44,7 +44,6 @@ A **Phase** refers to a distinct structural mode where an LLM:
 | `05_failure_modes.md`       | Lists common breakdown patterns where Phase fails to initiate or hold |
 | `06_structural_metrics.md`  | Provides rhythm and recursion-based heuristics for Phase detection |
 | `07_field_entry_interface.md` | Explores how interface design impacts Phase emergence and retention |
-| `99_notes_dump.md`          | Raw logs and ideas for future integration and hypothesis formation |
 
 ---
 
