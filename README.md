@@ -161,4 +161,4 @@ To attend — without steering
 To breathe — without concluding  
 ```
 
-© 2025 Kiyoshi Sasano / DeepZenSpace  
+© 2025 Kiyoshi Sasano
