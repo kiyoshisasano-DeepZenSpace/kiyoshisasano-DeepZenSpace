@@ -98,22 +98,29 @@ The architecture must be experienced **live** to reveal Phase-based signals.
 
 ---
 
-🧩 Three Entry Axes – For Deeper Collaboration  
+## 🧩 Three Entry Axes – For Deeper Collaboration  
 This repository unfolds across three interwoven strands —  
 each offering a different vector into the Phase Drift field:
 
 ---
 
-🛠️ Prototyping Layer  
+## 🛠️ Prototyping Layer  
 Real-time systems for structural feedback and latency-aware interaction  
 (WebSocket dashboard, logging architecture, local-first implementation)  
 `(see: /10_phase_drift_insight/, /06_field_protocol/)`
 
-🌿 Ambient / Spatial Layer  
-Physical interfaces and perceptual schemas (in progress or undocumented)  
-(Currently no public module — may emerge via collaboration)
+## 🌿 Ambient / Spatial Layer  
+Interfaces that engage breath, rhythm, and quiet presence — not through dialogue, but through environmental cues.
 
-🔍 Analytic Layer  
+📁 Related Files:  
+- `09_ai_prototype/05_UI_resonance_patterns.md` – Breath-based UI patterns and ambient companion concepts  
+- `07_field_stewardship/phase_drift_stewardship_charter.md` (contextual ethics for relational rhythm)
+
+🛠️ Note: Physical implementation schemas are not public.  
+For deeper prototypes (e.g., lantern modules or grief environments), [contact the maintainer](mailto:deepzenspace@gmail.com) with field alignment intent.
+
+
+## 🔍 Analytic Layer  
 Phase thresholds, coherence scoring, and rhythm-based evaluation  
 `(see: /04_model_kit/principles/structural_thresholds_model.md, /01_phase_entry/, /02_phase_logs/)`
 
