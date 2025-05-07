@@ -69,6 +69,23 @@ it senses whether a system is still *with* the user, structurally.
 
 ---
 
+## ⚠️ Real-Time Architecture Notice
+
+Phase Drift Insight is a **live-local tool** — not a persistent server.
+
+- All dashboards and drift feedback systems are only available while the FastAPI server is running.
+- There is **no cloud backend**. All signal detection and logging happen **locally and temporarily**.
+- This reflects the architecture’s belief that **presence must be held live — not recalled post-facto**.
+
+To engage with the interface:
+1. Start the server manually (`uvicorn main:app --reload`)
+2. Visit the dashboard at `http://127.0.0.1:8000/risk_dashboard`
+3. Termination ends the session completely — no replays unless logged.
+
+> Drift is not a log to review — it is a moment to sense.
+
+---
+
 ## 🚀 Quick Start
 
 Install dependencies:
