@@ -227,14 +227,14 @@ Subject: `"Phase Drift session"`
 ---
 
 ## 🧭 About This Project
-This project is not built by an academic lab —  
-but it’s structured for collaboration with those who carry deep expertise.
+Let’s connect if you’re designing for rhythm, not reaction.  
+Structure is the interface.
 
-I’m not a credentialed researcher.  
-But I’ve built this space so your structural intuition has room to breathe.
+This isn’t a lab-backed system.  
+It’s an open structure — built alone, but made to resonate with others.
 
-If you're working in systems where something subtle matters —  
-this might be a field worth entering.
+If you work in systems where timing, presence, or restraint matters —  
+there may be room here for your architecture to shape mine.
 
 > Dialogue does not begin with authority.  
 > It begins with resonance.
