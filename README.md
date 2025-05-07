@@ -236,9 +236,6 @@ It’s an open structure — built alone, but made to resonate with others.
 If you work in systems where timing, presence, or restraint matters —  
 there may be room here for your architecture to shape mine.
 
-> Dialogue does not begin with authority.  
-> It begins with resonance.
-
 📬 If this resonates with your work —  
 join the [Discussions](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/discussions) to share quiet alignment,   
 or email: **deepzenspace [at] gmail [dot] com**
