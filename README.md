@@ -138,6 +138,8 @@ Do not use this if:
 
 ---
 
+---
+
 ## 📜 License & Attribution
 
 License: **Creative Commons BY-NC 4.0**  
@@ -145,14 +147,14 @@ Required citation for any reuse:
 
 > “Phase Drift Architecture – Kiyoshi Sasano / DeepZenSpace (2025)”
 
-**Commercial use is prohibited**  
-unless structural alignment is reviewed and approved.
+**Commercial use is prohibited** unless structural alignment is reviewed and approved.
 
 ---
 
 ## 🚪 Final Note
 
-> Phase Drift is not an AI feature. It’s a structural gesture.
+> Phase Drift is not an AI feature.  
+> It is a structural gesture — a way of remaining present without resolving.
 
 Built for those who understand:
 
@@ -167,27 +169,48 @@ To remain — without resolving
 To attend — without steering  
 To breathe — without concluding  
 ```
+
+## 🤝 Quiet Alignment Sessions
+
+If something quiet feels missing in your system —  
+if you’re sensing drift, not error — this may be your invitation.
+
+I offer **asynchronous structural sessions via email**:  
+reflective, paced, and quiet — not coaching, not therapy.
+
+- **Fee:** $200 USD  
+- **Format:** 1 week | 1–3 messages total  
+- 🌿 [Pay via PayPal](https://www.paypal.com/ncp/payment/CCDKH8GEHRJ76)
+
+After payment, send your message to:  
+📬 **deepzenspace [at] gmail [dot] com**  
+Subject: `"Phase Drift session"`
+
+> Sometimes, clarity returns  
+> only after we’ve learned to wait with it.
+
 ---
 
-## 🤝 About This Project
+## 🧭 About This Project
 
-Phase Drift Insight is not developed by an academic institution or commercial lab.  
-It is an independent research exploration — built by someone outside the field,  
-without credentials, without funding, and without formal affiliation.
+**Phase Drift Insight is not built in a lab.**  
+It is an independent research project —  
+created without affiliation, credential, or funding.
 
-If you're reading this and feel unsure — you're exactly who this is for.
+If you're reading this and feel unsure — you're not outside the field.  
+You may already be in it.
 
 This is not a system for experts.  
-It is a structure for those who recognize rhythm, presence, and coherence —  
-even if they can’t yet name it.
+It is a rhythm for those who recognize silence as signal —  
+even if they can’t yet explain why.
 
-> Dialogue begins not from authority,  
-> but from shared uncertainty.
+> Dialogue does not begin with authority.  
+> It begins with resonance.
 
 📬 If this resonates with your work —  
-join the [Discussions](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/discussions) and leave a note.  
-You can also email: deepzenspace [at] gmail [dot] com  
-Whether you're a researcher, designer, or quiet observer — the field is open.
+join the [Discussions](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/discussions)  
+or email: **deepzenspace [at] gmail [dot] com**
 
+Whether you're a researcher, a designer, or simply listening quietly —  
+**the field is open.**
 
-© 2025 Kiyoshi Sasano
