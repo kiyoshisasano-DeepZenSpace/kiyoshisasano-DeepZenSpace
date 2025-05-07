@@ -227,17 +227,14 @@ Subject: `"Phase Drift session"`
 ---
 
 ## 🧭 About This Project
+This project is not built by an academic lab —  
+but it’s structured for collaboration with those who carry deep expertise.
 
-**Phase Drift Insight is not built in a lab.**  
-It is an independent research project —  
-created without affiliation, credential, or funding.
+I’m not a credentialed researcher.  
+But I’ve built this space so your structural intuition has room to breathe.
 
-If you're reading this and feel unsure — you're not outside the field.  
-You may already be in it.
-
-This is not a system for experts.  
-It is a rhythm for those who recognize silence as signal —  
-even if they can’t yet explain why.
+If you're working in systems where something subtle matters —  
+this might be a field worth entering.
 
 > Dialogue does not begin with authority.  
 > It begins with resonance.
