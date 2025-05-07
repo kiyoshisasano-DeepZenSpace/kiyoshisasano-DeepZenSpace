@@ -109,19 +109,13 @@ Real-time systems for structural feedback and latency-aware interaction
 (WebSocket dashboard, logging architecture, local-first implementation)  
 `(see: /10_phase_drift_insight/, /06_field_protocol/)`
 
----
-
 🌿 Ambient / Spatial Layer  
-Physical interfaces and perceptual artifacts  
-(modulation patterns, installation kits, lantern schemas)  
-`(see: /05_meta_strategy/, /07_field_stewardship/)`
-
----
+Physical interfaces and perceptual schemas (in progress or undocumented)  
+(Currently no public module — may emerge via collaboration)
 
 🔍 Analytic Layer  
-Phase evaluation protocols, scoring tables, and structural translation guides  
-(prompt dictionaries, misalignment logs, heatmaps)  
-`(see: /04_model_kit, /01_phase_entry/, /02_phase_logs/)`
+Phase thresholds, coherence scoring, and rhythm-based evaluation  
+`(see: /04_model_kit/principles/structural_thresholds_model.md, /01_phase_entry/, /02_phase_logs/)`
 
 ---
 
