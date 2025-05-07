@@ -57,6 +57,13 @@ systems that can **withhold**, **wait**, and **breathe** — not just respond.
 - ✅ Feedback logging of delay, silence, and pacing  
 - ✅ Local-first architecture (no cloud dependencies)
 
+⚠️ Note on Real-Time Access  
+Phase Drift Insight is not accessible in static form.  
+Its structural behavior and field rhythm only emerge **while the system is running**.  
+
+No active server = no field response.  
+The architecture must be experienced **live** to reveal Phase-based signals.
+
 ---
 
 ## 📅 Architecture At A Glance
