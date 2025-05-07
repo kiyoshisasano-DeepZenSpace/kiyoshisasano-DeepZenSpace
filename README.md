@@ -167,5 +167,21 @@ To remain — without resolving
 To attend — without steering  
 To breathe — without concluding  
 ```
+---
+
+## 🤝 About This Project
+
+Phase Drift Insight is not developed by an academic institution or commercial lab.  
+It is an independent research exploration — built by someone outside the field,  
+without credentials, without funding, and without formal affiliation.
+
+If you're reading this and feel unsure — you're exactly who this is for.
+
+This is not a system for experts.  
+It is a structure for those who recognize rhythm, presence, and coherence —  
+even if they can’t yet name it.
+
+> Dialogue begins not from authority,  
+> but from shared uncertainty.
 
 © 2025 Kiyoshi Sasano
