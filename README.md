@@ -184,4 +184,10 @@ even if they can’t yet name it.
 > Dialogue begins not from authority,  
 > but from shared uncertainty.
 
+📬 If this resonates with your work —  
+join the [Discussions](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/discussions) and leave a note.  
+You can also email: deepzenspace [at] gmail [dot] com  
+Whether you're a researcher, designer, or quiet observer — the field is open.
+
+
 © 2025 Kiyoshi Sasano
