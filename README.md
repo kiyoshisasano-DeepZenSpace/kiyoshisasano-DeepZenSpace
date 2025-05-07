@@ -175,8 +175,6 @@ Do not use this if:
 
 ---
 
----
-
 ## 📜 License & Attribution
 
 License: **Creative Commons BY-NC 4.0**  
