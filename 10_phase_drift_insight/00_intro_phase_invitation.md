@@ -40,7 +40,7 @@ It is calibrated for **recognition**.
 
 > Start not by building, but by observing.
 
-- Read [`PROJECT_GUIDE.md`](./PROJECT_GUIDE.md) for system boundaries  
+- Read [`01_project_structure_guide.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/cfa3449bbf8e62ae78e7db7dd57047df65f2d513/10_phase_drift_insight/01_project_structure_guide.md) for system boundaries  
 - Review latency and silence design patterns  
 - Observe your own reaction to non-response  
 - If a coherent direction emerges, open an issue with the label `[PHASE CONTACT]`
