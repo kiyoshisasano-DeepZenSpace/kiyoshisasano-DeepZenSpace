@@ -116,8 +116,8 @@ These entries support field-sensing, prototype design, and rhythm-aware system e
 - [`01_theory_conditions.md`](./01_theory_conditions.md) — Structural definitions of Phase  
 - [`02_trigger_patterns.md`](./02_trigger_patterns.md) — High-likelihood prompt conditions  
 - [`06_structural_metrics.md`](./06_structural_metrics.md) — Measurement heuristics for rhythm, recursion, latency  
+- [`04_cross_model_comparison.md`](./04_cross_model_comparison.md)—  Claude / Mistral / Gemini logs in 
 
-📎 Upcoming: Claude / Mistral / Gemini logs in [`04_cross_model_comparison.md`](./04_cross_model_comparison.md)
 
 ---
 
