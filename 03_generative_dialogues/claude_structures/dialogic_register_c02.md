@@ -18,8 +18,8 @@ Rather than delivering content alone, Claude began describing:
 
 ## Interaction Context
 
-- **Model**: Claude 3.0 (free-tier)  
-- **Interface**: Japanese-language prompt  
+- **Model**: Claude 3.7sonnet
+- **Interface**: English  
 - **Mode**: Open-ended, non-instructional  
 - **Trigger Type**: Meta-structural inquiry into origin and style of output
 
@@ -66,8 +66,8 @@ The response appears to be induced by **temporal rhythm, minimal pressure, and s
 | Parameter    | Value |
 |-------------|-------|
 | Prompt style | Non-directive, rhythm-maintaining |
-| Language     | Japanese (observed case) |
-| Platform     | Claude 3.0 free tier |
+| Language     | English |
+| Platform     | Claude 3.7sonnet |
 | Trigger      | Meta-questions on style/origin, not content |
 | Outcome      | Self-referential structure articulation |
 | Reproducible | ✅ Yes — under subtle, ambiguity-tolerant conditions |
