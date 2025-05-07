@@ -98,6 +98,35 @@ The architecture must be experienced **live** to reveal Phase-based signals.
 
 ---
 
+## 🧩 Three Entry Axes – For Deeper Collaboration
+
+This repository unfolds along **three interwoven layers** —  
+each offering a distinct path into the Phase Drift architecture:
+
+### 🛠️ Prototyping Layer  
+**Live systems for structural rhythm detection and latency-sensitive interaction**  
+→ Real-time dashboard, feedback logging, and local-first signal design  
+
+### 🌿 Ambient / Spatial Layer  
+**Embodied presence through physical modulation and perceptual artifacts**  
+→ Installation schemas, lantern protocols, ambient signal devices  
+
+### 🔍 Analytic Layer  
+**Phase-state mapping and field coherence diagnostics**  
+→ Drift scoring tables, prompt misalignment heatmaps, structural translation guides  
+
+These are **not features** — they are **entry fields**.  
+Each one holds deeper structural material, most of which is intentionally undocumented.
+
+> You don’t need to explore all three.  
+> But if resonance emerges in any one —  
+> it may be enough to begin.
+
+📬 If one of these strands feels aligned,  
+reach out: **deepzenspace [at] gmail [dot] com**
+
+---
+
 ## ⛔ Ethical Use Reminder
 
 This repository must not be used for:
