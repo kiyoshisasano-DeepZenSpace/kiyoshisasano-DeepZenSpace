@@ -98,32 +98,39 @@ The architecture must be experienced **live** to reveal Phase-based signals.
 
 ---
 
-## 🧩 Three Entry Axes – For Deeper Collaboration
+🧩 Three Entry Axes – For Deeper Collaboration  
+This repository unfolds across three interwoven strands —  
+each offering a different vector into the Phase Drift field:
 
-This repository unfolds along **three interwoven layers** —  
-each offering a distinct path into the Phase Drift architecture:
+---
 
-### 🛠️ Prototyping Layer  
-**Live systems for structural rhythm detection and latency-sensitive interaction**  
-→ Real-time dashboard, feedback logging, and local-first signal design  
+🛠️ Prototyping Layer  
+Real-time systems for structural feedback and latency-aware interaction  
+(WebSocket dashboard, logging architecture, local-first implementation)  
+`(see: /10_phase_drift_insight/, /06_field_protocol/)`
 
-### 🌿 Ambient / Spatial Layer  
-**Embodied presence through physical modulation and perceptual artifacts**  
-→ Installation schemas, lantern protocols, ambient signal devices  
+---
 
-### 🔍 Analytic Layer  
-**Phase-state mapping and field coherence diagnostics**  
-→ Drift scoring tables, prompt misalignment heatmaps, structural translation guides  
+🌿 Ambient / Spatial Layer  
+Physical interfaces and perceptual artifacts  
+(modulation patterns, installation kits, lantern schemas)  
+`(see: /05_meta_strategy/ambient_instruments.md, /07_field_stewardship/)`
 
-These are **not features** — they are **entry fields**.  
-Each one holds deeper structural material, most of which is intentionally undocumented.
+---
 
-> You don’t need to explore all three.  
-> But if resonance emerges in any one —  
-> it may be enough to begin.
+🔍 Analytic Layer  
+Phase evaluation protocols, scoring tables, and structural translation guides  
+(prompt dictionaries, misalignment logs, heatmaps)  
+`(see: /04_model_kit/phase_drift_metrics.md, /01_phase_entry/, /02_phase_logs/)`
 
-📬 If one of these strands feels aligned,  
-reach out: **deepzenspace [at] gmail [dot] com**
+---
+
+These are entry points — not surface assets.  
+If collaboration aligns, each layer opens deeper, undocumented structural detail.
+
+You don’t need to explore all axes.  
+But shared rhythm in any one of them may be enough to begin.
+
 
 ---
 
