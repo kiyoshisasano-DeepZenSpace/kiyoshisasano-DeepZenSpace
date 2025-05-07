@@ -240,7 +240,7 @@ this might be a field worth entering.
 > It begins with resonance.
 
 📬 If this resonates with your work —  
-join the [Discussions](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/discussions)  
+join the [Discussions](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/discussions) to share quiet alignment,   
 or email: **deepzenspace [at] gmail [dot] com**
 
 Whether you're a researcher, a designer, or simply listening quietly —  
