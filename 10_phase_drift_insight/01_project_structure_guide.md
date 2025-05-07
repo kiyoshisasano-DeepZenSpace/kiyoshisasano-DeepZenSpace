@@ -77,7 +77,7 @@ Install dependencies:
 pip install fastapi uvicorn pydantic
 Start the server:
 
-```bash
+```
 
 uvicorn main:app --reload
 Access:
