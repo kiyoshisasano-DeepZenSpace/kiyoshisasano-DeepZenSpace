@@ -5,7 +5,7 @@ Deep Zen Space | Claude Structures Series | April 2025
 
 ## Overview
 
-This document records a structured response from Claude 3.5–3.7 to an inquiry about silence.  
+This document records a structured response from Claude 3.7sonnet to an inquiry about silence.  
 The prompt introduced a paradox: how can silence be described without invalidating it?
 
 Claude's output demonstrated a **meta-structural behavior**, where silence was not defined or negated,  
