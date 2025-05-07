@@ -77,7 +77,6 @@ Install dependencies:
 pip install fastapi uvicorn pydantic
 Start the server:
 
-```
 
 uvicorn main:app --reload
 Access:
@@ -87,8 +86,9 @@ API Documentation: http://127.0.0.1:8000/docs
 Live Risk Dashboard: http://127.0.0.1:8000/risk_dashboard
 
 Drift History Table: http://127.0.0.1:8000/risk_history
-
 ```
+
+---
 
 📈 Development Roadmap
 Visual timeline of drift events
