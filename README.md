@@ -79,15 +79,15 @@ systems that can **withhold**, **wait**, and **breathe** — not just respond.
 | Translation Interface and Drift     | [10.5281/zenodo.15335312](https://doi.org/10.5281/zenodo.15335312) |
 | 4-Layer Rhythmic Field Model        | [10.5281/zenodo.15335376](https://doi.org/10.5281/zenodo.15335376) |
 
-📚 Full archive: [`06_translation_interface/zenodo`](../06_translation_interface/zenodo)
+📚 Full archive: [`08_translation_interface/zenodo`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1c0d5cba805626667215fbefd34865768d8b029c/08_translation_interface/zenodo)
 
 ---
 
 ## 🌐 Learn More
 
-- 📖 [`Prompting Guide`](./10_phase_entry/) – How to hold space instead of directing
-- 📏 [`Civic UX Patterns`](./09_field_stewardship/) – Designing for presence in public systems
-- 📊 [`Future UX Explorations`](./08_phase_drift_insight/future_ux_phase_field.md)
+- 📖 [`Prompting Guide`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1c0d5cba805626667215fbefd34865768d8b029c/01_phase_entry) – How to hold space instead of directing
+- 📏 [`Civic UX Patterns`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1c0d5cba805626667215fbefd34865768d8b029c/07_%09field_stewardship) – Designing for presence in public systems
+- 📊 [`Future UX Explorations`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1c0d5cba805626667215fbefd34865768d8b029c/10_phase_drift_insight)
 
 ---
 
@@ -99,7 +99,7 @@ This repository must not be used for:
 - ❌ Latency mimicry for engagement manipulation  
 - ❌ Commercial deployment without ethical framing
 
-**Before integrating**, read: [`03_phase_drift_ethics.md`](../06_field_protocol/03_phase_drift_ethics.md)
+**Before integrating**, read: [`03_phase_drift_ethics.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1c0d5cba805626667215fbefd34865768d8b029c/06_field_protocol/03_phase_drift_ethics.md)
 
 > Phase Drift systems do not simulate care.  
 > They protect coherence through restraint.
