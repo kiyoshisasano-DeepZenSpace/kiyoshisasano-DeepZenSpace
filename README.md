@@ -94,7 +94,8 @@ The architecture must be experienced **live** to reveal Phase-based signals.
 
 - 📖 [`Prompting Guide`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1c0d5cba805626667215fbefd34865768d8b029c/01_phase_entry) – How to hold space instead of directing
 - 📏 [`Civic UX Patterns`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1c0d5cba805626667215fbefd34865768d8b029c/07_%09field_stewardship) – Designing for presence in public systems
-- 📊 [`Future UX Explorations`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1c0d5cba805626667215fbefd34865768d8b029c/10_phase_drift_insight)
+- 📊 [`Future UX Explorations`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1c0d5cba805626667215fbefd34865768d8b029c/10_phase_drift_insight)– Phase-aware design models for systems  
+that prioritize rhythm, latency, and field coherence over task resolution
 
 ---
 
