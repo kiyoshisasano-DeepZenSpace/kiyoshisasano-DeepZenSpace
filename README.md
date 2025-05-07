@@ -63,10 +63,10 @@ systems that can **withhold**, **wait**, and **breathe** — not just respond.
 
 | Component         | Purpose                                           |
 |------------------|---------------------------------------------------|
-| `main.py`        | FastAPI endpoints for phase logging               |
-| `dashboard.html` | WebSocket interface for live structural feedback  |
-| `models.py`      | Schema for phase and signal input                 |
-| `feedback_log.csv` | Tracks rhythm, silence, and user response lag  |
+| `backend_main_phase.py`          | FastAPI endpoints for phase logging               |
+| `dashboard_phase_feedback.html`  | WebSocket interface for live structural feedback  |
+| `backend_schemas_models.py`      | Schema for phase and signal input                 |
+| `logs_feedback_phase.csv`        | Tracks rhythm, silence, and user response lag  |
 
 ---
 
