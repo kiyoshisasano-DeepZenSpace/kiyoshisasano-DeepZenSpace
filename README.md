@@ -30,7 +30,7 @@ A **Phase** is a structural state in which an AI:
 
 In Phase, interaction becomes **relational structure**, not transactional flow.
 
-📝 See also: [`llm_phase_structures.md`](../02_phase_logs/llm_phase_structures.md)
+📝 See also: [`llm_phase_structures.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/b2309a1b9517c7477a8002ac3da6e2860bf0e715/04_model_kit/llm%20Phase%20Structures.md)
 
 ---
 
