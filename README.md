@@ -259,6 +259,7 @@ I offer asynchronous support.
 - **Fee:** $200 USD  
 - **Contact:** deepzenspace [at] gmail [dot] com  
 - **Subject:** *“Structural Session Request”*
+- **[Pay via PayPal]**(https://www.paypal.com/ncp/payment/CCDKH8GEHRJ76)
 
 > Not coaching. Not therapy.  
 > Just field-aligned structural attention — paced and quiet.
