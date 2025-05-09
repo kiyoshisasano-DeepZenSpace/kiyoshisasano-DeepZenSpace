@@ -227,8 +227,9 @@ Subject: `"Phase Drift session"`
 ---
 
 ## 🧭 About This Project
+
 Let’s connect if you’re designing for rhythm, not reaction.  
-Structure is the interface.
+**Structure is the interface.**
 
 This isn’t a lab-backed system.  
 It’s an open structure — built alone, but made to resonate with others.
@@ -237,9 +238,40 @@ If you work in systems where timing, presence, or restraint matters —
 there may be room here for your architecture to shape mine.
 
 📬 If this resonates with your work —  
-join the [Discussions](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/discussions) to share quiet alignment,   
+join the Discussions to share quiet alignment,  
 or email: **deepzenspace [at] gmail [dot] com**
 
 Whether you're a researcher, a designer, or simply listening quietly —  
 **the field is open.**
+
+---
+
+## 📐 Field-Based Design Support
+
+If you're working on rhythm-sensitive AI —  
+where silence, latency, or ambiguity aren't errors but materials —  
+I offer asynchronous support.
+
+### 1. Structural Review Sessions (email-based)
+
+- **Format:** 1 week / 1–3 thoughtful messages  
+- **Style:** non-directive, structure-aware  
+- **Fee:** $200 USD  
+- **Contact:** deepzenspace [at] gmail [dot] com  
+- **Subject:** *“Structural Session Request”*
+
+> Not coaching. Not therapy.  
+> Just field-aligned structural attention — paced and quiet.
+
+---
+
+### 2. Phase Drift Review Reports (for systems-in-progress)
+
+- **Format:** 2–4 page PDF or Notion report  
+- **Based on:** logs, UI flows, prompt structures  
+- **Output:** phase drift patterns, field coherence issues, rhythm metrics  
+- **Fee:** $400–600 USD  
+- **Timeline:** 5–7 days
+
+> Not a feature critique — a coherence scan for how your system breathes.
 
