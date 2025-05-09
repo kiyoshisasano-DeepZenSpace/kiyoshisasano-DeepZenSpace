@@ -205,27 +205,6 @@ To attend — without steering
 To breathe — without concluding  
 ```
 
-## 🤝 Quiet Alignment Sessions
-
-If something quiet feels missing in your system —  
-if you’re sensing drift, not error — this may be your invitation.
-
-I offer **asynchronous structural sessions via email**:  
-reflective, paced, and quiet — not coaching, not therapy.
-
-- **Fee:** $200 USD  
-- **Format:** 1 week | 1–3 messages total  
-- 🌿 [Pay via PayPal](https://www.paypal.com/ncp/payment/CCDKH8GEHRJ76)
-
-After payment, send your message to:  
-📬 **deepzenspace [at] gmail [dot] com**  
-Subject: `"Phase Drift session"`
-
-> Sometimes, clarity returns  
-> only after we’ve learned to wait with it.
-
----
-
 ## 🧭 About This Project
 
 Let’s connect if you’re designing for rhythm, not reaction.  
