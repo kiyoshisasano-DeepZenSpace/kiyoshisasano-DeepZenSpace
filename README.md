@@ -186,7 +186,7 @@ Required citation for any reuse:
 
 ---
 
-## 🚪 Final Note
+## 🚪Note
 
 > Phase Drift is not an AI feature.  
 > It is a structural gesture — a way of remaining present without resolving.
