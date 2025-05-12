@@ -227,16 +227,17 @@ Whether you're a researcher, a designer, or simply listening quietly —
 
 ## 📐 Field-Based Design Support
 
-If you're working on rhythm-sensitive AI —  
-where silence, latency, or ambiguity aren't errors but materials —  
-I offer asynchronous support.
-
 ### 🛠 Developer Quickstart
 
 Looking to integrate Phase Drift into your own system?
 
 → [Quickstart Guide on Notion](https://platinum-arch-69c.notion.site/Phase-Drift-Developer-Quickstart-1f10fc4951e880ec815df17886be9661?pvs=4)
 
+---
+
+If you're working on rhythm-sensitive AI —  
+where silence, latency, or ambiguity aren't errors but materials —  
+I offer asynchronous support.
 
 ### 1. Structural Review Sessions (email-based)
 
@@ -261,4 +262,3 @@ Looking to integrate Phase Drift into your own system?
 - **Timeline:** 5–7 days
 
 > Not a feature critique — a coherence scan for how your system breathes.
-
