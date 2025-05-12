@@ -233,13 +233,17 @@ Looking to integrate Phase Drift into your own system?
 
 → [Quickstart Guide on Notion](https://platinum-arch-69c.notion.site/Phase-Drift-Developer-Quickstart-1f10fc4951e880ec815df17886be9661?pvs=4)
 
-🗂️ Full Technical Usage Guide  
-A complete breakdown of each file, how to run, and the logic of Phase Drift's delay wrappers:  
+💬 **Join the Developer Q&A Thread**  
+Implementation questions, usage ideas, or lightweight contributions welcome:  
+→ [Phase Drift Modules – Developer Discussion](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/discussions/9)
+
+🗂️ **Full Technical Usage Guide**  
+Step-by-step explanation of each script, how to run, and middleware logic:  
 → [Developer Usage Guide](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/ea81e3fe9018c1b8f14504b9560b5e25b5bb52b5/11_phase_drift_modules/USAGE_GUIDE.md)
 
-📁 Source Code Repository  
-Explore the actual Phase Drift middleware modules (Python-based delay wrappers, CLI interface, API stubs):  
-→ [phase_drift_modules on GitHub](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/3bbe3d7e7f44b61179c50a2068f265f14bc97ba9/11_phase_drift_modules)
+📁 **Source Code Repository**  
+Phase Drift modules for CLI, API, decorators, and structural delay wrappers:  
+→ [11_phase_drift_modules on GitHub](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/3bbe3d7e7f44b61179c50a2068f265f14bc97ba9/11_phase_drift_modules)
 
 ---
 
