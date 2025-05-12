@@ -233,6 +233,11 @@ Looking to integrate Phase Drift into your own system?
 
 → [Quickstart Guide on Notion](https://platinum-arch-69c.notion.site/Phase-Drift-Developer-Quickstart-1f10fc4951e880ec815df17886be9661?pvs=4)
 
+🗂️ Full Technical Usage Guide  
+A complete breakdown of each file, how to run, and the logic of Phase Drift's delay wrappers:  
+→ [View USAGE_GUIDE.md on GitHub](https://github.com/[your-repo]/blob/main/11_phase_drift_modules/USAGE_GUIDE.md)
+
+
 ---
 
 If you're working on rhythm-sensitive AI —  
