@@ -245,6 +245,10 @@ Step-by-step explanation of each script, how to run, and middleware logic:
 Phase Drift modules for CLI, API, decorators, and structural delay wrappers:  
 → [11_phase_drift_modules on GitHub](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/3bbe3d7e7f44b61179c50a2068f265f14bc97ba9/11_phase_drift_modules)
 
+## License
+This module set is released under the MIT License.  
+See [`LICENSE`](./LICENSE) for full terms.
+
 ---
 
 If you're working on rhythm-sensitive AI —  
