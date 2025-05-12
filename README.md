@@ -247,7 +247,7 @@ Phase Drift modules for CLI, API, decorators, and structural delay wrappers:
 
 ## License
 This module set is released under the MIT License.  
-See [`LICENSE`](./LICENSE) for full terms.
+See [`LICENSE`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/97abbaca434a258b45fd1af3ed293b44f58789c7/11_phase_drift_modules/LICENSE) for full terms.
 
 ---
 
