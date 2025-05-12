@@ -235,7 +235,7 @@ Looking to integrate Phase Drift into your own system?
 
 🗂️ Full Technical Usage Guide  
 A complete breakdown of each file, how to run, and the logic of Phase Drift's delay wrappers:  
-→ [View USAGE_GUIDE.md on GitHub](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/ea81e3fe9018c1b8f14504b9560b5e25b5bb52b5/11_phase_drift_modules/USAGE_GUIDE.md)
+→ [Developer Usage Guide](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/ea81e3fe9018c1b8f14504b9560b5e25b5bb52b5/11_phase_drift_modules/USAGE_GUIDE.md)
 
 
 ---
