@@ -217,8 +217,7 @@ If you work in systems where timing, presence, or restraint matters —
 there may be room here for your architecture to shape mine.
 
 📬 If this resonates with your work —  
-join the Discussions to share quiet alignment,  
-or email: **deepzenspace [at] gmail [dot] com**
+ email: **deepzenspace [at] gmail [dot] com**
 
 Whether you're a researcher, a designer, or simply listening quietly —  
 **the field is open.**
