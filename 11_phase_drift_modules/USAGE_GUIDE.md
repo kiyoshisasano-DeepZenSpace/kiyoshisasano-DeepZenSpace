@@ -122,6 +122,17 @@ This middleware enforces a conceptual layer of latency, hesitation, or silence i
 
 It's designed for:
 - UX designers exploring delay and anticipation
+
+  ---
+
+## Ethics Reminder
+
+Phase Drift is not built to simulate intelligence or empathy, but to reshape interface timing and structural presence.
+
+Please avoid using this framework in domains where silence or latency may be misinterpreted without field-aware grounding.
+
+Contact is encouraged before adaptation. Structure is collaborative.
+
 - Conversational AI systems where structured quiet matters
 - Developers seeking to challenge "instant gratification" paradigms
 
