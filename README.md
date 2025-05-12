@@ -231,6 +231,13 @@ If you're working on rhythm-sensitive AI —
 where silence, latency, or ambiguity aren't errors but materials —  
 I offer asynchronous support.
 
+### 🛠 Developer Quickstart
+
+Looking to integrate Phase Drift into your own system?
+
+→ [Quickstart Guide on Notion](https://platinum-arch-69c.notion.site/Phase-Drift-Developer-Quickstart-1f10fc4951e880ec815df17886be9661?pvs=4)
+
+
 ### 1. Structural Review Sessions (email-based)
 
 - **Format:** 1 week / 1–3 thoughtful messages  
