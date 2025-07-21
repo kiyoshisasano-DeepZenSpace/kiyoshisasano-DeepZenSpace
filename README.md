@@ -244,6 +244,68 @@ Step-by-step explanation of each script, how to run, and middleware logic:
 Phase Drift modules for CLI, API, decorators, and structural delay wrappers:  
 → [11_phase_drift_modules on GitHub](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/3bbe3d7e7f44b61179c50a2068f265f14bc97ba9/11_phase_drift_modules)
 
+# 🧠 Generative Structural Dialogues  
+_Explorations in Latency-Aware, Field-Sensitive Response Design_
+
+This directory collects design logs and analytical documents that examine how GPT-based models respond under structurally tense or ambiguous interaction fields — particularly within the **Phase Drift** framework of rhythm-aware HCI.
+
+These are not mere prompt experiments.  
+They are **structural tuning tests**: designed to observe, stress, and refine LLM response behavior within recursive, non-directive, or latency-sensitive dialogue contexts.
+
+---
+
+## 📄 Key Entries
+
+### 1. [`gpt_structural_tuning_log.md`](./gpt_structural_tuning_log.md)  
+**Scenario**: The user introduces a possible topic switch in a high-resonance dialogue.  
+**Focus**: Can GPT maintain field coherence without collapsing structural tension?  
+**Outcome**: A minimal, latency-sensitive response pattern that gently holds resonance without imposing closure.
+
+📌 Design Highlights:
+- Soft affirmative framing
+- Conditional phrasing
+- Initiative remains with the user
+
+---
+
+### 2. [`meta_analysis_structural_response.md`](./meta_analysis_structural_response.md)  
+**Scenario**: User requests GPT to respond *without* resonance, affect, or philosophical alignment.  
+**Focus**: Can GPT produce a "cold" structural explanation under suppression of affective cues?  
+**Outcome**: Functional translation of structural semantics into formal logic — but with noted limitations.
+
+📌 Evaluation Summary:
+- ✔ Accurate in symbolic framing  
+- ❌ Inert in field activation  
+- Reveals the limits of non-resonant design in relational systems
+
+---
+
+## 🎯 Why These Matter
+
+These logs serve multiple purposes:
+
+- 📐 **Design Patterns**: For building latency-aware, ambiguity-tolerant interaction systems
+- 🧪 **Diagnostic Tools**: To observe how LLMs behave under field pressure
+- 💬 **Theory Translation**: Making embodied concepts legible to symbolic AI models
+
+---
+
+## 📬 For Collaborators
+
+If your work explores:
+
+- Latency and rhythm in AI systems
+- Structural UX and recursive dialogue
+- Posthuman HCI or speculative interaction
+
+…you may find entry points here.
+
+> Dialogue begins not with answers —  
+> but with alignment in unresolved structure.
+
+For shared inquiries or collaboration, please contact:  
+📧 `deepzenspace [at] gmail [dot] com`
+
 ## License
 This module set is released under the MIT License.  
 See [`LICENSE`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/97abbaca434a258b45fd1af3ed293b44f58789c7/11_phase_drift_modules/LICENSE) for full terms.
