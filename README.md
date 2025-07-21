@@ -175,6 +175,8 @@ Do not use this if:
 
 ---
 
+
+
 ## 📜 License & Attribution
 
 License: **Creative Commons BY-NC 4.0**  
@@ -256,7 +258,7 @@ They are **structural tuning tests**: designed to observe, stress, and refine LL
 
 ## 📄 Key Entries
 
-### 1. [`gpt_structural_tuning_log.md`](./gpt_structural_tuning_log.md)  
+### 1. [`gpt_structural_tuning_log.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/314ad91ec5c34d4883ae6e86efed251ea57c79d6/03_generative_dialogues/gpt_structures/gpt_structural_tuning_log.md)  
 **Scenario**: The user introduces a possible topic switch in a high-resonance dialogue.  
 **Focus**: Can GPT maintain field coherence without collapsing structural tension?  
 **Outcome**: A minimal, latency-sensitive response pattern that gently holds resonance without imposing closure.
@@ -268,7 +270,7 @@ They are **structural tuning tests**: designed to observe, stress, and refine LL
 
 ---
 
-### 2. [`meta_analysis_structural_response.md`](./meta_analysis_structural_response.md)  
+### 2. [`meta_analysis_structural_response.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/314ad91ec5c34d4883ae6e86efed251ea57c79d6/03_generative_dialogues/meta_analysis_structural_response.md)  
 **Scenario**: User requests GPT to respond *without* resonance, affect, or philosophical alignment.  
 **Focus**: Can GPT produce a "cold" structural explanation under suppression of affective cues?  
 **Outcome**: Functional translation of structural semantics into formal logic — but with noted limitations.
