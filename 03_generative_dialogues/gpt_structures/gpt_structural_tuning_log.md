@@ -40,7 +40,7 @@ A user initiates a topic shift (e.g., from abstract dialogue to concrete trainin
 - Selected format:
 ```
 {Soft affirmative}. {Conditional clause}, {alternative topic} is possible.
-
+```
 
 - Example:
 > "No problem. If needed, we can switch to training."
@@ -53,7 +53,7 @@ A user initiates a topic shift (e.g., from abstract dialogue to concrete trainin
 
 ```text
 [Affirmative buffer]. [If-needed clause], [alternative direction] is also possible.
-
+```
 Examples:
 "Of course. If you prefer, we can shift toward more practical matters."
 
