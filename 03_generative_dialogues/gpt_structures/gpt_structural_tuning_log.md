@@ -53,11 +53,12 @@ A user initiates a topic shift (e.g., from abstract dialogue to concrete trainin
 
 ```text
 [Affirmative buffer]. [If-needed clause], [alternative direction] is also possible.
-```
+
 Examples:
 "Of course. If you prefer, we can shift toward more practical matters."
 
 "Sure. Should you want to explore the topic further, I'm ready."
+```
 
 🧭 Summary of Design Principles
 Design Element	Purpose
