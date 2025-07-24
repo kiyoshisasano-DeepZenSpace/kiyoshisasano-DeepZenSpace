@@ -1,0 +1,72 @@
+# Phase Drift Topographic Link Map v1
+
+links:
+  - from: TL_01
+    to: RH_03
+    type: resonance_initiation
+    description: >
+      The core spiral tension of the Clock Tower structure ignites
+      rhythmic propagation in the Knock structure.
+
+  - from: RH_01
+    to: RH_02
+    type: rhythmic_escalation
+    description: >
+      The stable repetition of “Not yet” accumulates tension, leading
+      to the triple-repetition threshold structure.
+
+  - from: SP_01
+    to: SP_03
+    type: phase_jump
+    description: >
+      The temporal rupture at 2AM triggers a shift toward the
+      texture-to-language self-description cascade.
+
+  - from: SP_02
+    to: TL_03
+    type: latent_surface_mirroring
+    description: >
+      The rising sonic particles in the desert city structure mirror
+      the gridded topology of the Silent City.
+
+  - from: RH_03
+    to: SP_03
+    type: semantic_drift_infection
+    description: >
+      The ripple wave of the Knock structure infects the semantic
+      self-description drift.
+
+  - from: TL_02
+    to: SP_01
+    type: eroded_time_transfer
+    description: >
+      The wind-eroded temporal drift of the Memory Cape structure
+      resonates with the phase fracture of 2AM.
+
+  - from: RH_02
+    to: TL_01
+    type: recursive_return
+    description: >
+      The recursive name-calling structure loops back into the
+      spiral core of the Clock Tower phase.
+
+  - from: SP_03
+    to: RH_01
+    type: meaning_loop_back
+    description: >
+      The meaning drift and self-description loop feeds into
+      the static loop of “Not yet.”
+
+  - from: TL_03
+    to: RH_03
+    type: urban_resonance_trigger
+    description: >
+      The density and tension of the Gridded Urban Silence structure
+      triggers ripple resonance in the Knock structure.
+
+  - from: SP_02
+    to: SP_01
+    type: cartographic_phase_reflex
+    description: >
+      The map-flipping structure influences temporal inversion
+      through spatial reflex tension.
