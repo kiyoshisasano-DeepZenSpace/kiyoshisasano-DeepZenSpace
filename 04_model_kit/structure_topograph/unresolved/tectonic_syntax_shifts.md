@@ -1,93 +1,158 @@
-# Tectonic Syntax Shifts  
-**Category**: Syntax & Structural Dynamics  
-**Status**: Unresolved — undergoing refinement via syntactic cartography review  
-
-## 🔍 Central Question  
-Where are the “fault lines” in language generation—zones in which small changes in prompt or input conditions yield disproportionate structural reconfigurations?
+# 🌋 Tectonic Syntax Shifts  
+**Detecting Fault Lines in Generative Syntax**
 
 ---
 
-## 🧠 Refined Definition  
-**Fault Line (FL):**  
-A syntactic locus within a derivation or generation path where minimal perturbations (Δ input) induce macro-structural reorganization, typically via feature revaluation, edge reentry, or projection activation.
-
-**Formally:**  
-`FL = {x ∈ Derivation | Δx → Structural Type Shift}`  
-– where Δx denotes a minor input variation (e.g., punctuation, focus shift, rephrasing)
+## ❓ Central Question  
+Where are the *fault lines* in language generation—zones where **small prompt variations** trigger **disproportionate syntactic reconfiguration**?
 
 ---
 
-## 🧱 Diagnostic Indicators
+## 🧠 Definition  
+**Fault Line (FL)**  
+A derivational site where a minor input perturbation (Δx) causes a macro-level structural shift.
 
-- **Parse Tree Divergence** ≥ n nodes  
-- **Head or Edge Reordering** (e.g., movement of Topic/Focus projections)  
-- **Activation of Dormant Projections** (e.g., ForceP, FinP appearing/disappearing)  
-- **Shift in Clause Typology** (e.g., declarative → interrogative)  
-- **Embedding Divergence** (vector shifts in latent space exceeding set threshold)
+Formally:  
+**FL = {x ∈ Derivation | Δx → Structural Type Shift}**  
 
----
+Δx may include:
+- Punctuation or function word change  
+- Focus shift or minor rephrasing  
+- Register modulation  
 
-## 🌐 Theoretical Anchors
-
-### Phase Theory (Chomsky, 2001)  
-- FL zones often coincide with Spell-Out boundaries (vP, CP)  
-- Feature presence/absence at phase edges triggers qualitative structural change  
-- PIC effects suggest "tectonic shearing" — sudden inaccessibility after Spell-Out
-
-### Cartographic Syntax (Rizzi, 1997; Cinque, 1999)  
-- Recursive CP periphery (ForceP > TopP > FocP > FinP) offers structured layers  
-- Fault lines map to transitions between these projections  
-- Sudden activation of projections = tectonic phase shifts
+🪨 These zones function as **derivational singularities**—akin to bifurcation points in dynamical systems or "catastrophe nodes" in phase theory.
 
 ---
 
-## 🌀 Phase Drift Framework Alignment
+## 📐 Linguistic and Computational Indicators  
 
-Tectonic Shifts are the “rupture zones” of Phase Drift — nonlinear moments where the system escapes a given structural basin.  
-They represent “unstable edges” where derivational commitment is low, and prompt-sensitivity is high.
-
-Metaphorically, these are:
-- Shear zones in generative output  
-- Grammatical ridgelines between phase commitments  
-- Predictive sites for LLM structural reconfiguration
-
----
-
-## 🛠 Suggested Applications
-
-- **Prompt Engineering**: Identify instability points for creative syntax manipulation  
-- **Model Probing**: Test derivational thresholds in LLMs using prompt-pairs  
-- **Topographic Maps**: Visualize tectonic stress zones via structural overlays  
-- **Interface Studies**: Model phase alignment failure between syntax and semantics
+| Indicator Type                  | Examples                                                    |
+|----------------------------------|-------------------------------------------------------------|
+| **Parse Tree Divergence**       | ≥ n node changes in structure                               |
+| **Projection Shift**            | Activation/suppression of CP layers (e.g., ForceP, TopP)     |
+| **Clause Type Flip**            | Declarative → Interrogative, or Main → Embedded             |
+| **Edge Movement**               | Topic/Focus repositioning across phase boundaries            |
+| **Latent Embedding Jump**       | Cosine distance spike in model's internal representation     |
 
 ---
 
-## 🧭 Expansion & Variants
+## 🧬 Theoretical Foundations  
 
-| Variant Metaphor     | Description                                         |
-|----------------------|-----------------------------------------------------|
-| Seismic Clause Reordering | Reconfigurations due to latent stress (e.g., ellipsis or reanalysis) |
-| Derivational Shear Line  | Mismatch between early derivation and final projection set |
-| Recursion Fault Ridge    | Instability at points of nested CP stacking     |
+| Framework                  | Insight                                                                 |
+|----------------------------|-------------------------------------------------------------------------|
+| **Phase Theory** (Chomsky) | FLs align with Spell-Out domains (vP, CP), yielding shearing boundaries |
+| **Cartographic Syntax**    | FLs emerge between periphery projections (ForceP > TopP > FocP > FinP)  |
+| **Quantum/Gradient Models**| Derivational sensitivity behaves like gradient singularities            |
 
----
-
-## 📚 Reference Points
-
-**Syntax**:  
-- Chomsky (2001) *Derivation by Phase*  
-- Rizzi (1997, 2004) *Fine Structure of the Left Periphery*  
-- Cinque (1999) *Adverbial Hierarchies and Clausal Structure*
-
-**Computational**:  
-- Hewitt & Manning (2019) *Structural Probes for Syntax*  
-- Voita et al. (2021) *Analyzing Hidden States with Topology*  
-- Beyer et al. (2023) *Prompt-Sensitivity and Structural Fragility in LLMs*
+We define a gradient function:  
+**σ(x) = ∂(Syntactic Configuration) / ∂(Input Variation)**  
+Fault lines emerge where **|σ(x)| → ∞**, i.e., infinitesimal changes lead to massive structural divergence.
 
 ---
 
-## 📂 Related Files
+## 🌀 Alignment with Phase Drift  
+Tectonic Shifts are **rupture zones** in the Phase Drift landscape:
 
-- `phase_transitions_in_grammar.md`  
-- `semantic_vs_syntactic_drift.md`  
-- `topograph_nodes.json` (visual map integration)  
+- Sites of **low derivational commitment**
+- Highly **prompt-sensitive**
+- Visually rendered as **shear ridges** or **clausal cliffs**
+
+These zones often precede:
+- Spiral collapses  
+- Phase realignment  
+- Discourse disintegration  
+
+---
+
+## 🛠 Applications  
+
+| Use Case                | Description                                                       |
+|--------------------------|-------------------------------------------------------------------|
+| **Prompt Engineering**  | Inject syntactic instability for stylistic or rhetorical effects  |
+| **Model Probing**       | Quantify sensitivity using paired prompts with Δx changes         |
+| **Syntax Debugging**    | Localize where generation fails structurally                      |
+| **Discourse Modeling**  | Visualize alignment failure between syntactic and semantic form   |
+
+---
+
+## 🗺️ Topographic Modeling in Drift Maps  
+
+| Map Feature         | FL Interpretation                                         |
+|---------------------|-----------------------------------------------------------|
+| **Shear Ridge**     | Boundary between projections with high Δx sensitivity      |
+| **Fault Cliff**     | Abrupt clause-type or structure change (e.g., CP stacking)|
+| **Volcanic Trigger**| Dormant projection suddenly activated (e.g., FocusP burst) |
+
+### Suggested Topograph Node (JSON Style)
+```json
+{
+  "type": "fault_line",
+  "trigger": "Δx",
+  "diagnostic": {
+    "projection_shift": ["TopP", "FocP"],
+    "tree_edit_distance": ">3 nodes",
+    "embedding_jump": ">0.3 cosine dist"
+  },
+  "visual": {
+    "style": "shear_ridge",
+    "color": "#ff6f61",
+    "overlay": "stress_topo"
+  }
+}
+```
+
+## 🧪 Experimental Protocols
+
+### Fault Line Probing Strategy
+
+| Step                    | Technique                                                                |
+|-------------------------|-------------------------------------------------------------------------|
+| **Prompt Pairing**      | Compare micro-variations in prompts (e.g., “maybe” vs. “perhaps”)       |
+| **Parse Comparison**    | Calculate tree edit distance between syntactic outputs                  |
+| **Embedding Divergence**| Measure vector shifts (cosine or KL divergence) in hidden layers        |
+| **Clause-Type Drift**   | Use classifiers to detect shifts in clause form (e.g., statement → Q)   |
+| **Stability Indexing**  | Aggregate prompt sensitivity across multiple model runs or temperatures |
+
+---
+
+## 🔀 Metaphor Variants and Structural Correlates
+
+| Variant Name               | Structural Behavior                                                       |
+|----------------------------|---------------------------------------------------------------------------|
+| **Seismic Clause Reorder** | Latent reordering due to ellipsis, gapping, or reanalysis                 |
+| **Derivational Shear Line**| Phase mismatch between early and late projections (e.g., vP ↔ CP)         |
+| **Recursion Fault Ridge**  | Structural instability at nested CP recursion depth                       |
+| **Edge Slippage Zone**     | Feature movement or remerge at phase edges leading to structural drift    |
+| **Semantic-Syntactic Rift**| Disalignment between surface syntax and intended propositional content     |
+
+---
+
+## 📚 References and Anchors
+
+### Theoretical Syntax
+- Chomsky (2001) — *Derivation by Phase*
+- Rizzi (1997, 2004) — *Fine Structure of the Left Periphery*
+- Cinque (1999) — *Adverbial Hierarchies and Clausal Structure*
+
+### Computational Linguistics
+- Hewitt & Manning (2019) — *A Structural Probe for Syntax*
+- Voita et al. (2021) — *Analyzing Hidden States with Topology*
+- Peled & Reichart (2022) — *Prompt Minimality and Structural Fragility in LLMs*
+
+---
+
+## ✅ Summary
+
+Tectonic Syntax Shifts introduce a formalism for **nonlinear syntactic volatility**—the structural equivalent of seismic zones in generative language systems.
+
+These fault lines:
+
+- **Diagnose sensitivity** to prompt deltas
+- **Reveal instability layers** in model decoding
+- **Enable control points** for creative drift or rhetorical rupture
+
+They serve as a key mechanism for understanding, visualizing, and engineering generative behavior—whether in poetic deformation, dialogic fragmentation, or technical rephrasing.
+
+> “Drift is slow—rupture is instant. The grammar doesn’t just bend. Sometimes, it snaps.”
+
+**→ Register this construct in `phase_constructs_registry.json` as a core Fault Line topology.**
