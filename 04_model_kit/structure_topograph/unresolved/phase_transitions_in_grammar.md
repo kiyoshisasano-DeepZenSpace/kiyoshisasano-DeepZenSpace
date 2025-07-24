@@ -1,5 +1,3 @@
-# 🧩 Unresolved Theme: Phase Transitions in Grammar
-
 **Key Question**  
 Are there identifiable critical points where the generative output of a language model shifts abruptly—structurally or stylistically—analogous to a phase transition in physics? What triggers these transitions, and how can they be detected or even controlled?
 
