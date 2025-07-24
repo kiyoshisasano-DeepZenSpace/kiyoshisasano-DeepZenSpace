@@ -292,6 +292,21 @@ These logs serve multiple purposes:
 
 ---
 
+### 🗺 Topographic Structure Map (v1)
+
+The diagram below visualizes structural nodes across three major syntactic zones:
+
+- 🗻 Topographic Language Zone (TL)
+- 🌀 Structural Phase Zone (SP)
+- 🔁 Rhythm Zone (RH)
+
+Each node is placed based on its ignition point, rupture type, and phase pattern.  
+This topographic map serves as a spatial reference for interpreting syntactic terrain in Phase Drift structures.
+
+📎 See: `structure_topograph/images/topograph_nodes_v1.png`
+
+---
+
 ## 📬 For Collaborators
 
 If your work explores:
@@ -307,6 +322,7 @@ If your work explores:
 
 For shared inquiries or collaboration, please contact:  
 📧 `deepzenspace [at] gmail [dot] com`
+
 
 ## License
 This module set is released under the MIT License.  
