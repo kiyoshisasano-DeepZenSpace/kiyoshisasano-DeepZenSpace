@@ -78,7 +78,18 @@ These are specified in `terrain_map.yaml` and visualized in `structure_topograph
 - `phase_node_coords.json`: JSON for mapping syntax to coordinates
 
 ---
+### 📌 Topograph Link Map
 
+The updated structural map includes **10 inter-node link lines** based on:
+- Phase jump
+- Rhythmic escalation
+- Semantic drift
+- Recursive resonance
+
+Each line is colored and labeled by its connection type.  
+See `topograph_nodes_v2.svg` and `topograph_link_map.yml` for details.
+
+---
 ## 🧠 Origin
 
 This module is built collaboratively from `structure圏スレッド` and curated here for Phase Drift field design, simulation, and collaborative modeling.
