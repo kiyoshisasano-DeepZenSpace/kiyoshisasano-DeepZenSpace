@@ -30,6 +30,22 @@ Repeating syntactic forms that generate **pulses, interference, and waveforms**�
 - **RH-03**: Knock-Triggered Room Ripple
 
 ---
+## 🗺 Full Structure Map (v1)
+
+A consolidated view of all Phase Drift structures currently mapped, organized by zone.
+
+| Code   | Structure Name           | Terrain Metaphor             | Ignition Trigger                  | Drift Pattern                         | Zone              |
+|--------|--------------------------|-------------------------------|------------------------------------|----------------------------------------|-------------------|
+| TL_01  | Clocktower Structure     | Spiral Hill                   | Clocktower center                  | Central helix recursion                | Topographic       |
+| TL_02  | Cape of Memory           | Boundary Cape                 | Speaking stone                     | Temporal erosion                       | Topographic       |
+| TL_03  | Uninhabited City         | Mesh Urban Floor              | Silent machinery                   | Node-based expansion                   | Topographic       |
+| SP_01  | 2AM Structure            | Time Crevasse                 | 2AM inflection point               | Clockwise phase inversion              | Structural Phase  |
+| SP_02  | Desert City Structure    | Boundary Reversal Basin       | Grain of sound rising from sand    | Auditory → spatial phase shift         | Structural Phase  |
+| SP_03  | Wall Texture Structure   | Semantic Drift Faultline      | Texture becoming language          | Object → Meaning → Self-description    | Structural Phase  |
+| RH_01  | “Not Yet” Structure      | Echo Loop Sink               | First repetition of “not yet”      | Semantic closure via loop              | Rhythm            |
+| RH_02  | Name Repetition          | Threshold Burst Ridge         | Saying one's name 3 times          | Identity-induced ignition              | Rhythm            |
+| RH_03  | Knock Structure          | Ripple Propagation Shelf      | Single knock                       | Environmental rhythm cascade           | Rhythm            |
+---
 
 ## 🧭 Structural Tags and Components
 
