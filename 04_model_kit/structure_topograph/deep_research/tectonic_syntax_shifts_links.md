@@ -1,110 +1,95 @@
-# 🌋 Deep Research Links: Tectonic Syntax Shifts  
-_Phase Drift Syntax Mapping Framework – Research Module_
+# Deep Research Links: Tectonic Syntax Shifts (v2)
 
-This document compiles the core theoretical, metaphorical, and empirical sources grounding the concept of **Tectonic Syntax Shifts** within the Phase Drift topography system.  
-It connects formal syntax theory, dynamical systems, metaphor cognition, and LLM behavior modeling to support the idea of **rupture lines** in generative language space.
+This document collects interdisciplinary research, analog models, and theoretical tools that support the development of the **Tectonic Syntax Shifts** concept within the *Phase Drift Syntax Mapping* framework. Version 2 incorporates insights from the "Open Questions" initiative, expanding metaphoric range, theoretical grounding, and AI interpretability.
 
 ---
 
 ## 🔍 Conceptual Foundations
 
-### 🧭 Syntactic Cartography
+### • Syntactic Cartography
+- **Cinque (1999)** — *Adverbs and Functional Heads*: vertical layering of syntax.
+- **Rizzi (1997)** — *The Fine Structure of the Left Periphery*: faultline precursors via clause-edge shifts.
 
-- **Cinque, Guglielmo** (1999). _Adverbs and Functional Heads_  
-  → Origin of vertical syntax layer mapping (useful for identifying pressure zones in derivational strata)
-
-- **Rizzi, Luigi** (1997). _The Fine Structure of the Left Periphery_  
-  → Pinpoints zones of syntactic fragility (e.g., TopP > FocP transitions)
-
-### 🧱 Phase Theory in Minimalist Syntax
-
-- **Chomsky** (2000, 2001). _Derivation by Phase_  
-  → Foundation of discrete "phase" steps; justifies modeling syntax as tectonic plate-like systems
-
-- **Legate, Julie Anne** (2003). _Phases and Cyclicity_  
-  → Offers empirical diagnostics for detecting phase transition points
+### • Phase Theory in Minimalism
+- **Chomsky (2000, 2001)** — *Derivation by Phase*: syntax as discrete intervals supporting rupture modeling.
+- **Legate (2003)** — *Phases and Cyclicity*: diagnostics for phase boundaries and syntactic instability.
 
 ---
 
 ## 🌍 Metaphorical & Dynamical Analogues
 
-### 🌐 Tectonic Metaphor in Linguistics
+### • Tectonic & Physical Metaphors in Language
+- **Talmy (2000)** — *Toward a Cognitive Semantics*: rupture and force dynamics in cognitive metaphor.
+- **Kövecses (2002)** — *Metaphor: A Practical Introduction*: dynamic conceptual mappings support tectonic analogy.
 
-- **Talmy, Leonard** (2000). _Toward a Cognitive Semantics_  
-  → Maps cognitive metaphors involving **rupture**, **motion**, **resistance**, and **force dynamics**
-
-- **Kövecses, Zoltán** (2002). _Metaphor: A Practical Introduction_  
-  → General metaphor theory applicable to shifting structural fields
-
-### ⚙️ Dynamical Systems & Phase Shift Models
-
-- **Strogatz, Steven** (1994). _Nonlinear Dynamics and Chaos_  
-  → Basis for bifurcation logic and state transitions
-
-- **Buzsáki, György** (2006). _Rhythms of the Brain_  
-  → Phase locking and abrupt reconfigurations in cognitive processing, applicable to LLM behavior shifts
+### • Dynamical Systems & Rupture Theory
+- **Strogatz (1994)** — *Nonlinear Dynamics and Chaos*: phase transitions and bifurcations in generative flow.
+- **Buzsáki (2006)** — *Rhythms of the Brain*: rhythmic phase locking and sudden jumps across states.
 
 ---
 
-## 🧠 AI + LLM Behavior Research
+## 🧠 AI & LLM Behavior Research
 
-### 🧪 Fragility and Catastrophe in Language Models
-
-- **Elhage et al.** (Anthropic, 2022). _Toy Models of Superposition_  
-  → Micro-vector changes triggering major representational collapse
-
-- **OpenAI** (2023). _GPT Behavior Across Temperature and Prompt Shifts_  
-  → Identifies **sensitivity thresholds** and syntactic destabilization zones
-
-- **Andreas, Jacob** (2023). _Language Models as Mechanistic Systems_  
-  → Distinguishes **structure-preserving** from **structure-reconfiguring** states in LLM behavior
+### • Structural Instability in Generative Systems
+- **Elhage et al. (Anthropic, 2022)** — *Toy Models of Superposition*: vector perturbation ↔ output rupture.
+- **OpenAI (2023)** — *GPT Behavior Across Temperature and Prompt Shifts*: tipping points in syntax trajectories.
+- **Andreas (2023)** — *Language Models as Mechanistic Systems*: stable vs. reconfigurable syntax zones.
 
 ---
 
-## 🔬 Experimental Directions
+## 🚧 Extensions from Open Questions
 
-- **Prompt Delta Testing**  
-  Create minimal prompt variations (`Δx`) and trace divergence in outputs
+The following advanced themes from the **Open Questions** corpus enhance the tectonic framework:
 
-- **Latent Space Visualization**  
-  Apply PCA / UMAP to model activations to visualize **fault planes**
+### 🌀 Phase Entanglement
+- Overlapping syntactic routines create interference zones — possible source of compound rupture.
+- ↪ Quantum-inspired models (e.g. *quantinuum.com*) suggest entangled syntax phases.
 
-- **Coherence Monitoring**  
-  Track entailment, parsing, or syntactic consistency loss during generation
+### ⚡ Phase Transitions in Grammar
+- Prompt- or token-triggered regime changes (e.g., from list to narrative).
+- ↪ Aligns with structural rupture across boundaries in latent phase space.
 
----
+### 🧩 Metastable Fault Zones
+- Regions of syntactic ambiguity may hover between structural states — pre-rupture "plateaus."
+- ↪ Related to linguistic code-switching and phase instability.
 
-## 🧭 Visual + System Integration
+### 🕳️ Syntactic Wormholes
+- Non-local syntax jumps (e.g., long-distance reference, sudden topic shifts) modeled as "wormholes."
+- ↪ Visualized as shortcut portals on the syntax terrain.
 
-This research informs future expansions to:
+### 🧠 Latent Space Alignment
+- Embedding space rupture zones match visible faultlines (e.g., drop in cosine similarity across time).
+- ↪ Enables overlay of structural faults onto PCA/UMAP reductions.
 
-- `structure_topograph.svg`  
-  → Add **fault-line overlays** with rupture potential indicators
-
-- `topograph_links.yml`  
-  → Mark unstable **inter-node zones** or phase-jump vectors
-
-- `generative_sandbox/`  
-  → Develop rupture simulation tools with prompt perturbation mapping
-
----
-
-## 🧾 Suggested Citation
-
-```
-Tectonic Syntax Shifts — Deep Research Module  
-Phase Drift Syntax Mapping v1  
-Location: structure_topograph/deep_research/tectonic_syntax_shifts_links.md  
-GitHub Project: Phase Drift Topography
-```
+### 📈 Drift Over Long Sequences
+- Cumulative syntactic erosion in longform generation may trace tectonic paths.
+- ↪ Faultlines as endpoints or attractors in slow generative drift.
 
 ---
 
-Would you like help prototyping:
+## 🧪 Experimental Probes
 
-- A `Δx sensitivity explorer`?
-- Fault plane detection via embedding space gradients?
-- Interactive visual overlays for rupture-prone syntax zones?
+- **Prompt delta testing**: minor prompt shifts, major syntax rupture.
+- **Latent space tracking**: PCA/UMAP reveal activation discontinuities (phase plane detection).
+- **Coherence monitoring**: track NLI/parsing metrics for rupture onset.
+- **Phase Activation Index (PAI)**: prototype metric for sudden drops in inter-sentence structure synchrony.
 
-Let’s model the cracks—before they widen.
+---
 
+## 🧭 Visual Integration
+
+This research supports upcoming enhancements in:
+
+- `structure_topograph.svg` — adding **fault overlays**, **wormhole markers**, and **phase stability contours**.
+- `topograph_links.yml` — tagging **volatility indices** between nodes.
+- Interactive sandbox: **simulate prompt-triggered rupture**, **visualize structural earthquakes**.
+
+---
+
+## 🧠 Suggested Citation
+
+```text
+Tectonic Syntax Shifts — Deep Research Module (Phase Drift Syntax Mapping v2)  
+structure_topograph/deep_research/tectonic_syntax_shifts_links.md  
+GitHub Project: Phase Drift Topography  
+Informed by the Open Questions thread and latent phase modeling research (2025)
