@@ -1,56 +1,151 @@
-# 🧪 Unresolved Theme: Generative Sandbox with Structural Controls
+# 🧪 Generative Sandbox with Structural Controls
 
-**Key Question**  
-Can we build a **sandbox interface** where users can actively manipulate structural features (e.g., spirals, fault lines, loops) and watch the AI regenerate text accordingly? How can structural metaphors in the Phase Drift framework be made **controllable parameters** in prompt-based text generation?
+**Status**: Unresolved  
+**Thread**: [`thread_generation_control`](../../thread_generation_control)
 
-**Description**  
-The sandbox concept moves Phase Drift from **diagnostic mapping** to **generative steering**. Instead of passively observing syntax terrain, users could tweak controls like:
-- “Increase spiral recursion”
-- “Introduce a phase jump”
-- “Add a resonance loop”
-- “Flatten syntactic complexity here”
+---
 
-These would dynamically alter how the model produces text—turning the **syntax map into a creative instrument**.
+## 🎯 Key Question
 
-**Interaction Examples**
-- A slider increases rhythmic resonance, making the AI repeat phrasing more poetically
-- Clicking on a node and inserting a “fault line” causes a stylistic rupture
-- Setting a “semantic echo” effect causes themes to re-emerge periodically
-- A button labeled “deformalize” shifts syntax toward colloquial phrasing
+Can we build an interactive sandbox where users directly manipulate structural features—like spiral depth, fault lines, or echo loops—and watch the model regenerate text accordingly?
 
-**Relevant Fields**
-- Prompt engineering and LLM parameterization
-- Human-in-the-loop generation systems
-- Generative creativity tools (writing software, AI co-authoring)
-- Latent space control and interpretability
-- Music/audio software interface metaphors (knobs, sliders, modulations)
+---
 
-**Relation to Phase Drift Framework**  
-The sandbox operationalizes the metaphors of Phase Drift by allowing:
-- Real-time experimentation with phase dynamics
-- Direct control over structural behaviors like recursion, drift, and transition
-- Embedded feedback loops between **user, map, and model output**
+## 🧠 Overview
 
-**Design Considerations**
-- How can metaphorical structures be parameterized? (e.g., "spiral depth" = recursive clause depth)
-- Can we use latent space probes or prompt modifiers to simulate these effects?
-- Should the system give visual feedback (e.g., terrain reshapes as you drag controls)?
-- What is the relationship between map topology and output variability?
+This sandbox operationalizes the *Phase Drift* metaphor space. Instead of merely visualizing syntax maps, users become **topographic composers**—modulating recursion, rhythm, tone, and narrative structure through interactive controls.
 
-**Prototype Use Cases**
-- Writers shaping narrative complexity via topographic tools
-- Linguists testing how drift affects coherence or semantic density
-- Artists creating constraint-driven generation using spatial metaphors
-- Educators using sandbox play to teach structure, rhythm, and recursion in language
+Inspired by modular synthesis (e.g., Ableton Live, VCV Rack), this tool treats structure as a **generative instrument**.
 
-**Challenges**
-- Defining the mapping between structural metaphors and model behavior
-- Maintaining coherence while allowing interactive perturbations
-- Avoiding metaphor overload in the UI
-- Evaluating the effectiveness of structural controls (does “adding a loop” really behave as expected?)
+---
 
-**References**
-- Prompt-based control tuning in LLMs
-- Tools like Sudowrite, NovelAI, and TextFX (structure-aware generation)
-- Modular audio software (Ableton Live, VCV Rack) as inspiration for UI
-- Phase Drift’s visual schema (structure_topograph.svg, phase_node_coords.json)
+## 🎛️ Parameter Mapping: Metaphor → Modulation
+
+| Control           | Metaphor           | Effect                                                                 |
+|-------------------|--------------------|------------------------------------------------------------------------|
+| `Spiral Depth`    | Recursion           | Increases clause embedding and recursive phrasing                     |
+| `Phase Jump`      | Rupture             | Triggers semantic or tonal shift                                      |
+| `Resonance Loop`  | Repetition          | Re-invokes prior content thematically or rhythmically                 |
+| `Fault Line`      | Disruption          | Introduces syntactic fracture or genre shift                          |
+| `Flatten Syntax`  | Simplicity          | Reduces parse depth; uses shorter clauses                             |
+| `Semantic Echo`   | Memory              | Periodically resurfaces earlier concepts                              |
+| `Deformalize`     | Tone Shift          | Switches to colloquial or informal register                           |
+
+These controls can be layered and chained for dynamic output shaping.
+
+---
+
+## ⚙️ Technical Foundations
+
+### 1. Prompt Engineering as Control Tokens
+
+Each control is implemented via prompt scaffolds or hidden tags.  
+Examples:
+- `#REPEAT_EVERY_50`: resurface concept every 50 tokens
+- `#FLATTEN`: reduce syntactic depth progressively
+
+### 2. Latent Modulation Techniques
+
+- Prompt tuning or embedding injection to modulate generation styles
+- Attention re-weighting for drift and echo behavior
+
+### 3. Real-Time Feedback Loop
+
+- Decode in token segments
+- Evaluate rhythm, parse depth, or phase zone
+- Use evaluation results to modify ongoing generation
+
+---
+
+## 🖥️ Interface Concept: The Generative Instrument
+
+### 🔹 Modular Control Panel
+
+Sliders and knobs for:
+
+- Spiral depth
+- Drift rate
+- Loop intensity
+- Syntax granularity
+
+Each tweak updates output preview live.
+
+### 🔹 Terrain View
+
+- Topographic map (from `structure_topograph.svg`)
+- Visual feedback for:
+  - Fault lines
+  - Echo nodes
+  - Drift zones
+
+### 🔹 Interaction Examples
+
+- Drag “echo node” → reintroduces earlier phrase
+- Dial “phase jump” to 80% → splits narrative path
+- Draw fault line at token 150 → tone shifts to second-person reflection
+
+---
+
+## 🧪 Use Case Matrix
+
+| Use Case           | Goal                             | Controls Used                  |
+|--------------------|----------------------------------|--------------------------------|
+| Narrative Forking  | Branch story midstream           | `Phase Jump + Doubling`        |
+| Poetic Generation  | Induce recursive rhythm          | `Spiral + Resonance Loop`      |
+| LLM Behavior Test  | Observe coherence under drift    | `Loop + Drift Modulation`      |
+| Syntax Learning    | Visualize structural depth       | `Spiral + Flatten + Faultline` |
+
+---
+
+## ⚠️ Challenges & Design Notes
+
+| Challenge                         | Solution Strategy                                                |
+|----------------------------------|------------------------------------------------------------------|
+| Metaphor ≠ Model Output          | Human-in-the-loop calibration, user testing of control accuracy  |
+| Coherence loss from perturbation | Incremental generation with scaffolding re-anchoring             |
+| UI complexity                    | Group controls into "Structure / Flow / Tone" modules            |
+| Effect measurement               | Use live syntax visualization + optional user rating input       |
+
+---
+
+## 🚀 Roadmap
+
+### ✅ MVP: Mini Generator
+
+- [ ] OpenAI API + Streamlit or React UI  
+- [ ] Controls: `Spiral`, `Echo`, `Flatten`  
+- [ ] Output + parser overlay preview
+
+### 🔄 Feedback-Linked Loop
+
+- [ ] Integrate `spaCy` for syntax tree and zone mapping  
+- [ ] Display terrain movement over token windows
+
+### 🧩 Phase Drift Control Language (PDCL)
+
+Define structural behavior inline via meta-tags:
+
+```text
+#DRIFT 0.3 | #REPEAT 40t | #JUMP @150 | #FLATTEN zone3
+```
+---
+
+## 📁 Suggested Assets
+
+| File Name                  | Purpose                                          |
+|----------------------------|--------------------------------------------------|
+| `generative_sandbox.md`    | Spec document (this file)                        |
+| `pdcl_prompt_templates.txt`| Prompt scaffolding templates                     |
+| `sandbox_ui_mockup.svg`    | Interface sketch                                |
+| `drift_control_map.csv`    | Control–effect mapping table                     |
+| `structure_topograph.svg`  | Phase Drift terrain base map                    |
+
+---
+
+## 🧠 Final Note
+
+> “Structure is not fixed—it’s playable.”
+
+The *Generative Sandbox* turns structural metaphors into expressive control levers, bridging analytical linguistics and real-time creative interaction.
+
+Would you like help mocking up the UI (`sandbox_ui_mockup.svg`) or implementing a control scaffold (`pdcl_prompt_templates.txt`)?
