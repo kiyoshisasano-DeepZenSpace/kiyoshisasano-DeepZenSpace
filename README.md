@@ -125,6 +125,97 @@ Phase thresholds, coherence scoring, and rhythm-based evaluation
 `(see: /04_model_kit/principles/structural_thresholds_model.md, /01_phase_entry/, /02_phase_logs/)`
 
 ---
+# 🗺️ Structural Topography Module  
+**Visualizing Drift as Syntactic Terrain**  
+
+_“Phase Drift is not just behavior — it’s geography.”_
+
+This module reimagines syntactic and semantic drift as **topographic formations** — composed of attractors, rupture zones, phase boundaries, and recurrence fields.  
+Each structure has a unique ignition pattern, rhythm signature, and spatial logic.
+
+---
+
+## 📁 `/04_model_kit/structure_topograph/` – Syntax as Landscape
+
+This directory is composed of three interlocking systems:
+
+---
+
+### 🧩 1. Drift Structure Corpus  
+**Path:** `structure_topograph/<domain>/<structure>.md`  
+**Total:** 28 mapped structures across 6 cognitive-design domains:
+
+| Domain | Thematic Focus |
+|--------|----------------|
+| `cognitive_linguistics/` | Semantic echo, gravity wells, referential drift |
+| `generation_control/` | Phase metrics, prompt trajectories, instability detection |
+| `rhythm_structure/` | Recursion, polyrhythms, temporal drift loops |
+| `syntax_visualization/` | Diagrammatic syntax, semiotic layering |
+| `topological_syntax/` | Phase transitions, wormholes, latent realignments |
+| `visual_language_design/` | Interactive terrains, metaphor overload, spatial UX |
+
+Each structure file documents:
+
+- 📌 **Drift signature** & instability triggers  
+- 🌋 **Terrain metaphor** & structural force logic  
+- 🔗 **Cross-links** to related zones and metaphoric bridges  
+
+🧭 _Example:_  
+`topological_syntax/phase_transitions_in_grammar.md`  
+→ Models syntax mutation via boundary inversion and topological reconfiguration.
+
+---
+
+### 📚 2. Vocabulary Mapping System  
+**Path:** `glossary/`
+
+| File | Description |
+|------|-------------|
+| `foundational_terms.md` | Core primitives: phase, drift, rupture, echo, zone |
+| `applied_terms_mapping.md` | Phase-aligned terms for UI, NLP, and generative control |
+| `README_terms_mapping.md` | Overview + semantic index of key vocabularies |
+
+This layer forms the **conceptual grammar** for terrain-based syntax reasoning.
+
+---
+
+### 🧭 3. Linking & Navigation Maps
+
+| File | Function |
+|------|----------|
+| `topograph_nodes.json` | Coordinates + syntactic metadata for each structure |
+| `topograph_link_map.yml` | Inter-structure transitions: recursion, semantic drift, phase jumps |
+| `topograph_nodes_v2.svg` | Visual layout of resonance fields and structural fault lines |
+
+💡 _See also:_  
+- `topograph_links_README.md` – Link logic taxonomy (e.g. `latent_surface_mirroring`)  
+- `tectonic_syntax_shifts_links.md` – Interdisciplinary references for fault-based modeling
+
+---
+
+## 🧭 Use Cases
+
+This module supports:
+
+- 🌐 Drift-sensitive **interface and UX design**  
+- 📈 **Prompt tuning** via resonance mapping and rupture prediction  
+- 🧠 Cross-domain **metaphor grounding** for generative structure  
+- 🔍 LLM **interpretability** through structural navigation
+
+---
+
+> In Phase Drift, syntax is not just formed — it is **located**.  
+> These documents let you **map**, **traverse**, and **design** the terrain of generative grammar.
+
+---
+
+### 📖 Citation
+
+> **“Phase Drift Syntax Topography — Structural Mapping v1.0 (2025)”**  
+> Part of the *Phase Drift Language Systems Project*  
+> GitHub: [https://github.com/your-org/phase-drift](https://github.com/your-org/phase-drift)
+
+---
 
 These are entry points — not surface assets.  
 If collaboration aligns, each layer opens deeper, undocumented structural detail.
