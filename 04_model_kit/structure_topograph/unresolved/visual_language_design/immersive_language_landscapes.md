@@ -38,26 +38,24 @@ These metaphors aren’t decorations—they’re **cognitive scaffolds** encoded
 ## 🧠 Applications & Cognitive Impact
 
 ### 🧍 1. Embodied Syntax Learning
-- Walk clause structures
-- Spiral into recursion
-- Side paths = modifiers
-
-→ For L2 acquisition, syntax therapy, dyslexia-friendly immersion.
+- Walk clause structures  
+- Spiral into recursion  
+- Side paths = modifiers  
+→ For L2 acquisition, syntax therapy, dyslexia-friendly immersion
 
 ---
 
 ### 🧭 2. Narrative Construction as World Design
-- Writers build by moving:
-  - Traverse thematic fields
-  - Drop motifs as artifacts
-  - Anchor climaxes as landmarks
-
-→ Story = architecture of semantics.
+- Writers build by moving:  
+  - Traverse thematic fields  
+  - Drop motifs as artifacts  
+  - Anchor climaxes as landmarks  
+→ Story = architecture of semantics
 
 ---
 
 ### 🤖 3. Co-Exploration with AI Models
-LLM outputs = generative trails.
+LLM outputs = generative trails
 
 | Model Behavior  | Spatial Metaphor         |
 |------------------|--------------------------|
@@ -69,7 +67,7 @@ LLM outputs = generative trails.
 ---
 
 ### 🧏 4. Accessibility Through Embodiment
-Tactile grammar interfaces allow blind/neurodiverse users to feel structure:
+Tactile grammar interfaces allow blind/neurodiverse users to feel structure
 
 - Pulse = clause depth  
 - Texture = mood  
@@ -98,7 +96,7 @@ Tactile grammar interfaces allow blind/neurodiverse users to feel structure:
 | Auditory Layer    | FMOD, Web Audio API, Tone.js                          |
 | Graph Compiler    | `topograph_nodes.json` + `phase_node_coords.json`     |
 
-→ Procedural terrain generated from syntactic metadata.
+→ Procedural terrain generated from syntactic metadata
 
 ---
 
@@ -163,9 +161,9 @@ This module provides the blueprint for full-stack **cognitive immersion** in lan
 /visual_language_design/unresolved/immersive_language_landscapes.md
 ```
 
-🔗 Suggested links:
-- `topograph_nodes.json`
-- `phase_node_coords.json`
+🔗 Suggested links:  
+- `topograph_nodes.json`  
+- `phase_node_coords.json`  
 - `topograph_link_map.yml` (`immersive_arc` → new link type)
 
 ---
