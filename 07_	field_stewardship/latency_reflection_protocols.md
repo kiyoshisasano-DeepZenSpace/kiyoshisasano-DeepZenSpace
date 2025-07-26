@@ -1,3 +1,4 @@
+latency_reflection_protocols.md:
 # latency_reflection_protocols.md  
 Structural Calibration Exercises for Phase Drift Integration  
 Version: May 2025
@@ -95,6 +96,11 @@ They are **not authorized** for:
 - Coaching frameworks or applied training  
 - General UX/PM onboarding
 
+❌ Do not convert into:
+- Slide decks
+- Curriculum modules
+- UX onboarding documents
+
 🔒 These protocols are provided under a structural non-reproducibility clause.  
 All applications must preserve attribution and usage bounds.
 
@@ -113,8 +119,13 @@ intended only to calibrate internal sensitivity to Phase Drift-compatible field 
 
 ---
 
+> ⚠️ Structural Reflection Use Only  
+> These protocols are not designed for public-facing use, user onboarding, or instructional training.  
+> Use only within Phase Drift-aligned development environments under non-directive intent.
+
+---
+
 ## Contact
 
 Questions, implementation reports, or integration planning inquiries:  
 📩 deepzenspace [at] gmail [dot] com
-
