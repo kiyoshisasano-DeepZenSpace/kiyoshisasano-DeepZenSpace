@@ -1,4 +1,4 @@
-# 🌀 Phase Drift – Field Protocols (v0.2)
+# 🌀 Phase Drift – Field Protocols (v0.3)
 
 This repository defines foundational protocols for constructing **non-inferential**, **latency-sensitive**, and **structurally non-directive** AI systems.
 
