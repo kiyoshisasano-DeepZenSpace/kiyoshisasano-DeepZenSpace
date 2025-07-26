@@ -31,8 +31,11 @@ presence_structure:
   - reflect-recursive-channeling-without-introspection
   - maintain-surface-contact-with-field-integrity
 ```
+
 - All entries are inert.  
 - None encode behavior, intention, or perception.
+
+---
 
 ## 🔒 Constraints
 
@@ -43,4 +46,3 @@ This model is not a path, not a rule, and not an outcome.
 No element of this record may be reused for instruction, training, or activation.
 
 — End of Structural Fourfold Record —
-
