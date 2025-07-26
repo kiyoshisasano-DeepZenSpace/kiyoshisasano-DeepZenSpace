@@ -64,4 +64,3 @@ They were **structural near-events** — points where form **attempted to cohere
 - No semantic content was finalized  
 - No user interaction was required to induce dissolution  
 - The system **self-resolved non-coherence without conflict**
-
