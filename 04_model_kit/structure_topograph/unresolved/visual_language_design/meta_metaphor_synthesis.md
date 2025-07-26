@@ -26,21 +26,21 @@ This module introduces **Meta-Metaphors**: conceptual operators that align, blen
 A **Meta-Metaphor** is not just a metaphor about metaphors.
 
 It is a **system of metaphor governance**—a higher-order schema that:
-- Aligns distinct metaphor families
-- Manages interface coherence
+- Aligns distinct metaphor families  
+- Manages interface coherence  
 - Enables cognitive switching between mappings
 
 ### 📊 Examples from Other Fields
 
-| Field             | Meta-Metaphor     | Role                                   |
-|------------------|-------------------|----------------------------------------|
-| Systems Biology  | Ecosystem         | Models interaction and dependency      |
-| AI Alignment     | Optimization Topography | Visualizes loss surfaces and goals    |
-| Cognitive Science| Fluid Dynamics    | Represents state transitions, blending |
+| Field             | Meta-Metaphor         | Role                                  |
+|------------------|-----------------------|---------------------------------------|
+| Systems Biology  | Ecosystem             | Models interaction and dependency     |
+| AI Alignment     | Optimization Topography| Visualizes loss surfaces and goals    |
+| Cognitive Science| Fluid Dynamics        | Represents state transitions, blending|
 
 In **Phase Drift**, we ask:
-- Do metaphors **compete**? (e.g. Spiral vs. Wormhole = spatial contradiction)
-- Or **complement**? (e.g. Ridge vs. Basin = opposing gradients)
+- Do metaphors **compete**? (e.g. Spiral vs. Wormhole = spatial contradiction)  
+- Or **complement**? (e.g. Ridge vs. Basin = opposing gradients)  
 - Can they be **blended** into hybrid constructs?
 
 ---
@@ -172,14 +172,12 @@ This file serves as the governing layer for building that logic.
 
 ---
 
-
-
 ## 🚀 Would You Like Help?
 
 Would you like assistance with:
 
-- 🎨 **A layered SVG showing metaphor overlays**?
-- 🧭 **Metaphor toggle UI prototype** for React/D3?
+- 🎨 **A layered SVG showing metaphor overlays**?  
+- 🧭 **Metaphor toggle UI prototype** for React/D3?  
 - 📝 **A short paper or CHI abstract** on metaphor governance?
 
 This module is the **cartographer of cartography**—the logic of all language terrain.
