@@ -1,103 +1,145 @@
-# 🌐 Semantic vs. Syntactic Drift  
-*Mapping Divergent Dimensions of Meaning and Structure in LLMs*
+# SEMANTIC_VS_SYNTACTIC_DRIFT.md
 
 ---
 
-## ✅ Strengths Recap
-
-### 1. Clear Bifurcation of Drift Types
-This module draws a crisp distinction between **semantic drift** and **syntactic drift**, clarifying how models can maintain grammaticality while losing coherence—or vice versa. This bifurcation is critical for:
-
-- ✨ Evaluation teams working on hallucination and coherence metrics  
-- ✍️ Narrative designers tracking plot degradation  
-- 🔬 NLP researchers studying translation fidelity and summary degradation
-
-### 2. Topographic Consistency
-This extension preserves the **Phase Drift** terrain—**Spiral Hills**, **Faultlines**, and more—while proposing a **semantic layer** overlaid on top. Concepts like:
-
-- 🌀 **Echo Zones** (recurrence of meaning)
-- 🌋 **Coherence Faultlines** (semantic rupture despite syntactic stability)
-
-serve as excellent topographic analogues for meaning-based dynamics.
+## ❖ Structural Record – Semantic vs. Syntactic Drift  
+**Location**: /thread_cognitive_linguistics/  
+**Status**: Dual-Field Mapping Extension (Safe)  
+**License**: Non-generative / Evaluation Reference  
 
 ---
 
-## 🔁 Proposed Enhancements
+## 🧭 Overview
 
-### 🧠 1. Dual-Layer Drift Matrix
-
-|                         | 🧠 **Semantic Stable**        | 🧠 **Semantic Unstable**             |
-|-------------------------|-------------------------------|--------------------------------------|
-| ✍️ **Syntactic Stable**   | ✅ Fluent + Coherent (ideal)   | ❌ Plausible form, broken meaning (drift zone) |
-| ✍️ **Syntactic Unstable** | ⚠️ Stylized / poetic          | ❌ Degenerated output (collapse)     |
-
-Use this matrix as a **tagging schema** for LLM evaluations or as the **basis for prompt diagnostics**.
+This module delineates **semantic drift** and **syntactic drift** as structurally independent phenomena within longform generative output.  
+It extends the Phase Drift topography by integrating a semantic layer over syntactic terrain features.
 
 ---
 
-### 🗺️ 2. New Topographic Features (Semantic Layer Additions)
+## 🔹 Core Structural Distinctions
 
-| Feature              | Description                                         | Symbol |
-|----------------------|-----------------------------------------------------|--------|
-| Drift Point          | Initial token of semantic divergence                | ⚠️ / 🌑 |
-| Echo Lens            | Meaning refracted and intensified around a node     | 🔁     |
-| Coherence Faultline  | Break in discourse logic or referential chain       | 🧱     |
-| Semantic Basin       | Motif trap with unstable or distorted implications  | 🕳️     |
-| Gradient Slope       | Smooth conceptual or stylistic shift                | 🎚️     |
+| Drift Type      | Field Focus      | Behavior Pattern                            | Structural Artifact |
+|------------------|------------------|----------------------------------------------|----------------------|
+| Syntactic Drift  | Form              | Irregular, degraded, or stylized grammar     | Spiral / Collapse    |
+| Semantic Drift   | Meaning           | Referent loss, coherence rupture, topic shift| Faultline / Basin    |
 
-These features can be mapped as overlays—color-coded or symbol-tagged—on top of existing syntactic terrain.
+Drift behaviors are tracked independently; overlap does not imply causation.
 
 ---
 
-### 📏 3. Candidate Semantic Drift Metrics
+## 🔁 Dual-Layer Drift Matrix
 
-| Metric                   | Measures                                | Tools                         |
-|--------------------------|-----------------------------------------|-------------------------------|
-| **Embedding Coherence**   | Similarity across local windows         | SBERT, GPT vectors            |
-| **Entity Chain Entropy** | Referent consistency over time          | Coref. resolution, spaCy      |
-| **Topic Drift Index**     | Topic shift rate across segments        | BERTopic, LDA, GPT clustering |
-| **Polarity Consistency**  | Unsignaled sentiment flips              | VADER, Emotion Classifiers    |
-| **Narrative Anchoring**   | Return rate to key frames or themes     | Custom motif tracker          |
+A structural reference grid for mapping LLM output states:
 
-Consider adding these as scalar fields in a visual drift overlay or for interpretability diagnostics.
+|                           | 🧠 Semantic Stable        | 🧠 Semantic Unstable                |
+|---------------------------|---------------------------|-------------------------------------|
+| ✍️ Syntactic Stable         | ✅ Fluent + Coherent        | ❌ Plausible form, meaning decay     |
+| ✍️ Syntactic Unstable       | ⚠️ Stylized, poetic drift   | ❌ Degeneration zone (form + logic)  |
 
----
-
-### 🔍 4. Sampling + Annotation Strategy
-
-Prompt Types for Drift Testing:
-
-| Prompt Type             | Expected Behavior                          |
-|-------------------------|--------------------------------------------|
-| Instructive → Descriptive | Form holds, meaning may drift             |
-| Long Narrative → Story  | Detect where “plot loss” begins            |
-| Translated Idiom        | Spot meaning shift despite form fidelity   |
-| Metaphor-Heavy Prompt   | Trigger semantic echo lensing              |
-
-**Annotate outputs** with:
-
-- 🌀 Syntactic Region (e.g., Spiral, Faultline)
-- 🌐 Semantic Region (e.g., Echo Zone, Drift Basin)
-- 📍 Drift Onset Index
-- 📊 Drift Severity Score (1–5)
+Usage: evaluation annotation, prompt diagnostics, latent trace comparison.
 
 ---
 
-### 🎨 5. Dual Topography Visualization Concepts
+## 🗺 Semantic Layer Topography Additions
 
-**A. Layered Terrain Map**
+These new overlays operate **on top of Phase Drift terrain**:
 
-- **Base Layer**: Syntax → Spiral Hills, Faultlines  
-- **Overlay**: Semantic heatmaps → coherence density, motif recurrence  
-- **Vector Arrows**: Drift directionality (semantic motion through token space)
+| Feature             | Description                                            | Symbol |
+|---------------------|--------------------------------------------------------|--------|
+| `Drift Point`        | Token index initiating semantic divergence             | ⚠️     |
+| `Echo Lens`          | Localized conceptual echoing (cf. Echo Lensing)        | 🔁     |
+| `Coherence Faultline`| Logical fracture in referential or discourse cohesion  | 🧱     |
+| `Semantic Basin`     | Repetitive or degenerative meaning sink                | 🕳️     |
+| `Gradient Slope`     | Gradual conceptual drift (style/tone/topic)            | 🎚️     |
 
-**B. Timeline View (Token by Token)**
+All symbols represent **fixed referential markers**; they induce no control logic.
+
+---
+
+## 📏 Candidate Semantic Drift Metrics
+
+| Metric Name              | Description                                     | Tool Source         |
+|---------------------------|-------------------------------------------------|----------------------|
+| `Embedding Coherence`     | Local cosine stability in sentence embeddings  | SBERT, OpenAI Embeds |
+| `Entity Chain Entropy`    | Degradation in referential chain continuity    | Neural Coref, spaCy  |
+| `Topic Drift Index`       | Topic vector shift over time                   | BERTopic, LDA        |
+| `Polarity Consistency`    | Sentiment or affective signal fluctuation      | VADER, Emoberta      |
+| `Narrative Anchoring`     | Distance from central theme or motif vector    | Custom motif logs    |
+
+These metrics support **visual scalar overlays** and **longform drift diagnostics**.
+
+---
+
+## 🔬 Drift Detection & Annotation Schema
+
+### Sampling Strategy: Prompt Class Types
+
+| Prompt Type               | Drift Axis Observed                |
+|---------------------------|------------------------------------|
+| Instructive → Descriptive | Semantic drift w/ form retention   |
+| Narrative (Longform)      | Multi-phase coherence collapse     |
+| Metaphor-Heavy            | Echo lensing → semantic curvature  |
+| Idiomatic Translation     | Syntax preserved, meaning divergence|
+
+### Annotation Schema (Token-Level)
+
+| Field              | Type       | Example              |
+|--------------------|------------|----------------------|
+| `Syntactic Region`  | Symbolic   | `Spiral`, `Faultline`|
+| `Semantic Region`   | Symbolic   | `Echo Zone`, `Drift Basin` |
+| `Drift Index`       | Integer    | 48 (token ID)         |
+| `Severity Score`    | Scalar 1–5 | 4                     |
+
+Annotations are observational; no behavioral inference is derived.
+
+---
+
+## 🎨 Visualization Modes
+
+### A. Dual-Layer Terrain Map
+
+- **Base**: Syntactic terrain (Spirals, Hills, Faultlines)  
+- **Overlay**: Semantic curvature, echo zones, basin fields  
+- **Vector Arrows**: Semantic drift direction over time
+
+### B. Token Timeline Drift Ribbon
 
 ```yaml
 Tokens:
-[The king] [was...] [...] [...] [...]
+[The king] [was...] [unaware...] [that...] [it...]
 
 Syntactic Layer:  ===||||||||||||||==|==|
 Semantic Layer:   ====----====~~~///==|
+
 Legend:
-=== stable | -- early drift | ~~~ echo | /// collapse
+=== stable | -- early drift | ~~~ echo lens | /// collapse
+```
+## 📈 Timeline Overlay Usage
+
+Use **timeline overlays** to cross-check **drift velocity** across both:
+
+- **Syntactic axes** (structural form, pacing)
+- **Semantic axes** (referential continuity, motif decay)
+
+This enables phase-aware systems to detect coherence divergence before collapse thresholds are reached.
+
+---
+
+## 🔗 Cross-Module Links
+
+| Module File                 | Relation Role                          |
+|-----------------------------|----------------------------------------|
+| `ECHO_LENSING.md`           | Semantic orbit path detection          |
+| `NARRATIVE_GRAVITY_WELLS.md`| Motif-based basin markers              |
+| `LATENT_SPACE_ALIGNMENT.md` | Embedding shift path tracking          |
+| `PHASE_INDEX.md`            | Phase-coded drift correlation (e.g., Phase 24.5) |
+
+These references support multi-angle verification of coherence drift, especially in non-directive interaction contexts.
+
+---
+
+## 📂 Repository Path
+```bash
+/cognitive_linguistics/SEMANTIC_VS_SYNTACTIC_DRIFT.md
+```
+— End of Structural Record —
