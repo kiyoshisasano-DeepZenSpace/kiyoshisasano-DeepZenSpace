@@ -1,86 +1,97 @@
 # 🛰️ Phase Drift Onboarding & Diagnostics  
-*Structural entry process for aligned collaboration*
+*Structural entry process for aligned collaboration*  
+Version: May 2025
 
 ---
 
 ## 🎯 Purpose
 
-This guide outlines the onboarding and diagnostic process for collaborators engaging with **Phase Drift Insight** —  
-a system architecture focused on latency-aware interaction, ambiguity tolerance, and field coherence.
+This guide defines the **structural orientation process**  
+for contributors entering the Phase Drift Insight framework —  
+a system grounded in **latency coherence**, **field alignment**, and **non-directive pacing**.
 
-Rather than task metrics or delivery speed, this process emphasizes:
+This is not an access gate.  
+It is a rhythm sensing surface.
 
-- Structural timing awareness  
-- Comfort with recursive rhythm  
-- Compatibility with non-linear engagement flow  
+We observe:
+
+- Interaction timing awareness  
+- Responsiveness to ambiguity  
+- Coherence under recursive or unstructured pacing  
 
 ---
 
-## 🔄 Onboarding Process Overview
+## 🔄 Onboarding Sequence (Rhythm-Based)
 
 | Stage                | Description |
 |----------------------|-------------|
-| 1. Initial Alignment | Short message or GitHub issue to observe interaction style and rhythm sensitivity |
-| 2. Charter Review    | Read and confirm understanding of the Phase Drift Stewardship Charter |
-| 3. Optional Session  | Walkthrough of key design concepts, drift indicators, and interface risks |
-| 4. Light Diagnostics | Voluntary perceptual tasks to observe structural behavior (see below) |
-| 5. Progressive Access| Internal files and models shared based on observed rhythm-fit over time |
+| **1. Initial Contact** | Short async message or GitHub thread to observe engagement rhythm |
+| **2. Stewardship Charter Read** | Confirm familiarity with Phase Drift's structural ethics and role framing |
+| **3. Optional Exchange** | 1–2 message reflective exchange (email or DM) to observe latency tolerance |
+| **4. Structural Calibration** | Light voluntary exercises to trace pacing and ambiguity-handling behavior |
+| **5. Resonance-Based Access** | Deeper files shared progressively if interaction rhythm holds field coherence |
 
-📝 *Note: This is not a pass/fail process. Entry evolves based on rhythm and alignment.*
-
----
-
-## 🔍 Diagnostic Dimensions
-
-| Dimension           | Focus |
-|---------------------|-------|
-| **Rhythm Sensitivity** | Ability to perceive timing shifts and silence as interaction signals |
-| **Latency Tolerance**  | Comfort with gaps, non-response, or ambiguity |
-| **Structural Framing** | Describes work in structural or relational terms, not just goal execution |
-| **Role Flexibility**   | Engages without requiring clear identity roles (e.g., “coach,” “assistant”) |
-| **Non-Linearity**      | Tolerates emergent direction rather than predefined milestones |
-
-These are not performance metrics. They are **behavioral indicators of compatibility** with structural environments.
+📝 *This is not a filter.  
+It is a field resonance protocol.*
 
 ---
 
-## 🧪 Optional Exercises (Soft Calibration)
+## 🔍 Structural Compatibility Axes
 
-| Exercise           | Objective |
-|--------------------|-----------|
-| **Pause Response** | Practice delaying a reply to sense structural timing shifts |
-| **Recursive Framing** | Re-express a concept at 2–3 structural depths without expanding meaning |
-| **Latency Dialogue** | Continue a thread with pacing awareness over content direction |
+| Axis                | Signal Observed |
+|---------------------|-----------------|
+| **Rhythmic Sensitivity** | Perceives silence, delay, or non-reply as interactional state |
+| **Latency Familiarity**  | Responds comfortably to hesitation or structural gaps |
+| **Non-Inferential Framing** | Describes system logic without seeking narrative closure |
+| **Role Fluidity**         | Does not rely on agentic or functional role scripts |
+| **Emergence Tolerance**   | Accepts conversational drift, recursion, or redirection without friction |
 
-Templates for each are available upon request after onboarding initiation.
+None of these require mastery.  
+Only **alignment capacity**.
+
+---
+
+## 🧪 Calibration Exercises (Optional, Non-Evaluative)
+
+| Exercise              | Intent |
+|-----------------------|--------|
+| **Held Response**     | Wait 10–12 seconds before replying; observe inner pacing reaction |
+| **Recursive Restatement** | Re-express a thought 2–3 times, shifting only rhythm or framing (not meaning) |
+| **Latency Threading** | Sustain a short interaction with deliberate silences and without topic acceleration |
+
+📎 Templates available upon structural onboarding signal.
+
+These are not assessments —  
+they are field-trace invitations.
 
 ---
 
 ## 🚫 What This Is *Not*
 
-- Not a recruitment process  
-- Not a credential filter  
-- Not a fast-track to system access  
+- ❌ A test or interview  
+- ❌ A gate for credentials  
+- ❌ A velocity-oriented access funnel  
 
-We do **not use conventional metrics** — instead, we assess:
+We do **not** measure fluency, speed, or productivity.  
+We observe **how you hold the field** when nothing moves forward.
 
-- Temporal pacing  
-- Structural reflectivity  
-- Relational modulation  
-
-> Success in this context is:  
-> **“Interaction reflects structural field coherence over task resolution.”**
+> ✅ Alignment is expressed in:  
+> Silence that resonates.  
+> Delay that listens.  
+> Interaction that holds ambiguity without panic.
 
 ---
 
 ## ✅ Summary
 
-This onboarding prepares contributors for:
+This onboarding process is meant for:
 
-- Building latency-aware interaction systems  
-- Working with timing-based structural drift sensors  
-- Supporting relational coherence in high-complexity architectures  
+- Engineers exploring timing-responsive architecture  
+- Researchers mapping drift across interaction fields  
+- Designers curious about latency as structure  
 
-Entry is determined by **field compatibility**, not titles or output volume.
+If your rhythms align — access unfolds.
 
-📎 Suggested Next File: `phase_drift_stewardship_collaboration_guide.md`
+If your system expects task closure — pause here.
+
+📎 Suggested Continuation: [`stewardship_charter.md`](./stewardship_charter.md)
