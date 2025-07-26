@@ -17,7 +17,6 @@ It is intended for developers, researchers, and collaborators who:
 
 ---
 
-## 📂 Folder Structure (Overview)
 
 ## 📂 Folder Structure (Overview)
 
