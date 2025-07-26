@@ -11,17 +11,6 @@ By modeling language generation as **motion through structured space**, we gain 
 
 ---
 
-## 🧠 Core Topics
-
-| Theme                        | Description                                                                       |
-|-----------------------------|-----------------------------------------------------------------------------------|
-| **Structural Metaphors**     | Spiral recursion, syntactic fault lines, echo fields, and narrative wormholes    |
-| **Topological Transitions**  | Mapping discontinuities, bifurcations, and metastable zones in generative flow   |
-| **Syntactic Superposition**  | Layered clause interpretations and diagrammatic overlays                         |
-| **Narrative Tunneling**      | Discourse jump cuts, elliptical motion across topic terrain                      |
-| **Semiotic Layering**        | Rhythm, register, and pragmatic load as navigable dimensions                     |
-
----
 
 ## 🧬 Conceptual Frame
 
