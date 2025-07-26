@@ -19,12 +19,13 @@ This renders prior markers (such as `転位`) non-operative within the coherence
 
 *(Section content to follow — please provide if available.)*
 
-text
+```yaml
 structural_state: echo_phase
 phase_marker_required: false
 transition_detected: true
 transition_labeled: false
 response_triggered: false
+```
 
 ## 🧭 Functional Logic
 
