@@ -1,4 +1,4 @@
-# 🧭 AI-Guided Phase Navigation  
+ # 🧭 AI-Guided Phase Navigation  
 *From Structural Drift to Syntactic Intentionality*  
 **Status**: Exploratory Control Proposal  
 **Version**: 0.2  
@@ -88,52 +88,53 @@ Map conceptual **phase regions** to behavior clusters using vector-space analysi
 → Transitioned to Fractal Ridge (symmetry ↑, novelty ↑)
 → User directive: climb toward Syntax Peak (diversity ↑)
 ```
-## 🚧 Experimental Uncertainties
+# 🚧 Experimental Uncertainties
 
-| Challenge                 | Ongoing Approach                              |
-|---------------------------|-----------------------------------------------|
-| Region ↔ Latent alignment | Human-aligned annotation + cluster evaluation |
-| Avoiding overconstraint   | Use of soft penalties and gradient falloff    |
-| Evaluation criteria       | Drift metrics + human readability             |
-| Navigable interface design | Compass UI, phase trajectory timeline, overlays |
+| **Challenge**                    | **Ongoing Approach**                                      |
+|----------------------------------|------------------------------------------------------------|
+| Region ↔ Latent alignment        | Human-aligned annotation + cluster evaluation             |
+| Avoiding overconstraint          | Use of soft penalties and gradient falloff                |
+| Evaluation criteria              | Drift metrics + human readability                         |
+| Navigable interface design       | Compass UI, phase trajectory timeline, overlays           |
 
 ---
 
 ## 🔭 Use Case Concepts
 
-**✍️ Creative Writing Partner**  
+### ✍️ Creative Writing Partner  
 > “You're drifting in the Echo Basin. Try a recursive hook toward Fractal Ridge?”
 
-**🧑‍🏫 Structural Writing Tutor**  
+### 🧑‍🏫 Structural Writing Tutor  
 > “Faultline detected in this clause. Suggested transition: modal leveling.”
 
-**🤖 Self-monitoring Dialogue Agent**  
+### 🤖 Self-Monitoring Dialogue Agent  
 > “Detected orbit decay — rebalancing clause structure for novelty gain.”
 
 ---
 
 ## 🧠 From Terrain to Trajectory
 
-Phase Drift, when paired with policy navigation, enables structural agency:  
-The model not only detects where it is — it can choose where to go in structure space.
+Phase Drift, when paired with **policy navigation**, enables structural agency:
 
-> “Structure is no longer emergent. It is chosen.”
+> _The model not only detects where it is — it can choose where to go in structure space._
+
+**“Structure is no longer emergent. It is chosen.”**
 
 ---
 
 ## 🔗 Linked Modules
 
-- `latent_space_alignment.md`  
-- `syntax_control_handles.md`  
-- `phase_drift_metrics.md`  
-- `drift_trajectory_mapping.md`  
-- `echo_zone_behavior.md`  
+- [`latent_space_alignment.md`](./latent_space_alignment.md)
+- [`syntax_control_handles.md`](./syntax_control_handles.md)
+- [`phase_drift_metrics.md`](./phase_drift_metrics.md)
+- [`drift_trajectory_mapping.md`](./drift_trajectory_mapping.md)
+- [`echo_zone_behavior.md`](./echo_zone_behavior.md)
 
 ---
 
 ## ✅ Next Options
 
-- Design **Phase Compass UI** mockup  
-- Prototype **policy loop** using GPT hidden state analysis  
-- Extend **prompt control syntax** with structural operators  
-- Build **annotation layer** for phase-aligned corpora  
+- [ ] Design **Phase Compass UI** mockup  
+- [ ] Prototype **policy loop** using GPT hidden state analysis  
+- [ ] Extend **prompt control syntax** with structural operators  
+- [ ] Build **annotation layer** for phase-aligned corpora
