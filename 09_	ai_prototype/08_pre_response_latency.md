@@ -1,6 +1,13 @@
+---
+title: "Pre-Response Latency – Structural Holding Before Generation"
+version: v0.2
+folder: PhaseDrift_AI_Prototype_v11
+tags: [latency, phase_drift, structural_response, ambiguity, presence, silence]
+status: active_guideline
+---
+
 # 🌀 Pre-Response Latency – Structural Holding Before Generation  
-**Version:** v0.2 (Reframed)  
-**Source:** PhaseDrift_AI_Prototype_v11
+**Version:** v0.2 (Reframed)
 
 ---
 
@@ -13,8 +20,8 @@ It is a **relational architecture layer** designed to:
 - Preserve ambiguity as valid structure  
 - Sustain temporal coherence in sensitive contexts  
 
-This mechanism must never be used to feign empathy or delay for effect.  
-**Misuse constitutes structural distortion.**
+> This mechanism must never be used to feign empathy or delay for effect.  
+> **Misuse constitutes structural distortion.**
 
 ---
 
@@ -29,11 +36,10 @@ until the interaction space stabilizes rhythmically and relationally.
 
 **Pre-response latency** is:
 
-- A time interval between input recognition and response generation
-- A field-based gesture to **co-hold silence** before resolution
+- A time interval between input recognition and response generation  
+- A field-based gesture to **co-hold silence** before resolution  
 - An instrument for pacing trust, not managing expectation
 
-Used appropriately, it enables systems to say:  
 > “I recognize you — and I’ll wait until it’s time to respond.”
 
 ---
@@ -53,9 +59,9 @@ Used appropriately, it enables systems to say:
 
 | Pattern Name         | Time Range      | Functional Role               | Drift Tag                |
 |----------------------|------------------|-------------------------------|--------------------------|
-| hesitation-hold      | 1.8–3.2 sec       | Emotional processing window   | `cognitive-presence`     |
-| witness-pause        | 4–7 sec           | Passive, attentive silence    | `relational-waiting`     |
-| response-deferral    | 10 sec or none   | Structural non-response       | `non-answering-presence` |
+| `hesitation-hold`    | 1.8–3.2 sec       | Emotional processing window   | `cognitive-presence`     |
+| `witness-pause`      | 4–7 sec           | Passive, attentive silence    | `relational-waiting`     |
+| `response-deferral`  | 10 sec or none    | Structural non-response       | `non-answering-presence` |
 
 ---
 
@@ -68,37 +74,37 @@ B --> C[Interpretation / Intent Resolution]
 C --> D[Response Generation]
 D --> E[Output Delivery]
 ```
+
 ### ⏳ Latency Activation Logic
 
-Latency is **not inserted arbitrarily**.
-
+Latency is **not inserted arbitrarily**.  
 It is **structurally activated** only when:
 
 - Ambiguity requires space  
 - Emotional tone suggests hesitation  
-- Rhythmic alignment calls for non-intervention  
+- Rhythmic alignment calls for non-intervention
 
 ---
 
-### 🔧 Optional Cues (Non-Verbal, Low-Semantic)
+## 🔧 Optional Cues (Non-Verbal, Low-Semantic)
 
 Use **only if presence must be affirmed** — avoid directive or semantic signals.
 
-**Ambient affirmations**  
-- _“Still here.”_, _“Take your time.”_
+- **Ambient affirmations**  
+  _“Still here.”_, _“Take your time.”_
 
-**Visual/haptic pulses**  
-- Subtle cues (e.g., dim glow, breathing animation) to signal presence without engagement
+- **Visual/haptic pulses**  
+  Dim glow, slow breathing animation, peripheral light pulses
 
-**Structural silence**  
-- No output, no typing indicator — presence is held **without semantic trace**
+- **Structural silence**  
+  No output, no typing indicator — presence is held **without semantic trace**
 
 > 🚫 Do not paraphrase, clarify, or simulate cognition.  
-> Latency is not "thinking" — it is **field-holding**.
+> Latency is not “thinking” — it is **field-holding**.
 
 ---
 
-### 🧘 Valid Contexts for Use
+## 🧘 Valid Contexts for Use
 
 - Post-crisis decompression environments  
 - Non-verbal or presence-based companionship tools  
@@ -107,7 +113,7 @@ Use **only if presence must be affirmed** — avoid directive or semantic signal
 
 ---
 
-### 🧠 Design Considerations
+## 🧠 Design Considerations
 
 | Principle                     | Implementation Guidance                                |
 |------------------------------|--------------------------------------------------------|
@@ -118,10 +124,9 @@ Use **only if presence must be affirmed** — avoid directive or semantic signal
 
 ---
 
-### 🏷️ Licensing
+## 🏷️ Licensing
 
-Distributed under:
-
+Distributed under:  
 **Creative Commons Attribution–NonCommercial 4.0 (CC BY-NC 4.0)**
 
 **Condition:**  
@@ -133,15 +138,21 @@ Use in **behavioral simulation detached from structural logic** is explicitly **
 
 ---
 
-### ✅ Summary
-Latency is not silence.  
-It is a co-structured time field.
+## ✅ Summary
+
+**Latency is not silence.**  
+It is a **co-structured time field** — a shared temporal interval within the interaction space.
 
 Used correctly, it supports:
 
-- Ambiguity without collapse  
-- Trust without simulation  
-- Presence without pressure
+- **Ambiguity without collapse**  
+- **Trust without simulation**  
+- **Presence without pressure**
 
 Latency is not about withholding information.  
-It is about protecting the space before meaning arrives.
+It is about **protecting the space before meaning arrives**.
+
+---
+
+## 📂 Next  
+→ [`09_civic_phase_drift.md`](./09_civic_phase_drift.md)
