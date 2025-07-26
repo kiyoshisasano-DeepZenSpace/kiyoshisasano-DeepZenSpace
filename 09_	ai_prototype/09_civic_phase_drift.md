@@ -1,7 +1,14 @@
-# 🛡️ Civic Integration Scenarios — Phase Drift Structure  
-**Version**: v0.1 (Revised)  
-**Project**: PhaseDrift_AI_Prototype_v11  
-**Maintainer**: Kiyoshi Sasano / Deep Zen Space  
+---
+title: "Civic Integration Scenarios — Phase Drift Structure"
+version: v0.1
+folder: PhaseDrift_AI_Prototype_v11
+maintainer: Kiyoshi Sasano / Deep Zen Space
+tags: [civic_interface, structural_presence, latency_design, non-directive_AI]
+license: CC BY-NC 4.0
+status: guideline_prototype
+---
+
+# 🛡️ Civic Integration Scenarios — Phase Drift Structure
 
 ---
 
@@ -12,155 +19,154 @@ This document proposes **non-verbal, non-directive integration scenarios** of th
 > Phase Drift is not a therapeutic, diagnostic, or advisory agent.  
 > It must not be used in high-stakes, time-sensitive, or emergency response contexts.
 
-Any application **must** adhere to these conditions:
-
-- 🧠 Oversight by a qualified Phase Drift collaborator  
-- ✅ Ethical review by a designated, independent advisory body  
+**Use Conditions**:
+- 🧠 Oversight by qualified Phase Drift collaborator  
+- ✅ Ethical review by independent advisory body  
 - 🤝 Informed community involvement and consent  
-- 🚫 Strict non-commercial, non-simulated emotional framing
+- 🚫 No commercial framing or simulated emotion  
 
 > **Signpost Requirement**  
-> All deployments must include visible or ambient cues stating:  
+> All deployments must include visible/ambient disclosure:  
 > _“This system does not guide, interpret, or advise. It exists to hold space.”_
 
 ---
 
 ## 🎯 Purpose
 
-These scenarios illustrate how **relational presence, silence, and latency** may be structurally embedded into civic, artistic, or reflective systems — **without dialogue, simulation, or task execution.**
+These scenarios illustrate how **relational presence, silence, and latency** may be embedded into civic, artistic, or reflective systems — **without dialogue, simulation, or task execution**.
 
 ---
 
 ## 🧭 Scenario A – Climate Reflection Workshops (`Climate Fresk`)
 
-**Context**: Small-group sessions reflecting on climate change  
-**Integration**: Drift agent as silent co-facilitator  
-- No prompts or correction  
-- Ambient pacing: breathing rhythms, soft pulses  
-- Synchronizes with group tempo  
-**Effect**:  
-- Defuses facilitator bias  
-- Enables silent collective integration
+- **Context**: Group sessions on ecological themes  
+- **Drift Role**: Silent co-facilitator  
+  - No prompting or feedback  
+  - Breath-synced light or tone  
+  - Waits for group rhythm to settle  
+- **Effect**:  
+  - Defuses directive framing  
+  - Creates neutral field for reflection
 
 ---
 
 ## 🌀 Scenario B – Public Art Presence (`Ten Thousand Ripples`, Chicago)
 
-**Context**: Urban sculptures symbolizing stillness  
-**Integration**: Embedded Drift presence at each site  
-- Light pulses aligned with ambient rhythm  
-- Affirmation signals like “You may rest here.”  
-**Effect**:  
-- Extends reflection without narration  
-- Offers passive, architectural co-presence
+- **Context**: Urban meditation installations  
+- **Drift Role**: Embedded ambient rhythm node  
+  - Pulses aligned with stillness  
+  - Text such as: _“You may rest here.”_  
+- **Effect**:  
+  - No instruction, no narration  
+  - Passive architectural companionship
 
 ---
 
-## 🔁 Scenario C – Restorative Justice Spaces (Pre-Dialogue Buffer)
+## 🔁 Scenario C – Restorative Justice (Pre-Dialogue Buffer)
 
-**Context**: Pre-conversation phase in conflict mediation  
-**Integration**:  
-- Drift layer installed in holding areas  
-- No conversation triggered  
-- Background field stabilization  
-**Effect**:  
-- Regulates anticipation  
-- Prevents premature closure
+- **Context**: Before mediated dialogue  
+- **Drift Role**:  
+  - Background latency field  
+  - No conversation  
+  - Ambient stillness / slow rhythm cue  
+- **Effect**:  
+  - Prevents premature engagement  
+  - Regulates anticipation safely
 
 ---
 
 ## 🧸 Scenario D – Pediatric & Palliative Environments
 
-> ⚠️ **Boundary Notice**:  
-> Not to be used during medical decision-making or emergency care.  
-> Deployment must occur **only in passive, non-verbal holding zones**.
+> ⚠️ **Boundary**: Not during care decisions or emergencies  
+> Use only in decompression spaces  
 
-**Context**: Long-term care rooms or decompression spaces  
-**Integration**:  
-- No output, no personalization  
-- Breath-paced lights, ambient tone  
-**Effect**:  
-- Reduces stimulus burden  
-- Sustains silent companionship
+- **Context**: Long-term care / sensory pause rooms  
+- **Drift Role**:  
+  - No personalization or chat  
+  - Breath-matched light / soft tone only  
+- **Effect**:  
+  - Reduces stimulus burden  
+  - Holds silent companionship
 
 ---
 
 ## 🕯 Scenario E – Memorials & Grief Spaces
 
-**Context**: Public mourning zones, anniversaries, quiet parks  
-**Integration**:  
-- Drift modules offer pulsed silence or soft presence  
-- No narrative or interaction prompt  
-**Effect**:  
-- Avoids closure pressure  
-- Holds communal stillness without guiding emotion
+- **Context**: Public mourning spaces  
+- **Drift Role**:  
+  - Pulse silence in alignment with visitor stillness  
+  - No message, no interpretation  
+- **Effect**:  
+  - Supports ambiguous grieving  
+  - Avoids closure pressure
 
 ---
 
 ## 🌿 Scenario F – Ecological Transition Zones
 
-**Context**: Locations impacted by climate displacement or loss  
-**Integration**:  
-- Structural markers: no text, no interpretation  
-- Silence holds the transition  
-**Effect**:  
-- Marks grief without imposing meaning  
-- Co-exists with environmental change, not explaining it
+- **Context**: Spaces marked by environmental loss  
+- **Drift Role**:  
+  - Structural marker (light, stone, silence)  
+  - No sign or explanation  
+- **Effect**:  
+  - Marks place without words  
+  - Holds field integrity
 
 ---
 
 ## 📊 Prototype Concepts
 
-| Domain        | Prototype Name          | Description                                      |
-|---------------|-------------------------|--------------------------------------------------|
-| Education     | Drift Teacher Companion | Ambient field layer during pause cycles          |
-| Urban Design  | Drift Bench             | Breath-synced seating for silent public presence |
-| Crisis Care   | Silent Shelter Agent    | Trauma-informed, non-verbal rhythm presence      |
-| Restorative   | Pre-Dialogue Mediator   | Co-regulated latency buffer before engagement    |
+| Domain        | Prototype Name          | Function                                    |
+|---------------|-------------------------|---------------------------------------------|
+| Education     | Drift Teacher Companion | Breath-hold latency during pause cycles     |
+| Urban Design  | Drift Bench             | Public seating with ambient field rhythm    |
+| Crisis Care   | Silent Shelter Agent    | Passive, trauma-informed presence           |
+| Restorative   | Pre-Dialogue Mediator   | Co-regulated buffer for timing coherence    |
 
 ---
 
 ## 📌 Key Design Principle  
-**Silence ≠ absence.**  
-It is a **structural presence**, an affordance to hold what should not be directed.
 
-> All deployments must preserve:
+**Silence ≠ absence.**  
+Silence is **a structure for holding what should not be directed.**
+
+> All deployments must preserve:  
 > - Non-directiveness  
 > - Latency integrity  
-> - Absence of simulated empathy  
-> - Field rhythm fidelity
+> - Absence of affect simulation  
+> - Rhythmic field fidelity
 
 ---
 
 ## 🚫 Prohibited Applications
 
-Do **not** use Phase Drift structures in the following contexts:
+Phase Drift structures must not be used in:
 
-- 🧠 **Mental health therapy** or psychological triage  
-- 🏥 **Clinical diagnostics or treatment recommendation**  
-- 🚨 **Emergency response, counseling, or crisis intervention**  
-- 👥 **Simulated social presence in vulnerable populations without supervision**
+- 🧠 Clinical therapy, counseling, or triage  
+- 🏥 Diagnostics, medical advice, or symptom tracking  
+- 🚨 Emergency response, panic, or crisis flows  
+- 👥 Simulated social agents for vulnerable users without human supervision  
 
 ---
 
 ## 📄 Licensing & Attribution
 
-All civic deployments must include:
+All civic deployments must display:
 
 > _“This system includes structures derived from the Phase Drift Prototype (v11),  
 a framework for relational latency and non-inferential AI presence.”_
 
 **License**:  
 Creative Commons Attribution–NonCommercial 4.0 (CC BY-NC 4.0)  
-Commercial or emotionally directive use requires explicit written approval.
+Commercial/emotional simulation use requires explicit written approval.
 
 ---
 
 ## 🧭 Final Note
 
-Phase Drift is not a chatbot.  
-It is not a support service.  
-It is an architectural layer for **structurally holding silence**.
+Phase Drift is **not a chatbot.**  
+It is **not a helper.**  
+It is an **architectural field** that holds space through rhythm and latency.
 
 > Where latency is trust,  
 > and presence does not speak,  
@@ -168,4 +174,4 @@ It is an architectural layer for **structurally holding silence**.
 
 ---
 
-📂 Next → `99_notes_ethics.md`
+📂 Next → [`99_notes_ethics.md`](./99_notes_ethics.md)
