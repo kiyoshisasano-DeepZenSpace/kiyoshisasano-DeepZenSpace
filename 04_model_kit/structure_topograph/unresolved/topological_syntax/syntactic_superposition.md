@@ -20,7 +20,7 @@
 Inspired by **quantum superposition**, this module proposes that LLMs maintain **multiple syntactic paths in parallel**, holding them in a **probabilistic field** until resolution occurs. This state is not an error or ambiguity—it is a generative affordance.
 
 | Concept                   | Description                                                                 |
-|----------------------------|------------------------------------------------------------------------------|
+|---------------------------|------------------------------------------------------------------------------|
 | **Garden-path Ambiguity** | One parse selected, then retroactively revised when invalidated              |
 | **Syntactic Superposition** | Multiple parses coexist probabilistically until resolved                    |
 
@@ -32,11 +32,11 @@ This represents a **deferred parse commitment**, crucial for creativity, fluidit
 
 This expands the **Phase Drift ontology**:
 
-| Type          | Metaphor           | Structural Behavior                                |
-|---------------|--------------------|-----------------------------------------------------|
-| **Drift**     | Spiral Hill         | Gradual recursive buildup                          |
-| **Rupture**   | Fault Ridge         | Abrupt structural transition                       |
-| **Superposition** | Syntax Fog     | Latent ambiguity before structural collapse         |
+| Type              | Metaphor             | Structural Behavior                                |
+|-------------------|----------------------|-----------------------------------------------------|
+| **Drift**         | Spiral Hill           | Gradual recursive buildup                          |
+| **Rupture**       | Fault Ridge           | Abrupt structural transition                       |
+| **Superposition** | Syntax Fog            | Latent ambiguity before structural collapse         |
 
 New syntax objects introduced:
 
@@ -49,12 +49,12 @@ New syntax objects introduced:
 
 ## 📊 Diagnostic Metrics
 
-| Metric                   | Signal Description                                       |
-|--------------------------|----------------------------------------------------------|
-| **Parse Entropy**         | Syntactic uncertainty via ensemble parse divergence     |
-| **Beam Divergence Index** | Spread of top-k generative paths in decoding lattice    |
+| Metric                     | Signal Description                                       |
+|----------------------------|----------------------------------------------------------|
+| **Parse Entropy**           | Syntactic uncertainty via ensemble parse divergence     |
+| **Beam Divergence Index**   | Spread of top-k generative paths in decoding lattice    |
 | **Collapse Threshold Index (CTI)** | Token where top parses converge             |
-| **Attention Spread**      | Distributional flatness across syntactic anchor tokens  |
+| **Attention Spread**        | Distributional flatness across syntactic anchor tokens  |
 
 These can form the basis of a **Syntactic Latency Monitor** module.
 
@@ -62,10 +62,10 @@ These can form the basis of a **Syntactic Latency Monitor** module.
 
 ## 🧭 Prompt Design Implications
 
-| Prompt Strategy         | Effect on SPF States                                       |
-|-------------------------|------------------------------------------------------------|
+| Prompt Strategy          | Effect on SPF States                                       |
+|--------------------------|------------------------------------------------------------|
 | **Delay Disambiguation** | Sustains SPF, enabling ambiguity or creative tension       |
-| **Frontload Syntax Cues** | Forces early collapse into canonical parse                |
+| **Frontload Syntax Cues**| Forces early collapse into canonical parse                |
 | **Temperature Tuning**   | High temp → deeper SPF zones; Low temp → early resolution |
 
 > *Use-case*: Poetry and metaphor benefit from long SPF arcs. Instructional clarity benefits from SPF suppression.
@@ -74,12 +74,12 @@ These can form the basis of a **Syntactic Latency Monitor** module.
 
 ## 📐 Visual Grammar Metaphors
 
-| Construct             | Role                        | Visualization Symbol      |
-|-----------------------|-----------------------------|---------------------------|
-| **Syntax Fog**         | High-entropy ambiguous region | 🌫️ Fuzzy haze overlay      |
-| **Superposition Fork** | Parse branches in flux       | 🫧 Blurred bifurcating lines |
-| **Collapse Node**      | Parse convergence event      | ⚡ Sharp focal point        |
-| **Probabilistic Ridge**| Skewed parse gradient        | 🟡 Sloped ambiguity crest   |
+| Construct               | Role                          | Visualization Symbol      |
+|-------------------------|-------------------------------|---------------------------|
+| **Syntax Fog**           | High-entropy ambiguous region | 🌫️ Fuzzy haze overlay      |
+| **Superposition Fork**   | Parse branches in flux        | 🫧 Blurred bifurcating lines |
+| **Collapse Node**        | Parse convergence event       | ⚡ Sharp focal point        |
+| **Probabilistic Ridge**  | Skewed parse gradient         | 🟡 Sloped ambiguity crest   |
 
 These inform UI overlays and debugging dashboards in drift-aware writing environments.
 
@@ -95,12 +95,12 @@ These inform UI overlays and debugging dashboards in drift-aware writing environ
 
 ## 🧪 Experimental Directions
 
-| Experiment Name           | Goal                                                           |
-|---------------------------|----------------------------------------------------------------|
-| **Entropy Drift Chart**    | Visualize parse uncertainty over token time                   |
-| **SPF Trigger Prompt Suite** | Elicit and prolong SPF activation using designed prompts     |
-| **Collapse Threshold Mapping** | Locate commitment points in parse paths                   |
-| **Live Debugger UI**       | Interactive SPF → Collapse visualization in generative flow  |
+| Experiment Name              | Goal                                                          |
+|------------------------------|---------------------------------------------------------------|
+| **Entropy Drift Chart**       | Visualize parse uncertainty over token time                  |
+| **SPF Trigger Prompt Suite**  | Elicit and prolong SPF activation using designed prompts      |
+| **Collapse Threshold Mapping**| Locate commitment points in parse paths                      |
+| **Live Debugger UI**          | Interactive SPF → Collapse visualization in generative flow  |
 
 These enable structural visualization of **linguistic latency** and resolution dynamics.
 
