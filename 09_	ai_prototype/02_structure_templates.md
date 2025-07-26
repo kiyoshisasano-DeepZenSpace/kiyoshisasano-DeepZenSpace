@@ -1,5 +1,13 @@
+---
+title: "Structural Response Templates – Phase Drift Systems"
+version: v0.1
+folder: PhaseDrift_AI_Prototype_v11
+status: published
+tags: [phase_drift, interaction_patterns, latency_design, ambiguous_input, relational_ai, silence_modeling]
+---
+
 # 🧩 Structural Response Templates – Phase Drift Systems  
-**Version:** v0.1  
+**Version:** v0.2  
 **Folder:** PhaseDrift_AI_Prototype_v11  
 
 ---
