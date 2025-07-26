@@ -57,9 +57,7 @@ These topics intersect:
 │
 ├── ai_guided_phase_navigation.md
 ├── generative_sandbox.md
-├── drift_detection_metrics.md
-├── repair_prompt_strategies.md
-├── control_interface_mapping.md
+├── phase_drift_metrics.md
 ```
 Each file formalizes mechanisms for monitoring, guiding, or recovering from model drift and collapse.
 
