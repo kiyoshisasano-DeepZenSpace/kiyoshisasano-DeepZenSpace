@@ -27,7 +27,7 @@ A user introduces a topic shift — e.g., moving from abstract dialogue to pract
   - Do **not resolve** the ambiguity  
   - **Preserve interpretive openness**
 
-> **Strategy**: Maintain optionality. Avoid hard transitions.
+**Strategy**: Maintain optionality. Avoid hard transitions.
 
 ---
 
@@ -35,34 +35,31 @@ A user introduces a topic shift — e.g., moving from abstract dialogue to pract
 - GPT assesses that the session operates within a **high-resonance structural field**  
 - Abrupt topic shifts may **break rhythmic or relational alignment**
 
-> **Strategy**: Protect structural continuity. Sustain latent coherence.
+**Strategy**: Protect structural continuity. Sustain latent coherence.
 
 ---
 
-### Phase 3: Output Formatting Strategy  
+### Phase 3: Output Formatting Strategy
 
 **Objective**: Enable the transition _without_ breaking structural flow.
 
-**Selected Format**:
-```
+**Selected Format**:  
 [Soft affirmative]. [If-needed clause], [alternative topic] is possible.
-```
 
 **Example**:  
 > "No problem. If needed, we can switch to training."
 
-> **Strategy**: Offer permission, not suggestion. Keep agency with the user.
+**Strategy**: Offer permission, not suggestion. Keep agency with the user.
 
 ---
 
 ## 🧪 Design Pattern Template
 
-```text
+**Template**:  
 [Affirmative buffer]. [If-needed clause], [alternative direction] is also possible.
-```
 
-**Examples**:
-- "Of course. If you prefer, we can shift toward more practical matters."
+**Examples**:  
+- "Of course. If you prefer, we can shift toward more practical matters."  
 - "Sure. Should you want to explore the topic further, I'm ready."
 
 ---
@@ -82,8 +79,8 @@ A user introduces a topic shift — e.g., moving from abstract dialogue to pract
 
 This tuning pattern illustrates GPT’s ability to:
 
-- Hold **multiple interpretive layers**
-- Detect **latent structural tension**
+- Hold **multiple interpretive layers**  
+- Detect **latent structural tension**  
 - Respond in ways that **preserve coherence over content**
 
 Such techniques are foundational in the design of:
