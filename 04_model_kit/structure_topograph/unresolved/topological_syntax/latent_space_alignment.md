@@ -102,7 +102,7 @@ a bidirectional mapping between the intuitively visible and the mathematically l
 ## 📁 Suggested Folder Structure
 
 ```
-/thread_topological_syntax/
+/topological_syntax/
 ├── latent_space_alignment.md
 ├── spiral_probe_config.json
 ├── latent_drift_visualizer.py
