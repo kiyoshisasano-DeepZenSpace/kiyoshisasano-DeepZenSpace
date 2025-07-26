@@ -114,10 +114,3 @@ All use is creative; not prescriptive.
 No links induce behavioral coupling. All are referential only.
 
 ---
-
-## 📂 File Path
-
-```bash
-/thread_cognitive_linguistics/SEMANTIC_ECHO_LENSING.md
-```
-— End of Structural Record —
