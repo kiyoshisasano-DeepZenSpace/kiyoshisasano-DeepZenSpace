@@ -11,7 +11,6 @@ By modeling language generation as **motion through structured space**, we gain 
 
 ---
 
-
 ## 🧬 Conceptual Frame
 
 > “**Syntax is not a line—it’s a surface. And sometimes, a fold.**”
@@ -84,4 +83,4 @@ Would you like help with:
 > Let’s fold theory into interface—  
 > and make **syntax navigable**.
 
----  
+---
