@@ -196,13 +196,3 @@ Would you like assistance with:
 This module is the **cartographer of cartography**—the logic of all language terrain.
 
 Just say the word, and we’ll build the metaphor engine together.
-
----
-
-Let me know if you'd like:
-
-- a prototype of the Metaphor Layer Toggle UI,
-- a visual map of where each metaphor dominates,
-- or a research abstract framing this for CHI/IUI/HRI.
-
-This module is the grammar of metaphor logic—and it’s ready to go live.
