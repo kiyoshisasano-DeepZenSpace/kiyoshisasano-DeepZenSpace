@@ -1,5 +1,14 @@
+---
+title: "Phase Drift PoC: Silent Companion Agent"
+version: v0.2
+status: prototype
+context: non-clinical
+folder: PhaseDrift_AI_Prototype_v11
+tags: [phase_drift, ambient_presence, silence_design, palliative_ai, latency_modeling]
+---
+
 # 🏥 Phase Drift PoC: Silent Companion Agent  
-**Version:** v0.1  
+**Version:** v0.2  
 **Context:** Prototype — Non-Clinical Use Only  
 
 ---
