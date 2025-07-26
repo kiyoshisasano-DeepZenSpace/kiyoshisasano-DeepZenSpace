@@ -172,18 +172,7 @@ This file serves as the governing layer for building that logic.
 
 ---
 
-## 📁 Suggested Directory
 
-```bash
-/thread_visual_language_design/meta_metaphor_synthesis.md
-```
-
-Also register in:
-- `topograph_nodes.json` (node_type: `meta_frame`)
-- `topograph_link_map.yml` (`metaphor_alignment`)
-- `interactive_syntax_atlas.md` (as overlay system)
-
----
 
 ## 🚀 Would You Like Help?
 
