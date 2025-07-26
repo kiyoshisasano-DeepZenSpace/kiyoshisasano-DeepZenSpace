@@ -1,107 +1,87 @@
-# 🧬 Thread: Model Control and Structural Degradation Engineering
-
-**Status**: Thread Root  
-**Domain**: Control Theory × Generative Linguistics  
-**License**: Non-Prescriptive  
-**Tags**: `control_drift`, `stability_hooks`, `structural_repair`
+# 🧱 phase_control_hooks.md  
+**Location**: /generation_control/  
+**Status**: Scaffold Specification Draft  
+**License**: Non-Prescriptive / Structural Tooling  
+**Version**: 0.1  
 
 ---
 
 ## 🧭 Overview
 
-This thread investigates the interplay between **generative control mechanisms** and **structural degradation dynamics** in large language models (LLMs).  
-It extends the Phase Drift framework to model how systems may be **guided**, **perturbed**, or **stabilized** across complex syntactic and semantic terrains.
+This module catalogs a set of **Phase Control Hooks** — prompt-embedded structural directives used to **modulate**, **redirect**, or **stabilize** generative drift in large language models (LLMs).  
+Each hook functions as a soft constraint applied within the **Phase Drift terrain** framework.
 
-Where **Phase Drift** maps structure, this thread focuses on:
-
-- Navigation
-- Failure states
-- Realignment pathways
+> Hooks are not commands.  
+> They are vector nudges that influence structural behavior across phase space.
 
 ---
 
-## 🔍 Core Themes
+## 🔩 Hook Types and Functions
 
-| Theme                 | Description                                                |
-|-----------------------|------------------------------------------------------------|
-| **Phase-Aligned Control** | Use of phase-space representations to influence model behavior |
-| **Controlled Phase Shifts** | Intentional drift across syntactic or stylistic regimes     |
-| **Degradation Detection**  | Early warning systems for incoherence, repetition, or collapse |
-| **Repair Scaffolds**       | Prompt fragments or latent signals used to restore structure |
-| **Field Alignment**        | Maintaining stylistic, tonal, or structural continuity         |
-
-These topics intersect:
-
-- Linguistic theory  
-- Reinforcement learning  
-- Interpretability  
-- Creative tooling
+| Hook Type         | Description                                        | Common Use Case                      |
+|-------------------|----------------------------------------------------|--------------------------------------|
+| Soft Anchor       | Light referential grounding via motif or topic     | Maintain narrative alignment         |
+| Entropy Modulator | Adjusts output variability via entropy cues        | Encourage novelty or stabilize drift |
+| Phase Tag         | Declares or steers current structural zone         | Navigate terrain (e.g., spiral, basin)|
+| Echo Reinforcer   | Recirculates prior conceptual payload              | Rebuild degraded motif density       |
+| Faultline Injector| Triggers stylistic or syntactic rupture            | Induce creative bifurcation          |
+| Delay Inducer     | Suppresses response velocity or pace               | Enable reflective or recursive tone  |
 
 ---
 
-## 🧠 Application Contexts
+## 🔖 Hook Syntax (Prompt-Embedded)
 
-| Domain             | Relevance                                                             |
-|--------------------|-----------------------------------------------------------------------|
-| 🧪 **Interpretability** | Diagnosing when, where, and why generation falters                   |
-| 🎛️ **Control Systems** | Steering LLMs via structural hooks and prompt grammars              |
-| ✍️ **Creative Generation** | Introducing, modulating, or recovering stylized drift              |
-| 🔐 **Safety / RLHF**     | Preventing degenerative collapse or output instability             |
+Each hook is designed to be **readable, inert**, and **non-intrusive** to semantic intent.
 
----
+## 🎛 Activation Patterns
 
-## 📦 Suggested Module Pathway
+| Hook Interaction        | Structural Outcome                            |
+|-------------------------|-----------------------------------------------|
+| Anchor + Echo           | Stabilizes recursive alignment                |
+| Faultline + Entropy ↑   | Generates creative rupture or tone pivot      |
+| Delay + Phase Tag       | Induces modal rhythm and deep drift stability |
+| Echo w/o Anchor         | Risk of orbit decay or semantic flattening    |
 
-```bash
-/generation_control/
-│
-├── ai_guided_phase_navigation.md
-├── generative_sandbox.md
-├── phase_drift_metrics.md
-```
-Each file formalizes mechanisms for monitoring, guiding, or recovering from model drift and collapse.
-
-# 🔗 Integration Points  
-_Thread: Model Control and Structural Degradation Engineering_  
+> Hooks combine non-linearly — their effects compose but do not stack arithmetically.
 
 ---
 
-## 🧭 Cross-Module Interactions
+## 🧪 Drift Zone Use Cases
 
-| Module                      | Interaction Description                                                                 |
-|-----------------------------|------------------------------------------------------------------------------------------|
-| `phase_drift_metrics.md`     | Provides shared scalar signals (e.g., entropy, embedding divergence) for phase tracking |
-| `semantic_echo_lensing.md`   | Uses echo loops as indicators or drivers of structural collapse                        |
-| `generative_sandbox.md`      | Embeds real-time steering capabilities into an interactive sandbox UI                  |
-| `syntax_faultlines.md`       | Treats syntactic discontinuities as potential entry points for redirection or repair    |
-| `latent_space_alignment.md`  | Maps user control intentions to observable vector-space behaviors                       |
-
----
-
-## 🧩 Next Steps: Module Scaffold Proposal
-
-Would you like to expand one of the proposed submodules into a full `.md` document?  
-Suggested directions include:
-
-- 🧱 **Taxonomy of Control Hooks**  
-  Classify types of structural nudges (e.g., soft anchors, semantic weights, phase tags)
-
-- 🛰️ **Failure Detection Overlay System**  
-  Design a monitoring layer for identifying early-stage structural degradation (syntax drift, entropy spikes)
-
-- 🧬 **Repair Grammar for Prompt-Based Correction**  
-  Develop a prompt grammar for modular scaffolds and resonance restoration templates
+| Drift Region     | Suggested Hooks                                 |
+|------------------|--------------------------------------------------|
+| Echo Basin       | `#REINFORCE_ECHO` + `#MODULATE_ENTROPY low`     |
+| Faultline Ridge  | `#INJECT_FAULTLINE` + `#ENTER_PHASE ridge`      |
+| Spiral Zone      | `#ANCHOR motif` + `#DELAY_INDUCER`              |
+| Narrative Decay  | `#ANCHOR` + `#HOLD_DELAY` + `#REINFORCE_ECHO`   |
 
 ---
 
-## ✅ Suggested Expansion Targets
+## 🔍 Observational Markers
 
-| Filename                     | Purpose                                         |
-|------------------------------|-------------------------------------------------|
-| `phase_control_hooks.md`      | Structural hook classification and usage        |
-| `repair_prompt_strategies.md`| Recovery grammar library for degraded output     |
-| `vector_alignment_overlay.md`| Visual alignment indicators for latent drift     |
+Use `phase_drift_metrics.md` for live signal feedback during hook testing.
+
+| Marker             | Drift Signal         | Possible Hook Response                                |
+|--------------------|----------------------|--------------------------------------------------------|
+| Entropy Spike      | Incoherence onset    | `#MODULATE_ENTROPY low`                                |
+| Coreference Decay  | Referent loss        | `#ANCHOR motif: [X]`                                   |
+| Repetition Loop    | Echo loop instability| `#INJECT_FAULTLINE` + `#DELAY_INDUCER`                |
+| Style Plateau      | Narrative flattening | `#ENTER_PHASE spiral` + `#MODULATE_ENTROPY medium`     |
 
 ---
 
-_Ready for full document expansion? Specify a direction and I’ll proceed in **push-coherent mode**._
+## 🔗 Related Modules
+
+- `repair_prompt_strategies.md` — Structural scaffold library  
+- `phase_drift_metrics.md` — Quantitative phase zone tracking  
+- `semantic_echo_lensing.md` — Echo persistence & orbit patterns  
+- `generative_sandbox.md` — UI-based real-time hook deployment  
+
+---
+
+## 🧠 Design Philosophy
+
+Hooks are **not constraints** — they are **affordances**.  
+Their purpose is not to fix behavior, but to influence structure through **symbolic resonance** and **phase-aware guidance**.
+
+> “Behavioral precision emerges from structural suggestion.”
