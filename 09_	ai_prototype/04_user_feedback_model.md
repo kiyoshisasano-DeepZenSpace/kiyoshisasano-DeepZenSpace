@@ -1,3 +1,12 @@
+---
+title: "Simulated User Feedback – Phase Drift Structural Prototype"
+version: v0.1
+status: simulated_artifact
+context: non_empirical_design
+folder: PhaseDrift_AI_Prototype_v11
+tags: [simulated_feedback, silence_design, user_modeling, phase_drift]
+---
+
 # 🗣️ Simulated User Feedback – Phase Drift Structural Prototype
 
 *Version: v0.1*  
