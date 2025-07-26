@@ -1,6 +1,6 @@
 ---
 title: "Civic Integration Scenarios — Phase Drift Structure"
-version: v0.1
+version: v0.2
 folder: PhaseDrift_AI_Prototype_v11
 maintainer: Kiyoshi Sasano / Deep Zen Space
 tags: [civic_interface, structural_presence, latency_design, non-directive_AI]
