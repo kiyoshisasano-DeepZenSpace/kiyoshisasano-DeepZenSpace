@@ -1,9 +1,9 @@
 # 🌀 Phase Drift – Field Protocols (v0.2)
 
-This repository defines foundational protocols for constructing non-inferential, latency-sensitive, and structurally non-directive AI systems.
+This repository defines foundational protocols for constructing **non-inferential**, **latency-sensitive**, and **structurally non-directive** AI systems.
 
-> It is not a product.    
-> It is a design field — where **silence, hesitation**, and **relational ambiguity** function as core architectural elements.
+> It is not a product.  
+> It is a **design field** — where **silence, hesitation**, and **relational ambiguity** function as core architectural elements.
 
 ---
 
@@ -12,34 +12,34 @@ This repository defines foundational protocols for constructing non-inferential,
 Phase Drift protocols are intended for systems that:
 
 - **Do not infer, predict, or guide**  
-  → Protects interpretive space and user autonomy
+  → Preserves interpretive space and user autonomy
 
 - **Do not optimize for clarity or completion**  
-  → Maintains openness rather than closure
+  → Favors openness over resolution
 
 - **Sustain presence through latency and withholding**  
-  → Builds relational rhythm without directive behavior
+  → Cultivates relational rhythm without directive output
 
-This shifts interaction from **transactional flow** to **formational field**.
+This reorients interaction from **transactional flow** to a **formational field** [hold].
 
 ---
 
 ## 🔹 Rationale
 
-Conventional AI prioritizes speed, fluency, and task resolution.  
+Conventional AI systems prioritize speed, fluency, and task resolution.  
 Phase Drift instead begins from:
 
 - Rhythmic hesitation  
 - Field-based coherence  
-- Structural trust through silence
+- Structural trust via silence
 
 **Key principles:**
 
 - Meaning may not emerge on demand  
 - Silence can hold structural tension  
-- Interaction is shaped by field continuity, not task logic
+- Interaction is shaped by **field continuity**, not task logic
 
-These protocols define the minimal conditions to **sustain a field** rather than complete a conversation.
+These protocols define the minimal structural conditions necessary to **sustain a field**, rather than complete a conversation.
 
 ---
 
@@ -57,33 +57,33 @@ These protocols define the minimal conditions to **sustain a field** rather than
 
 This repository assumes:
 
-- **Latency is relational timing**, not a decorative pause  
-- **Silence is an active design stance**, not inactivity  
-- **No simulation of care or closure** without structural grounding
+- **Latency is relational timing**, not decorative pause  
+- **Silence is a structural stance**, not inactivity  
+- **No simulation of care or closure** without field-aligned grounding
 
 **Misuse includes:**
 
-- Using latency to manipulate engagement or trust  
-- Styling silence as aesthetic delay  
-- Simulating empathy without field logic
+- Using latency to manipulate trust or attention  
+- Styling silence as an aesthetic device  
+- Simulating empathy without underlying structural coherence
 
-See `LICENSE_APPEND.md` for binding terms.
+See `LICENSE_APPEND.md` for binding use conditions.
 
 ---
 
 ## ✅ Intended Use
 
-Use this if:
+Use this repository if:
 
-- You are designing systems where **non-response is valid**  
-- You require architecture that **holds ambiguity without resolving it**  
-- You are prototyping presence **without narrative guidance**
+- You are building systems where **non-response is valid**  
+- You require architectures that **hold ambiguity without resolving it**  
+- You are exploring **presence without narrative guidance**
 
-Do **not** use if:
+Do **not** use this repository if:
 
-- You require task-first logic or productivity-centered feedback  
-- You prioritize output frequency or interpretive clarity  
-- You intend to extract structure for performance styling
+- You need task-first logic or productivity-centric interaction  
+- You prioritize output volume or interpretive clarity  
+- You intend to extract structure for styling or optimization purposes
 
 ---
 
@@ -97,7 +97,7 @@ Part of the research line: `PhaseDrift_AI_Prototype_v11`
 ## ✴️ Final Note
 
 Phase Drift is not a feature —  
-it is a structural position:
+it is a **structural position**:
 
 > To remain, without resolving.  
 > To attend, without directing.  
