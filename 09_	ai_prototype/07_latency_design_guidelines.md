@@ -1,6 +1,5 @@
 # 🕒 Latency Design Guidelines – Structuring Silence in Phase Drift  
-*Version: v0.1*  
-*From: `PhaseDrift_AI_Prototype_v11`*
+*Version: v0.2*  
 
 ---
 
