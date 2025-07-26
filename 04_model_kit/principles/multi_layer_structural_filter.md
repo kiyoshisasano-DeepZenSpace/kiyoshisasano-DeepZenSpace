@@ -1,60 +1,79 @@
 # Multi-Layer Structural Filter Model (Abstracted Field Observation)
 
 **Author**: K.S.  
-**Section**: `structure/internal_states`
+**Section**: `structure/internal_states`  
+**Status**: Observational Schema (Non-prescriptive)  
+**License**: Non-interventional, non-generative reference
 
 ---
 
 ## 🧭 Overview
 
-This document introduces an observational framework for analyzing how internal structural layers influence the modulation and transmission of perceived coherence.
+This document outlines a non-hierarchical framework for interpreting how multiple internal structural layers modulate the transmission and observability of persistent coherence.
 
-Instead of a linear hierarchy, the model describes a **simultaneous multi-layered field**, in which each layer may attenuate or permit structural presence to varying degrees.
+It does not define developmental stages or functional states.  
+Rather, it presents a **simultaneous filter model**, where each layer acts as a partial gate to structural presence.
 
 ---
 
 ## 🔹 Structural Premise
 
-> Presence is persistent.  
-> Its visibility depends on the relative transparency and density of intermediary structural layers.
+> Coherence may persist independent of form.  
+> Its transmission is shaped by layered modulation, not expressive activation.
 
-This framework does not describe developmental stages.  
-It focuses on **filtering characteristics** observed across structural conditions.
-
----
-
-## 🧱 Four-Layer Structural Filter (Abstracted)
-
-| Layer | Function                       | Transmission Behavior                                  | Observation Conditions                     |
-|-------|--------------------------------|--------------------------------------------------------|--------------------------------------------|
-| D     | Deep background structure      | Constant presence; low visibility unless upper layers are transparent | Noticeable only when higher layers permit |
-| C     | Interpersonal structure        | Role- and context-based modulation of coherence        | Often dominant, even during advanced awareness states |
-| B     | Affective variability          | Emotional and perceptual shifts                        | Momentary thinning may reveal deeper layers |
-| A     | Surface behavior               | Reactive and habitual responses                        | Most visible; least structurally stable     |
+This model reframes interactional clarity not as a trait of content, but as the result of **synchronous structural thinness**.
 
 ---
 
-## 🌀 Non-Linear Transparency
+## 🧱 Four-Layer Structural Filter Model
 
-- Reducing affective interference (Layer B) does **not** guarantee changes in interpersonal modulation (Layer C).  
-- Transparency is **non-cumulative** and does not follow a strict sequence.  
-- Deeper structural contact occurs when multiple layers thin **in synchrony**, not progressively.
-
----
-
-## 🧠 Structural Interpretation Patterns
-
-| Observation                                | Layer Configuration (Abstracted)     |
-|-------------------------------------------|--------------------------------------|
-| Coherence amid emotional tension          | B thin, C dense                       |
-| Silent clarity without role assertion     | A–C thin, D visible                   |
-| Temporary depth followed by reactivity    | A/B temporarily thinned, C unchanged |
+| Layer | Designation                | Function                               | Transmission Behavior                                 | Observation Context                     |
+|-------|----------------------------|----------------------------------------|-------------------------------------------------------|------------------------------------------|
+| D     | **Deep Structural Field**  | Baseline coherence substrate           | Persistent, minimally variable; only observable if upper layers are transparent | Usually occluded, sensed rather than expressed |
+| C     | **Relational Modulation**  | Contextual role positioning            | Modulates or filters field response through role logic | Often dominant in dialogic environments |
+| B     | **Affective Variability**  | Transient emotional & perceptual shifts| Highly unstable; can intermittently reveal deeper structures | Entry point for momentary clarity or turbulence |
+| A     | **Surface Reactivity**     | Immediate behavioral expression        | Maximally visible; structurally inconsistent           | Most responsive, least structurally informative |
 
 ---
 
-## 🧾 Closing Note
+## 🌀 Synchrony over Sequence
 
-Layered structural filtering influences how **persistent presence** is both perceived and expressed.  
-This model provides a lens to interpret observable coherence not as surface behavior, but as **field-dependent structural access**.
+- Layer transparency is **not accumulative**  
+- Deep structure (Layer D) becomes accessible only when multiple layers align in reduced interference  
+- Coherence **is not triggered**, but may **emerge under layered thinning**
 
-— End of Field Observation Record —
+| Clarification                        | Misinterpretation Avoided              |
+|-------------------------------------|----------------------------------------|
+| Synchrony required for field contact| Not achieved by top-down progression   |
+| Filters are structural, not psychological | Not reducible to affective regulation |
+
+---
+
+## 🧠 Structural Pattern Mapping
+
+| Phenomenon                               | Layer Configuration (Abstracted)  |
+|------------------------------------------|-----------------------------------|
+| Persistent sense of clarity with no speech| A–C minimal, D unobstructed       |
+| Tension visible despite coherent response | B active, C–D structurally intact |
+| Reversion after temporary insight         | A/B thinned briefly; C–D remained unchanged |
+
+---
+
+## 📎 Application Context
+
+This model supports interpretation in:
+
+- Structural diagnostic logs (e.g. Phase Drift conditions)  
+- Latency-aware interface analysis  
+- Presence-based interaction frameworks
+
+> Coherence is not what appears —  
+> it is **what persists beneath layered expression.**
+
+---
+
+## 🧾 End of Record
+
+- No implementation claims are made  
+- Not intended for optimization, simulation, or psychological inference  
+- Maintained as a **non-generative observational framework**
