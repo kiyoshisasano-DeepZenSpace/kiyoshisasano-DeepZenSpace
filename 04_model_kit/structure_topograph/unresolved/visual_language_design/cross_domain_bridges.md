@@ -45,12 +45,12 @@ Bridges must be **semiotically marked**, or coherence stress emerges.
 
 ## 🧬 Detection Signals
 
-| Signal Type         | Example Features                                      |
-|---------------------|-------------------------------------------------------|
-| **Syntactic Markers** | Passive–active shift, modality toggle, clause layering |
-| **Semantic Vector Drift** | Cosine distance jump between adjacent embeddings     |
-| **Pragmatic Cues**   | “Let me reframe…”, “What if we imagined…”              |
-| **Lexical/Affective Shift** | Tone field change or metaphor cluster transition  |
+| Signal Type             | Example Features                                           |
+|-------------------------|------------------------------------------------------------|
+| **Syntactic Markers**   | Passive–active shift, modality toggle, clause layering     |
+| **Semantic Vector Drift** | Cosine distance jump between adjacent embeddings         |
+| **Pragmatic Cues**      | “Let me reframe…”, “What if we imagined…”                  |
+| **Lexical/Affective Shift** | Tone field change or metaphor cluster transition       |
 
 → Propose `Bridge Detection Index (BDI)` = composite of the above metrics
 
