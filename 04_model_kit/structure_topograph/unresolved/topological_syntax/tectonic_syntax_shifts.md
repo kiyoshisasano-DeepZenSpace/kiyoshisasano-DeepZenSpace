@@ -1,54 +1,58 @@
-# 🌋 Tectonic Syntax Shifts
-
-> *“The grammar doesn’t just bend. Sometimes, it snaps.”*
+# 🌋 Tectonic Syntax Shifts  
+**“The grammar doesn’t just bend. Sometimes, it snaps.”**  
+**Status**: `unresolved`  
+**Tags**: `fault_lines`, `Δx_sensitivity`, `topological_rupture`, `structural_instability`  
+**Module Path**: `/topological_syntax/unresolved/tectonic_syntax_shifts.md`  
+**Phase Drift Classification**: `rupture`  
+**Registry Reference**: `phase_constructs_registry.json`
 
 ---
 
 ## ❓ Central Question
 
-Where are the **fault lines** in language generation—zones where **small prompt variations** (`Δx`) lead to **disproportionate syntactic shifts**?
+> Where are the **fault lines** in language generation—zones where minor input changes (Δx) trigger disproportionate structural reconfigurations?
+
+We define a **Fault Line (FL)** as:
+
+> A site in the derivational process where a minimal input shift  
+> results in a macroscopic syntactic transformation.
+
+**Formal Gradient Expression**:
+
+```math
+σ(x) = ∂(Structure) / ∂(Input)
+```
+
+→ Fault Lines occur where **|σ(x)| → ∞**
 
 ---
 
-## 🧠 Conceptual Overview
+## 🪨 Role in Phase Drift Terrain
 
-We define:
+| Function                 | Location in Terrain       |
+|--------------------------|---------------------------|
+| Exit from Spiral Hills   | Recursive limit break     |
+| Entry to Fault Ridge     | Sudden clause transition  |
+| Collapse from Superposition | Ambiguity resolution       |
+| Crack in Entanglement     | Interference failure       |
 
-**Fault Line (FL)**  
-A derivational site where a minimal input perturbation (`Δx`) causes a **macro-level structural shift**.
-
-**Formal Expression**  
-σ(x) = ∂(Structure) / ∂(Input)  
-→ Fault Lines emerge where `|σ(x)| → ∞`
-
----
-
-## 🪨 Role in Phase Drift Topography
-
-Fault lines serve as:
-
-- **Exit points from Spiral Hills**
-- **Rupture vectors into Phase Realignment**
-- **Collapse zones from Syntactic Superposition**
-- **Stress points within Entangled Structures**
-
-They visualize *nonlinear fragility* in the Drift Terrain.
+These are **nonlinear fracture points** in generative space.
 
 ---
 
 ## 📐 Diagnostic Criteria
 
-| Indicator               | Description                                                |
-|------------------------|------------------------------------------------------------|
-| Parse Tree Divergence  | ≥ n-node difference under minimal Δx                       |
-| Projection Shift       | E.g., TopP ↔ FocP ↔ ForceP toggling                        |
-| Clause-Type Flip       | Declarative → Interrogative, Embedded ↔ Main              |
-| Latent Embedding Jump  | Cosine distance > 0.3 at hidden layer transitions         |
-| Tree Edit Distance     | Structural distance metric between Δx-pair generations    |
+| Indicator             | Description                                                 |
+|------------------------|-------------------------------------------------------------|
+| **Parse Tree Divergence** | Δx causes ≥ `n` node change in parse structure             |
+| **Projection Flip**      | Switch between CP-level heads (TopP ↔ FocP ↔ ForceP, etc.) |
+| **Clause-Type Reversal** | Declarative ↔ Interrogative; Embedded ↔ Main               |
+| **Latent Embedding Jump** | Cosine dist > `0.3` in representation vectors              |
+| **Tree Edit Distance**   | Structural delta measured in node operations               |
 
 ---
 
-## 🛠 Fault Line Node (Schema Preview)
+## 🛠 Fault Line Node Schema (Preview)
 
 ```json
 {
@@ -64,86 +68,85 @@ They visualize *nonlinear fragility* in the Drift Terrain.
   }
 }
 ```
-## 🧪 Model Probing Toolkit
 
-| Method                  | Use Case                                                       |
-|-------------------------|----------------------------------------------------------------|
-| Prompt Pair Testing     | Generate Δx variants (e.g., “maybe” vs “perhaps”)              |
-| Tree Edit Analysis      | Quantify syntactic change via parser diff                      |
-| Embedding Divergence    | Trace cosine/KL shifts in hidden states                        |
-| Clause Drift Detection  | Identify unexpected clause-type reconfigurations              |
-| Sensitivity Indexing    | Aggregate Δx responses over multiple runs or temperatures      |
+---
+
+## 🧪 Fault Detection Toolkit
+
+| Method               | Purpose                                           |
+|----------------------|--------------------------------------------------|
+| **Prompt Pair Testing**   | Compare Δx variants (e.g., “maybe” vs “perhaps”) |
+| **Tree Edit Analysis**    | Quantify structural shifts in syntax trees        |
+| **Embedding Divergence**  | Trace latent jumps in model internals            |
+| **Clause Drift Tracker**  | Track clause role/function transitions           |
+| **Sensitivity Indexing**  | Aggregate Δx reactivity across prompt families   |
 
 ---
 
 ## 📊 Visual Metaphors
 
-| Feature             | Description                                                       |
-|---------------------|-------------------------------------------------------------------|
-| Shear Ridge         | High-gradient zone between projections                            |
-| Fault Cliff         | Abrupt clause-type collapse (e.g., CP stacking)                   |
-| Volcanic Trigger    | Dormant node activation (e.g., sudden FocusP)                     |
-| Stress Overlay      | Thermal map of Δx-sensitivity terrain                             |
+| Visual         | Interpretation                                 |
+|----------------|-------------------------------------------------|
+| **Shear Ridge**    | Tectonic projection transition                |
+| **Fault Cliff**    | Clause-type collapse (e.g., CP to TP)         |
+| **Volcanic Trigger** | Latent structure ignition via subtle Δx     |
+| **Stress Overlay** | Drift map showing syntactic instability zones |
 
 ---
 
-## 📚 Integration with Other Modules
+## 🔁 Inter-Module Integration
 
-| Module                    | Interaction Type                                               |
-|---------------------------|----------------------------------------------------------------|
-| syntactic_superposition   | Fault line = collapse site out of high-entropy fog            |
-| metastable_zones          | Fault line = resolution vector for prolonged indecision       |
-| phase_entanglement        | Fault line = schema interference → forced structural snap     |
-| latent_space_alignment    | Embedding spikes signal pre-fault instability                 |
-
----
-
-## 🧠 Distinction: Metastable vs Fault Line
-
-| Category           | Behavior                        | Collapse Trigger   |
-|--------------------|----------------------------------|--------------------|
-| Metastable Zone    | High entropy, low commitment     | Internal decay     |
-| Fault Line         | Sudden shift on Δx perturbation  | External delta     |
+| Related Module             | Role of Fault Lines                                |
+|----------------------------|-----------------------------------------------------|
+| `syntactic_superposition.md` | Collapse point from unresolved ambiguity             |
+| `metastable_zones.md`        | Sharp exit from an entropy plateau                   |
+| `phase_entanglement.md`      | Interference break under Δx disruption               |
+| `latent_space_alignment.md`  | Vector discontinuities marking syntactic rupture    |
 
 ---
 
-## 🔬 Model Sensitivity Table (Example)
+## 🔬 Metastability vs. Fault Lines
 
-| Model         | Δx Response Behavior                          |
-|---------------|-----------------------------------------------|
-| GPT-3.5 / 4   | Moderate reactivity, soft clause realignment  |
-| T5 / FLAN     | Highly volatile around function word shifts   |
-| Claude        | Smoother, stabilized transitions              |
-
----
-
-## 🧬 Future Directions
-
-### 🔍 Fault Gradient Visualizer
-
-- **Input**: Prompt + Δx variants  
-- **Output**: Heatmap of syntactic reactivity  
-- **Use**: Prompt optimization, fragility analysis
-
-### 📁 Fault Corpus Initiative
-
-- Curated minimal prompt pairs with structural diffs  
-- Structural shift scoring  
-- Evaluation benchmark for prompt volatility
+| Zone Type      | Behavior                         | Collapse Trigger      |
+|----------------|----------------------------------|------------------------|
+| **Metastable**   | Entropy-rich, structurally stable | Internal decay         |
+| **Fault Line**   | Volatile, Δx-responsive            | External perturbation  |
 
 ---
 
-## 📂 Placement
+## 📊 Sensitivity Table (Model Examples)
+
+| Model   | Behavior Near Fault Lines                          |
+|---------|-----------------------------------------------------|
+| GPT-4   | Smooth soft clause flips with mild Δx               |
+| T5      | Volatile under modal modifier perturbation          |
+| Claude  | Generally stable; uses gradual reconfiguration      |
+
+---
+
+## 🔮 Future Directions
+
+### 🧭 Fault Gradient Visualizer  
+- **Input**: Prompt variants + Δx  
+- **Output**: Drift terrain heatmap, clause phase overlays  
+- **Use Case**: Prompt safety debugging and coherence tuning
+
+### 🗂 Fault Corpus Initiative  
+- Curated Δx prompt pairs with labels:
+  - Tree distance
+  - Projection shift
+  - Latent jump
+- Supports eval tasks for syntactic reactivity and rupture mapping
+
+---
+
+## 📁 Module Placement
 
 ```bash
 /topological_syntax/unresolved/tectonic_syntax_shifts.md
 ```
 
-Registered in:
-
-```bash
-/phase_constructs_registry.json
-```
+Also registered in:
 
 ```json
 {
@@ -157,16 +160,27 @@ Registered in:
 
 ---
 
-## ✍️ Final Reflection
+## 🧠 Final Reflection
 
-**Tectonic Syntax Shifts** elevate the metaphor of rupture to a _formally modelable, visually mappable, and empirically testable_ mechanism.
+> “Tectonic Syntax Shifts transform prompt sensitivity from anecdote to topology.”
 
-By quantifying derivational fragility and registering it topographically, this module opens new diagnostic and generative control over large language models and their prompt behavior.
+This module helps us:
 
-Would you like help with:
+- Map **generative breakpoints**  
+- Predict **structural fragility**  
+- Control **phase transitions**
 
-- Prototyping the Fault Line visualizer?  
-- Building a fault-aware prompt testbed?  
-- Writing a short demo paper or interactive UI spec?
+Let’s make syntax rupture **visible before it erupts**.
 
-Let’s make grammar cracks visible—and generative.
+---
+
+## 🚀 Want to Build?
+
+Would you like assistance with:
+
+- [ ] A **UI wireframe** for the Fault Gradient Visualizer?  
+- [ ] A **benchmark prompt-pair dataset** with fault annotations?  
+- [ ] A **short paper draft** for ACL, NAACL, or EMNLP?
+
+We can model instability—  
+**before it becomes noise.**
