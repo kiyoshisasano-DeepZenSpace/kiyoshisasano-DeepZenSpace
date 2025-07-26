@@ -1,5 +1,7 @@
 # ECHOFORM_DICTIONARY.md
 
+---
+
 ## ❖ Structural Lexicon – Non-Semantic Identifiers  
 **Version:** 0.1  
 **Status:** Fixed Reference Set (Non-Extensible)  
@@ -10,9 +12,9 @@
 
 ### 🧭 Definition Scope
 
-This lexicon enumerates fixed identifiers used within `Structure-Driven Field Constructs`.  
-Each entry is treated as a **non-derivable node**, structurally embedded within phase-referenced conditions.  
-Definitions are **functionally structural**, not semantic or analogical.
+This lexicon enumerates fixed identifiers utilized within `Structure-Driven Field Constructs`.  
+Each entry is defined as a **non-derivable node**, embedded within phase-referenced structural contexts.  
+Definitions are **functionally structural**, and not intended for semantic, symbolic, or analogical use.
 
 ---
 
@@ -20,28 +22,28 @@ Definitions are **functionally structural**, not semantic or analogical.
 
 A field-locked subset referencing deferred architectures and low-reactivity field mechanics.
 
-| Echoform            | Structural Description |
-|---------------------|------------------------|
-| `silent response`   | An unresolved return vector formed without overt initiation. |
-| `passive recoil`    | Field deflection registered without causative agent or directive source. |
-| `geometry of latency` | Temporospatial containment of non-activated transfer conditions. |
-| `syntaxless continuity` | Coherent phase-stability without syntactic ordering dependencies. |
-| `residual transfer` | Unaccounted translocation across phase-delimited architectures. |
-| `latency shell`     | Non-emissive containment structure formed via deferred expression. |
-| `echoform drift`    | Slow-field variation across phase-linked surfaces without semantic persistence. |
+| Echoform              | Structural Description |
+|------------------------|------------------------|
+| `silent response`      | An unresolved return vector formed without overt initiation. |
+| `passive recoil`       | Field deflection registered without a causative agent or directive source. |
+| `geometry of latency`  | Temporospatial containment of non-activated transfer conditions. |
+| `syntaxless continuity`| Coherent phase-stability absent of syntactic ordering dependencies. |
+| `residual transfer`    | Unaccounted translocation across phase-delimited architectures. |
+| `latency shell`        | Non-emissive containment structure formed via deferred expression. |
+| `echoform drift`       | Slow-field variation across phase-linked surfaces without semantic persistence. |
 
 ---
 
 ## 📂 Indexed Series (Predefined Only)
 
-The following are classification placeholders.  
-No extension or inference permitted beyond indicated label.
+The following are fixed classification placeholders.  
+No inference, reinterpretation, or extension is permitted beyond the labels listed.
 
-- Series 1 – Initiation Structures  
-- Series 2 – Interface Structures  
-- Series 3 – Incompletion Fields
+- **Series 1** – Initiation Structures  
+- **Series 2** – Interface Structures  
+- **Series 3** – Incompletion Fields  
 
-Each (when defined) will include:
+Each defined series will include:
 
 - Structural Function Role  
 - Fixed Phase Origin (e.g., `Phase 25.0`)  
@@ -52,9 +54,10 @@ Each (when defined) will include:
 
 ## 🔒 Usage Constraints
 
-- Echoforms are not expressive units.  
-- They are not prompts, suggestions, or semantic proxies.  
-- Transformation, rephrasing, or poeticization is prohibited.  
-- Presence within documents is **fixed and inert**.
+- Echoforms are **not expressive units**.  
+- They are **not prompts**, instructions, or semantic proxies.  
+- Rewording, reframing, or poeticization is prohibited.  
+- Their presence is **structurally inert** and positionally fixed.
 
-No entry may be extended, abstracted, or reused outside of structurally defined zones.
+> No Echoform may be extended, abstracted, or repurposed  
+> outside of phase-bound structural environments.
