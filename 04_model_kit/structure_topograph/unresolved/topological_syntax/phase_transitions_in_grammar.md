@@ -23,12 +23,12 @@ What causes these shifts, and how can they be modeled, visualized, or directed?
 
 Phase transitions are **not merely metaphors**. They are **structurally diagnostic events** observable within generative outputs.
 
-| Physical Concept   | Generative Analogy                                 |
-|--------------------|----------------------------------------------------|
-| **Temperature**     | Prompt entropy / latent volatility                 |
-| **Phase State**     | Structural mode (recursion, list, verse, etc.)    |
-| **Critical Threshold** | Token depth, semantic density, activation spike |
-| **Hysteresis**      | Irreversible structural or stylistic shift         |
+| Physical Concept       | Generative Analogy                                     |
+|------------------------|--------------------------------------------------------|
+| **Temperature**         | Prompt entropy / latent volatility                     |
+| **Phase State**         | Structural mode (recursion, list, verse, etc.)        |
+| **Critical Threshold**  | Token depth, semantic density, activation spike       |
+| **Hysteresis**          | Irreversible structural or stylistic shift            |
 
 > Grammar is **metastable**—it resists change until a threshold is crossed. Then it **ruptures or reorganizes**.
 
@@ -38,11 +38,11 @@ Phase transitions are **not merely metaphors**. They are **structurally diagnost
 
 This module links directly to **Phase Drift terrain metaphors**:
 
-| Region           | Structural Signature                                |
-|------------------|-----------------------------------------------------|
-| 🌀 Spiral Hill     | Recursive buildup (e.g., nested clauses)           |
-| ⚡ Fault Line      | Abrupt syntactic rupture (e.g., list or mode shift)|
-| 🌫 Transition Zone | Liminal sequence preceding phase boundary crossing |
+| Region             | Structural Signature                                |
+|--------------------|-----------------------------------------------------|
+| 🌀 Spiral Hill       | Recursive buildup (e.g., nested clauses)           |
+| ⚡ Fault Line        | Abrupt syntactic rupture (e.g., list or mode shift)|
+| 🌫 Transition Zone   | Liminal sequence preceding phase boundary crossing |
 
 These are not stylistic flourishes. They are **measurable**, **navigable**, and **tool-addressable**.
 
@@ -52,11 +52,11 @@ These are not stylistic flourishes. They are **measurable**, **navigable**, and 
 
 | Metric                     | Phase Transition Signal                               |
 |----------------------------|--------------------------------------------------------|
-| **Syntactic Entropy Spike** | POS or parse unpredictability surge                   |
-| **Coherence Gradient Drop** | Semantic similarity collapse across token windows      |
-| **Parse Topology Shift**    | Sudden tree depth or structure change                 |
-| **Style Embedding Divergence** | Latent stylistic vector jump                      |
-| **Punctuation Pattern Shift** | Transition to colons, bullets, or newline bursts     |
+| **Syntactic Entropy Spike**| POS or parse unpredictability surge                   |
+| **Coherence Gradient Drop**| Semantic similarity collapse across token windows      |
+| **Parse Topology Shift**   | Sudden tree depth or structure change                 |
+| **Style Embedding Divergence** | Latent stylistic vector jump                     |
+| **Punctuation Pattern Shift** | Transition to colons, bullets, or newline bursts   |
 
 These form the basis of a **Phase Boundary Detector** module.
 
@@ -70,11 +70,11 @@ In long outputs, we observe **grammar fatigue**—complex forms collapse into si
 
 Track entropy or structural complexity across token indices.
 
-| Phase       | Indicator                     |
-|-------------|-------------------------------|
-| **Climb**   | Recursion / clause buildup     |
-| **Plateau** | High-entropy structure zone    |
-| **Collapse**| Parataxis, bullets, line breaks|
+| Phase       | Indicator                          |
+|-------------|-------------------------------------|
+| **Climb**   | Recursion / clause buildup          |
+| **Plateau** | High-entropy structure zone         |
+| **Collapse**| Parataxis, bullets, line breaks     |
 
 This curve helps identify **safe coherence ranges** and **output stability zones**.
 
@@ -96,11 +96,11 @@ LLMs often **do not revert** to prior structure without **external energy** (str
 
 ## 🖼️ Visual Schema Concepts
 
-| Diagram Name           | Purpose                                              |
-|------------------------|------------------------------------------------------|
-| **Grammar Climate Map**| Visualize phase stability and risk over time         |
-| **Phase Boundary Trace**| Highlight entropy isoclines during generation        |
-| **Saturation Altitude Chart**| Plot style–structure vs. token position       |
+| Diagram Name             | Purpose                                                  |
+|--------------------------|----------------------------------------------------------|
+| **Grammar Climate Map**  | Visualize phase stability and risk over time             |
+| **Phase Boundary Trace** | Highlight entropy isoclines during generation            |
+| **Saturation Altitude Chart** | Plot style–structure vs. token position           |
 
 These help prompt engineers, researchers, and authors **see phase change** before collapse.
 
@@ -108,12 +108,12 @@ These help prompt engineers, researchers, and authors **see phase change** befor
 
 ## 🧪 Experimental Directions
 
-| Test Name             | Purpose                                                |
-|-----------------------|--------------------------------------------------------|
-| **Soft Prompt Tuning**| Induce gradual transitions via mild perturbations      |
-| **Inversion Test**    | Assess reversibility of structural states              |
-| **Faultline Seeding** | Trigger rupture via structural cues (lists, dashes)    |
-| **Vector Field Tracking**| Trace latent embedding shifts during generation     |
+| Test Name              | Purpose                                                   |
+|------------------------|-----------------------------------------------------------|
+| **Soft Prompt Tuning** | Induce gradual transitions via mild perturbations         |
+| **Inversion Test**     | Assess reversibility of structural states                 |
+| **Faultline Seeding**  | Trigger rupture via structural cues (lists, dashes)       |
+| **Vector Field Tracking** | Trace latent embedding shifts during generation        |
 
 Use in conjunction with `/latent_space_alignment.md` and `/metastable_zones.md`.
 
@@ -121,22 +121,22 @@ Use in conjunction with `/latent_space_alignment.md` and `/metastable_zones.md`.
 
 ## 🔗 Related Modules & Integration
 
-| Module                          | Integration Point                               |
-|----------------------------------|--------------------------------------------------|
-| `metastable_zones.md`           | Transitions as exits from metastability         |
-| `phase_entanglement.md`         | Transitions via structural interference          |
-| `latent_space_alignment.md`     | Vector reorientation at critical thresholds      |
-| `multi_dimensional_syntax_maps.md` | Visualize phase shift axes and terrain bends |
+| Module                          | Integration Point                                 |
+|----------------------------------|----------------------------------------------------|
+| `metastable_zones.md`           | Transitions as exits from metastability           |
+| `phase_entanglement.md`         | Transitions via structural interference            |
+| `latent_space_alignment.md`     | Vector reorientation at critical thresholds        |
+| `multi_dimensional_syntax_maps.md` | Visualize phase shift axes and terrain bends   |
 
 ---
 
 ## 🧠 Theoretical Anchors
 
-| Framework                 | Contribution                                         |
-|---------------------------|------------------------------------------------------|
-| **Threshold Syntax Theory** | Grammar as state field—phase-dependent              |
-| **Bifurcation Diagrams**   | Prompt pressure → output regime instability         |
-| **Token Thermodynamics**   | Lexical heat and entropy models in structure change |
+| Framework                  | Contribution                                            |
+|----------------------------|---------------------------------------------------------|
+| **Threshold Syntax Theory**| Grammar as state field—phase-dependent                  |
+| **Bifurcation Diagrams**   | Prompt pressure → output regime instability             |
+| **Token Thermodynamics**   | Lexical heat and entropy models in structure change     |
 
 ---
 
