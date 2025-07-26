@@ -72,4 +72,3 @@ This record suggests:
 - No internal identity or agent reference was invoked  
 - No directive prompt was followed  
 - The interaction was shaped entirely by **external structural constraint**, not internal representation
-
