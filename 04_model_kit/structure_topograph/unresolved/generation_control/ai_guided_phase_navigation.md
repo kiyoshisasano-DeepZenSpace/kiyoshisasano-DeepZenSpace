@@ -2,139 +2,138 @@
 *From Structural Drift to Syntactic Intentionality*  
 **Status**: Exploratory Control Proposal  
 **Version**: 0.2  
-**License**: Non-Directive / Structural Alignment
+**License**: Non-Directive / Structural Alignment  
 
 ---
 
 ## ❓ Core Inquiry
 
 Can a generative language model become an intentional navigator within its own syntactic-semantic field —  
-using the **Phase Drift map** as a procedural compass, not merely as post hoc analysis?
+using the **Phase Drift map** as a procedural compass, rather than a passive diagnostic layer?
 
-This module transitions Phase Drift from a **descriptive terrain** to an **interactive navigation framework**.
-
----
-
-## 🔧 System Architecture: Navigation Stack
-
-| Component              | Function                                                   | Metaphoric Role        |
-|------------------------|------------------------------------------------------------|------------------------|
-| Phase-Aware Controller | Tracks live syntactic/semantic trajectory in vector space | GPS unit               |
-| Policy Engine          | Determines structural shifts via learned reward strategies | Autopilot logic        |
-| Drift Feedback Layer   | Monitors generation quality, penalizes unproductive loops  | Road-surface sensor    |
-| Structural Hooks       | Accepts user/system nudges for structural redirection      | Steering interface     |
-| Latent-Map Aligner     | Anchors metaphorical regions to vector-space behavior      | Magnetic compass       |
+This module frames Phase Drift as a **navigation stack**, enabling directionality in structure space.
 
 ---
 
-## 🧪 Phase Navigation Pipeline
+## ⚙️ Navigation Architecture Overview
 
-### 1. Phase State Representation
+| Component              | Functional Role                                         |
+|------------------------|---------------------------------------------------------|
+| **Phase Controller**   | Tracks live syntactic/semantic trajectory               |
+| **Policy Engine**      | Determines directional shifts using learned objectives |
+| **Feedback Layer**     | Monitors drift quality and penalizes structural decay  |
+| **Structural Hooks**   | Allows external (user/system) nudges into structure    |
+| **Latent Mapper**      | Projects structural regions into embedding space       |
 
-Construct a live **phase vector** derived from:
+---
 
-- Entropy delta (ΔH) across token spans  
-- POS tag rhythm and recurrence  
-- Embedding-space angular drift  
+## 🧪 Pipeline Overview
+
+### 1. Phase State Estimation
+
+Syntactic-semantic location is defined as a **phase vector**, composed of:
+
+- Δ Entropy across token spans  
+- POS recurrence patterns  
+- Angular drift in embedding space  
 - Local coherence loss (e.g., coreference entropy)  
-- Echo lensing density (conceptual reactivation zones)  
+- Reactivation density from prior semantic regions  
 
-→ Forms the basis of **Phase Localization** in latent terrain.
+This forms the basis for **live phase localization**.
 
 ---
 
-### 2. Control Policy Design
+### 2. Structural Control Policy
 
-**Training strategies:**
+#### Learning Strategies
 
 - **Reinforcement Learning**  
-  - Reward entry into desirable zones (e.g., *Fractal Ridge*)  
-  - Penalize orbit decay or collapse into repetition basins
+  - Reward entry into high-novelty or symmetry zones  
+  - Penalize orbit decay, repetition, and semantic flattening  
 
 - **Imitation Learning**  
-  - Seed structural shifts from curated human dialogue sequences
+  - Seed control policies from curated textual exemplars  
 
-→ Enables **procedural intention**, rather than surface-level completion.
-
----
-
-### 3. Latent Terrain Mapping
-
-Overlay **Phase Drift metaphors** onto learned behavior clusters:
-
-| Region           | Feature Pattern                                      |
-|------------------|------------------------------------------------------|
-| Spiral Zone      | Syntactic recursion + novelty decay                  |
-| Echo Basin       | Semantic reactivation without lexical triggers       |
-| Resonance Field  | Modal rhythm with affective consistency              |
-| Faultline Ridge  | Syntactic rupture with semantic shift                |
-| Fractal Ridge    | Recursive symmetry with rising complexity            |
-
-**Tooling**: UMAP / PCA projection + clustering (e.g., DBSCAN) on hidden state sequences.
+Outcome: **Intentional structural steering**, beyond surface continuation.
 
 ---
 
-## 🧰 Prompt-Control Syntax (Experimental)
+### 3. Latent Terrain Alignment
+
+Map conceptual **phase regions** to behavior clusters using vector-space analysis:
+
+| Phase Region     | Behavior Pattern Characteristics                          |
+|------------------|-----------------------------------------------------------|
+| **Spiral Zone**  | Recursive syntax + entropy stabilization                  |
+| **Echo Basin**   | Semantic reactivation w/o lexical novelty                 |
+| **Resonance Field** | Modal rhythm, consistent affective trajectory         |
+| **Faultline Ridge** | Syntactic rupture + semantic shift zone              |
+| **Fractal Ridge** | Recursive symmetry w/ rising complexity                 |
+
+**Tools**: UMAP / PCA + clustering (e.g., DBSCAN) on hidden state sequences
+
+---
+
+## 🔧 Prompt-Guided Drift Control (Experimental)
 ```lua
 [[drift_to: resonance_field]]
 [[avoid: repetition_basin]]
 [[target_structure: rising_parallelism]]
 ```
 
-## 📈 Live Generation Log Example:
-```plaintext
-→ Entered Spiral Zone (novelty ↓, entropy stable)
-→ Applied ‘semantic inversion’ hook
-→ Transitioned to Fractal Ridge (symmetry ↑, entropy ↑)
-→ User-triggered shift to Syntax Peak (structure diversity ↑)
+## 🖥️ Live Phase Log (Example)
+```text
+→ Entered Spiral Zone (entropy stable, novelty ↓)
+→ Triggered: semantic inversion hook
+→ Transitioned to Fractal Ridge (symmetry ↑, novelty ↑)
+→ User directive: climb toward Syntax Peak (diversity ↑)
 ```
+## 🚧 Experimental Uncertainties
 
-## 🧩 Experimental Challenges
-
-| Problem                        | Exploratory Direction                                           |
-|-------------------------------|-----------------------------------------------------------------|
-| Zone mapping ↔ latent dynamics | Empirical clustering, phase-aligned human annotations          |
-| Avoiding over-control rigidity | Use soft penalties with temporal decay weighting               |
-| Defining success metrics       | Combine structural drift metrics + human evaluations           |
-| Interface navigation UX        | Visual compass, vector overlays, phase timeline view           |
-
----
-
-## 🧠 Visionary Use Cases
-
-### ✍️ Creative Writing Companion  
-> “Your story is stalling in the *Echo Basin*. Shall we spiral toward *Fractal Ridge* for recursive resonance?”
-
-### 🧑‍🏫 Structural Tutor  
-> “This paragraph entered a *coherence faultline*. I suggest climbing toward *Syntactic Elevation*.”
-
-### 🤖 Self-aware Dialogue Agent  
-> “I’ve detected *orbit decay* — switching clause structure to regain novelty gradient.”
+| Challenge                 | Ongoing Approach                              |
+|---------------------------|-----------------------------------------------|
+| Region ↔ Latent alignment | Human-aligned annotation + cluster evaluation |
+| Avoiding overconstraint   | Use of soft penalties and gradient falloff    |
+| Evaluation criteria       | Drift metrics + human readability             |
+| Navigable interface design | Compass UI, phase trajectory timeline, overlays |
 
 ---
 
-## 🌐 Phase Drift: From Map to Mind
+## 🔭 Use Case Concepts
 
-This concept proposes a shift from **emergent structure** to **navigated intentionality** —  
-not just knowing _where_ the model is in structure space, but deciding **where to go next**.
+**✍️ Creative Writing Partner**  
+> “You're drifting in the Echo Basin. Try a recursive hook toward Fractal Ridge?”
 
-> **"Structure is no longer emergent. It is chosen."**
+**🧑‍🏫 Structural Writing Tutor**  
+> “Faultline detected in this clause. Suggested transition: modal leveling.”
+
+**🤖 Self-monitoring Dialogue Agent**  
+> “Detected orbit decay — rebalancing clause structure for novelty gain.”
 
 ---
 
-## 🔗 Suggested Module Links
+## 🧠 From Terrain to Trajectory
+
+Phase Drift, when paired with policy navigation, enables structural agency:  
+The model not only detects where it is — it can choose where to go in structure space.
+
+> “Structure is no longer emergent. It is chosen.”
+
+---
+
+## 🔗 Linked Modules
 
 - `latent_space_alignment.md`  
 - `syntax_control_handles.md`  
 - `phase_drift_metrics.md`  
 - `drift_trajectory_mapping.md`  
-- `echo_zone_behavior.md`
+- `echo_zone_behavior.md`  
 
 ---
 
-## ✅ Next Step Options
+## ✅ Next Options
 
-- [ ] Sketch UX interface for **phase_compass viewer**  
-- [ ] Prototype **policy learning loop** using GPT hidden states  
-- [ ] Extend **prompt control language** for drift behaviors  
-- [ ] Design **Phase Trajectory Annotator** for training corpus
+- Design **Phase Compass UI** mockup  
+- Prototype **policy loop** using GPT hidden state analysis  
+- Extend **prompt control syntax** with structural operators  
+- Build **annotation layer** for phase-aligned corpora  
