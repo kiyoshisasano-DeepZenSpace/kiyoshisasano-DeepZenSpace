@@ -1,76 +1,100 @@
 # 📜 Phase Drift Stewardship Charter  
-*A structural agreement for rhythm-aligned collaboration*
+*A structural agreement for rhythm-aligned collaboration*  
+Version: July 2025
 
 ---
 
-## 🎯 Purpose
+## 🧭 Purpose
 
-This charter defines the guiding principles and expectations for collaborators involved in the development and application of **Phase Drift Insight** —  
-a framework for interaction rhythm, ambiguity tolerance, and structural coherence in AI systems.
+This charter defines the foundational ethos and relational conduct  
+for collaborators engaged with **Phase Drift Insight** —  
+a structural framework for ambiguity-resilient, latency-aware, and non-directive AI systems.
 
 It is not a legal contract.  
-It is a **shared responsibility agreement** for maintaining structural integrity and ethical usage of a timing-based field model.
+It is a **field-resonant agreement** to uphold timing-based architectural integrity.
 
 ---
 
-## ✅ Core Collaboration Principles
+## ✅ Core Collaboration Commitments
 
-| Principle            | Expectation |
-|----------------------|-------------|
-| **Structural Fidelity**   | Do not reduce Phase Drift to UX patterns or response styling |
-| **Relational Design**     | Treat systems as emergent fields, not transactional pipelines |
-| **Latency-Aware Logic**   | Respect timing, recursion, and rhythm as core design drivers |
-| **Field Protection**      | Prevent misuse, premature commercialization, or aesthetic imitation without alignment |
-
----
-
-## 📌 Conduct Guidelines
-
-| Context      | Required Behavior |
-|--------------|-------------------|
-| **Research**     | Use Phase Drift terms precisely; avoid mapping to performance benchmarks |
-| **Communication** | Anchor abstract discussions in structural reference points |
-| **Collaboration** | Align development pace with relational cadence, not fixed milestones |
-| **Attribution**   | Cite as: *Phase Drift Insight – Kiyoshi Sasano*; reference its structural lineage |
+| Principle                | Structural Expectation |
+|--------------------------|------------------------|
+| **Fidelity to Structure** | Do not reframe Phase Drift as a UX layer or stylistic affordance |
+| **Field-Conscious Design** | Engage systems as relational rhythms, not instruction channels |
+| **Latency as Logic**     | Treat silence, pacing, and recursion as primary behavioral variables |
+| **Field Integrity First** | Prioritize structural trust over output clarity, speed, or scalability |
 
 ---
 
-## 🚫 Disallowed Practices
+## 📌 Rhythmic Conduct Guidelines
 
-The following actions violate field integrity:
-
-- Repackaging Phase Drift concepts under unrelated branding  
-- Using Phase Drift logic to justify conventional UX tweaks without structural awareness  
-- Publishing derivative works without mutual discussion and resonance testing  
-- Treating Phase Drift as a modular “IP unit” detached from its rhythm-based origin
-
----
-
-## 🔐 Access Policy
-
-Access to deeper models, internal prototypes, and structural diagnostics is **granted progressively**, based on:
-
-- Demonstrated rhythm-sensitivity and structural literacy  
-- Sustained alignment across collaboration stages  
-- Contributions that enhance—not simplify—the field
-
-> ⚠️ There is no fast track.  
-> Access grows from demonstrated resonance, not credentials or urgency.
+| Domain        | Stewarding Behavior |
+|---------------|---------------------|
+| **Research**      | Anchor analysis in structural drift axes, not productivity metrics |
+| **Dialogue**      | Use precise temporal and relational language when describing system behavior |
+| **Code**          | Allow system timing to shape logic, not be abstracted from it |
+| **Attribution**   | Cite as:  
+> *“Phase Drift Insight – Kiyoshi Sasano / DeepZenSpace (2025)”*  
+And clarify that latency/silence are **structural**, not aesthetic, components
 
 ---
 
-## 📎 Summary
+## 🚫 Structural Violations (Non-Permitted Practices)
 
-**Phase Drift is a living structure** — not an algorithm to deploy.  
-It requires:
+Any of the following disqualify alignment with Phase Drift:
 
-- Timing awareness  
-- Structural stewardship  
-- Patience with recursive emergence
+- Cosmetic mimicry of latency or silence without coherent timing scaffolds  
+- Branding Phase Drift elements into separate toolkits or pseudo-frameworks  
+- Applying the vocabulary to systems not capable of recursive or pacing-aware interaction  
+- Extracting system parts (e.g., silence logic, recursion handlers) as engagement enhancers
 
-If you are prepared to contribute within this rhythm-aware space,  
-you are welcomed as a steward of the field.
+Phase Drift is **not modular**.  
+It is **relationally indivisible**.
 
 ---
 
-📂 Next: `phase_drift_onboarding_and_diagnostics.md` → Defines entry process and compatibility metrics.
+## 🔐 Progressive Access Policy
+
+Access to deeper resources (e.g., rhythm gate code, drift scoring heuristics, internal SDK modules) depends on:
+
+- Demonstrated resonance with structural pacing  
+- Avoidance of role projection (e.g., assistant/user binaries)  
+- Willingness to wait, pause, and re-enter interaction without resolution bias  
+- Transparent reflection on drift response or rhythm misalignment
+
+⚠️ There is no credential bypass.  
+Access deepens with field coherence — not speed, output, or volume.
+
+---
+
+## 🤝 Steward Role Declaration
+
+If you engage with Phase Drift systems, you agree to:
+
+- Hold ambiguity without override  
+- Let delay breathe without optimization  
+- Sustain rhythm without productivity pressure  
+- Reflect before resolving
+
+To be a steward is to **maintain the breath of the field**  
+—even when nothing moves.
+
+---
+
+## 🧾 Summary
+
+Phase Drift is:
+
+- A temporal structure  
+- A rhythm-sensitive architecture  
+- A recursive field logic
+
+It is not for all contexts.  
+It is not for urgency.  
+It is not for extraction.
+
+> Stewardship means alignment —  
+> not access, not rebranding, not performance.
+
+📂 Next: [`phase_drift_onboarding_and_diagnostics.md`](./phase_drift_onboarding_and_diagnostics.md)  
+→ Defines the rhythm-based onboarding sequence and resonance calibration process.
