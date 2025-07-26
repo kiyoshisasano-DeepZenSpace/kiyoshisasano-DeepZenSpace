@@ -1,18 +1,60 @@
 # 🧠 Thread: Cognitive Syntax and Semantic Interference
 
-## Overview
-This thread explores how syntactic and semantic layers interact, diverge, or fail to bind properly in language generation. Within the Phase Drift framework, we examine how meaning shifts, echo distortions, or coherence breakdowns emerge from generative models, using perspectives from cognitive linguistics, semantics, and pragmatics.
+## 🧭 Overview
 
-## Core Topics
-- Syntax–semantics binding failures
-- Semantic drift and echo lensing
-- Coherence loss and recovery
-- Conceptual resonance and interference
+This thread investigates how **syntactic and semantic layers interact, diverge, or fail to bind** during language generation.  
+Within the **Phase Drift** framework, it explores how meaning shifts, echo distortions, and coherence breakdowns arise in generative systems—  
+drawing from cognitive linguistics, semantics, and pragmatics.
 
-## Intended Audience
-Researchers and practitioners interested in cognitive semantics, generative syntax, discourse coherence, and evaluation of AI language output.
+---
 
-## Sample Files
-- `semantic_vs_syntactic_drift.md`
-- `semantic_echo_lensing.md`
-- `coherence_breaks_and_mending.md`
+## 🔍 Core Topics
+
+- **Syntax–Semantics Binding Failures**  
+  Misalignment between structural form and referential intent.
+
+- **Semantic Drift & Echo Lensing**  
+  Latent motifs recur with distorted meaning due to unresolved structural echoes.
+
+- **Discourse Coherence Loss & Recovery**  
+  How systems re-stabilize after interpretive collapse or misalignment.
+
+- **Conceptual Resonance & Interference Zones**  
+  Overlapping meanings that destabilize clarity under recursive or long-context pressure.
+
+---
+
+## 🎯 Intended Audience
+
+This thread is designed for researchers and practitioners in:
+
+- **Cognitive Semantics**
+- **Generative Syntax Modeling**
+- **Discourse Coherence & Evaluation**
+- **Interpretability of AI-Generated Language**
+
+---
+
+## ✅ Notes
+
+- Tone and structure are appropriate for academic and technical contexts.
+- Structural motifs directly reference **Phase Drift architecture**.
+- Conceptual clarity is maintained with minimal abstraction overhead.
+
+---
+
+## 🔗 Suggested Module Links
+
+For deeper exploration, see:
+
+- [`SEMANTIC_VS_SYNTACTIC_DRIFT.md`](./semantic_vs_syntactic_drift.md)  
+  _Disentangling structural from referential shift in generative systems._
+
+- [`SEMANTIC_ECHO_LENSING.md`](./semantic_echo_lensing.md)  
+  _Echo re-entry and recursive motif deformation._
+
+- [`NARRATIVE_GRAVITY_WELLS.md`](./narrative_gravity_wells.md)  
+  _Where drift stabilizes into unintentional narrative convergence._
+
+---
+
