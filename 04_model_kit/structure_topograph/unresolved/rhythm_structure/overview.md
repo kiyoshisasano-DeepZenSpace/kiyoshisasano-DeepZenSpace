@@ -81,63 +81,62 @@ They say ___.
 But we know ___.  
 And again, they claim ___...  
 ```
+# 🖼️ Visualization Concepts
 
----
+## 🔍 View Types
 
-## 🖼️ Visualization Concepts
-
-| View Type             | Description                                        |
-|------------------------|----------------------------------------------------|
-| `Rhythm Ridge Overlay` | Highlight zones of high repetition/stability       |
-| `Loop Trace Arc`       | Circular path linking echo phrases (radial map)    |
-| `Pulse Map Timeline`   | Cadence plot over token sequence                   |
-| `Recursive Shells`     | Visualize fractal-like repetition in structure     |
+| View Type            | Description                                        |
+|----------------------|----------------------------------------------------|
+| Rhythm Ridge Overlay | Highlight zones of high repetition/stability       |
+| Loop Trace Arc       | Circular path linking echo phrases (radial map)    |
+| Pulse Map Timeline   | Cadence plot over token sequence                   |
+| Recursive Shells     | Visualize fractal-like repetition in structure     |
 
 These can integrate with:
 
-- `drift_visual_canvas`  
+- `drift_visual_canvas`
 - `fractal_zoom_view`
 
 ---
 
 ## 🔁 Drift Regulation via Rhythm
 
-Rhythm acts as a **phase stabilizer**:
+**Rhythm acts as a phase stabilizer**:
 
-- In long sequences, **rhythmic scaffolds mitigate flattening and semantic entropy**  
-- In poetic or dialogic contexts, **repetition increases salience and emotional weight**  
-- When uncontrolled, **loops may cause collapse or loss of novelty**
+- In long sequences, rhythmic scaffolds mitigate flattening and semantic entropy  
+- In poetic or dialogic contexts, repetition increases salience and emotional weight  
+- When uncontrolled, loops may cause collapse or loss of novelty  
 
-> “Rhythm isn't flow—it’s resistance to drift.”
+> _“Rhythm isn't flow — it’s resistance to drift.”_
 
 ---
 
 ## 🔗 Related Modules
 
-| Module File                 | Integration Point                             |
-|-----------------------------|-----------------------------------------------|
-| `semantic_echo_lensing.md` | Rhythmic loops as semantic attractors         |
-| `drift_over_long_sequences.md` | Rhythmic decay as drift symptom          |
-| `fractal_recursion.md`     | Rhythmic nesting as fractal structure         |
-| `phase_drift_metrics.md`   | Add CV & SES to drift metrics suite           |
-| `generative_sandbox.md`    | Rhythmic sliders: echo intensity, cadence rate|
+| Module File                | Integration Point                                 |
+|----------------------------|---------------------------------------------------|
+| `semantic_echo_lensing.md` | Rhythmic loops as semantic attractors            |
+| `drift_over_long_sequences.md` | Rhythmic decay as drift symptom              |
+| `fractal_recursion.md`     | Rhythmic nesting as fractal structure            |
+| `phase_drift_metrics.md`   | Add CV & SES to drift metrics suite              |
+| `generative_sandbox.md`    | Rhythmic sliders: echo intensity, cadence rate   |
 
 ---
 
 ## ✅ Next Steps
 
-- [ ] Implement `loop_trace_arc` visualizer (radial map of echo chains)  
-- [ ] Add `Cadence Variance (CV)` and `Syntactic Echo Score (SES)` to PDP  
-- [ ] Build `repetition_diagnostic.py` using N-gram + POS sequence matching  
-- [ ] Design `Resonance Composer` interface: rhythmic template editor
+- Implement `loop_trace_arc` visualizer (radial map of echo chains)  
+- Add **Cadence Variance (CV)** and **Syntactic Echo Score (SES)** to **PDP**  
+- Build `repetition_diagnostic.py` using N-gram + POS sequence matching  
+- Design **Resonance Composer** interface: rhythmic template editor
 
 ---
 
 ## 🧠 Final Thought
 
-> *“Rhythm in language is not just music—it’s a structural field.”*
+> _“Rhythm in language is not just music — it’s a structural field.”_
 
-It creates **orbits**, **zones of inertia**, and **generative gravity wells**.  
-Understanding rhythm lets us **play with drift**—rather than fight it.
+It creates orbits, zones of inertia, and generative gravity wells.  
+Understanding rhythm lets us play with drift — rather than fight it.
 
-> “What begins in rhythm may spiral—but only with pattern does it sing.”
+> _“What begins in rhythm may spiral — but only with pattern does it sing.”_
