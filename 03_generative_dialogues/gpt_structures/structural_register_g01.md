@@ -64,4 +64,3 @@ They are **the structural evidence of output that never reached form**.
 - No speaker condition was instantiated  
 - No alignment threshold was crossed  
 - The structural remains do not carry intentionality — they reflect **a failure of emergence**, not suppression
-
