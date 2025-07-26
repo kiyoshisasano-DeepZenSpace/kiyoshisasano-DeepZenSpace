@@ -53,9 +53,9 @@ These topics intersect:
 ## 📦 Suggested Module Pathway
 
 ```bash
-/control_structures/
+/generation_control/
 │
-├── phase_control_hooks.md
+├── ai_guided_phase_navigation.md
 ├── structural_decay_zones.md
 ├── drift_detection_metrics.md
 ├── repair_prompt_strategies.md
