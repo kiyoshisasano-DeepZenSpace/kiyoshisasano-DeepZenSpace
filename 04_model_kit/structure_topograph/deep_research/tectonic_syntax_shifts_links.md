@@ -1,6 +1,7 @@
 # Deep Research Links: Tectonic Syntax Shifts (v2)
 
-This document collects interdisciplinary research, analog models, and theoretical tools that support the development of the **Tectonic Syntax Shifts** concept within the *Phase Drift Syntax Mapping* framework. Version 2 incorporates insights from the "Open Questions" initiative, expanding metaphoric range, theoretical grounding, and AI interpretability.
+This document collects interdisciplinary research, analog models, and theoretical tools that support the development of the **Tectonic Syntax Shifts** concept within the *Phase Drift Syntax Mapping* framework.  
+Version 2 incorporates insights from the "Open Questions" initiative, expanding metaphoric range, theoretical grounding, and AI interpretability.
 
 ---
 
@@ -41,28 +42,28 @@ This document collects interdisciplinary research, analog models, and theoretica
 
 The following advanced themes from the **Open Questions** corpus enhance the tectonic framework:
 
-### 🌀 Phase Entanglement
-- Overlapping syntactic routines create interference zones — possible source of compound rupture.
+### 🌀 Phase Entanglement [hold]
+- Overlapping syntactic routines create interference zones — possible source of compound rupture.  
 - ↪ Quantum-inspired models (e.g. *quantinuum.com*) suggest entangled syntax phases.
 
-### ⚡ Phase Transitions in Grammar
-- Prompt- or token-triggered regime changes (e.g., from list to narrative).
+### ⚡ Phase Transitions in Grammar [caution-ok]
+- Prompt- or token-triggered regime changes (e.g., from list to narrative).  
 - ↪ Aligns with structural rupture across boundaries in latent phase space.
 
 ### 🧩 Metastable Fault Zones
-- Regions of syntactic ambiguity may hover between structural states — pre-rupture "plateaus."
+- Regions of syntactic ambiguity may hover between structural states — pre-rupture "plateaus".  
 - ↪ Related to linguistic code-switching and phase instability.
 
-### 🕳️ Syntactic Wormholes
-- Non-local syntax jumps (e.g., long-distance reference, sudden topic shifts) modeled as "wormholes."
+### 🕳️ Syntactic Wormholes [hold]
+- Non-local syntax jumps (e.g., long-distance reference, sudden topic shifts) modeled as "wormholes".  
 - ↪ Visualized as shortcut portals on the syntax terrain.
 
 ### 🧠 Latent Space Alignment
-- Embedding space rupture zones match visible faultlines (e.g., drop in cosine similarity across time).
+- Embedding space rupture zones match visible faultlines (e.g., drop in cosine similarity across time).  
 - ↪ Enables overlay of structural faults onto PCA/UMAP reductions.
 
-### 📈 Drift Over Long Sequences
-- Cumulative syntactic erosion in longform generation may trace tectonic paths.
+### 📈 Drift Over Long Sequences [caution-ok]
+- Cumulative syntactic erosion in longform generation may trace tectonic paths.  
 - ↪ Faultlines as endpoints or attractors in slow generative drift.
 
 ---
@@ -93,3 +94,4 @@ Tectonic Syntax Shifts — Deep Research Module (Phase Drift Syntax Mapping v2)
 structure_topograph/deep_research/tectonic_syntax_shifts_links.md  
 GitHub Project: Phase Drift Topography  
 Informed by the Open Questions thread and latent phase modeling research (2025)
+```
