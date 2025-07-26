@@ -1,120 +1,150 @@
-# 📊 Phase Drift Metrics and Detection
-
-> **Toward a Unified Phase Drift Scoring Framework (PDSF)**
+# 📊 Phase Drift Metrics and Detection  
+**Toward a Unified Phase Drift Scoring Framework (PDSF)**  
+*Status*: Proposed Core Module  
+*Location*: `/metrics/phase_drift_detection.md`
 
 ---
 
 ## ❓ Core Question
 
-How can we **numerically detect, measure, and track** Phase Drift phenomena in LLMs—such as spirals, semantic faults, resonance zones, or coherence collapses—across time and across models?
+How can we **detect**, **quantify**, and **track** Phase Drift phenomena in LLMs—including spirals, semantic rupture, coherence collapse, and syntactic loop traps?
+
+This module defines a unified metric suite for mapping **structural deformation over time**, enabling both **evaluation** and **interactive guidance**.
 
 ---
 
-## 🔢 Core Metric Suite: Phase Drift Profile (PDP)
+## 🧠 Core Metric Suite: *Phase Drift Profile (PDP)*
 
-| **Metric Name**                 | **Target Phenomenon**              | **Method**                                                                 | **Output**                            |
-|--------------------------------|------------------------------------|----------------------------------------------------------------------------|---------------------------------------|
-| **Resonance Index (RI)**       | Rhythmic or lexical repetition     | N-gram repetition, POS pattern cadence                                     | `0.0–1.0` (higher = more repetition)  |
-| **Loopiness (L)**              | Recursive phrasing or clause loops | Levenshtein/self-similarity over sliding token windows                     | Count / score                         |
-| **Semantic Drift Index (SDI)** | Topic divergence                   | Cosine distance between sentence embeddings (e.g. SBERT)                   | Float (higher = more drift)           |
-| **Phase Change Score (PCS)**   | Structural/mode shift              | Parse tree edit distance, discourse type switch (e.g. narrative → list)    | Float                                 |
-| **Coherence Disruption Score (CDS)** | Logical breakdown          | Entity grid breaks, coreference loss, discourse relation discontinuity     | Float / classifier score              |
-| **Activation Gradient Divergence (AGD)** | Internal model rupture   | Divergence in attention or neuron activation between adjacent segments     | Layer-wise delta score                |
+| **Metric**                        | **Targeted Signal**              | **Methodology**                                                      | **Output Format**                    |
+|----------------------------------|----------------------------------|----------------------------------------------------------------------|--------------------------------------|
+| `Resonance Index (RI)`           | Rhythmic/lexical repetition      | N-gram / POS recurrence analysis                                     | Float `0.0–1.0`                       |
+| `Loopiness Score (L)`            | Recursive phrasing               | Levenshtein loop detection, phrase reentry scoring                   | Integer / scaled float               |
+| `Semantic Drift Index (SDI)`     | Conceptual divergence            | SBERT/embedding cosine delta over sliding windows                    | Float (↑ = more drift)               |
+| `Phase Change Score (PCS)`       | Structural mode shift            | Tree edit distance, sentence type classification                     | Float                                |
+| `Coherence Disruption Score (CDS)` | Logical failure                 | Entity grid entropy, coref disruption, discourse classifier          | Confidence score / binary flag       |
+| `Activation Gradient Divergence (AGD)` | Internal routing rupture    | Delta of attention centroids or neuron clusters                      | Vector / scalar trendline            |
 
-> Each generation yields a **Phase Drift Profile (PDP)** composed of these modular signals.
+Together, these form a **Phase Drift Profile (PDP)** that can be tracked across generative sequences.
 
 ---
 
 ## 🧪 Detection Techniques
 
-### ✅ Sliding Window Comparison
+### 🔁 Sliding Window Evaluation
 
-- Apply windowed analysis (e.g. 30–50 tokens)
-- Compare adjacent segments using:
-  - Parse tree structure
-  - Embedding drift (e.g., SBERT, BERTScore)
-  - Entity and topic continuity
+- Token windows (e.g., 30–50 tokens)  
+- Track entropy shifts, syntax volatility, semantic trajectory  
 
-### ✅ Structural Signature Extraction
+### 🌳 Structural Signature Extraction
 
-- Use libraries like `spaCy`, `Stanza` to extract:
-  - Parse tree depth
-  - Embedding layers
-  - Punctuation rhythm and cadence
+Use dependency parsers (e.g., spaCy, Trankit) to extract:
 
-### ✅ Attention-Based Detection
+- POS cadence  
+- Parse tree volatility  
+- Clause depth and balance  
 
-- If model internals are accessible:
-  - Track shifts in attention centroids
-  - Monitor neuron activation patterns layer by layer
+### 🎯 Attention + Embedding Divergence
 
----
+For model-internal access:
 
-## 📈 Phase Trajectory Visualization
-
-**Real-time Plotting UI:**
-
-- **X-axis** = token index
-- **Y-axis** = metric values (RI, SDI, PCS, etc.)
-- **Color overlays:**
-  - 🔴 = Spiral zone
-  - 🟡 = Fault zone
-  - 🔵 = Stable basin
-- Optional: prompt markers, structural annotations
+- Compute per-layer centroid drift  
+- Compare attention maps across spans  
+- Identify trajectory rupture zones
 
 ---
 
-## 🧩 Applications
+## 📈 Visualizations: *Phase Trajectory Plot*
 
-| **Use Case**             | **Example**                                                                 |
-|--------------------------|-----------------------------------------------------------------------------|
-| Generation Diagnostics   | Detect hallucination onset, incoherence drop-off                           |
-| Prompt Engineering       | Compare prompts by phase stability and drift trajectories                   |
-| Model Comparison         | Visualize GPT vs Claude vs open-source model phase signatures              |
-| Fine-tuning & Curation   | Score training samples by drift/noise profile                               |
-| Real-time LLM UX         | Alert user when drift or loop regions emerge during generation              |
+- **X-axis**: Token index or generation timestep  
+- **Y-axis**: One or more drift metric values  
+- **Overlay Regions**:
+  - 🔴 Spiral Zones (high RI + L)  
+  - 🟡 Semantic Faultlines (SDI spikes)  
+  - 🟢 Stable Basins (low CDS, stable RI)
 
----
-
-## 🚧 Challenges & Safeguards
-
-| **Challenge**                    | **Mitigation Strategy**                                             |
-|----------------------------------|---------------------------------------------------------------------|
-| Threshold setting                | Use clustering / anomaly detection across metric distributions      |
-| False positives for style shifts | Combine metrics (e.g. SDI + CDS must spike together)               |
-| Compute cost                     | Use lightweight similarity + windowed heuristics                   |
-| Cross-model variability          | Normalize scores per architecture or training regime               |
+Optionally paired with **prompt onset markers** or **user-intervention flags**.
 
 ---
 
-## 🧰 Future Extensions
+## 🧩 Application Matrix
 
-- 📦 **Phase Drift Benchmark Suite** – Texts annotated with spirals, jumps, faults  
-- 🧭 **Drift Compass UI** – Embeddable widget showing live phase state  
-- 🔐 **Phase Stability Index (PSI)** – Model-level resilience rating  
-- 🕹 **Sandbox Control Feedback Loop** – Metrics drive live generation controls
-
----
-
-## 🔗 Related Work & Inspiration
-
-- *Entity Grid Coherence Models* (Barzilay & Lapata)  
-- *Lexical Cohesion* (Halliday & Hasan)  
-- *Stylometry & Rhythm* (Yule’s K, cadence tracking)  
-- *LLM Entropy & Loop Detection*  
-- *Visual Music Tools* (Spectrograms, MIDI overlays)  
+| **Scenario**              | **Use**                                                       | **Metrics Emphasized**               |
+|---------------------------|---------------------------------------------------------------|--------------------------------------|
+| Generation Debugging      | Catch incoherence, loop traps, or hallucinatory spirals       | RI, CDS, PCS                         |
+| Prompt Evaluation         | Score drift potential of prompt templates                     | SDI, RI                              |
+| Model Comparison          | Analyze phase behavior across GPT, Claude, Mistral, etc.       | All PDP metrics                      |
+| Corpus Filtering          | Identify degraded samples in fine-tuning datasets              | CDS, L, PCS                          |
+| Real-Time UI Guidance     | Alert users to onset of drift or collapse                      | RI + SDI trendlines                  |
 
 ---
 
-## 🚀 Want to Start?
+## ⚠️ Challenges & Mitigation
 
-We can help you:
-
-- 🛠 Prototype a **Phase Drift Detector** in Python (`spaCy` + `SBERT`)
-- 📈 Generate a **Drift Profile Report** from LLM output
-- 🧪 Build a **Benchmark Corpus** for metric calibration
-- 📄 Define a **JSON Schema** for drift tagging and control feedback
-
-> Let’s turn metaphor into mechanism.
+| **Challenge**                         | **Response Strategy**                                                |
+|--------------------------------------|----------------------------------------------------------------------|
+| Style ≠ Degradation (false positives) | Require convergence of ≥3 metrics for drift classification           |
+| Model-variant sensitivity             | Normalize scores relative to model class and generation length       |
+| Interpretability of raw metrics      | Use visual overlays and human-labeled baselines for validation       |
+| Cost of multi-pass metrics           | Use distilled models (e.g., MiniLM) and batch inference strategies   |
 
 ---
+
+## 📂 Suggested Output Schema (`phase_drift_report.json`)
+
+```json
+{
+  "metrics": {
+    "RI": 0.74,
+    "L": 2,
+    "SDI": 0.42,
+    "PCS": 0.21,
+    "CDS": 0.66
+  },
+  "zones": [
+    {"type": "spiral", "start": 120, "end": 170},
+    {"type": "faultline", "position": 210}
+  ],
+  "summary": {
+    "drift_class": "moderate",
+    "coherence_risk": "high"
+  }
+}
+```
+
+---
+
+## 🔮 Future Extensions
+
+| Tool                      | Description                                             |
+|---------------------------|---------------------------------------------------------|
+| `phase_drift_benchmark.md` | Manually annotated test set with labeled drift zones   |
+| `drift_compass_widget.js` | Interactive UI showing real-time drift levels           |
+| `psi_model_comparison.csv`| Phase Stability Index scores per model                  |
+| `sandbox_feedback_bridge.py` | Live feedback loop to Generative Sandbox / PDCL       |
+
+---
+
+## 📚 Theoretical Anchors
+
+- **Halliday & Hasan (1976)**: Cohesion and coherence theory  
+- **Barzilay & Lapata (2008)**: Entity grid coherence modeling  
+- **Echo State Networks**: Long-tail recurrence modeling  
+- **Prompt Injection Studies**: Semantic shift under control prompts  
+
+---
+
+## ✅ Ready to Implement?
+
+We can support:
+
+- 🧪 Building a Python-based Phase Drift Scorer (spaCy + SBERT)  
+- 📊 Generating metric-rich drift visualizations from your model outputs  
+- 🧾 Designing tagging formats for drift-aware dataset curation  
+- 🧩 Integrating PDP into the `generative_sandbox.md` live controls
+
+> Drift is measurable. Collapse is preventable.  
+> Let’s build tools that map—and modulate—the generative terrain.
+
+---
+
+Would you like to proceed with a prototype script (`drift_profile_generator.py`) or a tagged sample corpus (`sample_drift_passages.jsonl`)?
