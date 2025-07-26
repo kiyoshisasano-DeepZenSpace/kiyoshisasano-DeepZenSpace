@@ -29,7 +29,7 @@ This is not just diagramming—it’s the foundation for building **cognitive to
 - Aligning metaphors to Peirce’s triad:  
   - **Icons** (visual resemblance) → Spiral, Ridge, Fog  
   - **Indices** (trace or process) → Wormhole arc, Clause shadow  
-  - **Symbols** (abstract mapping) → Collapse Pit, Entropy ridge
+  - **Symbols** (abstract mapping) → Collapse Pit, Entropy Ridge
 
 ### 🧭 Topological Coherence vs. Pluralism  
 - Should Phase Drift adopt one unified metaphor schema (e.g. terrain)?  
@@ -46,10 +46,10 @@ This is not just diagramming—it’s the foundation for building **cognitive to
 
 This thread is intended for:
 
-- 🧠 Researchers in **semiotics**, **diagrammatic logic**, **cognitive metaphor theory**
-- 🖥 UI/UX designers building **language visualizers**, **generative editors**, or **syntax navigators**
-- 🧑‍🏫 Educators and interface developers in **L2 grammar**, **accessibility**, or **creative writing**
-- 🔬 Scholars exploring **metaphor governance** in cognitive systems and AI explainability
+- 🧠 Researchers in **semiotics**, **diagrammatic logic**, **cognitive metaphor theory**  
+- 🖥 UI/UX designers building **language visualizers**, **generative editors**, or **syntax navigators**  
+- 🧑‍🏫 Educators and interface developers in **L2 grammar**, **accessibility**, or **creative writing**  
+- 🔬 Scholars exploring **metaphor governance** in cognitive systems and AI explainability  
 
 ---
 
@@ -92,9 +92,9 @@ This thread is intended for:
 ```
 
 Also referenced in:
-- `topograph_nodes.json` (node_type: `visual_framework`)
-- `topograph_link_map.yml` (`diagrammatic_alignment`, `semantic_overlay`)
-- `interactive_syntax_atlas.md`
+- `topograph_nodes.json` (node_type: `visual_framework`)  
+- `topograph_link_map.yml` (`diagrammatic_alignment`, `semantic_overlay`)  
+- `interactive_syntax_atlas.md`  
 
 ---
 
@@ -107,8 +107,8 @@ Also referenced in:
 This thread lays the design logic for the **visual metaphor engine** of the Phase Drift framework—where metaphors become *scaffolds for sense*, *bridges between domains*, and *interfaces for navigating generative cognition*.
 
 Would you like assistance with:
-- 🧭 Mapping metaphor-to-UI layers in a prototype?
-- 🎨 Creating an SVG overlay of core metaphor types?
+- 🧭 Mapping metaphor-to-UI layers in a prototype?  
+- 🎨 Creating an SVG overlay of core metaphor types?  
 - 📝 Drafting a short CHI/IUI paper on diagrammatic metaphor frameworks?
 
 Let’s make metaphors manipulable.
