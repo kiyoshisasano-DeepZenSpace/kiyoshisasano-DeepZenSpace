@@ -1,5 +1,4 @@
 # 🌌 Thread: Topological Syntax and Structural Space  
-📁 Path: `syntax_cartography/dev/topological_syntax_and_structural_space.md`
 
 ---
 
