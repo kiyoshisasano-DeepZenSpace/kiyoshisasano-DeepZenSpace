@@ -75,7 +75,7 @@ If your system requires internal logic or adaptive modules, please initiate cont
 
 ---
 
-### ⚠️ Structural Use Notice
+## ⚠️ Structural Use Notice
 
 This directory contains field-level design materials for Phase Drift systems.
 
@@ -85,7 +85,7 @@ The files here are designed to:
 
 - Support relational architectures using latency and silence as first-class signals  
 - Be studied or built upon **only when structural coherence is preserved**  
-- Require framing and ethical restraint before reuse or integration  
+- Require framing and ethical restraint before reuse or integration
 
 Misuse includes stylistic extraction, simulated empathy, or UX mimicry without structural grounding.
 
