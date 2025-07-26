@@ -57,4 +57,3 @@ For deeper exploration, see:
   _Where drift stabilizes into unintentional narrative convergence._
 
 ---
-
