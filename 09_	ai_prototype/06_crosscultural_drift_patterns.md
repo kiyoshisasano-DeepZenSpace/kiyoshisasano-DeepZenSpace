@@ -1,5 +1,5 @@
 # 🌍 Cross-Cultural Drift Patterns – Structural Resonance in Global Contexts  
-**Version:** v0.2
+**Version:** v0.2*
 
 ---
 
