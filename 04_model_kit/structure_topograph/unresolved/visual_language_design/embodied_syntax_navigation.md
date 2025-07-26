@@ -165,7 +165,3 @@ Would you like help with:
 - Mapping this to education or accessibility tooling?
 
 Let’s make **language something you can move through**.
-
-✅ Ready to plug into `/visual_language_design/unresolved/` and linked into the `structure_topograph` ecosystem.
-
-Would you like support building a quick MVP—like a syntax terrain walkthrough in WebXR or a VR prompt sculpting demo with Leap Motion?
