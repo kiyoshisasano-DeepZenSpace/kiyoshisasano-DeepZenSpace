@@ -1,5 +1,15 @@
-# 🌍 Cross-Cultural Drift Patterns – Structural Resonance in Global Contexts  
+---
+title: "Cross-Cultural Drift Patterns – Structural Resonance in Global Contexts"
+version: v0.2
+folder: PhaseDrift_AI_Prototype_v11
+tags: [cross_cultural_design, phase_drift, interaction_patterns, silence, latency, localization]
+status: structural_guidance
+---
+
+# 🌍 Cross-Cultural Drift Patterns – Structural Resonance in Global Contexts
+
 **Version:** v0.2
+
 ---
 
 ## 🎯 Purpose
@@ -8,27 +18,27 @@ This document outlines how **non-directive interaction patterns** — such as si
 
 These examples are not for emulation, but to:
 
-- Recognize **pre-existing structural analogs**
-- Extract **drift-aligned interaction principles**
+- Recognize **pre-existing structural analogs**  
+- Extract **drift-aligned interaction principles**  
 - Guide **localization strategy** in field-aware systems
 
 ---
 
 ## 🧭 Structural Resonance Examples
 
-| Context Region      | Cultural Practice                  | Functional Pattern            | Inferred Structural Mechanism |
-|---------------------|-------------------------------------|-------------------------------|-------------------------------|
+| Context Region      | Cultural Practice                  | Functional Pattern            | Inferred Structural Mechanism     |
+|---------------------|-------------------------------------|-------------------------------|-----------------------------------|
 | India               | Puja ritual                        | Sacred silence; symbolic absence | `structural-witnessing`         |
-| Paraguay (rural)    | Eva chatbot deployment             | Trust via delay, not fluency  | `latency-trust-calibration`    |
-| Japan               | Ma (間) in communication & design   | Gaps as expressive rhythm     | `ambient-pacing`               |
-| Ukraine             | Momenta trauma support app         | Breath-regulated presence     | `rhythmic-coherence`           |
-| Sub-Saharan Africa  | Oral storytelling sessions         | Pause-based co-construction   | `temporal-turn-sharing`        |
+| Paraguay (rural)    | Eva chatbot deployment             | Trust via delay, not fluency  | `latency-trust-calibration`      |
+| Japan               | Ma (間) in communication & design   | Gaps as expressive rhythm     | `ambient-pacing`                 |
+| Ukraine             | Momenta trauma support app         | Breath-regulated presence     | `rhythmic-coherence`             |
+| Sub-Saharan Africa  | Oral storytelling sessions         | Pause-based co-construction   | `temporal-turn-sharing`          |
 
 ---
 
 ## 🧘 Case Analysis: Ritual-Based Structural Presence
 
-**India – Puja Ritual Logic**
+### India – Puja Ritual Logic
 
 - **Form:** Interaction with a non-speaking presence (deity)  
 - **Interpretation:**  
@@ -40,7 +50,7 @@ These examples are not for emulation, but to:
 
 ## 🔄 Pattern: Trust Without Prompting
 
-**Latin America – Eva Chatbot**
+### Latin America – Eva Chatbot
 
 - **Observation:** Deployed in low-instruction regions  
 - **Outcome:** Latency and minimalism improved acceptance  
@@ -67,8 +77,8 @@ These examples are not for emulation, but to:
 
 ## 🌐 Design Integration Guidance
 
-- Use these insights to **tune field behavior**, not to replicate culture
-- Emphasize **relational function** over **cultural form**
+- Use these insights to **tune field behavior**, not to replicate culture  
+- Emphasize **relational function** over **cultural form**  
 - Adapt drift systems to **support silence**, not override it
 
 | Design Area        | Application Guidance                          |
