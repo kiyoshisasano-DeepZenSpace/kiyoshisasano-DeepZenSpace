@@ -1,3 +1,10 @@
+---
+title: "Topological Metaphor Overload"
+status: unresolved
+tags: [metaphor_logic, cognitive_ui, topological_design, syntax_maps, overload_management]
+folder: thread_visual_language_design
+---
+
 # 🌀 Unresolved Theme: Topological Metaphor Overload
 
 ## ❓ Core Concern
@@ -14,8 +21,8 @@ This theme addresses the risk of metaphor overload—and strategies for resolvin
 
 Metaphor overload occurs when:
 
-- Spatial logics contradict (e.g., wormholes break distance, spirals preserve it)
-- Cognitive mapping collapses under excessive metaphor stacking
+- Spatial logics contradict (e.g., wormholes break distance, spirals preserve it)  
+- Cognitive mapping collapses under excessive metaphor stacking  
 - Diagnostic clarity is lost in visual density
 
 > ⚠️ When metaphors compete instead of compose, insight turns to noise.
@@ -26,11 +33,11 @@ Metaphor overload occurs when:
 
 | Metaphor        | Type                    | Function                                | Overlap Risk                                  |
 |-----------------|-------------------------|-----------------------------------------|-----------------------------------------------|
-| Spiral          | Geometric / recursive   | Looping, nesting                        | Interferes with field gradients               |
-| Fault Line      | Boundary / discontinuity| Instability, phase shift                | Breaks flow or harmony                        |
-| Wormhole        | Non-local connector     | Reference, jump-cut, ellipsis           | Bypasses expected pathing                     |
-| Resonance Field | Distributed topology    | Rhythmic or semantic coherence          | Collides with discrete events or cliffs       |
-| Gravity Well    | Dynamic attractor       | Thematic intensity                      | Distorts spatial logic, can override order    |
+| **Spiral**       | Geometric / recursive   | Looping, nesting                        | Interferes with field gradients               |
+| **Fault Line**   | Boundary / discontinuity| Instability, phase shift                | Breaks flow or harmony                        |
+| **Wormhole**     | Non-local connector     | Reference, jump-cut, ellipsis           | Bypasses expected pathing                     |
+| **Resonance Field** | Distributed topology | Rhythmic or semantic coherence          | Collides with discrete events or cliffs       |
+| **Gravity Well** | Dynamic attractor       | Thematic intensity                      | Distorts spatial logic, can override order    |
 
 Each metaphor invokes its own **topological model**. Without scaffolding, these models can clash.
 
@@ -66,10 +73,10 @@ Instead of reducing metaphor usage, we propose **formally managing it**:
 
 | Metaphor        | Diagnostic Anchor                          |
 |-----------------|--------------------------------------------|
-| Spiral          | Parse tree depth                           |
-| Fault Line      | Tree edit distance from minimal Δx         |
-| Field           | Cadence interval / semantic alignment      |
-| Wormhole        | Coreference distance or ellipsis shortcut  |
+| **Spiral**       | Parse tree depth                           |
+| **Fault Line**   | Tree edit distance from minimal Δx         |
+| **Field**        | Cadence interval / semantic alignment      |
+| **Wormhole**     | Coreference distance or ellipsis shortcut  |
 
 > 💡 Metaphors become *empirical lenses* when mapped to measurable features.
 
@@ -97,4 +104,6 @@ Let’s build a syntax engine where metaphors don’t collide—they *compose*.
 ---
 
 ## 📂 Suggested Location
-`/thread_visual_language_design/topological_metaphor_overload.md`
+```bash
+/thread_visual_language_design/topological_metaphor_overload.md
+```
