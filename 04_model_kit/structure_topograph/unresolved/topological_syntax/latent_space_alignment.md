@@ -13,96 +13,101 @@ This theme proposes a conceptual bridge between the **metaphorical structures** 
 
 ## ✅ Core Hypothesis
 
-Phase Drift metaphor → Latent Space correlate:
+**Phase Drift metaphor → Latent Space correlate:**
 
-| Phase Drift Metaphor | Latent Space Signature | Interpretation |
-|----------------------|------------------------|----------------|
-| **Spiral**           | Looping latent trajectory | Recursive generation path |
-| **Fault Line**       | Sharp vector divergence | Stylistic or syntactic rupture |
-| **Resonance Field**  | Low-variance embedding zone | Rhythmic or rhetorical stability |
-| **Semantic Gravity Well** | Embedding attractor basin | Dense conceptual cluster |
-| **Phase Drift**      | Longitudinal latent shift | Discourse or tone transition |
+| Phase Drift Metaphor       | Latent Space Signature        | Interpretation                        |
+|----------------------------|-------------------------------|---------------------------------------|
+| **Spiral**                 | Looping latent trajectory      | Recursive generation path             |
+| **Fault Line**             | Sharp vector divergence        | Stylistic or syntactic rupture        |
+| **Resonance Field**        | Low-variance embedding zone    | Rhythmic or rhetorical stability      |
+| **Semantic Gravity Well**  | Embedding attractor basin      | Dense conceptual cluster              |
+| **Phase Drift**            | Longitudinal latent shift      | Discourse or tone transition          |
 
 ---
 
 ## 🧪 Experimental Directions
 
-### 1. Dimensionality Reduction (UMAP / PCA / t-SNE)
-- Use *phase-tagged* prompts to trigger metaphor-specific structures.
-- Visualize token embeddings across time.
-- Look for **loops, ruptures, attractors**.
+### 1. Dimensionality Reduction (UMAP / PCA / t-SNE)  
+- Use *phase-tagged* prompts to trigger metaphor-specific structures.  
+- Visualize token embeddings across time.  
+- Look for **loops, ruptures, attractors** in low-dimensional projections.
 
-### 2. Synthetic Metaphor Injection
-- Engineer prompts with structural intent:
-  - Recursion (spirals)
-  - Topic shift (faults)
-  - Refrain (resonance)
-- Compare latent movement vs. controls.
+### 2. Synthetic Metaphor Injection  
+- Design prompts to deliberately invoke Phase Drift metaphors:  
+  - Recursion → induce spirals  
+  - Sudden tone shift → simulate fault lines  
+  - Refrain or rhythmic parallelism → activate resonance fields  
+- Measure latent deviation vs. control prompts.
 
-### 3. Probe or Classifier Models
-- Train lightweight probes to detect metaphor categories from activation shifts.
-- Use Phase Drift labels (manual or heuristic).
+### 3. Probe or Classifier Models  
+- Train lightweight probes to detect metaphor signatures in latent activation paths.  
+- Use human- or heuristic-annotated data for spirals, resonance, rupture, etc.
 
-### 4. Drift Sensitivity Analysis
-- Paraphrase prompts, track how embeddings **drift** in high-D space.
-- Use entropy, KL divergence, or curvature metrics.
+### 4. Drift Sensitivity Analysis  
+- Generate paraphrased variants of prompts.  
+- Track how their **latent representations diverge** over time.  
+- Measure with cosine distance, KL divergence, entropy, or curvature.
 
 ---
 
 ## 🛠 Tools & Applications
 
-### 📊 PhaseMap Dashboard
-- Token-by-token visual trail through latent space.
-- Overlay **resonance**, **spiral**, **fault** zones.
+### 📊 PhaseMap Dashboard  
+Live visualization of embedding drift token-by-token.  
+→ Annotated overlays: **spiral zones**, **resonance bands**, **fault vectors**.
 
-### 🧭 Latent Drift Inspector
-- Detect unintentional phase shifts in model output.
-- Useful for coherence debugging.
+### 🧭 Latent Drift Inspector  
+Detect latent ruptures indicating potential incoherence or style shift.  
+→ Flag drift thresholds for human or model intervention.
 
-### ✍️ Prompt Rewriter (Drift-Smoothing)
-- Suggest edits to reduce erratic shifts in latent geometry.
-- Could guide prompt authors or refine automated output.
+### ✍️ Prompt Rewriter (Drift-Smoothing)  
+Suggest prompt modifications to reduce erratic latent motion.  
+→ Tune narrative tone, rhythm, or logical phase flow.
 
 ---
 
 ## ⚠️ Challenges & Mitigations
 
-| Challenge | Solution |
-|----------|----------|
-| High-D noise | Windowed smoothing, local clustering |
-| Run instability | Use frozen model checkpoints, seed aggregation |
-| No metaphor ground truth | Define probeable heuristics or crowd-annotate |
-| Geometry-metaphor mismatch | Accept partial overlap—metaphor as lens, not mirror |
+| Challenge                  | Proposed Strategy                              |
+|---------------------------|-------------------------------------------------|
+| **High-dimensional noise**| Windowed smoothing, manifold learning           |
+| **Model run instability** | Fix seeds, average across generations           |
+| **Lack of ground truth**  | Proxy metrics, crowd annotations, synthetic data|
+| **Metaphor mismatch risk**| Use metaphors as **heuristic lenses**, not axioms|
 
 ---
 
 ## 🔮 Forward Steps
 
-- Build **Phase-Aligned Latent Maps** from metaphor-inducing prompt sets
-- Integrate with **LLM visualization tools** (BertViz, LIT, Activation Atlases)
-- Train detectors: `spiral_probe`, `fault_line_classifier`, etc.
-- Use **latent feedback** to inform real-time generation tools or editors
+- [ ] Build **Phase-Aligned Latent Maps** from metaphor-inducing prompt datasets  
+- [ ] Integrate with LLM visualization tools: `BertViz`, `LIT`, `Activation Atlases`  
+- [ ] Train and test metaphor probes:  
+  - `spiral_probe`  
+  - `resonance_field_classifier`  
+  - `fault_line_detector`  
+- [ ] Explore **real-time feedback loops**:  
+  → Use latent drift metrics to steer output during generation
 
 ---
 
 ## ✨ Closing Insight
 
-> "To align metaphor with geometry is to reveal the shape of thought beneath the surface of structure."
+> “To align metaphor with geometry is to reveal the shape of thought beneath the surface of structure.”
 
-By linking Phase Drift’s poetic terrain with neural vectors, this theme opens new ground for interpretability, linguistic theory, and cognitive tooling.
-
----
-
-## 📁 Suggested Folder
-
-`/thread_topological_syntax/latent_space_alignment.md`
+This theme opens interpretability as a **poetic–geometric dialogue**:  
+a bidirectional mapping between the intuitively visible and the mathematically latent.
 
 ---
 
-Would you like:
+## 📁 Suggested Folder Structure
 
-- A visual prototype using real model embeddings?
-- Prompt sets to trigger spirals or fault lines?
-- A research abstract for an interpretability workshop?
-
-Let’s build the bridge together.
+```
+/thread_topological_syntax/
+├── latent_space_alignment.md
+├── spiral_probe_config.json
+├── latent_drift_visualizer.py
+├── example_prompt_set/
+│   ├── spiral_triggers.txt
+│   ├── faultline_cases.txt
+│   └── resonance_patterns.txt
+```
