@@ -33,11 +33,11 @@ The result: structurally braided syntax resistant to linear parsing.
 
 ## 🧩 Entanglement Typologies
 
-| Type | Name | Description | Example |
-|------|------|-------------|---------|
-| I | Clause-Type Overlay | Blended clause logics | *“He believed—without question, yet with pause—that it was ending.”* |
-| II | Recursive–Interruptive Braiding | Parentheticals embedded in recursion | *“The truth (and this matters) is still unclear.”* |
-| III | Latent Prompt Hybridization | Structural blending via prompt activation | *“List five reasons you loved me in a sonnet form.”* |
+| Type | Name                       | Description                                 | Example                                                   |
+|------|----------------------------|---------------------------------------------|-----------------------------------------------------------|
+| I    | Clause-Type Overlay        | Blended clause logics                        | *“He believed—without question, yet with pause—that it was ending.”* |
+| II   | Recursive–Interruptive Braiding | Parentheticals embedded in recursion     | *“The truth (and this matters) is still unclear.”*         |
+| III  | Latent Prompt Hybridization | Structural blending via prompt activation   | *“List five reasons you loved me in a sonnet form.”*       |
 
 Each type represents a distinct mode of syntactic interference or overlap.
 
@@ -57,11 +57,11 @@ Not all complex structure is entangled. These should be ruled out:
 
 ## 🧪 Diagnostic Criteria and Signals
 
-| Signal | Description | Possible Proxy |
-|--------|-------------|----------------|
-| Parse Instability | Competing parses persist across decoding | Divergence in top-k parse paths |
-| Rhythm–Syntax Conflict | Rhythmic patterns misalign with structure | Phase resonance vs. cadence slippage |
-| Latent Hybrid Activation | Multiple template structures in vector neighborhood | Activation overlap in latent space |
+| Signal                 | Description                                      | Possible Proxy                           |
+|------------------------|--------------------------------------------------|-------------------------------------------|
+| Parse Instability      | Competing parses persist across decoding         | Divergence in top-k parse paths           |
+| Rhythm–Syntax Conflict | Rhythmic patterns misalign with structure        | Phase resonance vs. cadence slippage      |
+| Latent Hybrid Activation | Multiple template structures in vector neighborhood | Activation overlap in latent space   |
 | Delayed Phase Commitment | Structural ambiguity resolved only late in generation | High entropy before structural lock-in |
 
 Consider combining these into a **Phase Entanglement Probability Index (PEPI)**.
@@ -70,14 +70,12 @@ Consider combining these into a **Phase Entanglement Probability Index (PEPI)**.
 
 ## 📐 Visual Schema Proposals
 
-| Visual | Meaning |
-|--------|---------|
-| 🧵 Braided Spirals | Co-active recursive loops interweaving |
-| 🌊 Wavefield Interference | Overlapping syntactic energy regions |
+| Visual                 | Meaning                                         |
+|------------------------|-------------------------------------------------|
+| 🧵 Braided Spirals     | Co-active recursive loops interweaving          |
+| 🌊 Wavefield Interference | Overlapping syntactic energy regions      |
 | 🔗 Phase Node Crossings | Trajectories that traverse multiple phase regimes |
-| 🧭 Entanglement Map | Annotated generative trajectories with phase blending zones |
-
-Visual metaphors not only aid understanding—they suggest UI tools and debug overlays for drift-aware systems.
+| 🧭 Entanglement Map    | Annotated generative trajectories with phase blending zones |
 
 ---
 
@@ -98,22 +96,22 @@ Proposed components:
 
 ## 🔗 Conceptual Anchors
 
-| Field | Contribution |
-|-------|--------------|
-| 🧠 Quantum Linguistics | Non-separability of grammatical states |
-| 🧩 Syntactic Ambiguity Theory | Unresolvable parses under prompt variation |
-| 🧬 Latent Space Topology | Blended embedding peaks in LLMs |
-| 🌀 Cognitive Cartography | Mental model of overlapping schemas |
+| Field                 | Contribution                                         |
+|----------------------|------------------------------------------------------|
+| 🧠 Quantum Linguistics | Non-separability of grammatical states              |
+| 🧩 Syntactic Ambiguity Theory | Unresolvable parses under prompt variation      |
+| 🧬 Latent Space Topology | Blended embedding peaks in LLMs                    |
+| 🌀 Cognitive Cartography | Mental model of overlapping schemas                |
 
 ---
 
 ## 🧭 Integration Within Phase Drift
 
-| Phase Model | Role of Entanglement |
-|-------------|----------------------|
-| Spiral Hills | May become braided or distorted by multi-phase overlays |
-| Rhythmic Fields | Conflict or resonance may initiate entanglement |
-| Fault Lines | Entanglement zones may precede ruptures or coherence collapse |
+| Phase Model     | Role of Entanglement                                             |
+|------------------|------------------------------------------------------------------|
+| Spiral Hills     | May become braided or distorted by multi-phase overlays         |
+| Rhythmic Fields  | Conflict or resonance may initiate entanglement                 |
+| Fault Lines      | Entanglement zones may precede ruptures or coherence collapse   |
 
 🧬 Entanglement isn’t noise—it’s **structured interference**, and may even serve as a **creativity engine** in language generation.
 
@@ -124,6 +122,7 @@ Proposed components:
 ```bash
 /structure_topograph/unresolved/phase_entanglement.md
 ```
+
 Link explicitly to:
 - `/latent_mapping/latent_space_alignment.md`
 - `/metastable_theory/metastable_zones.md`
@@ -141,8 +140,8 @@ This module enables a new lens on:
 - Latent diagnostics for LLM interpretability
 
 Would you like support creating:
-- A **braided spiral diagram** with parse overlays?
-- A **prompt suite** for entanglement type induction?
+- A **braided spiral diagram** with parse overlays?  
+- A **prompt suite** for entanglement type induction?  
 - A **prototype entanglement detector** with metric output?
 
 These are excellent candidates for next-stage toolbuilding or concept publication.
