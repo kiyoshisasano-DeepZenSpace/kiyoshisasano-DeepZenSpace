@@ -1,5 +1,5 @@
 # 📚 GLOSSARY.md — Phase Drift Terminology  
-**Version:** v0.1  
+**Version:** v0.2
 **Source:** PhaseDrift_AI_Prototype_v11  
 
 ---
@@ -93,8 +93,8 @@ Leaves relational field open for future return or continued reflection.
 
 ## 🛡 Ethical Anchors (Related Concepts)
 
-| Term                     | Definition                                                                 |
-|--------------------------|----------------------------------------------------------------------------|
+| Term                      | Definition                                                                 |
+|---------------------------|----------------------------------------------------------------------------|
 | **Non-Inferential Logic** | System does not guess, project, or simulate user state                     |
 | **Latency Integrity**     | Latency is designed, not mimicked or disguised                             |
 | **Over-Identification Risk** | The tendency of users to assign empathy or sentience to a silent system |
