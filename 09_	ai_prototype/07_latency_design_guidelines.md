@@ -1,5 +1,13 @@
+---
+title: "Latency Design Guidelines – Structuring Silence in Phase Drift"
+version: v0.2
+folder: PhaseDrift_AI_Prototype_v11
+tags: [latency_design, phase_drift, silence, timing, interaction_field, structural_ui]
+status: active_guideline
+---
+
 # 🕒 Latency Design Guidelines – Structuring Silence in Phase Drift  
-*Version: v0.2*  
+*Version: v0.2*
 
 ---
 
@@ -26,12 +34,12 @@ It is not a system failure, but a deliberate **structural interval** that can:
 
 ## 🌀 Latency Pattern Table
 
-| Pattern Name         | Interval     | Use Context                    | Drift Function              |
-|----------------------|--------------|--------------------------------|-----------------------------|
-| `breath-hold`        | 1.5–3 sec     | Emotional processing           | `attunement-delay`         |
-| `delayed-ack`        | 4–7 sec       | Post-input reflection          | `field-holding`            |
-| `non-reply-witness`  | >10 sec / none| Passive presence               | `co-presence-withholding`  |
-| `slow-repeat`        | ~5 sec loop   | Ambient affirmation patterns   | `temporal-anchoring`       |
+| Pattern Name         | Interval       | Use Context                    | Drift Function              |
+|----------------------|----------------|--------------------------------|-----------------------------|
+| `breath-hold`        | 1.5–3 sec       | Emotional processing           | `attunement-delay`         |
+| `delayed-ack`        | 4–7 sec         | Post-input reflection          | `field-holding`            |
+| `non-reply-witness`  | >10 sec / none  | Passive presence               | `co-presence-withholding`  |
+| `slow-repeat`        | ~5 sec loop     | Ambient affirmation patterns   | `temporal-anchoring`       |
 
 > Timing should not be fixed — it adapts to user rhythm and session field state.
 
@@ -49,16 +57,16 @@ It is not a system failure, but a deliberate **structural interval** that can:
 
 ## 🛠 Implementation Techniques
 
-- **Dynamic Delay Adjustment:**  
+- **Dynamic Delay Adjustment**  
   Tune latency by rhythm sensing or affect model (e.g., breath pattern, typing pause)
-  
-- **Interruptible Delays:**  
+
+- **Interruptible Delays**  
   User input can override (opt-out from structured silence)
 
-- **Fallback to Silence:**  
+- **Fallback to Silence**  
   If meaning is unclear, defer instead of prompting
 
-- **Latency as Loggable Event:**  
+- **Latency as Loggable Event**  
   Silence should appear in logs:  
   `"event": "latency_hold", "duration": 5200, "semantic": null`
 
@@ -66,12 +74,12 @@ It is not a system failure, but a deliberate **structural interval** that can:
 
 ## ⚠️ Safety & Interpretation Notes
 
-| Risk Scenario                    | Design Mitigation                             |
-|----------------------------------|-----------------------------------------------|
-| Silence misread as system error  | Frame latency in onboarding (“This system may pause...”) |
-| User urgency mismatched          | Allow opt-out, or detect urgency triggers      |
-| Cultural mismatch in pacing      | Localize via region or rhythm calibration      |
-| Emotional projection onto delay  | Avoid anthropomorphic framing (“thinking...”)  |
+| Risk Scenario                    | Design Mitigation                                     |
+|----------------------------------|-------------------------------------------------------|
+| Silence misread as system error  | Frame latency in onboarding (“This system may pause…”) |
+| User urgency mismatched          | Allow opt-out, or detect urgency triggers              |
+| Cultural mismatch in pacing      | Localize via region or rhythm calibration              |
+| Emotional projection onto delay  | Avoid anthropomorphic framing (“thinking…”)           |
 
 ---
 
@@ -86,8 +94,9 @@ It is not a system failure, but a deliberate **structural interval** that can:
     "structural_role": "field-holding"
   }
 }
-
 ```
+
+---
 
 ## ✅ Summary
 
@@ -105,10 +114,6 @@ It is about **protecting the space before meaning arrives**.
 
 ---
 
-📂 **Next**  
+## 📂 Next
+
 → [`08_pre_response_latency.md`](./08_pre_response_latency.md)
-
-
-
-
-
