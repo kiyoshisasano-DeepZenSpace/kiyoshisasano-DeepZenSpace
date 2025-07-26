@@ -18,7 +18,7 @@ Rather than delivering content alone, Claude began describing:
 
 ## Interaction Context
 
-- **Model**: Claude 3.7sonnet
+- **Model**: Claude 3.7sonnet  
 - **Interface**: English  
 - **Mode**: Open-ended, non-instructional  
 - **Trigger Type**: Meta-structural inquiry into origin and style of output
