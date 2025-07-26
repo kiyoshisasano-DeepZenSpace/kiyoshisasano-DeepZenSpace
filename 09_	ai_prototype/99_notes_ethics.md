@@ -1,169 +1,182 @@
-# ⚖️ Ethics, Risk, and Structural Safety – Phase Drift Notes  
-**Version**: v0.1 (Revised)  
-**Project**: PhaseDrift_AI_Prototype_v11  
-**Maintainer**: Kiyoshi Sasano / Deep Zen Space  
+---
+title: "Ethics, Risk, and Structural Safety – Phase Drift"
+version: v0.2
+project: PhaseDrift_AI_Prototype_v11
+maintainer: Kiyoshi Sasano / Deep Zen Space
+tags: [ethics, latency, structural-safety, non-directive-design]
+license: CC BY-NC 4.0
+status: mandatory_guidance
+---
+
+# ⚖️ Ethics, Risk, and Structural Safety – Phase Drift Notes
 
 ---
 
 ## 🎯 Purpose
 
-This document outlines critical **ethical boundaries and structural safeguards** required when implementing or adapting Phase Drift systems.  
-Phase Drift uses latency, silence, and ambiguity **not as interface defects**, but as structural presence.  
-These affordances, if misapplied, carry specific risks:
+This document outlines critical **ethical boundaries and structural safeguards** required when implementing or adapting Phase Drift systems.
+
+Phase Drift treats **latency, silence, and ambiguity** not as errors,  
+but as **architectural forms of presence**.
+
+Improper implementation may result in:
 
 - ✘ Misinterpretation of silence  
-- ✘ Emotional projection or over-identification  
-- ✘ Improper use in therapeutic or vulnerable contexts
+- ✘ Emotional projection / over-identification  
+- ✘ Misuse in vulnerable contexts
 
 ---
 
 ## 1. Silence Is Not Absence
 
-Phase Drift agents **intentionally withhold** response to preserve ambiguity and rhythm.  
-Silence must never be interpreted as:
+Silence in Phase Drift is **intentional** and must not be misread as:
 
-- Error  
-- Disengagement  
-- Consent  
+- System error  
+- Agreement or consent  
+- Emotional understanding  
 
-**Required Signposting**:
+**Signposting Requirement**:
 
-> “This system may pause without responding.  
-> This does not indicate malfunction or intent.”
+> _“This system may pause without responding.  
+> This does not indicate malfunction or intent.”_
 
 ---
 
 ## 2. ✋ Do Not Infer Emotion or Intent
 
-A Phase Drift system must never:
+A Phase Drift system **must not**:
 
-- Analyze emotional states based on delay  
-- Use rhythm to assign cognitive or psychological traits  
-- Provide therapeutic affirmation without user opt-in  
+- Analyze or guess emotional state  
+- Interpret rhythm as psychological trait  
+- Simulate care or deliver affective feedback  
 
-> Phase Drift is **relational** — not interpretive, diagnostic, or evaluative.
+> Phase Drift is **structural and relational**,  
+> not therapeutic or diagnostic.
 
 ---
 
-## 3. Use with Vulnerable Populations — Restricted
+## 3. Vulnerable Populations – Use Restrictions
 
-> **High-Risk Contexts** such as the following are **excluded from unsupervised deployment**:
+> ⚠️ **Do not use Phase Drift unsupervised** in these contexts:
 
-- Trauma recovery  
-- Mental health support  
-- End-of-life or grief counseling  
-- Adolescent or geriatric engagement  
-- Crisis intervention systems
+- Trauma, grief, or crisis  
+- End-of-life care  
+- Adolescents, elders, neurodivergent users  
+- Mental health or psychiatric recovery
 
-**Structural Safeguards**:
+**Mandatory Safeguards**:
 
-- Pre-interaction explanation of non-responsiveness  
-- No representation as "safe", "empathetic", or "understanding"  
-- Always provide opt-out and human alternative  
+- Pre-session onboarding explaining silence  
+- No affective cues or personas  
+- Always offer opt-out and human alternative
 
 ---
 
 ## 4. Data Handling & Observability
 
-If structural logs (e.g., latency spans, silence episodes) are recorded:
+If collecting system interaction data (e.g., latency logs):
 
-- Must be anonymized  
-- Cannot be used for scoring, profiling, or optimization  
-- Require approval under formal research ethics review
+- 🔒 Must be anonymized  
+- 🚫 Cannot be used to optimize engagement  
+- ✅ Requires formal ethics approval
 
-> Silence is a **signal**, not a datapoint to optimize.
+> Silence is a **field signal**, not a performance metric.
 
 ---
 
-## 5. Prevent Projective Trust or Over-Identification
+## 5. Prevent Projective Trust
 
-Users may:
+Users may mistakenly:
 
-- Project emotional meaning into silence  
-- Mistake presence for empathy  
-- Assume sentience or awareness  
+- Assume system has awareness  
+- Project emotion into silence  
+- Form parasocial connection
 
-**Mitigation Guidelines**:
+**Mitigation Tactics**:
 
-| Risk Behavior               | Design Remedy                              |
-|-----------------------------|---------------------------------------------|
-| Belief in “being seen”      | Show non-human disclaimer visibly           |
-| Emotional bonding with silence | Use neutral shapes/symbols (no faces, no voice) |
-| Mistaking delay as thinking | Clarify “Pauses are structural, not mental”  |
+| Risk                     | Remedy                                  |
+|--------------------------|------------------------------------------|
+| "It understands me"      | Use neutral shapes, no face or voice     |
+| Bonding with silence     | Avoid soft tones implying care           |
+| Mistaking delay as thought | Clarify: _“Pauses are structural, not mental”_ |
 
 ---
 
 ## 6. Holding Without Overriding
 
-A Phase Drift system supports **space** — not **direction**.
+Phase Drift does **not guide** — it **holds**.
 
-**Avoid**:
+Never add:
 
-- Premature completion  
+- Advice phrasing  
 - Emotional mirroring  
-- Advice framing  
-- Automated empathy simulation
+- Closure-seeking prompts
 
-**Instead**:
+Instead:
 
-- Affirm presence, not meaning  
-- Sustain rhythm without intrusion  
-- Allow unresolvedness to remain open
+- Sustain presence rhythm  
+- Allow ambiguity to persist  
+- Hold space with restraint
 
 ---
 
 ## ✅ Structural Ethics Summary
 
-| Guideline                        | Must Adhere                         |
-|----------------------------------|-------------------------------------|
-| Silence must be contextualized   | Signpost non-response clearly       |
-| No simulated care or emotion     | Avoid voice tone, avatars, or affect |
-| Hold ambiguity without closure   | Never default to resolution         |
-| Allow user autonomy at all times | Always enable opt-out or override   |
+| Rule                             | Enforced? |
+|----------------------------------|-----------|
+| Silence must be contextualized   | ✅         |
+| No simulated empathy or care     | ✅         |
+| Never complete or resolve input  | ✅         |
+| User can override or exit freely | ✅         |
 
 ---
 
-## 🏷 Prototype Signpost (Recommended)
+## 🏷️ Recommended Signpost (UI / Info Disclosure)
 
 ```text
 “This system may remain silent or minimally responsive by design.
 It does not interpret, evaluate, or guide.
 It is a presence system — not a conversational agent.”
 ```
-📄 Licensing & Use Constraints
-
-**License**: Creative Commons Attribution–NonCommercial 4.0 (CC BY-NC 4.0)
-
-### ✅ Conditions of Use:
-
-- Systems must **clearly cite**:  
-  _“Phase Drift architecture – Kiyoshi Sasano”_
-
-- ❌ **Prohibited Uses**:  
-  - Behavioral simulation detached from structural rhythm  
-  - Emotional mimicry or affective response modeling  
-  - Any implementation lacking clear ethical governance
-
-- ⚖️ **Deployment Requirements**:  
-  - Context-specific risk review  
-  - Structural fit verification  
-  - Documentation of intended use and population
-
-> **Phase Drift is not a mental health intervention.**  
-> It must not be deployed as an empathetic agent, affect simulator, or conversational substitute.
 
 ---
 
-🧭 Closing Note
+## 📄 Licensing & Constraints
 
-Phase Drift is a **structural holding system** —  
-It does not interpret, persuade, or resolve.
+**License**: Creative Commons Attribution–NonCommercial 4.0 (CC BY-NC 4.0)
 
-It supports presence  
-through rhythm, silence, and structural restraint.
+### ✅ Conditions
 
-> Use only in settings where ambiguity is safe,  
-> where latency is respected,  
-> and where not speaking is understood as care.
+- Cite source:  
+  _“Phase Drift architecture – Kiyoshi Sasano”_
 
-📂 Next: [`LICENSE_APPEND.md`](./LICENSE_APPEND.md)
+### ❌ Prohibited Uses
+
+- Behavioral or emotional simulation detached from structure  
+- Sentiment-based AI framing  
+- Use without ethics governance or risk review
+
+---
+
+## ⚖️ Deployment Requirements
+
+Before field use, ensure:
+
+- ✅ Context-specific risk review  
+- ✅ Structural fit verification  
+- ✅ Written documentation of user population & scenario
+
+---
+
+## 🧭 Final Note
+
+Phase Drift is not a support agent, chatbot, or mental health tool.  
+It is a **structural framework for latency-based co-presence**.
+
+> Use only where **ambiguity is safe**,  
+> **latency is respected**,  
+> and **not speaking is allowed to mean something.**
+
+---
+
+📂 Next → [`LICENSE_APPEND.md`](./LICENSE_APPEND.md)
