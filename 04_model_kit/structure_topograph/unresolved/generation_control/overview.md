@@ -56,7 +56,7 @@ These topics intersect:
 /generation_control/
 │
 ├── ai_guided_phase_navigation.md
-├── structural_decay_zones.md
+├── generative_sandbox.md
 ├── drift_detection_metrics.md
 ├── repair_prompt_strategies.md
 ├── control_interface_mapping.md
