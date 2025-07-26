@@ -1,3 +1,11 @@
+---
+title: "Phase Drift AI Prototype — Structural Overview"
+version: v0.2
+folder: PhaseDrift_AI_Prototype_v11
+status: published
+tags: [phase_drift, rhythm_ui, silence_structures, non-directive_ai, field_coherence, latency_design]
+---
+
 # 🌀 Phase Drift AI Prototype — Structural Overview  
 **Version:** v0.2  
 **Folder:** PhaseDrift_AI_Prototype_v11  
@@ -145,4 +153,3 @@ For structural collaborations or rhythm-aligned proposals:
 
 > Phase Drift is not a brand or style.  
 > It is a structural rhythm field — to be sensed, not styled.
-
