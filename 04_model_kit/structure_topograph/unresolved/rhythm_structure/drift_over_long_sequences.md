@@ -40,10 +40,7 @@ Long outputs can be split into token-based segments and mapped like a flight pat
 ```text
 [Formal Plateau] → [Resonance Field] → [Enumerative Slope] → [Semantic Sink]
 ```
-
 This enables dynamic visualization and intervention in real-time generative flow.
-
----
 
 ## 🛠 Drift Mitigation Techniques
 
@@ -54,30 +51,30 @@ This enables dynamic visualization and intervention in real-time generative flow
 | Forecasting Hooks      | Cue transitions before they occur (“Next, let us consider...”)              |
 | Grammar Climate Control| Modulate style/rhythm to resist drift as "weather system" metaphor          |
 
-These aren’t patches—they’re syntactic governance tools.
+> These aren’t patches — they’re syntactic governance tools.
 
 ---
 
 ## 🧪 Prototype Tools and Interfaces
 
-| Tool Name               | Functionality                                                                 |
-|--------------------------|------------------------------------------------------------------------------|
-| `phase_window_mapper`    | Labels each token window with its Phase Drift zone                          |
-| `drift_vector_tracker`   | Plots syntactic or semantic drift trajectory across time                    |
-| `narrative_phase_compass`| Predicts structural turning points based on past metrics                    |
-| `syntax_inertia_index`   | Measures resistance to drift using rhythmic and structural indicators        |
-| `drift_visual_canvas`    | Interactive terrain map of generative output segments                       |
+| Tool Name               | Functionality                                                               |
+|-------------------------|-----------------------------------------------------------------------------|
+| `phase_window_mapper`   | Labels each token window with its Phase Drift zone                         |
+| `drift_vector_tracker`  | Plots syntactic or semantic drift trajectory across time                   |
+| `narrative_phase_compass` | Predicts structural turning points based on past metrics                |
+| `syntax_inertia_index`  | Measures resistance to drift using rhythmic and structural indicators       |
+| `drift_visual_canvas`   | Interactive terrain map of generative output segments                      |
 
-These prototypes would support research, diagnostics, and creative scaffolding.
+> These prototypes would support research, diagnostics, and creative scaffolding.
 
 ---
 
 ## 🔁 Rhythm as Anti-Drift Force
 
 Rhythm is reframed as structural resistance, not mere ornament.  
-Symmetry, pacing, repetition—these function as inertial guidance systems:
+Symmetry, pacing, repetition — these function as inertial guidance systems:
 
-> _“Repetition becomes structural inertia—keeping generation in orbit.”_
+> “Repetition becomes structural inertia — keeping generation in orbit.”
 
 Cadence-aware prompts and recursive syntax may counteract entropy in long-form outputs.
 
@@ -89,13 +86,16 @@ Cadence-aware prompts and recursive syntax may counteract entropy in long-form o
 - **Prompt Engineering Kits**: Library of rhythm-aligned structural frames  
 - **Drift Topography Lexicon**: Codified terrain names (e.g., Enumerative Slope, Semantic Sink, Meta Plateau)
 
-These support cognitive ergonomics in generative writing, editing, and evaluation.
+> These support cognitive ergonomics in generative writing, editing, and evaluation.
 
 ---
 
 ## ✅ Final Thought
 
-Phase Drift over long sequences isn’t a flaw—it’s a feature of temporal structure.  
-By measuring, mapping, and modulating it, we unlock new forms of structural fluency in AI-assisted language.
+Phase Drift over long sequences isn’t a flaw —  
+it’s a feature of temporal structure.
 
-> _“What begins in rhythm may end in entropy—unless we learn to navigate the slope.”_
+By measuring, mapping, and modulating it,  
+we unlock new forms of structural fluency in AI-assisted language.
+
+> _“What begins in rhythm may end in entropy — unless we learn to navigate the slope.”_
