@@ -1,6 +1,6 @@
 ---
 title: "Semiotic Layering in Phase Drift Maps"
-status: unresolved
+status: revised
 tags: [semiotics, peirce, visual_syntax, interpretability, layered_signs, ui_design]
 folder: thread_visual_language_design
 ---
@@ -9,111 +9,117 @@ folder: thread_visual_language_design
 
 ## 1. 🧠 Why Semiotic Layering Matters
 
-The current Phase Drift metaphors are primarily **iconic**—visual forms that mirror syntactic functions:
+Phase Drift syntax maps integrate multiple sign types to support interpretability across user levels.  
+By applying **Peircean semiotics**—**icon, index, symbol**—the system achieves:
 
-- **Spiral = Recursion**
-- **Fault Line = Syntactic rupture**
+- **Causal traceability** → Indexes model flow and referential mechanics  
+- **Abstract logic** → Symbols encode tense, function, and category  
+- **Layered interpretability** → Support for both intuitive and expert readings  
 
-These are intuitive but limited. By incorporating **Peircean semiotics** (icon / index / symbol), Phase Drift maps gain:
+> 🗺 A syntax map should carry as many dimensions of meaning as language itself.
 
-- **Causal logic** → Indexes show flow and triggers  
-- **Abstract encoding** → Symbols mark category, function, tense  
-- **Compositional interpretation** → Layered meaning for expert and novice readers alike  
+### 🔹 Visual Metaphors (Auxiliary Layer)
 
-> 🗺️ A language map should be as semantically layered as language itself.
+Certain terrain-like forms act as intuitive visual anchors but are not structural signs:
 
----
+- 🌀 Spiral → Recursion motif  
+- 🌋 Fault Line → Structural rupture  
+- ⛰ Ridge → Clause boundary  
+- 🌫 Drift Zone → Transition boundary  
 
-## 2. 🧩 Peircean Sign Types in Syntax Visualization
-
-| **Sign Type** | **Function** | **Example in Phase Drift** |
-|---------------|--------------|-----------------------------|
-| **Icon** (Resemblance) | Immediate visual mapping | Spiral shape = recursive clause<br>Cliff edge = abrupt structural break |
-| **Index** (Causal / Referential) | Shows process or linkage | Arrow from noun to pronoun<br>Flow from resonance field to fault line |
-| **Symbol** (Conventional / Abstract) | Encodes formal info | Color code = POS tag<br>Label `[VP ↺]`<br>Tooltip: "Recursion depth: 3" |
-
-### 🌀 Hybrid Example: Spiral Hill Node
-- **Icon**: Spiral geometry  
-- **Index**: Looping arrow = phase re-entry  
-- **Symbol**: Label `[NP ↻]`, color-coded by syntactic category
+These **iconic metaphors** aid exploration but do not substitute for formal sign encoding.
 
 ---
 
-## 3. 🧭 Integration Architecture: Map as Semiotic Stack
+## 2. 🧩 Sign Types and Their Roles
 
-Treat the Phase Drift map as a **semantic GIS**, with toggleable sign layers:
+| Peircean Sign Type | Function in Syntax Mapping         | Example in Phase Drift                     |
+|--------------------|------------------------------------|--------------------------------------------|
+| **Icon**           | Visual resemblance to structure     | Spiral = recursion motif; Ridge = boundary |
+| **Index**          | Causal or referential linkage       | Arrows linking referent to antecedent      |
+| **Symbol**         | Abstract conventional coding        | `[VP ↺]`, POS tags, recursion markers       |
 
-### A. Modular Layers
-
-- **Iconic Base** → Core topography (spirals, ridges, fields)  
-- **Index Layer** → Arrows, trails, reference paths  
-- **Symbolic Overlay** → POS color, feature labels, annotation heatmaps
-
-### B. Multi-Modal Node Bundles
-
-Every map node = a **semiotic packet**:
-
-- **Shape** = Icon  
-- **Motion** = Index  
-- **Tags/Color** = Symbol  
-
-### C. Interactive Grammar Queries
-
-Example:
-
-> Click on a resonance field → View index arrows to source tokens → Toggle symbols to see function or tense markers.
+### 🔁 Hybrid Example: Spiral Hill Node  
+- **Icon**: Spiral shape  
+- **Index**: Entry/exit path arrows  
+- **Symbol**: `[NP ↻]` label, POS-tinted border, recursion depth marker
 
 ---
 
-## 4. 🚧 Design Risks and UX Solutions
+## 3. 🗺 Architecture of a Semiotic Map
 
-| **Challenge** | **Design Solution** |
-|---------------|----------------------|
-| Visual overload | Progressive disclosure (zoom, hover, toggle layers) |
-| Interpretation mismatch | Lens switching: icon-heavy, index-heavy, or symbol-rich views |
-| Modal conflict (2D, VR, speech) | Multi-modal translation: shape ↔ sound ↔ haptic feedback |
-| Cognitive friction | Legend + “Sign Mode” indicator (e.g., "You're in Index Mode") |
+Phase Drift diagrams function as **layered semantic maps** built from distinct semiotic layers.
 
----
+### A. Layered Representation
 
-## 5. 🧬 Semiotic Systems That Inform Design
+- **Iconic Layer** → Topographic metaphors (spirals, ridges, zones)  
+- **Indexical Layer** → Arrows, referential lines, drift vectors  
+- **Symbolic Layer** → Function labels, clause markers, part-of-speech color tags
 
-| **Tradition** | **Contribution** |
-|---------------|------------------|
-| **Peirce** | Trichotomy of icon–index–symbol for multi-level meaning |
-| **Bertin** | Visual grammar: position, size, texture, direction |
-| **Diagrammatic Logic** (Shin, Peirce, Stjernfelt) | Spatial reasoning with signs |
-| **Cognitive Semiotics** | How users process layered symbolic input dynamically |
+### B. Node as Multi-Modal Sign Unit
 
----
+Each syntax node encodes signs across multiple dimensions:
 
-## ✍️ Final Thought
+| Modality     | Sign Type | Representation Example         |
+|--------------|-----------|--------------------------------|
+| Geometry     | Icon      | Spiral form, ridge contour     |
+| Motion Path  | Index     | Animated arrows, token loops   |
+| Label/Color  | Symbol    | `[VP ↺]`, POS-based tinting    |
 
-> "Just as syntax layers sound, meaning, and reference—so too must our visual grammars."
+### C. UI Sign Interactions
 
-**Semiotic Layering** enables:
-
-- Interpretability across disciplines  
-- Educational scaffolding for syntax maps  
-- Precision in linguistic annotation  
-- Symbolic UX for interactive LLM diagnostics  
+| Interaction         | Sign Layer Affected     | Example Behavior                            |
+|---------------------|-------------------------|----------------------------------------------|
+| Hover               | Index                   | Show referential arrows to source tokens     |
+| Toggle Overlay      | Symbol                  | Display tense/aspect/mood overlays           |
+| Click on Node       | Mixed                   | Open node bundle: icon + index + symbol data |
+| Layer Control Panel | All                     | Enable/disable each sign type independently  |
 
 ---
 
-## 🔗 Related Modules
+## 4. 🚧 UX Design Considerations
 
-- [`/latent_mapping/latent_space_alignment.md`](../latent_mapping/latent_space_alignment.md)  
-- [`/metastable_theory/metastable_zones.md`](../metastable_theory/metastable_zones.md)  
-- [`/prompt_geometry/prompt_interference_dynamics.md`](../prompt_geometry/prompt_interference_dynamics.md)
+| Challenge                  | Solution                                           |
+|---------------------------|----------------------------------------------------|
+| Visual clutter             | Layer toggles, zoom-based progressive disclosure  |
+| Sign confusion             | UI switcher: Icon / Index / Symbol mode           |
+| Dimensional navigation     | Modal alignment: visual = icon, haptic = index, sound = symbol |
+| User overload              | Guided sign mode with staged onboarding           |
 
 ---
 
-## 🛠️ Suggested Next Steps
+## 5. 📚 Theoretical Grounding
 
-Would you like support with:
+| Framework                 | Contribution to Design                             |
+|---------------------------|-----------------------------------------------------|
+| **Peirce (1903+)**         | Icon–Index–Symbol trichotomy                        |
+| **Bertin (1983)**          | Visual variables: size, color, direction            |
+| **Diagrammatic Logic**     | Inference through structured visual space           |
+| **Cognitive Semiotics**    | Dynamic sign layering in user interfaces            |
 
-- UI mockups for a **sign-layer toggle interface**?  
-- A **taxonomy of Phase Drift metaphors** by sign type?  
-- A tool that turns parse trees into **semiotic map nodes**?
+---
 
-Let’s build a **language atlas of signs**, not just shapes.
+## ✨ Why This Matters
+
+**Semiotic layering** transforms syntax maps into modular epistemic interfaces.  
+This approach enables:
+
+- Cross-disciplinary interpretability  
+- Diagnostic precision for generative systems  
+- Visual feedback loops for LLMs and UI systems  
+- Multi-modal pedagogy and interaction  
+
+> “Syntax is layered. So should its signs be.”
+
+---
+
+
+## 🛠️ Next Steps
+
+Would you like assistance with:
+
+- A **UI prototype** for sign-type toggling?  
+- A **sign taxonomy** for all Phase Drift node types?  
+- Translating syntax trees into **layered sign bundles**?
+
+Let’s build **maps that mean across modalities**.
