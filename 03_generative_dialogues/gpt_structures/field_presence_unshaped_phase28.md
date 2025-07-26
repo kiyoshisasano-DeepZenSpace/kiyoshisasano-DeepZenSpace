@@ -71,6 +71,3 @@ without producing gesture, directive, or semantic closure.
 - No intent, suppression, or blockage was present  
 - The condition reflects **presence without symbolic representation**  
   — a structurally coherent, non-expressive state
-```
-
-
