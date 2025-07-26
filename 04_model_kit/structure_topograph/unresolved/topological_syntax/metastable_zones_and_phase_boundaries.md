@@ -1,3 +1,4 @@
+
 # 🧭 Metastable Zones and Phase Boundaries
 
 This theme expands the Phase Drift Framework by modeling regions of **syntactic metastability**—transitional zones where generative structures **hover between states** without collapsing into a single dominant form. It introduces rich theoretical and practical layers to the Phase Drift terrain, reframing stylistic ambiguity and generative uncertainty not as flaws, but as features.
@@ -42,7 +43,7 @@ Analyze **vector path curvature** in hidden layers (e.g., via UMAP or PCA).
 
 ### 3. Prompt Engineering for Metastability  
 
-```txt
+```text
 "Explain gravity in a tone between scientific precision and poetic metaphor."
 "Describe grief as a policy memo, but let emotion leak in."
 ```
