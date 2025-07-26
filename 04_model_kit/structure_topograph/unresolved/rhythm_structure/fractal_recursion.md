@@ -56,12 +56,16 @@ A score to quantify multi-scale recursion in syntactic and semantic patterns.
 ```text
 FDI = (Recurrence Density × Tree Similarity) × Nested Depth
 ```
+# 🌀 Fractal Drift: Recursive Structure Across Scale  
+_Integration Proposal for Phase Drift Atlas_
 
-Where:
+---
 
-- **Recurrence Density** = Token/motif-level echo frequency  
-- **Tree Similarity** = Structural overlap in parse subtrees  
-- **Nested Depth** = Maximum observed clause/subtree nesting
+## 📐 Metrics
+
+- **Recurrence Density**: Token/motif-level echo frequency  
+- **Tree Similarity**: Structural overlap in parse subtrees  
+- **Nested Depth**: Maximum observed clause/subtree nesting  
 
 **Tools**: `spaCy`, `nltk.Tree`, `SBERT`, `textacy` span-pattern detection
 
@@ -69,56 +73,57 @@ Where:
 
 ## 🖼️ Visualization Concepts for Phase Drift Atlas
 
-- 🌀 **Recursive Spiral Shells**  
-  Sentence → Paragraph → Section → Entire Discourse  
-- 🌳 **Self-Similar Tree Embeddings**  
-  Highlight reused syntactic shapes across scales  
-- 🧭 **Fractal Drift Fields**  
-  Terrain overlays showing zones of recursive resonance  
-- 🔍 **Zoomable Syntax Map**  
-  Multi-scale view (Observable / D3.js)
+### 🌀 Recursive Spiral Shells  
+- Sentence → Paragraph → Section → Entire Discourse  
+
+### 🌳 Self-Similar Tree Embeddings  
+- Highlight reused syntactic shapes across scales  
+
+### 🧭 Fractal Drift Fields  
+- Terrain overlays showing zones of recursive resonance  
+
+### 🔍 Zoomable Syntax Map  
+- Multi-scale view (`Observable`, `D3.js`)
 
 ---
 
 ## 🛠 Prompt Design Strategies
 
-Fractal-aware prompting enables deliberate recursion by layering both form and content.
+Fractal-aware prompting enables deliberate recursion  
+by layering both **form** and **content**.
 
 ### 🧱 Recursive Prompt Template
-
-```text
 Define → Metaphorize → Narrate → Reflect
-```
 
 ### 💡 Prompt Techniques
 
-| Technique          | Function                               |
-|--------------------|----------------------------------------|
-| `Refrain Structure`| Scaffolding repeated phrasing          |
-| `Nested Analogy`   | Embedding metaphor within metaphor     |
-| `Echo Logic`       | Progressive clarifications or loops    |
+| Technique         | Function                                |
+|-------------------|------------------------------------------|
+| Refrain Structure | Scaffolding repeated phrasing            |
+| Nested Analogy    | Embedding metaphor within metaphor       |
+| Echo Logic        | Progressive clarifications or loops      |
 
 ---
 
 ## 🧩 Proposed Tools / Modules
 
-| Tool Name              | Function                                                           |
-|------------------------|--------------------------------------------------------------------|
-| `fractal_zoom_view`    | Navigate recursive structure across token spans                    |
-| `fdi_tracker.py`       | Compute Fractal Depth Index from parsed output                     |
-| `recursive_prompt_lab` | Prompt editor with built-in recursion scaffolds                    |
-| `phase_memory_map`     | Visualize recurrence of phase zones in long texts                  |
+| Tool Name            | Function                                         |
+|----------------------|--------------------------------------------------|
+| `fractal_zoom_view`  | Navigate recursive structure across token spans  |
+| `fdi_tracker.py`     | Compute Fractal Depth Index from parsed output   |
+| `recursive_prompt_lab` | Prompt editor with built-in recursion scaffolds |
+| `phase_memory_map`   | Visualize recurrence of phase zones in long texts|
 
 ---
 
 ## 🔁 Related Phase Drift Modules
 
-| File                        | Link / Integration Point                                |
-|-----------------------------|---------------------------------------------------------|
-| `drift_over_long_sequences.md` | Fractal Drift as long-form trajectory                  |
-| `semantic_echo_lensing.md`     | Echo recurrence as recursion mechanism                 |
-| `syntax_visualization.md`      | Recursion visible in tree overlays                    |
-| `phase_drift_metrics.md`       | FDI as module in Phase Drift Profile (PDP)             |
+| File                         | Link / Integration Point                      |
+|------------------------------|-----------------------------------------------|
+| `drift_over_long_sequences.md` | Fractal Drift as long-form trajectory       |
+| `semantic_echo_lensing.md`     | Echo recurrence as recursion mechanism      |
+| `syntax_visualization.md`      | Recursion visible in tree overlays          |
+| `phase_drift_metrics.md`       | FDI as module in Phase Drift Profile (PDP)  |
 
 ---
 
@@ -126,10 +131,11 @@ Define → Metaphorize → Narrate → Reflect
 
 ### 🌀 **Fractal Hill** (New Phase Drift Zone)
 
-A recursive Spiral Zone where nested syntactic rhythms repeat across multiple levels (sentence → paragraph → section).  
+A recursive Spiral Zone where nested syntactic rhythms repeat  
+across multiple levels (sentence → paragraph → section).  
 Often features echo-like phrasing, nested logic, and form-memory.
 
-**Visual Glyph**: Recursive shell / spiraling staircase
+- **Visual Glyph**: Recursive shell / spiraling staircase  
 
 **Map Traits**:
 
@@ -142,11 +148,14 @@ Often features echo-like phrasing, nested logic, and form-memory.
 ## ✅ Summary
 
 Fractal syntax reframes structure as **memory across scale**.  
-A clause can reflect a paragraph; a sentence can mirror an essay.  
-This recursive view aligns with the broader goal of Phase Drift:  
-to model not just surface form, but its **dynamic trajectory** through linguistic terrain.
+A clause can reflect a paragraph;  
+a sentence can mirror an essay.
 
-> _“Fractality means the structure is never lost—only folded.”_
+This recursive view aligns with the broader goal of Phase Drift:  
+> to model not just surface form,  
+> but its dynamic trajectory through linguistic terrain.
+
+> _“Fractality means the structure is never lost — only folded.”_
 
 ---
 
@@ -154,5 +163,5 @@ to model not just surface form, but its **dynamic trajectory** through linguisti
 
 - ✅ Implement `fdi_tracker.py` using parse tree comparison and echo metrics  
 - 🧪 Annotate a sample corpus (news, fiction, summaries) for fractal motifs  
-- 🖼 Prototype `fractal_zoom_view` (Streamlit / Observable)  
-- 🗺 Submit `Fractal Hill` to Drift Atlas vocabulary
+- 🖼 Prototype `fractal_zoom_view` (`Streamlit` / `Observable`)  
+- 🗺 Submit **Fractal Hill** to Drift Atlas vocabulary
