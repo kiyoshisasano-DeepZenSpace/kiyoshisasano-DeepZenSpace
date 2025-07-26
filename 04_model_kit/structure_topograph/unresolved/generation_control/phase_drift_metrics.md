@@ -110,17 +110,14 @@ Optionally paired with **prompt onset markers** or **user-intervention flags**.
   }
 }
 ```
-
----
-
 ## 🔮 Future Extensions
 
-| Tool                      | Description                                             |
-|---------------------------|---------------------------------------------------------|
-| `phase_drift_benchmark.md` | Manually annotated test set with labeled drift zones   |
-| `drift_compass_widget.js` | Interactive UI showing real-time drift levels           |
-| `psi_model_comparison.csv`| Phase Stability Index scores per model                  |
-| `sandbox_feedback_bridge.py` | Live feedback loop to Generative Sandbox / PDCL       |
+| Tool                       | Description                                                   |
+|----------------------------|---------------------------------------------------------------|
+| `phase_drift_benchmark.md` | Manually annotated test set with labeled drift zones         |
+| `drift_compass_widget.js`  | Interactive UI showing real-time drift levels                |
+| `psi_model_comparison.csv` | Phase Stability Index scores per model                      |
+| `sandbox_feedback_bridge.py` | Live feedback loop to Generative Sandbox / PDCL           |
 
 ---
 
@@ -137,14 +134,10 @@ Optionally paired with **prompt onset markers** or **user-intervention flags**.
 
 We can support:
 
-- 🧪 Building a Python-based Phase Drift Scorer (spaCy + SBERT)  
-- 📊 Generating metric-rich drift visualizations from your model outputs  
-- 🧾 Designing tagging formats for drift-aware dataset curation  
-- 🧩 Integrating PDP into the `generative_sandbox.md` live controls
+- 🧪 **Building a Python-based Phase Drift Scorer** (e.g., using `spaCy` + `SBERT`)  
+- 📊 **Generating metric-rich drift visualizations** from your model outputs  
+- 🧾 **Designing tagging formats** for drift-aware dataset curation  
+- 🧩 **Integrating PDP** into the `generative_sandbox.md` live controls  
 
 > Drift is measurable. Collapse is preventable.  
-> Let’s build tools that map—and modulate—the generative terrain.
-
----
-
-Would you like to proceed with a prototype script (`drift_profile_generator.py`) or a tagged sample corpus (`sample_drift_passages.jsonl`)?
+> **Let’s build tools that map—and modulate—the generative terrain.**
