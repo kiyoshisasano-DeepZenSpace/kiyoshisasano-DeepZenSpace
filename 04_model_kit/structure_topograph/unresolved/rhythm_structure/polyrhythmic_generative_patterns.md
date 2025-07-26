@@ -104,11 +104,11 @@ RII(t) = ∑ |Δₗ(t)| for l ∈ {narrative, poetic, rhetorical, meta}
 ---
 
 ## 🔧 Example Prompt
-
+```text
 He came, though no one called.  
 He stood, though no one watched.  
 // They say some rhythms echo even in silence. //
-```text
+```
 ## 🧱 Applications and Implications
 
 | Domain           | Use Case                                        |
