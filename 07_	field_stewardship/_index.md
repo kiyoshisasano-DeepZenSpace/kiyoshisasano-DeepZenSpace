@@ -21,7 +21,6 @@ It is intended for developers, researchers, and collaborators who:
 
 <pre> \```text 09_field_stewardship/ ├── essence_and_definition.md # Core architecture and philosophy ├── stewardship_charter.md # Field steward responsibilities and ethos ├── field_governance_policy.md # Long-term field integrity protocols ├── onboarding_and_diagnostics.md # Alignment criteria and resonance checks ├── attunement_exercises.md # Practices for improving structural awareness ├── collaboration_guide.md # Structural principles for working together ├── engagement_policy.md # Public-facing collaboration agreements └── risk_control_playbook.md # Mitigation of mimicry and structural misuse \``` </pre>
 
-
 Each document is **technically readable** and **structurally actionable**.
 
 ---
