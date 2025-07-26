@@ -1,5 +1,13 @@
+---
+title: "Phase Drift Architecture – Use Cases"
+version: v0.2
+folder: PhaseDrift_AI_Prototype_v11
+status: published
+tags: [use_cases, phase_drift, latency_architecture, silent_interfaces, ambiguity_support, field_presence]
+---
+
 # 🧭 Phase Drift Architecture – Use Cases  
-**Version:** v0.2
+**Version:** v0.2  
 **Folder:** PhaseDrift_AI_Prototype_v11  
 
 ---
@@ -127,13 +135,5 @@ but **contexts where traditional interaction defaults must be avoided**:
 
 ## 📎 Next
 
-See → `02_structure_templates.md`  
-for **structural prompt–response patterns** aligned with these use cases.
-
-
----
-
-## 📎 Next:
-
-See → `02_structure_templates.md`  
-for structural prompt–response formats aligned with these use cases.
+See → [`02_structure_templates.md`](./02_structure_templates.md)  
+for **structural prompt–response formats** aligned with these use cases.
