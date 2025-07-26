@@ -1,14 +1,17 @@
 # 🧩 Unresolved Theme: Narrative Gravity Wells
 
 ## ❓ Key Question  
-Are there thematic or narrative attractors in text generation—points where a language model is drawn toward recurring motifs or dominant structures, similar to gravitational wells? How can we **detect**, **visualize**, or **regulate** these strong semantic pulls?
+Are there thematic or narrative attractors in text generation — points where a language model is drawn toward recurring motifs or dominant structures, similar to gravitational wells?  
+How can we **detect**, **visualize**, or **regulate** these strong semantic pulls?
 
 ---
 
 ## 🧠 Summary: Why This Matters  
-Narrative generation in LLMs often shows signs of gravitational pull—tendencies toward central tropes, emotional arcs, or genre anchors. These aren't just stylistic habits—they’re **topological features of latent space**, where semantic convergence reduces variability and creativity.  
 
-The “gravity well” metaphor captures this dual nature: **narrative coherence** vs. **degenerative repetition**.
+Narrative generation in LLMs often reveals gravitational tendencies — recurring pulls toward central tropes, emotional arcs, or genre anchors.  
+These are not just stylistic habits; they are **topological features in latent space**, where semantic convergence can reduce variability and creativity.
+
+The “gravity well” metaphor captures this dual nature: a tension between **narrative coherence** and **degenerative repetition**.
 
 ---
 
@@ -18,15 +21,15 @@ A **narrative gravity well** can be operationalized as a zone in latent space wh
 
 | Property | Description | Possible Signal |
 |----------|-------------|------------------|
-| Low Entropy | Model output becomes increasingly predictable | ↓ Entropy slope, ↑ repetition |
-| Vector Convergence | Embeddings trend toward thematic centers | Cosine alignment, cluster density |
-| Semantic Inertia | Tokens "orbit" prior motifs | Increased return-to-motif frequency |
-| Emotional Dominance | Salient affective terms gain momentum | ↑ Attention weights on key concepts |
+| Low Entropy | Output becomes increasingly predictable | ↓ Entropy slope, ↑ repetition |
+| Vector Convergence | Embeddings cluster toward thematic centers | Cosine alignment, cluster density |
+| Semantic Inertia | Tokens orbit prior motifs | Increased motif reactivation frequency |
+| Emotional Dominance | Affective terms gain prominence | ↑ Attention weights on key concepts |
 
 **Candidate Measurement Techniques**:
-- Token trajectory plots in embedding space (via UMAP, t-SNE, PCA)
-- BERTScore curve flattening across sentences
-- HDBSCAN or DBSCAN clustering of semantic vectors
+- Token trajectory plots in embedding space (UMAP, t-SNE, PCA)  
+- BERTScore curve flattening across adjacent sentences  
+- HDBSCAN or DBSCAN clustering of token embeddings  
 - Local maxima in topic similarity over time
 
 ---
@@ -34,28 +37,30 @@ A **narrative gravity well** can be operationalized as a zone in latent space wh
 ## 🧪 Prompt Engineering & Thematic Modulation
 
 ### 🎯 Prompt-Induced Wells
-Certain prompts inherently deepen gravity wells:
-- “Once upon a time…” → Archetypal hero structures
-- “He never forgave her for…” → Revenge / grief wells
+Certain prompts inherently trigger strong narrative convergence:
+
+- “Once upon a time…” → Archetypal hero structures  
+- “He never forgave her for…” → Revenge / grief attractors
 
 ### ⚙️ Control Concepts
+
 | Concept | Function |
 |--------|----------|
-| **Gravity Amplifiers** | Words that intensify semantic pull (`fate`, `betrayal`, `eternal`) |
-| **Escape Vectors** | Interruptive cues that deflect thematic drift (`suddenly`, `meanwhile`, `meta-reflection`) |
-| **Orbital Decay** | Unwanted spiral toward redundancy or trope saturation |
+| **Gravity Amplifiers** | Words that deepen semantic pull (`fate`, `betrayal`, `eternal`) |
+| **Escape Vectors** | Interruptive cues that deflect drift (`suddenly`, `meanwhile`, `meta-reflection`) |
+| **Orbital Decay** | Unchecked spiral into redundancy or trope saturation |
 
 ---
 
 ## 📊 Visual & Diagnostic Extensions
 
-### 📌 Phase Drift Map Overlay
-- Visualize wells as **semantic basins**
-- Vector arrows show **trajectory bend** around wells
+### 📌 Phase Drift Map Overlay  
+- Visualize gravity wells as **semantic basins**  
+- Vector fields show **trajectory bends** toward attractors
 
-### 🌀 Embedding Path Visualizer
-- Track **token-wise embeddings** as they spiral into or escape thematic centers
-- Annotate well entries and exits
+### 🌀 Embedding Path Visualizer  
+- Track token-wise embeddings as they spiral into or exit thematic centers  
+- Annotate entry, orbit, and exit points
 
 ---
 
@@ -63,9 +68,9 @@ Certain prompts inherently deepen gravity wells:
 
 | Theory | Correlation |
 |--------|-------------|
-| **Freytag’s Pyramid** | Narrative slope as gravity well depth |
-| **Emotional Arcs** (Reagan et al.) | Curvature in affective space = gravity well structure |
-| **Proppian Functions** | Morphology of story = potential well topographies |
+| **Freytag’s Pyramid** | Narrative slope ↔ gravity well depth |
+| **Emotional Arcs** (Reagan et al.) | Affective curvature ↔ semantic basin formation |
+| **Proppian Functions** | Morphology of plot ↔ potential well topology |
 
 ---
 
@@ -75,18 +80,21 @@ Certain prompts inherently deepen gravity wells:
 |--------|-------|--------|
 | **Spiral Hills** | Local | Recursion, syntactic rhythm |
 | **Gravity Wells** | Global | Thematic convergence, emotional mass |
-| **Faultlines** | Transitional | Stylistic rupture or genre shift |
-| **Resonance Fields** | Modal | Sustained tone or voice pattern |
+| **Faultlines** | Transitional | Stylistic rupture, genre shift |
+| **Resonance Fields** | Modal | Sustained tone or voice patterns |
 
-Together, they form a **multi-scale dynamical system** for modeling LLM behavior.
+These elements form a **multi-scale dynamical model** for generative system behavior.
 
 ---
 
 ## 🧠 Experimental Hypotheses
 
-1. **Thematic Inertia**: Once a well is triggered, output entropy drops as the model "commits" to a motif.
-2. **Prompt Topography**: Small wording changes can steepen or flatten well gradients.
-3. **Narrative Drift**: Gravity wells migrate over long-form text, corresponding to genre shifts or plot turns.
+1. **Thematic Inertia**  
+   Triggering a gravity well lowers entropy and reinforces motif commitment.  
+2. **Prompt Topography**  
+   Slight prompt variations steepen or flatten the basin's gradient.  
+3. **Narrative Drift**  
+   Wells shift position over time, corresponding to plot or genre turns.
 
 ---
 
@@ -94,37 +102,40 @@ Together, they form a **multi-scale dynamical system** for modeling LLM behavior
 
 | Tool Name | Description |
 |-----------|-------------|
-| **Gravity Well Detector** | Flags clustering in semantic space during generation |
-| **Attractor Heatmap** | Color-coded overlay of gravitational pull across narrative |
-| **Escape Vector Generator** | Suggests high-dispersion tokens to break trope collapse |
-| **Trajectory Tracker** | Plots latent path of a story through multiple attractors |
+| **Gravity Well Detector** | Flags semantic clustering during generation |
+| **Attractor Heatmap** | Visual overlay of pull zones in narrative output |
+| **Escape Vector Generator** | Suggests high-divergence tokens to reset narrative pull |
+| **Trajectory Tracker** | Plots latent path across multiple attractors |
 
 ---
 
 ## 🎨 Visualization Metaphors
 
-- **Crater Basins**: Dominant motifs shaping global curvature
-- **Orbit Rings**: Repeating returns to emotional or thematic centers
-- **Repulsion Fields**: Abrupt topic changes or meta-narrative interventions
+- **Crater Basins**: Motifs shaping semantic curvature  
+- **Orbit Rings**: Recurring returns to emotional or structural centers  
+- **Repulsion Fields**: Sudden narrative pivots or genre shifts
 
 ---
 
 ## ✅ Next Steps
 
-- [ ] Build annotated prompt-output corpus tagged with gravity well features
-- [ ] Prototype UMAP + entropy visualizer for longform text
-- [ ] Define glossary for `narrative attractor`, `semantic mass`, `escape vector`
-- [ ] Integrate with `latent_space_alignment.md` for topological synergy
+- [ ] Build annotated prompt-output corpus with gravity well indicators  
+- [ ] Prototype UMAP + entropy visualizer for longform trajectories  
+- [ ] Define terms: `narrative attractor`, `semantic mass`, `escape vector`  
+- [ ] Integrate with `latent_space_alignment.md` for cross-module synergy
 
 ---
 
 ## 💬 Final Thought
 
-> "A gravity well is where the story wants to go—again and again."
+> "A gravity well is where the story wants to go — again and again."
 
-Controlling gravity isn't about resisting theme—it's about **shaping the arc of semantic inevitability**.
+Controlling gravity isn't about resisting theme.  
+It's about **shaping the arc of semantic inevitability**.
 
 ---
 
-## 🔗 Suggested Path  
-Place in: `thread_cognitive_linguistics/narrative_gravity_wells.md`
+## 🔗 Suggested Path
+
+Place in:  
+`thread_cognitive_linguistics/narrative_gravity_wells.md`
