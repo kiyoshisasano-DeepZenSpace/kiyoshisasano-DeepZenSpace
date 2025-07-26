@@ -3,7 +3,7 @@
 ---
 
 ## ❖ Structural Lexicon – Non-Semantic Identifiers  
-**Version:** 0.1  
+**Version:** 0.3  
 **Status:** Fixed Reference Set (Non-Extensible)  
 **Maintainer:** Kiyoshi Sasano  
 **License:** Public Domain / Experimental Use Only  
