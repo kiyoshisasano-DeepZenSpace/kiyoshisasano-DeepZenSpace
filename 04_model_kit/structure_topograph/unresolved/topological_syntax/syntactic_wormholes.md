@@ -57,12 +57,12 @@ Each acts as a **semantic tunnel** across generative terrain.
 
 ## 🌌 Visual Schema Proposals
 
-| Element           | Metaphor Role                      | Visualization    |
-|------------------|-------------------------------------|------------------|
-| **Tunnel Arc**     | Cross-sentence semantic jump        | Dotted curve     |
-| **Foldback Loop**  | Return to earlier syntax structure  | Spiral overlay   |
-| **Resonance Bridge** | Echo alignment across segments    | Harmonic beam    |
-| **Portal Node**    | Sudden referent or style shift      | Vortex glyph     |
+| Element             | Metaphor Role                          | Visualization       |
+|---------------------|-----------------------------------------|---------------------|
+| **Tunnel Arc**       | Cross-sentence semantic jump            | Dotted curve         |
+| **Foldback Loop**    | Return to earlier syntax structure      | Spiral overlay       |
+| **Resonance Bridge** | Echo alignment across segments          | Harmonic beam        |
+| **Portal Node**      | Sudden referent or style shift          | Vortex glyph         |
 
 Visual attributes:  
 - Color = wormhole type  
@@ -73,12 +73,12 @@ Visual attributes:
 
 ## 🧪 Diagnostic Tool Proposals
 
-| Tool                     | Function                                          |
-|--------------------------|---------------------------------------------------|
-| `attention_arc_mapper`   | Trace long-distance attention link trajectories   |
-| `coreference_tracer`     | Highlight cross-sentence entity references        |
-| `narrative_shift_detector` | Align generation time vs. story time            |
-| `wormhole_clarity_index` (WCI) | Quantify reference persistence & clarity     |
+| Tool                     | Function                                               |
+|--------------------------|--------------------------------------------------------|
+| `attention_arc_mapper`   | Trace long-distance attention link trajectories        |
+| `coreference_tracer`     | Highlight cross-sentence entity references             |
+| `narrative_shift_detector` | Align generation time vs. story time                |
+| `wormhole_clarity_index` (WCI) | Quantify reference persistence & clarity        |
 
 Applications:  
 - 📉 **LLM hallucination detection**  
@@ -89,12 +89,12 @@ Applications:
 
 ## 🔗 Module Crosslinks
 
-| Module                    | Integration Point                                      |
-|---------------------------|--------------------------------------------------------|
-| `syntactic_superposition.md` | SPF → wormholes may arise from unresolved forks       |
-| `phase_entanglement.md`      | Entanglement zones amplify wormhole interference     |
-| `latent_space_alignment.md`  | Wormholes = high compression zones in vector space   |
-| `multi_dimensional_syntax_maps.md` | Visualize wormholes across higher-D surfaces    |
+| Module                        | Integration Point                                       |
+|-------------------------------|---------------------------------------------------------|
+| `syntactic_superposition.md`  | SPF → wormholes may arise from unresolved forks         |
+| `phase_entanglement.md`       | Entanglement zones amplify wormhole interference        |
+| `latent_space_alignment.md`   | Wormholes = high compression zones in vector space      |
+| `multi_dimensional_syntax_maps.md` | Visualize wormholes across higher-D surfaces     |
 
 ---
 
@@ -111,8 +111,8 @@ Applications:
 
 ## 🔭 Open Questions
 
-- **How many wormholes** can be supported before coherence degrades?
-- **Do different model sizes** modulate wormhole length/clarity?
+- **How many wormholes** can be supported before coherence degrades?  
+- **Do different model sizes** modulate wormhole length/clarity?  
 - **Can wormholes be optimized** for storytelling, not just coherence?
 
 ---
