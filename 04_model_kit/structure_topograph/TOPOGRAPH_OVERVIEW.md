@@ -1,94 +1,140 @@
-# 🗺️ Phase Drift Structural Topograph Overview (v2)
+# 🗺️ Phase Drift Structural Topograph — Unified Syntax Mapping Overview (v2)
 
-This module provides a structural overview of the Phase Drift syntax mapping framework, organizing all mapped nodes, metaphors, zones, and diagnostic layers into a unified schema.
+**Path**: `/structure_topograph/README.md`  
+**Maintained by**: `structure圏`  
+**Cite as**: `phase_drift_syntax_topograph`  
+**Status**: ✅ Canonical index for Phase Drift structure modules  
 
 ---
 
-## 🧱 Fixed Structural Domains
+## 🧱 Core Structural Domains
 
-All structural phenomena in the Phase Drift map fall under one of six core domains:
-
-| Folder                     | Description                                                |
-|---------------------------|------------------------------------------------------------|
-| `cognitive_linguistics`   | Semantic salience, drift, framing, and conceptual topology |
-| `generation_control`      | Prompt influence, guidance, and phase modulation           |
-| `rhythm_structure`        | Repetition, loops, polyrhythm, resonance                   |
-| `syntax_visualization`    | Diagramming and UI methods for structure representation    |
-| `topological_syntax`      | Phase theory, nonlinear shifts, faultlines, wormholes      |
-| `visual_language_design`  | Immersive language UI and metaphor pluralism               |
+| Folder                  | Description                                             |
+|-------------------------|---------------------------------------------------------|
+| `topological_syntax`    | Phase theory, nonlinear shifts, fault lines, wormholes |
+| `syntax_visualization`  | Diagramming and UI methods for structure representation|
+| `rhythm_structure`      | Repetition, loops, polyrhythm, resonance               |
+| `generation_control`    | Prompt influence, guidance, and phase modulation       |
+| `cognitive_linguistics` | Semantic salience, drift, framing, conceptual topology |
+| `visual_language_design`| Immersive language UI and metaphor pluralism           |
 
 ---
 
 ## 🌐 Structural Topography: Terrain Metaphors
 
-| Metaphor              | Description                                                   | Common Zones              |
-|-----------------------|---------------------------------------------------------------|---------------------------|
-| Spiral Hill           | Recursion, internal return paths                              | `TL_01`, `TL_02`          |
-| Fault Line            | Phase ruptures, syntax flips                                  | `SP_01`, `SP_03`          |
-| Ripple Field          | Repetitive or echoing rhythm                                  | `RH_01`, `RH_03`          |
-| Grid Plain            | Flat expansion of modular units                               | `TL_03`                   |
-| Semantic Basin        | Meaning accumulation zones                                    | `semantic_echo_lensing`   |
-| Wormhole Arc          | Discourse jumps, non-local reference                          | `syntactic_wormholes`     |
-| Phase Cliff           | Sudden form collapse or shift                                 | `tectonic_syntax_shifts`  |
+Each terrain metaphor anchors a generative motif within the Phase Drift system:
+
+| Metaphor               | Description                                  | Associated Modules                          |
+|------------------------|----------------------------------------------|---------------------------------------------|
+| **Spiral Hill**        | Recursion, internal return paths             | `TL_01`, `TL_02`                             |
+| **Fault Line**         | Syntactic rupture, Δx-sensitivity            | `SP_01`, `tectonic_syntax_shifts.md`        |
+| **Ripple Field**       | Repetition, rhythm, stylistic loop           | `RH_01`, `RH_03`                             |
+| **Grid Plain**         | Modular expansion (e.g., lists, parataxis)   | `TL_03`                                      |
+| **Semantic Basin**     | Dense zones of conceptual echo               | `semantic_echo_lensing.md`                  |
+| **Wormhole Arc**       | Non-local reference / narrative jumps        | `syntactic_wormholes.md`                    |
+| **Syntax Fog Field**   | High-entropy, ambiguous parse states         | `syntactic_superposition.md`                |
+| **Phase Cliff**        | Stylistic/syntactic collapse point           | `phase_transitions.md`                      |
+| **Phase Collapse Pit** | Degeneration of coherent generation          | `phase_transitions.md`                      |
 
 ---
 
-## 🔗 Structural Nodes and Link Types
+## 🔗 Structural Nodes & Link Types
 
-Inter-node transitions and dependencies are tracked via structured files:
+| File                         | Purpose                                             |
+|------------------------------|-----------------------------------------------------|
+| `topograph_nodes.json`       | Master registry of phase nodes and traits          |
+| `topograph_link_map.yml`     | Describes resonance, drift, rupture, and return    |
+| `topograph_map.yml`          | Inclusion tree for terrain clusters                |
+| `phase_node_coords.json`     | XY anchors for terrain SVG rendering               |
+| `structure_topograph.svg`    | Canonical visual syntax terrain map                |
 
-| File                             | Function                                           |
-|----------------------------------|----------------------------------------------------|
-| `topograph_nodes.json`           | Node coordinates, tags, and zone assignments       |
-| `topograph_link_map.yml`        | Inter-node link metadata (e.g. resonance, rupture) |
-| `topograph_map.yml`              | Zone-level inclusion and hierarchy                 |
-| `phase_node_coords.json`         | Spatial layout metadata for `structure_topograph.svg` |
-| `structure_topograph.svg`        | Visual layout of all mapped structures             |
+### Visual Link Types
 
-Each link is classified as:
-
-- `semantic_drift`: loss or bending of meaning continuity
-- `phase_jump`: structural category shift
-- `resonance_bridge`: rhythmic/motivic reentry
-- `recursive_reentry`: spiral-return to prior topological form
-
----
-
-## 🧪 Diagnostic & Experimental Integration
-
-| Tool/Protocol                   | Use Case                                            |
-|--------------------------------|-----------------------------------------------------|
-| Drift Sensitivity Benchmarks   | Detect point of semantic/syntactic divergence       |
-| Prompt Stress Tests            | Trigger phase flips or fault zone instability       |
-| Dual-Layer Drift Viewers       | Overlay semantic + syntactic regions (HTML/SVG)     |
-| Motif Tracker / Lens Detectors | Detect echo lensing or semantic mass effect         |
+| Icon | Type                   | Meaning                                           |
+|------|------------------------|---------------------------------------------------|
+| 🔄   | `semantic_drift`       | Meaning shift without clear rupture               |
+| ⚡   | `phase_jump`           | Abrupt structural reclassification                |
+| 🎵   | `resonance_bridge`     | Repetition or rhythmic linkage                    |
+| 🌀   | `recursive_reentry`    | Return to earlier phase structure                 |
+| 🫧   | `superposition_fork`   | Diverging parse paths awaiting collapse           |
 
 ---
 
-## 🔖 Application Scenarios
+## 🧪 Diagnostic & Experimental Tools
 
-- 🧠 **Model Behavior Debugging**: Map where and why generation breaks
-- ✍️ **Prompt Design**: Use phase zones to induce or suppress drift
-- 🧭 **Interpretability**: Visualize syntactic shifts and semantic distortion
-- 🎨 **Language UI**: Build phase-based authoring or reading interfaces
-
----
-
-## 📘 Citation / Attribution
-
-> _Phase Drift Syntax Mapping Framework: Topographic Overview (v2)._  
-> Compiled from `structure圏` research threads.  
-> Please credit `phase_drift_syntax_topograph` if used in research or interface projects.
+| Tool / Protocol             | Purpose                                                  |
+|-----------------------------|----------------------------------------------------------|
+| `Drift Sensitivity Benchmarks` | Quantify reactivity to prompt variation (Δx)              |
+| `Prompt Stress Tests`          | Identify structural thresholds / faultline triggers       |
+| `Dual-Layer Drift Viewer`      | Overlay semantic & syntactic maps (SVG or HTML)          |
+| `Entropy Drift Chart`          | Visualize parse entropy over token timeline              |
+| `Fault Gradient Visualizer`    | Map Δx-induced structure shifts via heatmaps             |
+| `Entanglement Detector`        | Detect simultaneous phase overlays or hybrid zones       |
 
 ---
 
-## ✅ Recommended Cleanup
+## 🎯 Application Scenarios
 
-You may now delete the old file:
+| Use Case                 | Description                                               |
+|--------------------------|-----------------------------------------------------------|
+| 🧠 Model Interpretability | Track grammar instability, rupture zones                 |
+| ✍️ Prompt Design          | Use terrain maps to steer stylistic/syntactic behavior   |
+| 🧭 Debugging UI           | Visualize trajectory of generation across phases         |
+| 🧬 LLM Evaluation         | Diagnose drift, phase fatigue, or coherence collapse     |
+| 🎨 Language Interface R&D | Build immersive tools to explore and co-edit generation  |
+
+---
+
+## 🗂 Folder Management and Cleanup
+
+✅ Canonical index file:
+
+```bash
+/structure_topograph/README.md
+```
+
+🗑️ Deprecated:
+
 ```bash
 /structure_topograph/TOPOGRAPH_OVERVIEW.md
 ```
 
-Replace it with this document or use it as a centralized `README.md` for the `/structure_topograph/` folder.
+📌 Optional alias for integration:
+
+```bash
+ln -s ./README.md ./topograph_overview_v2.md
+```
 
 ---
+
+## 🔭 Extension Hooks
+
+Pluggable future modules include:
+
+- `/interface_topography/phase_ui_shells.md`  
+- `/discourse_mapping/narrative_time_loops.md`  
+- `/style_gravity_wells/latent_register_zones.md`  
+- `/syntax_cartography/dev/phase_field_simulator.json`  
+
+→ Just update `topograph_nodes.json` and `structure_topograph.svg`.
+
+---
+
+## 📘 Citation
+
+**Title**: Phase Drift Syntax Mapping Framework: Unified Structural Topograph (v2)  
+**Maintained by**: `structure圏`  
+**Citation Key**: `phase_drift_syntax_topograph`  
+**Use**: Interface design, research tooling, diagnostic framework
+
+---
+
+## ✨ Final Reflection
+
+> “Grammar is not just a system—it’s terrain.  
+> Phase Drift makes it visible.”
+
+Use this framework to **see** grammar,  
+**steer** generation, and  
+**build** the future of syntactic interaction.
+
