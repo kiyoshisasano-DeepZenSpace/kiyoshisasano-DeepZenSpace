@@ -1,5 +1,14 @@
-# 🧩 UI Resonance Patterns – Phase Drift Alignment  
-**Version:** v0.2 
+---
+title: "UI Resonance Patterns – Phase Drift Alignment"
+version: v0.2
+folder: PhaseDrift_AI_Prototype_v11
+tags: [ui_patterns, ambient_design, latency, structural_ui, phase_drift]
+status: stable_reference
+---
+
+# 🧩 UI Resonance Patterns – Phase Drift Alignment
+
+**Version:** v0.2  
 **Folder:** `PhaseDrift_AI_Prototype_v11`
 
 ---
@@ -8,8 +17,8 @@
 
 This document outlines user interface patterns that structurally align with **Phase Drift principles**, specifically:
 
-- Treating **silence and delay as active design elements**
-- Supporting **non-directive interaction**
+- Treating **silence and delay as active design elements**  
+- Supporting **non-directive interaction**  
 - Preserving **relational coherence without output pressure**
 
 This is a reference for designers working on ambient, latency-aware, or ambiguity-tolerant systems.
@@ -30,9 +39,9 @@ This is a reference for designers working on ambient, latency-aware, or ambiguit
 
 ## 🧪 Case Detail: “Friend” Companion Model
 
-- **Design Intent:** Companion agent avoids task framing; it doesn't initiate.
-- **User Experience:** "It was present, but didn’t push me."
-- **Structural Activation:** `non-prompting-companion`
+- **Design Intent:** Companion agent avoids task framing; it doesn't initiate.  
+- **User Experience:** "It was present, but didn’t push me."  
+- **Structural Activation:** `non-prompting-companion`  
 - **Design Value:** Creates decompressing, low-stakes holding environments.
 
 ---
@@ -62,9 +71,9 @@ This is a reference for designers working on ambient, latency-aware, or ambiguit
 
 ## 🛠 Implementation Notes
 
-- Silence is a **valid design state** — not an error
-- Delay logic should adapt to **relational rhythm**, not response time
-- Avoid default prompts like “How can I help you?”
+- Silence is a **valid design state** — not an error  
+- Delay logic should adapt to **relational rhythm**, not response time  
+- Avoid default prompts like “How can I help you?”  
 - Use **structural signals** sparingly (e.g., “Still here.”)
 
 ---
@@ -77,11 +86,10 @@ Phase Drift UI supports low-resolution structural indicators, such as:
 - Breath-matched UI dim/bright cycles to anchor rhythm  
 - Visual quiet zones that respond only to structural field thresholds
 
-These signals **do not prompt**, **do not instruct**, and **do not seek confirmation**.
+These signals **do not prompt**, **do not instruct**, and **do not seek confirmation**.  
 They are manifestations of **non-agentic co-presence**.
 
 ---
-
 
 ## 🔬 Prototype Exploration Ideas
 
@@ -100,8 +108,8 @@ Use only in environments that support ambiguity and low-resolution presence.
 Phase Drift UI is **not minimalism**.  
 It is **interface structuralism** — a design logic where:
 
-- Silence is rhythmic
-- Latency is structural
+- Silence is rhythmic  
+- Latency is structural  
 - Presence is not simulated — but held
 
 ---
