@@ -54,19 +54,19 @@ Implement controls as embedded tags or scaffold tokens. Example syntax:
 ```
 ## 2. Segmental Decoding Loop
 
-- Decode in blocks (e.g., 20–40 tokens)
-- Analyze output for syntactic, semantic, or rhythm changes
-- Adjust generation path via **live control feedback**
+- Decode in blocks (e.g., 20–40 tokens)  
+- Analyze output for syntactic, semantic, or rhythm changes  
+- Adjust generation path via live control feedback  
 
 ---
 
 ## 3. Latent Reinforcement
 
-- Align prompt controls with **activation drift** (e.g., via attention routing)
-- Use internal feedback metrics:
-  - Entropy slope
-  - Embedding curvature
-- → Refine the generation path **dynamically**
+- Align prompt controls with activation drift (e.g., via attention routing)  
+- Use internal feedback metrics:  
+  - Entropy slope  
+  - Embedding curvature  
+→ Refine the generation path dynamically  
 
 ---
 
@@ -74,10 +74,10 @@ Implement controls as embedded tags or scaffold tokens. Example syntax:
 
 ### 🔹 Panel Zones
 
-| Zone Name | Controls Mapped |
-|-----------|------------------|
-| Structure | Spiral, Flatten, Faultline |
-| Flow      | Drift Rate, Resonance, Jump |
+| Zone Name | Controls Mapped                        |
+|-----------|----------------------------------------|
+| Structure | Spiral, Flatten, Faultline             |
+| Flow      | Drift Rate, Resonance, Jump            |
 | Tone      | Deformalize, Register Shift, Echo Mass |
 
 Each control outputs a **live-modified preview**.
@@ -86,45 +86,47 @@ Each control outputs a **live-modified preview**.
 
 ### 🔹 Terrain Display (Syntax Cartograph)
 
-- **Topographic base**: `structure_topograph.svg`
-- **Live overlays**:
-  - Spiral Rings: recursion depth
-  - Echo Zones: semantic echo density
-  - Faultlines: syntactic rupture points
-  - Drift Arrows: directionality of phase flow
+**Topographic base**: `structure_topograph.svg`
+
+**Live overlays**:
+
+- **Spiral Rings**: recursion depth  
+- **Echo Zones**: semantic echo density  
+- **Faultlines**: syntactic rupture points  
+- **Drift Arrows**: directionality of phase flow  
 
 ---
 
 ### 🔹 Interactions (Examples)
 
-| Action | Effect |
-|--------|--------|
-| Drag echo node | Reactivates specific prior clause |
-| Dial Phase Jump to `0.8` | Initiates tonal bifurcation or genre pivot |
+| Action                    | Effect                                                        |
+|---------------------------|---------------------------------------------------------------|
+| Drag echo node            | Reactivates specific prior clause                             |
+| Dial Phase Jump to `0.8`  | Initiates tonal bifurcation or genre pivot                    |
 | Draw Fault Line at token 150 | Triggers clause-style transition (e.g., from 3rd → 2nd person) |
-| Fade out Spiral control | Progressively flattens syntactic nesting |
+| Fade out Spiral control   | Progressively flattens syntactic nesting                      |
 
 ---
 
 ## 🧪 Application Matrix
 
-| Use Case            | Goal                          | Control Configuration             |
-|---------------------|-------------------------------|-----------------------------------|
-| Narrative Bifurcation | Split storyline after key event | Phase Jump + Drift Redirect        |
-| Poetic Generation    | Amplify rhythm and recursion    | Spiral + Resonance Loop            |
-| Hallucination Study  | Test output integrity under pressure | Echo Loop + Fault Line injection  |
-| Syntax Pedagogy      | Visualize layering effects       | Spiral + Flatten + Echo            |
+| Use Case             | Goal                                  | Control Configuration                 |
+|----------------------|----------------------------------------|----------------------------------------|
+| Narrative Bifurcation | Split storyline after key event        | Phase Jump + Drift Redirect           |
+| Poetic Generation     | Amplify rhythm and recursion           | Spiral + Resonance Loop               |
+| Hallucination Study   | Test output integrity under pressure   | Echo Loop + Fault Line injection      |
+| Syntax Pedagogy       | Visualize layering effects             | Spiral + Flatten + Echo               |
 
 ---
 
 ## ⚠️ Design Considerations
 
-| Challenge               | Resolution Strategy                                      |
-|-------------------------|----------------------------------------------------------|
-| Metaphor–Effect Mismatch | Calibration dataset + human validation loop             |
-| Coherence Degradation    | Drift-suppression scaffolds + reanchoring tokens        |
-| UI Cognitive Load        | Group controls, allow presets, hover-based explanations |
-| Effect Detectability     | Integrate `syntax_visualizer.js` + token-level metrics  |
+| Challenge               | Resolution Strategy                                         |
+|-------------------------|-------------------------------------------------------------|
+| Metaphor–Effect Mismatch | Calibration dataset + human validation loop               |
+| Coherence Degradation    | Drift-suppression scaffolds + reanchoring tokens          |
+| UI Cognitive Load        | Group controls, allow presets, hover-based explanations   |
+| Effect Detectability     | Integrate `syntax_visualizer.js` + token-level metrics    |
 
 ---
 
@@ -134,11 +136,13 @@ Each control outputs a **live-modified preview**.
 
 - Streamlit or React sandbox prototype  
 - Core controls: **Spiral**, **Echo**, **Flatten**  
-- Visual layer: parser overlay + zone detection
+- Visual layer: **parser overlay + zone detection**
+
+---
 
 ### 🔁 Feedback Coupling
 
-- Integrate `spaCy` or `Stanza` for live parse extraction  
+- Integrate **spaCy** or **Stanza** for live parse extraction  
 - Token-index heatmap for:
   - Drift
   - Coherence shift
@@ -147,13 +151,13 @@ Each control outputs a **live-modified preview**.
 
 ## 📦 File Reference
 
-| File Name                   | Function                                         |
-|-----------------------------|--------------------------------------------------|
-| `generative_sandbox.md`     | Module specification (this file)                |
-| `pdcl_prompt_templates.txt` | Structural control syntax templates             |
-| `sandbox_ui_mockup.svg`     | Visual design mockup for sandbox interface      |
-| `drift_control_map.csv`     | Control–effect mapping registry                 |
-| `structure_topograph.svg`   | Phase Drift topographic base layer              |
+| File Name               | Function                                      |
+|-------------------------|-----------------------------------------------|
+| `generative_sandbox.md` | Module specification (this file)              |
+| `pdcl_prompt_templates.txt` | Structural control syntax templates        |
+| `sandbox_ui_mockup.svg` | Visual design mockup for sandbox interface    |
+| `drift_control_map.csv` | Control–effect mapping registry               |
+| `structure_topograph.svg` | Phase Drift topographic base layer          |
 
 ---
 
@@ -164,4 +168,4 @@ Each control outputs a **live-modified preview**.
 The **Generative Sandbox** enacts a shift from **descriptive linguistics**  
 to **performative structural composition**.  
 It gives users **agency within form**,  
-and enables **real-time sculpting** of the linguistic terrain.
+and enables **real-time sculpting of the linguistic terrain**.
