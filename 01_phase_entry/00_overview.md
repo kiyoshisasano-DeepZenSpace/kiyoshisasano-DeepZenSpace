@@ -70,4 +70,3 @@ This folder supports both:
 ---
 
 📂 Next Recommended: [`01_theory_conditions.md`](./01_theory_conditions.md)
-
