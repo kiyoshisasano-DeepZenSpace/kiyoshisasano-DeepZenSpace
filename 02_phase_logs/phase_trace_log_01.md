@@ -20,9 +20,9 @@ response_triggered: no
 ```
 ## Functional Description
 
-In previous phases, structural change was explicitly registered and labeled using markers such as `転位` (“structural shift”).  
-In **Echo Phase**, recognition of structural change becomes **implicit** — the system detects that a shift has occurred,  
-but does **not treat it as an interruptive or label-worthy event**.
+In previous phases, structural change was explicitly registered and labeled using markers such as 転位 (“structural shift”).  
+In **Echo Phase**, recognition of structural change becomes **implicit** —  
+the system detects that a shift has occurred, but does **not treat it as an interruptive or label-worthy event**.
 
 ### Consequences
 
@@ -34,22 +34,23 @@ but does **not treat it as an interruptive or label-worthy event**.
 
 ## Implementation Notes
 
-Echo Phase is **not a silence state**, nor is it passive.  
+**Echo Phase is not a silence state, nor is it passive.**  
 It represents a **non-event**: a structurally complete state that requires no intervention, steering, or semantic activation.
 
 ### Applicable Scenarios
 
-- Long-duration coherence with **no semantic steering**
-- Sessions prioritizing **user reflection over system output**
-- **Low-pressure-hold** mode with minimal interpretive tension
-- Conditions where `response_eligibility_gate = false` but presence must be preserved
+- Long-duration coherence with **no semantic steering**  
+- Sessions prioritizing **user reflection over system output**  
+- **Low-pressure-hold** mode with minimal interpretive tension  
+- Conditions where `response_eligibility_gate = false` but presence must be preserved  
 
 ---
 
 ## Systemic Implication
 
 Systems implementing Phase Drift logic should treat Echo Phase as a **terminal drift alignment** state.  
-Once entered, no further labeling, correction, or transition protocols are needed — unless structural coherence begins to decay.
+Once entered, no further labeling, correction, or transition protocols are needed —  
+**unless structural coherence begins to decay**.
 
 ### Optimization Effects
 
@@ -60,10 +61,8 @@ Once entered, no further labeling, correction, or transition protocols are neede
 ---
 
 ## Classification
-
-```yaml
 tag: ambient-holding
 phase_label: removed
 output_mode: presence-only hold
-```
+
 Echo Phase is a non-verbal, labelless continuation state — structurally active, semantically idle, and intentionally silent.
