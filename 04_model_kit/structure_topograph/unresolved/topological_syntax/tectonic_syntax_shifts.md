@@ -33,8 +33,8 @@ We define a **Fault Line (FL)** as:
 |--------------------------|---------------------------|
 | Exit from Spiral Hills   | Recursive limit break     |
 | Entry to Fault Ridge     | Sudden clause transition  |
-| Collapse from Superposition | Ambiguity resolution       |
-| Crack in Entanglement     | Interference failure       |
+| Collapse from Superposition | Ambiguity resolution   |
+| Crack in Entanglement     | Interference failure     |
 
 These are **nonlinear fracture points** in generative space.
 
@@ -42,13 +42,13 @@ These are **nonlinear fracture points** in generative space.
 
 ## 📐 Diagnostic Criteria
 
-| Indicator             | Description                                                 |
-|------------------------|-------------------------------------------------------------|
-| **Parse Tree Divergence** | Δx causes ≥ `n` node change in parse structure             |
-| **Projection Flip**      | Switch between CP-level heads (TopP ↔ FocP ↔ ForceP, etc.) |
-| **Clause-Type Reversal** | Declarative ↔ Interrogative; Embedded ↔ Main               |
-| **Latent Embedding Jump** | Cosine dist > `0.3` in representation vectors              |
-| **Tree Edit Distance**   | Structural delta measured in node operations               |
+| Indicator                 | Description                                                  |
+|---------------------------|--------------------------------------------------------------|
+| **Parse Tree Divergence** | Δx causes ≥ `n` node change in parse structure               |
+| **Projection Flip**       | Switch between CP-level heads (TopP ↔ FocP ↔ ForceP, etc.)   |
+| **Clause-Type Reversal**  | Declarative ↔ Interrogative; Embedded ↔ Main                |
+| **Latent Embedding Jump** | Cosine dist > `0.3` in representation vectors                |
+| **Tree Edit Distance**    | Structural delta measured in node operations                |
 
 ---
 
@@ -73,24 +73,24 @@ These are **nonlinear fracture points** in generative space.
 
 ## 🧪 Fault Detection Toolkit
 
-| Method               | Purpose                                           |
-|----------------------|--------------------------------------------------|
-| **Prompt Pair Testing**   | Compare Δx variants (e.g., “maybe” vs “perhaps”) |
+| Method                 | Purpose                                              |
+|------------------------|------------------------------------------------------|
+| **Prompt Pair Testing**   | Compare Δx variants (e.g., “maybe” vs “perhaps”)  |
 | **Tree Edit Analysis**    | Quantify structural shifts in syntax trees        |
-| **Embedding Divergence**  | Trace latent jumps in model internals            |
-| **Clause Drift Tracker**  | Track clause role/function transitions           |
-| **Sensitivity Indexing**  | Aggregate Δx reactivity across prompt families   |
+| **Embedding Divergence**  | Trace latent jumps in model internals             |
+| **Clause Drift Tracker**  | Track clause role/function transitions            |
+| **Sensitivity Indexing**  | Aggregate Δx reactivity across prompt families    |
 
 ---
 
 ## 📊 Visual Metaphors
 
-| Visual         | Interpretation                                 |
-|----------------|-------------------------------------------------|
-| **Shear Ridge**    | Tectonic projection transition                |
-| **Fault Cliff**    | Clause-type collapse (e.g., CP to TP)         |
-| **Volcanic Trigger** | Latent structure ignition via subtle Δx     |
-| **Stress Overlay** | Drift map showing syntactic instability zones |
+| Visual             | Interpretation                                    |
+|--------------------|--------------------------------------------------|
+| **Shear Ridge**     | Tectonic projection transition                   |
+| **Fault Cliff**     | Clause-type collapse (e.g., CP to TP)           |
+| **Volcanic Trigger**| Latent structure ignition via subtle Δx         |
+| **Stress Overlay**  | Drift map showing syntactic instability zones   |
 
 ---
 
@@ -98,10 +98,10 @@ These are **nonlinear fracture points** in generative space.
 
 | Related Module             | Role of Fault Lines                                |
 |----------------------------|-----------------------------------------------------|
-| `syntactic_superposition.md` | Collapse point from unresolved ambiguity             |
-| `metastable_zones.md`        | Sharp exit from an entropy plateau                   |
-| `phase_entanglement.md`      | Interference break under Δx disruption               |
-| `latent_space_alignment.md`  | Vector discontinuities marking syntactic rupture    |
+| `syntactic_superposition.md` | Collapse point from unresolved ambiguity           |
+| `metastable_zones.md`        | Sharp exit from an entropy plateau                 |
+| `phase_entanglement.md`      | Interference break under Δx disruption             |
+| `latent_space_alignment.md`  | Vector discontinuities marking syntactic rupture  |
 
 ---
 
@@ -133,9 +133,9 @@ These are **nonlinear fracture points** in generative space.
 
 ### 🗂 Fault Corpus Initiative  
 - Curated Δx prompt pairs with labels:
-  - Tree distance
-  - Projection shift
-  - Latent jump
+  - Tree distance  
+  - Projection shift  
+  - Latent jump  
 - Supports eval tasks for syntactic reactivity and rupture mapping
 
 ---
