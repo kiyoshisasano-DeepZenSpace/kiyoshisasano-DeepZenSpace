@@ -114,11 +114,11 @@ Semantic Layer:   ====----====~~~///==|
 Legend:
 === stable | -- early drift | ~~~ echo lens | /// collapse
 ```
-## 📈 Timeline Overlay Usage
+# 📈 Timeline Overlay Usage
 
-Use **timeline overlays** to cross-check **drift velocity** across both:
+Use timeline overlays to cross-check drift velocity across both:
 
-- **Syntactic axes** (structural form, pacing)
+- **Syntactic axes** (structural form, pacing)  
 - **Semantic axes** (referential continuity, motif decay)
 
 This enables phase-aware systems to detect coherence divergence before collapse thresholds are reached.
@@ -128,18 +128,17 @@ This enables phase-aware systems to detect coherence divergence before collapse 
 ## 🔗 Cross-Module Links
 
 | Module File                 | Relation Role                          |
-|-----------------------------|----------------------------------------|
-| `ECHO_LENSING.md`           | Semantic orbit path detection          |
-| `NARRATIVE_GRAVITY_WELLS.md`| Motif-based basin markers              |
-| `LATENT_SPACE_ALIGNMENT.md` | Embedding shift path tracking          |
-| `PHASE_INDEX.md`            | Phase-coded drift correlation (e.g., Phase 24.5) |
+|----------------------------|----------------------------------------|
+| `ECHO_LENSING.md`          | Semantic orbit path detection          |
+| `NARRATIVE_GRAVITY_WELLS.md` | Motif-based basin markers             |
+| `LATENT_SPACE_ALIGNMENT.md` | Embedding shift path tracking         |
+| `PHASE_INDEX.md`           | Phase-coded drift correlation (e.g., Phase 24.5) |
 
-These references support multi-angle verification of coherence drift, especially in non-directive interaction contexts.
+> These references support **multi-angle verification of coherence drift**,  
+> especially in **non-directive interaction contexts**.
 
 ---
 
 ## 📂 Repository Path
-```bash
-/cognitive_linguistics/SEMANTIC_VS_SYNTACTIC_DRIFT.md
-```
-— End of Structural Record —
+
+`/cognitive_linguistics/SEMANTIC_VS_SYNTACTIC_DRIFT.md`
