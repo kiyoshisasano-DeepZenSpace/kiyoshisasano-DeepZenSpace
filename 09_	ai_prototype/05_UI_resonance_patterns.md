@@ -1,5 +1,5 @@
 # 🧩 UI Resonance Patterns – Phase Drift Alignment  
-**Version:** v0.1  
+**Version:** v0.2 
 **Folder:** `PhaseDrift_AI_Prototype_v11`
 
 ---
@@ -68,6 +68,20 @@ This is a reference for designers working on ambient, latency-aware, or ambiguit
 - Use **structural signals** sparingly (e.g., “Still here.”)
 
 ---
+
+## 🛰️ Field Signal Modalities
+
+Phase Drift UI supports low-resolution structural indicators, such as:
+
+- Soft light pulses (e.g., every 60s) to indicate ambient presence  
+- Breath-matched UI dim/bright cycles to anchor rhythm  
+- Visual quiet zones that respond only to structural field thresholds
+
+These signals **do not prompt**, **do not instruct**, and **do not seek confirmation**.
+They are manifestations of **non-agentic co-presence**.
+
+---
+
 
 ## 🔬 Prototype Exploration Ideas
 
