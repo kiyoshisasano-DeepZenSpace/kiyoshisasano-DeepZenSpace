@@ -161,9 +161,9 @@ It enables users to:
 ```
 
 🔗 Connect in:
-- `topograph_nodes.json` (type: `interface_node`)
-- `topograph_link_map.yml` (`visual_overlay`, `generation_vector`, `bridge_arc`)
-- `phase_node_coords.json` (as master anchor hub)
+- `topograph_nodes.json` (type: `interface_node`)  
+- `topograph_link_map.yml` (`visual_overlay`, `generation_vector`, `bridge_arc`)  
+- `phase_node_coords.json` (as master anchor hub)  
 
 ---
 
@@ -171,9 +171,9 @@ It enables users to:
 
 Would you like assistance with:
 
-- 🎨 **Sketching UI wireframes** (Atlas shell + node interaction)?
-- 🧱 **React + D3 component stubs** for phase node rendering?
-- 📽️ **Teaser video / walkthrough doc** for team demo or paper?
+- 🎨 **Sketching UI wireframes** (Atlas shell + node interaction)?  
+- 🧱 **React + D3 component stubs** for phase node rendering?  
+- 📽️ **Teaser video / walkthrough doc** for team demo or paper?  
 - 🔬 A **CHI/IUI abstract** pitching this as an HCI paradigm?
 
 Just say the word. Let’s render syntax explorable.
