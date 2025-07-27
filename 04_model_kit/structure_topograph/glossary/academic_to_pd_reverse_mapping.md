@@ -1,7 +1,7 @@
 # 📘 Academic-to-Phase Drift Term Mapping (Reverse Index v1.0)
 
-This document reverses the conceptual vocabulary of Phase Drift into familiar academic terminology across linguistics, cognitive science, and HCI.  
-Useful for researchers seeking alignment between Phase Drift terms and established scholarly frameworks.
+This document reverses the conceptual vocabulary of **Phase Drift** into established academic terminology.  
+It offers a bridge for researchers seeking theoretical alignment across linguistics, AI, cognitive science, and HCI.
 
 ---
 
@@ -20,83 +20,85 @@ Useful for researchers seeking alignment between Phase Drift terms and establish
 
 ## 🧠 Syntax & Structure
 
-| Academic Term                  | Phase Drift Equivalent(s)     | Field                     | Notes                                        |
-|-------------------------------|-------------------------------|---------------------------|----------------------------------------------|
-| Cartographic Syntax           | Structural Phase              | Generative Syntax         | Syntactic mapping through projections        |
-| Derivational Phase / Cycle    | Phase                         | Minimalist Syntax         | Units of structural processing               |
-| Mental Space / Discourse Field| Field                         | Cognitive Linguistics     | Spatial model of unfolding discourse         |
-| Interface Framing             | Topographic Design            | HCI, NLP                  | Structural shaping of prompts                |
+| Academic Term                  | Phase Drift Term(s)          | Field                     | Notes                                         |
+|-------------------------------|-------------------------------|---------------------------|-----------------------------------------------|
+| Cartographic Syntax           | Structural Phase              | Generative Syntax         | Hierarchical syntactic mapping                |
+| Derivational Cycle / Phase    | Phase                         | Minimalist Syntax         | Units of derivational movement                |
+| Discourse Field / Mental Space| Field                         | Cognitive Linguistics     | Spatial model of unfolding conceptual zones   |
+| Interface Framing             | Topographic Design            | HCI, NLP                  | Visual–structural prompt shaping              |
 
 ---
 
 ## 🔁 Priming & Propagation
 
-| Academic Term         | Phase Drift Equivalent(s)       | Field                   | Notes                                      |
-|----------------------|----------------------------------|-------------------------|--------------------------------------------|
-| Structural Priming   | Syntax Infection                | Psycholinguistics       | Reuse of structure across utterances       |
-| Dialogic Resonance   | Structural Mimicry              | Discourse Analysis      | Repetition via social echo                 |
-| Concept Drift        | Drift Transfer, Phase Drift     | AI, Historical Linguistics | Structural shift over time              |
-| Interactive Alignment| Syntax Infection, Mimetic Response | Dialogue Studies     | Converging syntax via interaction          |
+| Academic Term         | Phase Drift Term(s)            | Field                     | Notes                                         |
+|----------------------|---------------------------------|---------------------------|-----------------------------------------------|
+| Structural Priming   | Syntax Infection                | Psycholinguistics         | Reuse of abstract syntactic forms             |
+| Dialogic Resonance   | Structural Mimicry              | Interactional Linguistics | Emergent repetition through social echo       |
+| Concept Drift        | Drift Transfer, Phase Drift     | NLP / Linguistic Evolution| Long-term structural shift                    |
+| Interactive Alignment| Mimetic Response, Syntax Infection | Dialogue Studies       | Coordinated syntactic mirroring               |
 
 ---
 
 ## 🔇 Silence, Nulls, and Turn Structure
 
-| Academic Term           | Phase Drift Equivalent(s)   | Field                     | Notes                                      |
-|------------------------|------------------------------|---------------------------|--------------------------------------------|
-| Dispreferred Turn      | Response Silence             | Conversation Analysis     | Structural delay as signal                 |
-| Empty Category / Ellipsis Site | Null Response, Trace   | Generative Syntax         | Silent but syntactically active slots      |
-| Conduit Metaphor       | Response Medium              | Cognitive Linguistics, HCI| Syntax as carrier of meaning               |
-| Turn Relay Structure   | Response Medium              | Interface Theory          | Non-agentive transmission of structure     |
+| Academic Term              | Phase Drift Term(s)         | Field                    | Notes                                      |
+|---------------------------|------------------------------|--------------------------|--------------------------------------------|
+| Dispreferred Turn         | Response Silence             | Conversation Analysis    | Delays or omissions as social signals      |
+| Empty Category / Ellipsis | Null Response, Trace         | Generative Syntax        | Non-phonetic but syntactically necessary   |
+| Conduit Metaphor          | Response Medium              | Linguistic Metaphor, HCI | Language treated as information pipeline   |
+| Turn Relay / Channel Flow | Response Medium              | Dialogue Systems         | Non-agentive structural transmission       |
 
 ---
 
 ## 💾 Memory & Latency
 
-| Academic Term             | Phase Drift Equivalent(s) | Field                     | Notes                                      |
-|--------------------------|----------------------------|---------------------------|--------------------------------------------|
-| Procedural Syntax Memory | Formal Memory              | Cognitive Linguistics, NLP| Syntax retained through skill learning     |
-| Residual Activation      | Latency                    | Cognitive Psychology      | Echo of past structure                     |
-| Constructional Residue   | Template Residue           | Construction Grammar      | Partial leftover structures                |
-| Entrenchment / Syntactic Persistence | Structural Inertia | Usage-Based Grammar      | Resistance to syntactic change             |
+| Academic Term             | Phase Drift Term(s)       | Field                       | Notes                                      |
+|--------------------------|----------------------------|-----------------------------|--------------------------------------------|
+| Procedural Syntax Memory | Formal Memory              | Cognitive Linguistics, NLP  | Syntax accessed as skill                   |
+| Residual Activation      | Latency                    | Cognitive Science           | Echoes of prior syntactic activation       |
+| Constructional Residue   | Template Residue           | Construction Grammar        | Incomplete or decayed structures           |
+| Syntactic Entrenchment   | Structural Inertia         | Usage-Based Models          | Resistance to structural change            |
 
 ---
 
 ## 🌐 Drift & Transition
 
-| Academic Term        | Phase Drift Equivalent(s)    | Field                  | Notes                                       |
-|---------------------|-------------------------------|------------------------|---------------------------------------------|
-| Topic Shift / Frame Shifting | Phase Drift, Frame Shifting | Pragmatics, Semantics | Phasal recontextualization                 |
-| Style Drift          | Style Drift                  | NLP, Sociolinguistics  | Register shifting mid-discourse            |
-| Conceptual Shift / Reframing | Frame Shifting         | Cognitive Semantics    | Change of mental lens                      |
+| Academic Term         | Phase Drift Term(s)         | Field                       | Notes                                      |
+|----------------------|------------------------------|-----------------------------|--------------------------------------------|
+| Topic Shift           | Phase Drift                 | Discourse Modeling          | Change of thematic or topical field        |
+| Frame Shifting        | Frame Shifting              | Cognitive Semantics         | Change of interpretive lens                |
+| Register Drift        | Style Drift                 | Sociolinguistics, NLP       | Style shifts during generation             |
+| Conceptual Reframing  | Phase / Field Realignment   | Semantics, Narratology      | Meaning shifts across structural zones     |
 
 ---
 
 ## 🩰 Embodied Interaction
 
-| Academic Term                  | Phase Drift Equivalent(s)   | Field                    | Notes                                          |
-|-------------------------------|------------------------------|--------------------------|------------------------------------------------|
-| Embodied Construction Grammar (ECG) | Embodied Syntax        | Cognitive Linguistics    | Syntax grounded in sensorimotor schemas       |
-| Entrainment / Synchrony       | Interactional Synchrony      | HCI, Psycholinguistics   | Rhythm alignment in communication             |
-| Gaze Coordination             | Gaze Alignment                | HCI, Cognitive Psychology| Syntax-anchored visual cueing                 |
-| Joint Attention               | Gaze Alignment, Response Medium | Developmental Pragmatics | Shared attentional frame                    |
+| Academic Term                  | Phase Drift Term(s)       | Field                        | Notes                                         |
+|-------------------------------|----------------------------|------------------------------|-----------------------------------------------|
+| Embodied Construction Grammar | Embodied Syntax            | Cognitive Linguistics        | Syntax grounded in sensorimotor systems       |
+| Conversational Entrainment    | Interactional Synchrony    | Social Psychology, HCI       | Synchronous behavior alignment                |
+| Gaze Coupling / Joint Attention | Gaze Alignment           | Cognitive Psychology, UX     | Shared visual–cognitive space                 |
 
 ---
 
 ## 🖥 Syntax as Interface
 
-| Academic Term        | Phase Drift Equivalent(s)  | Field                | Notes                                      |
-|---------------------|-----------------------------|----------------------|--------------------------------------------|
-| Conduit Metaphor     | Response Medium             | Pragmatics, HCI      | Language as pipeline                       |
-| Interface Affordance | Affordance Structure        | UX Design, HCI       | Syntax as prompt-enabler                   |
-| Conversational Interface | Conversational Interface | NLP, Dialogue Systems| Turn-based input structure                 |
+| Academic Term           | Phase Drift Term(s)       | Field                   | Notes                                      |
+|------------------------|----------------------------|-------------------------|--------------------------------------------|
+| Conduit Metaphor        | Response Medium            | Linguistic Metaphor     | Message flow via language                  |
+| Interface Affordances   | Affordance Structure       | HCI / UX Design         | Prompt surface allows/disallows structure  |
+| Conversational Interface| Conversational Interface   | Dialogue Systems, NLP   | Structural scaffolding for interaction     |
 
 ---
 
 ## 🔖 Citation
 
-**Academic-to-Phase Drift Term Mapping (Reverse Index)**  
+```
+Academic-to-Phase Drift Term Mapping (Reverse Index v1.0)  
 Phase Drift Language Systems Collective, 2025  
-Repo: [https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace)
+Repository: https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace  
+```
 
----
+> “To translate the unknown, start from what is already mapped.”
