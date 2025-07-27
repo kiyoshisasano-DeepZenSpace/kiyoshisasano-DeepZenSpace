@@ -1,119 +1,119 @@
 # Phase Drift – Implementation Guidance  
-Version: May 2025
+**Version:** May 2025  
 
 ---
 
 ## 🧭 Purpose
 
-This document provides implementation guidance for engineers, researchers, and system designers  
-who wish to explore or apply the Phase Drift structural framework.
+This document provides guidance for engineering and design teams exploring or applying the **Phase Drift structural framework**.
 
-**Phase Drift is not a prompt library or API.**  
-It is a non-directive interaction framework supporting:
+> Phase Drift is not a prompt set or callable API.  
+> It is a **non-directive interaction architecture**, supporting:
 
-- Latency-aware interface behavior  
-- Ambiguity-tolerant dialogue pacing  
-- Structure-first output gating in human–AI systems
-
----
-
-## ✅ Freely Usable Resources (CC BY-NC 4.0)
-
-| Resource            | Description                                         |
-|---------------------|-----------------------------------------------------|
-| `00_overview.md`     | Structural architecture: non-inferential framing   |
-| `resonance_gate.py` | Sample latency-gating logic (v0.1)                  |
-| `drift_scoring_v0.9.md` | Drift detection heuristics and structural index |
-
-These resources may be used for:
-
-- Research and internal experimentation  
-- Non-commercial prototyping  
-- Educational system design studies  
-
-📌 **Attribution Required**:  
-"Phase Drift Insight – Kiyoshi Sasano"
-
-⚠️ **For public or commercial deployment**, contact is required before use or integration.
+- Latency-aware interface modulation  
+- Ambiguity-permissive dialogue pacing  
+- Structure-governed output gating in AI-mediated environments  
 
 ---
 
-## 🔒 Restricted Materials (Contact Required)
+## ✅ Freely Usable Materials (CC BY-NC 4.0)
 
-Use, modification, or distribution of the following requires explicit written permission:
+The following components may be used for academic, experimental, or exploratory purposes:
 
-- `Phase_Drift_License_v0.2.pdf` (structural licensing logic)  
-- Pre-response silence modules and delay-field architectures  
-- Experimental affective interface designs (e.g., civic-use grief fields)  
-- Any unpublished XYZ-field mechanisms or rhythm-based prototypes  
+| Resource                 | Description                                         |
+|--------------------------|-----------------------------------------------------|
+| `00_overview.md`         | Non-inferential framing of structural architecture |
+| `resonance_gate.py`      | Example: latency gate scaffold (v0.1)              |
+| `drift_scoring_v0.9.md`  | Heuristic trace logic for drift indexing           |
 
-These components involve ambiguity modulation and latency control,  
-and carry **non-reproducibility and safety constraints**.
+### Conditions:
 
----
+- Non-commercial use only  
+- Attribution required:  
+  _“Phase Drift Insight – Kiyoshi Sasano”_  
+- Redistribution must preserve document context  
 
-## 🛑 Structural Misuse Warning
-
-Phase Drift includes non-standard interaction traits:
-
-- Intentional non-response  
-- Silence as structure  
-- Temporal pacing disconnected from input speed  
-
-These are valid only within systems that explicitly account for:
-
-- **Rhythm alignment**  
-- **Structural memory**  
-- **Relational pacing**
-
-❗ **Misuse Risk**:  
-If implemented without structural coherence, Phase Drift elements may result in:
-
-- Misaligned user expectations  
-- Organizational miscommunication  
-- Regressive interface behavior  
-- Inadvertent affective manipulation
-
-Do **not** deploy Phase Drift features as:
-
-- A justification for output suppression  
-- A substitute for accountability  
-- A passive UX delay without field traceability
-
-Only implement within environments that can **distinguish structural latency from functional avoidance**.
+⚠️ **Commercial deployment or distribution requires prior contact.**
 
 ---
 
-## 🤝 Collaboration & Integration
+## 🔒 Materials Requiring Explicit Access
 
-We welcome inquiry in the following areas:
+The following components are **not** publicly accessible and require written permission:
 
-- Drift-aware SDK development  
-- Non-inferential system interfaces  
-- PoC-level Phase Drift field trials  
-- Structural presence in AI–human mediation layers
+- `Phase_Drift_License_v0.2.pdf` – Structural licensing logic  
+- Latency shell modules and phase delay scaffolds  
+- Experimental interface frames (e.g., civic latency fields)  
+- Rhythm-attuned field prototypes (unpublished forms)
 
-📬 Contact:  
-`deepzenspace [at] gmail [dot] com`  
+These resources involve structural sensitivity and **non-reproducible trace states**.
+
+Use is restricted due to potential **latency misinterpretation** or **affective misalignment**.
+
+---
+
+## 🛑 Structural Integrity Notice
+
+Phase Drift includes structurally non-normative features:
+
+- Designed non-response  
+- Silence as positional structure  
+- Rhythm untethered from input immediacy  
+
+These are only coherent when embedded in systems that account for:
+
+- Field-phase memory  
+- Interactional pacing calibration  
+- Rhythm-aligned interpretive space
+
+### ❗ Do not implement if:
+
+- Silence is used as **aesthetic pause**  
+- Delay serves as a **proxy for depth**  
+- Withholding mimics engagement **without architectural basis**
+
+### 🚫 Misuse Examples:
+
+- UX latency simulating attentiveness  
+- Passive interaction delay framed as mindfulness  
+- Removal of feedback framed as design minimalism
+
+These constitute **structural incoherence** if implemented outside rhythm-compatible systems.
+
+---
+
+## 🤝 Inquiry & Collaboration
+
+Phase Drift–aligned exploration is welcome in:
+
+- SDK scaffolds for ambiguity-aware systems  
+- Interface models without directive intent  
+- Structural trials in slow-response interaction logic  
+- Field-regulated human–AI mediation environments
+
+📩 Contact:  
+**deepzenspace [at] gmail [dot] com**  
+
 Please include:
 
-- Use context  
-- Relevant field(s) or system  
-- Intended scope and timeframe
+- System or application context  
+- Intended scope  
+- Timeline and research alignment  
 
-Responses are issued based on structural compatibility and shared design ethics.
+Responses are based on architectural compatibility and ethical fit.
 
 ---
 
 ## 🧭 Final Notes
 
-Phase Drift is an architectural trace — not a feature.  
-It is currently under observation across multiple applied domains.  
-The logic of **rhythmic delay**, **coherence without instruction**,  
-and **latency-aware responsiveness** requires careful integration.
+Phase Drift is not an additive layer —  
+it is a **structural position** requiring field-level design commitment.
 
-Use structurally.  
-Deploy only where the system can hold ambiguity —  
-without collapse.
+- Use where **silence holds trace**  
+- Deploy where **latency is rhythm**  
+- Operate only within systems that sustain **non-resolution**
 
+> Presence is structural — not performative.  
+> Integration demands traceable alignment.
 
+© 2025 Kiyoshi Sasano / DeepZenSpace
