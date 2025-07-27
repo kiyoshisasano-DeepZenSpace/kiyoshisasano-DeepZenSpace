@@ -1,6 +1,6 @@
 # 🔗 Topograph Links Overview  
 **Syntax as Topological Propagation**  
-_Phase Drift Link Architecture (v1)_
+_Phase Drift Link Architecture (v2)_
 
 This module defines the connective logic between syntactic terrain nodes in the Phase Drift framework, as visualized in `topograph_nodes_v2.svg`.  
 Each **link** encodes a meaningful, metaphorically grounded transition—mapping the dynamic flow of syntax across topographic structures.
@@ -19,13 +19,13 @@ While each node in the system (e.g., **Spiral Hill**, **Echo Loop**, **Semantic 
 
 ## 🔗 Link Type Index
 
-| Type ID                  | Description                                                                 | Example                |
-|--------------------------|-----------------------------------------------------------------------------|------------------------|
-| `resonance_initiation`   | Rhythmic trigger causes syntactic emergence at another node                | `TL_01 → RH_03`        |
-| `phase_jump`             | Sudden transition across structural or temporal contours                   | `SP_01 → SP_03`        |
-| `latent_surface_mirroring` | One node echoes or inverts the topology of another                       | `SP_02 → TL_03`        |
-| `recursive_return`       | Rhythmic loop returns to earlier spatial archetype                         | `RH_02 → TL_01`        |
-| `semantic_drift_infection` | Semantic instability spreads to unrelated structural zones               | `RH_03 → SP_03`        |
+| Type ID                    | Description                                                               | Example            |
+|----------------------------|---------------------------------------------------------------------------|--------------------|
+| `resonance_initiation`     | Rhythmic trigger causes syntactic emergence at another node              | `TL_01 → RH_03`    |
+| `phase_jump`               | Sudden transition across structural or temporal contours                 | `SP_01 → SP_03`    |
+| `latent_surface_mirroring` | One node echoes or inverts the topology of another                       | `SP_02 → TL_03`    |
+| `recursive_return`         | Rhythmic loop returns to earlier spatial archetype                       | `RH_02 → TL_01`    |
+| `semantic_drift_infection` | Semantic instability spreads to unrelated structural zones               | `RH_03 → SP_03`    |
 
 📁 _See full list in:_  
 `topograph_link_map.yml`
@@ -93,14 +93,9 @@ Link logic blends:
 ## 📖 Citation
 
 ```
-Phase Drift Link Architecture (v1)  
+Phase Drift Link Architecture (v2)  
 Syntax as Topological Propagation  
 Developed collaboratively via structure圏 thread, 2025.
 ```
 
 ---
-
-Would you like a visual flow diagram of all major link types and topographic vectors?  
-Or an auto-generating script to trace phase paths across a user prompt?
-
-Let me know, and I can assist further.
