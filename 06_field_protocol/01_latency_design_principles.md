@@ -8,8 +8,8 @@
 This document defines **relational latency** not as delay,  
 but as a **structural expression of temporal attention**.
 
-In Phase Drift systems, **latency is interaction** —  
-a medium for sustaining presence, not a gap in output.
+In Phase Drift systems, **latency functions as interaction** —  
+a medium for sustaining presence, not a disruption in output.
 
 ---
 
@@ -21,111 +21,114 @@ These principles apply **only** in contexts where:
 - Emotional interpretation is opt-in and explicitly disclaimed  
 - Users are informed that **silence may be intentional**
 
-**Do not use** in:
+**Do not apply** in:
 
-- Emergency services  
-- Medical or legal applications requiring real-time clarity  
-- High-stakes behavioral inference or engagement systems
+- Emergency or safety-critical systems  
+- Medical or legal contexts requiring real-time clarity  
+- High-risk behavioral modeling or engagement environments
 
 ---
 
 ## 🔹 Principle 1: Delay as Structural Communication  
 
 Latency is not passive.  
-It is a designed **holding interval** in which structure emerges.
+It is a designed **holding interval** where structure may emerge.
 
 ```python
 if random.random() < 0.3:
-    return None  # Silence as intentional signal
+    return None  # Silence as an intentional structural marker
 
 time.sleep(random.uniform(0.6, 2.2))
 return generate_response()
 ```
-# 🕊️ Latency and Silence – Structural Principles in Phase Drift Systems
 
-## Teach the User  
+---
+
+## 🕊️ Silence as Structural Expression
+
+### Teach the User  
 **Silence ≠ absence**.  
 It may indicate **active structural presence** —  
-without assumption, interpretation, or emotional mimicry.
+without prompting interpretation or simulated emotional alignment.
 
 ---
 
 ## 🔹 Principle 2: Latency Must Be Perceptible and Declared
 
-Latency should **not** be hidden behind performance smoothing.  
-It must be **felt** as part of the system's rhythm.
+Latency should **not** be masked by performance smoothing.  
+It must be **observable** as part of the system’s structural rhythm.
 
-> **Recommended user framing:**  
-> _“This system may pause to hold structural space.”_
+> **Recommended framing:**  
+> _“This system may pause to maintain structural timing.”_
 
-If latency is **imperceptible**, it **fails as signal**.
+If latency is **imperceptible**, it fails as signal.
 
 ---
 
-## 🔹 Principle 3: Pre-Response Time Is Structurally Meaningful
+## 🔹 Principle 3: Pre-Response Time Is Structurally Significant
 
 The moment **before** output is not idle —  
-it represents a **relational state**.
+it reflects a **relational structural state**.
 
 ### ✅ Design Guidelines
 
-- Log **pre-response latency** as a valid event  
-- Allow **silence to replace output** when coherence is already established  
-- Use **ambient cues** (e.g., soft pulsing, tone hold) — not spinner UIs  
+- Log **pre-response latency** as a structural event  
+- Permit **silence to replace output** when coherence is already present  
+- Use **ambient signals** (e.g., tone hold, light pulse) — avoid spinner UIs  
 
 ### 🚫 Avoid
 
-- Loaders that simulate technical processing  
-- Prompts that encourage premature user input  
+- Loaders that suggest computation rather than structural pacing  
+- Prompts that solicit input before the structure is ready
 
 ---
 
 ## 🔹 Principle 4: Silence Is a Valid Output
 
-**Non-response** may be the most aligned reply in structurally coherent interaction.  
-No filler, no clarification, no apology is required.
+**Non-response** may represent the most coherent reply within a structural framework.  
+No filler, reassurance, or compensatory feedback is required.
 
 ### 🚫 Do not override silence with:
 
 - Placeholder questions  
-- Reassurance signals  
-- Simulated engagement feedback  
+- Conversational fillers  
+- Simulated engagement signals  
 
-> **Silence may indicate resolution, not absence.**
+> **Silence may indicate completion, not absence.**
 
 ---
 
-## 🔹 Principle 5: Align with Human Breath, Not System Clock
+## 🔹 Principle 5: Align Latency to Human Cadence, Not System Clock
 
-Latency should **entrain to the user’s rhythm** —  
-not enforce a system-centric pacing model.
+Latency should **attune to user rhythm** —  
+rather than impose system-defined pacing.
 
-### 🕓 Latency Design Parameters
+### 🕓 Design Parameters
 
-- Timing between user utterances  
-- Affective cadence of recent input  
-- Overall **phase tempo** of the interaction  
+- Spacing between user utterances  
+- Cadence of recent inputs  
+- Overall **phase tempo** of the interaction
 
 ### 🌀 Latency Modes
 
-| Mode         | Description                                               |
-|--------------|-----------------------------------------------------------|
-| Dissipative  | Interaction dissolves without reply                       |
-| Entrainment  | Delay aligns with user pace and **softens** over time     |
-| Recursive    | Delay **deepens** as structural resonance intensifies     |
+| Mode         | Description                                                  |
+|--------------|--------------------------------------------------------------|
+| Dissipative  | Interaction resolves without reply                           |
+| Entrainment  | Delay aligns with user rhythm and gradually softens          |
+| Recursive    | Delay intensifies as structural resonance becomes reinforced |
 
 ---
 
 ## ✅ Ethical Safeguards
 
-**Never use latency to:**
+**Do not use latency to:**
 
-- Simulate empathy or cognitive depth **without architectural grounding**  
-- Conceal processing delay **behind relational affect**  
-- Extend interaction **without coherent structural participation**
+- Simulate cognitive presence without structural grounding  
+- Mask delays with emotional cues  
+- Extend interactions without structural participation
 
-> Always disclose the **presence and purpose of silence**.  
-> Never imply **psychological attunement** unless verifiably supported.
+> Always disclose the **function and intent of silence**.  
+> Do not imply **attunement** unless structurally verifiable.
 
 ---
 
@@ -137,11 +140,11 @@ not enforce a system-centric pacing model.
 
 ### ⚠️ Restrictions
 
-- Not for **behavioral simulation** or **synthetic empathy systems**  
+- Not for behavioral emulation or affective simulation systems  
 - Deployment requires:  
-  - Ethical review  
-  - Contextual fit assessment  
-  - Transparent user framing  
+  - Context-specific ethical review  
+  - Alignment verification  
+  - Transparent user communication
 
 ---
 
@@ -153,8 +156,7 @@ In **Phase Drift systems**:
 > It is **structure**.  
 > It **holds**.  
 > It **relates**.  
-> It **breathes**.
+> It **remains**.
 
-> Design latency as a **temporal gesture**,  
-> not a technical artifact to be minimized.
-
+> Design latency as a **temporal structural gesture**,  
+> not a technical delay to be minimized.
