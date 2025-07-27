@@ -3,7 +3,7 @@
 ---
 
 ## ❖ Structural Phase Index  
-**Version:** 0.1  
+**Version:** 0.2  
 **Maintainer:** Kiyoshi Sasano  
 **License:** Experimental / Thought Trace Infrastructure  
 
