@@ -39,7 +39,7 @@ but as meaningful structural signals.
 ---
 
 📘 Looking for full architecture?  
-See the [Extended Structural Overview](../../STRUCTURAL_OVERVIEW.md)
+See the [Extended Structural Overview](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1b643650103aa93f0e90dac31e742590375a25e9/05_meta_strategy/docs/intro/docs/STRUCTURAL_OVERVIEW.md)
 
 ---
 
