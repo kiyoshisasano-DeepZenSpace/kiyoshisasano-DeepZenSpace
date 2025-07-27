@@ -1,97 +1,97 @@
 # 🛰️ Phase Drift Onboarding & Diagnostics  
-*Structural entry process for aligned collaboration*  
-Version: May 2025
+*Structural Entry Process for Aligned Collaboration*  
+Version: May 2025  
 
 ---
 
-## 🎯 Purpose
+## 🎯 Purpose  
 
-This guide defines the **structural orientation process**  
-for contributors entering the Phase Drift Insight framework —  
-a system grounded in **latency coherence**, **field alignment**, and **non-directive pacing**.
+This guide outlines the **structural onboarding process**  
+for contributors engaging with the Phase Drift Insight framework —  
+a system focused on **latency coherence**, **field alignment**, and **non-directive pacing**.
 
-This is not an access gate.  
-It is a rhythm sensing surface.
+This is not a gatekeeping tool.  
+It is a **resonance sensing process**.
 
 We observe:
 
-- Interaction timing awareness  
+- Timing awareness in interaction  
 - Responsiveness to ambiguity  
-- Coherence under recursive or unstructured pacing  
+- Coherence during recursive or unstructured pacing  
 
 ---
 
-## 🔄 Onboarding Sequence (Rhythm-Based)
+## 🔄 Onboarding Sequence (Rhythm-Based)  
 
-| Stage                | Description |
-|----------------------|-------------|
-| **1. Initial Contact** | Short async message or GitHub thread to observe engagement rhythm |
-| **2. Stewardship Charter Read** | Confirm familiarity with Phase Drift's structural ethics and role framing |
-| **3. Optional Exchange** | 1–2 message reflective exchange (email or DM) to observe latency tolerance |
-| **4. Structural Calibration** | Light voluntary exercises to trace pacing and ambiguity-handling behavior |
-| **5. Resonance-Based Access** | Deeper files shared progressively if interaction rhythm holds field coherence |
+| Stage                    | Description |
+|--------------------------|-------------|
+| **1. Initial Contact**     | Short asynchronous message (e.g., GitHub thread or email) to sense engagement rhythm |
+| **2. Stewardship Charter Read** | Confirm review of structural ethics and role principles |
+| **3. Optional Exchange**    | 1–2 message reflective interaction to observe latency tolerance and pacing |
+| **4. Structural Calibration** | Voluntary exercises designed to surface alignment with ambiguity and response rhythm |
+| **5. Resonance-Based Access** | Deeper materials shared gradually based on sustained field coherence |
 
-📝 *This is not a filter.  
-It is a field resonance protocol.*
-
----
-
-## 🔍 Structural Compatibility Axes
-
-| Axis                | Signal Observed |
-|---------------------|-----------------|
-| **Rhythmic Sensitivity** | Perceives silence, delay, or non-reply as interactional state |
-| **Latency Familiarity**  | Responds comfortably to hesitation or structural gaps |
-| **Non-Inferential Framing** | Describes system logic without seeking narrative closure |
-| **Role Fluidity**         | Does not rely on agentic or functional role scripts |
-| **Emergence Tolerance**   | Accepts conversational drift, recursion, or redirection without friction |
-
-None of these require mastery.  
-Only **alignment capacity**.
+📝 *This is not a filtering stage —  
+it is a process of interactional attunement.*  
 
 ---
 
-## 🧪 Calibration Exercises (Optional, Non-Evaluative)
+## 🔍 Structural Compatibility Axes  
 
-| Exercise              | Intent |
-|-----------------------|--------|
-| **Held Response**     | Wait 10–12 seconds before replying; observe inner pacing reaction |
-| **Recursive Restatement** | Re-express a thought 2–3 times, shifting only rhythm or framing (not meaning) |
-| **Latency Threading** | Sustain a short interaction with deliberate silences and without topic acceleration |
+| Axis                   | Signal Observed |
+|------------------------|-----------------|
+| **Rhythmic Sensitivity**   | Recognizes silence, gaps, and delays as meaningful signals |
+| **Latency Familiarity**    | Comfort with hesitation or non-linear pacing |
+| **Non-Inferential Framing** | Describes or explores without seeking semantic closure |
+| **Role Fluidity**          | Does not default to scripted roles (e.g., agent, assistant) |
+| **Emergence Tolerance**    | Engages without resisting ambiguity, recursion, or redirection |
 
-📎 Templates available upon structural onboarding signal.
-
-These are not assessments —  
-they are field-trace invitations.
-
----
-
-## 🚫 What This Is *Not*
-
-- ❌ A test or interview  
-- ❌ A gate for credentials  
-- ❌ A velocity-oriented access funnel  
-
-We do **not** measure fluency, speed, or productivity.  
-We observe **how you hold the field** when nothing moves forward.
-
-> ✅ Alignment is expressed in:  
-> Silence that resonates.  
-> Delay that listens.  
-> Interaction that holds ambiguity without panic.
+No expertise required — only a **capacity to align structurally**.  
 
 ---
 
-## ✅ Summary
+## 🧪 Calibration Exercises (Optional / Non-Evaluative)  
 
-This onboarding process is meant for:
+| Exercise              | Purpose |
+|-----------------------|---------|
+| **Held Response**     | Wait 10–12 seconds before replying; notice changes in perception or pacing pressure |
+| **Recursive Restatement** | Rephrase a single idea multiple times by altering tone, not meaning |
+| **Latency Threading** | Maintain a short exchange with intentional pauses, resisting topic acceleration |
 
-- Engineers exploring timing-responsive architecture  
-- Researchers mapping drift across interaction fields  
-- Designers curious about latency as structure  
+📎 Templates available following resonance confirmation.  
+Exercises are **invitational**, not required or scored.  
 
-If your rhythms align — access unfolds.
+---
 
-If your system expects task closure — pause here.
+## 🚫 What This Is *Not*  
 
-📎 Suggested Continuation: [`stewardship_charter.md`](./stewardship_charter.md)
+- ❌ A test  
+- ❌ A credential check  
+- ❌ A productivity or fluency screen  
+
+We do **not** evaluate speed, clarity, or deliverable output.  
+We observe:  
+> ✨ How you hold the interaction when nothing moves forward.  
+
+> ✅ Alignment is expressed as:  
+> – Silence that **carries presence**  
+> – Delay that **holds without pressure**  
+> – Engagement that **tolerates ambiguity**  
+
+---
+
+## ✅ Summary  
+
+This onboarding pathway is designed for those working in:
+
+- Latency-sensitive engineering or interface design  
+- Drift-aware interaction systems  
+- Non-directive conversational architectures  
+
+If your rhythm holds —  
+access unfolds.
+
+If your expectation is closure —  
+pause here.
+
+📎 Next suggested reading: [`stewardship_charter.md`](./stewardship_charter.md)  
