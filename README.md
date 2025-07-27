@@ -38,6 +38,11 @@ but as meaningful structural signals.
 
 ---
 
+📘 Looking for full architecture?  
+See the [Extended Structural Overview](../../STRUCTURAL_OVERVIEW.md)
+
+---
+
 ## 📂 Repository Structure (v2025)
 
 ```
