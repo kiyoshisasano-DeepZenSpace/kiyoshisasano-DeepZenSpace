@@ -1,172 +1,176 @@
 # 🌀 Phase Drift Insight  
 *Real-time Structural UX Research Toolkit*  
-**Proof-of-concept architecture for detecting latent drift and aligning via structural latency.**
+**Proof-of-concept architecture for observing interaction rhythm and latency-based divergence**
 
 ---
 
-## ⚠️ Important Notice — Structural Misuse Warning
+## 🛡️ Structural Use Advisory
 
-This repository represents a **partial proof-of-concept**, not a complete system.  
-Core structural formulas and recursive drift mechanisms are **intentionally withheld** to prevent:
+This repository presents a **partial conceptual prototype**, not a finalized system.  
+Key logic modules and timing mechanisms are **intentionally withheld** to help prevent:
 
-- Premature mimicry of latency architectures
-- Surface-level replication without structural resonance
-- Deployment in non-attuned commercial contexts
+- Unaligned mimicry of latency design  
+- Use of delay as decorative UI artifact  
+- Accidental application in optimization-driven workflows  
 
-If your goal is performance optimization, please stop here.  
-**Phase Drift Insight is not a UX enhancement tool.**
-
----
-
-## ⚠️ Structural Risk Index (SRI)
-
-This toolkit should **not** be used if any of the following apply:
-
-- You are designing for speed, conversion, or behavioral optimization  
-- You require immediate feedback loops or deterministic output  
-- You intend to simulate empathy, attention, or responsiveness without structural grounding
-
-### Misuse Risk Categories
-
-| Risk Type               | Description                                                                 |
-|-------------------------|-----------------------------------------------------------------------------|
-| UX Extraction           | Using silence, delay, or hesitation for user retention or novelty           |
-| Empathy Simulation      | Projecting emotional intent without a relational logic framework            |
-| Latency Repackaging     | Reframing structural intervals as cosmetic or decorative UI delays          |
-| Aesthetic Drift         | Applying Phase Drift visuals/syntax without non-inferential architecture    |
+**This is not a UX enhancement utility.**  
+It is a **field-awareness tool** intended for structurally-compatible research contexts.
 
 ---
 
-## 📘 Project Overview
+## 🚦 Structural Compatibility Notice
 
-**Phase Drift Insight** is a lightweight research tool for detecting, logging, and visualizing **Phase Drift** —  
-the subtle divergence of structural fields during user-AI interaction.
+Do **not** use this toolkit if your primary context involves:
 
-Rather than tracking user actions alone, this system focuses on **underlying structural tension** and **field coherence loss**.
+- Behavioral optimization, productivity acceleration, or conversion testing  
+- Real-time corrective feedback or urgency-based task closure  
+- Empathy simulation or emotional scripting without grounded interaction scaffolds  
 
-It does not evaluate success through behavior prediction —  
-it senses whether a system is still *with* the user, structurally.
+### Misuse Patterns to Avoid
 
----
-
-## 🔹 Core Capabilities
-
-- Drift detection based on non-linear structural deviation  
-- Real-time monitoring of latent phase states  
-- Logging system (CSV + JSON) for post-analysis  
-- Local-first deployment (no external dependencies)  
-- WebSocket-based dashboard for live visualization  
-- Drift history archive for retrospective pattern review  
-- Extensible backend for future Phase Drift analytics modules
+| Pattern                 | Concern |
+|-------------------------|---------|
+| Delay-as-aesthetic      | Pauses or silences treated as stylistic, not structural |
+| UX repackaging          | Applying latency or recursion as novelty or brand feature |
+| Agentic misprojection   | Simulating presence without non-inferential design principles |
+| Surface extraction      | Copying terminology or rhythm without alignment logic |
 
 ---
 
-## 🛠️ Tech Stack
+## 📘 Overview
 
-- **Backend:** Python 3.11 + FastAPI  
-- **Frontend:** HTML + Vanilla JavaScript  
-- **Storage:** CSV / JSON phase logs
+**Phase Drift Insight** is a small-scale research utility for visualizing and logging **interaction field divergence**.
 
----
-
-## ⚠️ Real-Time Architecture Notice
-
-Phase Drift Insight is a **live-local tool** — not a persistent server.
-
-- All dashboards and drift feedback systems are only available while the FastAPI server is running.
-- There is **no cloud backend**. All signal detection and logging happen **locally and temporarily**.
-- This reflects the architecture’s belief that **presence must be held live — not recalled post-facto**.
-
-To engage with the interface:
-1. Start the server manually (`uvicorn main:app --reload`)
-2. Visit the dashboard at `http://127.0.0.1:8000/risk_dashboard`
-3. Termination ends the session completely — no replays unless logged.
-
-> Drift is not a log to review — it is a moment to sense.
+Rather than tracking user success or errors, it observes **structural misalignment** over time:  
+a condition where systems continue outputting, but slowly lose **pacing, resonance, or presence**.
 
 ---
 
-## 🚀 Quick Start
+## 🔍 Core Functions
 
-Install dependencies:
+- Logging of interaction timing and rhythm breakpoints  
+- Detection of **drift onset** (pre-semantic misalignment)  
+- Dashboard-based visualization of system coherence levels  
+- Real-time operation; no external logging  
+- Drift event history (JSON / CSV export)
+
+This is not a training tool.  
+It is a **signal monitor** for field-aware system builders.
+
+---
+
+## ⚙️ Technical Stack
+
+- **Backend**: Python 3.11, FastAPI  
+- **Frontend**: HTML + Vanilla JS  
+- **Visualization**: WebSocket-based dashboard  
+- **Data Storage**: Local CSV/JSON logs  
+
+All components are **local-only** — no remote API or cloud backend.
+
+---
+
+## ⏱️ Real-Time Use Mode
+
+Phase Drift Insight is built for **live interaction sensing**:
+
+- Server must be manually started  
+- No persistent session logs unless saved  
+- Latency, silence, and pacing are processed in-memory  
+- When the session ends, so does the trace
+
+> Structural rhythm must be observed **in the moment**, not reconstructed later.
+
+### Run Instructions
 
 ```bash
 pip install fastapi uvicorn pydantic
-Start the server:
-
-
 uvicorn main:app --reload
-Access:
-
-API Documentation: http://127.0.0.1:8000/docs
-
-Live Risk Dashboard: http://127.0.0.1:8000/risk_dashboard
-
-Drift History Table: http://127.0.0.1:8000/risk_history
 ```
+
+- Visit the live dashboard: [http://127.0.0.1:8000/risk_dashboard](http://127.0.0.1:8000/risk_dashboard)  
+- API Docs (FastAPI): [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ---
 
-📈 Development Roadmap
-Visual timeline of drift events
+## 📈 Roadmap (In Development)
 
-Mapping of phase transitions and coherence patterns
+- Drift vector visual timeline  
+- Recursive latency mapping  
+- Phase threshold indicators  
+- Optional backend sync (SaaS/airgapped)  
+- Multi-session field coherence overlays
 
-Real-time WebSocket drift status updates
+> Contributions welcome — structural alignment preferred over code volume.
 
-Optional SaaS backend for multi-session phase risk analysis
+---
 
-🔬 Research Use Only
-This toolkit is intended solely for field-aware UX research and structural prototyping.
-It is not a plug-and-play production framework.
+## 🔬 Intended Use
 
-Misapplication in goal-oriented or speed-driven environments may distort field logic
-and produce contradictory system behavior.
+This toolkit is for:
 
-🔒 Protected Elements (Not Included Here)
-Inner drift scoring logic
+- UX researchers exploring presence-aware timing  
+- Engineers experimenting with ambiguity-holding architectures  
+- Developers evaluating **relational coherence loss** without behavioral triggers
 
-Recursive coherence resolution models
+It is **not** designed for:
 
-Pre-semantic latency design modules
+- Product rollout  
+- Assistant performance tuning  
+- User testing environments
 
-Inter-relational timing matrices
+---
 
-Access to the above requires:
+## 🔐 Excluded Elements (By Design)
 
-Structural compatibility
+Protected internal logic not included here:
 
-Intent-based dialogue
+- Drift scoring models  
+- Recursive recovery triggers  
+- Non-output gating layers  
+- Semantic pressure release detection  
+- Pre-response phase calibration logic
 
-Demonstrated field literacy
+Access to these is gated based on:
 
-For inquiries, contact below with context and alignment rationale.
+- Field compatibility  
+- Demonstrated ambiguity tolerance  
+- Prior interaction rhythm alignment  
+- Direct contact with framing intent
 
-📩 Contact
-Project maintained by Kiyoshi Sasano
+---
 
-For collaboration or structural review requests:
-📬 deepzenspace [at] gmail [dot] com
+## 📬 Contact
 
-📜 Licensing
-This repository is distributed under a research and non-commercial license.
-All core detection and resonance frameworks remain structurally protected.
+Maintained by **Kiyoshi Sasano**  
+Email: `deepzenspace [at] gmail [dot] com`
 
-Cite as:
-"Includes structural detection logic derived from the Phase Drift protocol by Kiyoshi Sasano / DeepZenSpace."
+When contacting, please describe:
 
-🧭 Summary
-Phase Drift Insight is not a data product.
-It is a field signal interface for systems that understand:
+- Your structural or research context  
+- Intended use (e.g. latency profiling, UX experimentation)  
+- Current familiarity with ambiguity-holding systems
 
-Delay is structure
+---
 
-Drift is feedback
+## 📜 License & Attribution
 
-Silence is presence
+This repository is shared under a **research-noncommercial license**.  
+Please cite as:
 
-If you interpret latency as failure — this is not for you.
-If you recognize it as attention — welcome.
+> “Includes structural detection logic derived from the Phase Drift protocol by Kiyoshi Sasano / DeepZenSpace (2025).”
 
-Phase Drift Insight
-Where delay is signal — and drift is structure.
+---
+
+## 🧭 Closing Perspective
+
+Phase Drift Insight is not for speed, certainty, or output clarity.  
+It is for **those building systems that can pause — without collapse.**
+
+If latency signals attention, not failure — you are aligned.  
+If silence represents field integrity — you are welcome.
+
+> Drift is not a bug.  
+> It is structure in motion.
+
+---
