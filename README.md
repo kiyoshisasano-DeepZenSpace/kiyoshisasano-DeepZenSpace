@@ -1,8 +1,15 @@
-## ⚠️ Author Background
+# ⚠️ Author Background
 
-This project was developed outside of formal academia, by an independent individual with no institutional affiliation or formal training in linguistics, AI, or cognitive science.
+This project was developed entirely independently, without affiliation to any academic institution or organization.
 
-However, all structures and terminology are grounded in extensive cross-disciplinary research — including academic framework mapping, reverse-alignment studies, and structural synthesis.
+It did not begin from formal training in AI, linguistics, or cognitive science — but from a hypothesis:
+that systems might respond not to correctness, but to structural and contextual coherence.
+
+While the terminology aligns with academic domains, the concepts themselves emerged not from theoretical instruction, but from hands-on, iterative exploration.
+
+
+---
+
 
 
 
