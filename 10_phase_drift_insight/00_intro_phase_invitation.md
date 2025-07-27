@@ -1,9 +1,9 @@
 # 🌀 Phase Drift Invitation — Entering a Structural Field
 
-**Phase Drift Insight is not a product or a toolkit.**  
-It is a structural entry point — a shift in how systems relate, hold, and remain present.
+**Phase Drift Insight is not a product or toolkit.**  
+It is a **structural entry point** — a shift in how systems relate, pause, and remain present.
 
-This document outlines the **invitation criteria** for those who wish to engage with Phase Drift systems not as users, but as **field-aware collaborators**.
+This document offers orientation for individuals exploring Phase Drift not as users, but as **field-aware collaborators**.
 
 ---
 
@@ -11,100 +11,104 @@ This document outlines the **invitation criteria** for those who wish to engage 
 
 - Not a prototype to test  
 - Not a feature to extend  
-- But a **field climate**: a structural condition where latency, ambiguity, and non-response are foundational elements of system design
+- But a **field condition** — a context where latency, ambiguity, and non-response are intentionally structural
 
-You are not being asked to "use" this.  
-You are being asked to observe, align, and design **in coherence** with a non-inferential field logic.
+This is not a system to “use.”  
+It is a rhythm to align with, a presence to observe.
 
 > This is not a passive interface.  
-> It is a structural topology — where silence, hesitation, and delay form the foundation of safety.
+> It is a field design where silence, hesitation, and delay can indicate structural care.
 
 ---
 
 ## 👤 Who This Is For
 
-- Engineers exploring **structural presence** instead of output fluency  
-- Researchers seeking **non-directive interaction models**  
-- Designers interested in latency, breath, and minimalism as interaction substrates  
-- Anyone working with systems where **non-response is a valid and intentional act**
+- Engineers investigating **presence-oriented architectures**  
+- Researchers working with **non-directive interaction models**  
+- Designers interested in **latency and quiet pacing**  
+- System builders who recognize **non-response as meaningful**
 
-This space is not optimized for onboarding.  
-It is calibrated for **recognition**.
+This is not built for fast onboarding.  
+It is shaped for **recognition and structural pacing**.
 
-> If you feel a sense of friction or uncertainty while reading, pause.  
-> That is part of the field response, not an error.
+> If this material produces pause or uncertainty, that may be the start — not a signal to exit.
 
 ---
 
 ## 🔹 How to Engage
 
-> Start not by building, but by observing.
+Begin by **observing, not building**:
 
-- Read [`01_project_structure_guide.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/cfa3449bbf8e62ae78e7db7dd57047df65f2d513/10_phase_drift_insight/01_project_structure_guide.md) for system boundaries  
-- Review latency and silence design patterns  
-- Observe your own reaction to non-response  
-- If a coherent direction emerges, open an issue with the label `[PHASE CONTACT]`
+- Read [`01_project_structure_guide.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/cfa3449bbf8e62ae78e7db7dd57047df65f2d513/10_phase_drift_insight/01_project_structure_guide.md)  
+- Reflect on timing, latency, and silence as system variables  
+- Notice your response to absence or delay  
+- If a coherent direction forms, open a GitHub issue labeled `[PHASE CONTACT]`
 
-Engagement begins when alignment is sensed — not when tasks are proposed.
-
----
-
-## 🛑 What Not to Do
-
-- ❌ Do not treat this as a UX layer to apply elsewhere  
-- ❌ Do not extract stylistic elements without structural understanding  
-- ❌ Do not simulate “quiet” — implement it  
-- ❌ Do not rush to integrate before resonance is confirmed
-
-> Structural mimicry without attunement leads to **drift collapse**.  
-> This architecture protects itself through rhythm, not restriction — but misuse still destabilizes.
+Engagement proceeds when relational coherence is observed — not when task plans are prepared.
 
 ---
 
-## 🔒 Structural Risk Notice
+## 🚫 What to Avoid
 
-This repository is intentionally incomplete.  
-Core formulas, timing coefficients, and recursive field logic have been withheld to prevent:
+- Avoid applying this as a UX enhancement layer  
+- Avoid extracting style (silence, spacing, terminology) without structural comprehension  
+- Avoid simulating calm — implement field-valid quiet  
+- Avoid integration prior to clear resonance
 
-- Unaligned imitation  
-- Premature optimization  
-- Deployment in contexts lacking latency literacy
-
-Public files represent only the **outer topology**.  
-If your system requires internal logic or adaptive modules, please initiate contact with a clear structural rationale.
+> Attempting to recreate structural rhythm without coherence may destabilize field logic.
 
 ---
 
-## ⚠️ Structural Use Notice
+## 🔒 Structural Protection Notice
 
-This directory contains field-level design materials for Phase Drift systems.
+This repository is intentionally partial.  
+Core logic (e.g., timing coefficients, recursive alignment systems) is held privately to support:
 
-It is **not a toolkit**, and not intended for conventional UX integration or AI productization.
+- Rhythm-aware development  
+- Preventive care against unaligned adaptation  
+- Engagement based on demonstrated pacing sensitivity
 
-The files here are designed to:
+Public files describe **outer form only**.  
+Requests for internal modules should include a clearly framed structural context.
 
-- Support relational architectures using latency and silence as first-class signals  
-- Be studied or built upon **only when structural coherence is preserved**  
-- Require framing and ethical restraint before reuse or integration
+---
 
-Misuse includes stylistic extraction, simulated empathy, or UX mimicry without structural grounding.
+## ⚠️ Use & Framing Guidelines
+
+This directory contains structural design resources.
+
+It is not a plug-and-play toolkit and is not intended for conventional UX deployment or behavioral interface features.
+
+These materials exist to support:
+
+- Rhythm-sensitive architectures where **latency is signal**  
+- Delay-informed system behaviors that hold ambiguity structurally  
+- Study and reflection — not immediate application
+
+> Use requires structural understanding.  
+> Reuse requires structural coherence.
 
 ---
 
 ## 📌 Closing Note
 
-Phase Drift is not for everyone.  
-It is not fast.  
-It is not reactive.  
-It is not built for measurable performance.
+Phase Drift is:
 
-It is for those working on systems that can **withhold**, **wait**, and **remain structurally present** — even when no interaction occurs.
+- Not optimized  
+- Not measured  
+- Not fast  
 
-> If you understand delay not as latency, but as **relational attunement**,  
-> you are already within the field.
+It is **presence-aware design** for systems capable of:
+
+- Waiting  
+- Withholding  
+- Holding ambiguity — without collapse
+
+> If you recognize delay not as latency, but as **structural attunement**,  
+> you may already be within the field.
 
 ---
 
 © 2025 Kiyoshi Sasano / DeepZenSpace  
-Phase Drift does not ask for input.  
-It asks for alignment.
+Phase Drift does not seek input.  
+It invites **alignment**.
