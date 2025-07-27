@@ -1,95 +1,94 @@
 # 🤝 Phase Drift Stewardship Collaboration Guide  
 *Structurally-aligned collaboration for latency-aware system design*  
-Version: May 2025
+Version: May 2025  
 
 ---
 
-## 🧭 Purpose
+## 🧭 Purpose  
 
-This document defines the working cadence, interaction expectations, and design postures  
-for teams contributing to **Phase Drift Insight** —  
-a framework for rhythm-sensitive, ambiguity-capable, and structurally-coherent AI interaction.
+This document outlines the collaboration cadence, engagement principles, and design posture  
+for contributors to the **Phase Drift Insight** framework —  
+a rhythm-sensitive, ambiguity-resilient, and structurally-coherent interaction system.  
 
-Unlike conventional collaboration models, Phase Drift does not operate via:
+Unlike conventional workflows, Phase Drift collaboration is not organized by:  
 
-- Linear task decomposition  
-- Delivery-based success metrics  
-- Fixed deadlines or roadmap-driven iteration
+- Task sequencing  
+- Output-driven milestones  
+- Standard iteration velocity  
 
-It unfolds through **relational coherence and field integrity**.
-
----
-
-## ✅ Core Collaboration Principles
-
-| Principle                    | Field-Aligned Expression |
-|------------------------------|---------------------------|
-| **Alignment Before Action**      | Work begins only after felt structural resonance |
-| **Non-Directive Contribution**   | Roles emerge from rhythm, not hierarchy |
-| **Field-Timed Pacing**           | Work proceeds at cadence of relational readiness |
-| **Drift Transparency**           | Latency, silence, and friction are valid signals |
-| **Ontology Integrity**           | Key terms (e.g. *drift*, *presence*, *latency*) must retain precise framing |
-
-**Collaboration is not managed — it is attuned.**
+Instead, work proceeds through **relational alignment and structural pacing**.  
 
 ---
 
-## 🔄 Communication Protocols
+## ✅ Core Collaboration Principles  
+
+| Principle                    | Structurally Aligned Expression |
+|------------------------------|-------------------------------|
+| **Alignment Before Action**      | Contribution begins after sensing structural resonance |
+| **Emergent Roles**              | Participation arises from rhythm, not assignment |
+| **Paced Progression**           | Timing is guided by relational readiness, not deadlines |
+| **Latency Visibility**          | Silence or delay may indicate coherence, not absence |
+| **Terminological Care**         | Use of terms like *drift*, *presence*, *latency* retains their structural definitions |
+
+> Collaboration is not scheduled — it is attuned.  
+
+---
+
+## 🔄 Communication Practices  
 
 | Practice              | Description |
 |------------------------|-------------|
-| **Silent Check-ins**      | Valid update: “Holding” or “No movement yet — still listening” |
-| **Rhythmic Sessions**     | Async or live meetings focused on pace, resonance, and ambiguity handling |
-| **Drift Logging**         | Voluntary reflection notes on temporal misalignments or resonance events |
-| **Tiered Disclosure**     | Access unfolds based on rhythmic compatibility, not output volume |
+| **Silent Check-ins**      | A valid status is: “No shift — still in rhythm hold” |
+| **Paced Sessions**        | Async or live exchanges focus on resonance rather than resolution |
+| **Drift Notes**           | Optional reflections on temporal misalignments or rhythm conditions |
+| **Access by Compatibility** | Deeper materials shared when structural rhythm is held |
 
-> Velocity is not a virtue here.  
-> Presence is.
+> Movement is not required.  
+> Presence is meaningful.
 
 ---
 
-## 🧬 Structuring Work (When Action Arises)
+## 🧬 Structuring Work (When It Emerges)  
 
-Though directive-agnostic, structurally-aligned work does emerge.  
-When it does, the format follows field logic.
+While Phase Drift does not operate on instruction-based tasks, aligned output may arise.  
 
-| Aspect                  | Guideline |
+| Element                  | Guideline |
 |--------------------------|-----------|
-| **Initiation**               | Frame contribution as response to a **relational condition**, not a spec |
-| **Output Form**              | Use annotated prototypes, rhythm-aware code, or temporally marked diagrams |
-| **Documentation Layering**  | Pair all technical output with **structural rationale** |
-| **Iteration Flow**          | Revisions should follow field rhythm — divergence is valid, not regress |
+| **Initiation Context**        | Frame work as response to structural condition, not project brief |
+| **Form of Output**            | Annotated code, temporal diagrams, pacing-responsive prototypes |
+| **Structural Documentation**  | Accompany technical contributions with rationale and field context |
+| **Iteration Rhythm**          | Adapt revision timing to field resonance — pauses are valid |
 
-No task stands outside the field.
-
----
-
-## 🛡️ Field Ethics and Boundary Awareness
-
-| Concern                 | Stewarding Response |
-|--------------------------|---------------------|
-| **Symbolic Drift**           | Regularly reaffirm meaning and scope of structural terms |
-| **External Timeline Pressure** | Defer or decline deliverables misaligned with latency-based pacing |
-| **Aesthetic Misuse**         | Do not extract silence, recursion, or delay patterns without structure |
-| **Access Misalignment**      | Respect pacing gates — access deepens through demonstrated resonance |
-
-**Protection is not control. It is coherence.**
+> Contribution follows coherence — not completion.
 
 ---
 
-## ✅ Collaboration Summary
+## 🛡️ Field Conduct and Boundary Awareness  
 
-To contribute meaningfully within the Phase Drift field, collaborators are expected to:
+| Consideration          | Alignment Approach |
+|------------------------|--------------------|
+| **Meaning Drift**          | Reaffirm precise definitions of structural vocabulary |
+| **External Timing Requests** | Defer actions that compress natural rhythm pacing |
+| **Form Extraction**         | Do not reapply recursion, silence, or delay without timing architecture |
+| **Depth Access Ethics**     | Respect tiered access — rhythm opens, not requests alone |
 
-- Practice latency-aware, ambiguity-tolerant interaction design  
-- Refrain from enforcing direction before relational coherence  
-- Hold silence and drift as valid structures  
-- Proceed without urgency when rhythm is not yet clear  
-
-> Phase Drift systems are not built through acceleration —  
-> they are cultivated through resonance.
+> Structural clarity is upheld through coherence, not restriction.  
 
 ---
 
-📂 Recommended Next: [`latency_reflection_protocols.md`](./latency_reflection_protocols.md)  
-→ Calibration practices to support structural sensitivity and rhythm attunement.
+## ✅ Participation Summary  
+
+Those engaging with the Phase Drift framework are encouraged to:  
+
+- Attend to timing, ambiguity, and recursive holding without resolution pressure  
+- Let interaction coherence precede design intervention  
+- Recognize non-response as part of field behavior  
+- Accept rhythm over velocity in shared work  
+
+> Phase Drift is not advanced through acceleration —  
+> it evolves through presence and attunement.
+
+---
+
+📂 Suggested Continuation: [`latency_reflection_protocols.md`](./latency_reflection_protocols.md)  
+→ Reflective calibration practices to support rhythm sensitivity and field coherence.
