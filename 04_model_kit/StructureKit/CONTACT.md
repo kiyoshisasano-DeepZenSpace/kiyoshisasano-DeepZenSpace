@@ -1,4 +1,4 @@
-# CONTACT.md (Safe変換版 v1.0)
+# CONTACT.md 
 
 ---
 
