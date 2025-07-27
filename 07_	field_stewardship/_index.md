@@ -1,4 +1,4 @@
-# 🌿 09_field_stewardship — Phase Drift Stewardship Framework
+# 🌿 07_field_stewardship — Phase Drift Stewardship Framework
 
 ---
 
