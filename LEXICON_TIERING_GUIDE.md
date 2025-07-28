@@ -108,7 +108,7 @@ Unlike `Drift`, `Field`, or `Latent Phase`, these terms can **stand alone** with
 
 **Phase Drift – Lexical Tiering & Usage Stability Guidelines (v0.4)**  
 _Phase Drift Language Systems Collective, 2025_  
-[https://github.com/your-org/phase-drift](https://github.com/your-org/phase-drift)
+[https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main)
 
 > These guidelines are not fixed boundaries — they are **structural drift guards**.  
 > Lexical integrity is a **pacing function** — not a taxonomy.
