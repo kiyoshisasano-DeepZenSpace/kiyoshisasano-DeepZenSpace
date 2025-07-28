@@ -1,8 +1,9 @@
-# 📘 Phase Drift – Lexical Tiering & Usage Stability Guidelines (v0.3)
+# 📘 Phase Drift – Lexical Tiering & Usage Stability Guidelines (v0.4)
 
-> ⚠️ This document outlines **lexical tier classification** and **usage-level stability**  
-> for the ten semantically unstable or tentative terms introduced in *Phase Drift Lexicon v0.3*.  
-> It supports theoretical consistency and structural integrity across collaborative use.
+> ⚠️ This document outlines **lexical tier classification**, **usage-level stability**,  
+> and a **safe term appendix** for both tentative and structurally sound terms  
+> used in the *Phase Drift* framework. It supports theoretical consistency, safe reuse,  
+> and cross-domain intelligibility.
 
 ---
 
@@ -26,7 +27,7 @@
 
 ---
 
-## 🔡 Lexicon Tier Table
+## 🔡 Lexicon Tier Table (Tentative/Unstable Terms)
 
 | Term                  | Tier        | Stability | Usage Notes |
 |-----------------------|-------------|-----------|-------------|
@@ -54,13 +55,60 @@
 
 ---
 
-## 📘 Citation
+## ✅ Supplement: Safe Term Lexicon v0.1-draft
 
-**Phase Drift – Lexical Tiering & Usage Stability Guidelines (v0.3)**  
-_Phase Drift Language Systems Collective, 2025_  
-[https://github.com/your-org/phase-drift](https://github.com/your-org/phase-drift)
+> This appendix presents a set of **structurally safe and externally explainable terms**  
+> drawn from Phase Drift's discourse architecture. These are suitable for reuse in documentation,  
+> educational material, and cross-disciplinary modeling.
+
+### 🔑 Safe Term Criteria
+
+- Widely supported in existing literature (linguistics, HCI, cognitive science)
+- Low metaphorical ambiguity
+- Stable scope and transferable structure
+- Usable without interpretive framing
 
 ---
+
+### 📘 Safe Term Table
+
+| Term            | Tier        | Scope Description                             | External Usability      |
+|-----------------|-------------|-----------------------------------------------|--------------------------|
+| **Turn**        | `@support`  | Atomic unit of interaction/discourse          | ✅ Widely used in CA      |
+| **Attention**   | `@support`  | Shared focus structure in discourse           | ✅ Cross-disciplinary     |
+| **Segment**     | `@derived`  | Delimited unit of speech or gesture           | ✅ Structural modeling    |
+| **Timing**      | `@support`  | Relative temporal pacing                      | ✅ UI, UX, psycholinguistic use |
+| **Cue**         | `@support`  | Observable trigger for state/shift            | ✅ Broad applicability    |
+| **Feedback**    | `@derived`  | Reactive update or acknowledgment pattern     | ✅ Stable across domains  |
+| **Modality**    | `@core`     | Communicative channel (e.g., voice, gesture)  | ✅ Multimodal interaction |
+| **Alignment**   | `@derived`  | Semantic or structural convergence            | ✅ Discourse analysis     |
+| **Reference**   | `@support`  | Referential relation (pronouns, deixis, etc.) | ✅ Semantics, pragmatics  |
+
+---
+
+### 📌 Deployment Scenarios
+
+| Use Case                   | Recommendation        |
+|----------------------------|------------------------|
+| Internal docs              | ✅ Use freely           |
+| Academic writing           | ✅ Use with citations   |
+| Cross-domain collaboration | ✅ Use as shared layer  |
+| Phase Drift theory core    | ❌ Do not anchor models |
+
+---
+
+## 🔏 Safety Note
+
+This lexicon defines **operational scaffolding terms**, not core generative metaphors.  
+Unlike `Drift`, `Field`, or `Latent Phase`, these terms can **stand alone** with minimal risk of misinterpretation.
+
+---
+
+## 📘 Citation
+
+**Phase Drift – Lexical Tiering & Usage Stability Guidelines (v0.4)**  
+_Phase Drift Language Systems Collective, 2025_  
+[https://github.com/your-org/phase-drift](https://github.com/your-org/phase-drift)
 
 > These guidelines are not fixed boundaries — they are **structural drift guards**.  
 > Lexical integrity is a **pacing function** — not a taxonomy.
