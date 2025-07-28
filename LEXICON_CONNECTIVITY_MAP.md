@@ -87,7 +87,7 @@ A silent build-up creates an unseen structure that eventually aligns into stabil
 
 **Phase Drift – Lexical Connectivity Map (v0.2)**  
 _Phase Drift Language Systems Collective, 2025_  
-[https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/](https://github.com/your-org/phase-drift)
+[https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main)
 
 > This map is **a topological scaffold**, not a rule system.  
 > Use it to trace **structure in motion**, not to fix meaning.
