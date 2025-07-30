@@ -24,7 +24,7 @@ PLD bridges linguistic theory, discourse analysis, human-computer interaction (H
 | `/00_introduction.md` | Overview and rationale |
 | `/01_foundations.md` | Theoretical grounding and interdisciplinary lineage |
 | `/02_phase_structures.md` → `/09_interface_affordance.md` | Phase types, repair mechanisms, resonance fields, alignment, and interface affordance |
-| `/10_diagram/structure_topograph.svg` | Visual system diagram: full PLD structural topology |
+| `/10_phase_loop_dynamics.svg` | Visual system diagram: full PLD structural topology |
 | `/11_conclusion.md` | Cross-domain synthesis and future research outlook |
 | `/12_phase_loop_dynamics/` | Sample logs, YAML traces, glossary, and academic citations |
 
