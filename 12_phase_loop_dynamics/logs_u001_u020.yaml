@@ -1,5 +1,9 @@
+> The logs included in this repository are generated outputs based on syntactic observation experiments conducted using ChatGPT-4, guided by specific prompts and structural templates.  
+> They are organized according to a consistent syntactic theory and are intended to exemplify loop transitions, drift detection, and reconfiguration processes within the Phase Drift framework.  
+> As these are generated outputs, exact reproducibility is not guaranteed; however, they remain valuable for the analysis of observed syntax, phrasing patterns, and phase structures.
+
+
 # 📄 Phase Loop Dynamics - Sample Logs (U001–U020)
-# YAML形式で構文観察ログの代表例を収録
 unit_id: U001
 phase_status: initial_latent
 loop: Loop_03
