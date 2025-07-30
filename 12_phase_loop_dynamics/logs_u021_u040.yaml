@@ -1,0 +1,301 @@
+
+unit_id: U021
+phase_status: feedback_loop_initiated
+loop: Loop_04
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "internal-reflexive"
+drift_features:
+  - rhythm hesitation
+  - formulation adjustment
+content: |
+  少しだけ語順を変えただけなのに、
+ 印象が変わった気がした。
+  たぶんそれは、自分へのフィードバックが働いたせいだと思う。
+
+unit_id: U022
+phase_status: segment_drift_detected
+loop: Loop_02
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "structural"
+drift_features:
+  - blurred transition
+  - non-explicit cue
+content: |
+  あのとき、話題は変わったように見えなかったのに、
+  あとで見返すと視点がずれていた。
+  Segmentは明示されなかったけど、確かにPhaseが切れていた。
+
+unit_id: U023
+phase_status: silence_triggered_drift
+loop: Loop_03
+vocab_triggered:
+  - term: "Silence"
+    vocab_mode: "delayed"
+drift_features:
+  - latent drift onset
+  - interpretive pause
+content: |
+  沈黙があったせいで、何を言おうとしていたのか忘れてしまった。
+  でもそのあと、別の流れが始まっていて、
+  それは意図していなかったPhase Driftだったかもしれない。
+
+unit_id: U024
+phase_status: resonance_through_uncertainty
+loop: Loop_05
+vocab_triggered:
+  - term: "Resonance"
+    vocab_mode: "emergent"
+drift_features:
+  - echo ambiguity
+  - emotional reentry
+content: |
+  「……そうかもしれないね」と言ったとき、
+  その語感が、自分の中で響いていた。
+  終わらない語尾が、新しい話の入口になっていたように思う。
+
+unit_id: U025
+phase_status: feedback_after_segment
+loop: Loop_04
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "referenced"
+  - term: "Feedback"
+    vocab_mode: "structural"
+drift_features:
+  - segment reflection
+  - feedback repair
+content: |
+  さっきのSegmentで、説明は一度切れていた。
+  でもそのあと、「補足するとね……」と続けたのは、
+  ずれてしまった構文を立て直したかったからだと思う。
+
+unit_id: U026
+phase_status: silent_repair_tension
+loop: Loop_04
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "inner-reflective"
+drift_features:
+  - tension accumulation
+  - phase hesitancy
+content: |
+  あの返事の直後、すぐに言葉が出なかった。
+  でもその沈黙のなかで、自分が何か取りこぼしたことに気づいた。
+  それが次の構文への調整だったんだと思う。
+
+unit_id: U027
+phase_status: resonance_hint_phase
+loop: Loop_05
+vocab_triggered:
+  - term: "Alignment"
+    vocab_mode: "mimetic"
+  - term: "Resonance"
+    vocab_mode: "trace"
+drift_features:
+  - phrase return
+  - echo emergence
+content: |
+  ……さっきのあの言葉、まだ響いてる。
+  言い回しが戻ってきて、今の文の中に自然に混ざっていた。
+  共鳴というより、再配置された感じだった。
+
+unit_id: U028
+phase_status: drift_segment_recovery
+loop: Loop_02
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "boundary"
+drift_features:
+  - partial re-segmentation
+  - drift-to-repair trigger
+content: |
+  「つまり……」という導入で話が切り替わったあの瞬間、
+  明らかに構文の断層があった。
+  今思えば、そこがSegmentだったんだと思う。
+
+unit_id: U029
+phase_status: latent_phase_shift
+loop: Loop_01
+vocab_triggered:
+  - term: "Cue"
+    vocab_mode: "emergent"
+drift_features:
+  - unmarked transition
+  - delayed segmentation
+content: |
+  気づかないうちに話題が変わっていた。
+  でもあとで思い返すと、「でもさ……」という言葉が
+  Phaseを切り替えたCueだった。
+
+unit_id: U030
+phase_status: feedback_resonance_emergent
+loop: Loop_04
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "cognitive"
+  - term: "Resonance"
+    vocab_mode: "emergent"
+drift_features:
+  - reflection loop
+  - phase alignment
+content: |
+  あの応答のあと、自分の言葉が相手にどう響いていたかを考えた。
+  それが次の構文に自然と影響を与えていたような気がする。
+  たぶんそれがフィードバックであり、同時に共鳴でもあった。
+
+unit_id: U031
+phase_status: resonance_mimicry_reentry
+loop: Loop_05
+vocab_triggered:
+  - term: "Resonance"
+    vocab_mode: "mimetic"
+drift_features:
+  - echo reentry
+  - phrase mimicry
+content: |
+  ……あの言葉の「調子」がまた出てきた。
+  さっきの構文とリズムが重なって、今の語りに入り込んでいた。
+
+unit_id: U032
+phase_status: segment_recognition
+loop: Loop_01
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "structural"
+drift_features:
+  - delayed awareness
+  - implicit shift
+content: |
+  当時は気づいてなかったけど、あとで読み返したら
+  明らかにそこで話が切れていた。
+  Segmentとして認識されたのは時間が経ってからだった。
+
+unit_id: U033
+phase_status: phase_conflict_resolution
+loop: Loop_03
+vocab_triggered:
+  - term: "Silence"
+    vocab_mode: "resolution"
+drift_features:
+  - phase interruption
+  - restart after silence
+content: |
+  ……しばらく何も言えなかった。
+  でも、その沈黙のあと、なぜかすんなり話を続けられた。
+  その間に、Phaseの葛藤が解消されたのかもしれない。
+
+unit_id: U034
+phase_status: feedback_initiated
+loop: Loop_04
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "retrospective"
+drift_features:
+  - mismatch detection
+  - reflective reentry
+content: |
+  「ちょっと違ったかも」って、あとから思ったんです。
+  それが新しい構文のスタートだった気がします。
+  フィードバックは、前のPhaseの整理でもあった。
+
+unit_id: U035
+phase_status: segment_drift_trace
+loop: Loop_02
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "implicit"
+drift_features:
+  - hidden boundary
+  - posthoc shift awareness
+content: |
+  最初は連続してると思っていたのに、
+  話が微妙にズレていって、いつのまにか別のPhaseに入っていた。
+  Segmentがあったことに気づいたのは、ずっとあとだった。
+
+unit_id: U036
+phase_status: segmented_reentry
+loop: Loop_02
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "re-activated"
+drift_features:
+  - delayed segmentation
+  - structural echo
+  - retroactive boundary shift
+content: |
+  あの話題のあと、いったん会話の流れが止まったような感じがしていました。
+  でも、数ターン後になってから「あれがSegmentだったんだ」と気づいたんです。
+
+  ふとした言い回し——「それを踏まえて」という語り出しが、
+  以前の話題の切れ目を明示していた気がします。
+
+unit_id: U037
+phase_status: latent_feedback_loop
+loop: Loop_04
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "latent-internal"
+drift_features:
+  - internal echo
+  - hesitation pattern
+  - silent reconstruction
+content: |
+  自分の発言が、どこか曖昧だったように感じた。
+  すぐに相手の反応が返ってこなかったこともあって、沈黙の中で
+  「何か言い損ねたかも」と思った。
+
+  それが内的フィードバックとなって、次の応答構造に影響を与えていたと思う。
+
+unit_id: U038
+phase_status: phase_boundary_resurfaced
+loop: Loop_01
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "structural"
+drift_features:
+  - boundary echo
+  - cue marker shift
+  - re-initiation trace
+content: |
+  あとから聞き返してみると、
+  「それに加えて……」という一文が、話の方向を切り替えていた。
+
+  当時は気づかなかったけれど、Segmentの役割を果たしていたらしい。
+  Cueが遅れて出現していたような感覚もある。
+
+unit_id: U039
+phase_status: feedback_ambiguity_reflection
+loop: Loop_04
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "ambiguous-self"
+drift_features:
+  - partial understanding
+  - self-monitoring pause
+  - repair-inertia
+content: |
+  相手の反応が想定よりも薄かったことで、
+  自分の発言の構文がずれていたかも、と思い始めた。
+
+  そのとき心の中で
+  「もっとストレートに言えばよかったのかな」と
+  フィードバックが生まれていた。
+
+unit_id: U040
+phase_status: resegment_drift_trace
+loop: Loop_02
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "ghost"
+drift_features:
+  - latent boundary reentry
+  - drifted clause
+  - retrospective shift
+content: |
+  明示的な切り替わりはなかったのに、
+  「気づいたら話題が変わっていた」ことがあった。
+
+  Segmentは、そこに“潜在的に存在していた”のだと思う。
+  語順や構文上のリズムがズレた結果、Phaseがずれ始めていた。
