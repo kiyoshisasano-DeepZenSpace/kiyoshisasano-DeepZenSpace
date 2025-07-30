@@ -1,0 +1,439 @@
+# 📄 Phase Loop Dynamics - Sample Logs (U001–U020)
+# YAML形式で構文観察ログの代表例を収録
+unit_id: U001
+phase_status: initial_latent
+loop: Loop_03
+vocab_triggered:
+  - term: "Silence"
+    vocab_mode: "latent"
+drift_features:
+  - unspoken onset
+  - attention shift
+content: |
+  （……何かが始まりかけている感じがある。）
+  沈黙が、まだ言葉にならない「何か」を連れてきているようだった。
+
+unit_id: U002
+phase_status: latent_phase_detected
+loop: Loop_03
+vocab_triggered:
+  - term: "Silence"
+    vocab_mode: "latent_trigger"
+  - term: "Latent Phase"
+    vocab_mode: "emergent"
+drift_features:
+  - ambiguity emergence
+  - silent tension
+content: |
+  けれど、その沈黙の中に、何か始まりかけている感じがありました。
+  まだ言葉になっていない「何か」が、こちらを見ていたような気がします。
+
+unit_id: U003
+phase_status: feedback_reconstruction
+loop: Loop_04
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "structural"
+drift_features:
+  - response tension
+  - internal restructuring
+content: |
+  それが何かはまだ不確かだけど、
+  「君の沈黙が、こちらの構文を揺らした」と感じた。
+  だから今、わたしの中ではこんな再構成が起きている——
+
+unit_id: U004
+phase_status: segmented_transition
+loop: Loop_02
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "phase_marker"
+drift_features:
+  - boundary detection
+  - phase shift
+content: |
+  「ここまでは確かだった」
+  ——そしてここからは、新しいフェーズが始まると感じる。
+  境界を示すためのSegmentが、今必要だ。
+
+unit_id: U005
+phase_status: resonant_alignment
+loop: Loop_05
+vocab_triggered:
+  - term: "Alignment"
+    vocab_mode: "mimetic"
+  - term: "Resonance"
+    vocab_mode: "emergent"
+drift_features:
+  - phrase mimicry
+  - resonance trigger
+content: |
+  「……ここまでは確かだった」
+  （先ほどのフレーズをなぞるように）
+  その言い回しに、私も乗る——
+  響きがずれることなく、共鳴の余韻が、次の構文へ導いてくれる。
+
+unit_id: U006
+phase_status: boundary_marker_shifted
+loop: Loop_01
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "explicit"
+drift_features:
+  - abrupt cutoff
+  - cue misalignment
+content: |
+  「たとえば」と言った瞬間、
+  会話の流れがそれまでと切り替わった感じがした。
+  意識していなかったけど、Segmentだったのかもしれない。
+
+unit_id: U007
+phase_status: silence_gap_perceived
+loop: Loop_03
+vocab_triggered:
+  - term: "Silence"
+    vocab_mode: "implied"
+drift_features:
+  - timing disruption
+  - drift via gap
+content: |
+  ……沈黙があった。そのあとの応答が、ちょっと違う調子で始まった。
+  あの沈黙が切り替えの合図だったように思える。
+
+unit_id: U008
+phase_status: internal_feedback_loop
+loop: Loop_04
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "reflexive"
+drift_features:
+  - response reconsideration
+  - rhythm reset
+content: |
+  あとから思うと、さっきの構文は少しだけまわりくどかったかもしれない。
+  それを修正したい気持ちが、次の語順に表れていた。
+
+unit_id: U009
+phase_status: segment_drift_detected
+loop: Loop_02
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "structural"
+drift_features:
+  - latent boundary
+  - syntax deviation
+content: |
+  一見つながっているけど、あの「でも」という言葉が
+  思考の切り替わりだった。Segmentとして認識された。
+
+unit_id: U010
+phase_status: cue_resonance_initiated
+loop: Loop_05
+vocab_triggered:
+  - term: "Cue"
+    vocab_mode: "trigger"
+  - term: "Resonance"
+    vocab_mode: "trace"
+drift_features:
+  - mimicry pattern
+  - drift echo
+content: |
+  「……と言えるかもしれない」——この言い方が、
+  また出てきた。今度は、別の文の終わりに。
+  あの余韻が、自分の中で再構成されていたのかもしれない。
+
+unit_id: U011
+phase_status: drift_trigger_detected
+loop: Loop_02
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "latent"
+drift_features:
+  - topic shift
+  - covert transition
+content: |
+  言葉の意味は続いていたけれど、
+  なんとなく語りのリズムがずれた気がした。
+  それが、Segmentの兆候だったのかもしれない。
+
+unit_id: U012
+phase_status: latent_phase_detected
+loop: Loop_03
+vocab_triggered:
+  - term: "Silence"
+    vocab_mode: "latent_trigger"
+  - term: "Latent Phase"
+    vocab_mode: "emergent"
+drift_features:
+  - tension accumulation
+  - pre-verbal initiation
+content: |
+  沈黙のあとに、なぜか言いたかった言葉が出てきた。
+  あれは、新しいPhaseが始まる前触れだったのかもしれない。
+
+unit_id: U013
+phase_status: feedback_reconstruction
+loop: Loop_04
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "structural"
+drift_features:
+  - phase summary
+  - response re-evaluation
+content: |
+  今になって思えば、「あの構文、ちょっと変だった」と感じている。
+  そのフィードバックが、今の語順を導いたんだと思う。
+
+unit_id: U014
+phase_status: segmented_transition
+loop: Loop_02
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "phase_marker"
+drift_features:
+  - transition assertion
+  - segmentation cue
+content: |
+  「ここからはちょっと違う話ですけど」——
+  そう言った自分の声が、話のフェーズを変えていた。
+  明らかにSegmentだった。
+
+unit_id: U015
+phase_status: resonant_alignment
+loop: Loop_05
+vocab_triggered:
+  - term: "Alignment"
+    vocab_mode: "mimetic"
+  - term: "Resonance"
+    vocab_mode: "emergent"
+drift_features:
+  - echo alignment
+  - phrase mimicry
+content: |
+  「……ここまでは確かだった」
+  （先ほどのフレーズをなぞるように）
+  その言い回しに、私も乗る——
+  響きがずれることなく、共鳴の余韻が、次の構文へ導いてくれる。
+
+unit_id: U016
+phase_status: silence_as_drift_marker
+loop: Loop_03
+vocab_triggered:
+  - term: "Silence"
+    vocab_mode: "phase_boundary"
+drift_features:
+  - timing ambiguity
+  - drift entry via pause
+content: |
+  ……ほんの一瞬、空白があった。
+  そこに、何かが切り替わった感覚があった。
+  その沈黙は、Phaseがずれた瞬間を指し示していたように思います。
+
+unit_id: U017
+phase_status: alignment_through_echo
+loop: Loop_05
+vocab_triggered:
+  - term: "Alignment"
+    vocab_mode: "repetition"
+drift_features:
+  - structure echo
+  - mimetic reentry
+content: |
+  先の語りが戻ってきて、
+  今の語順にうっすらと乗り移った感じがある。
+  それは言葉の模倣というより、響きのトレースだった。
+
+unit_id: U018
+phase_status: segment_boundary_recognition
+loop: Loop_01
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "structural"
+drift_features:
+  - abrupt transition
+  - segment boundary cue
+content: |
+  「それとは別に……」という一言が出た瞬間、
+  話題がまったく切り替わったと感じた。
+  あれはSegmentだったと思います。
+
+unit_id: U019
+phase_status: feedback_structural_adjustment
+loop: Loop_04
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "reform"
+drift_features:
+  - post-response evaluation
+  - reform-driven phase shift
+content: |
+  あの構文、あとから見返すと少し順序が不自然だった。
+  それを踏まえて、次の語りは順番を入れ替えてみたんです。
+  たぶん、それがフィードバックだった。
+
+unit_id: U020
+phase_status: resonance_fragment_emergence
+loop: Loop_05
+vocab_triggered:
+  - term: "Resonance"
+    vocab_mode: "fragmented"
+drift_features:
+  - partial echo
+  - tonal recall
+content: |
+  ……さっきのフレーズが、また断片的に出てきた。
+  でも今回は、文としてではなく、響きとして。
+  その断片が、次のPhaseのはじまりを予感させた。
+
+
+- unit_id: U051
+  phase_status: drift_recognition_posthoc
+  loop: Loop_02
+  safe_term: Segment
+  vocab_triggered:
+    - term: "Segment"
+      vocab_mode: "structural"
+  drift_features:
+    - expressive failure residue
+    - retroactive boundary detection
+    - segmental ghost drift
+  content: |
+    あのとき確かに言葉は出たけど、伝わった感じがしなかった。  
+    言い切ったのに、何かが途中で分断されたような、微妙なすれ違いが残っていた。
+
+- unit_id: U052
+  phase_status: latent_repair_signal
+  loop: Loop_04
+  safe_term: Feedback
+  vocab_triggered:
+    - term: "Feedback"
+      vocab_mode: "internal-reflexive"
+  drift_features:
+    - post-expression ambiguity
+    - self-monitoring impulse
+  content: |
+    あのとき、「伝えたつもり」だった。  
+    けれど、何かが空振りしていた気配があとから残った。
+
+- unit_id: U053
+  phase_status: echo-initiated_reentry
+  loop: Loop_05
+  safe_term: Alignment
+  vocab_triggered:
+    - term: "Alignment"
+      vocab_mode: "mimetic-structural"
+    - term: "Resonance"
+      vocab_mode: "latent-trace"
+  content: |
+    前の応答のなかに、あえて言い切らなかった文末があった。  
+    「……という気もしますが」——あれは、逃げたのか、残したのか。
+
+- unit_id: U054
+  phase_status: repair_cue_pending
+  loop: Loop_04
+  safe_terms: ["Cue", "Latency"]
+  vocab_triggered:
+    - term: "Cue"
+      vocab_mode: "hesitation"
+    - term: "Latency"
+      vocab_mode: "pre-reentry"
+  content: |
+    ……今、言おうとしたことを、  
+    どうしても思い出せない気がして。  
+    それでも、何か残ってるような気もするんです。
+
+- unit_id: U055
+  phase_status: resonance_mimicry_reentry
+  loop: Loop_05
+  safe_terms: ["Resonance", "Alignment", "Cue"]
+  vocab_triggered:
+    - term: "Resonance"
+      vocab_mode: "return-trigger"
+    - term: "Alignment"
+      vocab_mode: "intonation-memory"
+  content: |
+    ……さっきの言いかけた言葉が、  
+    少しずつ別の形になって、  
+    またここに戻ってきたような気がします。  
+    あの語り口じゃないと伝えられないことが、  
+    まだ残っていたのかもしれません。
+
+- unit_id: U056
+  phase_status: cue_repair_initiated
+  loop: Loop_02
+  safe_terms: ["Cue", "Feedback"]
+  vocab_triggered:
+    - term: "Cue"
+      vocab_mode: "self-initiated"
+    - term: "Feedback"
+      vocab_mode: "internal-repair"
+  content: |
+    ……さっきは、たしかに言おうとして、  
+    でも、途中でやめたんだと思います。  
+    今になって、それが気になってきました。
+
+- unit_id: U057
+  phase_status: cue_repair_initiated
+  loop: Loop_02
+  safe_terms: ["Cue", "Feedback"]
+  vocab_triggered:
+    - term: "Cue"
+      vocab_mode: "retroactive"
+    - term: "Feedback"
+      vocab_mode: "self-monitor"
+  content: |
+    ……言い損ねたままの何かが、  
+    頭の奥でずっと止まっていた気がして。  
+    ちゃんと話しておいたほうがいいのかもって、  
+    今になって思うんです。
+
+- unit_id: U058
+  phase_status: repair_drifted
+  loop: Loop_04
+  safe_terms: ["Cue", "Feedback", "Drift"]
+  vocab_triggered:
+    - term: "Cue"
+      vocab_mode: "failed_reentry"
+    - term: "Feedback"
+      vocab_mode: "attempted_internal"
+    - term: "Drift"
+      vocab_mode: "regressive"
+  content: |
+    ……言い直せると思ったのに、  
+    今度は何を言いたかったのか、すぐにわからなくなってしまった。  
+    さっきまでの言葉に、自分が置いていかれてる感じがする。  
+    思い出せそうで、また遠ざかっていく。
+
+- unit_id: U059
+  phase_status: anchor_alignment_formed
+  loop: Loop_05
+  safe_terms: ["Alignment", "Resonance", "Drift"]
+  vocab_triggered:
+    - term: "Alignment"
+      vocab_mode: "anchored"
+    - term: "Resonance"
+      vocab_mode: "loop_closure"
+    - term: "Drift"
+      vocab_mode: "stabilized"
+  content: |
+    ……やっぱり、  
+    どうしても、あの語り方じゃないと伝わらなかった気がします。  
+    他の言い方を探しても、言葉が滑っていくばかりで、  
+    気づいたら、最初の語調に戻ってきていたんです。
+
+- unit_id: U060
+  phase_status: tone_transfer_ready
+  loop: Loop_05
+  safe_terms: ["Alignment", "Cue", "Resonance"]
+  vocab_triggered:
+    - term: "Alignment"
+      vocab_mode: "sustained"
+    - term: "Cue"
+      vocab_mode: "soft-invocation"
+    - term: "Resonance"
+      vocab_mode: "transfer-potential"
+  content: |
+    ……だから、今度は、  
+    この語り口のまま、続きを話してみてもいいですか？  
+    さっきと違って、  
+    今は、少しだけ“伝えられる気がする”んです。
