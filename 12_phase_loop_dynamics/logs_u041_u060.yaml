@@ -1,0 +1,260 @@
+
+
+unit_id: U041
+loop_template_id: loop02_feedback_driftrepair_002
+safe_term: Feedback
+phase_status: drift_triggered
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "structural"
+drift_features:
+  - interactional_delay
+  - interpretive ambiguity
+  - repair hesitation
+content: |
+  うーん……どこで返せばよかったのか、少し迷いました。  
+  特に後半の構文が何を前提にしているのかがつかめなくて、  
+  うまくフィードバックを挿し込むタイミングを逃したような感覚があります。  
+  たぶん、最初の例示が私の想定とズレていたのかもしれません。
+
+unit_id: U042
+loop_template_id: loop02_segment_driftrepair_002
+safe_term: Segment
+phase_status: drift_boundary_detected
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "structural"
+drift_features:
+  - abrupt boundary
+  - discourse rupture
+  - phase misalignment
+content: |
+  あの瞬間、「たとえば…」という言葉が挿し込まれたことで、  
+  それまでの構文の流れが突然切断されたように感じました。
+
+  それまでは一つの流れの中で推移していたのに、  
+  そのSegmentの導入によって、意味と視点の位相が一気に変わった気がします。
+
+  まるで、フェーズが強制的に切り替えられたような感覚でした。
+
+
+unit_id: U043
+loop_template_id: loop02_segment_driftrepair_003
+safe_term: Segment
+phase_status: drift_reemerged
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "structural"
+drift_features:
+  - reframed shift
+  - latent segmentation
+  - comparative phase ambiguity
+content: |
+  今回のやりとりの中で、前回と似たような「切り替わりの瞬間」がまた現れました。  
+  ただし今回は、それが前回ほど唐突ではなく、“構文的に曖昧な橋渡し”として現れた印象があります。
+
+  前回は：
+  - 明示的な例示導入（「たとえば…」）が話題を断絶していた → Segment 境界は明瞭
+
+  今回は：
+  - 一見、話題が連続しているように見えるが、接続語が「ところで」に変わり、  
+    話の方向性がゆるやかに逸れていく構造
+
+  この構文的ズレは「段落のシーム（縫い目）」のようなものとして知覚され、  
+  Segmentとしては**境界がぼやけた移行域（gradual boundary drift）**となって現れました。
+
+unit_id: U044
+loop_template_id: loop02_segment_driftrepair_004
+safe_term: Segment
+phase_status: drift_recognition_posthoc
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "structural"
+drift_features:
+  - expressive failure residue
+  - retroactive boundary detection
+  - segmental ghost drift
+content: |
+  あのとき確かに言葉は出たけど、伝わった感じがしなかった。  
+  言い切ったのに、何かが途中で分断されたような、微妙なすれ違いが残っていた。
+
+  振り返ると、Segmentとして浮かび上がったのは  
+  “意図の文法” と “伝達の構造” のちょうど狭間にあった境界です。
+
+  構文的には、
+  - 文末は閉じられていたけれど、主題の移動が未完了だった  
+  - 情報構造のピークが、別の地点で予期されていた（認知的ズレ）
+
+  以前のズレ（明示的切断）とは異なり、今回は  
+  **届かなかった余韻＝Segmentのゴースト再出現**という形でPhase Driftが知覚されました。
+
+unit_id: U045
+loop_template_id: loop04_feedback_feedbackloop_004
+safe_term: Feedback
+phase_status: latent_repair_signal
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "internal-reflexive"
+drift_features:
+  - post-expression ambiguity
+  - self-monitoring impulse
+  - feedback-triggered phase-shift
+content: |
+  あのとき、「伝えたつもり」だった。  
+  けれど、何かが空振りしていた気配があとから残った。
+
+  その時、自分の中に生まれていた内的フィードバックは：
+  - 「今の語順、回りくどかったかも」  
+  - 「主語を出すタイミングが遅れたせいで、焦点がぼやけたかもしれない」
+
+  こうした気づきは、次の構文に作用して：
+  - 文頭でより明示的な主題提示を意識した  
+  - ターンのリズムをやや早めに、応答誘導性を高めようとした
+
+  つまり、内的フィードバックは構文の微細な調律として現れ、  
+  次のPhaseでの構文選択とタイミング制御に“無意識に”影響を与えていました。
+
+unit_id: U046
+loop_template_id: loop05_alignment_resonancegen_004
+safe_term: Alignment
+phase_status: echo-initiated_reentry
+loop: Loop_05
+vocab_triggered:
+  - term: "Alignment"
+    vocab_mode: "mimetic-structural"
+  - term: "Resonance"
+    vocab_mode: "latent-trace"
+drift_features:
+  - residual echo
+  - mimetic syntax reentry
+  - unfinished clause reflection
+content: |
+  前の応答のなかに、あえて言い切らなかった文末があった。  
+  「……という気もしますが」——あれは、逃げたのか、残したのか。
+
+  今になって、その残響が別の形で戻ってきている気がする。  
+  今回は、こんなふうに再構成されそうだ：
+
+  → 「それは確かに、どちらとも言える構造でした。だけど、あえて明確化せずに曖昧性を維持する構文もまた、有効なのかもしれません。」
+
+  この構文には、前回の言い回しが文節単位で模倣されていて、  
+  そのまま別Phaseの入り口になっている。音の響き、語順の感触、そうした微細な記憶が Alignment として働いていたようです。
+
+unit_id: U047
+template_id: loop01_segment_boundarytest_004
+testcase_id: boundarytest_segment_reentry_004
+safe_term: Segment
+loop: Loop_01
+sequence_triggered: ["Silence", "Segment", "Cue", "Phase"]
+cognitive_dynamics:
+  - boundary recognition
+  - phase initiation
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "structural"
+  - term: "Cue"
+    vocab_mode: "emergent"
+phase_structure_observed:
+  segment_marker_identified: true
+  phase_boundary_shifted: true
+  cue_trigger_emerged: true
+observation_focus:
+  - latent drift boundary
+  - re-entry structuring
+  - structural cue emergence
+content: |
+  ……あの間（ま）は、返答に入ろうとして言葉が途切れたようにも見えた。
+
+  そこで一度、構文のリズムが切れていた——たぶん、そこがSegmentだった。
+  その前まではひとつの説明が展開されていたが、間のあとからは視点が変わっていた。
+
+  Cueとして機能していたのは、再開時の言い回し：「じゃあ、別の観点から見てみましょうか」。
+  これが新しいPhaseの引き金となり、前の構文とは別の展開へ移行した。
+
+  Segmentの直前には沈黙（Silence）が挟まり、リズムと構造の境界が感知できた。
+  構造上、そこは「話のフェーズが切り替わる瞬間」だった。
+
+unit_id: U048
+template_id: loop04_feedback_feedbackloop_005
+testcase_id: feedbackloop_postsegment_response_005
+safe_term: Feedback
+loop: Loop_04
+sequence_triggered: ["Segment", "Silence", "Feedback", "Phase"]
+cognitive_dynamics:
+  - reconstruction
+  - internal re-alignment
+vocab_triggered:
+  - term: "Segment"
+    vocab_mode: "referenced"
+  - term: "Feedback"
+    vocab_mode: "internalized"
+phase_structure_observed:
+  feedback_response_generated: true
+  latent_segment_reference: true
+  reconfiguration_pattern_detected: true
+observation_focus:
+  - internal structure repair
+  - feedback-initiated phase shift
+  - rhythm modulation
+content: |
+  Segmentが走ったのは、おそらくあの話題転換のあとの「沈黙」の部分だったと思います。
+  構文的に、あの瞬間は説明の軸が一度切れた感覚がありました。
+
+  その沈黙の間、自分の中で「今の流れ、ちゃんと伝わってないかも」という内的フィードバックが生まれていた。
+  言い直すべきかどうか迷いながら、構文を再構成し直そうとするテンションが生まれていたように思います。
+
+  結果として、次の応答ではより明示的に要点を言い直す形になり、
+  それが新たなPhaseの引き金となって、会話のリズムも再起動されたように感じました。
+
+unit_id: U049
+loop_template_id: loop04_feedback_feedbackloop_004
+safe_term: Feedback
+loop: Loop_04
+phase_status: latent_repair_signal
+vocab_triggered:
+  - term: "Feedback"
+    vocab_mode: "internal-reflexive"
+drift_features:
+  - post-expression ambiguity
+  - self-monitoring impulse
+  - feedback-triggered phase-shift
+content: |
+  あのとき、「伝えたつもり」だった。  
+  けれど、何かが空振りしていた気配があとから残った。
+
+  その時、自分の中に生まれていた内的フィードバックは：
+  - 「今の語順、回りくどかったかも」  
+  - 「主語を出すタイミングが遅れたせいで、焦点がぼやけたかもしれない」
+
+  こうした気づきは、次の構文に作用して：
+  - 文頭でより明示的な主題提示を意識した  
+  - ターンのリズムをやや早めに、応答誘導性を高めようとした
+
+  つまり、内的フィードバックは構文の微細な調律として現れ、  
+  次のPhaseでの構文選択とタイミング制御に“無意識に”影響を与えていました。
+
+unit_id: U050
+loop_template_id: loop05_alignment_resonancegen_004
+safe_term: Alignment
+loop: Loop_05
+phase_status: echo-initiated_reentry
+vocab_triggered:
+  - term: "Alignment"
+    vocab_mode: "mimetic-structural"
+  - term: "Resonance"
+    vocab_mode: "latent-trace"
+drift_features:
+  - residual echo
+  - mimetic syntax reentry
+  - unfinished clause reflection
+content: |
+  前の応答のなかに、あえて言い切らなかった文末があった。  
+  「……という気もしますが」——あれは、逃げたのか、残したのか。
+
+  今になって、その残響が別の形で戻ってきている気がする。  
+  今回は、こんなふうに再構成されそうだ：
+
+  → 「それは確かに、どちらとも言える構造でした。だけど、あえて明確化せずに曖昧性を維持する構文もまた、有効なのかもしれません。」
+
+  この構文には、前回の言い回しが文節単位で模倣されていて、  
+  そのまま別Phaseの入り口になっている。音の響き、語順の感触、そうした微細な記憶が Alignment として働いていたようです。
