@@ -84,7 +84,7 @@ Loop_03 (Latent or Silent Sink)
     [Loop_03: Latent Reset]
       ↑             ↓
 [Loop_05: Resonance] ←
-
+```
 
 Arrows: Primary transitions observed across units
 
