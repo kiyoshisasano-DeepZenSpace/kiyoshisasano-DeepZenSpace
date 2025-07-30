@@ -155,5 +155,3 @@ See:
 - **License**: Creative Commons BY-NC 4.0  
 - Structural reuse requires **attunement**, not extraction  
 - Drift-aware contributions preferred over speed or optimization
-
----
