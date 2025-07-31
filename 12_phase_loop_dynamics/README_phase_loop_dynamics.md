@@ -65,7 +65,7 @@ PLD intersects with both theoretical and applied disciplines:
 title = {Phase Loop Dynamics: Syntax Modeling through Drift, Alignment, and Resonance},
 author = {The Phase Drift Language Systems Collective},
 year = {2025},
-url = {https://github.com/https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/edit/main/12_phase_loop_dynamics}
+url = {/https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/edit/main/12_phase_loop_dynamics}
 }
 ```
 
