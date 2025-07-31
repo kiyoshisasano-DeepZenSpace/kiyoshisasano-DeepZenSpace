@@ -35,7 +35,7 @@ It reflects a stance of listening rather than commanding, sensing rather than so
 
 ---
 
-## [🧱 Phase Loop Dynamics](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/a5436415c29262831d738492a5c91253c53cd40c/12_phase_loop_dynamics) — Structural Principles
+## 🧱[ Phase Loop Dynamics](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/a5436415c29262831d738492a5c91253c53cd40c/12_phase_loop_dynamics) — Structural Principles
 
 At its core, PLD structures interaction through rhythmic sequences:
 
@@ -101,7 +101,7 @@ Field-aware engineers, latency-first designers, rhythm-sensitive researchers
 
 ---
 
-### 🧪 `/ai_prototype/` — Latency-Preserving AI Design
+### 🧪 [/ai_prototype/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/d8bf3bdf69c573000f8408de5359e24617c90ebf/09_%09ai_prototype) — Latency-Preserving AI Design
 
 PLD-compliant PoC architecture for non-directive presence:
 
