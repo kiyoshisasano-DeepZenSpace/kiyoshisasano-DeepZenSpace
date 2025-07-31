@@ -29,7 +29,7 @@ PLD bridges linguistic theory, discourse analysis, human-computer interaction (H
 | `/12_phase_loop_dynamics/` | Sample logs, YAML traces, glossary, and academic citations |
 
 For glossary and terminology mappings:  
-→ [`/12_phase_loop_dynamics/glossary_academic_mapping_v2.md`](./12_phase_loop_dynamics/glossary_academic_mapping_v2.md)
+→ [`/12_phase_loop_dynamics/09_glossary_academic_mapping.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/d177a26c337c0d5e9b826263d1abe038162d9340/12_phase_loop_dynamics/09_glossary_academic_mapping.md)
 
 ---
 
