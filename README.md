@@ -145,6 +145,20 @@ See:
 
 ---
 
+## 🧭 Lexicon Architecture Supplements
+
+For extended guidance on **term relationships**, **usage safety**, and **activation patterns**, see:
+
+- 📘 [LEXICON_CONNECTIVITY_MAP.md](./LEXICON_CONNECTIVITY_MAP.md)  
+  → Outlines structural connections between core and derived terms, including activation chains and containment logic.
+
+- 📘 [LEXICON_TIERING_GUIDE.md](./LEXICON_TIERING_GUIDE.md)  
+  → Defines lexical tiers (`@core`, `@support`, `@derived`) and stability indicators for use in modeling and documentation.
+
+> _These documents serve as scaffolds — not constraints — for navigating the Phase Drift lexicon._
+
+---
+
 ## 📜 License & Use Conditions
 
 **License:** Creative Commons BY-NC 4.0
