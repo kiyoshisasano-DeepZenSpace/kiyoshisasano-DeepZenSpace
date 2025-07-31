@@ -1,4 +1,4 @@
-# 📘 Phase Drift – Lexical Tiering & Usage Stability Guidelines (v0.4)
+# 📘 Lexical Tiering & Usage Stability Guidelines (v0.4)
 
 > ⚠️ This document outlines **lexical tier classification**, **usage-level stability**,  
 > and a **safe term appendix** for both tentative and structurally sound terms  
