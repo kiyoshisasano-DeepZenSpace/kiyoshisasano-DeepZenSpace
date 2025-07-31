@@ -24,7 +24,7 @@ Each file reflects a distinct *component scope* in the Phase Loop Dynamics model
 | [`01_foundations.md`](./01_foundations.md) | Theoretical lineage: syntax, drift, resonance, alignment |
 | [`02_phase_structures.md`](./02_phase_structures.md) | Formal model of phase types and recursive behavior |
 | [`03_feedback_dynamics.md`](./03_feedback_dynamics.md) | Feedback, cue-triggered repair, phase reentry |
-| [`04_model_kit/`](./04_model_kit/) | Glossaries, topographs, and structural kits ([glossary](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/f42de37d401e1d61b353fd59226ee97f4d2d7e5b/04_model_kit/structure_topograph/glossary)) |
+| [`04_model_kit/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/0178aca53237e7acb936c32236ad3b427a4140a1/04_model_kit) | Glossaries, topographs, and structural kits ([glossary](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/f42de37d401e1d61b353fd59226ee97f4d2d7e5b/04_model_kit/structure_topograph/glossary)) |
 
 ---
 
