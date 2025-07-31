@@ -38,7 +38,7 @@ For glossary and terminology mappings:
 To explore key components:
 
 - 🧠 [Core Concepts](./01_foundations.md) — phase syntax and drift theory  
-- 🔄 [Sample Loop Logs](./12_phase_loop_dynamics/sample_logs_snippet.md) — annotated trace examples  
+- 🔄 [Sample Loop Logs](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/69be1feca756044d72fc5f2550dc56a73194a639/12_phase_loop_dynamics/logs_u001_u020.yaml) — annotated trace examples  
 - 🗺 [Topographic System Map](./10_diagram/structure_topograph.svg) — overview of recursive phase logic
 
 ---
