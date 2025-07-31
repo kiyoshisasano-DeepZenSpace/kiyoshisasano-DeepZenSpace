@@ -92,13 +92,12 @@ Its foundational dynamics — drift, repair, resonance, reentry — appear where
 
 This includes but is not limited to:
 
-- ✍️ Conversational Agents (e.g. handling silence or mid-turn breakdowns)
-- 🧠 Cognitive Scaffolding Systems (e.g. dropout recovery in learning environments)
-- 🔐 Trust-Driven Workflows (e.g. staged disclosures in identity UX)
+- ✍️ Conversational Agents (e.g. handling silence or mid-turn breakdowns)  
+- 🧠 Cognitive Scaffolding Systems (e.g. dropout recovery in learning environments)  
+- 🔐 Trust-Driven Workflows (e.g. staged disclosures in identity UX)  
 - 🕸 Multi-Actor Feedback Fields (e.g. distributed input with asynchronous resolution)
 
-> PLD is not tied to UX — it’s a structure for **presence-oriented systems** in rhythmically unstable environments.
-
+> PLD is not exclusive to UX — it operates as a structure for **presence-oriented systems** in rhythmically unstable environments.
 
 ---
 
@@ -112,14 +111,14 @@ Each unit reflects a recoverable deviation or transition in user intent.
 |----------------|----------------------------------|------------------------------------|----------------|
 | `Drift`        | Ambiguity / latency window       | Input pause, silent handoff        | User pauses mid-form and switches tabs |
 | `Repair`       | Clarification or fallback action | Soft prompts, retry suggestion     | App gently asks “Did you mean X?” |
-| `Resonance`    | Rhythmic feedback / echo         | Subtle confirmation, replay loop   | User repeats an action and UI rhythm adapts (e.g. subtle animation matches pace) |
+| `Resonance`    | Rhythmic feedback / echo         | Subtle confirmation, replay loop   | User repeats an action and UI rhythm adapts (e.g. animation tempo mirrors user pacing, audio cue echoes prior pattern) |
 | `Reentry`      | Return path to dropped intent    | “Resume where you left off” flow   | System restores a partial draft after reload |
 | `Latency Hold` | Designed pause or suspense       | Timed reveal, delayed response     | AI waits briefly before responding to mimic natural pacing (`e.g. 600–1500ms delay range`, `anticipatory animation`, `breath-like cue`) |
 
-We recommend categorizing these patterns by **functional axis** for greater reuse:
+We recommend categorizing these patterns by **functional axis** (or **structural modes**) for broader reuse:
 
-- **State Transitions**: Drift / Repair / Reentry  
-- **Rhythmic Interaction**: Resonance / Latency Hold  
+- **State Transitions** *(Interaction States)*: Drift / Repair / Reentry  
+- **Rhythmic Interaction** *(Temporal Modulation)*: Resonance / Latency Hold  
 
 > These axes may co-occur — rhythm can often reinforce or smooth state transitions.
 
