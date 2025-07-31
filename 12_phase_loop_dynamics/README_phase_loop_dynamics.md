@@ -39,7 +39,7 @@ To explore key components:
 
 - 🧠 [Core Concepts](./01_foundations.md) — phase syntax and drift theory  
 - 🔄 [Sample Loop Logs](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/69be1feca756044d72fc5f2550dc56a73194a639/12_phase_loop_dynamics/logs_u001_u020.yaml) — annotated trace examples  
-- 🗺 [Topographic System Map](./10_diagram/structure_topograph.svg) — overview of recursive phase logic
+- 🗺 [Topographic System Map](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/bcba17aef72e8050b9fa812bbefd8e05af7d9725/12_phase_loop_dynamics/10_phase_loop_dynamics.svg) — overview of recursive phase logic
 
 ---
 
