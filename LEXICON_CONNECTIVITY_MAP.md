@@ -1,4 +1,4 @@
-# 📘 Phase Drift – Lexical Connectivity Map (v0.2)
+# 📘 Lexical Connectivity Map (v0.2)
 
 > ⚠️ This map outlines **structural relationships** among both semantically unstable and safe terms  
 > used in the Phase Drift framework. These relations capture **activation chains**, **containment dynamics**,  
