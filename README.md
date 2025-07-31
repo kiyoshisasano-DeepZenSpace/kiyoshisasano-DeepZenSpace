@@ -31,7 +31,7 @@ From this dialogic practice, the structural vocabulary of drift, repair, and res
 **This origin matters.**  
 It reflects a stance of listening rather than commanding, sensing rather than solving.
 
-📩 Contact: `deepzenspace@gmail.com`
+📩 Contact: `deepzenspace[at]gmail[dot]com`
 
 ---
 
