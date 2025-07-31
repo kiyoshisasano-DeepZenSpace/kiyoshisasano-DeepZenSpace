@@ -65,7 +65,7 @@ Each file reflects a distinct *component scope* in the Phase Loop Dynamics model
 **Academic Support**
 
 - [`09_glossary_academic_mapping.md`](./09_glossary_academic_mapping.md): Cross-domain term alignment  
-- [`citations.bib`](./12_phase_loop_dynamics/citations.bib): BibTeX references  
+- [`citations.bib`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/4321db27a32701b252d192e82e0ef7e8d754166f/12_phase_loop_dynamics/citations.bib): BibTeX references  
 
 - `logs_u001_u060.yaml`: YAML-formatted structural trace logs
 
