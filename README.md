@@ -85,21 +85,20 @@ Includes:
 
 ---
 
-### 🧭 Applied Contexts & UI/UX Pattern Translation
+### 🧭 Applied Contexts
 
-While PLD emerged from dialogic modeling, its underlying logic — of **drift**, **repair**, and **reentry** — applies naturally to any **interactive system where user flow can destabilize and recover**.
+While Phase Drift originated from dialogic structures, its architecture generalizes beyond language or interface.  
+Its foundational dynamics — drift, repair, resonance, reentry — appear wherever systems engage with uncertainty, ambiguity, or partial trust.
 
-The framework supports **repair-centric UX**, **reentry design**, and **latency-aware interaction** in domains such as:
+This includes but is not limited to:
 
-- 📝 Web forms — handling ambiguity or silent drop-offs  
-- 📚 Learning platforms — recovering from cognitive drift or dropout  
-- 🤖 AI/agent tools — surfacing unspoken intent via soft prompts  
-- 🎛 Nonverbal feedback systems — using rhythm or hesitation as signal  
-- 🔐 Trust workflows — staged confirmations and soft deferrals  
+- ✍️ Conversational Agents (e.g. handling silence or mid-turn breakdowns)
+- 🧠 Cognitive Scaffolding Systems (e.g. dropout recovery in learning environments)
+- 🔐 Trust-Driven Workflows (e.g. staged disclosures in identity UX)
+- 🕸 Multi-Actor Feedback Fields (e.g. distributed input with asynchronous resolution)
 
-> PLD is a design grammar for **presence-aware systems** —  
-> not just dialogue, but rhythm, rupture, and return.  
-> It helps systems listen better — not just to what users do, but to **how they pause, hesitate, or drift away.**
+> PLD is not tied to UX — it’s a structure for **presence-oriented systems** in rhythmically unstable environments.
+
 
 ---
 
