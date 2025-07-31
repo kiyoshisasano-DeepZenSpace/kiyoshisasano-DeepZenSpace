@@ -113,7 +113,7 @@ Each unit reflects a recoverable deviation or transition in user intent.
 | `Repair`       | Clarification or fallback action | Soft prompts, retry suggestion     | App gently asks “Did you mean X?” |
 | `Resonance`    | Rhythmic feedback / echo         | Subtle confirmation, replay loop   | User repeats an action and UI rhythm adapts (e.g. animation tempo mirrors user pacing, audio cue echoes prior pattern) |
 | `Reentry`      | Return path to dropped intent    | “Resume where you left off” flow   | System restores a partial draft after reload |
-| `Latency Hold` | Designed pause or suspense       | Timed reveal, delayed response     | AI waits briefly before responding to mimic natural pacing (`e.g. 600–1500ms delay range`, `anticipatory animation`, `breath-like cue`) |
+| `Latency Hold` | Designed pause or suspense       | Timed reveal, delayed response     | AI waits briefly before responding to mimic natural pacing (`e.g. 600–1500ms delay range`, `anticipatory animation`, `breath-like cue`) — a deliberate pause (not technical lag), designed to reflect human pacing rhythms. |
 
 We recommend categorizing these patterns by **functional axis** (or **structural modes**) for broader reuse:
 
