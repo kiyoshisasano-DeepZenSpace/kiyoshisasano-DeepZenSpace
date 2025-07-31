@@ -73,7 +73,7 @@ Each file reflects a distinct *component scope* in the Phase Loop Dynamics model
 
 ## 🌐 External Repository Link
 
-→ [https://github.com/12_phase_loop_dynamics](./https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/edit/main/12_phase_loop_dynamics)
+→ [https://github.com/12_phase_loop_dynamics](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/6c08eb268f5e85f7219ebaca05b487409edde2ef/12_phase_loop_dynamics)
 
 ---
 
