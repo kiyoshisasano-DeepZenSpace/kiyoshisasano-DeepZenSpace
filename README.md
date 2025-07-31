@@ -51,7 +51,7 @@ At its core, PLD structures interaction through rhythmic sequences:
 ---
 
 ## 📂 Repository Structure
-
+```yaml
 PhaseDrift/
 ├── 04_model_kit/
 │ └── structure_topograph/ → Syntactic terrain mapping (28 drift forms)
@@ -59,7 +59,7 @@ PhaseDrift/
 ├── 09_ai_prototype/ → Latency-preserving AI design examples
 ├── 10_phase_drift_insight/ → Real-time drift sensing & visualization
 └── shared_glossary/ → Academic ↔ PLD terminology mapping
-
+```
 
 ---
 
@@ -114,7 +114,7 @@ PLD-compliant PoC architecture for non-directive presence:
 
 ---
 
-### 📊 `/phase_drift_insight/` — Drift Visualization Toolkit
+### 📊 [/phase_drift_insight/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/4dd85cbacf43a59f8579bda4041950664bcde853/10_phase_drift_insight) — Drift Visualization Toolkit
 
 Not a performance logger — a **coherence field monitor**.
 
