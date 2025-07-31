@@ -35,7 +35,7 @@ It reflects a stance of listening rather than commanding, sensing rather than so
 
 ---
 
-## 🧱 Phase Loop Dynamics — Structural Principles
+## [🧱 Phase Loop Dynamics](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/a5436415c29262831d738492a5c91253c53cd40c/12_phase_loop_dynamics) — Structural Principles
 
 At its core, PLD structures interaction through rhythmic sequences:
 
