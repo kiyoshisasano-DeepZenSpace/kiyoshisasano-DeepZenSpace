@@ -85,7 +85,7 @@ Includes:
 
 ---
 
-### 🌿 `/field_stewardship/` — Governance, Rhythm & Care
+### 🌿 [/field_stewardship/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/794a1346150c5c8b6e034604f16b1583fe17a90e/07_%09field_stewardship) — Governance, Rhythm & Care
 
 Defines how to **maintain**, not simply build, PLD systems.
 
