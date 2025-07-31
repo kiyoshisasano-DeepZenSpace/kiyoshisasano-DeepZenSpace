@@ -65,7 +65,7 @@ PhaseDrift/
 
 ## 🔭 Module Overview
 
-### 🧠 `/structure_topograph/` — Terrain of Structural Drift
+### 🧠 [/structure_topograph/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/d4546cc94cdac1e29a31537adf1a349e62990665/04_model_kit/structure_topograph) — Terrain of Structural Drift
 
 Canonical metaphors for structural instability:
 
