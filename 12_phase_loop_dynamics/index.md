@@ -42,7 +42,7 @@ Each file reflects a distinct *component scope* in the Phase Loop Dynamics model
 **Interface Syntax**
 
 - [`08_field_alignment.md`](./08_field_alignment.md): Cross-phase anchoring and global alignment loops  
-- [`09_interface_affordance.md`](./09_interface_affordance.md): Syntax–interface logic and affordance theory
+- [`09_glossary_academic_mapping.md`](./09_glossary_academic_mapping.md): Syntax–interface logic and affordance theory
 
 ---
 
@@ -50,9 +50,8 @@ Each file reflects a distinct *component scope* in the Phase Loop Dynamics model
 
 | File | Description |
 |------|-------------|
-| [`10_diagram/structure_topograph.svg`](./10_diagram/structure_topograph.svg) | Topographic diagram of model architecture and interaction flow |
+| [`10_phase_loop_dynamics.svg`](./10_phase_loop_dynamics.svg) | Topographic diagram of model architecture and interaction flow |
 | [`11_conclusion.md`](./11_conclusion.md) | Future research directions and cross-domain synthesis |
-| [`12_phase_loop_dynamics/`](./12_phase_loop_dynamics/) | Academic mappings, trace logs, and bibliographic references |
 
 ---
 
@@ -65,16 +64,16 @@ Each file reflects a distinct *component scope* in the Phase Loop Dynamics model
 
 **Academic Support**
 
-- [`glossary_academic_mapping_v2.md`](./12_phase_loop_dynamics/glossary_academic_mapping_v2.md): Cross-domain term alignment  
+- [`09_glossary_academic_mapping.md`](./09_glossary_academic_mapping.md): Cross-domain term alignment  
 - [`citations.bib`](./12_phase_loop_dynamics/citations.bib): BibTeX references  
-- [`sample_logs_snippet.md`](./12_phase_loop_dynamics/sample_logs_snippet.md): Syntax drift observation examples  
-- [`logs_u051_u060.yaml`](./12_phase_loop_dynamics/logs_u051_u060.yaml): YAML-formatted structural trace logs
+
+- `logs_u001_u060.yaml`: YAML-formatted structural trace logs
 
 ---
 
 ## 🌐 External Repository Link
 
-→ https://github.com/your-org/phase_loop_dynamics
+→ {https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/edit/main/12_phase_loop_dynamics}(./https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/edit/main/12_phase_loop_dynamics)
 
 ---
 
