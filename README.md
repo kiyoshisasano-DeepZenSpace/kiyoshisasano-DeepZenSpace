@@ -65,7 +65,7 @@ PhaseDrift/
 
 Looking to explore real-world PLD patterns?
 
-📁 See [`13_quickstart_kit/`](./13_quickstart_kit) for:
+📁 See [`13_quickstart_kit/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/c46dc51010cd26bfdd988e11c08057e46f18fcda/13_quickstart_kit) for:
 
 - Hands-on examples in Rasa, LLMs, Figma
 - Logging and analytics schemas for drift/repair/reentry
