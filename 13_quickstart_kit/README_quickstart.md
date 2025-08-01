@@ -1,135 +1,153 @@
-# 🚀 PLD Quickstart Kit Overview
+# 🚀 PLD Quickstart Kit
 
-Welcome to the **Phase Loop Dynamics (PLD) Quickstart Kit** — a progressive onboarding and implementation guide for teams building resilient, rhythm-aware user interactions.
-
-This README acts as your entry point for navigating and applying PLD modules across conversational AI, UI prototyping, and adaptive UX environments.
+The **Phase Loop Dynamics (PLD)** kit provides reusable interaction design patterns for designers, engineers, and product teams. It bridges theory and practice across NLU, LLMs, UI prototypes, and metrics logging.
 
 ---
 
 ## 📁 Folder Structure
 
-| Folder Path                    | Purpose                                                                 |
-|-------------------------------|-------------------------------------------------------------------------|
-| `01_getting_started/`         | Core concepts, Quickstart walkthrough, implementation tips             |
-| `02_pattern_examples/`        | Code and pattern examples for Rasa, Figma, LLM, etc.                    |
-| `03_metrics_tracking/`        | Tracking templates and schemas for drift, repair, and reentry events   |
-
----
-
-## ✨ Use Cases
-
-- Implement **soft fallback** and **reentry flows** in Rasa, LLM chains, or mobile UX
-- Simulate **latency hold** in prototypes (e.g., delayed tooltip or progressive reveal in Figma)
-- Track interaction loops such as **dropout → repair → return** using custom metrics
-- Design resilient, rhythm-aware UX that adapts to ambiguity, hesitation, or silence
-
----
-
-## 🛠️ Getting Started: Steps to Apply PLD
-
-1. 🔹 Start with [`01_getting_started/Quickstart.md`](./01_getting_started/Quickstart.md)  
-   → Learn PLD’s core loop primitives and how they adapt to user deviation
-
-2. 🔸 Explore [`02_pattern_examples/`](./02_pattern_examples/)  
-   → Reusable examples for fallback repair, reentry scaffolding, and tempo-based UX  
-   → These can be dropped into your dialogue flow, UI interaction layer, or orchestration logic
-
-3. 📊 Configure metrics using [`03_metrics_tracking/`](./03_metrics_tracking/)  
-   → Includes a telemetry schema, logging format, and dashboard spec
-
-4. 🧭 Use [`schema_mapping_table.md`](./02_pattern_examples/schema_mapping_table.md)  
-   → Match PLD patterns to platform-specific features  
-   (e.g., `drift_probe → Rasa fallback`, `latency_hold → Figma overlay`, `repair_hint → LLM clarification`)
-
----
-
-## 🧠 PLD Core Patterns
-
-PLD defines five reusable primitives for human-paced, error-resilient interaction:
-
-| Pattern         | Description                                                                 |
-|----------------|-----------------------------------------------------------------------------|
-| **Drift**       | User hesitation, silence, latency, or ambiguity                            |
-| **Repair**      | Lightweight prompt or fallback to recover from drift                       |
-| **Reentry**     | Resuming the prior state after dropout or deviation                        |
-| **Latency Hold**| Intentional pause to create rhythm or give users processing time           |
-| **Resonance**   | Optional cue matching (e.g., echoing language or UI rhythm)                 |
-
-Each pattern can be:
-- Instrumented via logs and dashboards
-- Implemented as a UX gesture, dialogue scaffold, or prompt strategy
-- Composed modularly into learning flows, assistants, or prototypes
-
----
-
-## 🔎 Example Entry Points
-
-- [`rasa_soft_repair.yml`](./02_pattern_examples/rasa_soft_repair.yml)  
-  → Soft fallback pattern in Rasa for low-confidence NLU  
-- [`figma_latency_hold.md`](./02_pattern_examples/figma_latency_hold.md)  
-  → Tempo-aware pacing pattern using overlays in UI prototypes  
-- [`llm_reentry_prompt.json`](./02_pattern_examples/llm_reentry_prompt.json)  
-  → Prompt structure for returning to topic after conversational dropout  
-- [`metrics_schema.yaml`](./03_metrics_tracking/metrics_schema.yaml)  
-  → Unified schema for logging drift, repair attempts, and reentry success  
-- [`reentry_success_dashboard.json`](./03_metrics_tracking/reentry_success_dashboard.json)  
-  → Visualization config for tracking user recovery and loop closure
-
----
-
-## 🧩 Visual Overview (Optional)
-
-```text
-PLD Quickstart Flow:
-┌────────────────────────────┐
-│ 01_getting_started │ → Theory, onboarding
-└────────────┬───────────────┘
-↓
-┌────────────┴───────────────┐
-│ 02_pattern_examples │ → Code, prompts, prototypes
-└────────────┬───────────────┘
-↓
-┌────────────┴───────────────┐
-│ 03_metrics_tracking │ → Logging + dashboard specs
-└────────────────────────────┘
-
+```
+13_quickstart_kit/
+├── README_quickstart.md          ← You are here
+│
+├── 01_getting_started/           ← Start here: key principles + usage advice
+│   ├── Quickstart.md             ← Intro to PLD: loop overview and principles (5 min read)
+│   ├── pld_core_summary.md       ← Core PLD concepts: drift, repair, reentry (3 min read)
+│   └── usage_notes.md            ← Tips for implementation, testing, extensibility (5–8 min)
+│
+├── 02_pattern_examples/          ← Drop-in patterns for real platforms
+│   ├── figma_latency_hold.md         ← UX latency buffers in Figma flows
+│   ├── llm_reentry_prompt.json       ← Reentry prompt template for LLM flows
+│   ├── rasa_soft_repair.yml          ← Repair logic (NLU/rules) for Rasa bots
+│   ├── rasa_soft_repair_actions.py   ← Custom repair loop handling via Rasa actions
+│   └── schema_mapping_table.md       ← PLD patterns mapped to platform behaviors
+│
+├── 03_metrics_tracking/          ← Logging + dashboard templates
+│   ├── drift_event_logging.md        ← How to detect, log, and interpret drift
+│   ├── metrics_schema.yaml           ← YAML schema for PLD event logging
+│   ├── pld_event.schema.json         ← JSON Schema version of metrics spec
+│   └── reentry_success_dashboard.json← Example analytics dashboard (e.g. PostHog)
 ```
 
+---
+
+## 🔁 PLD Pattern Microloop
+
+PLD defines interaction rhythm as a **loop** of signal and adaptation:
+
+```
+User hesitates or diverges → [Drift]
+      ↓
+System probes softly       → [Repair]
+      ↓
+User resumes               → [Reentry]
+      ↓
+System modulates tempo     → [Latency Hold / Resonance]
+                             (e.g., pause, shimmer, echo phrase)
+```
+
+This replaces rigid fallback logic with **graceful recovery patterns**.
 
 ---
 
-## 🛡️ Safety & Recovery Considerations
+## 🧪 Pattern Examples (02_pattern_examples)
 
-PLD patterns are designed to be resilient, not fragile. When implementing:
-
-- ✅ Cap repair loops with `max_attempts` or timeout logic  
-- ✅ Detect prolonged drift to offer escalation or exit options  
-- ✅ Use reentry patterns to resume from known state, not restart  
-- ✅ Log unresolved loops as `drift_unrecovered` for analysis
-
----
-
-## 🌱 Contributing
-
-This kit is open for collaborative extension. To contribute:
-
-- ✨ Add platform-specific pattern examples  
-  _(e.g., Dialogflow repair intent, Notion AI memory restore)_
-- 📈 Improve telemetry: expand `metrics_schema.yaml`, share Grafana dashboards
-- 🧪 Refactor [`usage_notes.md`](./01_getting_started/usage_notes.md) with edge cases or dev heuristics
-
-Feel free to fork, open issues, or submit pull requests.
+| File                         | Description                                              |
+|------------------------------|----------------------------------------------------------|
+| `rasa_soft_repair.yml`       | PLD-style fallback logic in Rasa using repair_attempts   |
+| `rasa_soft_repair_actions.py`| Custom repair escalation logic (prevents infinite loops) |
+| `figma_latency_hold.md`      | Prototyping hesitation delays using frames & overlays    |
+| `llm_reentry_prompt.json`    | LLM prompt templates for context-aware reentry           |
+| `schema_mapping_table.md`    | Crosswalk between PLD terms and tool-specific mappings   |
 
 ---
 
-## 📮 Contact
+## 📊 Metrics & Logging (03_metrics_tracking)
 
-Created by: **Kiyoshi Sasano**  
-📩 deepzenspace[at]gmail[dot]com  
-🔗 [PLD GitHub Repository](https://github.com/kiyoshisasano-DeepZenSpace)
+| File                          | Role                                                        |
+|-------------------------------|-------------------------------------------------------------|
+| `metrics_schema.yaml`         | Event + metric structure (drift, repair, reentry, latency)  |
+| `pld_event.schema.json`       | JSON Schema for event log validation                        |
+| `drift_event_logging.md`      | Logging strategy and trigger mechanisms                     |
+| `reentry_success_dashboard.json` | Sample dashboard to visualize recovery flows              |
+
+⏱ Metrics like `drift_to_repair_ratio`, `reentry_success_rate`, and `avg_latency_hold` help track **system rhythm and resilience**.
 
 ---
 
-> _“Don’t fix the flow — listen to it.”_  
-> — Phase Loop Dynamics
+## 📚 Foundational Reading (01_getting_started)
 
+Start with:
+
+- `Quickstart.md`: High-level PLD introduction and flow sketch (5 min read)
+- `pld_core_summary.md`: Concept definitions with examples (3 min read)
+- `usage_notes.md`: Best practices, edge cases, implementation caveats (5–8 min)
+
+---
+
+## 🔗 Tool-Specific Highlights
+
+| Platform     | PLD Mapping Examples                                 |
+|--------------|------------------------------------------------------|
+| **Rasa**     | `out_of_scope`, `repair_attempts`, fallback layering |
+| **LLM**      | time-gap reentry triggers, ambiguity detection       |
+| **Figma**    | `after delay`, `opacity fade`, shimmer overlays      |
+| **PostHog**  | Drift heatmaps, funnel tracking, reentry latency plots |
+
+→ See `schema_mapping_table.md` for a full breakdown.
+
+---
+
+## 🧠 Who Is This For?
+
+| Role            | Value                                               |
+|------------------|----------------------------------------------------|
+| Conversation UX  | Repair/reentry scaffolds, pacing-aware design      |
+| LLM Engineers    | Reentry prompts, ambiguity handling scaffolds      |
+| Product Analysts | Drift heatmaps, latency metrics, recovery rates    |
+| QA/Support       | Dropout → recovery flow validation                  |
+| EdTech Designers | Dropout → return logic, engagement pacing          |
+
+---
+
+## 🛠 Getting Started
+
+Start with `Quickstart.md`, then try a live pattern:
+
+- Rasa bot repair logic → `rasa_soft_repair.yml` + `rasa_soft_repair_actions.py`
+- UI prototype delay → `figma_latency_hold.md`
+- LLM memory recovery → `llm_reentry_prompt.json`
+- Drift observability → `drift_event_logging.md`
+
+💡 All pattern examples are file-based — no live server needed to explore the logic.
+
+---
+
+## 🧩 Extending PLD
+
+You can add new pattern primitives:
+
+```yaml
+pattern: anticipation_prompt
+trigger: hesitation OR context_switch
+action: preload_response_option
+log_event: anticipation_prompt_triggered
+```
+
+→ See `metrics_schema.yaml` or `pld_event.schema.json` for logging field templates.
+
+---
+
+## 📬 Feedback / Contributing
+
+Found an edge case or want to contribute?
+
+- Fork and add a new pattern example (e.g. for mobile UI, AR, call center UX)
+- Suggest a new metric, pattern, or platform mapping
+- Submit a PR or open an issue on [GitHub](https://github.com/kiyoshisasano-DeepZenSpace)
+
+---
+
+> PLD is not a rulebook.  
+> It’s a rhythm you can work with.  
+> Don’t force it — feel it, adapt it.
