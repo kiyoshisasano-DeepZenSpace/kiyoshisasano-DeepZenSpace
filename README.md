@@ -1,4 +1,5 @@
-# 🔁 Phase Loop Dynamics — Structural Rhythm Architecture
+# 🔁 Phase Loop Dynamics (PLD) — Interaction Rhythm Framework
+
 
 ## 📖 Origin of the Project
 This project did not emerge from any preexisting academic discipline or theory.  
