@@ -75,22 +75,6 @@ Each unit reflects a recoverable deviation or transition in user intent.
 
 ---
 
-## 🌿 [`field_stewardship/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/07_field_stewardship) — Governance, Rhythm & Care
-
-> 🌱 Not just for developers:  
-> This folder supports facilitators, moderators, and rhythm-sensitive team roles.  
-> It defines how to **maintain** — not just build — PLD systems.
-
-Includes:
-
-- `essence_and_definition.md` — structural grounding  
-- `onboarding_and_diagnostics.md` — attunement criteria  
-- `risk_control_playbook.md` — misuse detection, mimicry prevention  
-- `engagement_policy.md` — public rhythm protocol  
-
-
----
-
 ## 📘 [Glossary & Theoretical Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/abdf7d7bba919ffa9654de454420b77a502fa014/04_model_kit/structure_topograph/glossary)
 
 Cross-disciplinary term alignment:
@@ -122,6 +106,24 @@ For extended guidance on **term relationships**, **usage safety**, and **activat
 > _These documents serve as scaffolds — not constraints — for navigating the Phase Drift lexicon._
 
 ---
+
+## 💬 Collaborate with PLD
+
+We welcome contributions from:
+
+- 🧠 Researchers exploring drift, latency, or repair in interaction
+- 🎨 Designers prototyping rhythm-aware UX
+- 🔧 Developers testing latency-hold or reentry prompts
+- 🪷 Facilitators maintaining interactional fields (see [`field_stewardship/`](./07_field_stewardship))
+
+You can start by:
+
+- Forking from [`13_quickstart_kit/`](./13_quickstart_kit)
+- Submitting new patterns or rhythms
+- Suggesting glossaries or mapping terms
+
+PLD is not a finished model — it's a shared field under construction.
+
 
 ## 📜 License & Use Conditions
 
