@@ -118,7 +118,7 @@ We welcome contributions from:
 
 You can start by:
 
-- Forking from [`13_quickstart_kit/`](./13_quickstart_kit)
+- Forking from [`13_quickstart_kit/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1fc955515b9c38174bc96c1be4e44e0503761b64/13_quickstart_kit)
 - Submitting new patterns or rhythms
 - Suggesting glossaries or mapping terms
 
