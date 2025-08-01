@@ -1,0 +1,105 @@
+# metrics_schema.yaml
+# Phase Loop Dynamics – Event & Metric Logging Schema
+# Updated: 2025-08-01
+
+pld_events:
+  - event: drift_detected
+    description: >
+      Indicates that user behavior deviated from expected flow or timed out.
+    fields:
+      - timestamp: ISO8601
+      - user_id: string
+      - session_id: string  # New: for multi-turn aggregation
+      - context_id: string  # e.g., screen_id, form_node, intent_id
+      - drift_type: [silence, ambiguity, misclick, off-path]
+      - ui_state: string
+      - confidence_score: float
+
+  - event: repair_triggered
+    description: >
+      System offered clarification, soft fallback, or redirect.
+    fields:
+      - timestamp: ISO8601
+      - user_id: string
+      - session_id: string
+      - strategy: [soft_repair, hard_repair, prompt_hint]
+      - success_predicted: boolean
+      - latency_before_repair: float  # seconds
+      - context_id: string
+
+  - event: repair_failed
+    description: >
+      User did not respond to or rejected clarification prompts.
+    fields:
+      - timestamp: ISO8601
+      - user_id: string
+      - session_id: string
+      - context_id: string
+      - failed_attempts: integer
+
+  - event: reentry_success
+    description: >
+      User successfully resumed or completed previously abandoned intent.
+    fields:
+      - timestamp: ISO8601
+      - user_id: string
+      - session_id: string
+      - previous_context_id: string
+      - reentry_lag: float  # seconds
+      - reentry_method: [automatic_resume, user_initiated, ai_suggested]
+      - goal_completed: boolean
+
+  - event: latency_hold_rendered
+    description: >
+      System introduced a deliberate pause for pacing or affective modulation.
+    fields:
+      - timestamp: ISO8601
+      - user_id: string
+      - session_id: string
+      - hold_duration: float  # seconds
+      - context: string
+      - user_cancelled: boolean
+
+pld_metrics:
+  - name: drift_to_repair_ratio
+    formula: drift_detected.count / repair_triggered.count
+    description: >
+      Indicates how often drift leads to a system-led recovery attempt.
+
+  - name: reentry_success_rate
+    formula: reentry_success.count / reentry_success.total_attempts
+    description: >
+      Measures how often users reenter successfully after prior dropout.
+
+  - name: avg_latency_hold
+    formula: latency_hold_rendered.sum(hold_duration) / latency_hold_rendered.count
+    description: >
+      Average duration of pause-induced pacing patterns.
+
+  - name: time_to_repair
+    formula: repair_triggered.avg(latency_before_repair)
+    description: >
+      Time between drift and system-led repair prompt.
+
+  - name: repair_escalation_rate
+    formula: repair_triggered.count(strategy=hard_repair) / repair_triggered.count
+    description: >
+      Ratio of soft repairs that escalate to harder fallback strategies.
+
+  - name: latency_interrupt_rate
+    formula: latency_hold_rendered.count(user_cancelled=true) / latency_hold_rendered.count
+    description: >
+      Percentage of system pacing holds that are user-interrupted.
+
+  - name: repair_loop_depth
+    formula: repair_triggered.max_consecutive_events_per_context
+    description: >
+      Maximum number of repair attempts before resolution or abandonment.
+
+notes:
+  - All timestamps should use ISO 8601 format.
+  - Event tracking should be privacy-compliant and pseudonymized before aggregation.
+  - session_id may be derived from cookies, JWT, or local storage, depending on platform.
+  - context_id should be stable across reentry — e.g., frame ID, node ID, or intent key.
+  - Consider setting drift detection thresholds (e.g., silence > 5s, confidence_score < 0.45).
+
