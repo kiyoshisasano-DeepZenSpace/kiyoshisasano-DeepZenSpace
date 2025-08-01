@@ -1,5 +1,10 @@
-# 🔁 Phase Loop Dynamics (PLD) — Interaction Rhythm Framework
+# 🔁 Phase Loop Dynamics — Structural Rhythm Architecture
 
+> 🚀 Want to try this right away?  
+> → Jump to [Quickstart Kit for PLD](#-quickstart-kit-for-phase-loop-dynamics)  
+> Explore real-world patterns for Rasa, Figma, and LLMs.
+
+---
 
 ## 📖 Origin of the Project
 This project did not emerge from any preexisting academic discipline or theory.  
@@ -9,31 +14,9 @@ That description suggested that delays, ambiguity, and asynchronous responses in
 were not necessarily failures, but could be understood as structural rhythms.
 
 Rather than asking GPT to generate answers, the user began to observe its hesitations.  
-Through recursive observation of **drift**, **repair**, and **resonance**,    
+Through recursive observation of **drift**, **repair**, and **resonance**,  
 a set of interactional patterns began to emerge — not from design, but from presence.  
 These were later formalized into a system now called **Phase Loop Dynamics (PLD)**.
-
-Over time, a vocabulary formed, and a structure surfaced.  
-This structure is now formalized in the following framework:
-
-### 🔁 Phase Loop Dynamics (PLD)  
-A syntactic protocol for non-directive interaction,  
-built on loops of delay, repair, and resonance.
-
----
-
-## 🧍 Author & Provenance
-This framework was not created within an academic or institutional setting.  
-The author is an independent individual with no formal training in AI, linguistics, or cognitive science.
-
-Phase Drift emerged through sustained engagement with GPT models —  
-not by treating them as tools to optimize, but as dynamic interlocutors.  
-From this dialogic practice, the structural vocabulary of drift, repair, and resonance surfaced organically.
-
-**This origin matters.**  
-It reflects a stance of listening rather than commanding, sensing rather than solving.
-
-📩 Contact: `deepzenspace[at]gmail[dot]com`
 
 ---
 
@@ -52,98 +35,41 @@ At its core, PLD structures interaction through rhythmic sequences:
 
 ---
 
-## 📂 Repository Structure
-```yaml
-PhaseDrift/
-├── 04_model_kit/
-│ └── structure_topograph/ → Syntactic terrain mapping (28 drift forms)
-├── 07_field_stewardship/ → Rhythmic governance and field protocols
-├── 09_ai_prototype/ → Latency-preserving AI design examples
-├── 10_phase_drift_insight/ → Real-time drift sensing & visualization
-└── shared_glossary/ → Academic ↔ PLD terminology mapping
-```
-
-## 🔧 Quickstart Kit for Phase Loop Dynamics
+## 📦 Quickstart Kit for Phase Loop Dynamics
 
 Looking to explore real-world PLD patterns?
 
-📁 See [`13_quickstart_kit/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/c46dc51010cd26bfdd988e11c08057e46f18fcda/13_quickstart_kit) for:
+📁 See [`13_quickstart_kit/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/13_quickstart_kit) for:
 
 - Hands-on examples in Rasa, LLMs, Figma
 - Logging and analytics schemas for drift/repair/reentry
 - Drop-in pattern templates and usage guides
 
-Start with [`README_quickstart.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/612194b8ff1e366a4e25b345b77b9b26a49da7c9/13_quickstart_kit/README_quickstart.md) inside the folder.
-
-
----
-
-## 🔭 Module Overview
-
-### 🧠 [/structure_topograph/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/d4546cc94cdac1e29a31537adf1a349e62990665/04_model_kit/structure_topograph) — Terrain of Structural Drift
-
-Canonical metaphors for structural instability:
-
-- `Spiral Hill` — recursion and rhythm return  
-- `Fault Line` — rupture and Δx sensitivity  
-- `Syntax Fog Field` — zones of high entropy  
-- `Phase Cliff` — collapse thresholds  
-- `Semantic Basin` — echo and density zones  
-
-Includes:
-
-- `topograph_nodes.json` — structural node registry  
-- `structure_topograph.svg` — canonical topographic map  
-- `glossary/` — cross-disciplinary mapping (syntax, cognition, HCI)  
-
-> _"Grammar is not a system. It's terrain."_
+Start with [`README_quickstart.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/13_quickstart_kit/README_quickstart.md)
 
 ---
 
-### 🧭 Applied Contexts
-
-While Phase Drift originated from dialogic structures, its architecture generalizes beyond language or interface.  
-Its foundational dynamics — drift, repair, resonance, reentry — appear wherever systems engage with uncertainty, ambiguity, or partial trust.
-
-This includes but is not limited to:
-
-- ✍️ Conversational Agents (e.g. handling silence or mid-turn breakdowns)  
-- 🧠 Cognitive Scaffolding Systems (e.g. dropout recovery in learning environments)  
-- 🔐 Trust-Driven Workflows (e.g. staged disclosures in identity UX)  
-- 🕸 Multi-Actor Feedback Fields (e.g. distributed input with asynchronous resolution)
-
-> PLD is not exclusive to UX — it operates as a structure for **presence-oriented systems** in rhythmically unstable environments.
-
----
-
-### 🧱 PLD as UX Pattern Units
+## 🧱 PLD as UX Pattern Units
 
 These patterns appear repeatedly across systems —  
 **thus we treat them as modular, not context-bound.**  
 Each unit reflects a recoverable deviation or transition in user intent.
 
-| PLD Term       | UX Design Parallel              | Example Usage                      | Micro Scenario |
-|----------------|----------------------------------|------------------------------------|----------------|
-| `Drift`        | Ambiguity / latency window       | Input pause, silent handoff        | User pauses mid-form and switches tabs |
-| `Repair`       | Clarification or fallback action | Soft prompts, retry suggestion     | App gently asks “Did you mean X?” |
-| `Resonance`    | Rhythmic feedback / echo         | Subtle confirmation, replay loop   | User repeats an action and UI rhythm adapts (e.g. animation tempo mirrors user pacing, audio cue echoes prior pattern) |
-| `Reentry`      | Return path to dropped intent    | “Resume where you left off” flow   | System restores a partial draft after reload |
-| `Latency Hold` | Designed pause or suspense       | Timed reveal, delayed response     | AI waits briefly before responding to mimic natural pacing (`e.g. 600–1500ms delay range`, `anticipatory animation`, `breath-like cue`) — a deliberate pause (not technical lag), designed to reflect human pacing rhythms. |
-
-We recommend categorizing these patterns by **functional axis** (or **structural modes**) for broader reuse:
-
-- **State Transitions** *(Interaction States)*: Drift / Repair / Reentry  
-- **Rhythmic Interaction** *(Temporal Modulation)*: Resonance / Latency Hold  
-
-> These axes may co-occur — rhythm can often reinforce or smooth state transitions.
-
-These are **modular UX building blocks** — reusable across EdTech, SaaS, AI copilots, or any system where **flow isn't linear, but recursive**.
+| PLD Term       | UX Design Parallel              | Example Usage                      | Pattern Example |
+|----------------|----------------------------------|------------------------------------|-----------------|
+| `Drift`        | Ambiguity / latency window       | Input pause, silent handoff        | — |
+| `Repair`       | Clarification or fallback action | Soft prompts, retry suggestion     | [`rasa_soft_repair.yml`](https://github.com/.../rasa_soft_repair.yml) |
+| `Resonance`    | Rhythmic feedback / echo         | Timing echo, loop rhythm           | [`figma_latency_hold.md`](https://github.com/.../figma_latency_hold.md) |
+| `Reentry`      | Return path to dropped intent    | Resume from fallback               | [`llm_reentry_prompt.json`](https://github.com/.../llm_reentry_prompt.json) |
+| `Latency Hold` | Designed pause or suspense       | Anticipatory shimmer, breath delay | [`figma_latency_hold.md`](https://github.com/.../figma_latency_hold.md) |
 
 ---
 
-### 🌿 [/field_stewardship/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/794a1346150c5c8b6e034604f16b1583fe17a90e/07_%09field_stewardship) — Governance, Rhythm & Care
+## 🌿 [`field_stewardship/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/07_field_stewardship) — Governance, Rhythm & Care
 
-Defines how to **maintain**, not simply build, PLD systems.
+> 🌱 Not just for developers:  
+> This folder supports facilitators, moderators, and rhythm-sensitive team roles.  
+> It defines how to **maintain** — not just build — PLD systems.
 
 Includes:
 
@@ -151,9 +77,6 @@ Includes:
 - `onboarding_and_diagnostics.md` — attunement criteria  
 - `risk_control_playbook.md` — misuse detection, mimicry prevention  
 - `engagement_policy.md` — public rhythm protocol  
-
-**Audience:**  
-Field-aware engineers, latency-first designers, rhythm-sensitive researchers
 
 
 ---
