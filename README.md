@@ -1,4 +1,4 @@
-# 🌀 Phase Drift — Structural Rhythm Field Architecture
+# 🔁 Phase Loop Dynamics — Structural Rhythm Architecture
 
 ## 📖 Origin of the Project
 This project did not emerge from any preexisting academic discipline or theory.  
