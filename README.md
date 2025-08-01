@@ -70,7 +70,7 @@ Each unit reflects a recoverable deviation or transition in user intent.
 | `Drift`        | Ambiguity / latency window       | Input pause, silent handoff        | — |
 | `Repair`       | Clarification or fallback action | Soft prompts, retry suggestion     | [`rasa_soft_repair.yml`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/b5892a07b7542991733dd37fdcf5d6dd7c2347a6/13_quickstart_kit/02_pattern_examples/rasa_soft_repair.yml) |
 | `Resonance`    | Rhythmic feedback / echo         | Timing echo, loop rhythm           | [`figma_latency_hold.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/bdf10677e22ee59bbc2e7884deddc6aa1b13fe36/13_quickstart_kit/02_pattern_examples/figma_latency_hold.md) |
-| `Reentry`      | Return path to dropped intent    | Resume from fallback               | [`llm_reentry_prompt.json`](https://github.com/.../llm_reentry_prompt.json) |
+| `Reentry`      | Return path to dropped intent    | Resume from fallback               | [`llm_reentry_prompt.json`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1f04d13cc3a00c8af0ceae71560ec01245f14957/13_quickstart_kit/02_pattern_examples/llm_reentry_prompt.json) |
 | `Latency Hold` | Designed pause or suspense       | Anticipatory shimmer, breath delay | [`figma_latency_hold.md`](https://github.com/.../figma_latency_hold.md) |
 
 ---
