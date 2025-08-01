@@ -153,31 +153,6 @@ Includes:
 **Audience:**  
 Field-aware engineers, latency-first designers, rhythm-sensitive researchers
 
----
-
-### 🧪 [/ai_prototype/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/d8bf3bdf69c573000f8408de5359e24617c90ebf/09_%09ai_prototype) — Latency-Preserving AI Design
-
-PLD-compliant PoC architecture for non-directive presence:
-
-- `03_PoC_medical_silent_agent.md` — silence as soft care  
-- `04_user_feedback_model.md` — UX without metrics  
-- `07_latency_design_guidelines.md` — latency-aware interaction  
-- `GLOSSARY.md` — terms like field coherence, drift tags, etc.  
-
-> _Design for when the system doesn’t respond._
-
----
-
-### 📊 [/phase_drift_insight/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/4dd85cbacf43a59f8579bda4041950664bcde853/10_phase_drift_insight) — Drift Visualization Toolkit
-
-Not a performance logger — a **coherence field monitor**.
-
-- `backend_main_phase.py` — FastAPI drift server  
-- `dashboard_client_logic.js` — real-time rhythm lens  
-- `logs_feedback_phase.csv` — local drift trace  
-- `90_structural_rhythm_ux.md` — UX theory focused on presence  
-
-> _"If your system can wait — it's already within the field."_
 
 ---
 
