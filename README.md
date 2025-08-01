@@ -71,7 +71,7 @@ Looking to explore real-world PLD patterns?
 - Logging and analytics schemas for drift/repair/reentry
 - Drop-in pattern templates and usage guides
 
-Start with [`README_quickstart.md`](./13_quickstart_kit/README_quickstart.md) inside the folder.
+Start with [`README_quickstart.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/612194b8ff1e366a4e25b345b77b9b26a49da7c9/13_quickstart_kit/README_quickstart.md) inside the folder.
 
 
 ---
