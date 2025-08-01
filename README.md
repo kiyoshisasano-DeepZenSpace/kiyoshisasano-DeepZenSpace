@@ -1,8 +1,9 @@
 # 🔁 Phase Loop Dynamics — Structural Rhythm Architecture
 
-> 🚀 Want to try this right away?  
-> → Jump to [Quickstart Kit for PLD](#-quickstart-kit-for-phase-loop-dynamics)  
-> Explore real-world patterns for Rasa, Figma, and LLMs.
+🚀 Want to try this right away?  
+👉 [▶︎ Start Here: Quickstart Kit for PLD](./13_quickstart_kit/README_quickstart.md)  
+Explore real-world patterns for Rasa, Figma, and LLMs.
+
 
 ---
 
