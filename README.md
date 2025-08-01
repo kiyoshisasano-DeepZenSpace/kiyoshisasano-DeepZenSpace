@@ -114,7 +114,7 @@ We welcome contributions from:
 - 🧠 Researchers exploring drift, latency, or repair in interaction
 - 🎨 Designers prototyping rhythm-aware UX
 - 🔧 Developers testing latency-hold or reentry prompts
-- 🪷 Facilitators maintaining interactional fields (see [`field_stewardship/`](./07_field_stewardship))
+- 🪷 Facilitators maintaining interactional fields (see [`field_stewardship/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/62e42b799a15f2d6eed08c3d5e223250ba2eaaa5/07_%09field_stewardship))
 
 You can start by:
 
