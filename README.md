@@ -61,6 +61,19 @@ PhaseDrift/
 └── shared_glossary/ → Academic ↔ PLD terminology mapping
 ```
 
+## 🔧 Quickstart Kit for Phase Loop Dynamics
+
+Looking to explore real-world PLD patterns?
+
+📁 See [`13_quickstart_kit/`](./13_quickstart_kit) for:
+
+- Hands-on examples in Rasa, LLMs, Figma
+- Logging and analytics schemas for drift/repair/reentry
+- Drop-in pattern templates and usage guides
+
+Start with [`README_quickstart.md`](./13_quickstart_kit/README_quickstart.md) inside the folder.
+
+
 ---
 
 ## 🔭 Module Overview
