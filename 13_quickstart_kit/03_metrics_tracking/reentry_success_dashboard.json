@@ -1,0 +1,45 @@
+{
+  "dashboard_title": "PLD Reentry Success Monitor",
+  "description": "Tracks how often users successfully return after drift or dropout, using PLD-based reentry flows.",
+  "theme": "dark",
+  "data_source": "pld_events",
+  "refresh_rate": "60s",
+  "panels": [
+    {
+      "id": "reentry_rate_over_time",
+      "title": "🌀 Reentry Rate Over Time",
+      "type": "line_chart",
+      "query": "SELECT DATE_TRUNC('hour', timestamp) AS time_slot, COUNT(*) FILTER (WHERE event = 'reentry_success') * 1.0 / NULLIF(COUNT(*) FILTER (WHERE event = 'drift_detected'), 0) AS reentry_rate FROM pld_events GROUP BY time_slot ORDER BY time_slot"
+    },
+    {
+      "id": "avg_reentry_latency",
+      "title": "⏱ Average Time to Reentry",
+      "type": "bar_chart",
+      "query": "SELECT DATE(timestamp) AS day, AVG(reentry_lag) AS avg_lag FROM pld_events WHERE event = 'reentry_success' GROUP BY day HAVING AVG(reentry_lag) < 600 ORDER BY day"
+    },
+    {
+      "id": "repair_vs_reentry_pathways",
+      "title": "🔀 Repair vs. Reentry Pathways",
+      "type": "pie_chart",
+      "query": "SELECT recovery_mode, COUNT(*) AS count FROM pld_events WHERE event IN ('drift_detected', 'repair_triggered', 'reentry_success') GROUP BY recovery_mode"
+    },
+    {
+      "id": "drift_heatmap",
+      "title": "🌡 Drift Occurrence Heatmap",
+      "type": "heatmap",
+      "query": "SELECT ui_state, drift_type, COUNT(*) AS drift_count FROM pld_events WHERE event = 'drift_detected' GROUP BY ui_state, drift_type ORDER BY drift_count DESC"
+    },
+    {
+      "id": "top_reentry_links",
+      "title": "🔗 Top Reentry Sources",
+      "type": "table",
+      "query": "SELECT referrer_context AS resumed_context_id, COUNT(*) AS uses, AVG(reentry_lag) AS avg_lag FROM pld_events WHERE event = 'reentry_success' GROUP BY referrer_context ORDER BY uses DESC LIMIT 10"
+    },
+    {
+      "id": "unresolved_drifts",
+      "title": "🚨 Unresolved Drifts After Repair",
+      "type": "bar_chart",
+      "query": "SELECT context_id, COUNT(*) AS unresolved_count FROM pld_events WHERE event = 'repair_triggered' AND goal_completed = false GROUP BY context_id ORDER BY unresolved_count DESC LIMIT 10"
+    }
+  ]
+}
