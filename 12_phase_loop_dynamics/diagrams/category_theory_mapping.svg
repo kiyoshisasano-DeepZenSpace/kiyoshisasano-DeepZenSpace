@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500">
+
+  <!-- Title -->
+  <text x="300" y="40" font-family="Arial" font-size="22" text-anchor="middle" font-weight="bold">PLD Category Theory Mapping</text>
+
+  <!-- Main Categories -->
+  <rect x="100" y="100" width="150" height="80" rx="10" fill="#e6f3ff" stroke="#3366cc" stroke-width="2"/>
+  <text x="175" y="140" font-family="Arial" font-size="16" text-anchor="middle">Syntactic</text>
+  <text x="175" y="160" font-family="Arial" font-size="14" text-anchor="middle">Category</text>
+  <text x="175" y="180" font-family="Arial" font-size="12" text-anchor="middle">Obj: Phases</text>
+  <text x="175" y="195" font-family="Arial" font-size="12" text-anchor="middle">Mor: Transitions</text>
+
+  <rect x="350" y="100" width="150" height="80" rx="10" fill="#ffe6f3" stroke="#cc3366" stroke-width="2"/>
+  <text x="425" y="140" font-family="Arial" font-size="16" text-anchor="middle">Loop</text>
+  <text x="425" y="160" font-family="Arial" font-size="14" text-anchor="middle">Category</text>
+  <text x="425" y="180" font-family="Arial" font-size="12" text-anchor="middle">Obj: Generators</text>
+  <text x="425" y="195" font-family="Arial" font-size="12" text-anchor="middle">Mor: Compositions</text>
+
+  <!-- Functors -->
+  <path d="M250,150 Q300,100 350,150" stroke="#009933" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <text x="300" y="100" font-family="Arial" font-size="14" fill="#009933">F</text>
+  <text x="300" y="120" font-family="Arial" font-size="12" fill="#009933">PhaseSpace</text>
+
+  <path d="M350,150 Q400,200 350,250" stroke="#990099" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <text x="380" y="200" font-family="Arial" font-size="14" fill="#990099">G</text>
+  <text x="380" y="220" font-family="Arial" font-size="12" fill="#990099">LoopAlgebra</text>
+
+  <!-- Natural Transformations -->
+  <rect x="200" y="300" width="200" height="80" rx="10" fill="#f0f0f0" stroke="#666666" stroke-width="2"/>
+  <text x="300" y="330" font-family="Arial" font-size="14" text-anchor="middle">Natural</text>
+  <text x="300" y="350" font-family="Arial" font-size="14" text-anchor="middle">Transformations</text>
+  <text x="300" y="370" font-family="Arial" font-size="12" text-anchor="middle">η: F ⇒ G</text>
+
+  <path d="M175,180 Q200,250 300,300" stroke="#ff6600" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="220" y="240" font-family="Arial" font-size="12" fill="#ff6600">η₁</text>
+
+  <path d="M425,180 Q400,250 300,300" stroke="#ff6600" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="380" y="240" font-family="Arial" font-size="12" fill="#ff6600">η₂</text>
+
+  <!-- Adjunction -->
+  <path d="M300,380 Q300,420 250,450" stroke="#0066cc" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="280" y="420" font-family="Arial" font-size="12" fill="#0066cc">Adj</text>
+
+  <rect x="150" y="450" width="200" height="40" rx="5" fill="#e6ffe6" stroke="#009933" stroke-width="1"/>
+  <text x="250" y="475" font-family="Arial" font-size="12" text-anchor="middle">F ⊣ G : Loop → Syn</text>
+
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Legend -->
+  <rect x="400" y="400" width="20" height="20" fill="#e6f3ff" stroke="#3366cc"/>
+  <text x="430" y="415" font-family="Arial" font-size="12">Syntactic Structures</text>
+
+  <rect x="400" y="425" width="20" height="20" fill="#ffe6f3" stroke="#cc3366"/>
+  <text x="430" y="440" font-family="Arial" font-size="12">Loop Algebra</text>
+
+  <line x1="400" y1="455" x2="420" y2="455" stroke="#ff6600" stroke-width="2"/>
+  <text x="430" y="460" font-family="Arial" font-size="12">Natural Transformations</text>
+</svg>
