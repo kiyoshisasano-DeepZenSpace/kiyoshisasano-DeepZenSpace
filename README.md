@@ -124,9 +124,8 @@ Each PLD pattern can be interpreted as a structural operator on interaction dyna
 
 This perspective enables rhythm-aware metric design, e.g.:
 
-```math
-\text{drift_to_repair_ratio} = \frac{|\text{repair events}|}{|\text{drift events}|}
-```
+Drift-to-Repair Ratio = |Repair Events| / |Drift Events|
+
 → See metrics_schema.yaml for implementation.
 
 ## 📘 [Glossary & Theoretical Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/abdf7d7bba919ffa9654de454420b77a502fa014/04_model_kit/structure_topograph/glossary)
