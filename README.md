@@ -109,6 +109,26 @@ Each unit reflects a recoverable deviation or transition in user intent.
 
 ---
 
+---
+
+### 🧮 Pattern Operators and Metrics
+
+Each PLD pattern can be interpreted as a structural operator on interaction dynamics:
+
+| Pattern        | Operator Expression                |
+|----------------|------------------------------------|
+| Drift          | $\nabla C(t)$ — gradient of coherence loss |
+| Repair         | $\mathcal{R}(\sigma)$ — re-alignment operator |
+| Reentry        | $\Sigma(t) \to \Sigma(t_0)$ — phase return |
+| Latency Hold   | $\psi_l \sim \text{Exp}(\lambda)$ — delay decay |
+
+This perspective enables rhythm-aware metric design, e.g.:
+
+```math
+\text{drift_to_repair_ratio} = \frac{|\text{repair events}|}{|\text{drift events}|}
+```
+→ See metrics_schema.yaml for implementation.
+
 ## 📘 [Glossary & Theoretical Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/abdf7d7bba919ffa9654de454420b77a502fa014/04_model_kit/structure_topograph/glossary)
 
 Cross-disciplinary term alignment:
