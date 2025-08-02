@@ -107,7 +107,6 @@ Each unit reflects a recoverable deviation or transition in user intent.
 | `Reentry`      | Return path to dropped intent    | Resume from fallback               | [`llm_reentry_prompt.json`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1f04d13cc3a00c8af0ceae71560ec01245f14957/13_quickstart_kit/02_pattern_examples/llm_reentry_prompt.json) |
 | `Latency Hold` | Designed pause or suspense       | Anticipatory shimmer, breath delay | [`figma_latency_hold.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7efb68e5cecfb5fee62e645c0fc803854825803f/13_quickstart_kit/02_pattern_examples/figma_latency_hold.md) |
 
----
 
 ---
 
@@ -124,7 +123,10 @@ Each PLD pattern can be interpreted as a structural operator on interaction dyna
 
 This perspective enables rhythm-aware metric design, e.g.:
 
-Drift-to-Repair Ratio = |Repair Events| / |Drift Events|
+$$
+\text{Drift-to-Repair Ratio} = \frac{\left|\mathrm{Repair\ Events}\right|}{\left|\mathrm{Drift\ Events}\right|}
+$$
+
 
 → See metrics_schema.yaml for implementation.
 
