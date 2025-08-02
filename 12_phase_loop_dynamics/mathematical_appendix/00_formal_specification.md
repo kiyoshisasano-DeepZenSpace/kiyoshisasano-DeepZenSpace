@@ -107,5 +107,3 @@ shows how loop generators act as morphisms between categories of phase types, wh
 - $\mathcal{C}_{\text{Cue}}$: Cue phases
 - $\mathcal{C}_{\text{Lat}}$: Latent phases
 - $\mathcal{C}_{\text{Res}}$: Resonance phases
-
-[Next: Dynamical Systems Formulation →](/01_dynamical_systems.md)
