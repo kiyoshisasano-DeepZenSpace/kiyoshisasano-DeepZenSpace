@@ -16,7 +16,7 @@
 ### Drift–Repair Duality
 
 $$
-\ker(\mathcal{D}) \cong \operatorname{im}(\mathcal{R}) \quad \text{(Isomorphism)}
+\mathrm{ker}(\mathcal{D}) \cong \mathrm{im}(\mathcal{R}) \quad \text{(Isomorphism)}
 $$
 
 ---
