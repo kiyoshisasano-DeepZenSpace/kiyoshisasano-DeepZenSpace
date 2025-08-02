@@ -70,8 +70,9 @@ $$
 **Metric Space Characterization**:
 
 $$
-d(\sigma_L, \sigma_S) = \min\left\{\frac{\|\psi_l^A - \psi_l^B\|}{\text{Var}(\psi_l)}, 1\right\}
+d(\sigma_L, \sigma_S) = \min\left\lbrace \frac{\|\psi_l^A - \psi_l^B\|}{\text{Var}(\psi_l)}, 1 \right\rbrace
 $$
+
 
 | Aspect      | Silence ($\sigma_S$)                   | Latent Phase ($\sigma_L$)                             |
 |-------------|----------------------------------------|--------------------------------------------------------|
