@@ -133,8 +133,9 @@ $$
 **Delay Operator Spectrum**:
 
 $$
-\sigma(\mathcal{L}_3) = \left\{ z \in \mathbb{C} \,\middle|\, |z| \leq e^{-\tau_0} \right\}
+\sigma(\mathcal{L}_3) = \left\lbrace z \in \mathbb{C} \,\middle|\, |z| \leq e^{-\tau_0} \right\rbrace
 $$
+
 
 **Hausdorff Measure**:
 
