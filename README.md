@@ -45,6 +45,42 @@ At its core, PLD structures interaction through rhythmic sequences:
 
 ---
 
+### 🧮 Supplement: Mathematical Framing (Optional)
+
+While PLD originated from observation, it lends itself to mathematical modeling via dynamic systems and signal alignment.
+
+#### Phase Space Representation
+
+```math
+\Sigma = \mathcal{S} \times \mathcal{T} \times \mathcal{P}
+```
+$\mathcal{S}$: Semantic configuration space  
+$\mathcal{T}$: Temporal modulation (delays, pacing)  
+$\mathcal{P}$: Prosodic or affective trace  
+
+---
+
+### Core Dynamics
+
+```math
+\begin{aligned}
+\text{Drift} &\sim \partial_t \Psi > \theta \\
+\text{Repair} &= \mathcal{R}(\sigma) \in \Sigma \\
+\text{Reentry} &\iff \exists t_r : \Sigma(t_r) \approx \Sigma(t_0) \\
+\text{Resonance} &\iff \langle \sigma_t, \sigma_{t-k} \rangle \to 1
+\end{aligned}
+```
+These expressions help describe:
+
+- Drift: when a user deviates from interactional coherence
+- Repair: how the system attempts to realign the state
+- Reentry: when system state returns near an earlier phase
+- Resonance: repeated structure or rhythmic convergence
+
+➡️ See formal_specification.md for optional symbolic mapping.
+
+---
+
 ## 📦 Quickstart Kit for Phase Loop Dynamics
 
 Looking to explore real-world PLD patterns?
