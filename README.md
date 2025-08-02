@@ -77,8 +77,6 @@ These expressions help describe:
 - Reentry: when system state returns near an earlier phase
 - Resonance: repeated structure or rhythmic convergence
 
-➡️ See formal_specification.md for optional symbolic mapping.
-
 ---
 
 ## 📦 Quickstart Kit for Phase Loop Dynamics
