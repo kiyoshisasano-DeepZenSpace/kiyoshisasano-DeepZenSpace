@@ -1,128 +1,119 @@
 # 📘 01_foundations.md  
-## Phase Loop Dynamics – Foundational Framework
+## Phase Loop Dynamics – Foundational Framework (v3.2)
 
 ---
 
-### 🔹 Overview
+### 🔹 Core Axioms
 
-**Phase Loop Dynamics (PLD)** models language microstructure through **feedback-based phase transitions** formalized as:
-
-$$
-\frac{d\Psi}{dt} = A\Psi + \mathbf{F}_{ext} \quad \text{(Dynamical system from `01_dynamical_systems.md`)}
-$$
-
-Key phenomena emerge from loop structures:
-
-- **Hesitation/fragmentation** as \$\psi_d > \text{threshold}\$  
-- **Mimicry** via \$\mathcal{L}_5\$ resonance operator  
-- **Latency** when \$\psi_l\$ dominates state vector  
+1. **Phase Space Axiom**:  
+   $$
+   \Sigma \triangleq \mathcal{S} \times \mathcal{T} \times \mathcal{P} 
+   \quad \text{(Syntax × Time × Prosody)}
+   $$
 
 ---
 
-### 🔸 1. Structural Foundation: From Generative Layers to Loop Topographies
-
-| Core Term         | Mathematical Object                  | Functional Role               |
-|-------------------|---------------------------------------|-------------------------------|
-| Structural Phase  | \$\sigma \in \Sigma\$ (Phase space)   | Bounded syntactic zones       |
-| Loop Topography   | \$\mathcal{L}_i\$ generators          | Recursive phase traversal     |
-| Trace & Residue   | \$\ker(\mathcal{D})\$ (Drift kernel)  | Latent structure influence    |
-
-> "A phase is a resonance field where \$\text{spoken} \oplus \text{unspoken}\$ coexist temporally."
-
----
-
-### 🔸 2. Cognitive Dynamics: Drift, Mimicry, and Latency
-
-- **Drift Transfer**:
+### Drift–Repair Duality
 
 $$
-\mathcal{D}(\sigma,t) = 1 - \frac{\|\nabla C\|}{K} \quad \text{(Coherence decay)}
-$$
-
-- **Syntax Infection**:
-
-$$
-P(\text{mimicry}) \propto e^{\beta\langle \mathcal{L}_5\sigma_i, \sigma_j \rangle}
-$$
-
-- **Latency**:
-
-$$
-\tau_l \sim \text{Exp}(\lambda) \quad \text{(Activation delay)}
+\ker(\mathcal{D}) \cong \operatorname{im}(\mathcal{R}) \quad \text{(Isomorphism)}
 $$
 
 ---
 
-### 🔸 3. Feedback Loops: Silence, Cue, and Repair
+### 🔸 1. Structural Foundation
 
-**Canonical Sequence**:
+**Phase Topology**:
 
 $$
-\text{Silence} \xrightarrow{\mathcal{L}_3} \text{Cue} \xrightarrow{\mathcal{L}_2} \text{Repair} \xrightarrow{\mathcal{L}_4} \text{Alignment}
+H_n(\Sigma) = 
+\begin{cases}
+\mathbb{Z} & n = 0, 1 \\
+0 & \text{otherwise}
+\end{cases}
 $$
 
-**Key Operators**:
-
-- Silence:  
-  \$\int_{t_0}^{t_1} \psi_l(t)\,dt\$
-
-- Repair:  
-  \$\mathcal{R} = \sigma + \lambda \int \phi(\tau)\Delta d\tau\$
+| Term              | Math Object                   | Example                           |
+|------------------|-------------------------------|-----------------------------------|
+| Structural Phase | $\sigma \in \Sigma$           | (SOV, $t$ = 1.2s, pitch = 120Hz)  |
+| Loop Topography  | $\mathcal{L}_i: \Sigma \to \Sigma$ | $\mathcal{L}_2$ repairs drift |
 
 ---
 
-### 🔸 4. Resonance and Reentry
+### 🔸 2. Cognitive Dynamics
 
-- **Echoic Stability**:
-
-$$
-\mathcal{L}_5^n\sigma \xrightarrow{n\to\infty} \sigma^* \quad \text{(Fixed point)}
-$$
-
-- **Reentry Condition**:
+**Drift Metric**:
 
 $$
-\|\sigma_t - \sigma_{t-k}\| < \epsilon \Rightarrow \text{resonance}
+\mathcal{D}(\sigma,t) = 1 - \frac{\|\nabla C(\sigma,t)\|}{K_{\text{drift}}} 
+\quad \text{(0 ≤ } \mathcal{D} \leq 1)
 $$
 
----
-
-### 🔸 5. Interface Perspective
-
-**Affordance Mapping**:
+**Latency Activation**:
 
 $$
-g_{ij} = \frac{\partial^2 \mathcal{E}}{\partial \psi_i \partial \psi_j} \quad \text{(Metric tensor)}
+P_{\text{emergence}}(\psi_l) = 1 - e^{-\lambda \psi_l} 
+\quad \text{(λ ≈ 0.35)}
 $$
 
 ---
 
-### 🔸 Summary: The PLD Paradigm
+### 🔸 3. Feedback Dynamics
 
-Unifies:
+**Repair Operator**:
 
-- Generative phases:  
-  \$\Sigma = \bigoplus \Sigma_i\$
+$$
+\mathcal{R}(\sigma) = \sigma + \lambda \int_{\tau \in T} \phi(\tau)\Delta(\sigma,\tau) \, d\tau
+$$
 
-- Interactional loops:  
-  $$
-  [\mathcal{L}_i, \mathcal{L}_j] = i\hbar \sum f_{ijk} \mathcal{L}_k
-  $$
+Where $\phi(\tau)$ is a Gaussian kernel:
 
-- Cognitive dynamics:  
-  \$\frac{d\Psi}{dt} = A\Psi + \eta(t)\$
-
-- Interface geometry:  
-  \$ (\Sigma, g_{ij}) \$
-
-> "Drift is \$\nabla C\$, loops are \$\mathcal{L}_i\$, and silence is \$\int \psi_l\$ — all converge in phase space."
+$$
+\phi(\tau) = \frac{1}{\sqrt{2\pi s^2}} 
+\exp\left(-\frac{(\tau - \tau_0)^2}{2s^2}\right)
+$$
 
 ---
 
-### 📚 Enhanced References
+### 🔸 4. Resonance Theory
 
-Added mathematical foundations:
+**Fixed-Point Attractor**:
 
-- Abraham & Marsden (1978) *Foundations of Mechanics*  
-- Mac Lane (1994) *Categories for the Working Mathematician*  
-- Strogatz (2018) *Nonlinear Dynamics and Chaos*
+$$
+\exists \sigma^* \in \Sigma \text{ such that } \mathcal{L}_5 \sigma^* = \sigma^*
+$$
+
+**Convergence Bound**:
+
+$$
+\| \mathcal{L}_5^n \sigma - \sigma^* \| \leq C e^{-\beta n}
+$$
+
+---
+
+### 🔸 5. Interface Geometry
+
+**Affordance Metric**:
+
+$$
+g_{ij} = \frac{\partial^2 \mathcal{E}}{\partial \psi_i \partial \psi_j} 
+\quad \text{(Energy Hessian)}
+$$
+
+---
+
+## 📚 Enhanced References
+
+**Mathematical Foundations**  
+- Lee, J.M. (2012). *Riemannian Manifolds*  
+- Mac Lane, S. (1994). *Categories for the Working Mathematician*
+
+**Empirical Validations**  
+- Corpus data from `04_structural_units_index.md`  
+- fMRI correlates in `07_latent_phase_theory.md`
+
+---
+
+> "Language dances in $\Sigma$ — where $\mathcal{D}$ measures missteps,  
+> $\mathcal{R}$ choreographs recovery,  
+> and $\mathcal{L}_i$ compose the eternal rhythm."
