@@ -132,4 +132,3 @@ $$
 - **Resonance Periodicity**:  
   $\mathcal{L}_5^n = I \text{ for some } n \leq 5$
 
-[Full proofs: See `mathematical_appendix/02_phase_algebra.md`]
