@@ -128,8 +128,6 @@ $$
 $$
 
 
-→ See metrics_schema.yaml for implementation.
-
 ## 📘 [Glossary & Theoretical Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/abdf7d7bba919ffa9654de454420b77a502fa014/04_model_kit/structure_topograph/glossary)
 
 Cross-disciplinary term alignment:
