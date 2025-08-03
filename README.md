@@ -127,7 +127,7 @@ $$
 \text{Drift-to-Repair Ratio} = \frac{\left|\mathrm{Repair\ Events}\right|}{\left|\mathrm{Drift\ Events}\right|}
 $$
 
-📁 See [`12_quickstart_kit/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/13_quickstart_kit) for:
+📁 See [`12_phase_loop_dynamics/mathematical_appendix`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/8857011769232d78b8bae5c511c9893ea02400ba/12_phase_loop_dynamics/mathematical_appendix) for:
 
 - []()
 
