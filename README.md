@@ -144,7 +144,7 @@ Cross-disciplinary term alignment:
 
 See:
 
-- `structure_topograph/glossary/README_terms_mapping.md`  
+- [structure_topograph/glossary/README_terms_mapping.md](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/fc3d314b05ca1bf6abc77c74df72ebef81aa41bd/04_model_kit/structure_topograph/glossary/README_terms_mapping.md)
 - `glossary/academic_to_pd_reverse_mapping.md`
 
 ---
