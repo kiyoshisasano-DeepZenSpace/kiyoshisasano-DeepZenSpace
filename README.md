@@ -129,7 +129,7 @@ $$
 
 📁 See [`12_phase_loop_dynamics/mathematical_appendix`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/8857011769232d78b8bae5c511c9893ea02400ba/12_phase_loop_dynamics/mathematical_appendix) for:
 
-- []()
+- [00_formal_specification.md](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/51472019970369bd2a6c4c411927e2998a33c2c9/12_phase_loop_dynamics/mathematical_appendix/00_formal_specification.md)
 
 ## 📘 [Glossary & Theoretical Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/abdf7d7bba919ffa9654de454420b77a502fa014/04_model_kit/structure_topograph/glossary)
 
