@@ -158,9 +158,11 @@ See:
 - 📘 **Main Text (PDF):** [`paper_5__Phase_Loop_Dynamics__Sasano_2025_TEXT.pdf`](./08_translation_interface/zenodo/paper_5__Phase_Loop_Dynamics__Sasano_2025_TEXT.pdf)
 - 📊 **Figures & Tables:** [`paper_5__Phase_Loop_Dynamics__Sasano_2025_FIGURES.pdf`](./08_translation_interface/zenodo/paper_5__Phase_Loop_Dynamics__Sasano_2025_FIGURES.pdf)
 - 🔗 **DOI via Zenodo:** [10.5281/zenodo.16736821](https://doi.org/10.5281/zenodo.16736821)
-- 📝 [`paper_5__zenodo_link.md`](./08_translation_interface/zenodo/paper_5__zenodo_link.md)
+- 🗂 **Repository Metadata:** [`paper_5__README`](./08_translation_interface/zenodo/paper_5__README)
+- 📝 **Zenodo Metadata Summary:** [`paper_5__zenodo_link.md`](./08_translation_interface/zenodo/paper_5__zenodo_link.md)
 
 > *"Language is not only spoken — it hesitates, echoes, and returns."*
+
 
 ---
 
