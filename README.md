@@ -149,6 +149,21 @@ See:
 
 ---
 
+## 📄 Publications
+
+#### 🧷 Paper #5 — *Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance* (2025)
+
+> A recursive framework for modeling syntactic drift, cue-triggered repair, and latent structure emergence in real-time interaction.
+
+- 📘 **Main Text (PDF):** [`paper_5__Phase_Loop_Dynamics__Sasano_2025_TEXT.pdf`](./08_translation_interface/zenodo/paper_5__Phase_Loop_Dynamics__Sasano_2025_TEXT.pdf)
+- 📊 **Figures & Tables:** [`paper_5__Phase_Loop_Dynamics__Sasano_2025_FIGURES.pdf`](./08_translation_interface/zenodo/paper_5__Phase_Loop_Dynamics__Sasano_2025_FIGURES.pdf)
+- 🔗 **DOI via Zenodo:** [10.5281/zenodo.16736821](https://doi.org/10.5281/zenodo.16736821)
+- 📝 [`paper_5__zenodo_link.md`](./08_translation_interface/zenodo/paper_5__zenodo_link.md)
+
+> *"Language is not only spoken — it hesitates, echoes, and returns."*
+
+---
+
 ## 🧭 Lexicon Architecture Supplements
 
 For extended guidance on **term relationships**, **usage safety**, and **activation patterns**, see:
