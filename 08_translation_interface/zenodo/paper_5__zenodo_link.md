@@ -4,9 +4,9 @@ This repository hosts the reference and supporting materials for the fifth paper
 
 > **Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance**  
 > Kiyoshi Sasano (2025)  
-> DOI: [10.5281/zenodo.16736821](https://doi.org/10.5281/zenodo.16736821)  
+> DOI: [10.5281/zenodo.16741300](https://doi.org/10.5281/zenodo.16741300)  
 > Published: August 3, 2025  
-> [🌐 View on Zenodo](https://zenodo.org/records/16736821)
+> [🌐 View on Zenodo](https://zenodo.org/records/16741300)
 
 ---
 
