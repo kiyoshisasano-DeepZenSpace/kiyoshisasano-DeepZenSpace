@@ -37,8 +37,8 @@ By modeling syntax as a **phase ecology**, this work introduces a new operationa
   title        = {Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance},
   year         = 2025,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.16736821},
-  url          = {https://zenodo.org/records/16736821}
+  doi          = {10.5281/zenodo.16741300},
+  url          = {https://zenodo.org/records/16741300}
 }
 ```
 🔗 **Related Links**
