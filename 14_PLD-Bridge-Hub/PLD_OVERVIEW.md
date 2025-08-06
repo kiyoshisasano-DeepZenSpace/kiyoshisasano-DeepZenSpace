@@ -1,24 +1,27 @@
-# PLD_OVERVIEW.md
+# 🧠 PLD Overview
 
-## 🌐 PLD-Bridge Hub
+## 🌐 What is PLD?
 
-This repository serves as the central bridge hub for two parallel projects based on Phase Loop Dynamics (PLD).
+**Phase Loop Dynamics (PLD)** is a theoretical and practical framework for modeling dynamic cognitive or user experience states as structured alternations of **Pause** and **Drift**.  
+A **Loop** is formed when these phases recur in a coherent pattern over time.
 
-**PLD** is a framework that models cyclic cognitive or user experience states through pause and drift phases.  
-A **Loop** is a cyclic structure formed by alternating **Pause** and **Drift**.
-
-
-
-## 🔗 Resource Links
-
-| Resource | Description | Channel |
-|----------|-------------|---------|
-| 🚀 PLD Notion UI Kit | Templates for Pause/Drift structures | [Gumroad]() / [Notion]() |
-| 🤖 PLD Structure Bot (Colab) | Pause detection to Loop structure generation | [Colab]() |
-| 🌟 HF Spaces Demo | Interactive UI and Bot trial | [HF Spaces]() |
-| 📘 PLD Papers (Zenodo) | PLD theory: algebra, dynamics, topology | [Zenodo DOI]() |
+See [`docs/zenodo_paper_links.md`](./docs/zenodo_paper_links.md) for mathematical and implementation references.
 
 ---
+
+## 🔗 Key Resources
+
+| Resource | Description | Link |
+|----------|-------------|------|
+| 🧩 PLD Notion UI Kit | Structured Notion templates reflecting Pause/Drift patterns | [TBD] |
+| 🤖 PLD Structure Bot | Conversational agent that generates loop-based structures | [TBD] |
+| 🌐 HF Spaces Demo | Interactive trial of PLD-based bots and generators | [TBD] |
+| 📄 Zenodo Papers | Algebraic, dynamical, topological models of PLD | [Zenodo DOI](https://doi.org/...) |
+
+---
+
+## 🧭 Repository Structure
+
 /14_PLD-Bridge-Hub/
 ├── PLD_OVERVIEW.md               # This master overview file
 ├── README_stub.md                # Minimal README with pointer to this file
@@ -34,26 +37,33 @@ A **Loop** is a cyclic structure formed by alternating **Pause** and **Drift**.
 
 ---
 
-## 🔁 A ↔ B Cross-Thread Navigation
+## 🔎 About the Papers
 
-### From A to B (Notion → Technical Curiosity)
-- “This template is auto-generated → Try the Bot”
+### 🧪 Theoretical Background
+The PLD framework formalizes user/system state transitions using tools from:
+- Dynamical systems (phase manifolds, stability theorems)
+- Algebraic structures (loop generators, repair operators)
+- Topological constructs (winding numbers, loop separation)
+- Metric geometry (phase distances, geodesics, fractals)
 
-### From B to A (PLD Code → UI Realization)
-- “This Pause classification is implemented in Notion → See the Kit”
+All models aim to **generate, classify, or visualize Pause/Drift/Loop structures** in a reusable form.
+
+### 🌍 Multilingual Structure
+While the core mathematical texts are in English, applications and guides are actively translated or localized into Japanese and other languages.  
+See Notion UI packs for language-specific flows.
 
 ---
 
-## 🚀 Planned Enhancements
+## 🚀 Roadmap Highlights
 
-### 🔧 Notion Integration
-- Add Pause prediction linkage to Notion UI Pack
+### 🧷 Notion Integration
+- Add seamless links from generated PLD structures to Notion blocks
 
-### 🧪 Bot Hosting
-- Host PLD Bot on HF Spaces for broader trials
+### 🔄 Loop Visualizations
+- Embed Mermaid.js-based diagrams of loop transitions and phase drift
 
-### 📰 Medium Outreach
-- Medium articles mapping Loop structures to UX patterns
+### ✍️ Outreach Articles
+- Publish Medium series linking PLD models to design and cognition practice
 
 ---
 
@@ -61,8 +71,5 @@ A **Loop** is a cyclic structure formed by alternating **Pause** and **Drift**.
 
 **License:** Creative Commons BY-NC 4.0
 
-> - Structural reuse requires **attunement** *(alignment with dynamic structure, not literal code reuse)*, not extraction  
-> - **Drift-aware contributions** *(favoring system-level adaptability over static optimization)* are preferred over speed or optimization
-
-## 🧭 Repository Structure
-
+> - Reuse requires **attunement** (alignment with phase structures), not extraction  
+> - Prefer **drift-aware contributions** (phase-aligned iteration) over speed-driven edits
