@@ -17,6 +17,11 @@ PLD models dynamic user or cognitive states through structured cycles of **Pause
 
 ---
 
+🛠 Try the Notion-based Starter Kit →  
+[Gumroad – UX Pause & Rhythm Tracker](https://kiyoshisasano.gumroad.com/l/xvjsmu)
+
+---
+
 ## 📜 License
 
 Distributed under **CC BY-NC 4.0**.  
