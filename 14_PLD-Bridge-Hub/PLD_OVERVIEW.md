@@ -5,7 +5,7 @@
 **Phase Loop Dynamics (PLD)** is a theoretical and practical framework for modeling dynamic cognitive or user experience states as structured alternations of **Pause** and **Drift**.  
 A **Loop** is formed when these phases recur in a coherent pattern over time.
 
-See [`docs/zenodo_paper_links.md`](./docs/zenodo_paper_links.md) for mathematical and implementation references.
+See [`paper_5__zenodo_link.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/aefad9af9302aae697e07cf5a23b9b43f98e0e63/08_translation_interface/zenodo/paper_5__zenodo_link.md) for mathematical and implementation references.
 
 ---
 
