@@ -13,7 +13,7 @@ See [`paper_5__zenodo_link.md`](https://github.com/kiyoshisasano-DeepZenSpace/ki
 
 | Resource | Description | Link |
 |----------|-------------|------|
-| 🧩 PLD Notion UI Kit | Structured Notion templates reflecting Pause/Drift patterns | [TBD] |
+| 🧩 PLD Notion UI Kit | Structured Notion templates reflecting Pause/Drift patterns | [UX Pause Rhythm Tracker](https://platinum-arch-69c.notion.site/UX-Pause-Rhythm-Tracker-Starter-Kit-2430fc4951e8809481f6c77478a64535) |
 | 🤖 PLD Structure Bot | Conversational agent that generates loop-based structures | [TBD] |
 | 🌐 HF Spaces Demo | Interactive trial of PLD-based bots and generators | [TBD] |
 | 📄 Zenodo Papers | Algebraic, dynamical, topological models of PLD | [Zenodo DOI](https://doi.org/10.5281/zenodo.16736820) |
