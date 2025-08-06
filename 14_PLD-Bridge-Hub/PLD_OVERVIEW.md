@@ -7,15 +7,7 @@ This repository serves as the central bridge hub for two parallel projects based
 **PLD** is a framework that models cyclic cognitive or user experience states through pause and drift phases.  
 A **Loop** is a cyclic structure formed by alternating **Pause** and **Drift**.
 
-### ✅ Thread A: Notion Template Deployment & UX Support
-- Provides structured Notion templates for practical users, reflecting Pause/Drift structures.
-- Channels: Product Hunt / Gumroad / Notion
 
-### ✅ Thread B: PLD Structure Generation & Bot Development
-- Focused on Python-based generators, React interfaces, and conversational agents based on PLD.
-- Channels: GitHub / Hugging Face Spaces (HF Spaces) / Colab
-
----
 
 ## 🔗 Resource Links
 
