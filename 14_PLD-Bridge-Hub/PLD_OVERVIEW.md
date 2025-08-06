@@ -54,6 +54,25 @@ See Notion UI packs for language-specific flows.
 
 ---
 
+
+## 🛠 Try the PLD Notion Kit
+
+Want a lightweight, hands-on tool to observe drift, pause, and reentry in your UX?
+
+📦 **Get the Notion-based PLD Starter Kit here** →  
+👉 [UX Pause & Rhythm Tracker – Starter Kit (Gumroad)](https://kiyoshisasano.gumroad.com/l/xvjsmu)
+
+This kit includes:
+
+- ✅ Pause detection checklist  
+- ✅ Drift event log table  
+- ✅ UX Rhythm Kanban tracker  
+- ✅ Before/after comparison layout
+
+No setup required. Just duplicate and begin observing your UX flow today.
+
+---
+
 ## 🚀 Roadmap Highlights
 
 ### 🧷 Notion Integration
