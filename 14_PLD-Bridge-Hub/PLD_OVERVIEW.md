@@ -33,7 +33,7 @@ See [`docs/zenodo_paper_links.md`](./docs/zenodo_paper_links.md) for mathematica
 │   └── README.md
 ├── /docs/
 │   └── zenodo_paper_links.md    # Mapping between papers and implementations
-txt```
+```
 
 ---
 
