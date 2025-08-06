@@ -21,7 +21,7 @@ See [`docs/zenodo_paper_links.md`](./docs/zenodo_paper_links.md) for mathematica
 ---
 
 ## 🧭 Repository Structure
-text```
+```
 /14_PLD-Bridge-Hub/
 ├── PLD_OVERVIEW.md               # This master overview file
 ├── README_stub.md                # Minimal README with pointer to this file
