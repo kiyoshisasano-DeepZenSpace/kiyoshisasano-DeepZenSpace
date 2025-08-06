@@ -16,7 +16,7 @@ See [`paper_5__zenodo_link.md`](https://github.com/kiyoshisasano-DeepZenSpace/ki
 | 🧩 PLD Notion UI Kit | Structured Notion templates reflecting Pause/Drift patterns | [TBD] |
 | 🤖 PLD Structure Bot | Conversational agent that generates loop-based structures | [TBD] |
 | 🌐 HF Spaces Demo | Interactive trial of PLD-based bots and generators | [TBD] |
-| 📄 Zenodo Papers | Algebraic, dynamical, topological models of PLD | [Zenodo DOI](https://doi.org/...) |
+| 📄 Zenodo Papers | Algebraic, dynamical, topological models of PLD | [Zenodo DOI](https://doi.org/10.5281/zenodo.16736820) |
 
 ---
 
