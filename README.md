@@ -180,6 +180,20 @@ For extended guidance on **term relationships**, **usage safety**, and **activat
 
 ---
 
+## 🌉 PLD-Bridge Hub: Theory ↔ Implementation
+
+Looking to bridge theory and application?
+
+The **PLD-Bridge Hub** is a modular directory system that connects:
+
+- 🧠 **Theory Papers**: [PLD core frameworks](./docs/zenodo_paper_links.md)
+- 🧩 **Structure Generators**: [Bot-driven syntax construction](./structure_generators/)
+- 🧰 **UX Templates**: [Notion trackers & rhythm tagging](./notion_ui_templates/)
+
+For a full map of tools and interfaces, see: [`PLD_OVERVIEW.md`](./PLD_OVERVIEW.md)
+
+---
+
 ## 💬 Collaborate with PLD
 
 We welcome contributions from:
