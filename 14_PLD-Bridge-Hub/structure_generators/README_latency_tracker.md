@@ -1,98 +1,84 @@
-# ⏱️ Latency Tracker — UI Pause Logger for PLD
+# ⏸️ Latency Tracker
 
-This module detects and logs user interaction pauses in web UIs  
-as defined by **Phase Loop Dynamics (PLD)** — specifically as indicators of:
+Detects input latency events and classifies them based on Pause/Drift thresholds from Phase Loop Dynamics (PLD).
 
-- ⏸️ Cognitive delay  
-- ⏸️ UI friction  
-- ⏸️ Intent suppression or micro-hesitation  
+---
 
-Used to support pattern-aware UX design and rhythm-resonant system feedback.
+## ⚙️ Functionality
+
+This script tracks time gaps between user interactions (e.g., UI events, button presses) and identifies when a **pause** occurs, based on a millisecond threshold.
+
+| Feature         | Description                                  |
+|----------------|----------------------------------------------|
+| ⏱ Time Capture | Measures time between events (`start → end`) |
+| 📊 Pause Label | Labels as `"⏸️ Pause"` if duration exceeds threshold |
+| 📝 CSV Logging | Records all events into a local `.csv` file  |
+
+---
+
+## 🧠 PLD Theory Mapping
+
+| Code Element     | PLD Concept                        | Source         |
+|------------------|------------------------------------|----------------|
+| `PAUSE_THRESHOLD_MS` | Cognitive latency / UI friction     | Paper 1 Fig.3 / Paper 2 |
+| `pause_type`     | `⏸️ Pause` vs `✅ Smooth` classification | Drift boundary |
+| CSV logging      | Loop trace of temporal irregularity | Field recovery |
 
 ---
 
 ## 🛠️ Configuration
 
-- `PAUSE_THRESHOLD_MS`: Default `800` milliseconds
+| Variable             | Description                                     | Default |
+|----------------------|-------------------------------------------------|---------|
+| `PAUSE_THRESHOLD_MS` | Millisecond threshold for labeling a pause      | `800`   |
+| `CSV_LOG_PATH`       | Output path for logging pause events (`.csv`)   | `"pause_log.csv"` |
 
-> **Rationale**:
-> - PLD Paper 1, Fig.3 — Cognitive drift begins after ~750ms  
-> - Modified Fitts' Law for UI delay friction  
-> - Practical UX thresholds for latency awareness  
-
-You can modify this value in `latency_tracker.py` to suit your interaction environment.
-
----
-
-## ⚙️ How It Works
-
-```text
-[User Action A]
-↓ (pause of 1.2s)
-[User Action B]
-→ Logged as: PauseEvent(type="⏸️ Latency Hold", duration=1.2s, timestamp=...)
-```
-The script compares timestamps between interactions.
-If the pause exceeds PAUSE_THRESHOLD_MS, it logs the pause event to CSV.
+> Threshold of 800ms based on:
+> - PLD Paper 1 Fig.3 (Cognitive Drift Onset)
+> - Modified Fitts’ Law for interface latency friction
 
 ---
 
 ## 🚀 Quick Example
 
-```bash
-python latency_tracker.py
-```
-Then perform sample UI inputs (or simulate).
-Output will be saved to: latency_log.csv
+```python
+from latency_tracker import create_pause_event, log_event_to_csv
+import time
 
-# Sample log:
-```bash
-timestamp,pause_duration_ms,label
-2025-08-07 14:22:05,1250,⏸️ Cognitive
+print("🔴 Start interaction")
+start = time.time()
+input("⏸️ Press Enter when ready...")
+end = time.time()
+
+event = create_pause_event(start, end)
+print("🧠 Detected Pause Event:", event)
+log_event_to_csv(event)
 ```
 ---
 
 ## 🧠 Notes on Interpretation
 
-**Pause ≠ Failure** — in PLD, pauses are structural rhythm markers.  
+**Extended Sensing Possibilities (Future)**:
 
-They indicate **intent latency**, **micro-transition**, or **repair opportunity**,  
-and may lead to loop realignment (see `reentry_detector.py` for next stage).
-
----
-
-### 🔭 Extended Sensing (Planned)
-
-Future versions may support:
-
-| Modality           | PLD Mapping       | Example              |
-|--------------------|------------------|----------------------|
-| 👁️ Eye tracking     | ⏸️ Cognitive       | Gaze fixed, no input |
-| 🖱️ Scroll Stalling  | ⏸️ UI Friction     | Scroll → stop        |
-| 📱 Touch idle gap   | ⏸️ Latency Hold    | Mobile finger hover  |
+| Input Modality    | Mapped Pause Type   | Rationale                        |
+|-------------------|---------------------|----------------------------------|
+| Eye tracking      | `⏸️ Cognitive`       | Blink/stare delay detection      |
+| Scroll hesitation | `⏸️ UI Friction`     | Interaction breakdown            |
+| Cursor wobble     | `⏸️ Latency Hold`    | Anticipatory pausing behavior    |
 
 ---
 
 ## 🤝 Contributing
 
-**Theoretical Consistency Checklist**:
-
-- [ ] Does your change correspond to a PLD concept (Drift / Pause / Repair)?  
-- [ ] Cite the related section in [`zenodo_paper_links.md`](../docs/zenodo_paper_links.md)  
-- [ ] If you introduce new thresholds or labels, document the rationale.
-
----
-
-## 📚 References
-
-- 🧠 [`docs/zenodo_paper_links.md`](../docs/zenodo_paper_links.md)  
-- 🔄 [`structure_generators/README_structure_generators.md`](../structure_generators/README_structure_generators.md)  
-- 💬 [`pause_classifier_bot.py`](./pause_classifier_bot.py)  
-- 🔁 [`reentry_detector.py`](./reentry_detector.py)
+**PLD-Theory Consistency Checklist**:
+- [ ] Document which paper section your code corresponds to
+- [ ] Add a comment link to `docs/zenodo_paper_links.md`  
+- [ ] Ensure delay logic aligns with drift/repair models in Paper 1 & 2
 
 ---
 
-## 📜 License
+## 📚 Related Resources
 
-This project is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).  
-See [`LICENSE`](../LICENSE) for full details.
+- 🧠 [PLD Theory Papers](../docs/zenodo_paper_links.md)
+- 🧩 [UX Pattern Tracker](../notion_ui_templates/README_notion_ui_templates.md)
+- 🤖 [Structure Generators Index](../structure_generators/README_structure_generators.md)
