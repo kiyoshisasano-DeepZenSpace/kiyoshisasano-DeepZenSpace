@@ -1,168 +1,73 @@
-# 🧭 07_field_stewardship — Phase Loop Dynamics Implementation Layer
+# 🌀 Phase Loop Dynamics — Field Stewardship Index  
+**Version:** August 2025
 
 ---
 
-## 📌 Purpose of This Folder
+## 🧭 Overview
 
-This folder defines the implementation-side access point for **Phase Loop Dynamics (PLD)**.  
-It is intended for teams conducting **technical evaluations**, **PoC development**, or **modular prototyping**,  
-under well-defined structural conditions.
+**Phase Loop Dynamics (PLD)** is a structural interaction model for systems that:
+
+- Treat **latency or hesitation** as signal-bearing events  
+- Tolerate **ambiguity or recursion** without requiring resolution  
+- Interpret **silence, delay, or repetition** structurally — not as errors  
 
 PLD is:
-- A **technical modulation layer** for latency and pacing-sensitive design
-- **Not** a framework, philosophy, or product guideline
-- **Not** relevant to team cadence, coordination processes, or strategic planning
 
-Use is always optional, modular, and isolated to system internals.
+- A **technical modulation layer**  
+- **Not** a framework, methodology, or belief system  
+- **Modular**, with no required runtime, policy, or platform dependencies  
+
+This directory collects stewardship, governance, calibration, and diagnostic protocols  
+for applying PLD responsibly in experimental or timing-sensitive environments.
 
 ---
 
 ## 🎯 Intended Use Context
 
-PLD may be appropriate in **technical architectures** that include:
+PLD is appropriate for systems with the following structural conditions:
 
-| Condition                | Description                                                                 |
-|--------------------------|-----------------------------------------------------------------------------|
-| Latency or delay modeling | Systems where pause, delay, silence, or deferral must be represented        |
-| Non-directive interaction | Interfaces not bound to prompt-finality or goal-seeking logic              |
-| Recursive/systemic pacing | Structures involving loopback, rhythm tolerance, or non-linear flow         |
+| Pattern                  | System Criteria                                         |
+|--------------------------|---------------------------------------------------------|
+| Latency or delay modeling | Systems where pause must be interpreted structurally   |
+| Recursive dialog patterns | Agents that loop meaningfully without breaking coherence |
+| Non-directive interaction | Not bound to goal-seeking or productivity logic        |
 
-PLD is **not intended** for:
+### Theoretical Foundations:
 
-- Business planning, velocity estimation, or management workflows
-- Collaborative process frameworks or team design methodology
-- Outcome-first UX scenarios
-
-> Use PLD **only** where structural timing and pacing are part of the problem space.  
-> Do not apply PLD to interpersonal or procedural contexts.
+- Delay modeling → PLD Paper1 Fig.4  
+- Non-directive interaction → PLD Paper2 Section 3.2  
+- Structural latency definition → PLD Paper1 Definition 3.1  
+- Recursive tolerance requirements → PLD Paper2 Theorem 2  
 
 ---
 
-## 🧱 Structural Role of PLD
-
-PLD provides a formal mechanism for:
-
-- Modeling **latency-aware interaction outcomes**
-- Designing for **non-directive or open-loop responses**
-- Supporting **recursion or variation** without forced escalation
-
-It does **not** define behavior, success metrics, or interface aesthetics.
-
-> PLD is structurally passive — it can be embedded or excluded with no effect on strategy.
-
----
-
-## 📂 Folder Contents
-
-```text
-07_field_stewardship/
-├── essence_and_definition.md          # Purpose, applicability, and exclusion criteria
-├── implementation_entry.md           # Integration guidelines and usage constraints
-├── latency_reflection_protocols.md   # Internal-only structural test scenarios
-├── stewardship_charter.md            # Consistency principles for long-term usage
-├── onboarding_and_diagnostics.md     # Optional diagnostic modules (not required)
-├── collaboration_guide.md            # Use PLD alongside other structures (only if relevant)
-├── engagement_policy.md              # Public integration terms for cross-org interaction
-└── risk_control_playbook.md          # Risk scenarios and mitigation pathways
-```
----
 ## ✅ Usage Requirements
 
-PLD should be considered **only if all of the following are true**:
+- The system must treat **non-resolution** as a structurally valid outcome  
+- Teams must understand that **latency is not failure**  
+- Silence and pause must be **interpretable**, not auto-filled  
+- **Framing and attribution** must be preserved in any adaptations  
 
-| Requirement            | Explanation                                                               |
-|------------------------|---------------------------------------------------------------------------|
-| Structural Need        | The system includes modulation of response timing or output conditions     |
-| Optional Integration   | Exclusion of PLD does not invalidate system design                         |
-| Implementation Scope   | The usage is owned and controlled by the implementation team              |
-| Strategy Separation    | PLD is not shaping any planning, coordination, or product direction        |
+### ❌ Prohibited Use Cases:
 
-PLD is modular and does not impose any runtime or policy requirements.
+- Applying PLD to HR evaluation, productivity tracking, or project oversight  
+- Modifying PLD theory and presenting it as a new structural model  
+- Using PLD elements solely for UX enhancement or AI optimization  
+- Surface mimicry (e.g., inserting delays or recursion for effect only)
 
----
-
-## 🧠 Optional Design Features
-
-These features are available but **not required** for PLD use:
-
-| Feature                   | Description                                                               |
-|---------------------------|---------------------------------------------------------------------------|
-| Latency-aware interaction | Use of pause, delay, or silence as valid system output                    |
-| Non-directive pacing      | Outputs are not strictly bound to user prompts or finality conditions     |
-| Recursive tolerance       | Systems may accept repetition or variation without forcing resolution     |
-
-Examples of use cases include:
-- Adding pause classification to a chatbot UX debugger
-- Modeling silence tolerance in asynchronous agent flows
-
-These features can be selectively enabled at the component level.
+> PLD is not a simulation toolkit.  
+> It is a structural rhythm protocol — use only where rhythm structurally matters.
 
 ---
 
-## 🤝 Joint Exploration
+## 🧩 Integration Entry Points
 
-If you're exploring latency-aware UX, rhythm-sensitive feedback, or recursive interaction design,  
-we welcome sandbox trials or short-term explorations.
+```python
+# Minimal PLD activation example
+from pld_tools import enable_pld
 
-We're especially open to collaborating with:
-- Conversational AI teams
-- Human-in-the-loop system architects
-- UX toolmakers working with hesitation or rhythm tracking
-
----
-
-## ❓ Why apply PLD here?
-
-- Your system struggles to distinguish meaningful silence from disengagement.
-- You need recursion or non-final responses without escalating fallback behavior.
-- You want to simulate pause-based variations without building full rule systems.
-
----
-
-## 📂 Public Resources for External Use
-
-These materials are cleared for distribution in external or cross-organizational settings:
-
-| Resource                                      | Description                                                      |
-|----------------------------------------------|------------------------------------------------------------------|
-| phase_drift_external_overview_v0.3.md        | Conceptual outline (non-proprietary, no code)                    |
-| Phase_Drift_Insight_Structural_Overview_v0.3.pdf | Visual summary for high-level briefings                          |
-
-No proprietary logic, source code, or internal simulation data is included.
-
----
-
-## 🧭 Integration Entry Points
-
-Teams exploring PLD in their systems can start with:
-
-- `implementation_entry.md` — Understand integration constraints
-- `latency_reflection_protocols.md` — Optional simulation structures
-- `collaboration_guide.md` — Considerations for joint use, if applicable
-
-All materials are optional and modular. No core dependency is introduced by using PLD.
-
----
-
-## 📬 Contact
-
-For SDK access or design-level questions regarding PLD use:
-
-📧 **deepzenspace [at] gmail [dot] com**
-
-Include:
-- The system or module context
-- Intended area of PLD use (if any)
-- Timeline and scope (optional)
-
----
-
-## 🔚 Final Note
-
-PLD is a **structural-level utility** — not a requirement, not a guideline, not a philosophy.  
-It is **only useful where latency and structural modulation are core concerns**.
-
-> Ignore PLD unless it clearly benefits your system.  
-> Apply it when helpful.  
-> Disregard when irrelevant.  
-> **No justification is needed. Only alignment.**
+enable_pld(modules=[
+    'latency_tracker',
+    'pause_classifier_bot',
+    'reentry_detector'
+])
