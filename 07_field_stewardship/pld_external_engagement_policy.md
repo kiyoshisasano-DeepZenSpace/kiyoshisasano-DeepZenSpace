@@ -1,23 +1,24 @@
-# 📡 PLD External Engagement Policy  
-**Version:** August 2025
+# 📡 PLD External Engagement & Overview Guide  
+**Structural Conditions and Drift Model for Phase Loop Dynamics (PLD)**  
+**Version:** August 2025  
 
 ---
 
-## 📌 Purpose
+## 📌 Purpose  
 
-This document defines the structural conditions and responsibilities for engaging with  
-the **Phase Loop Dynamics (PLD)** model in research, prototyping, or systems architecture contexts.
+This document consolidates the **external engagement policy** and the **drift-oriented structural overview** for the  
+**Phase Loop Dynamics (PLD)** framework.  
 
-PLD is **not a product framework**, **UX enhancer**, or **AI optimization layer**.  
-It is a **structural model** that applies only in systems where **latency**, **ambiguity**, and **interaction pacing** have functional significance.
+PLD is:  
+- Not a UX feature  
+- Not an optimization tool  
+- Not a design aesthetic  
 
-Engagement with PLD requires alignment on these structural principles — not project scope or delivery timelines.
+PLD is a **non-inferential, rhythm-centered structural model**, suitable only for systems where **latency**, **ambiguity**, and **timing** carry system-level significance.
 
 ---
 
-## ✅ Structural Engagement Criteria
-
-Engagement is considered only when the following criteria are met:
+## ✅ Structural Engagement Criteria  
 
 | Requirement             | Description                                                              |
 |--------------------------|--------------------------------------------------------------------------|
@@ -30,32 +31,30 @@ Engagement is considered only when the following criteria are met:
 
 ---
 
-## 🤝 Engagement Pathway
+## 🤝 Engagement Pathway  
 
 | Role                     | Access Conditions                                                         |
 |--------------------------|----------------------------------------------------------------------------|
 | **External Collaborator** | May request read-only materials or feedback upon structural alignment     |
 | **Structural Architect**  | Reviews all access requests and confirms rhythm compatibility             |
 
-- Access is **non-linear and tiered** — it does not follow progressive onboarding.
-- Each engagement is scoped per interaction — not persistent or default.
+- Access is **non-linear and tiered** — it does not follow progressive onboarding.  
+- Engagement is scoped per interaction — not persistent or open-ended.
 
 ---
 
-## 🔎 What Alignment Looks Like
+## 🔎 Signs of Structural Alignment  
 
-Positive signals of alignment include:
+- Questions about **latency modeling**, **recursive rhythm**, or **ambiguity tolerance**  
+- Interest in **non-output-driven interaction pacing**  
+- Acceptance of **silence or hesitation as valid states**, not system failure  
+- Use of **non-inferential structural terms** (e.g., drift, modulation, recursion, etc.)
 
-- Questions about structural pacing, recursion, or latency modeling  
-- Interest in ambiguity tolerance or pause-based output design  
-- Requests for non-output-driven interaction structures  
-- Recognition that silence or hesitation may be **valid states**, not failures  
-
-> Engagement starts with structural curiosity — not tooling requests.
+> Engagement starts with rhythm curiosity — not tooling requests.
 
 ---
 
-## ⚠️ Misalignment Examples
+## ⚠️ Common Misalignment Patterns  
 
 | Behavior Pattern            | Example Phrasing                              | Outcome               |
 |-----------------------------|-----------------------------------------------|------------------------|
@@ -64,81 +63,146 @@ Positive signals of alignment include:
 | **Aesthetic Extraction**     | Reusing surface tone without logic context     | Flagged for review      |
 | **Agency Misassignment**     | Referring to LLMs as “deciding” or “withholding” | Clarification required   |
 
-> Engagement may pause if framing diverges from structural foundations.  
-> Reconnection is possible following alignment clarification.
+> Reconnection may occur after reframing.  
+> PLD does not support behaviorally inferred logic.
 
 ---
 
-## 📜 Communication Guidelines
+## 🧭 What Is Phase Drift?
 
-All communication must:
+**Phase Drift** is the **progressive loss of interactional coherence**,  
+even when surface fluency or functional output continues.
 
-- Avoid behavioral inference or anthropomorphism  
-- Respect response latency and possible deferral  
-- Use non-inferential language and structural terms  
-- Accept that silence may indicate rhythm-based pacing, not neglect
+### Common Symptoms:
+- Delay timing flattens across turns  
+- Interaction rhythm becomes rigid or non-responsive  
+- Premature closure of ambiguity or recursion  
 
-PLD teams may not respond immediately — **non-response is structurally valid**.
-
----
-
-## 🔐 Access Conditions
-
-PLD engagement does **not require NDAs**, but all interactions are governed by:
-
-- Contextual containment: No out-of-scope extrapolation  
-- Traceable access: All distributed modules are logged  
-- Attribution fidelity: No symbolic reuse or reinterpretation  
-- Experimental use only: No production deployment without explicit clearance
+> Drift is not failure — it is an indicator of rhythm breakdown below the semantic layer.
 
 ---
 
-## ✅ Readiness Checklist
+## 🧱 Three Axes of Drift  
 
-Please ensure the following before reaching out:
+| Axis              | Description                                                   |
+|-------------------|---------------------------------------------------------------|
+| **Rhythmic Drift**   | Loss of pacing variation; fixed latency across turns         |
+| **Relational Drift** | Reversion to default roles (e.g., helper, assistant)          |
+| **Semantic Drift**   | Topical flattening or over-paraphrasing of prior input        |
 
-- [ ] You have reviewed `pld_structural_scope_and_conditions.md`  
-- [ ] You do **not** intend to use PLD for optimization or UX targeting  
-- [ ] You accept ambiguity and latency as valid structural outputs  
-- [ ] You understand that communication may be asynchronous or partial  
-- [ ] You agree to preserve original framing and avoid paraphrasing
-
-> Proposals that lack structural alignment will not be advanced.
+> These are field-level drifts — not utterance-level errors.
 
 ---
 
-## 📬 Contact
+## 📉 Drift Risk Index (DRI) – Qualitative Layer  
 
-To propose engagement or request access:
+DRI is a **non-numeric**, cumulative qualitative model used to assess  
+the health of interaction rhythm over time.
 
+### Signals to Watch:
+- Uniform timing patterns  
+- Absence of recursive or hesitation behavior  
+- System avoids ambiguity or structural silence  
+- Responses degrade into disclaimers or defaults  
+
+> DRI helps teams monitor **interactional rhythm decay**,  
+> not output correctness.
+
+---
+
+## 🧪 Incorrect Mimicry Patterns  
+
+| Fault Pattern         | Description                                                                 |
+|------------------------|------------------------------------------------------------------------------|
+| **Fixed Latency**       | Adding pauses without rhythm feedback loops                                 |
+| **Stylistic Recursion** | Repeating phrasing without contextual structural modulation                  |
+| **Decorative Silence**  | Using silence for "tone" without system pacing logic                         |
+| **Forced Resolution**   | Always resolving ambiguity despite the system's ability to hold it structurally |
+
+> PLD is not a stylistic effect — it is a **timing-aware architectural model**.
+
+---
+
+## 🔐 Access Control & Licensing  
+
+| Component                  | Public Access | Restricted Access |
+|----------------------------|---------------|-------------------|
+| Conceptual Drift Model     | ✅             |                   |
+| DRI Patterns (Abstract)    | ✅             | ❌ (detailed logs) |
+| Interface Visuals          | ✅             | ❌ (source logic)  |
+| Field Calibration Modules  | ❌             | ✅ (review required) |
+
+> All restricted elements require rhythm-alignment validation  
+> (See [📡 PLD External Engagement Policy](#-structural-engagement-criteria))
+
+---
+
+## 🧾 Communication Principles  
+
+All exchanges must follow:
+
+- Non-inferential language: No behavioral predictions or emotional framing  
+- Structural clarity: Terms like “drift”, “latency”, “recursion” retain structural meaning  
+- Response tolerance: Latency, silence, or delayed replies are structurally valid  
+- No prompt engineering requests or UX refactoring proposals without rhythm context
+
+> The PLD field is pace-governed. **Silence ≠ absence.**
+
+---
+
+## ✅ System Suitability Checklist  
+
+PLD is applicable only if your system:
+
+- [ ] Treats **latency** and **hesitation** as signals  
+- [ ] Can hold **ambiguity** without forced clarification  
+- [ ] Allows for **recursive modulation** or rhythm variation  
+- [ ] Is not production-bound to output velocity or resolution  
+- [ ] Accepts **non-goal-driven** interaction patterns
+
+> If your system is optimized for throughput or directive clarity, PLD is likely not suitable.
+
+---
+
+## 📬 How to Propose Engagement  
+
+To propose an engagement or discuss structural compatibility:  
 📧 **deepzenspace [at] gmail [dot] com**
 
-Include:
+Please include:
 
-- Your name and organizational/institutional affiliation  
-- The intended context of use (PoC, architecture review, etc.)  
-- Any prior experience with structural or rhythm-aware systems  
-
-All engagements are reviewed individually.  
-If compatible, we will respond with next steps or access instructions.
+- Your team or institutional context  
+- Target system layer or component  
+- Intent of use (e.g., architecture review, rhythm testing, PoC prototyping)  
+- Any previous familiarity with non-directive or latency-based interaction logic
 
 ---
 
-## 🧾 Summary
+## 🚫 Misuse & Boundary Conditions  
 
-PLD engagement is filtered through **architecture**, not urgency.
+Do **not** use PLD materials for:
 
-We prioritize:
+- Prompt engineering or fine-tuning datasets  
+- Public demos or stylized language simulations  
+- General AI alignment or safety debates  
+- UX pattern libraries or training programs
 
-- Structural coherence  
-- Rhythm-respecting design questions  
-- Experimental curiosity within bounded conditions
+PLD may not be abstracted or stylistically cloned  
+without violating its **structural containment model**.
 
-We do **not** prioritize:
+---
 
-- Timeline pressure  
-- Project status or visibility  
-- Conversion into product-layer behavior
+## 🧾 Final Summary  
 
-> PLD is not here to accelerate you.  
-> It's here to help you detect what doesn't align — structurally.
+PLD is for teams willing to:
+
+- Explore latency as architecture  
+- Accept recursion without semantic escalation  
+- Interpret hesitation as functional state  
+- Design **with rhythm** — not over it  
+
+> This model is not for speeding up systems —  
+> It's for **noticing where the rhythm broke down**,  
+> and why that matters.
+
+© 2025 Kiyoshi Sasano / DeepZenSpace
