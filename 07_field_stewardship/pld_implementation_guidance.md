@@ -3,114 +3,138 @@
 
 ---
 
-## 🧭 Purpose
+## 📌 Purpose
 
-This document provides a practical reference for teams exploring or integrating **Phase Loop Dynamics (PLD)** into technical or interface-level systems.
+This document provides a structured reference for implementing **Phase Loop Dynamics (PLD)**  
+in prototype, research, or modular system environments.
 
-PLD is **not an API or prompt set**. It is a **structural interaction architecture**, designed to support:
-
-- Latency-aware system pacing  
-- Ambiguity-tolerant interaction loops  
-- Rhythm-governed feedback and silence handling in human–AI or distributed systems  
+PLD is **not an API, toolkit, or optimization layer**.  
+It is a structural model for managing interaction rhythm — applicable only in systems where **timing**, **ambiguity**, and **latency** are treated as design-relevant signals.
 
 ---
 
-## ✅ Freely Usable Components (CC BY-NC 4.0)
+## ✅ Freely Usable Resources
 
-The following resources are available for experimental, academic, or prototype use:
+The following components are available under **CC BY-NC 4.0** for non-commercial, experimental use:
 
-| Resource                | Description                                             |
-|-------------------------|---------------------------------------------------------|
-| `00_overview.md`        | Non-inferential structural framing for rhythm handling |
-| `resonance_gate.py`     | Basic scaffold for timing gate logic                   |
-| `drift_scoring_v0.9.md` | Heuristic logic for identifying interactional drift    |
+| Resource                | Description                                              |
+|-------------------------|----------------------------------------------------------|
+| `00_overview.md`        | Structural framing of rhythm and latency interaction     |
+| `resonance_gate.py`     | Scaffold for conditional timing gate behavior            |
+| `drift_scoring_v0.9.md` | Heuristic model for detecting interactional drift        |
 
-### Usage Conditions
+### Conditions:
 
-- Non-commercial use only  
-- Attribution required:  
-  _“Phase Loop Dynamics — Kiyoshi Sasano”_  
-- Redistribution must preserve context and structure  
+- Attribution required: _“Phase Loop Dynamics — Kiyoshi Sasano”_  
+- Use must preserve **structural logic** and original framing  
+- Redistribution must be non-commercial and context-preserving  
 
-> ⚠️ For commercial deployment, integration, or redistribution, contact is required in advance.
-
----
-
-## 🔒 Restricted Components (By Request Only)
-
-The following PLD-aligned artifacts are access-controlled due to system sensitivity:
-
-- `PLD_License_v0.2.pdf` – Licensing terms for structural rhythm logic  
-- Latency shell modules and delay scaffolds  
-- Experimental interface frames (e.g., civic latency field models)  
-- Non-public rhythm attunement prototypes  
-
-These involve non-reproducible trace states and may result in **interpretive misalignment** if used without rhythm-calibrated architectures.
+> For commercial use or redistribution, contact is required in advance.
 
 ---
 
-## 🧱 PLD Structural Constraints
+## 🔒 Access-Controlled Modules
 
-PLD includes intentionally **non-normative interaction patterns**, such as:
+The following components are restricted due to architectural sensitivity:
 
-- Designed silence as structural signal  
-- Feedback withholding as intentional trace  
-- Decoupling of user input and system output rhythm  
+- `PLD_License_v0.2.pdf` — Usage terms for licensed latency logic  
+- Structural delay shells and rhythm calibration scaffolds  
+- Experimental interface structures (e.g., civic latency models)  
+- Rhythm attunement logic prototypes (non-public)
 
-To preserve coherence, PLD must be embedded in systems that support:
-
-- Interactional pacing memory  
-- Structural rhythm feedback loops  
-- Field-aware latency calibration  
-
-### ❗ Do NOT use PLD principles if:
-
-- Delay is used purely for aesthetic effect  
-- Silence is mimicking attentiveness without structural tracking  
-- Latency is added to simulate depth without interactional alignment  
-
-### 🚫 Misuse Examples:
-
-- Passive delays presented as mindfulness  
-- Disconnected latency framed as minimalism  
-- Removing system feedback to imply elegance or calm  
-
-Such cases lead to **structural incoherence**, and may produce adverse effects in UX or AI mediation.
+These involve architecture-specific trace logic. Misuse may cause **misaligned interaction behavior**.
 
 ---
 
-## 🤝 Collaboration & Inquiry
+## ✅ Valid Implementation Conditions
+
+PLD requires the system to support:
+
+| Condition                     | Description                                                    |
+|-------------------------------|----------------------------------------------------------------|
+| **Trace-Aware Latency**        | The system can interpret silence, pause, or delay structurally |
+| **Recursive Rhythm Feedback**  | Timing loops are not forced to converge or resolve             |
+| **Ambiguity Preservation**     | Not all inputs must lead to final output or resolution         |
+| **Output Decoupling**          | Input and output are rhythmically but not temporally linked    |
+
+If your system enforces **immediacy**, **resolution**, or **continuous output**, PLD is not appropriate.
+
+---
+
+## ⚠️ Misuse Patterns to Avoid
+
+Do **not** apply PLD if:
+
+| Pattern                        | Description                                                   |
+|--------------------------------|---------------------------------------------------------------|
+| **Aesthetic Delay**             | Latency is added for "minimalism" or to simulate depth        |
+| **Implied Attentiveness**      | Silence mimics presence but has no structural logic           |
+| **Response Withholding as Style** | Feedback is removed to imply calm or elegance               |
+
+> These produce **surface-level artifacts**, not structural rhythm.  
+> PLD does not simulate — it structures.
+
+---
+
+## 🧩 Examples of Valid Use Cases
+
+PLD can be meaningfully applied in:
+
+- **Chatbot feedback pacing** — interpreting delay as signal, not failure  
+- **Dialogue recursion models** — holding state open across iterations  
+- **Latency-sensitive decision logic** — allowing pause-based arbitration  
+- **Reflective UI prototypes** — where non-response or delay is functional  
+
+These are valid only if the **architecture supports rhythm as a state layer**, not as a cosmetic effect.
+
+---
+
+## ⚙️ Implementation Entry Patterns
+
+You may introduce PLD in lightweight form using:
+
+| Pattern                     | Description                                                         |
+|-----------------------------|---------------------------------------------------------------------|
+| **Timing Gates**             | Use conditional logic to gate outputs based on latency thresholds  |
+| **Silence Classification**   | Track pause as a structural signal, not a failure state            |
+| **Drift Heuristics**         | Log and surface misalignment across pacing and recursion layers    |
+
+These allow safe PoC exploration **without full structural embedding**.
+
+---
+
+## 🤝 Collaboration Pathways
 
 PLD-aligned experimentation is welcome in areas such as:
 
-- SDK scaffolds for non-directive systems  
-- Interface designs that allow non-resolution  
-- Timing-sensitive or rhythm-regulated interaction logic  
-- Human–AI mediation where pacing reflects internal state
+- SDKs for non-directive systems  
+- UX modules tolerant of ambiguity and recursion  
+- Human–AI systems using delay as a coordination signal  
+- Multimodal interfaces where pacing affects interpretation
 
 📩 Contact:  
 **deepzenspace [at] gmail [dot] com**
 
 Please include:
 
-- Intended application or system domain  
-- Timeline and scope of inquiry  
-- Research goals or integration context  
+- Intended use case or domain  
+- Scope of integration or experimentation  
+- Any experience with rhythm-aware or latency-sensitive systems
 
-Collaboration is considered based on structural compatibility and ethical alignment.
+Engagement is evaluated based on structural compatibility and design maturity.
 
 ---
 
-## 🧭 Closing Notes
+## 🧭 Final Considerations
 
-PLD is not a surface feature —  
-it is a **deep structural logic** that requires architectural commitment.
+PLD is not a presentation layer. It is a **deep structural schema** for timing-sensitive interaction.  
+Apply only when:
 
-- Apply only where **trace-based latency** can be interpreted  
-- Use within environments that support **non-immediacy**  
-- Integrate only when systems can sustain **unresolved rhythmic forms**
+- Delay carries design intent  
+- Resolution is not always required  
+- Timing reflects internal state — not just external behavior
 
-> PLD is a rhythm framework — not a performance layer.  
-> Misuse reduces rhythm to delay. Proper use sustains coherence through absence.
+> PLD is not a delay engine.  
+> It is a **modulation framework** for rhythm integrity.
 
 © 2025 Kiyoshi Sasano / DeepZenSpace
