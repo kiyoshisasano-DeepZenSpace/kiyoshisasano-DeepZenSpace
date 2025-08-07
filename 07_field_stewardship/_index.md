@@ -97,19 +97,20 @@ Only proceed if you can answer “Yes” to all of the following:
 
 ## 📚 File Structure Overview
 
-| File | Description |
-|------|-------------|
-| `pld_external_engagement_policy.md` | Conditions for engaging with external collaborators |
-| `pld_external_overview_v0.3.md` | PLD drift model overview for new readers |
-| `pld_field_stewardship_charter.md` | Stewardship principles for maintainers |
-| `pld_structural_risk_governance_guide.md` | Risk models and mitigation pathways |
-| `pld_latency_calibration_protocols.md` | Structural latency calibration exercises |
-| `pld_minimal_collaboration_protocol.md` | Minimal viable engagement workflow |
-| `pld_rhythm_alignment_session.md` | Async rhythm recalibration protocol |
-| `pld_implementation_guidance.md` | Implementation entry guidance |
-| `pld_trace_examples.md` | Annotated traces for rhythm diagnostics |
-| `pld_internal_review_protocol.md` | Internal rhythm review framework |
-| `pld_structural_scope_and_conditions.md` | Applicability and exclusion conditions |
+| File Name                               | Description |
+|----------------------------------------|-------------|
+| `pld_external_engagement_policy.md`     | Conditions for interacting with PLD logic externally |
+| `pld_structural_risk_governance_guide.md` | Practices for rhythm-based field protection |
+| `pld_latency_calibration_protocols.md`  | Internal structural exercises for latency and recursion |
+| `pld_minimal_collaboration_protocol.md` | Baseline technical engagement for PLD-aligned teams |
+| `pld_rhythm_alignment_session.md`       | Async protocol for realigning complex project rhythms |
+| `pld_implementation_guidance.md`        | Technical conditions for valid PLD integration |
+| `pld_trace_examples.md`                 | Annotated interaction traces and drift diagnostics |
+| `pld_internal_review_protocol.md`       | Self-audit checklist for deployed PLD systems |
+| `pld_structural_scope_and_conditions.md`| Where PLD applies — and where it should not |
+| `pld_field_stewardship_charter.md`      | Core stewardship values and field containment boundaries |
+| `pld_onboarding_and_diagnostics.md`     | Safe entry workflow and signal-level diagnostics |
+| `pld_stewardship_collaboration_guide.md`| Rules for long-term or institutional field partnership |
 
 ---
 
