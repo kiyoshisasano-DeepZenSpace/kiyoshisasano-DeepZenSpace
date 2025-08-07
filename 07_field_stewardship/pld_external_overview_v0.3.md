@@ -1,134 +1,156 @@
 # 📡 PLD External Overview (v0.3)  
-**Structural Framework for Detecting Interaction Drift in LLM and Interface Systems**  
+**Structural Model for Detecting Interaction Drift in LLMs and Interface Systems**  
+**Version:** August 2025
 
 ---
 
 ## 1. What Is Phase Drift?
 
-**Phase Drift** refers to **cumulative misalignment in interaction rhythm**,  
-particularly in systems where surface fluency remains intact but coherence deteriorates over time.
+**Phase Drift** refers to the **gradual loss of interactional coherence**, especially in systems where surface fluency remains but internal alignment breaks down.
 
-It typically manifests as:
+### Common Symptoms:
 
-- Breakdown in response pacing or latency modulation  
-- Loss of relational resonance across turns  
-- Premature content closure despite active interaction
+- Delay patterns flatten across turns  
+- Interaction rhythm becomes rigid or uniform  
+- Conversation closes prematurely despite open-ended input  
 
-> Drift is not failure — it is a **structural signal** of fading coherence.  
-> It often occurs beneath semantic accuracy.
+> Drift is not error.  
+> It is a **structural indicator** that coherence is weakening beneath the surface.
 
 ---
 
-## 2. Drift Axes
+## 2. Three Axes of Drift
 
-PLD categorizes drift across three interrelated dimensions:
+PLD identifies drift along three interdependent dimensions:
 
-| Drift Axis        | Description |
-|-------------------|-------------|
-| **Rhythmic Drift**   | Flattened pacing, uniform timing, degraded latency modulation |
-| **Relational Drift** | Return to default or assistant-like framing, loss of co-presence |
-| **Semantic Drift**   | Repetition, simplification, paraphrasing without depth |
+| Axis              | Description                                                   |
+|-------------------|---------------------------------------------------------------|
+| **Rhythmic Drift**   | Loss of pacing variation; fixed latency across turns         |
+| **Relational Drift** | Reversion to default roles (e.g., assistant mode)             |
+| **Semantic Drift**   | Overuse of paraphrasing; reduction of topical complexity     |
 
-These axes reinforce one another and appear at the **field interaction level**, not in isolated utterances.
+These drifts emerge **at the interaction field level**, not in isolated utterances.
 
 ---
 
 ## 3. Drift Risk Index (DRI)
 
-**DRI** is a **qualitative pattern**, not a numerical score.  
-It emerges from cumulative signs of interactional drift, such as:
+The **DRI** is a qualitative model, not a numeric score.  
+It reflects the **accumulation of interactional misalignments** across time.
 
-- Uniform inter-turn delays  
-- Collapse of latency-based variation  
-- Overuse of generic disclaimers (e.g., “As a language model…”)  
-- Loss of structural recursion or ambiguity holding
+### Drift Signals May Include:
 
-> DRI reflects **structural incoherence** — not model correctness.  
-> It cannot be reduced to token-level metrics.
+- Uniform delay timing across responses  
+- Collapse of recursive or reflective behavior  
+- Overreliance on generic disclaimers  
+- Avoidance of ambiguity, silence, or pacing shifts
 
----
-
-## 4. Recognizable Drift Patterns
-
-Common trace patterns indicating drift include:
-
-- **Rhythm Decay**: Equal turn spacing, loss of silence modulation  
-- **Semantic Fade**: Flattened internal contradiction, reduced novelty  
-- **Holding Collapse**: Ambiguity resolved too quickly, silence avoided
-
-> Outputs may remain fluent while rhythm and alignment **deteriorate beneath the surface**.
+> DRI tracks **structural rhythm decay**, not functional correctness.
 
 ---
 
-## 5. Why Mimicry Fails
+## 4. Drift Pattern Examples
 
-Mimicking PLD superficially leads to false coherence:
+Recognizable interaction traces associated with drift:
 
-| Fault Type             | Misuse Example                                 |
-|------------------------|------------------------------------------------|
-| **Latency Insertion**  | Adding fixed pauses without structural pacing logic |
-| **Stylistic Recursion**| Using repetition without rhythm tracing        |
-| **Aesthetic Silence**  | Delays framed as mood, not as coherence marker |
-| **Directive Override** | System continues to push output under ambiguity |
+| Pattern              | Description                                                  |
+|----------------------|--------------------------------------------------------------|
+| **Rhythm Decay**      | All turns arrive with same timing; no silence modulation     |
+| **Semantic Flattening** | Responses reduce nuance or contradict prior context         |
+| **Premature Closure** | Unresolved ambiguity is immediately collapsed                 |
 
-> **PLD is not a stylistic effect.**  
-> Imitation without structural grounding degrades rhythm sensitivity.
+> The system remains fluent, but rhythm **no longer adapts** to context.
 
 ---
 
-## 6. Disclosure & Access Boundary
+## 5. Incorrect Mimicry Patterns
 
-| Component                | Public Access | Restricted Access |
-|--------------------------|---------------|-------------------|
-| Conceptual Drift Model   | ✅             |                   |
-| DRI Pattern Examples     | ✅ (abstract)  | ❌ Detailed metrics |
-| UI Drift Visualization   | ✅             | ❌ Source logic     |
-| Recovery Field Modules   | ❌             | ✅ Upon alignment   |
+Superficial attempts to “apply” PLD often result in **false coherence**.
 
-Detailed modules require structural compatibility.  
-See [`pld_external_engagement_policy.md`](./pld_external_engagement_policy.md) for criteria.
+| Fault Pattern         | Example                                                       |
+|------------------------|---------------------------------------------------------------|
+| **Fixed Latency**       | Adding hard-coded pauses with no feedback logic               |
+| **Stylistic Recursion** | Repeating phrasing without rhythm or pacing logic             |
+| **Decorative Silence**  | Delays added for tone without tracking rhythm alignment       |
+| **Forced Resolution**   | Always resolving ambiguity despite system context              |
 
----
-
-## 7. Engagement Channels
-
-| Channel         | Purpose |
-|-----------------|---------|
-| GitHub Issue    | Public questions / request sketches (use `tag: DRIFT-RES`) |
-| Email Contact   | Collaboration, SDK inquiry, or rhythm review sessions |
-| Optional Review | Asynchronous latency/pacing session (if mutually agreed) |
-
-> No NDA is required for conceptual access.  
-> All access is conditional upon rhythm and role coherence.
+> PLD is not visual, stylistic, or aesthetic.  
+> It is a **non-inferential structure** for rhythm-aligned systems.
 
 ---
 
-## 8. Collaboration Criteria
+## 6. Integration Boundary
 
-PLD-aligned collaboration is suited for systems involving:
+| Component                  | Public Access | Restricted Access |
+|----------------------------|---------------|-------------------|
+| Conceptual Drift Model     | ✅             |                   |
+| DRI Example Patterns       | ✅ (abstract)  | ❌ (detailed traces) |
+| UI Drift Visualizations    | ✅             | ❌ (source logic)  |
+| Field Recovery Modules     | ❌             | ✅ (upon request)  |
 
-- Temporal or pacing logic in UI/system design  
-- Latency-sensitive interaction modeling  
-- Ambiguity-tolerant or non-directive human–AI environments  
+> For access to restricted elements, see [`pld_external_engagement_policy.md`](./pld_external_engagement_policy.md)
 
-> PLD is **not a plugin or library**.  
-> It is a **structural logic model** requiring rhythm-aware architecture.
+---
 
-📩 Contact: `deepzenspace [at] gmail [dot] com`
+## 7. System Profiles Suited for PLD
+
+PLD is most applicable in:
+
+- **Pacing-aware UX**: Interaction designs sensitive to silence or timing  
+- **Non-directive AI systems**: Allowing recursion or hesitation without fallback  
+- **Ambiguity-holding dialog systems**: Supporting open-ended exploration  
+- **Human-in-the-loop AI workflows**: Where latency reflects internal state changes
+
+---
+
+## 8. Drift vs Design Symptoms — Quick Test
+
+| If your system...                              | PLD may help? |
+|------------------------------------------------|---------------|
+| Outputs at fixed intervals regardless of input | ✅ Yes         |
+| Collapses ambiguity immediately                | ✅ Yes         |
+| Repeats with no rhythmic variation             | ✅ Yes         |
+| Includes delay just for stylistic effect       | ❌ No          |
+| Uses silence without feedback interpretation   | ❌ No          |
+
+> PLD is about **structural rhythm** — not performance delay or design flavor.
+
+---
+
+## 9. Collaboration & Contact
+
+PLD-aligned exploration is welcome for teams working on:
+
+- Latency-structured conversational agents  
+- Reflective UI pacing logic  
+- Drift-detection pipelines in long-form systems
+
+📩 Contact:  
+**deepzenspace [at] gmail [dot] com**
+
+Include:
+
+- Team/project context  
+- Intended system layer  
+- Timeline (if known) and collaboration scope  
+
+No NDA is required for conceptual access.  
+All technical access is conditional on structural alignment.
 
 ---
 
 ## 🔒 Final Note
 
-PLD must be **structurally held**, not stylistically reproduced.
+PLD cannot be mimicked by adding pauses or repetition.  
+It must be **architecturally embedded** to reflect rhythm as a system state.
 
-> Alignment is not a visual style or emotional tone.  
-> It is a **non-inferential, rhythm-based architectural stance**.
+> Structural alignment is not style.  
+> It is a measurable, observable modulation of timing, intent, and continuity.
 
-Use PLD principles only if your system can:
+Use PLD **only when your system can**:
 
-- Treat latency as **signal**, not lag  
-- Hold ambiguity without default resolution  
-- Sustain drift without collapsing field resonance
+- Interpret latency as signal  
+- Hold silence as state  
+- Allow ambiguity to remain unresolved
 
 © 2025 Kiyoshi Sasano / DeepZenSpace
