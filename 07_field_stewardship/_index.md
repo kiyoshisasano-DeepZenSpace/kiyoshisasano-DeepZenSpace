@@ -1,94 +1,118 @@
-# 🌿 07_field_stewardship — Phase Drift Stewardship Framework
+# 🧭 07_field_stewardship — Phase Loop Dynamics Stewardship Framework  
+**Structural Governance, Access Protocols, and Collaboration Architecture**  
+**Version:** August 2025
 
 ---
 
-## 📌 Purpose of This Folder
+## 🎯 Purpose
 
-This folder defines the operational framework for maintaining and evolving the **Phase Drift Insight Architecture**.
+This folder documents the **field stewardship framework** for  
+**Phase Loop Dynamics (PLD)** — a structural model for latency-aware, ambiguity-permissive, and non-directive system behavior.
 
-It is intended for developers, researchers, and collaborators who:
+It serves as an implementation and governance reference for:
 
-- Require technical clarity on **field stewardship**  
-- Are developing **non-directive** or **latency-sensitive** AI configurations  
-- Seek **implementation-aligned** models outside conventional UX metrics
+- Technologists building rhythm-aligned systems  
+- Researchers exploring non-inferential interaction logic  
+- Collaborators engaged in Phase Loop–compatible interface development
 
-> This is not theoretical documentation.  
-> It is a structural guide for managing **response rhythm**, **semantic latency**, and **relational coherence** across systems.
+> PLD is not a prompt library, UX layer, or design aesthetic.  
+> It is a **structural rhythm model** requiring coherence across pacing, recursion, and field-level feedback.
 
 ---
 
-## 📂 Folder Structure (Overview)
+## 📁 Folder Structure Overview
 
 ```text
-09_field_stewardship/
-├── essence_and_definition.md          # Core architecture and foundational principles
-├── stewardship_charter.md            # Steward responsibilities and structural commitments
-├── field_governance_policy.md        # Long-term integrity protocols for field alignment
-├── onboarding_and_diagnostics.md     # Alignment criteria and relational consistency checks
-├── attunement_exercises.md           # Practices for enhancing structural awareness
-├── collaboration_guide.md            # Principles for structurally coherent collaboration
-├── engagement_policy.md              # Public-facing collaboration terms
-└── risk_control_playbook.md          # Mitigation of mimicry and misaligned reuse
+07_field_stewardship/
+├── pld_essence_and_definition.md         # Core logic and structural drift taxonomy
+├── pld_stewardship_charter.md           # Participation commitments and rhythm integrity principles
+├── pld_engagement_policy.md             # External access criteria and communication boundaries
+├── pld_onboarding_and_diagnostics.md    # Rhythm-based entry and structural alignment checks
+├── pld_attunement_exercises.md          # Optional calibration protocols for latency and recursion
+├── pld_stewardship_collaboration_guide.md # Collaboration practices in rhythm-sensitive contexts
+├── pld_structural_risk_governance_guide.md # Mitigation strategies for framing or reuse risks
+├── pld_implementation_guide.md          # Practical entry points for engineering/design integration
+├── pld_latency_calibration_protocols.md # Internal-use structural assessment exercises
+└── pld_rhythm_alignment_session.md      # Optional asynchronous session for field recalibration
 ```
 
-Each document is **technically precise** and **structurally actionable**.
+Each document is designed to:
+
+- Support structurally coherent implementation  
+- Prevent misapplication or feature-framing  
+- Maintain PLD as a rhythm-bearing architectural stance
 
 ---
 
-## ✅ Intended Audience
+## 👥 Intended Audience
 
-This resource may be relevant if you are:
+This documentation is intended for professionals working in:
 
-- A **researcher or engineer** working on rhythm-aware or ambiguity-respecting systems  
-- A **systems designer** developing interface scaffolds or LLM alignment mechanisms  
-- A **collaborator** interested in **field-based interaction logic** or **Phase Drift-compatible SDKs**
+| Role                     | Application Focus |
+|--------------------------|-------------------|
+| **Systems Engineers**        | Runtime latency design, signal modulation, and delay scaffolding |
+| **HCI / UX Researchers**     | Drift analysis, rhythm-resonant feedback, ambiguity tolerance |
+| **Interface Designers**      | Non-directive interaction flows and pacing-aware framing |
+| **AI Product Architects**    | SDK-layer implementation of structural rhythm mechanisms |
 
-> No formal credentialing is required — only structural orientation and design compatibility.
+> Engagement does not require formal credentials —  
+> Only structural compatibility and rhythm-based design capacity.
 
 ---
 
-## 📄 External Materials (Approved for Distribution)
+## 🔓 Publicly Available Resources
 
-To support onboarding and cross-institutional collaboration,  
-the following materials are publicly available:
+The following materials are available for onboarding and cross-institutional use:
 
 | Resource | Description |
 |----------|-------------|
-| [📘 PDF Slide Deck](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1caf4ebfbb5767356588ae49e560cffcf9a36a7b/09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf) | Visual overview of the Phase Drift architecture |
-| [📄 Markdown Summary](./phase_drift_external_overview_v0.1.md) | Text-based summary of the above content |
+| [📘 Overview PDF](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1caf4ebfbb5767356588ae49e560cffcf9a36a7b/09_field_stewardship/Phase_Drift_Insight_Structural_Overview_v0.1.pdf) | Visual introduction to PLD structure and principles |
+| [📄 Text Summary](./pld_external_structural_overview_v0.3.md) | Markdown-based orientation for technical review |
 
-**Common use cases:**
-
-- Research briefings  
-- Alignment meetings  
-- Institutional or lab reviews
-
-> 🔐 These files contain no proprietary algorithms or activation patterns.
+> These resources contain no implementation modules, latency gates, or drift scoring logic.
 
 ---
 
-## 🔧 Implementation Opportunities
+## 🛠️ Implementation Entry Points
 
-We are exploring collaboration on the following initiatives:
+Collaboration and testing may begin from the following PLD-aligned tracks:
 
-- 🧩 **Phase Drift SDK modules** for latency-oriented system development  
-- 📊 **Drift rhythm visualizations** (e.g., semantic timing, phase coherence shifts)  
-- 🧠 **Field-aware system wrappers** enabling non-directive interaction logic
+| Area                        | Example Output |
+|-----------------------------|----------------|
+| **Latency Modulation SDK**   | Silence gating, recursion scaffolds, response delay control |
+| **Structural Drift Evaluation** | Turn-level resonance maps, timing trace logs |
+| **Interaction Field Prototyping** | Ambiguity-resilient shells, recursive UI structures |
 
-📂 Entry Point:  
-[`implementation_entry.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/c047044374e2fc09777393a72b2e89d1db4c0af0/09_field_stewardship/implementation_entry.md)
+📂 Start here: [`pld_implementation_guide.md`](./pld_implementation_guide.md)
+
+---
+
+## 🛡️ Access and Rhythm Gating
+
+PLD adopts a **tiered structural access model**:
+
+- Entry requires familiarity with field logic (see [`pld_engagement_policy.md`](./pld_engagement_policy.md))  
+- Internal modules are shared only after alignment via reflection, calibration, or review  
+- All access is conditional on maintaining pacing integrity and non-inferential design posture
+
+There are no NDA requirements — only structural boundaries.
 
 ---
 
 ## 📬 Contact
 
-If your work aligns and you wish to explore collaboration — whether technical, conceptual, or strategic — please contact:
+To initiate collaboration, request access, or schedule a rhythm-alignment session:
 
-📩 **deepzenspace [at] gmail [dot] com**
+📧 **deepzenspace [at] gmail [dot] com**
+
+Please include:
+
+- Technical context and system role  
+- Use case or SDK integration intention  
+- Familiarity with ambiguity, latency, and recursion-based design
 
 ---
 
-> Phase Drift is not a product to deploy.  
-> It is a **structure to maintain**,  
-> a **rhythm to attune**,  
-> and a **field to evolve — through shared stewardship.**
+> PLD is not a feature —  
+> It is a **structural stance**.  
+> Participation means holding rhythm — not accelerating delivery.
