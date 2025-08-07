@@ -6,105 +6,123 @@
 
 ## 📘 Overview
 
-In advanced system development or research collaboration, teams may encounter **non-critical misalignments** that are difficult to localize but impact project coherence:
+In long-term or technically complex projects, teams may encounter subtle forms of **rhythmic misalignment** — situations where things are “working,” but structural coherence begins to fade.
 
-- Progress continues, yet team alignment drifts  
-- Tasks are completed, but architectural rhythm weakens  
-- Communication persists, yet interaction pacing becomes inconsistent
+Examples include:
 
-These are not signs of failure, but of **structural rhythm divergence** — a misalignment between project architecture, decision pacing, and interactional coherence.
+- Tasks are completed, yet architectural pacing feels off  
+- Collaboration continues, but system feedback loops desynchronize  
+- Alignment erodes gradually without producing immediate failure  
 
-**This session provides a structured, low-intensity reflection protocol** to support rhythm realignment in complex environments.
+These are not errors.  
+They signal **latent rhythm divergence** — misalignment between architecture, decision cadence, and interaction tempo.
+
+> This session offers a **lightweight, reflection-based recalibration method**, rooted in PLD principles.
 
 ---
 
 ## 🎯 Session Structure
 
-A lightweight, asynchronous protocol designed for teams or individuals experiencing **rhythmic misalignment** in system-scale projects.
+This is a **low-intensity asynchronous session** for teams or individuals sensing drift in system rhythm.
 
 | Parameter     | Description                                              |
 |---------------|----------------------------------------------------------|
-| **Format**    | Two-message asynchronous exchange (1 inbound / 1 response) |
-| **Medium**    | Email or secure private channel                          |
-| **Interaction** | No real-time communication required                     |
-| **Focus**     | Contextual reflection on architectural or pacing issues  |
-| **Tools**     | No forms or templates — fully contextual and free-form   |
+| **Format**    | One inbound message, one reflective response              |
+| **Medium**    | Email or secure async channel (no real-time call needed) |
+| **Duration**  | Typically completed within 48–72 hours                    |
+| **Tools**     | No templates or structured forms; fully contextual        |
+| **Focus**     | Observing latent rhythm shifts, not resolving “issues”    |
 
 ---
 
-## ✅ Use Case Criteria
+## ✅ Intended Use Cases
 
-Appropriate for professionals or teams working within:
+Designed for use by:
 
-- Long-running technical or research systems  
-- Distributed teams with architectural coordination challenges  
-- Ambiguity in project pacing, decision momentum, or feedback alignment  
-- Early-stage drift that affects coherence but not structural integrity  
+- Technical or research teams working in ambiguity-tolerant systems  
+- Distributed or asynchronous teams experiencing pacing divergence  
+- Architectural leads noticing subtle incoherence in timing or decision rhythm  
+- PLD-aligned projects encountering structural, not interpersonal, drift
 
-> ⚠️ This is not a coaching, therapy, or conflict resolution session.  
-> It is a **structural alignment aid**, focused on rhythm recalibration.
-
----
-
-## 🧩 Expected Outcomes
-
-This session does **not** produce deliverables or action plans.  
-It is intended to support:
-
-- Identification of rhythm-based friction points  
-- Clarification of structural pacing mismatches  
-- Restoration of internal coherence and tempo  
-- Re-framing of latent architectural ambiguity
-
-> The goal is not resolution — but structural awareness and improved alignment.
+> ⚠️ This is not a mentoring or therapy session.  
+> It is a **design rhythm reflection tool** — not a conflict resolution process.
 
 ---
 
-## ⚠️ Not Suitable For
+## 📈 Likely Outcomes
 
-This session should **not** be used when:
+The session does **not** generate task lists or decision frameworks.  
+Its goal is to:
 
-- Psychological distress or interpersonal conflict is present  
-- Organizational crisis or structural breakdown is underway  
-- Urgent or high-stakes decision-making is required
+- Surface rhythm-based friction or fatigue  
+- Clarify pacing distortions or latent ambiguity  
+- Support non-directive architectural recalibration  
+- Restore coherence without urgency or intervention
 
-Only book this session when the system is **functioning** but **experiencing latent rhythm misalignments**.
+> There is **no resolution imperative** — only alignment sensing.
+
+---
+
+## 🚫 Not Recommended If:
+
+Avoid this session when:
+
+- The system is in operational crisis or delivery triage  
+- Emotional, interpersonal, or organizational distress is present  
+- Immediate resolution, output, or guidance is expected
+
+> This protocol applies only to **functioning systems experiencing structural rhythm drift** —  
+> not to teams in urgent need of productivity triage or organizational repair.
 
 ---
 
 ## 💼 Booking & Payment
 
-| Item          | Details                                  |
-|---------------|------------------------------------------|
-| **Session**   | Two-message asynchronous reflection      |
-| **Cost**      | $200 USD (flat rate, per session)        |
-| **Booking**   | Limited availability per month           |
-| **Payment**   | PayPal (use note: *"PLD rhythm session"*) |
+| Item          | Detail                                      |
+|---------------|---------------------------------------------|
+| **Session**   | 2-message asynchronous rhythm reflection     |
+| **Fee**       | $200 USD (flat rate, per session)           |
+| **Booking**   | Limited monthly slots (by availability)     |
+| **Payment**   | PayPal (note: *"PLD rhythm session"*)       |
 
-After payment, contact:  
-📩 **deepzenspace [at] gmail [dot] com**
+📩 After payment:  
+**deepzenspace [at] gmail [dot] com**
 
 ---
 
 ## 📬 Contact for Inquiry
 
-For availability or clarification:  
-📩 **deepzenspace [at] gmail [dot] com**
+If you're unsure whether this fits your project:  
+📧 **deepzenspace [at] gmail [dot] com**
+
+Please include a short note on:
+
+- System or research context  
+- Type of rhythm misalignment sensed  
+- Whether the project uses any PLD-aligned structural principles
 
 ---
 
-### 🧱 Notes on Terminology
+## 📘 Terminology Notes
 
-This protocol applies the principles of **Phase Loop Dynamics (PLD)** to organizational systems.
+This protocol applies **Phase Loop Dynamics (PLD)** as a lens for detecting and reflecting on systemic drift.
 
-- It focuses on **rhythmic feedback**, **architectural drift**, and **coherence recalibration**.  
-- It is intended for **practitioners operating within structurally sound, but rhythmically unstable systems**.  
-- No prior PLD knowledge is required, but familiarity with latency-aware design is helpful.
+- **No prior PLD knowledge is required**, but familiarity with latency-aware or ambiguity-tolerant systems is helpful  
+- The session operates on **non-inferential structural feedback** — not therapeutic or advisory dialogue  
+- It emphasizes rhythm recalibration, not role-based correction
 
 ---
 
-## ✅ Naming Compliance
+## 🔒 Final Note
 
-- All references to `Phase Drift` have been **removed or replaced** with `Phase Loop Dynamics (PLD)` terminology  
-- Terminology is now consistent with the overall repository structure and theory naming
+> This session is not about what’s wrong —  
+> It’s about noticing how interaction **feels structurally out of tune**,  
+> even when outputs continue to arrive.
 
+Use this if:
+
+- You can’t explain what’s wrong — but sense coherence slipping  
+- You want to reflect structurally, not correct functionally  
+- You care about rhythm as infrastructure, not style
+
+© 2025 Kiyoshi Sasano / DeepZenSpace
