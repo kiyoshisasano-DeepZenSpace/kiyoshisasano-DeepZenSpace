@@ -86,9 +86,9 @@ graph TD
 
 ## 📚 Related Resources
 
-- 🧠 **PLD Framework Documentation** — See `../structure_generators/`  
-- ⏱️ **Latency Tracker** — See `latency_tracker.py`  
-- 🔁 **Reentry Detector** — See `reentry_detector.py`  
+- 🧠 **PLD Framework Documentation** — See [../structure_generators/](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/e6278c2a9eb82006fd2aa68326829adafd942d9c/14_PLD-Bridge-Hub/structure_generators)  
+- ⏱️ **Latency Tracker** — See [latency_tracker.py](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/e6278c2a9eb82006fd2aa68326829adafd942d9c/14_PLD-Bridge-Hub/structure_generators/latency_tracker.py)  
+- 🔁 **Reentry Detector** — See [reentry_detector.py](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/e6278c2a9eb82006fd2aa68326829adafd942d9c/14_PLD-Bridge-Hub/structure_generators/reentry_detector.py)
 
 > 💡 Note: This demo is designed for showcasing structural rhythm in conversational UX.  
 > For production usage, integrate with the full **PLD-Bridge-Hub** system.
