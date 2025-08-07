@@ -71,3 +71,64 @@ enable_pld(modules=[
     'pause_classifier_bot',
     'reentry_detector'
 ])
+```
+You may omit unused modules. Begin with latency_tracker for lightweight entry.
+## 🛤️ Recommended Implementation Steps
+
+| Step | Module                     | Function                                           |
+|------|----------------------------|----------------------------------------------------|
+| 1    | `latency_tracker.py`       | Detects and categorizes structured silence/delay   |
+| 2    | `pause_classifier_bot.py`  | Classifies pause intent and modulates response     |
+| 3    | `reentry_detector.py`      | Supports recursion tracking and drift alignment    |
+
+---
+
+## 📋 PLD Suitability Checklist
+
+Only proceed if you can answer “Yes” to all of the following:
+
+- [ ] Does your system naturally produce delays >800ms?  
+- [ ] Can user input become recursive or ambiguous?  
+- [ ] Are non-responses or deferred outputs architecturally valid?
+
+> If any answer is “No”, PLD may not be structurally appropriate.
+
+---
+
+## 📚 File Structure Overview
+
+| File | Description |
+|------|-------------|
+| `pld_external_engagement_policy.md` | Conditions for engaging with external collaborators |
+| `pld_external_overview_v0.3.md` | PLD drift model overview for new readers |
+| `pld_field_stewardship_charter.md` | Stewardship principles for maintainers |
+| `pld_structural_risk_governance_guide.md` | Risk models and mitigation pathways |
+| `pld_latency_calibration_protocols.md` | Structural latency calibration exercises |
+| `pld_minimal_collaboration_protocol.md` | Minimal viable engagement workflow |
+| `pld_rhythm_alignment_session.md` | Async rhythm recalibration protocol |
+| `pld_implementation_guidance.md` | Implementation entry guidance |
+| `pld_trace_examples.md` | Annotated traces for rhythm diagnostics |
+| `pld_internal_review_protocol.md` | Internal rhythm review framework |
+| `pld_structural_scope_and_conditions.md` | Applicability and exclusion conditions |
+
+---
+
+## 📬 Contact
+
+For calibration, collaboration, or structural consultation:  
+📧 **deepzenspace [at] gmail [dot] com**
+
+---
+
+## 🧭 Closing Note
+
+> PLD is not about what the system says —  
+> It’s about **when**, **why**, or **whether** it should say anything at all.
+
+When rhythm is a first-class signal,  
+PLD becomes your lens of coherence.
+
+Use only when timing shapes structure.  
+Use responsibly. Maintain rhythm.
+
+© 2025 Kiyoshi Sasano / DeepZenSpace
