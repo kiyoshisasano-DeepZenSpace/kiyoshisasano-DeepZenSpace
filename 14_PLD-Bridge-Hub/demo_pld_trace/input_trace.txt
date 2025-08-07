@@ -1,0 +1,8 @@
+# demo_pld_trace/input_trace.txt
+[User] How do I export the invoice as PDF?
+[Bot] You can select it from the "Document Export" menu
+[User] Wait, I can't find the document export
+[Bot] Please check the ≡ menu at top-right
+[User] Actually, I want to edit this data first
+[Bot] Which data would you like to edit?
+[User] Never mind, I'll do the PDF export first
