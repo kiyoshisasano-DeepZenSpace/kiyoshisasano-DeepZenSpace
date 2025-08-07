@@ -93,6 +93,22 @@ Start with [`README_quickstart.md`](https://github.com/kiyoshisasano-DeepZenSpac
 
 ---
 
+
+## 🔁 PLD-Bridge Hub: Theory ↔ Tools
+
+Looking for bots, Notion kits, and structure generators?
+
+👉 Visit the **PLD-Bridge Hub** GitHub directory:  
+[🔗 /14_PLD-Bridge-Hub](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/14_PLD-Bridge-Hub)
+
+Includes:
+
+- 🤖 [Structure Generators](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/14_PLD-Bridge-Hub/structure_generators): UX pause classifiers, reentry detectors, and coherence tools  
+- 🧰 [Notion UI Templates](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/14_PLD-Bridge-Hub/notion_ui_templates): Pause tagging kits for UX reflection  
+- 📘 [Theory Mapping Docs](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/14_PLD-Bridge-Hub/docs/zenodo_paper_links.md): Zenodo-linked academic grounding
+
+---
+
 ## 🧱 PLD as UX Pattern Units
 
 These patterns appear repeatedly across systems —  
