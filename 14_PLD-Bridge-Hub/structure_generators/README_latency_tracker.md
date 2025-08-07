@@ -1,116 +1,98 @@
-# 🕒 Latency Tracker — Phase Drift Logger
+# ⏱️ Latency Tracker — UI Pause Logger for PLD
 
-This module tracks latency patterns in user interactions and logs potential **Phase Drift** events.  
-It is part of the **Phase Loop Dynamics (PLD)** toolkit, focusing on passive observation rather than classification or repair.
+This module detects and logs user interaction pauses in web UIs  
+as defined by **Phase Loop Dynamics (PLD)** — specifically as indicators of:
 
----
+- ⏸️ Cognitive delay  
+- ⏸️ UI friction  
+- ⏸️ Intent suppression or micro-hesitation  
 
-## ⚙️ Functionality
-
-- ⏸ Detects pauses exceeding a defined threshold (e.g., 800ms)
-- 🧠 Records drift segments for later analysis
-- 📊 Outputs structured CSV logs for review or modeling
-
-> Drift is not an error — it's rhythm under construction.  
-> — *Phase Loop Dynamics Paper 1*
-
----
-
-## 🧬 PLD Concept Mapping
-
-| Code Element     | PLD Theory Concept     |
-|------------------|------------------------|
-| `input_latency`  | Drift vector (⏸️)       |
-| `pause_threshold`| Latency boundary for phase transition |
-| `csv_logger()`   | Drift trace emission   |
-| `user_input_loop()` | Field presence monitoring |
-
----
-
-## 🗂 Output Log Format
-
-A sample CSV row:
-
-```csv
-timestamp,input_text,latency_ms,is_drift
-2025-08-07 12:34:56,"What does resonance mean again?",935,True
-```
-
-Each row represents a user's input and its associated pause time.  
-If the latency exceeds the threshold, it is flagged as a **Drift event**.
-
----
-
-## 🚀 Usage
-
-```bash
-export OPENAI_API_KEY="your-key"  # If GPT-based enhancements are later added
-python latency_tracker.py
-```
-
-During execution, the system will:
-
-1. Prompt for input
-2. Measure the delay since the last submission
-3. Log the entry if the pause exceeds the defined threshold
-
-> This module is ideal for **low-friction UX drift monitoring**, or as part of a **multi-phase analysis pipeline**.
-
----
-
-## 📚 Related Resources
-
-- 📘 PLD Theory Overview: [`docs/zenodo_paper_links.md`](../docs/zenodo_paper_links.md)
-- 📦 UX Pause Classifier: [`structure_generators/pause_classifier_bot.py`](./pause_classifier_bot.py)
-- 🌀 Reentry Detector: [`structure_generators/reentry_detector.py`](./reentry_detector.py)
-- 🧩 Notion UI Kit: [`notion_ui_templates/README_notion_ui_templates.md`](../notion_ui_templates/README_notion_ui_templates.md)
+Used to support pattern-aware UX design and rhythm-resonant system feedback.
 
 ---
 
 ## 🛠️ Configuration
 
-- `PAUSE_THRESHOLD_MS`: Default is `800` ms — can be adjusted in code or via environment variable.
-- `CSV_LOG_PATH`: Default output is `drift_log.csv` in current directory.
+- `PAUSE_THRESHOLD_MS`: Default `800` milliseconds
+
+> **Rationale**:
+> - PLD Paper 1, Fig.3 — Cognitive drift begins after ~750ms  
+> - Modified Fitts' Law for UI delay friction  
+> - Practical UX thresholds for latency awareness  
+
+You can modify this value in `latency_tracker.py` to suit your interaction environment.
 
 ---
 
-## 🧪 Example
+## ⚙️ How It Works
 
-```python
-# Sample interaction with drift
-User: "Wait... what was the repair operator again?"  [~900ms pause]
-→ Logged as DRIFT
-
-# Short latency
-User: "Nevermind."  [~150ms pause]
-→ Not logged
+```text
+[User Action A]
+↓ (pause of 1.2s)
+[User Action B]
+→ Logged as: PauseEvent(type="⏸️ Latency Hold", duration=1.2s, timestamp=...)
 ```
+The script compares timestamps between interactions.
+If the pause exceeds PAUSE_THRESHOLD_MS, it logs the pause event to CSV.
 
+---
+
+## 🚀 Quick Example
+
+```bash
+python latency_tracker.py
+```
+Then perform sample UI inputs (or simulate).
+Output will be saved to: latency_log.csv
+
+# Sample log:
+```bash
+timestamp,pause_duration_ms,label
+2025-08-07 14:22:05,1250,⏸️ Cognitive
+```
 ---
 
 ## 🧠 Notes on Interpretation
 
-This tracker does not **interpret** drift — it **observes**.  
-Classification or repair triggering should be handled by adjacent tools (e.g., `pause_classifier_bot.py`).
+**Pause ≠ Failure** — in PLD, pauses are structural rhythm markers.  
+
+They indicate **intent latency**, **micro-transition**, or **repair opportunity**,  
+and may lead to loop realignment (see `reentry_detector.py` for next stage).
+
+---
+
+### 🔭 Extended Sensing (Planned)
+
+Future versions may support:
+
+| Modality           | PLD Mapping       | Example              |
+|--------------------|------------------|----------------------|
+| 👁️ Eye tracking     | ⏸️ Cognitive       | Gaze fixed, no input |
+| 🖱️ Scroll Stalling  | ⏸️ UI Friction     | Scroll → stop        |
+| 📱 Touch idle gap   | ⏸️ Latency Hold    | Mobile finger hover  |
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions that align with PLD principles.
+**Theoretical Consistency Checklist**:
 
-> Please read [`CONTRIBUTING.md`](../CONTRIBUTING.md) before submitting changes.
+- [ ] Does your change correspond to a PLD concept (Drift / Pause / Repair)?  
+- [ ] Cite the related section in [`zenodo_paper_links.md`](../docs/zenodo_paper_links.md)  
+- [ ] If you introduce new thresholds or labels, document the rationale.
 
-Minimal guidelines:
+---
 
-- Link any change in detection logic to PLD theoretical sources.
-- Add reasoning to `docs/design_rationale.md` if new thresholds or metrics are introduced.
-- Prioritize **rhythm-aligned instrumentation** over performance optimization.
+## 📚 References
+
+- 🧠 [`docs/zenodo_paper_links.md`](../docs/zenodo_paper_links.md)  
+- 🔄 [`structure_generators/README_structure_generators.md`](../structure_generators/README_structure_generators.md)  
+- 💬 [`pause_classifier_bot.py`](./pause_classifier_bot.py)  
+- 🔁 [`reentry_detector.py`](./reentry_detector.py)
 
 ---
 
 ## 📜 License
 
-**License**: Creative Commons BY-NC 4.0  
-SPDX-License-Identifier: CC-BY-NC-4.0  
-Copyright (c) 2023–2025  
+This project is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).  
+See [`LICENSE`](../LICENSE) for full details.
