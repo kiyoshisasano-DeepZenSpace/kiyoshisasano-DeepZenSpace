@@ -4,107 +4,124 @@
 
 ---
 
-## 📌 Purpose
+## 🧭 Purpose
 
-This document defines the **technical scope, conditions, and non-applicable areas** for applying  
-**Phase Loop Dynamics (PLD)** as a structural observation model in system design.
+This document defines the **technical scope, structural preconditions, and non-applicable areas** for applying  
+**Phase Loop Dynamics (PLD)** as an interactional rhythm monitoring framework.
 
-It is intended for implementation teams, system architects, and research engineers  
-evaluating whether PLD is relevant for a given component or PoC context.
+It is intended for:
 
----
-
-## ✅ Structural Applicability
-
-PLD is relevant only when all of the following conditions apply:
-
-| Criterion                  | Description                                                                 |
-|----------------------------|-----------------------------------------------------------------------------|
-| Timing Sensitivity         | The system must interpret **latency, delay, or silence** as meaningful input |
-| Rhythm Implications        | Interaction **pacing or recursion** affects coherence or usability          |
-| Ambiguity Tolerance        | The design supports **non-resolution** as a valid interaction state         |
-| Modular Isolation          | PLD can be applied **without altering outcome logic or user goals**         |
-
-PLD is **not applicable** if:
-
-- The system prioritizes **fluency, throughput, or goal-completion**
-- Outputs are required to be **final, complete, or directive**
-- Structural rhythm has **no implementation-level significance**
+- Implementation teams exploring latency-sensitive architectures  
+- Research engineers conducting ambiguity-resilient PoC work  
+- System architects evaluating rhythmic misalignment as a structural issue  
 
 ---
 
-## 🧠 Drift Dimensions
+## ✅ Applicability Criteria
 
-PLD identifies **interactional misalignment** (not failure) using structural signals.
+PLD is only structurally valid when **all** of the following conditions hold:
 
-| Drift Type        | Signal Source                                      |
-|-------------------|----------------------------------------------------|
-| **Rhythmic Drift**   | Tempo irregularities, delay inconsistencies, silence misuse |
-| **Relational Drift** | Breakdown in shared framing, premature closure    |
-| **Semantic Drift**   | Unintended compression, topical repetition        |
+| Criterion                | Requirement |
+|--------------------------|-------------|
+| **Timing Sensitivity**     | Latency, delay, or silence is treated as a meaningful signal — not noise |
+| **Pacing Impact**          | Interaction rhythm (e.g., turn timing, recursion) materially affects coherence |
+| **Ambiguity Tolerance**    | Non-resolution is allowed as a functional system state |
+| **Modular Isolation**      | PLD logic can operate without altering system outcomes or user goals |
 
-> Drift is **cross-dimensional** and not error-based.  
-> It represents degradation of rhythm, not logic.
+If **any** of the following apply, PLD is **not** suitable:
 
----
+- Fluency, completion, or speed is prioritized over rhythm  
+- Outputs must be directive, resolved, or predictable  
+- Timing holds no structural significance in implementation
 
-## 🚫 Excluded Use Cases
-
-Do **not** apply PLD in:
-
-- Safety-critical, diagnostic, or regulatory systems  
-- Behavioral profiling, optimization pipelines, or reward-driven agents  
-- Simulated empathy, trust-building, or therapeutic claims  
-
-PLD must never be used to **infer intention, emotion, or user state**.
+> PLD is **not a UX enhancer** or **dialogue decorator**.  
+> It is only applicable when rhythm is part of system logic.
 
 ---
 
-## 📈 Use Case Examples (PoC Level)
+## 🧠 Structural Drift Dimensions
 
-- Testing hesitation tolerance in conversational agents  
-- Simulating silence calibration in agent handoff logic  
-- Observing pacing variance in ambiguity-rich tasks  
-- Designing pause behavior in reflection or feedback modes  
+PLD surfaces **interactional misalignments**, not failures.  
+These are detected as **degradations of rhythm across layers**:
 
-These are **technical tests**, not product features.  
-PLD is **non-directive** and never exposed directly to end users.
+| Drift Axis          | Structural Signal |
+|---------------------|-------------------|
+| **Rhythmic Drift**     | Timing collapse, flattened latency, silence misuse |
+| **Relational Drift**   | Premature closure, default persona fallback |
+| **Semantic Drift**     | Topic compression, paraphrased recursion, meaning loss |
+
+> Drift is **non-inferential** and multi-axial.  
+> It reflects loss of interactional rhythm — not behavioral error.
+
+---
+
+## 🚫 Explicit Exclusions
+
+PLD must **not** be used in:
+
+- Safety-critical, medical, or regulatory decision systems  
+- Optimization pipelines (e.g., reward tuning, personalization engines)  
+- Behavioral profiling, affect detection, or therapeutic simulation  
+- Systems intending to generate or simulate emotional trust
+
+> PLD cannot be applied to **infer** emotion, state, or intent.  
+> It is a structural sensor — not a predictive model.
+
+---
+
+## 🧪 Valid PoC Use Cases
+
+PLD may be applied in **controlled, non-user-facing test environments** for:
+
+- Measuring hesitation tolerance in dialogue agents  
+- Simulating silence window calibration in handoff design  
+- Tracking recursion pacing in ambiguous interaction flows  
+- Observing rhythmic degradation in asynchronous loops
+
+These uses are **diagnostic** — not directive.  
+PLD must remain **structurally contained**, invisible to the end-user experience.
 
 ---
 
 ## ✅ Implementation Readiness Checklist
 
-Before using PLD or drift-related tools, confirm the following:
+Confirm the following before integrating any PLD-aligned module:
 
-- ☐ The system supports structural interpretation of **latency or pause**  
-- ☐ Ambiguity is not immediately resolved by default logic  
-- ☐ Recursion or withholding can occur without forced closure  
-- ☐ No behavioral inference or emotion simulation is being applied  
-- ☐ `pld_external_engagement_policy.md` has been reviewed and accepted  
+- ☐ Latency, silence, or pause can be structurally interpreted  
+- ☐ System allows ambiguous states to persist without resolution  
+- ☐ Recursion can occur without forced content closure  
+- ☐ No affect simulation or behavioral inference is applied  
+- ☐ You have reviewed `pld_external_engagement_policy.md` and confirmed alignment
 
-> PLD is not suited for predictable, continuous-output, or deterministic environments.
-
----
-
-## 📎 Licensing & Attribution
-
-All PLD logic is licensed under structural-use terms:
-
-- Reuse must preserve **rhythm-context integrity**  
-- Partial extraction for symbolic or inferential logic is prohibited  
-- Attribution is required in any modified or derived tooling
-
-> Simulation of drift or latency without full structural grounding is **not permitted**.
+> PLD is not compatible with high-speed, deterministic, or outcome-optimized architectures.
 
 ---
 
-## 🔚 Closing Statement
+## 🔐 Licensing & Reuse Conditions
 
-PLD is not a method, interface, or optimization pattern.  
-It is a **structural diagnostic lens**, applicable only when interaction rhythm is a technical factor.
+PLD logic is governed under structural-use licensing. You must:
 
-> It does not interpret meaning.  
-> It detects when rhythm no longer aligns.
+- Maintain rhythm-context integrity in all adaptations  
+- Avoid symbolic, stylistic, or metaphorical repurposing  
+- Attribute the original framework clearly (e.g., “Phase Loop Dynamics — Kiyoshi Sasano”)
 
-Use PLD to **observe, not control**.  
-When in doubt — exclude it.
+> Simulating drift or latency **without grounding** in rhythm structure is prohibited.
+
+---
+
+## 📎 Closing Note
+
+PLD is **not**:
+
+- A UX method  
+- A prompt pattern  
+- A conversational template
+
+It is a **structural observation lens**, designed for environments where rhythm integrity **matters systemically**.
+
+> PLD does not interpret meaning.  
+> It detects rhythm loss.
+
+If rhythm is not part of your architecture — **do not apply PLD**.
+
+© 2025 Kiyoshi Sasano / DeepZenSpace
