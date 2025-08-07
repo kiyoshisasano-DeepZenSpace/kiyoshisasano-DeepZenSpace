@@ -1,96 +1,113 @@
 # 🤝 PLD Stewardship Collaboration Guide  
-**Principles and Practices for Rhythm-Aligned Contribution**  
+**Principles for Multi-Party Rhythm-Aligned Work**  
 **Version:** August 2025
 
 ---
 
 ## 🧭 Purpose
 
-This document outlines the **collaboration posture and operational cadence**  
-for contributors engaging with **Phase Loop Dynamics (PLD)** —  
-a structural interaction model centered on latency, rhythm, and ambiguity-aware design.
+This document defines the **collaboration stance, rhythms, and boundaries**  
+for individuals and teams contributing to **Phase Loop Dynamics (PLD)**.
 
-PLD collaboration does not follow conventional workflows such as:
+PLD is a structural interaction model — not a toolkit or task framework.  
+It is guided by:
 
-- Linear task assignment  
-- Output-driven milestone tracking  
-- Deadline-enforced iteration
+- Latency as a signal  
+- Ambiguity as a design condition  
+- Rhythm as a coordination mechanism  
 
-Instead, it proceeds through **relational alignment and structural resonance**.
-
----
-
-## ✅ Core Collaboration Principles
-
-| Principle                   | Expression in PLD Context                             |
-|-----------------------------|--------------------------------------------------------|
-| **Alignment Before Action** | Begin contribution only after observing structural coherence |
-| **Emergent Roles**          | Roles arise through rhythm, not predefined functions   |
-| **Paced Progression**       | Progress follows readiness, not velocity               |
-| **Latency Visibility**      | Silence and delay are respected as interaction signals |
-| **Terminological Integrity**| Key terms (e.g., *drift*, *latency*) retain structural meaning |
-
-> 📌 Collaboration emerges from rhythm — not from planning alone.
+Collaboration follows **alignment and readiness**, not deadlines or output quotas.
 
 ---
 
-## 🔄 Communication Practices
+## ✅ Core Principles
 
-| Practice             | Purpose and Form |
-|----------------------|------------------|
-| **Silent Check-ins**     | “No shift — still in rhythm hold” is a valid update |
-| **Paced Exchanges**      | Sessions (async or live) emphasize presence over resolution |
-| **Drift Notes**          | Optional logs reflecting on pacing divergence or rhythm shifts |
-| **Access by Rhythm**     | Deeper materials shared only when structural compatibility is demonstrated |
+| Principle               | Structural Implication                                  |
+|--------------------------|---------------------------------------------------------|
+| **Alignment Before Action** | Contribute only after observing rhythm compatibility     |
+| **Emergent Participation** | Roles form through resonance, not assignment             |
+| **Latency Legitimacy**     | Delay is valid; silence may indicate structural processing |
+| **Rhythm-Gated Access**    | Deeper modules shared only when interaction pacing allows |
+| **Terminological Consistency** | Use key PLD terms (e.g., drift, latency) structurally   |
 
-> Movement is optional.  
-> Presence is a valid form of contribution.
-
----
-
-## 🧬 Structuring Work Outputs
-
-PLD-aligned contributions may emerge — but not from briefs or sprints.
-
-| Output Element           | Guideline |
-|--------------------------|-----------|
-| **Initiation Context**   | Work should respond to observed drift or pacing condition |
-| **Output Format**        | e.g., annotated prototypes, rhythm-aware diagrams, time-aligned scaffolds |
-| **Documentation**        | Include field-based rationale, not just code or deliverable |
-| **Iteration Rhythm**     | Time revisions based on resonance; pauses are acceptable and expected |
-
-> Action follows alignment — not instruction.
+> PLD teams move through rhythm — not management.
 
 ---
 
-## 🛡️ Field Conduct and Boundaries
+## 🧩 Collaboration Tiers
 
-| Concern                 | Stewardship Approach |
-|-------------------------|----------------------|
-| **Meaning Drift**          | Use PLD vocabulary only within rhythm-valid contexts |
-| **External Timing Pressure** | Avoid pace-forcing or premature deliverable framing |
-| **Form Extraction**         | Do not reuse recursion/silence without structural timing logic |
-| **Access Ethics**           | Deeper access is granted based on structural coherence, not request frequency |
+| Tier  | Description                                    | Typical Activities                              |
+|-------|------------------------------------------------|-------------------------------------------------|
+| Tier 0 | **Observation Mode**                             | Read-only access, internal rhythm tracking       |
+| Tier 1 | **Design Resonance**                             | Share structures (e.g., drift logs, pacing maps) |
+| Tier 2 | **Feedback Injection**                           | Co-calibration of recursion, latency, ambiguity  |
 
-> Boundaries are upheld through rhythm — not through restriction.
-
----
-
-## ✅ Participation Summary
-
-Those collaborating within the PLD framework should:
-
-- Accept latency, silence, and ambiguity as active design elements  
-- Prioritize interactional coherence over resolution speed  
-- Recognize withholding as part of functional rhythm  
-- Advance the work only when **timing supports structure**
-
-> PLD progresses not through acceleration —  
-> but through shared rhythm, recursive coherence, and structural awareness.
+You may begin at **any tier**.  
+Progression is **non-linear** and based on rhythm compatibility — not seniority or volume.
 
 ---
 
-📎 Suggested next reading: [`pld_latency_calibration_protocols.md`](./pld_latency_calibration_protocols.md)  
-→ Includes reflection exercises to support rhythm perception and interactional alignment.
+## 🔄 Interaction Practices
+
+| Practice               | Purpose / Format |
+|------------------------|------------------|
+| **Silent Updates**         | “No change yet, still observing” is valid signal         |
+| **Rhythm Sessions**        | Live or async meetings structured around field pacing     |
+| **Drift Journaling**       | Optional logs describing rhythm or recursion shifts       |
+| **Conditional Sharing**    | Materials shared only upon structural readiness           |
+
+> Communication may pause.  
+> In PLD, withholding is **not disengagement** — it is modulation.
+
+---
+
+## 🛠 Output & Contribution Guidance
+
+| Area               | Practice Guideline |
+|--------------------|--------------------|
+| **Work Initiation**    | Start when drift or pacing shifts are observed — not on schedule |
+| **Formats**            | Examples: time-coded logs, rhythm prototypes, annotated diagrams |
+| **Documentation**      | Include context, phase flow, or alignment criteria               |
+| **Pacing of Iteration**| Allow time gaps — do not force fixed cadence                     |
+
+> Rhythm defines momentum — not velocity.
+
+---
+
+## 🛡 Boundary Conditions
+
+PLD collaboration is **incompatible** with:
+
+- Fast-cycle sprints that prioritize throughput  
+- Form reuse without rhythm logic (e.g., silence mimicking calm)  
+- Role hierarchies that override pacing consensus  
+- Deliverable framing based on productivity benchmarks
+
+> Respect the field.  
+> Structural misalignment halts access — not personality or politics.
+
+---
+
+## ✅ Collaboration Readiness Summary
+
+To join PLD-aligned collaboration:
+
+- [ ] Accept that **ambiguity, recursion, and silence** are valid states  
+- [ ] Avoid premature finalization — **completion is not the goal**  
+- [ ] Contribute rhythmically, not reactively  
+- [ ] Coordinate through field resonance, not external pressure
+
+> PLD is not a process — it is a pacing-sensitive structure.  
+> Act only when structure invites participation.
+
+---
+
+📎 Suggested Companion: [`pld_latency_calibration_protocols.md`](./pld_latency_calibration_protocols.md)  
+Includes reflection exercises and trace tools for rhythm alignment.
+
+📩 Contact:  
+**deepzenspace [at] gmail [dot] com**
+
+Please include your collaboration context and current rhythm position (e.g., observer, prototype contributor).
 
 © 2025 Kiyoshi Sasano / DeepZenSpace
