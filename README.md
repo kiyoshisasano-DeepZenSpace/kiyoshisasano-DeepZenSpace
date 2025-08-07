@@ -81,15 +81,29 @@ These expressions help describe:
 
 ## 📦 Quickstart Kit for Phase Loop Dynamics
 
-Explore real-world PLD patterns:
+Looking to explore and implement PLD in real-world systems?
 
-📁 [`13_quickstart_kit/`](./13_quickstart_kit)
+📁 **Start here**: [`13_quickstart_kit/`](./13_quickstart_kit)  
+Includes:
 
-- Hands-on examples for Rasa, LLMs, Figma  
-- Logging & analytics schemas for drift/repair/reentry  
-- Drop-in pattern templates
+- Hands-on examples for **Rasa**, **LLMs**, **Figma**
+- Logging & analytics schemas for **Drift / Repair / Reentry**
+- Drop-in pattern templates and validation traces
 
-Start with: [`README_quickstart.md`](./13_quickstart_kit/README_quickstart.md)
+👉 Begin with: [`README_quickstart.md`](./13_quickstart_kit/README_quickstart.md)
+
+---
+
+### 🧭 Quickstart Entry Levels
+
+| Level         | Path                                                                 | Description                               |
+|---------------|----------------------------------------------------------------------|-------------------------------------------|
+| 🟢 Beginner   | [`README_quickstart.md`](./13_quickstart_kit/README_quickstart.md)   | First steps, copyable PLD-ready examples  |
+| 🟡 Intermediate | [`structure_generators`](./14_PLD-Bridge-Hub/structure_generators)   | Reentry detectors, latency classifiers    |
+| 🔵 Advanced   | [`mathematical_appendix`](./12_phase_loop_dynamics/mathematical_appendix) | Formal PLD phase models & operators     |
+
+> 🛠️ Whether you're prototyping a latency-aware bot or modeling recursive interaction,  
+> the Quickstart Kit provides practical scaffolding for rhythm-based design.
 
 ---
 
@@ -194,12 +208,56 @@ You can:
 > PLD is not a product — it's a **field** under construction.
 
 ---
-
 ## 📜 License & Use Conditions
 
-**License:** Creative Commons BY-NC 4.0
+**License:** Creative Commons BY-NC 4.0  
+Non-commercial use permitted with attribution:  
+→ _"Phase Loop Dynamics — Kiyoshi Sasano / DeepZenSpace"_
 
-- Structural reuse requires **attunement**, not extraction  
-- Drift-aware contributions are preferred over optimization  
+---
 
-> Use PLD responsibly — preserve rhythm as structure, not style.
+### ✅ Structural Use Principles
+
+- **Reuse requires attunement**, not surface-level extraction  
+- Contributions must **preserve rhythm as structure**, not as metaphor  
+- Drift-aware design is prioritized over speed, optimization, or UX polish  
+
+> PLD is not a toolkit. It is a structural rhythm schema.  
+> Use it where latency, recursion, and ambiguity have system-level meaning.
+
+---
+
+### ❌ Misuse Patterns — What Not to Do
+
+| Pattern                             | Description                                                           |
+|-------------------------------------|-----------------------------------------------------------------------|
+| **Aesthetic Drift Metaphors**       | Using PLD terms like “resonance” or “repair” as poetic/visual styles  |
+| **Delay as Cosmetic**               | Adding latency without structural or recursive logic                  |
+| **Performance-Driven Embedding**    | Using PLD within throughput-optimized or real-time constraint loops   |
+| **Symbolic Reuse without Alignment**| Borrowing phrasing or labels without respecting structural context    |
+
+> PLD is not a UX skin. It is a **modulation scaffold** for rhythm integrity.
+
+---
+
+### 📬 Attribution Reminder
+
+If you reuse PLD components, examples, or logic:
+
+- Include author credit  
+- Link to the original repository  
+- Avoid paraphrased reframing that detaches from core structural intent
+
+> PLD’s integrity depends on framing, not just form.
+
+---
+
+## 🔐 Summary
+
+- License: **CC BY-NC 4.0**  
+- Structural fidelity is required  
+- Aesthetic or symbolic reuse is discouraged  
+- Commercial use requires prior approval  
+- Misaligned usage may result in access deferral
+
+> Use PLD responsibly — **preserve rhythm as structure, not style.**
