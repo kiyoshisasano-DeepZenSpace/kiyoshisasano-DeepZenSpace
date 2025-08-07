@@ -4,7 +4,6 @@
 👉 [▶︎ Start Here: Quickstart Kit for PLD](./13_quickstart_kit/README_quickstart.md)  
 Explore real-world patterns for Rasa, Figma, and LLMs.
 
-
 ---
 
 ## 📖 Origin of the Project
@@ -18,8 +17,6 @@ were not necessarily failures, but could be understood as structural rhythms.
 <details>
 <summary>More: how Phase Loop Dynamics emerged from presence, not design</summary>
 
-<br>
-
 Rather than asking GPT to generate answers, the user began to observe its hesitations.  
 Through recursive observation of **drift**, **repair**, and **resonance**,  
 a set of interactional patterns began to emerge — not from design, but from presence.  
@@ -27,10 +24,9 @@ These were later formalized into a system now called **Phase Loop Dynamics (PLD)
 
 </details>
 
-
 ---
 
-## 🧱[ Phase Loop Dynamics](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/a5436415c29262831d738492a5c91253c53cd40c/12_phase_loop_dynamics) — Structural Principles
+## 🧱 [Phase Loop Dynamics](./12_phase_loop_dynamics) — Structural Principles
 
 At its core, PLD structures interaction through rhythmic sequences:
 
@@ -39,8 +35,8 @@ At its core, PLD structures interaction through rhythmic sequences:
 - **Resonance** — a recursive echo or affective attunement  
 
 > The loop does not always close.  
-> The continued presence of drift may be the most meaningful part.
-
+> The continued presence of drift may be the most meaningful part.  
+>  
 > **Drift is not deviation — it's rhythm under construction.**
 
 ---
@@ -54,9 +50,12 @@ While PLD originated from observation, it lends itself to mathematical modeling 
 ```math
 \Sigma = \mathcal{S} \times \mathcal{T} \times \mathcal{P}
 ```
-$\mathcal{S}$: Semantic configuration space  
-$\mathcal{T}$: Temporal modulation (delays, pacing)  
-$\mathcal{P}$: Prosodic or affective trace  
+
+**Where:**
+
+- $\mathcal{S}$ — Semantic configuration space  
+- $\mathcal{T}$ — Temporal modulation (delays, pacing)  
+- $\mathcal{P}$ — Prosodic or affective trace
 
 ---
 
@@ -70,154 +69,137 @@ $\mathcal{P}$: Prosodic or affective trace
 \text{Resonance} &\iff \langle \sigma_t, \sigma_{t-k} \rangle \to 1
 \end{aligned}
 ```
+
 These expressions help describe:
 
-- Drift: when a user deviates from interactional coherence
-- Repair: how the system attempts to realign the state
-- Reentry: when system state returns near an earlier phase
+- Drift: when a user deviates from interactional coherence  
+- Repair: how the system attempts to realign the state  
+- Reentry: when system state returns near an earlier phase  
 - Resonance: repeated structure or rhythmic convergence
 
 ---
 
 ## 📦 Quickstart Kit for Phase Loop Dynamics
 
-Looking to explore real-world PLD patterns?
+Explore real-world PLD patterns:
 
-📁 See [`13_quickstart_kit/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/13_quickstart_kit) for:
+📁 [`13_quickstart_kit/`](./13_quickstart_kit)
 
-- Hands-on examples in Rasa, LLMs, Figma
-- Logging and analytics schemas for drift/repair/reentry
-- Drop-in pattern templates and usage guides
+- Hands-on examples for Rasa, LLMs, Figma  
+- Logging & analytics schemas for drift/repair/reentry  
+- Drop-in pattern templates
 
-Start with [`README_quickstart.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/13_quickstart_kit/README_quickstart.md)
+Start with: [`README_quickstart.md`](./13_quickstart_kit/README_quickstart.md)
 
 ---
 
-
 ## 🔁 PLD-Bridge Hub: Theory ↔ Tools
 
-Looking for bots, Notion kits, and structure generators?
-
-👉 Visit the **PLD-Bridge Hub** GitHub directory:  
-[🔗 /14_PLD-Bridge-Hub](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/14_PLD-Bridge-Hub)
+👉 [`14_PLD-Bridge-Hub`](./14_PLD-Bridge-Hub)
 
 Includes:
 
-- 🤖 [Structure Generators](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/14_PLD-Bridge-Hub/structure_generators): UX pause classifiers, reentry detectors, and coherence tools  
-- 🧰 [Notion UI Templates](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/14_PLD-Bridge-Hub/notion_ui_templates): Pause tagging kits for UX reflection  
-- 📘 [Theory Mapping Docs](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/3bca52efe5516061278dc0c7a10265194b3654d9/14_PLD-Bridge-Hub/docs): Zenodo-linked academic grounding
+- 🤖 Structure Generators  
+- 🧰 Notion UI Templates  
+- 📘 Theory Mapping Docs  
+- 🛠 Diagnostic Tools (`latency_tracker.py`, `pause_classifier_bot.py`)
 
 ---
 
 ## 🧱 PLD as UX Pattern Units
 
-These patterns appear repeatedly across systems —  
-**thus we treat them as modular, not context-bound.**  
-Each unit reflects a recoverable deviation or transition in user intent.
-
 | PLD Term       | UX Design Parallel              | Example Usage                      | Pattern Example |
 |----------------|----------------------------------|------------------------------------|-----------------|
 | `Drift`        | Ambiguity / latency window       | Input pause, silent handoff        | — |
-| `Repair`       | Clarification or fallback action | Soft prompts, retry suggestion     | [`rasa_soft_repair.yml`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/b5892a07b7542991733dd37fdcf5d6dd7c2347a6/13_quickstart_kit/02_pattern_examples/rasa_soft_repair.yml) |
-| `Resonance`    | Rhythmic feedback / echo         | Timing echo, loop rhythm           | [`figma_latency_hold.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/bdf10677e22ee59bbc2e7884deddc6aa1b13fe36/13_quickstart_kit/02_pattern_examples/figma_latency_hold.md) |
-| `Reentry`      | Return path to dropped intent    | Resume from fallback               | [`llm_reentry_prompt.json`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1f04d13cc3a00c8af0ceae71560ec01245f14957/13_quickstart_kit/02_pattern_examples/llm_reentry_prompt.json) |
-| `Latency Hold` | Designed pause or suspense       | Anticipatory shimmer, breath delay | [`figma_latency_hold.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7efb68e5cecfb5fee62e645c0fc803854825803f/13_quickstart_kit/02_pattern_examples/figma_latency_hold.md) |
-
+| `Repair`       | Clarification or fallback action | Retry prompts, reflective handoff  | [`rasa_soft_repair.yml`](./13_quickstart_kit/02_pattern_examples/rasa_soft_repair.yml) |
+| `Resonance`    | Rhythmic feedback / echo         | Loop confirmation, affective echo  | [`figma_latency_hold.md`](./13_quickstart_kit/02_pattern_examples/figma_latency_hold.md) |
+| `Reentry`      | Resume dropped intent            | Non-linear recovery                | [`llm_reentry_prompt.json`](./13_quickstart_kit/02_pattern_examples/llm_reentry_prompt.json) |
+| `Latency Hold` | Designed pause or suspense       | Anticipatory delay gesture         | [`figma_latency_hold.md`](./13_quickstart_kit/02_pattern_examples/figma_latency_hold.md) |
 
 ---
 
 ### 🧮 Pattern Operators and Metrics
 
-Each PLD pattern can be interpreted as a structural operator on interaction dynamics:
-
-| Pattern        | Operator Expression                |
-|----------------|------------------------------------|
-| Drift          | $\nabla C(t)$ — gradient of coherence loss |
-| Repair         | $\mathcal{R}(\sigma)$ — re-alignment operator |
-| Reentry        | $\Sigma(t) \to \Sigma(t_0)$ — phase return |
+| Pattern        | Operator Expression                         |
+|----------------|---------------------------------------------|
+| Drift          | $\nabla C(t)$ — coherence loss gradient     |
+| Repair         | $\mathcal{R}(\sigma)$ — realignment logic   |
+| Reentry        | $\Sigma(t) \to \Sigma(t_0)$ — phase return  |
 | Latency Hold   | $\psi_l \sim \text{Exp}(\lambda)$ — delay decay |
 
-This perspective enables rhythm-aware metric design, e.g.:
+Metric example:
 
-$$
-\text{Drift-to-Repair Ratio} = \frac{\left|\mathrm{Repair\ Events}\right|}{\left|\mathrm{Drift\ Events}\right|}
-$$
+```math
+\text{Drift-to-Repair Ratio} = \frac{|\mathrm{Repair\ Events}|}{|\mathrm{Drift\ Events}|}
+```
 
-📁 See [`12_phase_loop_dynamics/mathematical_appendix`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/8857011769232d78b8bae5c511c9893ea02400ba/12_phase_loop_dynamics/mathematical_appendix) for:
+More: [`mathematical_appendix`](./12_phase_loop_dynamics/mathematical_appendix)
 
-- [00_formal_specification.md](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/51472019970369bd2a6c4c411927e2998a33c2c9/12_phase_loop_dynamics/mathematical_appendix/00_formal_specification.md)
+---
 
-## 📘 [Glossary & Theoretical Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/abdf7d7bba919ffa9654de454420b77a502fa014/04_model_kit/structure_topograph/glossary)
+## 📘 [Glossary & Theoretical Mapping](./04_model_kit/structure_topograph/glossary)
 
-Cross-disciplinary term alignment:
+Cross-disciplinary alignment:
 
-| Academic Field         | Phase Drift Concept               |
-|------------------------|-----------------------------------|
-| Cognitive Linguistics  | Frame → Field / Latency Hold      |
-| Psycholinguistics      | Structural Priming → Drift        |
-| Discourse Theory       | Topic Shift → Phase Drift         |
-| HCI                    | Affordance → Structural Rhythm    |
+| Academic Field         | Phase Drift Concept            |
+|------------------------|-------------------------------|
+| Cognitive Linguistics  | Frame → Field, Latency Hold   |
+| Psycholinguistics      | Structural Priming → Drift    |
+| Discourse Theory       | Topic Shift → Phase Drift     |
+| HCI                    | Affordance → Rhythm Alignment |
 
-See:
-
-- [`structure_topograph/glossary/README_terms_mapping.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/fc3d314b05ca1bf6abc77c74df72ebef81aa41bd/04_model_kit/structure_topograph/glossary/README_terms_mapping.md)
-- [`glossary/academic_to_pd_reverse_mapping.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/402678a9da046fd0e45b850d1fab40260c9e9070/12_phase_loop_dynamics/09_glossary_academic_mapping.md)
+Details:  
+- [`README_terms_mapping.md`](./04_model_kit/structure_topograph/glossary/README_terms_mapping.md)  
+- [`academic_to_pd_reverse_mapping.md`](./12_phase_loop_dynamics/09_glossary_academic_mapping.md)
 
 ---
 
 ## 📄 Publications
 
-#### 🧷 Paper #5 — *Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance* (2025)
+### 🧷 Paper #5 — *Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance* (2025)
 
-> A recursive framework for modeling syntactic drift, cue-triggered repair, and latent structure emergence in real-time interaction.
+> Recursive model of drift emergence and latent structure.
 
-- 📘 **Main Text (PDF):** [`paper_5__Phase_Loop_Dynamics__Sasano_2025_TEXT.pdf`](./08_translation_interface/zenodo/paper_5__Phase_Loop_Dynamics__Sasano_2025_TEXT.pdf)
-- 📊 **Figures & Tables:** [`paper_5__Phase_Loop_Dynamics__Sasano_2025_FIGURES.pdf`](./08_translation_interface/zenodo/paper_5__Phase_Loop_Dynamics__Sasano_2025_FIGURES.pdf)
-- 🔗 **DOI via Zenodo:** [10.5281/zenodo.16736820](https://doi.org/10.5281/zenodo.16736820)
-- 🗂 **Repository Metadata:** [`paper_5__README`](./08_translation_interface/zenodo/paper_5__README)
-- 📝 **Zenodo Metadata Summary:** [`paper_5__zenodo_link.md`](./08_translation_interface/zenodo/paper_5__zenodo_link.md)
+- 📘 [`paper_5__TEXT.pdf`](./08_translation_interface/zenodo/paper_5__Phase_Loop_Dynamics__Sasano_2025_TEXT.pdf)  
+- 📊 [`paper_5__FIGURES.pdf`](./08_translation_interface/zenodo/paper_5__Phase_Loop_Dynamics__Sasano_2025_FIGURES.pdf)  
+- 🔗 [Zenodo DOI](https://doi.org/10.5281/zenodo.16736820)  
+- 🗂 [`paper_5__README`](./08_translation_interface/zenodo/paper_5__README)
 
-> *"Language is not only spoken — it hesitates, echoes, and returns."*
-
+> *“Language is not only spoken — it hesitates, echoes, and returns.”*
 
 ---
 
 ## 🧭 Lexicon Architecture Supplements
 
-For extended guidance on **term relationships**, **usage safety**, and **activation patterns**, see:
-
-- 📘 [LEXICON_CONNECTIVITY_MAP.md](./LEXICON_CONNECTIVITY_MAP.md)  
-  → Outlines structural connections between core and derived terms, including activation chains and containment logic.
-
-- 📘 [LEXICON_TIERING_GUIDE.md](./LEXICON_TIERING_GUIDE.md)  
-  → Defines lexical tiers (`@core`, `@support`, `@derived`) and stability indicators for use in modeling and documentation.
-
-> _These documents serve as scaffolds — not constraints — for navigating the Phase Drift lexicon._
+- [`LEXICON_CONNECTIVITY_MAP.md`](./LEXICON_CONNECTIVITY_MAP.md)  
+- [`LEXICON_TIERING_GUIDE.md`](./LEXICON_TIERING_GUIDE.md)
 
 ---
-
 
 ## 💬 Collaborate with PLD
 
 We welcome contributions from:
 
-- 🧠 Researchers exploring drift, latency, or repair in interaction
-- 🎨 Designers prototyping rhythm-aware UX
-- 🔧 Developers testing latency-hold or reentry prompts
-- 🪷 Facilitators maintaining interactional fields (see [`field_stewardship/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/62e42b799a15f2d6eed08c3d5e223250ba2eaaa5/07_%09field_stewardship))
+- 🧠 Researchers (drift, latency, repair)  
+- 🎨 Designers (non-directive UX)  
+- 🔧 Developers (timing-aware systems)  
+- 🪷 Facilitators ([field_stewardship](./07_field_stewardship))
 
-You can start by:
+You can:
 
-- Forking from [`13_quickstart_kit/`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1fc955515b9c38174bc96c1be4e44e0503761b64/13_quickstart_kit)
-- Submitting new patterns or rhythms
-- Suggesting glossaries or mapping terms
+- Fork from [`13_quickstart_kit`](./13_quickstart_kit)  
+- Submit trace examples ([`pld_trace_examples.md`](./07_field_stewardship/pld_trace_examples.md))  
+- Suggest glossaries or logic scaffolds
 
-PLD is not a finished model — it's a shared field under construction.
+> PLD is not a product — it's a **field** under construction.
 
+---
 
 ## 📜 License & Use Conditions
 
 **License:** Creative Commons BY-NC 4.0
 
 - Structural reuse requires **attunement**, not extraction  
-- Drift-aware contributions are preferred over speed or optimization  
+- Drift-aware contributions are preferred over optimization  
+
+> Use PLD responsibly — preserve rhythm as structure, not style.
