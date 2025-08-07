@@ -105,7 +105,7 @@ Includes:
 
 - 🤖 [Structure Generators](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/14_PLD-Bridge-Hub/structure_generators): UX pause classifiers, reentry detectors, and coherence tools  
 - 🧰 [Notion UI Templates](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/14_PLD-Bridge-Hub/notion_ui_templates): Pause tagging kits for UX reflection  
-- 📘 [Theory Mapping Docs](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/14_PLD-Bridge-Hub/docs/zenodo_paper_links.md): Zenodo-linked academic grounding
+- 📘 [Theory Mapping Docs](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/3bca52efe5516061278dc0c7a10265194b3654d9/14_PLD-Bridge-Hub/docs): Zenodo-linked academic grounding
 
 ---
 
