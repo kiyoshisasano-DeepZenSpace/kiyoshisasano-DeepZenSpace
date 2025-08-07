@@ -1,73 +1,49 @@
 # latency_tracker.py
-# Tracks latency patterns in user interaction — for PLD Pause detection
+# Tracks latency between UI events or user inputs, mapping delays to PLD pause types
 
 import time
-from typing import List, Dict, Optional
 import csv
+import os
+from typing import List, Dict
 
-# 📘 Related Theory:
-# - PLD Paper 1: Drift as latency-based deviation
-# - PLD Paper 2: Delay segment as precursor to repair/reentry
+# 📘 PLD Theory Mapping:
+# - Latency beyond threshold = ⏸️ Pause event
+# - PLD Paper 1: Drift as phase delay
+# - PLD Paper 2: UI-friction-induced delay (Fitts' Law deviation)
 
-# Optional config
-LATENCY_THRESHOLD = 1.5  # seconds (minimum pause to count as significant)
-CSV_LOG_PATH = "latency_log.csv"
+# ✅ Configuration
+PAUSE_THRESHOLD_MS = 800  # Based on PLD Paper1 Fig.3 & interaction latency norms
+CSV_LOG_PATH = "pause_log.csv"
 
-class LatencyEvent:
-    def __init__(self, start_time: float):
-        self.start = start_time
-        self.end: Optional[float] = None
-        self.duration: Optional[float] = None
+# ⏸️ Pause Event Structure
+def create_pause_event(start: float, end: float) -> Dict:
+    duration_ms = (end - start) * 1000
+    label = "⏸️ Pause" if duration_ms > PAUSE_THRESHOLD_MS else "✅ Smooth"
+    return {
+        "start_time": start,
+        "end_time": end,
+        "duration_ms": round(duration_ms, 2),
+        "pause_type": label
+    }
 
-    def stop(self):
-        self.end = time.time()
-        self.duration = round(self.end - self.start, 3)
-
-    def to_dict(self) -> Dict:
-        return {
-            "start": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(self.start)),
-            "end": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(self.end)) if self.end else "",
-            "duration_sec": self.duration if self.duration else ""
-        }
-
-class LatencyTracker:
-    def __init__(self):
-        self.events: List[LatencyEvent] = []
-        self.current_event: Optional[LatencyEvent] = None
-
-    def mark_pause_start(self):
-        self.current_event = LatencyEvent(time.time())
-
-    def mark_pause_end(self):
-        if not self.current_event:
-            return
-        self.current_event.stop()
-        if self.current_event.duration and self.current_event.duration >= LATENCY_THRESHOLD:
-            self.events.append(self.current_event)
-            print(f"⏸️ Significant pause recorded: {self.current_event.duration} sec")
-        else:
-            print(f"⏱️ Pause too short: {self.current_event.duration} sec — ignored")
-        self.current_event = None
-
-    def export_csv(self, path=CSV_LOG_PATH):
-        with open(path, mode='w', newline='') as f:
-            writer = csv.DictWriter(f, fieldnames=["start", "end", "duration_sec"])
+# 🚀 Logger
+def log_event_to_csv(event: Dict, path: str = CSV_LOG_PATH):
+    if not path.endswith(".csv"):
+        raise ValueError("Log path must be a .csv file")
+    file_exists = os.path.isfile(path)
+    with open(path, "a", newline="") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=event.keys())
+        if not file_exists:
             writer.writeheader()
-            for event in self.events:
-                writer.writerow(event.to_dict())
-        print(f"✅ Latency log exported to {path}")
+        writer.writerow(event)
 
+# 🧪 Example Usage
 if __name__ == "__main__":
-    tracker = LatencyTracker()
-    print("🌀 Latency Tracker started. Press Enter to simulate pause start/end.")
+    print("🔴 Recording start time...")
+    start = time.time()
+    input("⏸️ Press Enter after pausing...")
+    end = time.time()
 
-    while True:
-        cmd = input("▶️ Press Enter to toggle (or type 'q' to quit): ")
-        if cmd.strip().lower() == 'q':
-            break
-        if not tracker.current_event:
-            tracker.mark_pause_start()
-        else:
-            tracker.mark_pause_end()
-
-    tracker.export_csv()
+    event = create_pause_event(start, end)
+    print("🧠 Detected Pause Event:", event)
+    log_event_to_csv(event)
