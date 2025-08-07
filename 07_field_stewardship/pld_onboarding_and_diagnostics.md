@@ -8,6 +8,12 @@
 
 This document outlines the **onboarding and diagnostic process** for contributors engaging with the **Phase Loop Dynamics (PLD)** framework.
 
+It is intended for:
+
+- Engineering teams beginning PLD-aligned experiments  
+- Researchers exploring rhythm-based interaction models  
+- Collaborators seeking structural compatibility with PLD principles
+
 PLD is a structural model focused on:
 
 - Latency-based coherence  
@@ -49,7 +55,8 @@ It is a **structural resonance sensing protocol** — used to ensure implementat
 
 ## 🧪 Optional Calibration Exercises
 
-These are invitational, not mandatory. They are used only for internal reflection:
+These are invitational, not mandatory.  
+They can be used individually or in low-stakes pair sessions to explore rhythm fit — especially in early-phase design or testing environments.
 
 | Exercise                  | Goal |
 |---------------------------|------|
@@ -76,6 +83,15 @@ We observe:
 > 💬 How latency is held.  
 > 🔁 How ambiguity is tolerated.  
 > 🕒 Whether silence remains structurally coherent.
+
+---
+
+## 🔄 When Skipping Is Acceptable
+
+If your system already operates under rhythm-aware logic (e.g., drift tracing, latency gating, recursive modulation),  
+you may skip onboarding and move directly to structural alignment review.
+
+> Rhythm fit matters more than process completion.
 
 ---
 
