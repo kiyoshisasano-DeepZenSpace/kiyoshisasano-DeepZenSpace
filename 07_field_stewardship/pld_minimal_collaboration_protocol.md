@@ -1,146 +1,146 @@
 # 🤝 PLD Minimal Collaboration Protocol  
-**For Technical Teams Implementing Phase Loop Dynamics (PLD)**  
+**For Technical Teams Exploring Phase Loop Dynamics (PLD)**  
 **Version:** August 2025
 
 ---
 
-## 🧭 Purpose
+## 📌 Purpose
 
-This protocol outlines the **minimal technical collaboration process** for engineering teams working with systems that align with **Phase Loop Dynamics (PLD)**.
+This protocol defines the **minimal technical collaboration workflow** for teams exploring  
+or implementing **Phase Loop Dynamics (PLD)** in timing-sensitive or ambiguity-tolerant systems.
 
-PLD is **not a performance-optimized architecture**.  
-It is a structural interaction framework based on:
+PLD is a structural model — not a performance enhancer.  
+It is designed to support:
 
-- Latency-aware modulation  
-- Ambiguity tolerance  
-- Non-directive pacing logic  
+- Latency-aware interaction pacing  
+- Ambiguity-preserving response logic  
+- Rhythm-modulated behavior and withholding  
 
-This document ensures implementation teams operate with rhythm-consistent assumptions from the outset.
+This document helps teams align structurally while avoiding premature coupling or misapplication.
 
 ---
 
-## 🧱 Role Definitions
+## 🧱 Key Roles
 
 | Role                  | Responsibility                                                   |
 |-----------------------|------------------------------------------------------------------|
-| **Field Architect**   | Defines rhythm logic, drift criteria, and structural pacing models |
-| **Implementation Partner** | Translates rhythm structures into interface, backend, and signal logic |
+| **Field Architect**   | Defines structural pacing models and drift markers               |
+| **Implementation Partner** | Applies rhythm logic to interface and backend systems             |
 
 ---
 
-## 🛂 Step 0: Compatibility Check
+## ✅ Engagement Entry: Tier 0 (Observation Mode)
 
-Before collaboration begins, the team must verify:
+You may begin PLD-aligned collaboration by simply **observing structural rhythm** in your system.
 
-- Understanding of **non-directive interaction principles**  
-- No hard dependency on immediate outputs or prompt determinism  
-- Willingness to prioritize **rhythmic coherence** over speed or resolution
+### Checklist:
 
-> ⚠️ Systems driven by performance benchmarking or fixed-response pipelines are incompatible with PLD.
+- [ ] You can interpret **latency, silence, and recursion** as signal-bearing  
+- [ ] Your team accepts **non-directive behaviors** as valid outcomes  
+- [ ] You're open to pacing logic that **is not tied to speed or resolution**
 
----
-
-## 🔄 Core Collaboration Workflow
-
-### ✅ Step 1: Receive Structural Targets
-
-The Field Architect provides:
-
-- Drift event definitions (e.g., delayed response under semantic load)  
-- Evaluation markers (e.g., latency ranges, recursion thresholds)  
-
-**Example Targets:**
-
-- Observe timing shifts during high ambiguity  
-- Track phase retention in low-signal conversational loops
+> Systems built purely for throughput or deterministic output pipelines are not suitable for PLD.
 
 ---
 
-### ✅ Step 2: Capture Signal-Level Metrics
+## 🔄 Core Collaboration Workflow (Tier 1+)
 
-Capture logs without smoothing or abstraction:
+### Step 1: Receive Structural Targets
 
-- Input timing deltas  
-- Token-level recursion patterns  
-- Latency window variances  
+Field Architect shares definitions such as:
 
-Use timestamps to preserve raw interactional rhythm.
-
----
-
-### ✅ Step 3: Behavior Review
-
-Assess PLD-relevant dynamics:
-
-| Parameter            | Expected Behavior                                          |
-|----------------------|------------------------------------------------------------|
-| **Temporal Modulation** | Adapts output pacing to user rhythms, not fixed cycles      |
-| **Ambiguity Handling**  | Holds or withholds responses when signals are unclear      |
-| **Recursion Control**   | Maintains rhythm without introducing semantic escalation   |
+- Drift events (e.g., flattening after recursion)  
+- Latency and pacing thresholds  
+- Evaluation scenarios for ambiguity holding
 
 ---
 
-### ✅ Step 4: Structural Feedback Loop
+### Step 2: Capture Rhythm-Sensitive Metrics
 
-Provide implementation feedback using structural language:
+Implementation team collects:
 
-- “Latency collapsed below ambiguity threshold.”  
-- “Third recursion caused drift flattening.”  
-- “Pacing mismatch introduced semantic closure too early.”  
+- Timing deltas between turns  
+- Delay behavior during ambiguity  
+- Recursion indicators or hesitation windows
 
-Adjust system behavior toward **modulation consistency**, not completion velocity.
-
----
-
-### ✅ Step 5: Boundary Tiering (Optional)
-
-If enabling advanced features (e.g., memory loops, silence gating):
-
-- Confirm drift rhythm stability under load  
-- Ensure **no prompt template inference** is active  
-- Enable a **Drift Logging Layer** to capture:
-
-  - Latency sync events  
-  - Silence windows with rationale  
-  - Recursion patterns and rhythm breakpoints
-
-> Tier 2+ deployment must include structural logging for future traceability.
+Use **raw, timestamped logs** — no smoothing, averaging, or abstraction.
 
 ---
 
-### ✅ Step 6: Resonance Checkpoints
+### Step 3: Review Behavior Structurally
 
-At project milestones, perform rhythm-centric checks:
+Analyze system interaction for:
 
-- Does latency modulation persist across semantic densities?  
-- Are output delays synchronized with user pacing?  
-- Is withholding behavior aligned with ambiguity events?
-
-> Traditional success metrics (completion rate, response speed) are deprioritized.  
-> **Resonance and rhythm coherence take precedence.**
-
----
-
-## 📌 Core Design Principles
-
-| Principle          | Implementation Guideline                                |
-|--------------------|----------------------------------------------------------|
-| **Rhythm Coherence**  | Output timing adapts to field dynamics, not clock cycles |
-| **Latency as Signal** | Delay is structurally meaningful, not ornamental         |
-| **Access Control**    | Advanced logic gated by rhythm validation                |
-| **Silence Legitimacy**| Non-response may be structurally required               |
+| Parameter            | Expected Structural Signal                               |
+|----------------------|-----------------------------------------------------------|
+| **Latency Modulation** | Output delay adapts to user pacing                        |
+| **Ambiguity Holding**  | Unclear inputs may delay or defer resolution             |
+| **Recursive Rhythm**   | Re-entry into prior state preserves pacing structure     |
 
 ---
 
-## 🚫 Usage Limitations
+### Step 4: Structural Feedback Loop
 
-This protocol must **not** be repurposed as:
+Feedback should reference rhythm states — not correctness:
 
-- General UX onboarding material  
-- Prompt design schema  
-- Productivity pattern reference
+- “Latency collapsed below ambiguity threshold”  
+- “Second recursion caused rhythm compression”  
+- “Response pace desynchronized from user input rhythm”
 
-Use **only within PLD-aligned systems** with explicit structural framing.
+Adjustments focus on **modulation**, not goal completion.
+
+---
+
+### Step 5: Tier 2 Activation (Optional)
+
+If enabling deeper structural embedding:
+
+- Enable **Drift Logging Layer** to capture:
+
+  - Latency synchronization events  
+  - Silence windows with cause metadata  
+  - Recursive rhythm shift points  
+
+- Confirm:
+
+  - No template-based prompt biasing  
+  - Rhythm logic can operate asynchronously  
+  - Ambiguity is not forcibly collapsed
+
+> Tier 2 participation implies readiness for structural traceability and rhythm diagnostics.
+
+---
+
+## 🧭 Structural Design Priorities
+
+| Design Principle         | Implementation Implication                                  |
+|---------------------------|--------------------------------------------------------------|
+| **Rhythm Coherence**        | Output pacing adapts to contextual flow                     |
+| **Latency as Meaning**      | Delay is functional, not aesthetic                          |
+| **Silence Legitimacy**      | Non-response may be intentional and necessary               |
+| **Access Containment**      | Advanced logic is gated by verified structural alignment     |
+
+---
+
+## 🚫 Exclusions
+
+This protocol is **not intended for**:
+
+- Prompt design optimization workflows  
+- General UX onboarding guides  
+- Style-based design pattern frameworks
+
+Apply it only within **PLD-compatible architectures** that treat timing and pacing structurally.
+
+---
+
+## 🧩 Example Use Cases
+
+| Use Case                              | Notes                                           |
+|---------------------------------------|-------------------------------------------------|
+| Chatbot prototype using timed feedback | Observe output rhythm and silence during input  |
+| Ambiguity simulation tool             | Hold response across incomplete signal traces   |
+| Recursive conversation scaffolding    | Track loopback drift and modulation resilience  |
 
 ---
 
@@ -152,16 +152,18 @@ To initiate collaboration or request alignment review:
 
 Please include:
 
-- Implementation context and system domain  
-- Target interaction layer(s)  
-- Scope of latency/ambiguity requirements
+- Implementation context and interaction layer(s)  
+- Latency/ambiguity conditions of interest  
+- Your current system rhythm behavior (if known)
 
 ---
 
-## 🔒 Usage Terms
+## 🔒 Terms of Use
 
-> This document is distributed under alignment conditions.  
-> Redistribution, adaptation, or public abstraction is not permitted without approval.  
-> PLD integration requires treating rhythm as a **functional system component**, not a **stylistic choice**.
+This protocol is distributed under **alignment conditions**:
+
+- Redistribution or adaptation requires approval  
+- Application must preserve **non-inferential rhythm framing**  
+- PLD integration must treat rhythm as a **functional design input**, not a stylistic layer
 
 © 2025 Kiyoshi Sasano / DeepZenSpace
