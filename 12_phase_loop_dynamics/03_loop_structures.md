@@ -1,165 +1,148 @@
-# 🔃 Loop Structures – Syntax Rhythms and Functional Sequences
+# 🔃 Loop Structures – Syntax Rhythms and Functional Sequences (Integrated with Mathematical Hooks)
 
-In **Phase Loop Dynamics (PLD)**, language is not produced linearly, but circulates through recursive **loops** that govern how discourse segments emerge, fragment, and realign.  
-Each **Loop** represents a structurally recurrent pattern in the syntax-phase continuum—a dynamic interplay of silence, drift, cue, and recovery.
-
----
-
-## 🔁 Loop Overview Schema
-
-A generalized PLD loop may follow this rhythm:
-
-[Silence] → [Segment] → [Cue] → [Reentry or Drift]
-
-
-> Loops may be triggered by:
-> - Unfinished phrasing  
-> - Latent structures  
-> - Feedback from drift  
-> - Memory inhibition or rhythmic collapse
-
-📚 *Terminology like `Cue`, `Segment`, and `Drift` is defined in* [`02_phase_mechanics.md`](./02_phase_mechanics.md).
+In **Phase Loop Dynamics (PLD)**, language is not produced linearly but circulates through recursive **loops** $\mathcal{L}_i$ that govern how discourse segments emerge, fragment, and realign.  
+Each loop is a structurally recurrent pattern in the syntax–phase continuum—a dynamic interplay of silence, drift $(\mathcal{D})$, cue, and recovery $(\mathcal{R})$.
 
 ---
 
-## 🔹 Loop_01 – Segment Detection Loop
+## 🔁 General Loop Schema
 
-### **Purpose**  
-Detects utterance boundaries or breaks in flow, initiating phase segmentation.
+A generalized PLD loop may follow:
+\[
+\text{[Silence]} \;\to\; \text{[Segment]} \;\to\; \text{[Cue]} \;\to\; \text{[Reentry or Drift]}
+\]
 
-### **Typical Sequence**  
+**Loop triggers** include:
+- Unfinished phrasing
+- Latent structures
+- Feedback from drift
+- Memory inhibition or rhythmic collapse
 
-[Silence or Latency] → [Cue] → [Segment]
-
-
-### **Key Characteristics**
-- Serves as entry point for many loop sequences  
-- Captures turn-taking thresholds or idea emergence  
-- Segmentation may be prosodic (pause, stress) or syntactic (discontinuity)
-
-### **Failure Mode**
-- Cue fails to surface → fallback to Loop_03 (Latent Phase)
-
-**Safe Terms**: Silence, Cue, Segment, Latent Phase
+📚 Terms like *Cue*, *Segment*, and *Drift* are defined in [`02_phase_mechanics.md`](./02_phase_mechanics.md).
 
 ---
 
-## 🔹 Loop_02 – Drift–Repair Loop
+## 🔹 $\mathcal{L}_1$ – Segment Detection Loop
 
-### **Purpose**  
-Captures when active syntax destabilizes (drift) and seeks realignment.
+**Purpose**: Detects utterance boundaries or breaks in flow, initiating phase segmentation.
 
-### **Sequence**  
+**Sequence**:
+\[
+\text{[Silence or Latency]} \;\to\; \text{[Cue]} \;\to\; \text{[Segment]}
+\]
 
-[Segment] → [Drift] → [Cue] → [Feedback] → [Repair or Silence]
+**Characteristics**:
+- Entry point for many loop sequences
+- Captures turn-taking thresholds or idea emergence
+- Segmentation cues may be prosodic (pause, stress) or syntactic (discontinuity)
 
+**Failure**:
+- Cue fails → fallback to $\mathcal{L}_3$ (Latent Phase)
 
-### **Key Dynamics**
-- Cue can misfire (e.g., ambiguous correction)  
-- Repair may induce new drift → loop recursion  
-- May fail and trigger Loop_03 if expression collapses
+---
 
-### **Failure Mode**
+## 🔹 $\mathcal{L}_2$ – Drift–Repair Loop
+
+**Purpose**: Captures when active syntax destabilizes $(\mathcal{D})$ and seeks realignment.
+
+**Sequence**:
+\[
+\text{[Segment]} \;\to\; \mathcal{D} \;\to\; \text{[Cue]} \;\to\; \text{[Feedback]} \;\to\; \mathcal{R} \;\text{ or Silence}
+\]
+
+**Dynamics**:
+- Cue may misfire (ambiguous correction)
+- Repair may induce new drift → recursion
+- May fail and trigger $\mathcal{L}_3$
+
+**Failure**:
 - Recursive drift  
 - Fallback to Silence or Latency
 
-**Safe Terms**: Drift, Feedback, Cue, Repair, Segment
+---
+
+## 🔹 $\mathcal{L}_3$ – Latent Phase Induction
+
+**Purpose**: Handles withheld, unspoken, or delayed structures—surfacing latent syntactic intent.
+
+**Sequence**:
+\[
+\text{[Silence]} \;\to\; \text{[Latent Phase]} \;\to\; \text{[Cue]} \;\to\; \text{[Segment]}
+\]
+
+**Characteristics**:
+- Latency $(\mathcal{L}_3)$ modeled as phase container (pre-utterance activation)
+- Silence functions as syntactic placeholder
+- Cue acts as surfacing signal
+
+**Failure**:
+- Latent phase remains suppressed → no segment
 
 ---
 
-## 🔹 Loop_03 – Latent Phase Induction
+## 🔹 $\mathcal{L}_4$ – Feedback Reflex Loop
 
-### **Purpose**  
-Handles structures that were withheld, unspoken, or delayed—surfacing latent syntactic intent.
+**Purpose**: Models real-time self-correction or hesitation, typically unprompted by interlocutor.
 
-### **Sequence**  
+**Sequence**:
+\[
+\mathcal{D} \;\to\; \text{[Feedback]} \;\to\; \text{[Cue]} \;\to\; \text{[Segment or Drift]}
+\]
 
-[Silence] → [Latent Phase] → [Cue] → [Segment]
-
-
-### **Characteristics**
-- Latency modeled as phase container (pre-utterance activation)  
-- Silence becomes syntactic placeholder  
-- Cue acts as surfacing signal (prompt, resumption, signal)
-
-### **Failure Mode**
-- Latent phase remains suppressed → no segment emerges
-
-**Safe Terms**: Silence, Latent Phase, Cue, Segment
-
----
-
-## 🔹 Loop_04 – Feedback Reflex Loop
-
-### **Purpose**  
-Models real-time inner-loop correction or hesitation, typically unprompted by interlocutor.
-
-### **Sequence**  
-[Drift] → [Feedback] → [Cue] → [Segment or Drift]
-
-
-### **Functional Role**
-- Feedback arises from self-monitoring  
-- Prosodic, lexical, or tonal adjustment  
+**Function**:
+- Feedback arises from self-monitoring
+- Adjustment may be prosodic, lexical, or tonal
 - May cascade into recursive drift if realignment fails
 
-### **Failure Mode**
-- Correction attempt induces new instability → back to Loop_02
-
-**Safe Terms**: Drift, Feedback, Cue, Segment
+**Failure**:
+- Correction induces instability → back to $\mathcal{L}_2$
 
 ---
 
-## 🔹 Loop_05 – Alignment–Resonance Loop
+## 🔹 $\mathcal{L}_5$ – Alignment–Resonance Loop
 
-### **Purpose**  
-Enables structural alignment through echo, mimicry, or tonal resonance across turns or agents.
+**Purpose**: Enables structural alignment through echo, mimicry, or tonal resonance.
 
-### **Sequence**  
-[Alignment] → [Resonance] → [Cue] → [Transfer or Closure]
+**Sequence**:
+\[
+\text{[Alignment]} \;\to\; \mathcal{L}_5 \;\to\; \text{[Cue]} \;\to\; \text{[Transfer or Closure]}
+\]
 
-### **Key Elements**
-- Mimicry of phrasing or intonation  
-- Tone alignment as cohesion tool  
-- Transfer = phase continuation by another agent  
-- Closure = resolution or phase handoff
+**Key Elements**:
+- Mimicry of phrasing/intonation
+- Tone alignment as cohesion tool
+- *Transfer*: continuation by another agent
+- *Closure*: resolution or handoff
 
-### **Failure Mode**
-- Resonance breaks → fallback to Loop_01
-
-**Safe Terms**: Alignment, Resonance, Cue, Transfer, Closure
+**Failure**:
+- Resonance breaks → fallback to $\mathcal{L}_1$
 
 ---
 
 ## 🔁 Loop Interaction Model
 
-Loops are interdependent—failure or resolution in one may trigger another.  
-This chaining forms **multi-loop recovery paths** in the PLD model.
+Loops are interdependent: resolution or failure in one may trigger another. This chaining forms **multi-loop recovery paths**.
 
-### 🔄 Example Loop Cascade:
+**Example cascade**:
+\[
+\mathcal{L}_1 \;\to\; \mathcal{L}_2 \;\to\; \mathcal{L}_4 \;\to\; \mathcal{L}_5 \;\to\; \mathcal{L}_3
+\]
 
-Loop_01 (Segment Detection)
-→ Loop_02 (Drift–Repair)
-→ Loop_04 (Reflex Feedback)
-→ Loop_05 (Resonance Alignment)
-→ Loop_03 (Latent Phase fallback if unspoken)
-
-
-> 📌 Cross-loop transitions should be modeled as conditional links in YAML phase scripts or annotated dialog logs.
+📌 Cross-loop transitions should be modeled as conditional links in YAML phase scripts or annotated dialog logs.
 
 ---
 
 ## 📊 Loop Mapping Grid
 
-| **Loop**   | **Function**              | **Entry Trigger**     | **Failure Mode**               | **Recovery Path**         |
-|------------|---------------------------|------------------------|--------------------------------|----------------------------|
-| Loop_01    | Segment boundary detection | Silence, Latency       | No cue, latent persists        | → Loop_03                 |
-| Loop_02    | Drift management           | Structural deviation   | Recursive drift, no repair     | → Loop_03 or Loop_04      |
-| Loop_03    | Surfacing latent structure | Suppressed intention   | Remains unspoken               | Requires external cue      |
-| Loop_04    | Reflexive correction       | Drift realization      | Feedback loopback              | → Loop_02 or Loop_05      |
-| Loop_05    | Structural alignment       | Resonance trigger      | Break in echo, misalignment    | → Loop_01 or Loop_03      |
+| Loop       | Function                | Entry Trigger         | Failure Mode              | Recovery Path             |
+|------------|-------------------------|-----------------------|---------------------------|---------------------------|
+| $\mathcal{L}_1$ | Segment boundary detection | Silence, Latency      | No cue, latent persists   | → $\mathcal{L}_3$         |
+| $\mathcal{L}_2$ | Drift management           | Structural deviation  | Recursive drift, no repair| → $\mathcal{L}_3$ / $\mathcal{L}_4$ |
+| $\mathcal{L}_3$ | Surfacing latent structure | Suppressed intention  | Remains unspoken          | External cue required     |
+| $\mathcal{L}_4$ | Reflexive correction       | Drift realization     | Feedback loopback         | → $\mathcal{L}_2$ / $\mathcal{L}_5$ |
+| $\mathcal{L}_5$ | Structural alignment       | Resonance trigger     | Echo break, misalignment  | → $\mathcal{L}_1$ / $\mathcal{L}_3$ |
 
 ---
 
-> 🧠 PLD treats every loop not as containment—but as **flow choreography**.  
-> What matters is not just how syntax flows, but how it loops, collapses, and relaunches with intent.
+> 🧠 PLD treats every loop not as containment but as **flow choreography**.  
+> What matters is not only how syntax flows, but how it loops, collapses, and relaunches with intent.
