@@ -1,100 +1,117 @@
 # Formal Specification of Phase Loop Dynamics
 
-## Notation Reference
-Symbol | Meaning | Type
----|---|---
-$\Sigma$ | Phase space | Metric space
-$\mathcal{D}$ | Drift operator | $\Sigma \times \mathbb{R}^+ \to [0,1]$
-$\mathcal{R}$ | Repair operator | $\Sigma \to \Sigma$
-$\mathcal{L}_i$ | Loop generator | Phase transformation
-$C(\sigma,t)$ | Coherence field | $\Sigma \times \mathbb{R}^+ \to \mathbb{R}^+$
-$\phi(\tau)$ | Repair kernel | $\mathbb{R} \to [0,1]$
-$d(\cdot,\cdot)$ | Phase distance | $\Sigma \times \Sigma \to \mathbb{R}^+$
+This document defines the mathematical foundations of PLD.  
+Symbols and operators are cross-referenced with [`../09_glossary_academic_mapping_math.md`](../09_glossary_academic_mapping_math.md).
 
-## Core Mathematical Objects
+---
 
-### 1. Phase Space
+## 1. Notation Reference
+
+| Symbol | Meaning | Type |
+|--------|---------|------|
+| $\Sigma$ | Phase space | Metric space |
+| $\mathcal{D}$ | Drift operator | $\Sigma \times \mathbb{R}^+ \to [0,1]$ |
+| $\mathcal{R}$ | Repair operator | $\Sigma \to \Sigma$ |
+| $\mathcal{L}_i$ | Loop generator | Phase transformation |
+| $C(\sigma,t)$ | Coherence field | $\Sigma \times \mathbb{R}^+ \to \mathbb{R}^+$ |
+| $\phi(\tau)$ | Repair kernel | $\mathbb{R} \to [0,1]$ |
+| $d(\cdot,\cdot)$ | Phase distance | $\Sigma \times \Sigma \to \mathbb{R}^+$ |
+
+---
+
+## 2. Core Mathematical Objects
+
+### 2.1 Phase Space
 \[
-\Sigma = \{\sigma = (s,t,p) \mid s \in \mathcal{S}, t \in \mathcal{T}, p \in \mathcal{P}\}
+\Sigma = \{\sigma = (s,t,p) \mid s \in \mathcal{S},\ t \in \mathcal{T},\ p \in \mathcal{P}\}
 \]
-where:
-- $\mathcal{S}$: Context-free grammar derivations
-- $\mathcal{T} \subseteq \mathbb{R}^+$: Temporal coordinates
+- $\mathcal{S}$: Context-free grammar derivations  
+- $\mathcal{T} \subseteq \mathbb{R}^+$: Temporal coordinates  
 - $\mathcal{P}$: Prosodic parameter space
 
-### 2. Phase Distance Metric
+### 2.2 Phase Distance
 \[
 d(\sigma_1, \sigma_2) = \| \mathbf{e}_{\sigma_1} - \mathbf{e}_{\sigma_2} \|_2 + \alpha |t_1 - t_2|
 \]
-where $\mathbf{e}_\sigma$ are vector embeddings and $\alpha$ is a temporal scaling factor.
+$\mathbf{e}_\sigma$: vector embedding; $\alpha$: temporal scaling factor.
 
-### 3. Phase Transition Operators
-#### Drift Operator
+### 2.3 Phase Transition Operators
+
+**Drift Operator**
 \[
 \mathcal{D}(\sigma,t) = 1 - \frac{\|\nabla C(\sigma,t)\|}{K_{drift}}
 \]
-where the coherence field $C$ is:
+with coherence field:
 \[
 C(\sigma,t) = \mathrm{MI}(\sigma_{t-\delta t}, \sigma_t) + \lambda \cos(\theta_{\text{embed}})
 \]
-with:
-- $\mathrm{MI}$: Mutual information between phases
-- $\theta_{\text{embed}}$: Embedding vector angle
+- $\mathrm{MI}$: mutual information between phases  
+- $\theta_{\text{embed}}$: embedding vector angle
 
-#### Repair Operator
+**Repair Operator**
 \[
-\mathcal{R}(\sigma) = \sigma + \lambda \int_{\tau \in T} \phi(\tau)\Delta(\sigma,\tau)d\tau
+\mathcal{R}(\sigma) = \sigma + \lambda \int_{\tau \in T} \phi(\tau)\,\Delta(\sigma,\tau)\,d\tau
 \]
-using Gaussian attention kernel:
+with Gaussian attention kernel:
 \[
 \phi(\tau) = \exp\left(-\frac{(\tau-\tau_0)^2}{2s^2}\right)
 \]
 
-### 4. Loop Algebra
+### 2.4 Loop Algebra
 \[
-\begin{aligned}
-\mathcal{L}_i \circ \mathcal{L}_j &= \sum_{k=1}^5 c_{ijk}\mathcal{L}_k \\
-[\mathcal{L}_i, \mathcal{L}_j] &= \mathcal{L}_i\mathcal{L}_j - \mathcal{L}_j\mathcal{L}_i
-\end{aligned}
+\mathcal{L}_i \circ \mathcal{L}_j = \sum_{k=1}^5 c_{ijk}\mathcal{L}_k,\quad
+[\mathcal{L}_i, \mathcal{L}_j] = \mathcal{L}_i\mathcal{L}_j - \mathcal{L}_j\mathcal{L}_i
 \]
-Generator mappings:
-- $\mathcal{L}_1$: Segment Detection
-- $\mathcal{L}_2$: Drift-Repair
-- $\mathcal{L}_3$: Latent Phase
-- $\mathcal{L}_4$: Feedback Reflex
-- $\mathcal{L}_5$: Alignment-Resonance
+Generator mapping:
+- $\mathcal{L}_1$: Segment detection  
+- $\mathcal{L}_2$: Drift–repair  
+- $\mathcal{L}_3$: Latent phase  
+- $\mathcal{L}_4$: Feedback reflex  
+- $\mathcal{L}_5$: Alignment–resonance
 
-## Axiomatic Foundation
+---
 
-### Axiom 1 (Phase Continuity)
-\[
-\forall \epsilon > 0, \exists \delta > 0 \text{ s.t. } d(\sigma_1, \sigma_2) < \delta \Rightarrow |\mathcal{D}(\sigma_1) - \mathcal{D}(\sigma_2)| < \epsilon
-\]
+## 3. Axiomatic Foundation
 
-### Axiom 2 (Repair Closure)
-\[
-\mathcal{R}(\Sigma) \subseteq \Sigma
-\]
+1. **Phase Continuity**  
+   Small changes in phase yield small changes in drift:
+   \[
+   \forall \epsilon > 0, \exists \delta > 0 : d(\sigma_1,\sigma_2) < \delta \Rightarrow |\mathcal{D}(\sigma_1)-\mathcal{D}(\sigma_2)| < \epsilon
+   \]
 
-### Axiom 3 (Loop Compositionality)
-\[
-P(\mathcal{L}_k \mid \mathcal{L}_i, \mathcal{L}_j) > 0 \iff c_{ijk} > 0
-\]
+2. **Repair Closure**  
+   Repairs remain within the phase space:
+   \[
+   \mathcal{R}(\Sigma) \subseteq \Sigma
+   \]
 
-## Fundamental Theorems
+3. **Loop Compositionality**  
+   Positive composition probability corresponds to positive structure constant:
+   \[
+   P(\mathcal{L}_k|\mathcal{L}_i,\mathcal{L}_j) > 0 \iff c_{ijk} > 0
+   \]
 
-### Theorem 1 (Drift-Repair Duality)
-\[
-\ker(\mathcal{D}) \cong \operatorname{im}(\mathcal{R})
-\]
+---
 
-### Theorem 2 (Resonance Fixed-Point)
-\[
-\exists!\sigma^* \in \Sigma \text{ s.t. } \mathcal{R}(\sigma^*) = \sigma^*
-\]
+## 4. Fundamental Theorems
 
-## Categorical Preview
-The commutative diagram:
+1. **Drift–Repair Duality**  
+   \[
+   \ker(\mathcal{D}) \cong \operatorname{im}(\mathcal{R})
+   \]
+   The zero-drift subspace is isomorphic to the image of repair.
+
+2. **Resonance Fixed-Point**  
+   \[
+   \exists!\sigma^* \in \Sigma : \mathcal{R}(\sigma^*) = \sigma^*
+   \]
+   There exists a unique fixed point representing a resonance phase.
+
+---
+
+## 5. Categorical Preview
+
+Commutative diagram:
 \[
 \begin{CD}
 \mathcal{C}_{\text{Seg}} @>\mathcal{L}_1>> \mathcal{C}_{\text{Cue}} \\
@@ -102,8 +119,7 @@ The commutative diagram:
 \mathcal{C}_{\text{Lat}} @>>\mathcal{L}_5> \mathcal{C}_{\text{Res}}
 \end{CD}
 \]
-shows how loop generators act as morphisms between categories of phase types, where:
-- $\mathcal{C}_{\text{Seg}}$: Segment phases
-- $\mathcal{C}_{\text{Cue}}$: Cue phases
-- $\mathcal{C}_{\text{Lat}}$: Latent phases
+- $\mathcal{C}_{\text{Seg}}$: Segment phases  
+- $\mathcal{C}_{\text{Cue}}$: Cue phases  
+- $\mathcal{C}_{\text{Lat}}$: Latent phases  
 - $\mathcal{C}_{\text{Res}}$: Resonance phases
