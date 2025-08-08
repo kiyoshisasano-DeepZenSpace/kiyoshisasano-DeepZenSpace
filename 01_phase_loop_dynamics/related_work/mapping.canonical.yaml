@@ -1,0 +1,36 @@
+entries:
+  - id: plm.structural_phase
+    pld_term: Structural Phase
+    tier: core              # core | derived | support
+    description: Layered zones of syntactic scope in PLD.
+    academic_equivalents:
+      - term: Cartographic Syntax (Left Periphery)
+        field: Generative Syntax
+        ref_key: Rizzi1997
+      - term: Functional Hierarchies
+        field: Generative Syntax
+        ref_key: Cinque1999
+    notes: Optional note here.
+
+  - id: plm.syntax_infection
+    pld_term: Syntax Infection
+    tier: derived
+    description: Unintended mimicry across turns; priming-like transfer.
+    academic_equivalents:
+      - term: Structural Priming
+        field: Psycholinguistics
+        ref_key: BockGriffin2000
+    notes: Maps to alignment mechanisms.
+
+# 参考文献（任意）: ref_key→BibTeX
+references:
+  Rizzi1997: |
+    @incollection{Rizzi1997,
+      author={Luigi Rizzi}, title={The Fine Structure of the Left Periphery},
+      booktitle={Elements of Grammar}, year={1997}}
+  Cinque1999: |
+    @book{Cinque1999, author={Guglielmo Cinque},
+      title={Adverbs and Functional Heads}, year={1999}}
+  BockGriffin2000: |
+    @article{BockGriffin2000, author={Bock, J. K. and Griffin, Z. M.},
+      title={The Persistence of Structural Priming}, year={2000}}
