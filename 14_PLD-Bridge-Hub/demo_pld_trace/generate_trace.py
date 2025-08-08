@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from utils.pause_classifier import classify_pause
 from utils.reentry_detector import detect_reentry
 
-# ---- helpers ---------------------------------------------------------------
+# --- helpers ---------------------------------------------------------------
 
 def strip_icons(text: str) -> str:
     """Remove leading icons (⏸️/🔄) to avoid duplication in output."""
@@ -16,6 +16,14 @@ def strip_icons(text: str) -> str:
 def safe(s: str) -> str:
     """Escape double quotes for Mermaid node labels."""
     return s.replace('"', '\\"')
+
+def fmt_ts(ts: str) -> str:
+    """Short human-friendly timestamp: YYYY-MM-DD HH:MM"""
+    try:
+        dt = datetime.fromisoformat(ts)
+        return dt.strftime("%Y-%m-%d %H:%M")
+    except Exception:
+        return ts
 
 # ---- core ------------------------------------------------------------------
 
@@ -69,43 +77,80 @@ def save_outputs(analyzed_data):
     os.makedirs('outputs', exist_ok=True)
 
     # --- Mermaid nodes & styles ---
-    md_lines = ["# PLD Trace Analysis", "```mermaid", "graph TD"]
-    user_ids = []
+    md_lines = [
+        "# PLD Trace Analysis",
+        "```mermaid",
+        "graph TD",
+        "    %% Layout hints",
+        "    classDef pauseUI stroke:#f90,stroke-width:2px;",
+        "    classDef pauseRepair stroke:#f00,stroke-width:2px;",
+        "    classDef pauseDefault stroke:#f66,stroke-width:2px;",
+        "",
+        "    %% Legend",
+        "    subgraph Legend",
+        "      L1[⏸️ UI Friction]:::pauseUI",
+        "      L2[⏸️ Repair]:::pauseRepair",
+        "    end",
+    ]
+
+    user_ids = []  # [(node_id, turn)]
     node_idx = 1
 
-    # Create nodes and apply style based on pause type
+    # Create nodes with icons and apply class by pause type
     for turn in analyzed_data:
         if turn['role'] != 'user':
             continue
-        nid = f"U{node_idx}"
-        user_ids.append((nid, turn))
-        md_lines.append(f'    {nid}["{safe(turn["content"])}"]')
 
+        # prepend icons in node label if present
+        icons = []
         pa = (turn.get('pld_analysis') or {}).get('pause')
         if pa:
             label = strip_icons(pa.get('classification', ''))
             if "UI Friction" in label:
-                md_lines.append(f"    style {nid} stroke:#f90,stroke-width:2px")  # Orange
+                icons.append("⏸️")
             elif "Repair" in label:
-                md_lines.append(f"    style {nid} stroke:#f00,stroke-width:2px")  # Red
+                icons.append("⏸️")
+        re = (turn.get('pld_analysis') or {}).get('reentry')
+        if re and re.get('is_reentry'):
+            icons.append("🔄")
+
+        icon_prefix = (" ".join(icons) + " ") if icons else ""
+        nid = f"U{node_idx}"
+        user_ids.append((nid, turn))
+        md_lines.append(f'    {nid}["{icon_prefix}{safe(turn["content"])}"]')
+
+        # class by pause type
+        if pa:
+            ptxt = strip_icons(pa.get('classification', ''))
+            if "UI Friction" in ptxt:
+                md_lines.append(f"    class {nid} pauseUI;")
+            elif "Repair" in ptxt:
+                md_lines.append(f"    class {nid} pauseRepair;")
             else:
-                md_lines.append(f"    style {nid} stroke:#f66,stroke-width:2px")  # Default red-ish
+                md_lines.append(f"    class {nid} pauseDefault;")
         node_idx += 1
 
-    # Sequential edges (U1-->U2-->...)
+    # Sequential edges (U1 --> U2 --> ...)
     for i in range(len(user_ids) - 1):
         a, b = user_ids[i][0], user_ids[i + 1][0]
         md_lines.append(f"    {a} --> {b}")
 
+    # Optional: annotate “User turn sequence”
+    if user_ids:
+        md_lines.append("")
+        md_lines.append("    %% User turn sequence annotation")
+        md_lines.append(f'    note1(["User turns flow →"])')
+        md_lines.append(f"    note1 --- {user_ids[0][0]}")
+
     md_lines.append("```")
     md_lines.append("")
-    md_lines.append("## Pause / Reentry Tags")
+    md_lines.append("## Pause / Reentry Tags (short timestamps)")
 
-    # List tags with emoji icons
+    # Pretty tags list
     for nid, turn in user_ids:
         pa = (turn.get('pld_analysis') or {}).get('pause')
         re = (turn.get('pld_analysis') or {}).get('reentry')
-        md_lines.append(f"- **{turn['timestamp']}** [User] {turn['content']}")
+        md_lines.append(f"- **{fmt_ts(turn['timestamp'])}** [User] {turn['content']}")
         if pa:
             md_lines.append(f"  - ⏸️ {strip_icons(pa.get('classification'))}")
             reason = strip_icons(pa.get('reason'))
@@ -114,13 +159,15 @@ def save_outputs(analyzed_data):
         if re and re.get('is_reentry'):
             match = re.get('matching_segment', '')
             if match:
-                md_lines.append(f"  - 🔄 Reentry to: \"{match}\"")
+                md_lines.append(f'  - 🔄 Reentry to: "{match}"')
 
     with open(os.path.join('outputs', 'pld_trace.md'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(md_lines))
 
+    # JSON remains the same (structured data for devs)
     with open(os.path.join('outputs', 'pld_trace.json'), 'w', encoding='utf-8') as f:
         json.dump(analyzed_data, f, ensure_ascii=False, indent=2)
+
 
 # ---- main ------------------------------------------------------------------
 
