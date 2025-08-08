@@ -69,39 +69,6 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 
 ---
 
-## Structural Field — Compact Summary
-
-| Aspect | PLD Field (Temporal Resonance) | GPT-style Field (Stochastic Resonance) |
-|--------|--------------------------------|----------------------------------------|
-| **Signal focus** | Time-based gradients: silence length, cadence, overlap | Probability-based gradients: entropy spikes, logit shifts |
-| **Core loop** | Drift → Repair → Resonance | Uncertainty detection → Coherence adjustment |
-| **Optimization target** | Synchrony with user timing | Consistency within probabilistic context |
-| **Strength** | Captures pre-linguistic rhythm shifts | Maintains semantic & probabilistic coherence |
-| **Weakness** | Ignores model internal uncertainty | Ignores user timing disruptions |
-| **Complementarity** | Timing cues trigger uncertainty management | Uncertainty cues trigger timing adjustments |
-
----
-
-### Hybrid Cueing Example
-`user delay ↑ (PLD drift)` + `model entropy ↑ (GPT uncertainty)`  
-→ Proactive repair: simplify, ask a focused question, inject an example.
-
----
-
-### Multi-lens Interpretations
-
-| Lens | Drift | Repair | Resonance |
-|------|-------|--------|-----------|
-| **Information Theory** | ↑ Entropy | Entropy reduction | Coding efficiency |
-| **Network Science** | Fragmentation | Rewiring | Synchrony / lock-in |
-| **Dynamical Systems** | Orbit leaves manifold | Trajectory correction | Return to attractor |
-
----
-
-**Bottom line:**  
-PLD controls the **time-axis**; GPT controls the **probability-axis**.  
-Coupling both yields a richer, more adaptive structural field for interaction.
-
 
 ---
 
