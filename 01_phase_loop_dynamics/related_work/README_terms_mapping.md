@@ -42,7 +42,7 @@ From this YAML file, the following outputs are automatically generated:
 2. **Regenerate mapping files**  
    ```bash
    python generate_mappings.py
-```
+   ```
 This will update the forward and reverse `.md` mapping files.
 
 3. **Commit & submit a pull request**  
