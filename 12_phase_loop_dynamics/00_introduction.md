@@ -94,5 +94,3 @@ url = {https://github.com/your-org/phase_loop_dynamics}
 
 > “Not all syntax moves forward — some returns, loops, or waits.  
 > Phase Loop Dynamics maps where it loops, where it falters, and where it resonates.”
-> “Not all syntax moves forward — some returns, loops, or waits.  
-> Phase Loop Dynamics maps where it loops, where it falters, and where it resonates.”
