@@ -1,4 +1,4 @@
-# 📘 PLD Lexicon — Safe Usage & Tiering Guidelines (v0.5)
+# 📘 PLD Lexicon — Safe Usage & Tiering Guidelines (v0.6)
 
 > ⚠️ This document defines **lexical tier classification**, **usage stability**,  
 > and a **safe-term appendix** for concepts used in the *Phase Loop Dynamics (PLD)* framework.  
@@ -26,22 +26,29 @@
 
 ---
 
-## 🔡 Lexicon Tier Table — Tentative & Unstable Terms
-
-> Terms here **require contextual framing** when reused outside PLD core docs.
+## 🔡 Lexicon Tier Table — Tentative & Unstable Terms (Updated)
 
 | Term                  | Tier        | Stability | Usage Notes |
 |-----------------------|-------------|-----------|-------------|
-| **Drift**             | `@core`     | 🔴        | Use only with qualifiers (e.g., “semantic drift,” “structural drift”). Avoid standalone use in formal logic. |
-| **Phase**             | `@core`     | 🟢        | Safe when anchored to turn-taking, coherence cycles, or discourse segmentation. |
-| **Structural Tension**| `@support`  | 🔴        | Conceptual metaphor. Use only in interpretive logs or speculative commentary. |
-| **Rhythm**            | `@support`  | 🟡        | Define explicitly (not prosody). Clarify application (e.g., interaction timing, response cadence). |
-| **Field**             | `@core`     | 🔴        | Heavy metaphor load. Use only with explicit definition (e.g., “attentional field”). |
-| **Phase Boundary**    | `@derived`  | 🟡        | Acceptable when paired with segmentation logic or transition markers. |
-| **Resonance**         | `@derived`  | 🔴        | Avoid in structural claims; illustrative only (e.g., "resonance of prior syntax"). |
-| **Silence**           | `@support`  | 🟡        | Context required. Tie to conversation analysis, latency mapping, or interaction structure. |
-| **Coherence**         | `@derived`  | 🟡        | Specify dimension (e.g., “semantic coherence”). Avoid abstract use. |
-| **Latent Phase**      | `@derived`  | 🔴        | Use only in hypothetical mode (“possible latent phase indicators…”). Not yet formally supported. |
+| **Drift (𝒟)**         | `@core`     | 🟡        | **Updated**: Now strictly linked to the mathematical definition (Appendix §1.4) and the ML concept of *concept drift*. Avoid standalone use; explicitly state target and dimension (e.g., topic / structural / semantic). |
+| **Phase (Σ, 𝓛ᵢ)**     | `@core`     | 🟢        | Link to phase space and loop generators in the Mathematical Appendix. Avoid metaphorical use for CP/vP phases unless clearly contextualized. |
+| **Structural Tension**| `@support`  | 🔴        | *(No change)* |
+| **Rhythm**            | `@support`  | 🟡        | Reference Wilson & Wilson (2005) and specify the timing metric used. |
+| **Field**             | `@core`     | 🔴        | *(No change)* |
+| **Phase Boundary**    | `@derived`  | 🟡        | Include detection criteria, e.g., TextTiling. |
+| **Resonance (𝓛₅)**    | `@derived`  | 🟡        | **Updated**: Ground in *Dialogic Resonance* as primary source; treat as an empirical phenomenon, not just a metaphor. |
+| **Silence**           | `@support`  | 🟡        | Cite Jefferson (1989) metrics or Stivers (2009) thresholds. |
+| **Coherence (C(σ,t))**| `@derived`  | 🟡        | Specify using DRT/RST references or an explicit measurement. |
+| **Latent Phase (𝓛₃)** | `@derived`  | 🟡        | **Updated**: Stability changed from 🔴 to 🟡. Now supported by CA research on silence and psycholinguistic delay thresholds. |
+
+### Symbol Links
+- 𝒟 (Drift operator) → *Mathematical Appendix* §1.4  
+- ℛ (Repair operator) → §1.5  
+- 𝓛ᵢ (Loop generators) → §1.6 / §3.2  
+- Σ (Phase space) → §1.2  
+
+### References
+- For detailed definitions and mappings, see `01_phase_loop_dynamics/related_work/pld_to_academic.md`
 
 ---
 
@@ -49,10 +56,10 @@
 
 | Usage Context           | 🟢 Safe Terms    | 🟡 Cautious Terms                | 🔴 Unstable – Avoid |
 |-------------------------|------------------|----------------------------------|---------------------|
-| Internal documentation  | Phase            | Rhythm, Silence, Coherence       | Drift, Field         |
-| Public explanation      | Phase (w/ note)  | Phase Boundary (w/ model)        | Resonance, Tension   |
-| Structural modeling     | Phase            | Rhythm (defined)                 | Latent Phase         |
-| Academic papers         | Phase (anchored) | Silence (linked to CA)           | Drift (standalone)   |
+| Internal documentation  | Phase            | Drift, Rhythm, Silence, Coherence| Field               |
+| Public explanation      | Phase (w/ note)  | Drift, Phase Boundary (w/ model) | Resonance, Tension  |
+| Structural modeling     | Phase            | Drift, Rhythm (defined)          | *(none)*            |
+| Academic papers         | Phase (anchored) | Drift, Silence (linked to CA)    | *(none)*            |
 
 ---
 
@@ -103,7 +110,7 @@ Unlike `Drift` or `Latent Phase`, these terms can stand alone with minimal risk 
 
 ## 📘 Citation
 
-**Phase Loop Dynamics — PLD Lexicon Safe Usage & Tiering Guidelines (v0.5)**  
+**Phase Loop Dynamics — PLD Lexicon Safe Usage & Tiering Guidelines (v0.6)**  
 _Phase Drift / PLD Language Systems Collective, 2025_  
 [Repository Link](https://github.com/kiyoshisasano-DeepZenSpace)
 
