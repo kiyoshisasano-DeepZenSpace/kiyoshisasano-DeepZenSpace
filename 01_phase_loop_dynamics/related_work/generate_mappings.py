@@ -6,7 +6,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE
 CANON = ROOT / "mapping.canonical.yaml"
-OUT_FWD = ROOT / "README_terms_mapping.md"         # PLD→Academic
+OUT_FWD = ROOT / "pld_to_academic.md"              # PLD→Academic
 OUT_REV = ROOT / "academic_to_pld_reverse.md"      # Academic→PLD
 OUT_BIB = ROOT / "references.bib"
 
@@ -39,8 +39,9 @@ def build_forward(entries):
     return "".join(parts)
 
 def build_reverse(entries):
-    # 逆引き：Academic → PLD
-    # アカデミック項目をキーに再編
+    # Reverse mapping: Academic → PLD
+    # Re-index entries using academic terms as primary keys
+
     acc = []
     for e in entries:
         for a in e.get("academic_equivalents", []):
