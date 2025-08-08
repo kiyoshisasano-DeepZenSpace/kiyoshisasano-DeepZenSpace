@@ -6,7 +6,7 @@
 
 ## 🚀 Start Here — Quick Collaboration Entry
 
-📦 **[▶︎ Quickstart Kit](./13_quickstart_kit/README_quickstart.md)**  
+📦 **[▶︎ Quickstart Kit](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit/README_quickstart.md)**  
 Ready-to-use patterns for **Rasa**, **Figma**, and **LLMs** —  
 improve timing alignment, repair handling, and conversation reentry in hours, not weeks.
 
@@ -31,14 +31,14 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 - **Figma latency hold patterns** – keep attention during backend delays
 - **LLM reentry prompts** – improve multi-turn coherence
 
-📂 See: [`13_quickstart_kit`](./13_quickstart_kit)
+📂 See: [`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit)
 
 ---
 
 ## 🖼 Big Picture — PLD in 4 Stages
 
-<a href="./12_phase_loop_dynamics/10_phase_loop_dynamics.svg">
-<img src="./12_phase_loop_dynamics/10_phase_loop_dynamics.svg" alt="PLD Flow Diagram" width="800">
+<a href="./01_phase_loop_dynamics/10_phase_loop_dynamics.svg">
+<img src="./01_phase_loop_dynamics/10_phase_loop_dynamics.svg" alt="PLD Flow Diagram" width="800">
 </a>  
 
 1. **Observation** – Detect hesitations, drifts, and timing irregularities  
@@ -53,8 +53,8 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 | Role / Team              | Recommended First Step |
 |--------------------------|------------------------|
 | **Industry Partner**     | [Pilot Project Model](#pilot-project-model) |
-| **UX Researcher**        | Try [Quickstart Patterns](./13_quickstart_kit) |
-| **Academic Collaborator**| See [Glossary & Mapping](./12_phase_loop_dynamics/09_academic_mapping_index.md) |
+| **UX Researcher**        | Try [Quickstart Patterns](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit) |
+| **Academic Collaborator**| See [Glossary & Academic Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/01_phase_loop_dynamics/09_academic_mapping_index.md) |
 
 ---
 
@@ -62,9 +62,9 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 
 > *This section connects PLD to academic frameworks and formal models.*
 
-- **[Glossary & Academic Mapping](./12_phase_loop_dynamics/09_academic_mapping_index.md)** — Cross-disciplinary concept alignment  
-- **[Mathematical Appendix](./12_phase_loop_dynamics/PLD_Mathematical_Appendix.md)** — Formal operators, phase space, and loop generators  
-- **[Academic-to-PLD Reverse Mapping](./related_work/academic_to_pld_reverse.md)** — How existing literature maps back into PLD
+- **[Glossary & Academic Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/01_phase_loop_dynamics/09_academic_mapping_index.md)** — Cross-disciplinary concept alignment  
+- **[Mathematical Appendix](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/01_phase_loop_dynamics/PLD_Mathematical_Appendix.md)** — Formal operators, phase space, and loop generators  
+- **[Academic-to-PLD Reverse Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/01_phase_loop_dynamics/related_work/academic_to_pld_reverse.md)** — How existing literature maps back into PLD
 
 ---
 
@@ -81,8 +81,8 @@ PLD structures interaction through rhythmic sequences:
 
 ## 🧮 Mathematical Framing
 
-<a href="./12_phase_loop_dynamics/diagrams/category_theory_mapping.svg">
-<img src="./12_phase_loop_dynamics/diagrams/category_theory_mapping.svg" alt="PLD Math/Formal Mapping" width="800">
+<a href="./01_phase_loop_dynamics/diagrams/category_theory_mapping.svg">
+<img src="./01_phase_loop_dynamics/diagrams/category_theory_mapping.svg" alt="PLD Math/Formal Mapping" width="800">
 </a>  
 
 **Plain-language interpretation:**  
@@ -105,7 +105,7 @@ PLD structures interaction through rhythmic sequences:
 ```
 ## 📦 Quickstart Kit
 
-📂 **[`13_quickstart_kit`](./13_quickstart_kit)** includes:
+📂 **[`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit)** includes:
 - Hands-on examples for **Rasa**, **LLMs**, **Figma**
 - Drift / Repair / Reentry logging templates
 - Drop-in pattern modules
