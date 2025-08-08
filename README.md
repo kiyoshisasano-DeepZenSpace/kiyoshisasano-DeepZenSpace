@@ -69,7 +69,7 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 
 ---
 
-## Structural Rhythm — Public-Safe Summary
+## Structural Rhythm
 
 - Focuses on **observable interaction rhythms** — timing patterns, pauses, and changes in pace that occur during exchanges.
 
