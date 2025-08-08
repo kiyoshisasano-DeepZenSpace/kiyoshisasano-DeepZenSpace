@@ -82,8 +82,9 @@ PLD structures interaction through rhythmic sequences:
 
 ### 📜 Origin Story  
 
-PLD began not as planned analysis, but as open-ended dialogue with an AI.  
-One exchange exposed a **structural field** — a pre-interaction phase beneath words — which became the seed of the framework.  
+An unexpected insight from AI dialogue revealed that interaction rhythms start forming before words are spoken — this became the seed of PLD.  
+What began as open-ended questions, with no analysis in mind, unfolded into a framework now linking design, AI, and cognitive science.
+
 
 ---
 
