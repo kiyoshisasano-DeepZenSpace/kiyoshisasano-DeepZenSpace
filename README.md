@@ -23,10 +23,11 @@ Here’s why it matters for different audiences:
 
 ## 🖼 Big Picture: From Observation to Application
 
-<a href="./assets/pld_big_picture.svg">
-<img src="./assets/pld_big_picture.svg" alt="PLD Flow Diagram" width="800">
+<a href="https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7f2e59c8f509facd480808fe22b9283709a1253c/12_phase_loop_dynamics/10_phase_loop_dynamics.svg">
+<img src="https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7f2e59c8f509facd480808fe22b9283709a1253c/12_phase_loop_dynamics/10_phase_loop_dynamics.svg" alt="PLD Flow Diagram" width="800">
 </a>  
-<sub>*Click the image to view in full resolution. SVG source in [`assets/pld_big_picture.svg`](./assets/pld_big_picture.svg)*</sub>  
+<sub>*Click the image to view in full resolution. Source: `12_phase_loop_dynamics/10_phase_loop_dynamics.svg`*</sub>
+
 
 **How to read this diagram:**  
 This flow shows PLD’s progression in four stages:  
