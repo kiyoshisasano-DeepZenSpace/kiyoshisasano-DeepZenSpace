@@ -42,17 +42,55 @@ def analyze_trace(turns):
             analyzed.append(turn)
     return analyzed
 
+import os
+
 def save_outputs(analyzed_data):
-    """Generate Markdown and JSON outputs"""
-    # Markdown generation
-    md_lines = ["# PLD Trace Analysis", "```mermaid\ngraph TD"]
+    # 出力先フォルダを用意
+    os.makedirs('outputs', exist_ok=True)
+
+    # --- Markdown生成 ---
+    md_lines = ["# PLD Trace Analysis", "```mermaid", "graph TD"]
+    node_id = 1
+    user_nodes = []  # (id, turn)
+
     for turn in analyzed_data:
         if turn['role'] == 'user':
-            md_lines.append(f"    U{len(md_lines)}[\"{turn['content']}\"]")
-            if turn.get('pld_analysis'):
-                pause = turn['pld_analysis']['pause']
-                if pause:
-                    md_lines.append(f"    style U{len(md_lines)-1} stroke:#f00,stroke-width:2px")
+            nid = f"U{node_id}"
+            user_nodes.append((nid, turn))
+            # ノード
+            safe = turn['content'].replace('"', '\\"')
+            md_lines.append(f'    {nid}["{safe}"]')
+            # Pauseがあれば強調
+            pause = turn.get('pld_analysis', {}).get('pause')
+            if pause:
+                md_lines.append(f"    style {nid} stroke:#f00,stroke-width:2px")
+            node_id += 1
+
+    md_lines.append("```")
+    md_lines.append("")
+    md_lines.append("## Pause/Reentry Tags")
+
+    for turn in analyzed_data:
+        pa = turn.get('pld_analysis')
+        if not pa:
+            continue
+        md_lines.append(f"- **{turn['timestamp']}** [User] {turn['content']}")
+        pause = pa.get('pause')
+        if pause:
+            md_lines.append(f"  - ⏸️ {pause.get('classification')}")
+            md_lines.append(f"  - 💬 {pause.get('reason')}")
+        reentry = pa.get('reentry')
+        if reentry and reentry.get('is_reentry'):
+            md_lines.append(f"  - 🔄 Reentry: {reentry.get('matching_segment')}")
+
+    with open(os.path.join('outputs', 'pld_trace.md'), 'w', encoding='utf-8') as f:
+        f.write('\n'.join(md_lines))
+
+    # --- JSON出力 ---
+    out_json = os.path.join('outputs', 'pld_trace.json')
+    with open(out_json, 'w', encoding='utf-8') as f:
+        json.dump(analyzed_data, f, ensure_ascii=False, indent=2)
+
     
     md_lines.append("```\n\n## Pause/Reentry Tags")
     for turn in analyzed_data:
