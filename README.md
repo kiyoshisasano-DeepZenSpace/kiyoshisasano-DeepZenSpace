@@ -69,6 +69,22 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 
 ---
 
+## Structural Rhythm — Public-Safe Summary
+
+- Focuses on **observable interaction rhythms** — timing patterns, pauses, and changes in pace that occur during exchanges.
+
+- **PLD core** models these through:
+  - **Drift (𝒟):** emerging delays or irregularities
+  - **Repair (ℛ):** adjustments restoring smooth flow
+  - **Resonance (𝓛₅):** repetition of stabilizing patterns
+
+- **Multi-disciplinary analogies:**
+  - *Information theory:* drift = entropy rise; repair = entropy drop  
+  - *Network science:* drift = temporary fragmentation; repair = re-linking  
+  - *Dynamics:* drift = moving off track; repair = returning to stable path
+
+- **Bottom line:**  
+  PLD offers a structured way to detect, adjust, and reinforce interaction rhythms for more effective communication.
 
 ---
 
