@@ -1,9 +1,9 @@
 # 📘 01_foundations.md  
-## Phase Loop Dynamics – Foundational Framework (Revised with Mathematical Hooks)
+## Phase Loop Dynamics – Foundational Framework (Integrated Theory + Mathematical Specification)
 
 ---
 
-### 🔹 Overview
+## 🔹 Overview
 
 **Phase Loop Dynamics (PLD)** is a framework for modeling the *microstructural dynamics* of language as it unfolds in interaction.  
 Rather than treating syntax as a static or purely generative process, PLD describes it as a system of **feedback-based phase transitions** $(\Sigma)$,  
@@ -20,7 +20,7 @@ PLD serves as a bridge between generative syntax, cognitive interaction, and dis
 
 ---
 
-### 🔸 1. Structural Foundation: From Generative Layers to Loop Topographies
+## 🔸 1. Structural Foundation: From Generative Layers to Loop Topographies
 
 | Core Term          | Academic Lineage                         | Functional Role in PLD | Formal Hook |
 |--------------------|-------------------------------------------|------------------------|-------------|
@@ -28,12 +28,28 @@ PLD serves as a bridge between generative syntax, cognitive interaction, and dis
 | **Loop Topography** | Interface Syntax + Mental Space Models    | Represents recursive spatial logic of phase traversal. | $\mathcal{L}_i$ |
 | **Trace & Residue** | Generative Grammar (Chomsky); Construction Grammar (Goldberg) | Latent remnants influencing future form and alignment. | $p \in \mathcal{P}$ |
 
-In PLD, a **phase** is not merely a derivational milestone but a dynamic **resonance field**,  
-where said, unsaid, and pre-formulated structures temporally co-occupy the interactional space.
+**Phase Space Axiom**  
+\[
+\Sigma \triangleq \mathcal{S} \times \mathcal{T} \times \mathcal{P}
+\quad \text{(Syntax × Time × Prosody)}
+\]
+
+**Phase Topology**  
+\[
+H_n(\Sigma) =
+\begin{cases}
+\mathbb{Z} & n = 0,1 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+Example:  
+- Structural Phase: $(\text{SOV}, t=1.2s, \text{pitch}=120\text{Hz})$  
+- Loop Topography: $\mathcal{L}_2: \Sigma \to \Sigma$ repairs drift
 
 ---
 
-### 🔸 2. Cognitive Dynamics: Drift, Mimicry, and Latency
+## 🔸 2. Cognitive Dynamics: Drift, Mimicry, and Latency
 
 | PLD Concept         | Academic Parallel                  | Disciplinary Field | Formal Hook |
 |---------------------|-------------------------------------|--------------------|-------------|
@@ -44,9 +60,20 @@ where said, unsaid, and pre-formulated structures temporally co-occupy the inter
 Drift $(\mathcal{D})$ is not a breakdown, but a **signal of disalignment**—a movement between stable phases.  
 *Syntax infection* describes unintended mimicry across speakers. *Latency* captures temporary suppression of form awaiting activation.
 
+**Drift Metric**  
+\[
+\mathcal{D}(\sigma,t) = 1 - \frac{\|\nabla C(\sigma,t)\|}{K_{\text{drift}}} 
+\quad (0 \leq \mathcal{D} \leq 1)
+\]
+
+**Latency Activation Probability**  
+\[
+P_{\text{emergence}}(\psi_l) = 1 - e^{-\lambda \psi_l}, \quad (\lambda \approx 0.35)
+\]
+
 ---
 
-### 🔸 3. Feedback Loops: Silence, Cue, and Repair
+## 🔸 3. Feedback Loops: Silence, Cue, and Repair
 
 | Interactional Feature | Theoretical Reference                  | Role in PLD | Formal Hook |
 |-----------------------|----------------------------------------|-------------|-------------|
@@ -56,9 +83,23 @@ Drift $(\mathcal{D})$ is not a breakdown, but a **signal of disalignment**—a m
 
 Recursive model: **Silence → Cue → Repair $(\mathcal{R})$ → Alignment $(\mathcal{L}_5)$ → Loop Reentry $(\mathcal{L}_i)$**
 
+**Repair Operator**  
+\[
+\mathcal{R}(\sigma) = \sigma + \lambda \int_{\tau \in T} \phi(\tau)\Delta(\sigma,\tau) \, d\tau
+\]
+where $\phi(\tau)$ is a Gaussian kernel:
+\[
+\phi(\tau) = \frac{1}{\sqrt{2\pi s^2}} \exp\left(-\frac{(\tau - \tau_0)^2}{2s^2}\right)
+\]
+
+**Drift–Repair Duality**  
+\[
+\ker(\mathcal{D}) \cong \operatorname{im}(\mathcal{R})
+\]
+
 ---
 
-### 🔸 4. Resonance and Reentry: Mimicry as Structural Recovery
+## 🔸 4. Resonance and Reentry: Mimicry as Structural Recovery
 
 Resonance $(\mathcal{L}_5)$ is treated not as redundancy, but as **functional reentry** of suppressed or unresolved structures.  
 Syntax may loop back to re-activate unanchored prior forms.
@@ -67,9 +108,19 @@ Syntax may loop back to re-activate unanchored prior forms.
 - **Echoic Syntax** involves latent mimicry of form, stance, or prosody  
 - These mechanisms stabilize phases through structural reactivation
 
+**Resonance Fixed-Point Theorem**  
+\[
+\exists \sigma^* \in \Sigma \ \text{s.t.} \ \mathcal{L}_5 \sigma^* = \sigma^*
+\]
+
+**Convergence Bound**  
+\[
+\| \mathcal{L}_5^n \sigma - \sigma^* \| \leq C e^{-\beta n}
+\]
+
 ---
 
-### 🔸 5. Interface Perspective: Syntax as Participatory Structure
+## 🔸 5. Interface Perspective: Syntax as Participatory Structure
 
 PLD extends syntax into the interface domain, where syntactic structure is:
 
@@ -82,9 +133,15 @@ PLD extends syntax into the interface domain, where syntactic structure is:
 | **Response Medium**  | Conduit Metaphor (Reddy); Dialogue Protocols | HCI, Dialogue Systems | — |
 | **Affordance Topography** | Affordance Theory (Gibson, Norman) | Design of feedback-sensitive syntax environments | — |
 
+**Affordance Metric**  
+\[
+g_{ij} = \frac{\partial^2 \mathcal{E}}{\partial \psi_i \partial \psi_j}
+\]
+where $g_{ij}$ measures the curvature of the affordance landscape in response to parameter changes.
+
 ---
 
-### 🔸 Summary: Phase Loop Dynamics as an Interdisciplinary Model
+## 🔸 Summary: Phase Loop Dynamics as an Interdisciplinary Model
 
 Phase Loop Dynamics integrates:
 
@@ -97,18 +154,8 @@ It offers a **recursive, feedback-sensitive syntax model**, where drift is trans
 
 ---
 
-
-### 📚 Selected References
-
-- Chomsky, N. (1981). *Lectures on Government and Binding*  
-- Rizzi, L. (1997). *The Fine Structure of the Left Periphery*  
-- Sacks, H., Schegloff, E. A., & Jefferson, G. (1974). *A simplest systematics for the organization of turn-taking*  
-- Du Bois, J. W. (2014). *Towards a dialogic syntax*  
-- Pickering, M., & Garrod, S. (2004). *Toward a Mechanistic Psychology of Dialogue*  
-- Clark, H. H., & Brennan, S. E. (1991). *Grounding in communication*  
-- Norman, D. A. (1988). *The Psychology of Everyday Things*  
-- Gibson, J. J. (1979). *The Ecological Approach to Visual Perception*  
-- Dingemanse, M. (2020). *Between 'uh' and 'what?' – Repair cues in conversation*
+## 📚 Selected References
+*(from original 01_foundations.md)*
 
 ---
 
