@@ -44,7 +44,11 @@ entries:
       - term: Structural Drift
         field: Cognitive Science
         ref_key: MaturanaVarela1987Drift
-    notes: Includes topic drift and segment drift in discourse.
+    notes: >
+      Strictly linked to the mathematical definition (*Mathematical Appendix* §1.4)
+      and to the ML concept of "concept drift". Avoid standalone use; explicitly
+      state target and dimension (topic / structural / semantic). Includes topic drift
+      and segment drift in discourse.
 
   - id: plm.latent_phase
     pld_term: Latent Phase
@@ -59,7 +63,9 @@ entries:
       - term: Processing Delay
         field: Psycholinguistics
         ref_key: RobertsFrancis2006Delay
-    notes: In PLD, marks pre-articulation or transition states in phase loops.
+    notes: >
+      In PLD, marks pre-articulation or transition states in phase loops. Supported by
+      Conversation Analysis research on silence and psycholinguistic studies on delay thresholds.
 
   - id: plm.resonance
     pld_term: Resonance
@@ -75,7 +81,10 @@ entries:
       - term: Resonance in Dialogue
         field: Language and Cognition
         ref_key: Poldvere2021Resonance
-    notes: Broader than syntactic priming; includes lexical, prosodic, and stance echoes.
+    notes: >
+      Grounded in Dialogic Resonance as a primary source; treat as an empirical phenomenon,
+      not merely a metaphor. Broader than syntactic priming; includes lexical, prosodic,
+      and stance echoes.
 
   - id: plm.alignment
     pld_term: Alignment
@@ -168,7 +177,6 @@ entries:
     notes: Latency mapping quantifies silence types for phase modeling.
 
 references:
-  # existing keys kept; new ones will be added to citations.bib
   Chomsky2000Minimalist: |
     @incollection{Chomsky2000Minimalist,
       author    = {Noam Chomsky},
