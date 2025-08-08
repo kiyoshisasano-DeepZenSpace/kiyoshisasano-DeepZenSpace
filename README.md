@@ -250,14 +250,3 @@ If you reuse PLD components, examples, or logic:
 
 > PLD’s integrity depends on framing, not just form.
 
----
-
-## 🔐 Summary
-
-- License: **CC BY-NC 4.0**  
-- Structural fidelity is required  
-- Aesthetic or symbolic reuse is discouraged  
-- Commercial use requires prior approval  
-- Misaligned usage may result in access deferral
-
-> Use PLD responsibly — **preserve rhythm as structure, not style.**
