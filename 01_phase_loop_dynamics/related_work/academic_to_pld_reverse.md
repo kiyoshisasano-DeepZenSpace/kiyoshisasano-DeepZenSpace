@@ -36,7 +36,7 @@ It is intended as a quick reference for readers coming from linguistics, HCI, AI
 2. **Run** the mapping generator script:
    ```bash
    python tools/update_mappings.py
-```
+   ```
 3. This will update both:
 - `pld_to_academic.md` (forward mapping)  
 - `academic_to_pld_reverse.md` (this file)
