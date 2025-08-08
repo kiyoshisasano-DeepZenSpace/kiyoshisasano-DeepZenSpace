@@ -88,7 +88,7 @@ For usage and file summaries, see [`../README_phase_loop_dynamics.md`](../README
 title = {Phase Loop Dynamics: Syntax Modeling through Drift, Alignment, and Resonance},
 author = {The Phase Drift Language Systems Collective},
 year = {2025},
-url = {https://github.com/your-org/phase_loop_dynamics}
+url = {https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/12_phase_loop_dynamics}
 }
 ```
 
