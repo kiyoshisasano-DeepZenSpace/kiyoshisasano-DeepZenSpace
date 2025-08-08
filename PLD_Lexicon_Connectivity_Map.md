@@ -1,4 +1,4 @@
-# 🗺️ PLD Lexicon Connectivity Map (v0.5)
+# 🗺️ PLD Lexicon Connectivity Map (v0.6)
 
 > **Purpose:**  
 > This document provides a **structural overview of lexical relationships** within the  
@@ -13,11 +13,11 @@
 - **@core** → Foundational concepts that anchor other terms and model logic.  
 - **@support** → Contextual terms that rely on core terms for structure.  
 - **@derived** → Emergent concepts formed by interaction between terms or states.  
-- **Stability Indicators** (🟢 🟡 🔴) follow the [Lexicon Tiering Guide](./LEXICON_TIERING_GUIDE.md).
+- **Stability Indicators** (🟢 🟡 🔴) follow the [Lexicon Tiering Guide](./PLD_LEXICON_SAFE_USAGE_GUIDE.md).
 
 > **Reference:**  
-> - [Lexicon Tiering & Usage Stability Guide](./LEXICON_TIERING_GUIDE.md)  
-> - [PLD Glossary & Academic Mapping](./12_phase_loop_dynamics/09_glossary_academic_mapping.md)  
+> - [Lexicon Tiering & Usage Stability Guide](./PLD_LEXICON_SAFE_USAGE_GUIDE.md)  
+> - [PLD Glossary & Academic Mapping](./01_phase_loop_dynamics/09_glossary_academic_mapping.md)  
 
 ---
 
@@ -25,29 +25,30 @@
 
 ```mermaid
 graph TD
-    Drift["@core Drift 🔴"] --> Repair["@core Repair 🟢"]
+    Drift["@core Drift (𝒟) 🟡"] --> Repair["@core Repair (ℛ) 🟢"]
     Drift --> PhaseBoundary["@derived Phase Boundary 🟡"]
-    Repair --> Resonance["@derived Resonance 🔴"]
-    Phase["@core Phase 🟢"] --> PhaseBoundary
+    Repair --> Resonance["@derived Resonance (𝓛₅) 🟡"]
+    Phase["@core Phase (Σ, 𝓛ᵢ) 🟢"] --> PhaseBoundary
     Rhythm["@support Rhythm 🟡"] --> Phase
     Silence["@support Silence 🟡"] --> Repair
-    Coherence["@derived Coherence 🟡"] --> Phase
-    LatentPhase["@derived Latent Phase 🔴"] --> Coherence
+    Coherence["@derived Coherence (C(σ,t)) 🟡"] --> Phase
+    LatentPhase["@derived Latent Phase (𝓛₃) 🟡"] --> Coherence
 ```
+
 ---
 
 ## 🧩 Term Relationship Table
 
 | Source Term              | Target Term                | Relation Type    | Notes                                                     |
 |--------------------------|----------------------------|------------------|-----------------------------------------------------------|
-| Drift `@core` 🔴         | Repair `@core` 🟢          | Sequential link  | Drift often triggers repair events.                      |
-| Drift `@core` 🔴         | Phase Boundary `@derived` 🟡 | Causal link      | High drift magnitude can mark boundaries.                 |
-| Repair `@core` 🟢        | Resonance `@derived` 🔴    | Recursive link   | Repair can create rhythmic echoes.                        |
-| Phase `@core` 🟢         | Phase Boundary `@derived` 🟡 | Structural link  | Boundaries segment the phase space.                       |
-| Rhythm `@support` 🟡     | Phase `@core` 🟢           | Modulatory link  | Temporal pacing influences phase transitions.             |
-| Silence `@support` 🟡    | Repair `@core` 🟢          | Trigger link     | Silence can initiate repair sequences.                    |
-| Coherence `@derived` 🟡  | Phase `@core` 🟢           | Evaluative link  | Coherence measures phase alignment.                       |
-| Latent Phase `@derived` 🔴 | Coherence `@derived` 🟡   | Hypothetical link| Possible but unverified relationship.                     |
+| Drift `@core` 🟡         | Repair `@core` 🟢           | Sequential link  | Drift often triggers repair events. Linked to §1.4 Drift operator. |
+| Drift `@core` 🟡         | Phase Boundary `@derived` 🟡| Causal link      | High drift magnitude can mark boundaries.                 |
+| Repair `@core` 🟢        | Resonance `@derived` 🟡     | Recursive link   | Repair can create rhythmic echoes (see Dialogic Resonance). |
+| Phase `@core` 🟢         | Phase Boundary `@derived` 🟡| Structural link  | Boundaries segment the phase space.                       |
+| Rhythm `@support` 🟡     | Phase `@core` 🟢            | Modulatory link  | Temporal pacing influences phase transitions.             |
+| Silence `@support` 🟡    | Repair `@core` 🟢           | Trigger link     | Silence can initiate repair sequences.                    |
+| Coherence `@derived` 🟡  | Phase `@core` 🟢            | Evaluative link  | Coherence measures phase alignment.                       |
+| Latent Phase `@derived` 🟡| Coherence `@derived` 🟡    | Hypothetical link| Supported by CA and psycholinguistic delay thresholds.     |
 
 ---
 
@@ -61,15 +62,18 @@ graph TD
 
 ## 📌 Update Notes
 
-- **v0.5** — Added stability indicators, inline role tags, and links to related docs.  
-- Diagram converted to Mermaid for GitHub compatibility.  
-- Added “How to Read” section for onboarding.  
+- **v0.6** — Updated stability levels per *PLD Lexicon Safe Usage & Tiering Guidelines v0.6*.  
+- Adjusted `Drift` to 🟡 (linked to formal definition).  
+- `Resonance` upgraded from 🔴 to 🟡 with empirical grounding in Dialogic Resonance.  
+- `Latent Phase` upgraded from 🔴 to 🟡 with CA and psycholinguistic support.  
+- All links to operators now reference sections in the *Mathematical Appendix*.  
+- Diagram remains Mermaid-compatible for GitHub rendering.  
 
 ---
 
 ## 📘 Citation
 
-**Phase Loop Dynamics — Lexicon Connectivity Map (v0.5)**  
+**Phase Loop Dynamics — Lexicon Connectivity Map (v0.6)**  
 <https://github.com/kiyoshisasano-DeepZenSpace>  
 
 > These mappings are **structural guides**, not fixed taxonomies.  
