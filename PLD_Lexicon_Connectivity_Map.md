@@ -62,12 +62,9 @@ graph TD
 
 ## 📌 Update Notes
 
-- **v0.6** — Updated stability levels per *PLD Lexicon Safe Usage & Tiering Guidelines v0.6*.  
-- Adjusted `Drift` to 🟡 (linked to formal definition).  
-- `Resonance` upgraded from 🔴 to 🟡 with empirical grounding in Dialogic Resonance.  
-- `Latent Phase` upgraded from 🔴 to 🟡 with CA and psycholinguistic support.  
-- All links to operators now reference sections in the *Mathematical Appendix*.  
-- Diagram remains Mermaid-compatible for GitHub rendering.  
+- **v0.6** — Updated stability indicators (Drift 🟡, Resonance 🟡, Latent Phase 🟡).  
+- Added explicit operator and symbol links for mathematical correspondence.  
+- Maintained Mermaid diagram for GitHub compatibility.  
 
 ---
 
