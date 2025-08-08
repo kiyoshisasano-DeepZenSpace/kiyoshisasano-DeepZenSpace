@@ -1,59 +1,69 @@
-# 📚 Structural Units Index (U049–U060)
+# 📚 Structural Units Index (U049–U060) – Mathematical Hook Edition
 
 This index catalogs **Phase Drift Observation Units** U049–U060,  
-each marking a distinct **structural transformation** in discourse dynamics.
+each marking a distinct **structural transformation** in discourse dynamics within the PLD framework.
 
-Each unit is annotated with:
-- Its affiliated PLD loop  
-- Current **phase status**  
-- Key **Safe Terms** in play  
-- A brief structural description
+Each unit entry specifies:
+- **Affiliated loop** $\mathcal{L}_i$
+- **Phase status** $\sigma \in \Sigma$
+- **Safe Terms** (controlled vocabulary)
+- Concise structural description
 
-> These units serve as empirical anchors for PLD loop analysis, cue prediction, and drift modeling.
+These units serve as **empirical anchors** for:
+- Loop transition analysis
+- Cue prediction models
+- Drift $(\mathcal{D})$ and repair $(\mathcal{R})$ detection
 
 ---
 
 ## 🔢 Unit Table
 
-| Unit ID | Loop     | Phase Status                | Safe Terms                            | Description |
-|---------|----------|-----------------------------|----------------------------------------|-------------|
-| U049    | Loop_03  | `latent_expression_inhibited`   | `Silence`, `Latent Phase`             | Expression was delayed prior to surfacing |
-| U050    | Loop_04  | `resonance_trace_active`        | `Feedback`, `Latent Phase`            | Feedback emerged from a latent syntactic trace |
-| U051    | Loop_05  | `drift_resonance_interference`  | `Resonance`, `Drift`, `Silence`       | Mimicry introduced ambiguity in drift alignment |
-| U052    | Loop_02  | `cue_realignment_active`        | `Cue`, `Segment`, `Drift`             | Cue issued in search of phase reentry |
-| U053    | Loop_03  | `segment_repair_pending`        | `Silence`, `Latent Phase`             | Repair held in latency before structural recall |
-| U054    | Loop_03  | `latent_syntax_retention`       | `Silence`, `Segment`, `Latent Phase`  | Suppressed syntax remained unvoiced pre-utterance |
-| U055    | Loop_05  | `resonance_mimicry_reentry`     | `Resonance`, `Cue`, `Alignment`       | Drifted structure returned via tonal mimicry |
-| U056    | Loop_01  | `segment_drift_unfolding`       | `Segment`, `Drift`, `Silence`         | Fragmented segment went unnoticed until drift emerged |
-| U057    | Loop_02  | `cue_repair_initiated`          | `Cue`, `Segment`                      | Cue triggered self-repair attempt mid-expression |
-| U058    | Loop_04  | `repair_drifted`                | `Cue`, `Feedback`, `Drift`            | Repair failed, causing re-triggered drift sequence |
-| U059    | Loop_05  | `anchor_alignment_formed`       | `Alignment`, `Resonance`, `Drift`     | Tonal alignment stabilized previous drift |
-| U060    | Loop_05  | `tone_transfer_ready`           | `Alignment`, `Cue`, `Resonance`       | Phase concluded with tone inviting continuation |
-
-> ℹ️ *Unit IDs (U049–U060) are manually annotated and linked to empirical YAML traces. See [`09_log_appendix.yaml`](./09_log_appendix.yaml).*
+| Unit ID | Loop ($\mathcal{L}_i$) | Phase Status                   | Safe Terms                         | Description |
+|---------|------------------------|---------------------------------|-------------------------------------|-------------|
+| U049    | $\mathcal{L}_3$        | `latent_expression_inhibited`  | `Silence`, `Latent Phase`           | Expression delayed prior to surfacing |
+| U050    | $\mathcal{L}_4$        | `resonance_trace_active`       | `Feedback`, `Latent Phase`          | Feedback emerged from latent syntactic trace |
+| U051    | $\mathcal{L}_5$        | `drift_resonance_interference` | `Resonance`, `Drift`, `Silence`     | Mimicry introduced ambiguity in drift alignment $(\mathcal{D})$ |
+| U052    | $\mathcal{L}_2$        | `cue_realignment_active`       | `Cue`, `Segment`, `Drift`           | Cue issued for phase reentry |
+| U053    | $\mathcal{L}_3$        | `segment_repair_pending`       | `Silence`, `Latent Phase`           | Repair held in latency before structural recall $(\mathcal{R})$ |
+| U054    | $\mathcal{L}_3$        | `latent_syntax_retention`      | `Silence`, `Segment`, `Latent Phase`| Suppressed syntax remained unvoiced |
+| U055    | $\mathcal{L}_5$        | `resonance_mimicry_reentry`    | `Resonance`, `Cue`, `Alignment`     | Drifted structure returned via tonal mimicry |
+| U056    | $\mathcal{L}_1$        | `segment_drift_unfolding`      | `Segment`, `Drift`, `Silence`       | Fragmented segment unnoticed until drift emerged |
+| U057    | $\mathcal{L}_2$        | `cue_repair_initiated`         | `Cue`, `Segment`                    | Cue triggered self-repair mid-expression |
+| U058    | $\mathcal{L}_4$        | `repair_drifted`               | `Cue`, `Feedback`, `Drift`          | Repair failed, causing re-triggered drift |
+| U059    | $\mathcal{L}_5$        | `anchor_alignment_formed`      | `Alignment`, `Resonance`, `Drift`   | Tonal alignment stabilized prior drift |
+| U060    | $\mathcal{L}_5$        | `tone_transfer_ready`          | `Alignment`, `Cue`, `Resonance`     | Phase concluded with tonal continuation cue |
 
 ---
 
 ## 🔍 Observational Highlights
 
-### 💤 Latent Construct Cycles (Loop_03)
-- Units **U049**, **U053**, and **U054** form a latency-based progression from suppressed structure to segment emergence.
-- Common traits: `Silence` ➝ `Latent Phase` ➝ `Cue`.
+### 💤 Latent Construct Cycles $(\mathcal{L}_3)$
+- Units U049, U053, U054 form a progression:
+\[
+\text{Silence} \;\to\; \text{Latent Phase} \;\to\; \text{Cue}
+\]
+- Represents **phase-space latency activation** before utterance.
 
-### 🔁 Drift–Repair Cascades (Loop_02 & Loop_04)
-- Units **U052**, **U057**, and **U058** compose a recursive loop of drift recognition and unstable repair.
-- Drift triggers Cue, but Feedback loops may fail, triggering recursive loops.
+### 🔁 Drift–Repair Cascades $(\mathcal{L}_2, \mathcal{L}_4)$
+- Units U052, U057, U058 show recursive:
+\[
+\mathcal{D} \;\to\; \text{Cue} \;\to\; \mathcal{R} \;\to\; (\mathcal{D} \text{ or Success})
+\]
+- Failure triggers loop chaining.
 
-### 🔊 Resonant Phase Recovery (Loop_05)
-- Units **U055–U060** show tonal echoing leading to structural resolution or re-alignment.
-- Key progression: `Resonance` ➝ `Cue` ➝ `Transfer or Closure`.
+### 🔊 Resonant Phase Recovery $(\mathcal{L}_5)$
+- Units U055–U060 demonstrate:
+\[
+\text{Resonance} \;\to\; \text{Cue} \;\to\; \text{Transfer / Closure}
+\]
+- High **resonance matching score** $\rho \geq 0.8$.
 
-### 🪞 Segment Fragmentation (Loop_01)
-- **U056** illustrates a subtle breakdown of segment continuity, often invisible until later drift events.
+### 🪞 Segment Fragmentation $(\mathcal{L}_1)$
+- U056: delayed drift detection after segment breakdown.
 
 ---
 
-## 📌 Safe Term Frequency Overview
+## 📌 Safe Term Frequency
 
 | Term         | Occurrences | Representative Units        |
 |--------------|-------------|-----------------------------|
@@ -65,39 +75,24 @@ Each unit is annotated with:
 | `Silence`    | 5           | U049, U053, U054, U056       |
 | `Alignment`  | 3           | U055, U059, U060             |
 
-> 🔍 *To explore co-occurrence patterns like `Cue + Drift` or `Resonance + Silence`, see [loop_summary_chart.svg](./10_diagram/loop_summary_chart.svg) (planned).*
+---
+
+## 🧭 Loop Affiliation Criteria
+
+Loop assignment is based on:
+1. Manual pattern annotation
+2. Trigger-condition mapping
+3. Safe Term cluster detection
 
 ---
 
-## 🧭 Loop Affiliation Notes
+## 🔁 Use Cases
 
-Each unit is linked to a primary loop via:
-- **Manual pattern annotation**
-- **Trigger-condition mapping**
-- **Safe Term cluster detection**
-
-Loop determination criteria are outlined in [`/04_model_kit/loop_ruleset.md`](./04_model_kit/loop_ruleset.md).
+- **Empirical loop modeling**: Identify loop patterns in annotated dialog corpora.
+- **Phase drift detection**: Train $\mathcal{D}$–$\mathcal{R}$ classifiers.
+- **Safe term co-occurrence mapping**: Correlate recovery strategies with loop outcomes.
+- **Simulation datasets**: Generate YAML scenarios for PLD testing.
 
 ---
 
-## 🔁 Use Case Scenarios
-
-This index supports:
-
-- **Empirical Loop Modeling**  
-  → Identifying real-world PLD loop manifestations in annotated dialog logs.
-
-- **Phase Drift Detection Algorithms**  
-  → Training models on structural breakdown and cue patterns.
-
-- **Safe Term Co-Occurrence Analysis**  
-  → Mapping common recovery terms to loop outcomes.
-
-- **YAML-Based Loop Simulation Datasets**  
-  → Generating controllable simulation sequences for testing phase loop responses.
-
-For raw unit YAML, see: [`09_log_appendix.yaml`](./09_log_appendix.yaml)
-
----
-
-> “Each unit is a loop in motion — silent, recursive, echoic, or failing — but always structurally expressive.”
+> “Each unit is a loop in motion — silent, recursive, echoic, or failing — but always structurally expressive in $\Sigma$.”
