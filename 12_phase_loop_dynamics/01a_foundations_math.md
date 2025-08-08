@@ -1,108 +1,103 @@
 # 📘 01_foundations.md  
-## Phase Loop Dynamics – Foundational Framework (v3.2)
+## Phase Loop Dynamics – Foundational Framework (Revised with Mathematical Hooks)
 
 ---
 
-### 🔹 Core Axioms
+### 🔹 Overview
 
-1. **Phase Space Axiom**:  
-   $$
-   \Sigma \triangleq \mathcal{S} \times \mathcal{T} \times \mathcal{P} 
-   \quad \text{(Syntax × Time × Prosody)}
-   $$
+**Phase Loop Dynamics (PLD)** is a framework for modeling the *microstructural dynamics* of language as it unfolds in interaction.  
+Rather than treating syntax as a static or purely generative process, PLD describes it as a system of **feedback-based phase transitions** $(\Sigma)$,  
+in which alignment, silence, cue, repair $(\mathcal{R})$, and resonance interact recursively within **loop structures** $(\mathcal{L}_i)$.
 
----
+These interactional loops give rise to observable shifts in syntax and structure, including:
 
-### Drift–Repair Duality
+- Hesitation, fragmentation, and mid-turn revisions  
+- Structural mimicry and syntactic echo  
+- Latent activation and delayed alignment $(\mathcal{L}_3)$  
+- Silence-induced cueing and recursive repair $(\mathcal{R})$
 
-$$
-\mathrm{ker}(\mathcal{D}) \cong \mathrm{im}(\mathcal{R}) \quad \text{(Isomorphism)}
-$$
-
----
-
-### 🔸 1. Structural Foundation
-
-**Phase Topology**:
-
-$$
-H_n(\Sigma) = 
-\begin{cases}
-\mathbb{Z} & n = 0, 1 \\
-0 & \text{otherwise}
-\end{cases}
-$$
-
-| Term              | Math Object                   | Example                           |
-|------------------|-------------------------------|-----------------------------------|
-| Structural Phase | $\sigma \in \Sigma$           | (SOV, $t$ = 1.2s, pitch = 120Hz)  |
-| Loop Topography  | $\mathcal{L}_i: \Sigma \to \Sigma$ | $\mathcal{L}_2$ repairs drift |
+PLD serves as a bridge between generative syntax, cognitive interaction, and discourse-internal alignment.
 
 ---
 
-### 🔸 2. Cognitive Dynamics
+### 🔸 1. Structural Foundation: From Generative Layers to Loop Topographies
 
-**Drift Metric**:
+| Core Term          | Academic Lineage                         | Functional Role in PLD | Formal Hook |
+|--------------------|-------------------------------------------|------------------------|-------------|
+| **Structural Phase** | Cartographic Syntax (Rizzi, Cinque)       | Projects layered zones of syntactic scope. | $\sigma \in \Sigma$ |
+| **Loop Topography** | Interface Syntax + Mental Space Models    | Represents recursive spatial logic of phase traversal. | $\mathcal{L}_i$ |
+| **Trace & Residue** | Generative Grammar (Chomsky); Construction Grammar (Goldberg) | Latent remnants influencing future form and alignment. | $p \in \mathcal{P}$ |
 
-$$
-\mathcal{D}(\sigma,t) = 1 - \frac{\|\nabla C(\sigma,t)\|}{K_{\text{drift}}} 
-\quad \text{(0 ≤ } \mathcal{D} \leq 1)
-$$
-
-**Latency Activation**:
-
-$$
-P_{\text{emergence}}(\psi_l) = 1 - e^{-\lambda \psi_l} 
-\quad \text{(λ ≈ 0.35)}
-$$
+In PLD, a **phase** is not merely a derivational milestone but a dynamic **resonance field**,  
+where said, unsaid, and pre-formulated structures temporally co-occupy the interactional space.
 
 ---
 
-### 🔸 3. Feedback Dynamics
+### 🔸 2. Cognitive Dynamics: Drift, Mimicry, and Latency
 
-**Repair Operator**:
+| PLD Concept         | Academic Parallel                  | Disciplinary Field | Formal Hook |
+|---------------------|-------------------------------------|--------------------|-------------|
+| **Syntax Infection** | Structural Priming (Pickering & Garrod) | Psycholinguistics | — |
+| **Drift Transfer**   | Concept Drift (Widmer); Variation (Labov) | NLP, Historical Linguistics | $\mathcal{D}$ |
+| **Latency**          | Residual Activation (Segaert et al.) | Cognitive Psychology | $\mathcal{L}_3$ |
 
-$$
-\mathcal{R}(\sigma) = \sigma + \lambda \int_{\tau \in T} \phi(\tau)\Delta(\sigma,\tau) \, d\tau
-$$
-
-Where $\phi(\tau)$ is a Gaussian kernel:
-
-$$
-\phi(\tau) = \frac{1}{\sqrt{2\pi s^2}} 
-\exp\left(-\frac{(\tau - \tau_0)^2}{2s^2}\right)
-$$
+Drift $(\mathcal{D})$ is not a breakdown, but a **signal of disalignment**—a movement between stable phases.  
+*Syntax infection* describes unintended mimicry across speakers. *Latency* captures temporary suppression of form awaiting activation.
 
 ---
 
-### 🔸 4. Resonance Theory
+### 🔸 3. Feedback Loops: Silence, Cue, and Repair
 
-**Fixed-Point Attractor**:
+| Interactional Feature | Theoretical Reference                  | Role in PLD | Formal Hook |
+|-----------------------|----------------------------------------|-------------|-------------|
+| **Silence**           | Turn-taking Theory (Sacks, Schegloff); Wait Time (Rowe) | Triggers recalibration or expectancy reset. | — |
+| **Cue-Driven Repair** | Repair Sequences (Schegloff); Feedback Cues (Dingemanse) | Initiates loop restart via monitoring. | $\mathcal{R}$ |
+| **Alignment Anchoring** | Grounding (Clark & Brennan); Alignment Theory (Pickering & Garrod) | Ensures loop closure. | $\mathcal{L}_5$ |
 
-$$
-\exists \sigma^* \in \Sigma \text{ such that } \mathcal{L}_5 \sigma^* = \sigma^*
-$$
-
-**Convergence Bound**:
-
-$$
-\| \mathcal{L}_5^n \sigma - \sigma^* \| \leq C e^{-\beta n}
-$$
+Recursive model: **Silence → Cue → Repair $(\mathcal{R})$ → Alignment $(\mathcal{L}_5)$ → Loop Reentry $(\mathcal{L}_i)$**
 
 ---
 
-### 🔸 5. Interface Geometry
+### 🔸 4. Resonance and Reentry: Mimicry as Structural Recovery
 
-**Affordance Metric**:
+Resonance $(\mathcal{L}_5)$ is treated not as redundancy, but as **functional reentry** of suppressed or unresolved structures.  
+Syntax may loop back to re-activate unanchored prior forms.
 
-$$
-g_{ij} = \frac{\partial^2 \mathcal{E}}{\partial \psi_i \partial \psi_j} 
-\quad \text{(Energy Hessian)}
-$$
+- **Resonance Reentry** builds on Dialogic Syntax (Du Bois) and repetition phenomena  
+- **Echoic Syntax** involves latent mimicry of form, stance, or prosody  
+- These mechanisms stabilize phases through structural reactivation
 
 ---
 
-## 📚 Enhanced References
+### 🔸 5. Interface Perspective: Syntax as Participatory Structure
+
+PLD extends syntax into the interface domain, where syntactic structure is:
+
+- A **shared cognitive topology** $(\Sigma, d(\sigma_1,\sigma_2))$  
+- Modulated by affordance, perception, and alignment  
+- An **interactional architecture** emergent across turns
+
+| PLD Construct        | Interface Model                  | Application Domain | Formal Hook |
+|----------------------|-----------------------------------|--------------------|-------------|
+| **Response Medium**  | Conduit Metaphor (Reddy); Dialogue Protocols | HCI, Dialogue Systems | — |
+| **Affordance Topography** | Affordance Theory (Gibson, Norman) | Design of feedback-sensitive syntax environments | — |
+
+---
+
+### 🔸 Summary: Phase Loop Dynamics as an Interdisciplinary Model
+
+Phase Loop Dynamics integrates:
+
+- **Generative Syntax** — hierarchical phase transitions $(\Sigma)$  
+- **Interactional Linguistics** — repair $(\mathcal{R})$, turn-taking, reentry $(\mathcal{L}_i)$  
+- **Cognitive Modeling** — priming, drift $(\mathcal{D})$, latency $(\mathcal{L}_3)$  
+- **HCI Frameworks** — interface logic, affordance cues
+
+It offers a **recursive, feedback-sensitive syntax model**, where drift is transitional, silence is structural, and loops bind conversational time.
+
+---
+
+### 📚 Selected References
 
 **Mathematical Foundations**  
 - Lee, J.M. (2012). *Riemannian Manifolds*  
@@ -112,8 +107,8 @@ $$
 - Corpus data from `04_structural_units_index.md`  
 - fMRI correlates in `07_latent_phase_theory.md`
 
+
 ---
 
-> "Language dances in $\Sigma$ — where $\mathcal{D}$ measures missteps,  
-> $\mathcal{R}$ choreographs recovery,  
-> and $\mathcal{L}_i$ compose the eternal rhythm."
+> "Every drift $(\mathcal{D})$ is a door. Every loop $(\mathcal{L}_i)$ is a return not yet completed.  
+> Phase Loop Dynamics maps what returns, what misaligns, and what stabilizes again $(\mathcal{R})$."
