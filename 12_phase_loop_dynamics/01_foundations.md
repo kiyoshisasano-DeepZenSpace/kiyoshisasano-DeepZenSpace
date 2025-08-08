@@ -154,10 +154,5 @@ It offers a **recursive, feedback-sensitive syntax model**, where drift is trans
 
 ---
 
-## 📚 Selected References
-*(from original 01_foundations.md)*
-
----
-
 > "Every drift $(\mathcal{D})$ is a door. Every loop $(\mathcal{L}_i)$ is a return not yet completed.  
 > Phase Loop Dynamics maps what returns, what misaligns, and what stabilizes again $(\mathcal{R})$."
