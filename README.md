@@ -35,12 +35,6 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 
 ---
 
-### 📜 Origin Story  
-
-PLD began not as planned analysis, but as open-ended dialogue with an AI.  
-One exchange exposed a **structural field** — a pre-interaction phase beneath words — which became the seed of the framework.  
-
----
 
 ## 🖼 Big Picture — PLD in 4 Stages
 
@@ -85,6 +79,14 @@ PLD structures interaction through rhythmic sequences:
 📌 *Drift is not deviation — it's rhythm under construction.*
 
 ---
+
+### 📜 Origin Story  
+
+PLD began not as planned analysis, but as open-ended dialogue with an AI.  
+One exchange exposed a **structural field** — a pre-interaction phase beneath words — which became the seed of the framework.  
+
+---
+
 
 ## 🧮 Mathematical Framing
 
