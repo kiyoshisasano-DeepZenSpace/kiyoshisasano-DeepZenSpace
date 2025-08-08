@@ -105,3 +105,11 @@ graph TD
 
 > 💡 Note: This is a **demonstration tool** for analyzing UX dialogue rhythm, intended for prototyping and exploration.
 > For production-grade integration, refer to the full **PLD-Bridge-Hub** suite and latency-aware structural modules.
+
+---
+## 📜 License & Use Conditions
+
+**License:** Creative Commons BY-NC 4.0  
+Non-commercial use permitted with attribution:  
+→ _"Phase Loop Dynamics — Kiyoshi Sasano / DeepZenSpace"_
+
