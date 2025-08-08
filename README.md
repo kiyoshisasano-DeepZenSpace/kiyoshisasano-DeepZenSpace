@@ -35,6 +35,13 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 
 ---
 
+### 📜 Origin Story  
+
+PLD began not as planned analysis, but as open-ended dialogue with an AI.  
+One exchange exposed a **structural field** — a pre-interaction phase beneath words — which became the seed of the framework.  
+
+---
+
 ## 🖼 Big Picture — PLD in 4 Stages
 
 <a href="./01_phase_loop_dynamics/10_phase_loop_dynamics.svg">
