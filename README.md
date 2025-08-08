@@ -76,9 +76,11 @@ Cross-disciplinary alignment between PLD and academic frameworks.
 
 **Big Picture + Math Formulas Overview:**  
 
-<a href="./assets/pld_math_formulas.png">
-<img src="./assets/pld_math_formulas.png" alt="PLD Math Formulas" width="800">
+<a href="https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7f2e59c8f509facd480808fe22b9283709a1253c/12_phase_loop_dynamics/diagrams/category_theory_mapping.svg">
+<img src="https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/7f2e59c8f509facd480808fe22b9283709a1253c/12_phase_loop_dynamics/diagrams/category_theory_mapping.svg" alt="PLD Math/Formal Mapping" width="800">
 </a>  
+<sub>*Click the image to view in full resolution. Source: `12_phase_loop_dynamics/diagrams/category_theory_mapping.svg`*</sub>
+
 
 **Plain-language interpretation:**  
 - **Drift:** When a system’s timing shifts enough to feel noticeably different, often due to delay or asynchronous events.  
