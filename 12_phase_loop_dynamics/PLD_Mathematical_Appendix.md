@@ -1,12 +1,5 @@
 # 📘 PLD Mathematical Appendix — Integrated Edition
-
-*Integrated from:*
-- `00_formal_specification.md`
-- `01_dynamical_systems.md`
-- `02_phase_algebra.md`
-- `03_topological_analysis.md`
-- `04_metric_spaces.md`  
-Version: 2025-08-08
+  Version: 2025-08-08
 
 ---
 
