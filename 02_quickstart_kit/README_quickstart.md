@@ -22,11 +22,19 @@ The **Phase Loop Dynamics (PLD)** kit provides reusable interaction design patte
 │   ├── rasa_soft_repair_actions.py   ← Custom repair loop handling via Rasa actions
 │   └── schema_mapping_table.md       ← PLD patterns mapped to platform behaviors
 │
-├── 03_metrics_tracking/          ← Logging + dashboard templates
-│   ├── drift_event_logging.md        ← How to detect, log, and interpret drift
-│   ├── metrics_schema.yaml           ← YAML schema for PLD event logging
-│   ├── pld_event.schema.json         ← JSON Schema version of metrics spec
-│   └── reentry_success_dashboard.json← Example analytics dashboard (e.g. PostHog)
+├── 30_metrics/                      ← Logging specifications + dashboards + datasets
+│   ├── dashboards/                  ← Visualization templates for PLD metrics
+│   │   └── reentry_success_dashboard.json  ← Example analytics dashboard (e.g., PostHog, Metabase)
+│   ├── datasets/                     ← Sample event logs for validation or demo
+│   │   └── pld_events_demo.jsonl
+│   ├── guides/                       ← How to detect, log, and interpret PLD metrics
+│   │   └── drift_event_logging.md
+│   ├── reports/                      ← Output from schema validation or analytics runs
+│   │   └── pld_events_demo_report.md
+│   └── schemas/                      ← Event/metric definitions in machine-readable format
+│       ├── metrics_schema.yaml       ← YAML schema for PLD event logging
+│       └── pld_event.schema.json     ← JSON Schema version of metrics spec
+
 ```
 
 ---
