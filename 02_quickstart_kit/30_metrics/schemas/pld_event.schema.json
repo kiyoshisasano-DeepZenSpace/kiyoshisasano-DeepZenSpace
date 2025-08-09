@@ -1,89 +1,41 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.com/schemas/pld_event.schema.json",
-  "title": "PLD Event Log Schema",
-  "description": "Schema for Phase Loop Dynamics (PLD) event logging",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "oneOf": [
-    {
-      "title": "Drift Detected",
-      "type": "object",
-      "required": ["event", "timestamp", "user_id", "context_id", "drift_type"],
-      "properties": {
-        "event": { "const": "drift_detected" },
-        "timestamp": { "type": "string", "format": "date-time" },
-        "user_id": { "type": "string" },
-        "session_id": { "type": "string" },
-        "context_id": { "type": "string" },
-        "drift_type": {
-          "type": "string",
-          "enum": ["silence", "ambiguity", "misclick", "off-path"]
-        },
-        "ui_state": { "type": "string" },
-        "confidence_score": { "type": "number" }
-      }
+  "required": ["event_type", "timestamp"],
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "drift_detected",
+        "repair_triggered",
+        "repair_failed",
+        "reentry_success",
+        "reentry_anchor_set",
+        "reentry_missing_anchor",
+        "repair_escalation",
+        "latency_hold"
+      ]
     },
+    "timestamp": { "type": "string" },
+    "session_id": { "type": "string" },
+    "metadata": { "type": "object" }
+  },
+  "additionalProperties": true,
+  "allOf": [
     {
-      "title": "Repair Triggered",
-      "type": "object",
-      "required": ["event", "timestamp", "user_id", "strategy", "latency_before_repair"],
-      "properties": {
-        "event": { "const": "repair_triggered" },
-        "timestamp": { "type": "string", "format": "date-time" },
-        "user_id": { "type": "string" },
-        "session_id": { "type": "string" },
-        "context_id": { "type": "string" },
-        "strategy": {
-          "type": "string",
-          "enum": ["soft_repair", "hard_repair", "prompt_hint"]
-        },
-        "success_predicted": { "type": "boolean" },
-        "latency_before_repair": { "type": "number" }
-      }
-    },
-    {
-      "title": "Repair Failed",
-      "type": "object",
-      "required": ["event", "timestamp", "user_id", "context_id", "failed_attempts"],
-      "properties": {
-        "event": { "const": "repair_failed" },
-        "timestamp": { "type": "string", "format": "date-time" },
-        "user_id": { "type": "string" },
-        "session_id": { "type": "string" },
-        "context_id": { "type": "string" },
-        "failed_attempts": { "type": "integer", "minimum": 1 }
-      }
-    },
-    {
-      "title": "Reentry Success",
-      "type": "object",
-      "required": ["event", "timestamp", "user_id", "previous_context_id", "reentry_lag"],
-      "properties": {
-        "event": { "const": "reentry_success" },
-        "timestamp": { "type": "string", "format": "date-time" },
-        "user_id": { "type": "string" },
-        "session_id": { "type": "string" },
-        "previous_context_id": { "type": "string" },
-        "reentry_lag": { "type": "number" },
-        "reentry_method": {
-          "type": "string",
-          "enum": ["automatic_resume", "user_initiated", "ai_suggested"]
-        },
-        "goal_completed": { "type": "boolean" }
-      }
-    },
-    {
-      "title": "Latency Hold Rendered",
-      "type": "object",
-      "required": ["event", "timestamp", "user_id", "hold_duration"],
-      "properties": {
-        "event": { "const": "latency_hold_rendered" },
-        "timestamp": { "type": "string", "format": "date-time" },
-        "user_id": { "type": "string" },
-        "session_id": { "type": "string" },
-        "hold_duration": { "type": "number" },
-        "context": { "type": "string" },
-        "user_cancelled": { "type": "boolean" }
+      "if": { "properties": { "event_type": { "const": "latency_hold" } } },
+      "then": {
+        "required": ["event_type", "timestamp", "session_id"],
+        "properties": {
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "duration_ms": { "type": "number", "minimum": 0 },
+              "reason": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        }
       }
     }
   ]
