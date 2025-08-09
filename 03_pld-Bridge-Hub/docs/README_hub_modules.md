@@ -1,10 +1,9 @@
-<!-- Redirect stub (2025-08-09): This page is deprecated. Use INDEX.md and new OVERVIEW pages. -->
+<!-- Redirect stub (2025-08-09): Use new entry points. -->
 
 # Modules Overview (Deprecated)
 
-Start here instead:
-- Partner Index → `./INDEX.md`
-- Docs overview → `./docs/OVERVIEW.md`
-- Scripts overview → `./scripts/OVERVIEW.md`
-- Structure Generators → `./structure_generators/OVERVIEW.md`
-- Notion Templates → `./notion_ui_templates/OVERVIEW.md`
+Start here:
+- Partner Index → `../INDEX.md`
+- Docs overview → `./OVERVIEW.md`
+- Generators (code) → `../structure_generators/OVERVIEW.md`
+- Notion templates → `../notion_ui_templates/OVERVIEW.md`
