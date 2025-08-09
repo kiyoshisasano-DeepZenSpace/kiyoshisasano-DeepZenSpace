@@ -154,7 +154,7 @@ What began as open-ended questions, with no analysis in mind, unfolded into a fr
 
 ## 📩 Contact & Collaboration
 
-- Email: **pld.partners@deepzenspace.org**  
+- Email: **deepzenspace[at]gmai[dot]com**  
 - Contribution guide: [`05_field_stewardship`](./05_field_stewardship)  
 - License: **Creative Commons BY-NC 4.0**
 
