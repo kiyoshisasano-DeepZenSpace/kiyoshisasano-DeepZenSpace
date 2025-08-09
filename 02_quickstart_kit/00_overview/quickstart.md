@@ -1,9 +1,9 @@
-# ⚡ Quickstart – Phase Loop Dynamics (PLD)
+# ⚡ Quickstart – Phase Loop Dynamics (PLD) with Mathematical References
 
-**Phase Loop Dynamics (PLD)** is a modular interaction model that treats **drift**, **repair**, and **reentry** as designable, reusable structures — not system failures.  
-It helps teams build adaptive, resilient, and rhythm-aware UX across AI tools, learning flows, and dialogue systems.
+**Phase Loop Dynamics (PLD)** is a modular interaction model that treats **drift**, **repair**, and **reentry** as **designable, reusable structures** — not system failures.  
+It supports building adaptive, resilient, and rhythm-aware UX across AI tools, learning flows, and dialogue systems.
 
-This quickstart is for **UX designers, AI engineers, and prototypers** who want to implement PLD patterns without reading the full theory.
+This quickstart is for **UX designers, AI engineers, and prototypers** who want to implement PLD patterns **with grounding in the formal model**.
 
 ---
 
@@ -19,30 +19,30 @@ Don’t treat it as error — treat it as **structure**.
 
 ---
 
-## ▶️ 02. Core Concepts
+## ▶️ 02. Core Concepts with Math References
 
-| Term           | Meaning                                                  | UX Equivalent                    |
-|----------------|----------------------------------------------------------|----------------------------------|
-| **Drift**        | Delay, ambiguity, or off-path behavior                     | User hesitation, silent exit     |
-| **Repair**       | Clarification or re-alignment maneuver                    | Retry prompt, paraphrasing       |
-| **Reentry**      | Return to a dropped state or interrupted flow             | “Resume where you left off”      |
-| **Latency Hold** | Intentional pause to simulate rhythm or give space        | Delayed tooltip, slow animation  |
-| **Resonance**    | Echo or pacing match that affirms timing or intent       | Feedback that mirrors flow tempo |
+| Term           | Meaning                                                  | Math Ref |
+|----------------|----------------------------------------------------------|----------|
+| **Drift**      | Delay, ambiguity, or off-path behavior                   | 𝒟(σ,t) — eq. (1.3) |
+| **Repair**     | Clarification or re-alignment maneuver                   | ℛ(σ) — eq. (1.5) |
+| **Reentry**    | Return to a dropped or interrupted flow                  | Loop reinit — sec. 3.3 |
+| **Latency Hold** | Intentional pause to simulate rhythm or give space     | 𝓛₃ latency operator — sec. 3.2 |
+| **Resonance**  | Echo or pacing match that affirms timing or intent       | σ* fixed point — Theorem 2 |
 
-These are **UX pattern units** — composable across platforms and domains.
+Full definitions: [`PLD_Mathematical_Appendix.md`](../../01_phase_loop_dynamics/PLD_Mathematical_Appendix.md) and [`pld_core_summary.md`](../01_getting_started/pld_core_summary.md).
 
 ---
 
-## ▶️ 03. Sample Loop Pattern
+## ▶️ 03. Sample Loop Pattern (Logic + Math Link)
 
-### 🔁 Example: Drift → Repair → Reentry (YAML-style logic)
+### 🔁 Drift → Repair → Reentry
 
 ```yaml
 - state: drift_probe
   trigger:
-    silence_timeout: 5s
+    silence_timeout: 5s       # Drift trigger (𝒟 > threshold)
     low_NLU_confidence: <0.45
-  action: latency_hold(delay=900ms)
+  action: latency_hold(delay=900ms)  # Latency operator 𝓛₃
 
 - state: soft_repair
   prompt: "Just to confirm — did you mean [X] or something else?"
@@ -51,43 +51,39 @@ These are **UX pattern units** — composable across platforms and domains.
     user_denies: repair_escalation
 
 - state: reentry_link
-  resume_from: prior_context_id  # Must persist across sessions or form dropouts
+  resume_from: prior_context_id
 
 - state: repair_escalation
   action: handoff_or_reset_prompt
 ```
-## 🔧 Tip
-In Rasa, implement this via `FallbackAction` + slot retention.  
-In Figma, simulate reentry via overlay variants keyed to `frame_id`.
+
+**Math grounding:**  
+- Drift detection threshold → eq. (1.3) coherence gradient condition  
+- Repair step → eq. (1.5) kernel integration  
+- Reentry link → Loop closure property (Theorem 5)
 
 ---
 
 ## ▶️ 04. Adjacent Research & Influences
 
-### Domain vs. PLD Concepts
-
 | Domain                | PLD Concepts                               |
-|----------------------|--------------------------------------------|
-| Conversation Analysis| repair, latency_hold, drift-loop           |
-| Temporal Interaction | resonance, timed pacing                    |
-| Cognitive UX         | drift as overload, reentry as relief       |
-| Embodied Interaction | field stewardship, relational UX           |
+|-----------------------|--------------------------------------------|
+| Conversation Analysis | repair, latency_hold, drift-loop           |
+| Temporal Interaction  | resonance, timed pacing                    |
+| Cognitive UX          | drift as overload, reentry as relief       |
+| Embodied Interaction  | field stewardship, relational UX           |
 
 > **PLD reframes rhythm as a design primitive — not just a UX side effect.**
 
 ### Selected References
-
 - Drew (1997), *Repair in Conversation*
 - Wendy Ju (2015), *Temporal Interaction Design*
 - Odom et al. (2014), *Designing for Slowness*
 - Sha Xin Wei, *Rhythmic Computation*
-- Nielsen, Norman, Raskin — *Error Recovery Models*
 
 ---
 
 ## ▶️ 05. How to Apply PLD in Existing Platforms
-
-### 🧪 Try These Starter Points
 
 | Platform   | Start With                                                        |
 |------------|-------------------------------------------------------------------|
@@ -98,71 +94,37 @@ In Figma, simulate reentry via overlay variants keyed to `frame_id`.
 
 ---
 
-### 🤝 Contribute Patterns / Demos
+## ▶️ 06. Safety & Loop Handling (Math-Based)
 
-You can submit:
+PLD emphasizes **recovery without infinite fallback cycles**.
 
-- 🧩 New pattern units (e.g., `anticipation_link`, `interrupt_fade`)
-- 💬 Alternative terms or simplified developer mappings
-- 🎬 Demo GIFs or YAML prompt templates
-- 📊 Analytics schema extensions:  
-  `drift_detected`, `repair_failed`, `reentry_lag`
+Mathematical constraints for safety:
+- **Repair Closure** — ℛ(Σ) ⊆ Σ (Axiom 2) → All repair outputs remain valid states  
+- **Loop Compositionality** — Prevents uncontrolled loop growth (Axiom 3)  
+- **Stability Conditions** — Use Lyapunov-based checks (Theorem 3) to avoid divergence
 
-- [See `metrics_schema.yaml`](#)  
-- [See `llm_reentry_prompt.json`](#)
-
----
-
-## ▶️ 06. Safety & Loop Handling
-
-PLD emphasizes **recovery without getting stuck in infinite fallback cycles**.
-
-### When implementing:
-
-- ✅ Set max repair attempts or fallback escalation paths  
-- ✅ Detect unresolved drift (e.g., no input after repair)  
-- ✅ Persist context IDs for reentry logic  
+Implementation checklist:
+- ✅ Max repair attempts (configurable)  
+- ✅ Detect unresolved drift (𝒟 remains above threshold)  
+- ✅ Persist context IDs for reentry  
 - ✅ Log unresolved loops (`drift_unrecovered`) for dashboard tracking  
-
-- [See `reentry_success_dashboard.json`](#)
 
 ---
 
 ## ▶️ 07. Visual Overview
-```text
-PLD Quickstart Flow:
-┌────────────────────────────┐
-│ 01_getting_started         │ → Theory, onboarding
-└────────────┬───────────────┘
-             ↓
-┌────────────┴───────────────┐
-│ 02_pattern_examples        │ → Code, prompts, prototypes
-└────────────┬───────────────┘
-             ↓
-┌────────────┴───────────────┐
-│ 03_metrics_tracking        │ → Logging + dashboard specs
-└────────────────────────────┘
-```
-## 📖 Glossary & Term Reference
 
-For complete definitions of PLD pattern terms and roles:  
-→ [View the PLD Glossary](#)
+```text
+Phase Loop:
+Drift (𝒟) → Repair (ℛ) → Reentry → Latency Hold (𝓛₃) → Resonance (σ*)
+```
 
 ---
 
 ## 📜 License
 
-**Creative Commons BY-NC 4.0**  
-(Open for remixing, research, and non-commercial adaptation)
+Creative Commons BY-NC 4.0 — Open for research and non-commercial adaptation.
 
 ---
 
-## 📫 Contact
-
-**Created by:** Kiyoshi Sasano  
-📩 deepzenspace[at]gmail[dot]com  
-🔗 [PLD GitHub Repository](#)
-
 > “Don’t fix the flow — listen to it.”  
 > — *Phase Loop Dynamics*
-
