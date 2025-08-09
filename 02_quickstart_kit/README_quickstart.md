@@ -1,137 +1,93 @@
-# Quickstart Kit — Phase Loop Dynamics (PLD)
+# 🚀 PLD Quickstart Guide (with Mathematical Foundations)
 
-This Quickstart Kit provides a **hands-on entry point** for applying the Phase Loop Dynamics (PLD) framework in UX prototyping, LLM orchestration, and metrics-driven evaluation.
-
-It is **aligned with the PLD Core Theory** documented in [`01_phase_loop_dynamics`](../01_phase_loop_dynamics/) and integrates:
-- **Lexicon v0.6** safe usage rules
-- **Academic mapping** to related research
-- **Mathematical Appendix** notation for reproducibility
+> This quickstart introduces **Phase Loop Dynamics (PLD)** for researchers and developers.  
+> It now integrates references to the **formal mathematical model** from the *PLD Mathematical Appendix — Integrated Edition (2025-08-08)*.
 
 ---
 
-## 1. Purpose
+## 1. What is PLD?
 
-The Quickstart Kit serves as:
-1. **Entry Guide** — understand PLD concepts and terminology
-2. **Pattern Library** — ready-to-use operator patterns for UX, LLM prompts, and Rasa flows
-3. **Metrics Integration** — schemas, logging patterns, and dashboard templates
-
-> **Audience:**  
-> - **UX Engineers** — prototype and test conversational flows with latency/repair handling  
-> - **LLM Developers** — integrate prompt re-entry, repair triggers, and drift control  
-> - **Data Analysts** — track PLD-specific metrics and evaluate interaction quality
+**Phase Loop Dynamics (PLD)** is a framework for modeling dialogue as a sequence of *phases* connected through dynamic feedback loops.  
+It bridges **linguistic interaction** (alignment, repair, resonance) and **mathematical modeling** (phase spaces, operators, and loop algebra).
 
 ---
 
-## 2. Repository Layout
+## 2. Core Concepts
 
-Following the **2025-08-09 migration**, the Quickstart Kit is organized as:
+| PLD Term | Description | Math Ref |
+|----------|-------------|----------|
+| **Structural Phase** | Bounded syntactic/interactional unit. | Σ (eq. 1.1) |
+| **Drift** | Gradual, loop-driven change in structure or meaning. | 𝒟(σ,t) (eq. 1.3) |
+| **Cue-Driven Repair** | Mechanism restoring interaction after trouble. | ℛ(σ) (eq. 1.5) |
+| **Resonance** | Echoing of elements across turns. | Fixed point σ* (Theorem 2) |
+| **Alignment** | Synchronization of linguistic forms/interpretations. | Alignment tensor 𝒜⊗𝒜 (sec. 3.2) |
+| **Coherence** | Global semantic/logical stability. | C(σ,t) (eq. 1.4) |
+| **Rhythm** | Temporal turn-taking pattern. | Oscillator coupling (sec. 2.3) |
+| **Silence** | Interactional gap with significance. | Latent phase 𝓛₃ (sec. 3.2) |
 
-```
-00_overview/
-  quickstart.md
-  pld_theory_summary.md
-  usage_notes.md
+See the [Academic Mapping](./01_phase_loop_dynamics/related_work/academic_to_pld_reverse.md) for cross-disciplinary terminology.
 
-20_patterns/
-  ux/
-    figma_latency_hold.md
-  llm/
-    reentry_prompt.json
-  rasa/
-    soft_repair.yml
-    soft_repair_actions.py
-  mapping/
-    schema_mapping_table.md
+---
 
-30_metrics/
-  guides/
-    drift_event_logging.md
-  schemas/
-    metrics_schema.yaml
-    pld_event.schema.json
-  dashboards/
-    reentry_success_dashboard.json
+## 3. Mathematical Model Overview
 
-_meta/
-  MIGRATION.md
-  REDIRECTS.md
+PLD is defined over a **phase space** Σ, with:
+- **State representation:** σ = (s, t, p) ∈ Σ, combining syntactic derivation *s*, temporal coordinate *t*, and prosodic parameters *p*. (eq. 1.1)
+- **Distance metric:** d(σ₁, σ₂) combining embedding distance and temporal offset. (eq. 1.2)
+- **Drift operator:** 𝒟(σ,t) measuring deviation via coherence gradients. (eq. 1.3)
+- **Repair operator:** ℛ(σ) applying kernel-weighted adjustments. (eq. 1.5, 1.6)
+- **Loop generators:** 𝓛₁…𝓛₅ composing into a loop algebra. (eq. 1.7)
+
+### Key Theorems
+- **Drift–Repair Duality** — The drift kernel matches the image of repair. (Theorem 1)
+- **Resonance Fixed-Point** — There exists a unique stable resonance state σ*. (Theorem 2)
+- **Loop Closure as Lie Algebra** — Generators satisfy closure under commutators. (Theorem 5)
+
+For full derivations, see [`PLD_Mathematical_Appendix.md`](./01_phase_loop_dynamics/PLD_Mathematical_Appendix.md).
+
+---
+
+## 4. Quickstart Steps
+
+### 4.1 Installation
+Clone the repository:
+```bash
+git clone https://github.com/your-org/pld.git
+cd pld
 ```
 
-For a detailed migration table, see [`_meta/MIGRATION.md`](../_meta/MIGRATION.md).
+### 4.2 Load PLD Core
+```python
+from pld.core import PhaseLoopModel
 
----
-
-## 3. Core PLD Concepts
-
-| PLD Term | Tier | Academic Link | Mathematical Ref |
-|---|---|---|---|
-| **Structural Phase** | Core | [Phase (Minimalist Program)](../01_phase_loop_dynamics/related_work/pld_to_academic.md) | — |
-| **Cue-Driven Repair** | Core | [Conversational Repair](../01_phase_loop_dynamics/related_work/pld_to_academic.md) | ℛ |
-| **Structural Drift** | Core | [Concept Drift](../01_phase_loop_dynamics/related_work/pld_to_academic.md) | 𝒟 |
-| **Latent Phase** | Derived | [Conversational Silence](../01_phase_loop_dynamics/related_work/pld_to_academic.md) | 𝓛₃ |
-| **Resonance** | Derived | [Dialogic Resonance](../01_phase_loop_dynamics/related_work/pld_to_academic.md) | 𝓛₅ |
-| **Coherence Field** | Derived | [Coherence Relations](../01_phase_loop_dynamics/related_work/pld_to_academic.md) | C(σ,t) |
-
-> Full lexicon: [`PLD_LEXICON_SAFE_USAGE_GUIDE.md`](../01_phase_loop_dynamics/PLD_LEXICON_SAFE_USAGE_GUIDE.md)  
-> Academic mapping: [`pld_to_academic.md`](../01_phase_loop_dynamics/related_work/pld_to_academic.md)
-
----
-
-## 4. Getting Started
-
-### 4.1 Read the Overview
-- [`00_overview/quickstart.md`](00_overview/quickstart.md) — minimal working example
-- [`00_overview/pld_theory_summary.md`](00_overview/pld_theory_summary.md) — condensed theory
-- [`00_overview/usage_notes.md`](00_overview/usage_notes.md) — best practices & pitfalls
-
-### 4.2 Pick a Pattern
-Choose from [`20_patterns`](20_patterns/) based on your target environment:
-- **UX** (Figma prototypes with latency hold simulation)
-- **LLM** (prompt re-entry orchestration)
-- **Rasa** (soft repair integration)
-
-### 4.3 Track Metrics
-Integrate logging and dashboards from [`30_metrics`](30_metrics/) to measure:
-- Drift-to-Repair Ratio (𝒟 / ℛ)
-- Re-entry Success Rate
-- Average Latency Hold Duration
-
----
-
-## 5. Example: Latency Hold Pattern
-
-```mermaid
-sequenceDiagram
-  participant User
-  participant System
-  User->>System: Request
-  System-->>User: Latency Hold Signal (𝓛₃)
-  Note over System: Cognitive / system-level preparation
-  System->>User: Response
+model = PhaseLoopModel()
+model.load_defaults()
 ```
 
-See: [`20_patterns/ux/figma_latency_hold.md`](20_patterns/ux/figma_latency_hold.md)
+### 4.3 Run a Simulation
+```python
+state = model.initialize_phase()
+trajectory = model.run(duration=30.0)  # seconds
+model.plot(trajectory)
+```
+
+### 4.4 Apply Drift–Repair Cycle
+```python
+from pld.math import drift, repair
+
+sigma = state
+sigma_drifted = drift(sigma, t=1.5)
+sigma_repaired = repair(sigma_drifted)
+```
 
 ---
 
-## 6. Best Practices
+## 5. References
 
-1. **Use Lexicon Precisely** — match definitions in `PLD_LEXICON_SAFE_USAGE_GUIDE.md`
-2. **Reference Mathematical Notation** — maintain reproducibility in analysis
-3. **Log Rich Context** — timestamps, phase IDs, and triggering cues
-4. **Map to Academic Terms** — for clarity across research communities
-
----
-
-## 7. See Also
-
-- [Phase Loop Dynamics — Core Theory](../01_phase_loop_dynamics/README_phase_loop_dynamics.md)
-- [PLD × Academic Mapping](../01_phase_loop_dynamics/related_work/pld_to_academic.md)
-- [Mathematical Appendix](../01_phase_loop_dynamics/PLD_Mathematical_Appendix.md)
+- **Mathematical Appendix:** [PLD_Mathematical_Appendix.md](./01_phase_loop_dynamics/PLD_Mathematical_Appendix.md)  
+- **Academic Mapping:** [academic_to_pld_reverse.md](./01_phase_loop_dynamics/related_work/academic_to_pld_reverse.md)  
+- **Forward Mapping:** [pld_to_academic.md](./01_phase_loop_dynamics/related_work/pld_to_academic.md)
 
 ---
 
-**Version:** Quickstart Kit v2025-08-09  
-**License:** MIT  
-**Maintainer:** PLD Research Group
+> **Tip for Researchers:** The *Mathematical Appendix* retains stable equation numbering. You can cite eq. (1.3) or Theorem 2 directly in your papers.
