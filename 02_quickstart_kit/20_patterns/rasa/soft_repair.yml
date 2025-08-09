@@ -18,6 +18,9 @@ slots:
     type: bool
     initial_value: false
     influence_conversation: false
+  prior_context_id:
+    type: text
+    influence_conversation: false
 
 responses:
   utter_soft_repair:
@@ -35,7 +38,6 @@ responses:
 actions:
   - action_check_repair_attempts
   - action_store_reentry_flag
-  - action_latency_hold
 
 rules:
   - rule: Handle unclear input (drift) with soft repair
@@ -68,3 +70,30 @@ rules:
       - intent: reentry
       - action: action_store_reentry_flag
       - action: utter_reentry_ack
+
+nlu:
+  - intent: ask_balance
+    examples: |
+      - What's my balance?
+      - Show me how much money I have
+      - How much do I have in my account?
+
+  - intent: inform
+    examples: |
+      - I want to check
+      - Just wondering
+      - Not sure really
+
+  - intent: out_of_scope
+    examples: |
+      - Bananas are blue
+      - Tell me a joke about cats
+      - I saw a UFO
+      - How secure is this system?
+      - Can you help with transfers?
+
+  - intent: reentry
+    examples: |
+      - Let's continue
+      - Back now
+      - Pick up where we left off"
