@@ -73,6 +73,8 @@ This replaces rigid fallback logic with **graceful recovery patterns**.
 
 ⏱ Metrics like `drift_to_repair_ratio`, `reentry_success_rate`, and `avg_latency_hold` help track **system rhythm and resilience**.
 
+---
+
 ## ✅ Metrics Validation — Walkthrough (Copy-Paste Ready)
 
 This repo ships with a tiny, end-to-end demo so readers can validate PLD events locally.
