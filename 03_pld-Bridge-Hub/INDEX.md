@@ -31,12 +31,11 @@ See full diagram: `../01_phase_loop_dynamics/10_phase_loop_dynamics.svg`
 - **UX/Research** → Safe Lexicon & Connectivity → Notion templates → UX patterns (latency_hold)
 - **Analyst/ML** → Math Appendix §2.5 → 30_metrics → Academic mappings index
 
-## Collaboration workflow
-1. Scope in Notion (phases, cues, repair).  
-2. Spec thresholds (κ for 𝒟, τ for C(σ,t)).  
-3. Implement a pattern (LLM/Rasa/UX).  
-4. Emit events (schema-compliant).  
-5. Validate & visualize (demo/dashboard).
+
+## Collaboration
+For details on collaboration models, partner roles, and engagement guidelines,  
+see [`05_field_stewardship`](../05_field_stewardship).
+
 
 ## License
 **CC BY-NC 4.0** — attribution required; no commercial use.
