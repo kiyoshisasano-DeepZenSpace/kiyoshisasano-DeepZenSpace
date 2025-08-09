@@ -15,12 +15,16 @@ The **Phase Loop Dynamics (PLD)** kit provides reusable interaction design patte
 │   ├── pld_core_summary.md       ← Core PLD concepts: drift, repair, reentry (3 min read)
 │   └── usage_notes.md            ← Tips for implementation, testing, extensibility (5–8 min)
 │
-├── 02_pattern_examples/          ← Drop-in patterns for real platforms
-│   ├── figma_latency_hold.md         ← UX latency buffers in Figma flows
-│   ├── llm_reentry_prompt.json       ← Reentry prompt template for LLM flows
-│   ├── rasa_soft_repair.yml          ← Repair logic (NLU/rules) for Rasa bots
-│   ├── rasa_soft_repair_actions.py   ← Custom repair loop handling via Rasa actions
-│   └── schema_mapping_table.md       ← PLD patterns mapped to platform behaviors
+20_patterns/                   ← Drop-in patterns for real platforms
+├── ux/
+│   └── figma_latency_hold.md       ← UX latency buffers in Figma flows
+├── llm/
+│   └── llm_patterns_pld.md         ← LLM reentry/repair patterns using PLD
+├── rasa/
+│   ├── soft_repair.yml             ← Repair logic (NLU/rules) for Rasa bots
+│   └── soft_repair_actions.py      ← Custom repair loop handling via Rasa actions
+└── mapping/
+│    └── schema_mapping_table.md     ← PLD patterns mapped to platform behaviors
 │
 ├── 30_metrics/                      ← Logging specifications + dashboards + datasets
 │   ├── dashboards/                  ← Visualization templates for PLD metrics
