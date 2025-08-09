@@ -152,6 +152,23 @@ What began as open-ended questions, with no analysis in mind, unfolded into a fr
 
 ---
 
+## 🛠 Bridge-Hub Modules
+
+📂 **[`03_pld-Bridge-Hub`](./03_pld-Bridge-Hub)** contains runnable tools and APIs to detect, log, and classify PLD patterns in real-time or batch workflows.
+
+Includes:
+- `pause_classifier_bot.py` — Classifies pauses into cognitive, UI friction, disengagement, repair, etc.
+- `latency_tracker.py` — Detects latency-induced pauses and logs them.
+- `reentry_detector.py` — Identifies when a user returns to a prior intent after a gap.
+- `DEMORUN.md` — One-command demo with event validation and metrics reporting.
+
+🔍 Use Bridge-Hub to:
+- Test interaction rhythm detection before full integration.
+- Emit `pld_event` logs validated against schemas.
+- Compare metrics with your own dashboard for tuning thresholds.
+
+---
+
 ## 📩 Contact & Collaboration
 
 - Email: **deepzenspace[at]gmai[dot]com**  
