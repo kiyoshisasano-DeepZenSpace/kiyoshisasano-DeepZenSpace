@@ -1,169 +1,139 @@
-# 🕒 figma_latency_hold.md  
-**Simulating "Latency Hold" in Figma Prototypes**
-
-_Last updated: 2025-07-31_
-
----
-
-## 🎯 What Is Latency Hold?
-
-**Latency Hold** is a deliberate pause inserted into a user flow. It is not technical lag — it is a **designed rhythm buffer** that helps:
-
-- Mirror user hesitation  
-- Build anticipation or intentional delay  
-- Avoid abrupt transitions  
-- Establish flow pacing and trust  
-
-Used properly, it transforms perceived waiting into **intentional, tempo-aware UX**.
+# 🕒 Latency Hold in Figma — PLD-Compliant Prototype Guide
+**File:** `02_quickstart_kit/20_patterns/ux/figma_latency_hold.md`  
+**Scope:** UX pattern spec + how-to in Figma + telemetry hooks  
+**PLD anchor:** L3 Latency Operator → *Mathematical Appendix* §1.6 (𝓛₃)
 
 ---
 
-## 🧪 How to Prototype in Figma
+## Why “Latency Hold” (L3)?
+A **Latency Hold** is a *designed* pause that shapes interaction rhythm. It’s not technical lag; it’s a pacing primitive that:
+- gives users space to think (structured **silence**),
+- avoids abrupt transitions,
+- smooths **drift → repair** handoffs,
+- and supports trust by making system timing feel intentional.
 
-Figma supports latency simulation using:
-
-- **After Delay** triggers  
-- **Overlay frames**  
-- **Smart Animate** with shimmer or pulse  
-- **Component Variants** with timing options
+**Use stable terms** (per Lexicon Guide): *phase*, *timing*, *cue*.  
+If you mention **drift**, qualify it (e.g., “silence drift” / “low-confidence drift”).
 
 ---
 
-### 📘 Use Case 1: “Wait Before Prompt”
+## Quick Recipe (2 frames, 1 overlay)
+**Goal:** Form submit → short hold → confirmation
 
-**Scenario:**  
-User submits a form → brief hold → soft confirmation appears
-
-**Steps:**
-
-1. Create 3 frames:  
+1) Frames:  
    - `Form_Submitted`  
-   - `Latency_Buffer` (blank or shimmer animation)  
-   - `Confirmation_Message`  
+   - `Latency_Buffer` (blank/shimmer)  
+   - `Confirmation_Message`
 
-2. In Prototype tab:  
+2) Prototype wires:  
    - `Form_Submitted` → `Latency_Buffer`  
-     - After Delay: `0ms`  
-     - Navigate To: `Latency_Buffer`  
-
+     - Trigger: **After Delay** = `0ms` (instant jump)  
    - `Latency_Buffer` → `Confirmation_Message`  
-     - After Delay: `1200ms`  
-     - Smart Animate (optional)
+     - Trigger: **After Delay** = `1200ms`  
+     - Animation: **Smart Animate** (optional)
 
-**Optional Enhancements:**  
-- Add subtle animated dot or pulse to `Latency_Buffer`  
-- Use micro-feedback (e.g. “Just a sec…”) to align timing expectations
+3) Visual polish: shimmer, three-dot pulse, or subtle “just a sec…” copy.
 
----
-
-### 📘 Use Case 2: “Soft Prompt Timing”
-
-**Scenario:**  
-User hesitates → after 1000ms → assistive tooltip fades in
-
-**Steps:**
-
-1. Create base frame + overlay:  
-   - Main UI  
-   - `Tooltip_Prompt` (semi-transparent, hint-style)
-
-2. Connect using:  
-   - Trigger: `After Delay`  
-   - Delay: `1000ms`  
-   - Action: Show overlay (position: bottom-center)  
-   - Opacity: ~50%  
-   - Animation: Fade-in
+> **Operator mapping:** This is 𝓛₃ in action: a time-shift operator `e^{−τ∂_t}` that inserts a bounded pause.
 
 ---
 
-## 🎨 Design Tips
+## Hesitation Nudge (tooltip variant)
+**Scenario:** user hesitates on a field → 1000 ms → helper tooltip
 
-| Situation             | Recommended Timing | Visual Feedback     |
-|-----------------------|--------------------|----------------------|
-| Onboarding Step       | 1200–1500ms        | Dots, shimmer, delay |
-| Error Clarification   | 800–1000ms         | Fade-in hint         |
-| Power User Flow       | ≤800ms             | Quick fade or none   |
-
-- Use animation, not jump cuts  
-- LatencyHold is most effective when it **feels intentional**, not idle  
-- Match feedback tempo to user type or task complexity
+- Base frame + overlay `Tooltip_Prompt`  
+- Link: **After Delay** = `1000ms` → **Open Overlay** (bottom-center) → **Fade-in**  
+- Make overlay dismissible on click/typing (don’t trap).
 
 ---
 
-## 🔁 Example Pattern: Latency Loop
+## Timing Defaults (start here, then A/B)
+| Situation           | Initial delay | Notes                          |
+|---------------------|---------------|--------------------------------|
+| Onboarding step     | 1200–1500 ms  | Slower tempo improves clarity. |
+| Clarification hint  | 800–1000 ms   | Gentle, non-blocking prompt.   |
+| Power-user flows    | ≤ 800 ms      | Keep momentum; avoid drag.     |
 
-```plaintext
-Frame: SubmitAction
-  → Frame: LatencyHold (1200ms delay)
-  → Frame: SoftConfirmation ("Thanks! Ready for next step?")
+**Anti-patterns:** chaining multiple holds, blocking navigation, using “hold” to mask slow backends.
+
+---
+
+## Reusable Component: `LatencyHold_Frame`
+Create a component with variants for quick drop-in:
+
+- **Delay**: `800ms` / `1200ms` / `1500ms`  
+- **Style**: `Dots` / `Shimmer` / `Blank`  
+- **Overlay**: `Tooltip` / `Loading Icon` / `None`
+
+This enables consistent pacing across screens and easy A/B.
+
+---
+
+## Interrupt Rules (don’t trap users)
+If the user acts during a hold:
+- **Cancel** the pending transition.
+- **Bypass** the overlay and route to the user’s target.
+- In Figma: set the overlay interaction to close on click/typing; avoid modal dead-ends.
+
+---
+
+## PLD Flow Snippets
+### A. Drift → Hold → Soft Repair → Reentry
+```text
+User hesitates (silence / low-confidence)
+ → LatencyHold(1000–1200ms, shimmer)
+   → SoftRepair (gentle confirmation tooltip)
+     → Reentry (restore prior context if confirmed)
 ```
-Design Note:Users perceive **“rhythm”** in how feedback arrives.  
-A slight pause before response can **increase clarity and trust**.
 
----
-
-## 🔄 Multi-Pattern Integration
-
-`Latency Hold` often works best in combination with other PLD primitives:
-
-```plaintext
-Drift (user hesitates)
-  → LatencyHold (pause with shimmer)
-    → SoftRepair (clarification tooltip)
-      → Reentry (user resumes flow)
+### B. Submit → Hold → Confirmation (Resonance optional)
+```text
+Submit
+ → LatencyHold(1200ms)
+   → Confirmation ("Thanks — next step?")
+     → Resonance echo (match tempo / phrasing)
 ```
-This layered design models hesitation → nudge → resumption without forcing.
-## ⚠️ Edge Case Handling: Interrupts During Latency Hold
-
-If a user clicks **"Back"** or navigates away during a `Latency Hold`:
-
-- 🛑 Cancel or bypass the delayed step  
-- ✅ Ensure navigation isn’t blocked or visually frozen  
-- 🔁 Use conditional logic (e.g., *Prototype → Interaction → Bypass overlay on click*)
 
 ---
 
-## 🧩 Build as Reusable Component
+## Telemetry Hooks (aligns with `/30_metrics`)
+When you mirror this pattern in code (web/app), log the PLD events so design intent is measurable.
 
-To increase flexibility, create a component named:  
-**`LatencyHold_Frame`**
+**Event:** `latency_hold`  
+```json
+{
+  "event_type": "latency_hold",
+  "timestamp": "2025-08-09T12:00:00Z",
+  "session_id": "s-123",
+  "metadata": {
+    "duration_ms": 1200,
+    "reason": "soft_repair_probe",
+    "context_id": "frame:Form_Submitted",
+    "ui_state": "prototype/form_submit"
+  }
+}
+```
 
-| Variant         | Value                              |
-|-----------------|------------------------------------|
-| **Delay Duration** | 800ms / 1200ms / 1500ms             |
-| **Style**          | Dots / Shimmer / Blank              |
-| **Overlay**        | Tooltip / Loading Icon / None      |
+**Related events:**
+- `drift_detected` (e.g., silence > 5s / low NLU confidence),
+- `repair_triggered` (clarification shown),
+- `reentry_success` (user resumes after confirmation).
 
-This enables:
-
-- ♻️ Reuse of timing behaviors across flows  
-- 🧪 A/B testing of pacing for **power users vs. new users**
-
----
-
-## 🔗 Related PLD Patterns
-
-- **`soft_repair`**: Friendly clarification if hesitation continues  
-- **`resonance_echo`**: Repeat pacing structure to maintain rhythm  
-- **`reentry_link`**: Resume interaction after dropout with context memory
-
----
-
-## 📈 Design Ops Note
-
-To test or calibrate latency:
-
-- Use **Figma’s Prototype Testing** to A/B delay durations  
-- Start with **longer delays (~1200ms)** for onboarding  
-- Shorten for **returning/expert users (≤800ms)**  
-- Gather feedback on **perceived responsiveness vs. trust**
+**Validate logs:** see `/30_metrics/schemas/pld_event.schema.json` and the validator steps in `README_quickstart.md` (they check `metadata.duration_ms` is present).
 
 ---
 
-## 📌 Why It Matters
+## Accessibility & UX Notes
+- Always allow **escape**: click, keypress, or focus change should cancel a hold.
+- Communicate state briefly (“One moment…”), but avoid spinner-only ambiguity.
+- Respect reduced-motion settings; offer a **Blank** variant.
 
-- Prevents **abrupt transitions** that confuse or overwhelm  
-- Supports **phased UX** where pacing = user comprehension  
-- Reinforces PLD’s **rhythm-first design mindset**
+---
 
-> “Don’t just show the next step — give space for it.”
+## References & “See also”
+- **Operators:** `10_operator_primitives/L3_latency_operator.md`  
+- **Metrics:** `30_metrics/schemas/pld_event.schema.json`, `30_metrics/schemas/metrics_schema.yaml`  
+- **Rasa demo (L2 + L3):** `20_patterns/rasa/`  
+- **Theory anchors:** *PLD Mathematical Appendix* §1.6 (𝓛₃), Lexicon Safe Usage Guide
+
+> **Design mantra:** Don’t fake slowness—**shape** time. The hold is a *phase tool*, not camouflage.
