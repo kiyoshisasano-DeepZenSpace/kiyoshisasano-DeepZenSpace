@@ -33,7 +33,7 @@ Typical ranges observed in similar scenarios when adding **Bridge-Hub modules**
 **Note:**  
 These figures are **illustrative only** — not measured for this repository.  
 For measurement, emit events via `pld_event.schema.json` and compute metrics with  
-`metrics_schema.yaml` as shown in `03_pld-Bridge-Hub/DEMORUN.md`.
+`metrics_schema.yaml` as shown in [`03_pld-Bridge-Hub/DEMORUN.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/a76c1514ae3a6c6b2b5023f64ac1f9f5117a6cca/03_pld-Bridge-Hub/DEMORUN.md).
 
 ---
 
