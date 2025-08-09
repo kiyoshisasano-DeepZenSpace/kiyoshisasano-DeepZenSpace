@@ -1,4 +1,4 @@
-version: "3.1"
+version: "3.2"
 
 intents:
   - ask_balance
@@ -14,7 +14,6 @@ slots:
     type: float
     initial_value: 0
     influence_conversation: false
-
   resumed_from_repair:
     type: bool
     initial_value: false
@@ -24,35 +23,32 @@ responses:
   utter_soft_repair:
     - text: "Hmm, I didn't quite catch that — could you rephrase it?"
     - text: "Sorry, that wasn’t clear. Did you mean your account balance?"
-
   utter_ask_clarification:
     - text: "Are you asking about your current balance or recent transactions?"
-
   utter_balance_info:
     - text: "Your current balance is $2,315."
-
   utter_fallback_repair:
     - text: "Let me try to help another way — what exactly are you looking for?"
-
   utter_reentry_ack:
     - text: "Welcome back — ready to pick up where we left off?"
 
 actions:
   - action_check_repair_attempts
   - action_store_reentry_flag
+  - action_latency_hold
 
 rules:
   - rule: Handle unclear input (drift) with soft repair
     steps:
       - intent: out_of_scope
-      - action: action_check_repair_attempts  # Conditional soft repair/escalation
+      - action: action_check_repair_attempts
 
   - rule: Clarify vague intent (inform)
     steps:
       - intent: inform
       - action: utter_ask_clarification
 
-  - rule: Provide balance
+  - rule: Provide balance (resumed)
     steps:
       - intent: ask_balance
       - slot_was_set:
@@ -72,30 +68,3 @@ rules:
       - intent: reentry
       - action: action_store_reentry_flag
       - action: utter_reentry_ack
-
-nlu:
-  - intent: ask_balance
-    examples: |
-      - What's my balance?
-      - Show me how much money I have
-      - How much do I have in my account?
-
-  - intent: inform
-    examples: |
-      - I want to check
-      - Just wondering
-      - Not sure really
-
-  - intent: out_of_scope
-    examples: |
-      - Bananas are blue
-      - Tell me a joke about cats
-      - I saw a UFO
-      - How secure is this system?
-      - Can you help with transfers?
-
-  - intent: reentry
-    examples: |
-      - Let's continue
-      - Back now
-      - Pick up where we left off
