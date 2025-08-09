@@ -73,19 +73,33 @@ This replaces rigid fallback logic with **graceful recovery patterns**.
 
 ⏱ Metrics like `drift_to_repair_ratio`, `reentry_success_rate`, and `avg_latency_hold` help track **system rhythm and resilience**.
 
-## Event Log Validation Procedure
+## ✅ Metrics Validation — Walkthrough (Copy-Paste Ready)
 
-1. Activate the `validator_venv` environment.
-2. Run the following command:
+This repo ships with a tiny, end-to-end demo so readers can validate PLD events locally.
 
-   ```powershell
-   .\validator_venv\Scripts\python.exe .\pld_metrics_validator\pld_metrics_validator.py `
-       --schema ".\pld_metrics_validator\pld_event.schema.json" `
-       --input ".\02_quickstart_kit\pld_events_demo.jsonl" `
-       --report ".\02_quickstart_kit\pld_events_demo_report.md" `
-       --strict
-   ```
-The validation results will be saved in pld_events_demo_report.md
+**What’s included**
+- `02_quickstart_kit/30_metrics/schemas/pld_event.schema.json` — JSON Schema for PLD events
+- `02_quickstart_kit/30_metrics/datasets/pld_events_demo.jsonl` — sample events (from the Rasa mini-demo)
+- `02_quickstart_kit/30_metrics/reports/pld_events_demo_report.md` — a passing validation report (Invalid=0)
+
+**Validate locally (PowerShell):**
+```powershell
+# from your project root
+cd 02_quickstart_kit
+python -m venv validator_venv
+.\validator_venv\Scripts\Activate.ps1
+pip install -r ..\pld_metrics_validator\requirements.txt
+
+# run the validator against the included sample events
+.\validator_venv\Scripts\python.exe ..\pld_metrics_validator\pld_metrics_validator.py `
+  --schema ".\30_metrics\schemas\pld_event.schema.json" `
+  --input ".\30_metrics\datasets\pld_events_demo.jsonl" `
+  --report ".\30_metrics\reports\pld_events_demo_report_local.md" `
+  --strict
+
+# show the report (should say: Invalid events: 0)
+type .\30_metrics\reports\pld_events_demo_report_local.md
+```
 
 ---
 
