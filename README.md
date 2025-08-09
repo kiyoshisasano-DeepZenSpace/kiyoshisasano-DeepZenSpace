@@ -143,31 +143,44 @@ What began as open-ended questions, with no analysis in mind, unfolded into a fr
 \text{Resonance} &\iff \langle \sigma_t, \sigma_{t-k} \rangle \to 1
 \end{aligned}
 ```
-## 📦 Quickstart Kit
+## 📦 Quickstart Kit — Ready-to-Use Patterns
 
-📂 **[`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit)** includes:
-- Hands-on examples for **Rasa**, **LLMs**, **Figma**
+📂 **[`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit)**  
+Drop-in templates and patterns for **Rasa**, **Figma**, and **LLMs** —  
+designed to improve timing alignment, repair handling, and conversation reentry in hours, not weeks.
+
+**Purpose:**  
+Get from theory to working prototype *immediately* by using pre-built interaction patterns.
+
+Includes:
+- Soft repair flows for Rasa
+- Latency-hold UI patterns for Figma
+- Reentry prompts for LLMs
 - Drift / Repair / Reentry logging templates
-- Drop-in pattern modules
 
 ---
 
-## 🛠 Bridge-Hub Modules
+## 🛠 Bridge-Hub Modules — Detection & Measurement Backbone
 
-📂 **[`03_pld-Bridge-Hub`](./03_pld-Bridge-Hub)** contains runnable tools and APIs to detect, log, and classify PLD patterns in real-time or batch workflows.
+📂 **[`03_pld-Bridge-Hub`](./03_pld-Bridge-Hub)**  
+Runnable tools and APIs for **detecting**, **logging**, and **classifying** PLD patterns in real-time or batch workflows.
+
+**Purpose:**  
+Provide the *instrumentation and analytics layer* that lets you measure and tune interaction rhythms.
 
 Includes:
 - `pause_classifier_bot.py` — Classifies pauses into cognitive, UI friction, disengagement, repair, etc.
 - `latency_tracker.py` — Detects latency-induced pauses and logs them.
-- `reentry_detector.py` — Identifies when a user returns to a prior intent after a gap.
+- `reentry_detector.py` — Identifies return to a prior intent after a gap.
 - `DEMORUN.md` — One-command demo with event validation and metrics reporting.
 
 🔍 Use Bridge-Hub to:
-- Test interaction rhythm detection before full integration.
-- Emit `pld_event` logs validated against schemas.
-- Compare metrics with your own dashboard for tuning thresholds.
+- Validate PLD event logs (`pld_event.schema.json`)
+- Measure before/after metrics (`metrics_schema.yaml`)
+- Run proof-of-concept detection without a full system rebuild
 
 ---
+
 
 ## 📩 Contact & Collaboration
 
