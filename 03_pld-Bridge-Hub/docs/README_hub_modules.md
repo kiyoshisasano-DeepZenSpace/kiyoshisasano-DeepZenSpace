@@ -13,7 +13,7 @@ Revision notes (2025-08-09)
 
 ## Quick Access
 - 🧰 **Notion UI Templates**  
-  → [UX Pause Rhythm Tracker Starter Kit](../notion_ui_templates/NOTION_TEMPLATES_OVERVIEW.md)
+  → [UX Pause Rhythm Tracker Starter Kit](https://platinum-arch-69c.notion.site/UX-Pause-Rhythm-Tracker-Starter-Kit-2430fc4951e8809481f6c77478a64535)
 
 - 📘 **Theoretical Foundations**  
   → [Zenodo Papers & Definitions](../docs/zenodo_paper_links.md)
