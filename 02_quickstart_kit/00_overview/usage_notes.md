@@ -1,58 +1,60 @@
-# 🛠️ Usage Notes for Implementing PLD Patterns
+# 🛠️ Usage Notes for Implementing PLD Patterns — Extended Mathematical & Operational Guide
 
-_Last updated: 2025-07-31_
+_Last updated: 2025-08-09_
 
-This document offers operational guidance for teams adopting **Phase Loop Dynamics (PLD)** in real-world systems. It complements the conceptual overview in `Quickstart.md`.
+This document provides **practical and mathematically anchored guidance** for teams adopting **Phase Loop Dynamics (PLD)** in real-world systems.  
+It complements the conceptual overview in `quickstart.md` and the formal definitions in the [PLD Mathematical Appendix](../../01_phase_loop_dynamics/PLD_Mathematical_Appendix.md).
 
 ---
 
 ## ⚙️ When to Use PLD Patterns
 
-PLD patterns are most useful in systems that must:
+PLD patterns are particularly effective in systems that must:
 
-- Handle ambiguity, hesitation, or silence gracefully
-- Recover from conversational or navigational dropouts
-- Adapt to user pacing, delay, or rhythmic variation
+- Handle **ambiguity** or hesitation without breaking flow (𝒟(σ,t) > θ, eq. 1.3)  
+- Recover from conversational or navigational dropouts (**Repair Closure**, Axiom 2)  
+- Adapt to user pacing, delay, or rhythmic variation (**Resonance Fixed Point**, Theorem 2)
 
-Common examples include:
+Common examples:
 
-- Chatbots with fallback or reentry needs  
-- Onboarding flows requiring timed scaffolding  
-- Educational tools logging dropout and return behavior
+- Conversational AI with fallback or reentry needs  
+- Onboarding flows with adaptive scaffolding  
+- EdTech tools logging dropout and return behavior
 
 ---
 
 ## 🔄 Pattern Lifecycle at Runtime
 
-| Phase              | Trigger                            | Example Signal                          |
-|--------------------|------------------------------------|------------------------------------------|
-| Drift              | Uncertainty, pause                 | No response after 4s                     |
-| Repair             | Re-alignment prompt                | “Did you mean...?”                      |
-| Reentry            | Return to prior context            | “Continue where you left off”           |
-| Latency Hold       | Timed suspension                   | 800–1500ms system wait                  |
-| Resonance          | Rhythmic mirroring                 | UI pulse, feedback echo                 |
-| Drift → Repair Loop| Repeated misunderstanding          | User repeats vague query 3×             |
+| Phase              | Trigger                            | Example Signal                          | Math Ref |
+|--------------------|------------------------------------|------------------------------------------|----------|
+| Drift              | Uncertainty, pause                 | No response after 4s                     | 𝒟(σ,t) — eq. 1.3 |
+| Repair             | Re-alignment prompt                | “Did you mean...?”                      | ℛ(σ) — eq. 1.5 |
+| Reentry            | Return to prior context            | “Continue where you left off”           | Σ recovery — sec. 1.2 |
+| Latency Hold       | Timed suspension                   | 800–1500ms system wait                  | 𝓛₃ — sec. 3.2 |
+| Resonance          | Rhythmic mirroring                 | UI pulse, feedback echo                 | σ* fixed point — Th. 2 |
+| Drift → Repair Loop| Repeated misunderstanding          | User repeats vague query 3×             | Loop algebra — sec. 3.3 |
 
-> Note: PLD states are not strictly linear. Drift and repair often form micro-loops.
+> **Note:** PLD states form micro-loops; the full trajectory may be non-linear in Σ.
 
 ---
 
 ## ⚠️ Implementation Tips
 
-- **Don't force repair**: Only use soft repair if ambiguity is real — not after every low NLU score  
-  → *Example*: Use intent confidence < 0.45 **and** high intent confusion history  
-- **Latency is contextual**: A 1.2s pause may feel natural in onboarding but frustrating in search  
-- **Reentry requires memory**: Store `prior_context_id` or slot/frame references  
-  → *Example*: In Rasa, retain slots or use conversation ID across fallback transitions
+- **Don't force repair**  
+  → Use `soft_repair` only if 𝒟(σ,t) exceeds threshold **and** intent confusion history is high.  
+- **Contextual latency**  
+  → Optimal `latency_hold` (𝓛₃) duration depends on modality (voice vs. UI).  
+- **Persistent reentry**  
+  → Maintain `prior_context_id` or embeddings for state restoration (Axiom 2).  
 
 ---
 
 ## 🧪 Testing PLD Structures
 
-- Simulate silence or hesitation to trigger drift
-- Monitor abandonment vs. reentry rates
-- A/B test `latency_hold` durations (e.g., 800ms vs. 1200ms)
-- Log hesitation events with timestamps to visualize rhythm shifts
+- Simulate hesitation to trigger drift (𝒟)  
+- Compare abandonment vs. reentry completion rates  
+- A/B test latency parameters: 800ms vs. 1200ms  
+- Log `drift_detected` events with timestamps → analyze coherence gradients ∇C(σ,t) (eq. 1.4)
 
 ---
 
@@ -60,62 +62,60 @@ Common examples include:
 
 | Symptom                 | Likely Cause                    | Suggested Fix                                |
 |-------------------------|----------------------------------|----------------------------------------------|
-| Reentry fails silently  | No context recovery logic        | Ensure stored context is accessible (slot, ID)|
-| Latency feels awkward   | Delay not harmonized with UX     | Align pause with user expectation + UI affordance |
-| Repair loop spirals     | No fallback cap                  | Add `repair_attempts` limit (e.g., max = 2)  |
+| Reentry fails silently  | No context recovery logic        | Persist and restore Σ state variables        |
+| Latency feels awkward   | Poor temporal alignment          | Harmonize delay with user rhythm (sec. 4.4)  |
+| Repair loop spirals     | No fallback cap                  | Limit ℛ application count (max attempts)     |
 
 ---
 
 ## 🧩 Defining Custom PLD Patterns
 
-You can create new PLD-like structures for your system:
+You can extend PLD with new primitives:
 
 ```yaml
 pattern_name: anticipation_prompt
 trigger: context_switch | hesitation
 action: preload_response_option
 optional_timeout: 700ms
+math_binding: L3 + anticipatory_kernel
 ```
-This format enables cross-platform portability (Rasa, LLM, Figma, etc.)
 
-## 📊 Logging & Observability Tips
-
-To evaluate PLD effectiveness, log key events:
-
-- `drift_detected`  
-- `repair_triggered`  
-- `repair_failed`  
-- `reentry_success`  
-
-### Use dashboard tools to track:
-
-- Frequency of repair cycles  
-- **Drift → Repair → Reentry** loop completions  
-- Average `latency_hold` durations and their effectiveness  
-
-> See: [`metrics_schema.yaml`](#)
+This format ensures **cross-platform portability** while keeping the **loop algebra mapping** explicit.
 
 ---
 
-## 🔄 Extensibility Notes
+## 📊 Logging & Observability
 
-- Extend PLD with units like:  
-  `temporal_reset`, `loop_pause`, `anticipation_link`
+Log the following for quantitative PLD evaluation:
 
-- Define platform-specific mappings, e.g.:  
-  - **Figma:** variant overlay  
-  - **Rasa:** fallback form
+- `drift_detected` (𝒟 threshold crossings)  
+- `repair_triggered` (ℛ invocations)  
+- `repair_failed` (loop exit condition)  
+- `reentry_success` (Σ state restored)  
 
-- Use `pattern_library/` folders to store modular implementations  
-- Consider creating a `pld_pattern_template.md` to formalize reusable structures
+Metrics to monitor:
+
+- Drift→Repair ratio  
+- Reentry success rate  
+- Mean `latency_hold` duration (𝓛₃) and effectiveness
+
+→ See [`metrics_schema.yaml`](../03_metrics_tracking/metrics_schema.yaml)
+
+---
+
+## 🔄 Extensibility Guidelines
+
+- Add new units: `temporal_reset`, `loop_pause`, `anticipation_link`  
+- Map each to loop generators 𝓛ᵢ in the algebra (sec. 3.2)  
+- Store reusable structures in `pattern_library/`  
+- Create `pld_pattern_template.md` with **math binding + UX example**
 
 ---
 
 ## 🧠 Final Note
 
-PLD is not a rigid protocol — it's a **rhythm-aware vocabulary**.  
-Think structurally. Adapt rhythmically.
+PLD is not a fixed script — it’s a **loop grammar**.  
+Adapt tempo, respect silence, and design with rhythm.
 
-> Use PLD to frame pauses, not just fill them.  
-> Treat silence not as absence — but as signal.
-
+> “A pause is not a void — it’s part of the equation.”  
+> — *Phase Loop Dynamics*
