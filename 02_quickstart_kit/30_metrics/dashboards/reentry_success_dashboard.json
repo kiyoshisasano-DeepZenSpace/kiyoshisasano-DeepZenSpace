@@ -3,43 +3,44 @@
   "description": "Tracks how often users successfully return after drift or dropout, using PLD-based reentry flows.",
   "theme": "dark",
   "data_source": "pld_events",
+  "time_column": "timestamp",
   "refresh_rate": "60s",
   "panels": [
     {
       "id": "reentry_rate_over_time",
       "title": "🌀 Reentry Rate Over Time",
       "type": "line_chart",
-      "query": "SELECT DATE_TRUNC('hour', timestamp) AS time_slot, COUNT(*) FILTER (WHERE event = 'reentry_success') * 1.0 / NULLIF(COUNT(*) FILTER (WHERE event = 'drift_detected'), 0) AS reentry_rate FROM pld_events GROUP BY time_slot ORDER BY time_slot"
+      "query": "SELECT date_trunc('hour', \"timestamp\") AS time_slot,\n       (COUNT(*) FILTER (WHERE event_type = 'reentry_success'))::float\n       / NULLIF(COUNT(*) FILTER (WHERE event_type = 'drift_detected'), 0) AS reentry_rate\nFROM pld_events\nGROUP BY 1\nORDER BY 1"
     },
     {
       "id": "avg_reentry_latency",
-      "title": "⏱ Average Time to Reentry",
+      "title": "⏱ Average Time to Reentry (s)",
       "type": "bar_chart",
-      "query": "SELECT DATE(timestamp) AS day, AVG(reentry_lag) AS avg_lag FROM pld_events WHERE event = 'reentry_success' GROUP BY day HAVING AVG(reentry_lag) < 600 ORDER BY day"
+      "query": "WITH re AS (\n  SELECT e.*, COALESCE(\n    NULLIF((e.metadata->>'reentry_lag')::numeric, NULL),\n    EXTRACT(EPOCH FROM (\n      e.\"timestamp\" - (\n        SELECT MAX(d.\"timestamp\")\n        FROM pld_events d\n        WHERE d.session_id = e.session_id\n          AND d.event_type = 'drift_detected'\n          AND d.\"timestamp\" <= e.\"timestamp\"\n      )\n    ))\n  ) AS re_lag\n  FROM pld_events e\n  WHERE e.event_type = 'reentry_success'\n)\nSELECT date_trunc('day', \"timestamp\") AS day, AVG(re_lag) AS avg_lag\nFROM re\nWHERE re_lag IS NOT NULL AND re_lag < 600\nGROUP BY 1\nORDER BY 1"
     },
     {
       "id": "repair_vs_reentry_pathways",
       "title": "🔀 Repair vs. Reentry Pathways",
       "type": "pie_chart",
-      "query": "SELECT recovery_mode, COUNT(*) AS count FROM pld_events WHERE event IN ('drift_detected', 'repair_triggered', 'reentry_success') GROUP BY recovery_mode"
+      "query": "SELECT COALESCE(\n  NULLIF(metadata->>'recovery_mode', ''),\n  CASE\n    WHEN event_type = 'repair_triggered' THEN 'repair'\n    WHEN event_type = 'reentry_success' THEN 'reentry'\n    ELSE 'drift'\n  END\n) AS recovery_mode,\nCOUNT(*) AS count\nFROM pld_events\nWHERE event_type IN ('drift_detected', 'repair_triggered', 'reentry_success')\nGROUP BY 1\nORDER BY count DESC"
     },
     {
       "id": "drift_heatmap",
       "title": "🌡 Drift Occurrence Heatmap",
       "type": "heatmap",
-      "query": "SELECT ui_state, drift_type, COUNT(*) AS drift_count FROM pld_events WHERE event = 'drift_detected' GROUP BY ui_state, drift_type ORDER BY drift_count DESC"
+      "query": "SELECT COALESCE(NULLIF(metadata->>'ui_state',''), '(unknown)') AS ui_state,\n       COALESCE(NULLIF(metadata->>'drift_type',''), 'unspecified') AS drift_type,\n       COUNT(*) AS drift_count\nFROM pld_events\nWHERE event_type = 'drift_detected'\nGROUP BY 1,2\nORDER BY drift_count DESC"
     },
     {
       "id": "top_reentry_links",
       "title": "🔗 Top Reentry Sources",
       "type": "table",
-      "query": "SELECT referrer_context AS resumed_context_id, COUNT(*) AS uses, AVG(reentry_lag) AS avg_lag FROM pld_events WHERE event = 'reentry_success' GROUP BY referrer_context ORDER BY uses DESC LIMIT 10"
+      "query": "SELECT metadata->>'prior_context_id' AS resumed_context_id,\n       COUNT(*) AS uses,\n       AVG(\n         EXTRACT(EPOCH FROM (\n           e.\"timestamp\" - (\n             SELECT MAX(d.\"timestamp\")\n             FROM pld_events d\n             WHERE d.session_id = e.session_id\n               AND d.event_type = 'drift_detected'\n               AND d.\"timestamp\" <= e.\"timestamp\"\n           )\n         ))\n       ) AS avg_lag\nFROM pld_events e\nWHERE event_type = 'reentry_success'\nGROUP BY 1\nORDER BY uses DESC\nLIMIT 10"
     },
     {
       "id": "unresolved_drifts",
-      "title": "🚨 Unresolved Drifts After Repair",
+      "title": "🚨 Unresolved Drifts (no repair/reentry within 2 min)",
       "type": "bar_chart",
-      "query": "SELECT context_id, COUNT(*) AS unresolved_count FROM pld_events WHERE event = 'repair_triggered' AND goal_completed = false GROUP BY context_id ORDER BY unresolved_count DESC LIMIT 10"
+      "query": "WITH d AS (\n  SELECT session_id, \"timestamp\" AS drift_ts,\n         COALESCE(NULLIF(metadata->>'context_id',''), '(no_context)') AS context_id\n  FROM pld_events\n  WHERE event_type = 'drift_detected'\n), next_fix AS (\n  SELECT d.context_id, d.session_id, d.drift_ts,\n         EXISTS (\n           SELECT 1 FROM pld_events e\n           WHERE e.session_id = d.session_id\n             AND e.\"timestamp\" >= d.drift_ts\n             AND e.\"timestamp\" <= d.drift_ts + INTERVAL '2 minutes'\n             AND e.event_type IN ('repair_triggered','reentry_success')\n         ) AS resolved\n  FROM d\n)\nSELECT context_id,\n       COUNT(*) FILTER (WHERE NOT resolved) AS unresolved_count\nFROM next_fix\nGROUP BY 1\nORDER BY unresolved_count DESC\nLIMIT 10"
     }
   ]
 }
