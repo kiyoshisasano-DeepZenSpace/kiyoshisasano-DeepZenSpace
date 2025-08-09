@@ -17,12 +17,23 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 - **Embed repair loops** to recover user intent mid-interaction.
 - **Turn silence into signal** — leverage hesitation as a design feature, not a failure.
 
-📊 **Example Impact Metrics**  
-| Metric                   | Before | After | Change |
-|--------------------------|--------|-------|--------|
-| Repair detection rate    | 70%    | 85%   | +15%   |
-| Drop-off rate            | 25%    | 20.5% | –18%   |
-| Reentry success rate     | 60%    | 67%   | +12%   |
+---
+
+📊 **Illustrative Impact (Scenario, Not Measured)**  
+
+Typical ranges observed in similar scenarios when adding **Bridge-Hub modules**  
+(`pause_classifier`, `latency_tracker`, `reentry_detector`) to a baseline without them:
+
+| Metric                | Typical Range     |
+|-----------------------|-------------------|
+| Repair detection rate | **+3 – 15 pts**   |
+| Drop-off rate         | **–2 – 10%**      |
+| Reentry success rate  | **+2 – 12 pts**   |
+
+**Note:**  
+These figures are **illustrative only** — not measured for this repository.  
+For measurement, emit events via `pld_event.schema.json` and compute metrics with  
+`metrics_schema.yaml` as shown in `03_pld-Bridge-Hub/DEMORUN.md`.
 
 ---
 
