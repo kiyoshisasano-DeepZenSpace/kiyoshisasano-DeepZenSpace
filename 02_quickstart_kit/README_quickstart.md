@@ -1,93 +1,167 @@
-# 🚀 PLD Quickstart Guide (with Mathematical Foundations)
+# 🚀 PLD Quickstart Kit
 
-> This quickstart introduces **Phase Loop Dynamics (PLD)** for researchers and developers.  
-> It now integrates references to the **formal mathematical model** from the *PLD Mathematical Appendix — Integrated Edition (2025-08-08)*.
-
----
-
-## 1. What is PLD?
-
-**Phase Loop Dynamics (PLD)** is a framework for modeling dialogue as a sequence of *phases* connected through dynamic feedback loops.  
-It bridges **linguistic interaction** (alignment, repair, resonance) and **mathematical modeling** (phase spaces, operators, and loop algebra).
+The **Phase Loop Dynamics (PLD)** kit provides reusable interaction design patterns for designers, engineers, and product teams. It bridges theory and practice across NLU, LLMs, UI prototypes, and metrics logging.
 
 ---
 
-## 2. Core Concepts
+## 📁 Folder Structure
 
-| PLD Term | Description | Math Ref |
-|----------|-------------|----------|
-| **Structural Phase** | Bounded syntactic/interactional unit. | Σ (eq. 1.1) |
-| **Drift** | Gradual, loop-driven change in structure or meaning. | 𝒟(σ,t) (eq. 1.3) |
-| **Cue-Driven Repair** | Mechanism restoring interaction after trouble. | ℛ(σ) (eq. 1.5) |
-| **Resonance** | Echoing of elements across turns. | Fixed point σ* (Theorem 2) |
-| **Alignment** | Synchronization of linguistic forms/interpretations. | Alignment tensor 𝒜⊗𝒜 (sec. 3.2) |
-| **Coherence** | Global semantic/logical stability. | C(σ,t) (eq. 1.4) |
-| **Rhythm** | Temporal turn-taking pattern. | Oscillator coupling (sec. 2.3) |
-| **Silence** | Interactional gap with significance. | Latent phase 𝓛₃ (sec. 3.2) |
-
-See the [Academic Mapping](./01_phase_loop_dynamics/related_work/academic_to_pld_reverse.md) for cross-disciplinary terminology.
-
----
-
-## 3. Mathematical Model Overview
-
-PLD is defined over a **phase space** Σ, with:
-- **State representation:** σ = (s, t, p) ∈ Σ, combining syntactic derivation *s*, temporal coordinate *t*, and prosodic parameters *p*. (eq. 1.1)
-- **Distance metric:** d(σ₁, σ₂) combining embedding distance and temporal offset. (eq. 1.2)
-- **Drift operator:** 𝒟(σ,t) measuring deviation via coherence gradients. (eq. 1.3)
-- **Repair operator:** ℛ(σ) applying kernel-weighted adjustments. (eq. 1.5, 1.6)
-- **Loop generators:** 𝓛₁…𝓛₅ composing into a loop algebra. (eq. 1.7)
-
-### Key Theorems
-- **Drift–Repair Duality** — The drift kernel matches the image of repair. (Theorem 1)
-- **Resonance Fixed-Point** — There exists a unique stable resonance state σ*. (Theorem 2)
-- **Loop Closure as Lie Algebra** — Generators satisfy closure under commutators. (Theorem 5)
-
-For full derivations, see [`PLD_Mathematical_Appendix.md`](./01_phase_loop_dynamics/PLD_Mathematical_Appendix.md).
-
----
-
-## 4. Quickstart Steps
-
-### 4.1 Installation
-Clone the repository:
-```bash
-git clone https://github.com/your-org/pld.git
-cd pld
 ```
-
-### 4.2 Load PLD Core
-```python
-from pld.core import PhaseLoopModel
-
-model = PhaseLoopModel()
-model.load_defaults()
-```
-
-### 4.3 Run a Simulation
-```python
-state = model.initialize_phase()
-trajectory = model.run(duration=30.0)  # seconds
-model.plot(trajectory)
-```
-
-### 4.4 Apply Drift–Repair Cycle
-```python
-from pld.math import drift, repair
-
-sigma = state
-sigma_drifted = drift(sigma, t=1.5)
-sigma_repaired = repair(sigma_drifted)
+13_quickstart_kit/
+├── README_quickstart.md          ← You are here
+│
+├── 01_getting_started/           ← Start here: key principles + usage advice
+│   ├── Quickstart.md             ← Intro to PLD: loop overview and principles (5 min read)
+│   ├── pld_core_summary.md       ← Core PLD concepts: drift, repair, reentry (3 min read)
+│   └── usage_notes.md            ← Tips for implementation, testing, extensibility (5–8 min)
+│
+├── 02_pattern_examples/          ← Drop-in patterns for real platforms
+│   ├── figma_latency_hold.md         ← UX latency buffers in Figma flows
+│   ├── llm_reentry_prompt.json       ← Reentry prompt template for LLM flows
+│   ├── rasa_soft_repair.yml          ← Repair logic (NLU/rules) for Rasa bots
+│   ├── rasa_soft_repair_actions.py   ← Custom repair loop handling via Rasa actions
+│   └── schema_mapping_table.md       ← PLD patterns mapped to platform behaviors
+│
+├── 03_metrics_tracking/          ← Logging + dashboard templates
+│   ├── drift_event_logging.md        ← How to detect, log, and interpret drift
+│   ├── metrics_schema.yaml           ← YAML schema for PLD event logging
+│   ├── pld_event.schema.json         ← JSON Schema version of metrics spec
+│   └── reentry_success_dashboard.json← Example analytics dashboard (e.g. PostHog)
 ```
 
 ---
 
-## 5. References
+## 🔁 PLD Pattern Microloop
 
-- **Mathematical Appendix:** [PLD_Mathematical_Appendix.md](./01_phase_loop_dynamics/PLD_Mathematical_Appendix.md)  
-- **Academic Mapping:** [academic_to_pld_reverse.md](./01_phase_loop_dynamics/related_work/academic_to_pld_reverse.md)  
-- **Forward Mapping:** [pld_to_academic.md](./01_phase_loop_dynamics/related_work/pld_to_academic.md)
+PLD defines interaction rhythm as a **loop** of signal and adaptation:
+
+```
+User hesitates or diverges → [Drift]
+      ↓
+System probes softly       → [Repair]
+      ↓
+User resumes               → [Reentry]
+      ↓
+System modulates tempo     → [Latency Hold / Resonance]
+                             (e.g., pause, shimmer, echo phrase)
+```
+
+This replaces rigid fallback logic with **graceful recovery patterns**.
 
 ---
 
-> **Tip for Researchers:** The *Mathematical Appendix* retains stable equation numbering. You can cite eq. (1.3) or Theorem 2 directly in your papers.
+## 🧪 Pattern Examples (02_pattern_examples)
+
+| File                         | Description                                              |
+|------------------------------|----------------------------------------------------------|
+| `rasa_soft_repair.yml`       | PLD-style fallback logic in Rasa using repair_attempts   |
+| `rasa_soft_repair_actions.py`| Custom repair escalation logic (prevents infinite loops) |
+| `figma_latency_hold.md`      | Prototyping hesitation delays using frames & overlays    |
+| `llm_reentry_prompt.json`    | LLM prompt templates for context-aware reentry           |
+| `schema_mapping_table.md`    | Crosswalk between PLD terms and tool-specific mappings   |
+
+---
+
+## 📊 Metrics & Logging (03_metrics_tracking)
+
+| File                          | Role                                                        |
+|-------------------------------|-------------------------------------------------------------|
+| `metrics_schema.yaml`         | Event + metric structure (drift, repair, reentry, latency)  |
+| `pld_event.schema.json`       | JSON Schema for event log validation                        |
+| `drift_event_logging.md`      | Logging strategy and trigger mechanisms                     |
+| `reentry_success_dashboard.json` | Sample dashboard to visualize recovery flows              |
+
+⏱ Metrics like `drift_to_repair_ratio`, `reentry_success_rate`, and `avg_latency_hold` help track **system rhythm and resilience**.
+
+## Event Log Validation Procedure
+
+1. Activate the `validator_venv` environment.
+2. Run the following command:
+
+   ```powershell
+   .\validator_venv\Scripts\python.exe .\pld_metrics_validator\pld_metrics_validator.py `
+       --schema ".\pld_metrics_validator\pld_event.schema.json" `
+       --input ".\02_quickstart_kit\pld_events_demo.jsonl" `
+       --report ".\02_quickstart_kit\pld_events_demo_report.md" `
+       --strict
+   ```
+The validation results will be saved in pld_events_demo_report.md
+
+---
+
+## 📚 Foundational Reading (01_getting_started)
+
+Start with:
+
+- `Quickstart.md`: High-level PLD introduction and flow sketch (5 min read)
+- `pld_core_summary.md`: Concept definitions with examples (3 min read)
+- `usage_notes.md`: Best practices, edge cases, implementation caveats (5–8 min)
+
+---
+
+## 🔗 Tool-Specific Highlights
+
+| Platform     | PLD Mapping Examples                                 |
+|--------------|------------------------------------------------------|
+| **Rasa**     | `out_of_scope`, `repair_attempts`, fallback layering |
+| **LLM**      | time-gap reentry triggers, ambiguity detection       |
+| **Figma**    | `after delay`, `opacity fade`, shimmer overlays      |
+| **PostHog**  | Drift heatmaps, funnel tracking, reentry latency plots |
+
+→ See `schema_mapping_table.md` for a full breakdown.
+
+---
+
+## 🧠 Who Is This For?
+
+| Role            | Value                                               |
+|------------------|----------------------------------------------------|
+| Conversation UX  | Repair/reentry scaffolds, pacing-aware design      |
+| LLM Engineers    | Reentry prompts, ambiguity handling scaffolds      |
+| Product Analysts | Drift heatmaps, latency metrics, recovery rates    |
+| QA/Support       | Dropout → recovery flow validation                  |
+| EdTech Designers | Dropout → return logic, engagement pacing          |
+
+---
+
+## 🛠 Getting Started
+
+Start with `Quickstart.md`, then try a live pattern:
+
+- Rasa bot repair logic → `rasa_soft_repair.yml` + `rasa_soft_repair_actions.py`
+- UI prototype delay → `figma_latency_hold.md`
+- LLM memory recovery → `llm_reentry_prompt.json`
+- Drift observability → `drift_event_logging.md`
+
+💡 All pattern examples are file-based — no live server needed to explore the logic.
+
+---
+
+## 🧩 Extending PLD
+
+You can add new pattern primitives:
+
+```yaml
+pattern: anticipation_prompt
+trigger: hesitation OR context_switch
+action: preload_response_option
+log_event: anticipation_prompt_triggered
+```
+
+→ See `metrics_schema.yaml` or `pld_event.schema.json` for logging field templates.
+
+---
+
+## 📬 Feedback / Contributing
+
+Found an edge case or want to contribute?
+
+- Fork and add a new pattern example (e.g. for mobile UI, AR, call center UX)
+- Suggest a new metric, pattern, or platform mapping
+- Submit a PR or open an issue on [GitHub](https://github.com/kiyoshisasano-DeepZenSpace)
+
+---
+
+> PLD is not a rulebook.  
+> It’s a rhythm you can work with.  
+> Don’t force it — feel it, adapt it.
