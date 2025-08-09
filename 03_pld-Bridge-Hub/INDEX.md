@@ -1,7 +1,7 @@
 <!--
-Revision notes (2025-08-09)
+Revision notes (2025-08-09, updated)
 - Single landing doc for partners: role paths, quick access, workflow.
-- Mirrors 01 (theory) ↔ 02 (quickstart) and points to demo/run.
+- Added links to structure_generators and a quickstart section.
 -->
 
 # PLD Bridge Hub — Partner Index
@@ -16,6 +16,7 @@ Revision notes (2025-08-09)
 - Connectivity Map → `../PLD_Lexicon_Connectivity_Map.md`
 - Quickstart Kit → `../02_quickstart_kit/README_quickstart.md`
 - Metrics schemas → `../02_quickstart_kit/30_metrics/schemas/metrics_schema.yaml`, `../02_quickstart_kit/30_metrics/schemas/pld_event.schema.json`
+- Structure Generators (code) → `./structure_generators/OVERVIEW.md`
 - One-command demo → `./DEMORUN.md`
 
 ## Where the hub sits
@@ -31,11 +32,13 @@ See full diagram: `../01_phase_loop_dynamics/10_phase_loop_dynamics.svg`
 - **UX/Research** → Safe Lexicon & Connectivity → Notion templates → UX patterns (latency_hold)
 - **Analyst/ML** → Math Appendix §2.5 → 30_metrics → Academic mappings index
 
+## Quickstart in 5 Minutes
+Run a minimal demo and validate events:  
+See [`DEMORUN.md`](./DEMORUN.md)
 
 ## Collaboration
 For details on collaboration models, partner roles, and engagement guidelines,  
 see [`05_field_stewardship`](../05_field_stewardship).
-
 
 ## License
 **CC BY-NC 4.0** — attribution required; no commercial use.
