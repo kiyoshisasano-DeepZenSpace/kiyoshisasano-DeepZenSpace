@@ -13,8 +13,8 @@ By treating these as measurable patterns, PLD bridges **conversation analysis, c
 - **Bridge-Hub** – real-time event detection, metrics, and dashboards
 - **Interdisciplinary mapping** – 8+ academic domains linked to OSS modules
 
-> 📄 [One-Page Visual Overview (PDF)](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/d739436a07bf72334445f2c559bc56d0a793231b/06_translation_interface/zenodo/docs/PLD_OnePage_PressSheet_EN.pdf)
-> 📑 [DOI Publication](https://doi.org/10.5281/zenodo.16744239)
+- 📄 [One-Page Visual Overview (PDF)](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/d739436a07bf72334445f2c559bc56d0a793231b/06_translation_interface/zenodo/docs/PLD_OnePage_PressSheet_EN.pdf)
+- 📑 [DOI Publication](https://doi.org/10.5281/zenodo.16744239)
 
 
 
