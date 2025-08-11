@@ -103,6 +103,6 @@ It treats syntax as an evolving **topographic field** — shaped by resonance de
 
 **Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance**  
 Language Systems Collective, 2025  
-[https://github.com/phase-drift/atlas](https://github.com/phase-drift/atlas)
+[https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace)
 
 > “Language is not just uttered — it loops, it forgets, it returns.”  
