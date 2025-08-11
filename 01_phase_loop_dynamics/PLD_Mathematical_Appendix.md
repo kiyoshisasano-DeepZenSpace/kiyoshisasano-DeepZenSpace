@@ -1,5 +1,5 @@
-# 📘 PLD Mathematical Appendix — Integrated Edition
-  Version: 2025-08-08
+# 📘 PLD Mathematical Appendix — Integrated Edition (Revised)
+Version: 2025-08-11
 
 ---
 
@@ -15,93 +15,144 @@
 | ℛ | Repair operator | Σ → Σ | @support/Repair |
 | 𝓛ᵢ | Loop generator | Phase transformation | @core/Loop |
 | C(σ,t) | Coherence field | Σ × ℝ⁺ → ℝ⁺ | @derived/Coherence |
-| φ(τ) | Repair kernel | ℝ → [0,1] | @math/Kernel |
+| φ(τ) / ϕ(τ) | Repair kernel | ℝ → [0,1] (normalized) | @math/Kernel |
 | d(·,·) | Phase distance | Σ × Σ → ℝ⁺ | @math/Distance |
+
+> **Notation**: We use \( \varphi \) for the normalized repair kernel (revised §1.6).
 
 ---
 
 ### 1.2 Phase Space
 
-(1.1) Σ = { σ = (s,t,p) | s ∈ 𝒮, t ∈ 𝒯, p ∈ 𝒫 }
+(1.1) \( \Sigma = \{\, \sigma = (s,t,p) \mid s \in \mathcal{S},\ t \in \mathcal{T},\ p \in \mathcal{P} \,\} \)
 
-- 𝒮: Context-free grammar derivations  
-- 𝒯 ⊆ ℝ⁺: Temporal coordinates  
-- 𝒫: Prosodic parameter space
+- \( \mathcal{S} \): Context-free grammar derivations  
+- \( \mathcal{T} \subseteq \mathbb{R}^+ \): Temporal coordinates  
+- \( \mathcal{P} \): Prosodic parameter space
 
 ---
 
 ### 1.3 Phase Distance
 
-(1.2) d(σ₁, σ₂) = ∥ e_{σ₁} − e_{σ₂} ∥₂ + α |t₁ − t₂|  
+(1.2) \( d(\sigma_1, \sigma_2) = \lVert e_{\sigma_1} - e_{\sigma_2} \rVert_2 + \alpha\, |t_1 - t_2| \)
 
-- e_σ: vector embedding  
-- α: temporal scaling factor
+- \( e_\sigma \): vector embedding  
+- \( \alpha \): temporal scaling factor
 
 ---
 
 ### 1.4 Drift Operator
 
-(1.3) 𝒟(σ,t) = 1 − ( ∥∇C(σ,t)∥ / K_drift )
+(1.3) \( \mathcal{D}(\sigma,t) = 1 - \big( \lVert \nabla C(\sigma,t) \rVert \,/\, K_{\text{drift}} \big) \)
 
 with coherence field:
 
-(1.4) C(σ,t) = MI(σ_{t−δt}, σ_t) + λ cos(θ_embed)
+(1.4) \( C(\sigma,t) = \mathrm{MI}(\sigma_{t-\delta t}, \sigma_t) + \lambda \cos(\theta_{\text{embed}}) \)
 
 - MI: mutual information between phases  
-- θ_embed: embedding vector angle
+- \( \theta_{\text{embed}} \): embedding vector angle
 
 ---
 
 ### 1.5 Repair Operator
 
-(1.5) ℛ(σ) = σ + λ ∫_{τ∈T} φ(τ) Δ(σ,τ) dτ
+(1.5) \( \mathcal{R}(\sigma) = \sigma + \lambda \int_{\tau\in T} \varphi(\tau)\, \Delta(\sigma,\tau)\, d\tau \)
 
-Gaussian attention kernel:
-
-(1.6) φ(τ) = exp( − ( (τ − τ₀)² / 2s² ) )
+> **Interpretation**: With the normalized kernel (1.6), (1.5) implements a time-local **normalized averaging** of the discrepancy term \( \Delta(\sigma,\tau) \) around \( \tau_0 \) with bandwidth \( s \).
 
 ---
 
-### 1.6 Loop Algebra
+### 1.6 Gaussian Attention Kernel (Normalized) — **Revised**
 
-(1.7) 𝓛ᵢ ∘ 𝓛ⱼ = ∑_{k=1}^5 c_{ijk} 𝓛_k  
-    [𝓛ᵢ, 𝓛ⱼ] = 𝓛ᵢ𝓛ⱼ − 𝓛ⱼ𝓛ᵢ
+(1.6) \( \displaystyle \varphi(\tau) \;=\; \frac{1}{\sqrt{2\pi}\,s}\,
+\exp\!\left( -\,\frac{(\tau-\tau_0)^2}{2s^2} \right), \qquad s>0 \)
+
+Properties:  
+\( \int_{-\infty}^{\infty}\varphi(\tau)\,d\tau = 1 \),  
+\( \varphi(\tau_0+\delta)=\varphi(\tau_0-\delta) \),  
+\( \lVert \varphi \rVert_{L^1}=1 \).
+
+**Lemma 1.6.A (Series approximation of kernel repair).**  
+Assume \( \Delta(\sigma,\tau) \) is sufficiently smooth in \( \tau \) around \( \tau_0 \) and admits a Taylor expansion up to order \( m \):
+\[
+\Delta(\sigma,\tau_0+\delta)=\sum_{k=0}^{m}\frac{\delta^k}{k!}\,
+\partial_\tau^{(k)}\Delta(\sigma,\tau_0)+\mathcal{O}(\delta^{m+1}).
+\]
+Then the kernel integral in (1.5) with the normalized Gaussian (1.6) satisfies
+\[
+\int_{\mathbb{R}}\varphi(\tau)\,\Delta(\sigma,\tau)\,d\tau
+\;=\;
+\sum_{k=0}^{m}\frac{\mu_k(\varphi)}{k!}\,
+\partial_\tau^{(k)}\Delta(\sigma,\tau_0)\;+\;\mathcal{O}(s^{m+1}),
+\]
+where \( \mu_k(\varphi)=\int (\tau-\tau_0)^k \varphi(\tau)\,d\tau \) are the (centered) moments of \( \varphi \).  
+For the Gaussian (1.6),
+\[
+\mu_{2n+1}(\varphi)=0,\qquad
+\mu_{2n}(\varphi)=(2n-1)!!\,s^{2n}\quad (n\in\mathbb{N}).
+\]
+
+**Corollary 1.6.B (Mapping to series form).**  
+Let the repair operator in (1.5) be written as
+\( \mathcal{R}(\sigma) = \sigma + \lambda \int \varphi(\tau)\,\Delta(\sigma,\tau)\,d\tau \).
+Under the assumptions of Lemma 1.6.A we obtain the local series:
+\[
+\mathcal{R}(\sigma)
+= \sigma + \sum_{k=0}^{m} a_k\,\partial_\tau^{(k)}\Delta(\sigma,\tau_0)
+\;+\;\mathcal{O}(s^{m+1}),
+\quad
+a_k \;=\; \lambda\,\frac{\mu_k(\varphi)}{k!}.
+\]
+In particular, for the Gaussian kernel, odd-order coefficients vanish (\( a_{2n+1}=0 \)) and
+\( a_{2n}=\lambda\,\frac{(2n-1)!!}{(2n)!}\,s^{2n} \).
+Hence the series-type formulation used in **02_phase_mechanics** (Taylor-type repair)
+is an **asymptotic approximation** of the kernel form, with explicit coefficient identification via the kernel moments.
+
+*Proof (sketch).* Expand around \( \tau_0 \) and integrate term-wise; use centered moments of the Gaussian. □
+
+*Remark.* Coefficient sign conventions in the series form depend on the residual definition inside \( \Delta \) and the expansion point; in the paper, we state that series coefficients \( \tilde a_k \) **absorb** the kernel-moment identification \( a_k \).
+
+---
+
+### 1.7 Loop Algebra
+
+(1.7) \( \mathcal{L}_i \circ \mathcal{L}_j = \sum_{k=1}^5 c_{ijk}\, \mathcal{L}_k \), \[ \,[\mathcal{L}_i,\mathcal{L}_j] = \mathcal{L}_i\mathcal{L}_j - \mathcal{L}_j\mathcal{L}_i \]
 
 Generator mapping:  
-- 𝓛₁: Segment detection  
-- 𝓛₂: Drift–repair  
-- 𝓛₃: Latent phase  
-- 𝓛₄: Feedback reflex  
-- 𝓛₅: Alignment–resonance
+- \( \mathcal{L}_1 \): Segment detection  
+- \( \mathcal{L}_2 \): Drift–repair  
+- \( \mathcal{L}_3 \): Latent phase  
+- \( \mathcal{L}_4 \): Feedback reflex  
+- \( \mathcal{L}_5 \): Alignment–resonance
 
 ---
 
-### 1.7 Axioms
+### 1.8 Axioms
 
 1. **Phase Continuity**  
- ∀ε>0, ∃δ>0 : d(σ₁,σ₂) < δ ⇒ |𝒟(σ₁)−𝒟(σ₂)| < ε
+ \( \forall \varepsilon>0,\, \exists \delta>0: d(\sigma_1,\sigma_2) < \delta \Rightarrow |\mathcal{D}(\sigma_1)-\mathcal{D}(\sigma_2)| < \varepsilon \)
 
 2. **Repair Closure**  
- ℛ(Σ) ⊆ Σ
+ \( \mathcal{R}(\Sigma) \subseteq \Sigma \)
 
 3. **Loop Compositionality**  
- P(𝓛_k | 𝓛ᵢ, 𝓛ⱼ) > 0 ⇔ c_{ijk} > 0
+ \( P(\mathcal{L}_k \mid \mathcal{L}_i,\mathcal{L}_j) > 0 \iff c_{ijk} > 0 \)
 
 ---
 
-### 1.8 Theorems
+### 1.9 Theorems
 
 **Theorem 1 — Drift–Repair Duality**  
- ker(𝒟) ≅ im(ℛ)
+ \( \ker(\mathcal{D}) \cong \mathrm{im}(\mathcal{R}) \)
 
 **Theorem 2 — Resonance Fixed-Point**  
- ∃! σ* ∈ Σ : ℛ(σ*) = σ*
+ \( \exists!\, \sigma^* \in \Sigma : \mathcal{R}(\sigma^*) = \sigma^* \)
 
 ---
 
-### 1.9 Categorical Preview
+### 1.10 Categorical Preview
 
-Commutative diagram mapping between loop categories (see `pld_commutative_diagram.svg`).
+Commutative diagram mapping between loop categories (see `diagrams/pld_commutative_diagram.svg`).
 
 ---
 
@@ -110,43 +161,43 @@ Commutative diagram mapping between loop categories (see `pld_commutative_diagra
 
 ### 2.1 State-Space Representation
 
-(2.1) dΨ/dt = AΨ(t) + F_ext(t)  
+(2.1) \( \dfrac{d\Psi}{dt} = A\,\Psi(t) + F_{\text{ext}}(t) \)
 
-State vector: Ψ(t) = ( ψ_d, ψ_r, ψ_l )ᵀ  
-Matrix A defined as per system parameters (α, β, γ, δ, ε, ζ, η)
+State vector: \( \Psi(t) = ( \psi_d, \psi_r, \psi_l )^\top \)  
+Matrix \( A \) defined as per system parameters \( (\alpha,\beta,\gamma,\delta,\varepsilon,\zeta,\eta) \)
 
 ---
 
 ### 2.2 Phase Manifold Geometry
 
-(2.2) g_{ij} = ∂²E / (∂ψ_i ∂ψ_j)  
+(2.2) \( g_{ij} = \partial^2 E / (\partial \psi_i\, \partial \psi_j) \)
 
 Energy functional:  
-(2.3) E(Ψ) = ½ ψ_d² + ¼ ψ_r⁴ + λ e^{−ψ_l}
+(2.3) \( E(\Psi) = \tfrac{1}{2}\psi_d^2 + \tfrac{1}{4}\psi_r^4 + \lambda e^{-\psi_l} \)
 
 ---
 
 ### 2.3 Interaction Dynamics
 
-F_ext from multi-agent coupling:  
-(2.4) F_ext = ∑_k 𝒥_{ijk} Ψ^{(k)}(t−τ)
+External coupling:  
+(2.4) \( F_{\text{ext}} = \sum_k \mathcal{J}_{ijk}\, \Psi^{(k)}(t-\tau) \)
 
 ---
 
 ### 2.4 Stability and Limit Cycles
 
 - **Theorem 3:** Equilibrium stability conditions via Lyapunov exponents  
-- **Theorem 4:** Limit cycle existence if βγ > αδ
+- **Theorem 4:** Limit cycle existence if \( \beta\gamma > \alpha\delta \)
 
 ---
 
 ### 2.5 Stochastic Formulation
 
 Langevin dynamics:  
-(2.5) dΨ = (AΨ + F_ext) dt + σ dW_t
+(2.5) \( d\Psi = (A\Psi + F_{\text{ext}})\, dt + \sigma\, dW_t \)
 
 Fokker–Planck:  
-(2.6) ∂P/∂t = −∇·(vP) + ½ ∑_{i,j} D_{ij} ∂²P/(∂ψ_i ∂ψ_j)
+(2.6) \( \partial P/\partial t = -\nabla\cdot(vP) + \tfrac{1}{2} \sum_{i,j} D_{ij}\, \partial^2 P/(\partial \psi_i \partial \psi_j) \)
 
 ---
 
@@ -155,30 +206,30 @@ Fokker–Planck:
 
 ### 3.1 Space Decomposition
 
-(3.1) Σ = ⊕_{k=1}^5 Σ_k
+(3.1) \( \Sigma = \bigoplus_{k=1}^5 \Sigma_k \)
 
 ---
 
 ### 3.2 Generator Definitions
 
-𝓛₁ = ∂_seg (Boundary detection)  
-𝓛₂ = 𝒟ℛ (Drift–repair cycle)  
-𝓛₃ = e^{−τ∂_t} (Latency operator)  
-𝓛₄ = ℱ†ℱ (Feedback adjoint)  
-𝓛₅ = 𝒜⊗𝒜 (Alignment tensor)
+\( \mathcal{L}_1 = \partial_{\text{seg}} \) (Boundary detection)  
+\( \mathcal{L}_2 = \mathcal{D}\,\mathcal{R} \) (Drift–repair cycle)  
+\( \mathcal{L}_3 = e^{-\tau \partial_t} \) (Latency operator)  
+\( \mathcal{L}_4 = \mathcal{F}^\dagger\mathcal{F} \) (Feedback adjoint)  
+\( \mathcal{L}_5 = \mathcal{A}\otimes\mathcal{A} \) (Alignment tensor)
 
 ---
 
 ### 3.3 Composition Laws
 
-(3.2) 𝓛ᵢ ∘ 𝓛ⱼ = ∑ c_{ijk} 𝓛_k + ε_{ij}
+(3.2) \( \mathcal{L}_i \circ \mathcal{L}_j = \sum c_{ijk}\, \mathcal{L}_k + \varepsilon_{ij} \)
 
 ---
 
 ### 3.4 Key Theorems
 
 **Theorem 5:** Loop closure as Lie algebra  
-**Theorem 6:** Resonance stability via minimal n
+**Theorem 6:** Resonance stability via minimal \( n \)
 
 ---
 
@@ -187,23 +238,23 @@ Fokker–Planck:
 
 ### 4.1 Phase Space Topology
 
-(4.1) Σ ≅ S¹ × ℝ²
+(4.1) \( \Sigma \cong S^1 \times \mathbb{R}^2 \)
 
 ---
 
 ### 4.2 Homology, Fundamental Group
 
-H_n(Σ) = ℤ for n=0,1; otherwise 0  
-π₁(Σ) = ℤ
+\( H_n(\Sigma) = \mathbb{Z} \) for \( n=0,1 \); otherwise 0  
+\( \pi_1(\Sigma) = \mathbb{Z} \)
 
 ---
 
 ### 4.3 Loop Invariants
 
 Winding number:  
-(4.2) ν(Γ) = (1/2π) ∮_Γ (dφ/dt) dt
+(4.2) \( \nu(\Gamma) = \frac{1}{2\pi} \oint_\Gamma \big(\frac{d\phi}{dt}\big)\, dt \)
 
-Drift–repair index: I_DR = #(drift) − #(repair)
+Drift–repair index: \( I_{\text{DR}} = \#(\text{drift}) - \#(\text{repair}) \)
 
 ---
 
@@ -219,41 +270,41 @@ Drift–repair index: I_DR = #(drift) − #(repair)
 
 ### 5.1 Phase Distance Metric
 
-(5.1) d_Σ(σ₁, σ₂) = inf_γ ∫₀¹ √{ g_{γ(t)}(γ̇, γ̇) } dt
+(5.1) \( d_\Sigma(\sigma_1, \sigma_2) = \inf_\gamma \int_0^1 \sqrt{ g_{\gamma(t)}(\dot\gamma, \dot\gamma) }\, dt \)
 
 ---
 
 ### 5.2 Local Metric Tensor
 
-(5.2) g_{ij}(σ) = [matrix form with α, β, λ]
+(5.2) \( g_{ij}(\sigma) = \big[\text{matrix form with } \alpha, \beta, \lambda \big] \)
 
 ---
 
 ### 5.3 Properties
 
-- Completeness of (Σ, d_Σ)  
+- Completeness of \( (\Sigma, d_\Sigma) \)  
 - Geodesic equations and Christoffel symbols
 
 ---
 
 ### 5.4 Concentration Phenomena
 
-Modulus of continuity: ω(δ)  
-Doubling condition for μ(B_r)
+Modulus of continuity: \( \omega(\delta) \)  
+Doubling condition for \( \mu(B_r) \)
 
 ---
 
 ### 5.5 Fractal Analysis
 
-Hausdorff dimension dim_H(Σ_k)  
-Spectral dimension d_s
+Hausdorff dimension \( \dim_H(\Sigma_k) \)  
+Spectral dimension \( d_s \)
 
 ---
 
 ### 5.6 Stability Theorems
 
-**Theorem 9:** Lipschitz continuity of d_Σ  
-**Theorem 10:** Gromov–Hausdorff convergence of Σ_n → Σ
+**Theorem 9:** Lipschitz continuity of \( d_\Sigma \)  
+**Theorem 10:** Gromov–Hausdorff convergence \( \Sigma_n \to \Sigma \)
 
 ---
 
@@ -261,3 +312,18 @@ Spectral dimension d_s
 
 This index maps each mathematical object to its prose introduction in `00_introduction.md` and `01_foundations.md`.  
 Theorems retain their original numbering for citation stability.
+
+- \( \Sigma \) — Introduction §1; Foundations §1  
+- \( \mathcal{D} \) — Introduction §3; Mechanics §1; Appendix §1.4  
+- \( \mathcal{R} \) — Foundations §3; Mechanics §2; Appendix §1.5–1.6  
+- \( \mathcal{L}_i \) — Loop Structures; Appendix §1.7; Algebra §3  
+- \( C(\sigma,t) \) — Appendix §1.4  
+- Kernels/Series link — Appendix §1.6 Lemma 1.6.A / Cor. 1.6.B; Mechanics §2 (series)
+
+---
+
+**Change Log (2025-08-11):**  
+- §1.6 kernel **normalized**; properties stated explicitly.  
+- Added **Lemma 1.6.A** and **Corollary 1.6.B** (kernel–series correspondence).  
+- §1.5 note updated to clarify normalized averaging semantics.  
+- Notation table updated (ϕ).
