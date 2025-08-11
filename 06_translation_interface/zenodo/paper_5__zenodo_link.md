@@ -2,19 +2,26 @@
 
 This repository hosts the reference and supporting materials for the fifth paper in the **Phase Loop Dynamics** series:
 
-> **Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance**  
+> **Phase Loop Dynamics — Unified Framework**  
 > Kiyoshi Sasano (2025)  
-> DOI: [10.5281/zenodo.16736820](https://doi.org/10.5281/zenodo.16736820)  
-> Published: August 3, 2025  
-> [🌐 View on Zenodo](https://zenodo.org/records/16736820)
+> DOI: [10.5281/zenodo.16794452](https://doi.org/10.5281/zenodo.16794452)  
+> Published: August 11, 2025  
+> [🌐 View on Zenodo](https://zenodo.org/records/16794452)  
+> ORCID: [0009-0003-0268-5269](https://orcid.org/0009-0003-0268-5269)
 
 ---
 
 ## 📘 Overview
 
-This paper proposes a recursive, loop-based model of syntax, in which **drift**, **latency**, **repair**, and **resonance** are treated as **structurally meaningful operations**, not noise.
+This paper presents *Phase Loop Dynamics (PLD)* as a **unified theoretical and applied framework** for modeling conversational and syntactic interactions as a dynamic topology of recurrent loops.
 
-By modeling syntax as a **phase ecology**, this work introduces a new operational framework—*Phase Loop Dynamics (PLD)*—for analyzing linguistic instability, feedback, and self-repair across real-time interaction and neural computation.
+Key contributions include:
+
+- Definition of five primary loop types (𝓛₁–𝓛₅) with mathematical formalization via operator algebra, stability criteria, and gauge invariance.
+- **Latent Phase Theory** distinguishing latent phases from silence, with probabilistic and topological models.
+- Cross-disciplinary mappings to psycholinguistics, HCI, AI dialogue systems, and interaction design.
+- Practical applications in latency-aware interfaces, loop-augmented transformers, and educational engagement recovery.
+- Implementation architecture and evaluation metrics, with diagrams illustrating operator hierarchy, phase space trajectories, and processing pipelines.
 
 ---
 
@@ -22,30 +29,32 @@ By modeling syntax as a **phase ecology**, this work introduces a new operationa
 
 | File Name | Description |
 |-----------|-------------|
-| `Phase_Loop_Dynamics__Sasano_2025_TEXT_ONLY.pdf` | Main article body (text only, with figure/table references) |
-| `PLD_FIGURES_TABLES_ARCHIVE.zip` | Full archive of referenced figures, tables, math diagrams |
-| `README.md` | Structural summary and figure index |
-| `BibTeX.txt` | Citation entry for reference managers |
+| `paper_5_pld_unified_framework_v2025-08-11.pdf` | Final compiled paper (20 pages, figures included) |
+| `PLD_Fig4_Implementation_Modules_BW_fixed.svg` | Implementation module flow diagram (monochrome) |
+| `README.md` | Repository overview and citation info |
 
 ---
 
 ## 📑 Citation (BibTeX)
 
 ```bibtex
-@misc{sasano_2025_pld,
+@misc{sasano_2025_pld_unified,
   author       = {Kiyoshi Sasano},
-  title        = {Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance},
+  title        = {Phase Loop Dynamics — Unified Framework},
   year         = 2025,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.16741300},
-  url          = {https://zenodo.org/records/16741300}
+  doi          = {10.5281/zenodo.16794452},
+  url          = {https://doi.org/10.5281/zenodo.16794452}
 }
 ```
-🔗 **Related Links**
+---
 
-- 🔬 **PLD Core Repository** — Theoretical framework, agent implementations, and mathematical models  
-- 🧠 `pld_brain_core/`, `pld_brain_math/` — Loop dynamics modules and simulation logs  
+## 🔗 Related Links
+
+- 🔬 **PLD Core Repository** — Theoretical framework, implementations, and mathematical models  
+- 🧠 `pld_loop_engine/`, `pld_math_core/` — Loop dynamics modules and simulation logs  
 - 📊 **Drift Corpus Tools & Annotation Templates** *(coming soon)*  
 
-> “Language is not only spoken — it hesitates, echoes, and returns.”  
+> “Language is not just uttered — it loops, it forgets, it returns.”  
 > — *Phase Loop Dynamics Project*
+
