@@ -201,8 +201,19 @@ Includes:
 
 ## 📩 Contact & Collaboration
 
-- Email: **deepzenspace[at]gmai[dot]com**  
-- Contribution guide: [`05_field_stewardship`](./05_field_stewardship)  
+We welcome **industry partners, research collaborators, and open-source contributors**.
+
+### 🤝 Collaboration Models
+| Type | What You Get | First Step |
+|------|--------------|------------|
+| **Pilot Project** | Joint Proof-of-Concept with core PLD modules | Read [`05_field_stewardship/_index.md`](./05_field_stewardship) |
+| **Production Integration** | Full PLD deployment with calibration support | Contact us to discuss system context |
+| **Joint R&D** | Co-author research papers and prototypes | Review [`01_phase_loop_dynamics`](./01_phase_loop_dynamics) |
+| **Open Source Contribution** | Add modules, patterns, or documentation | See [`CONTRIBUTING.md`](./CONTRIBUTING.md) |
+
+### 📬 Get in Touch
+- Email: **deepzenspace[at]gmail[dot]com**
 - License: **Creative Commons BY-NC 4.0**
 
----
+> 💡 Most partners start with the [Quickstart Kit](./02_quickstart_kit) or a **Pilot Project** — both are low-barrier entry points.
+
