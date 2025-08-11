@@ -7,37 +7,49 @@ The **Phase Loop Dynamics (PLD)** kit provides reusable interaction design patte
 ## 📁 Folder Structure
 
 ```
-13_quickstart_kit/
-├── README_quickstart.md          ← You are here
+02_quickstart_kit/
+├── README_quickstart.md              ← Quick entry point for PLD usage
 │
-├── 01_getting_started/           ← Start here: key principles + usage advice
-│   ├── Quickstart.md             ← Intro to PLD: loop overview and principles (5 min read)
-│   ├── pld_core_summary.md       ← Core PLD concepts: drift, repair, reentry (3 min read)
-│   └── usage_notes.md            ← Tips for implementation, testing, extensibility (5–8 min)
+├── 00_overview/                       ← Orientation + conceptual grounding
+│   ├── mapping_index.md               ← Cross-reference map of PLD files
+│   ├── pld_theory_summary.md           ← Concise overview of PLD theory
+│   ├── quickstart.md                   ← Fast-start guide with examples
+│   └── usage_notes.md                  ← Implementation tips and caveats
 │
-20_patterns/                   ← Drop-in patterns for real platforms
-├── ux/
-│   └── figma_latency_hold.md       ← UX latency buffers in Figma flows
-├── llm/
-│   └── llm_patterns_pld.md         ← LLM reentry/repair patterns using PLD
-├── rasa/
-│   ├── soft_repair.yml             ← Repair logic (NLU/rules) for Rasa bots
-│   └── soft_repair_actions.py      ← Custom repair loop handling via Rasa actions
-└── mapping/
-│    └── schema_mapping_table.md     ← PLD patterns mapped to platform behaviors
+├── 10_operator_primitives/            ← Core PLD operators (modular building blocks)
+│   ├── L1_segment_detection.md         ← Detect pause/segment boundaries
+│   ├── L2_drift_repair.md              ← Identify + repair conversational drift
+│   ├── L3_latency_operator.md          ← Apply latency-aware operators
+│   ├── L4_feedback_reflex.md           ← Handle feedback loops and reflex responses
+│   └── L5_alignment_resonance.md       ← Achieve alignment and resonance
 │
-├── 30_metrics/                      ← Logging specifications + dashboards + datasets
-│   ├── dashboards/                  ← Visualization templates for PLD metrics
-│   │   └── reentry_success_dashboard.json  ← Example analytics dashboard (e.g., PostHog, Metabase)
-│   ├── datasets/                     ← Sample event logs for validation or demo
-│   │   └── pld_events_demo.jsonl
-│   ├── guides/                       ← How to detect, log, and interpret PLD metrics
-│   │   └── drift_event_logging.md
-│   ├── reports/                      ← Output from schema validation or analytics runs
-│   │   └── pld_events_demo_report.md
-│   └── schemas/                      ← Event/metric definitions in machine-readable format
-│       ├── metrics_schema.yaml       ← YAML schema for PLD event logging
-│       └── pld_event.schema.json     ← JSON Schema version of metrics spec
+├── 20_patterns/                        ← Ready-to-use PLD patterns for platforms
+│   ├── llm/
+│   │   └── llm_patterns_pld.md         ← LLM reentry/repair patterns
+│   ├── mapping/
+│   │   └── schema_mapping_table.md     ← Map PLD patterns to platform/system behaviors
+│   ├── rasa/
+│   │   ├── soft_repair.yml             ← Repair logic (NLU/rules) for Rasa bots
+│   │   └── soft_repair_actions.py      ← Custom repair loop handling via Rasa actions
+│   └── ux/
+│       └── figma_latency_hold.md       ← UX latency buffers in Figma flows
+│
+├── 30_metrics/                         ← Measurement, logging, and analytics
+│   ├── dashboards/
+│   │   └── reentry_success_dashboard.json   ← Example analytics dashboard (PostHog, Metabase)
+│   ├── datasets/
+│   │   └── pld_events_demo.jsonl       ← Sample event logs for validation/demo
+│   ├── guides/
+│   │   └── drift_event_logging.md      ← Guide for detecting and logging drift events
+│   ├── reports/
+│   │   └── pld_events_demo_report.md   ← Example analytics output
+│   └── schemas/
+│       ├── metrics_schema.yaml         ← YAML schema for PLD event logging
+│       └── pld_event.schema.json       ← JSON Schema version of metrics spec
+│
+└── _meta/                              ← Project maintenance and migration docs
+    ├── CHANGELOG.md                    ← Release changes and history
+    └── MIGRATION.md                    ← Migration guide between PLD versions
 
 ```
 
