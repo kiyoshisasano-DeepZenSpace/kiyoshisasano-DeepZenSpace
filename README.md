@@ -209,7 +209,6 @@ We welcome **industry partners, research collaborators, and open-source contribu
 | **Pilot Project** | Joint Proof-of-Concept with core PLD modules | Read [`05_field_stewardship/_index.md`](./05_field_stewardship) |
 | **Production Integration** | Full PLD deployment with calibration support | Contact us to discuss system context |
 | **Joint R&D** | Co-author research papers and prototypes | Review [`01_phase_loop_dynamics`](./01_phase_loop_dynamics) |
-| **Open Source Contribution** | Add modules, patterns, or documentation | See [`CONTRIBUTING.md`](./CONTRIBUTING.md) |
 
 ### 📬 Get in Touch
 - Email: **deepzenspace[at]gmail[dot]com**
