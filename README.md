@@ -2,9 +2,9 @@
 
 > **A cross-disciplinary framework for detecting, measuring, and designing interaction timing.**
 
-[🎥 Watch Demo on YouTube](https://youtu.be/LwLYTZpydZg)  
+[🎥 Watch Demo on YouTube](https://youtu.be/nI0S8Aaywgc)  
 *(Click thumbnail below to play)*  
-[![Watch the video](https://img.youtube.com/vi/LwLYTZpydZg/0.jpg)](https://youtu.be/LwLYTZpydZg)
+[![Watch the video](https://img.youtube.com/vi/nI0S8Aaywgc/0.jpg)](https://youtu.be/nI0S8Aaywgc)
 
 Phase Loop Dynamics (PLD) models the *rhythms* of interaction —  
 **Drift → Repair → Resonance** — to keep AI dialogues, UX flows, and multimodal systems in sync.
