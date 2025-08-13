@@ -1,4 +1,7 @@
-# 🔁 Phase Loop Dynamics — Structural Rhythm Architecture
+# 🔁 Phase Loop Dynamics — Unified Framework for Structural Rhythm Architecture
+
+> **A cross-disciplinary framework for detecting, measuring, and designing interaction timing.**
+
 
 > **A cross-disciplinary framework for detecting, measuring, and designing interaction timing.**
 
