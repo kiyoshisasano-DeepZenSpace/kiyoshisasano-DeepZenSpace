@@ -218,5 +218,8 @@ We welcome **industry partners, research collaborators, and open-source contribu
 - Email: **deepzenspace[at]gmail[dot]com**
 - License: **Creative Commons BY-NC 4.0**
 
+- ### Connect
+🌐 [X (Twitter): @DeepZenSpace](https://x.com/DeepZenSpace)
+
 > 💡 Most partners start with the [Quickstart Kit](./02_quickstart_kit) or a **Pilot Project** — both are low-barrier entry points.
 
