@@ -142,8 +142,8 @@ See **[`CONTRIBUTING.md`](./CONTRIBUTING.md)** for submission guidelines.
 **Communication**
 - **Discussions:** Conceptual and theoretical dialogue  
 - **Issues:** Bug reports and improvement suggestions  
-- **Email:** *your-email@example.com* (formal inquiries)  
-- **Twitter / X:** *@your_handle* (informal exchange)
+- **Email:** *deepzenspace[at]gmail[dot]com* (formal inquiries)  
+- **Twitter / X:** *@DeepZenSpace* (informal exchange)
 
 ---
 
