@@ -81,11 +81,11 @@ See: [`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshi
 
 ---
 
-## 🧠 Meta-Intelligence Integration Framework
+## Meta-Intelligence Integration Framework
 
 **Coordinating multiple AI systems through structured cognitive layers**
 
-📂 **[View Project →](./04_meta-intelligence-framework)**
+**[View Project →](./04_meta-intelligence-framework)**
 
 The **Meta-Intelligence Integration Framework** models how heterogeneous AI systems — each with distinct cognitive strengths — can collaborate *systematically* rather than through ad-hoc model switching.
 
