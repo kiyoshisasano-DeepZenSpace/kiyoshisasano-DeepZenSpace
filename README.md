@@ -17,8 +17,8 @@ By treating these as measurable patterns, PLD bridges **conversation analysis, c
 - **Bridge-Hub** – real-time event detection, metrics, and dashboards
 - **Interdisciplinary mapping** – 8+ academic domains linked to OSS modules
 
- 📄 [One-Page Visual Overview (PDF)](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/d739436a07bf72334445f2c559bc56d0a793231b/06_translation_interface/zenodo/docs/PLD_OnePage_PressSheet_EN.pdf) |
- 📑 [DOI Publication](https://doi.org/10.5281/zenodo.16794452)
+[One-Page Visual Overview (PDF)](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/d739436a07bf72334445f2c559bc56d0a793231b/06_translation_interface/zenodo/docs/PLD_OnePage_PressSheet_EN.pdf) |
+[DOI Publication](https://doi.org/10.5281/zenodo.16794452)
 
 
 
@@ -181,7 +181,7 @@ Includes:
 
 ---
 
-## 🛠 Bridge-Hub Modules — Detection & Measurement Backbone
+## Bridge-Hub Modules — Detection & Measurement Backbone
 
 **[`03_pld-Bridge-Hub`](./03_pld-Bridge-Hub)**  
 Runnable tools and APIs for **detecting**, **logging**, and **classifying** PLD patterns in real-time or batch workflows.
@@ -218,7 +218,7 @@ We welcome **industry partners, research collaborators, and open-source contribu
 - Email: **deepzenspace[at]gmail[dot]com**
 - License: **Creative Commons BY-NC 4.0**
 
-- ### Connect
+### Connect
 - [X (Twitter): @DeepZenSpace](https://x.com/DeepZenSpace)
 - email:deepzenspace[at]gmail[dot]com
 
