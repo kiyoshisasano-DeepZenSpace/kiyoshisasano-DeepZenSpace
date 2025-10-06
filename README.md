@@ -81,6 +81,42 @@ See: [`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshi
 
 ---
 
+## 🧠 Meta-Intelligence Integration Framework
+
+**Coordinating multiple AI systems through structured cognitive layers**
+
+📂 **[View Project →](./04_meta-intelligence-framework)**
+
+The **Meta-Intelligence Integration Framework** models how heterogeneous AI systems — each with distinct cognitive strengths — can collaborate *systematically* rather than through ad-hoc model switching.
+
+### Four-Layer Cognitive Architecture
+| Layer | Core Function | Cognitive Analogue |
+|-------|----------------|--------------------|
+| **I — Structural** | Knowledge organization, theoretical coherence | System-1 Rational |
+| **II — Contextual** | Situational adaptation, stakeholder translation | System-2 Intuitive |
+| **III — Integrative** | Multimodal synthesis, feasibility planning | System-3 Deliberative |
+| **IV — Reflective** | Ethical validation, meta-cognitive oversight | System-R Reflective |
+
+### Key Applications
+- Education curriculum design  
+- Healthcare decision support  
+- Policy development and governance  
+- Multimodal reasoning pipelines  
+
+### Current Status
+**Phase 1 (alpha)** — Theoretical framework and documentation complete; open for case studies and contributions.
+
+### Quick Links
+- [Framework Overview](./04_meta-intelligence-framework/PROJECT_OVERVIEW.md)  
+- [Theoretical Paper](./04_meta-intelligence-framework/docs/framework-overview.md)  
+- [Applied Examples](./04_meta-intelligence-framework/phase1_individual_research/docs/basic-examples.md)  
+- [Contributing Guide](./04_meta-intelligence-framework/CONTRIBUTING.md)
+
+### License
+**Creative Commons BY 4.0** — Free use with attribution.
+
+---
+
 ## Collaboration Paths
 
 | Role / Team              | Recommended First Step |
