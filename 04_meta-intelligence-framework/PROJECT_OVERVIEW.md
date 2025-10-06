@@ -152,7 +152,7 @@ See **[`CONTRIBUTING.md`](./CONTRIBUTING.md)** for submission guidelines.
 **License:** Creative Commons Attribution 4.0 International (CC BY 4.0)  
 Example attribution:
 
-> *Meta-Intelligence Integration Framework by [Your Name]. Licensed under CC BY 4.0. https://github.com/[username]/meta-intelligence-framework*
+> *Meta-Intelligence Integration Framework by [Kiyoshi Sasano]. Licensed under CC BY 4.0. https://github.com/kiyoshisasano-DeepZenSpace//kiyoshisasano-DeepZenSpace/edit/main/04_meta-intelligence-framework*
 
 **Trademark Notice:**  
 GPT™, Claude™, Gemini™, and DeepSeek™ are trademarks of their respective owners. Use here is illustrative within academic fair use and does not indicate endorsement or partnership.
