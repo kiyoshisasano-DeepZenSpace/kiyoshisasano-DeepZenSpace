@@ -1,8 +1,8 @@
-# 🔁 Phase Loop Dynamics — Unified Framework for Structural Rhythm Architecture
+# Phase Loop Dynamics — Unified Framework for Structural Rhythm Architecture
 
 > **A cross-disciplinary framework for detecting, measuring, and designing interaction timing.**
 
-[🎥 Watch Demo on YouTube](https://youtu.be/nI0S8Aaywgc)  
+[ Watch Demo on YouTube](https://youtu.be/nI0S8Aaywgc)  
 *(Click thumbnail below to play)*  
 [![Watch the video](https://img.youtube.com/vi/nI0S8Aaywgc/0.jpg)](https://youtu.be/nI0S8Aaywgc)
 
@@ -25,22 +25,22 @@ By treating these as measurable patterns, PLD bridges **conversation analysis, c
 
 ---
 
-## 🚀 Start Here — Quick Collaboration Entry
+##  Start Here — Quick Collaboration Entry
 
-📦 **[▶︎ Quickstart Kit](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit/README_quickstart.md)**  
+**[▶︎ Quickstart Kit](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit/README_quickstart.md)**  
 Ready-to-use patterns for **Rasa**, **Figma**, and **LLMs** —  
 improve timing alignment, repair handling, and conversation reentry in hours, not weeks.
 
 ---
 
-### 🏢 For Industry & Applied Teams
+### For Industry & Applied Teams
 - **Reduce drop-offs** in real-time AI agents by addressing latency and rhythm gaps.
 - **Embed repair loops** to recover user intent mid-interaction.
 - **Turn silence into signal** — leverage hesitation as a design feature, not a failure.
 
 ---
 
-📊 **Illustrative Impact (Scenario, Not Measured)**  
+**Illustrative Impact (Scenario, Not Measured)**  
 
 Typical ranges observed in similar scenarios when adding **Bridge-Hub modules**  
 (`pause_classifier`, `latency_tracker`, `reentry_detector`) to a baseline without them:
@@ -58,17 +58,17 @@ For measurement, emit events via `pld_event.schema.json` and compute metrics wit
 
 ---
 
-### 🎯 For Designers & Developers
+### For Designers & Developers
 - **Rasa soft repair templates** – avoid premature conversation drops
 - **Figma latency hold patterns** – keep attention during backend delays
 - **LLM reentry prompts** – improve multi-turn coherence
 
-📂 See: [`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit)
+See: [`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit)
 
 ---
 
 
-## 🖼 Big Picture — PLD in 4 Stages
+## Big Picture — PLD in 4 Stages
 
 <a href="./01_phase_loop_dynamics/10_phase_loop_dynamics.svg">
 <img src="./01_phase_loop_dynamics/10_phase_loop_dynamics.svg" alt="PLD Flow Diagram" width="800">
@@ -81,7 +81,7 @@ For measurement, emit events via `pld_event.schema.json` and compute metrics wit
 
 ---
 
-## 🤝 Collaboration Paths
+## Collaboration Paths
 
 | Role / Team              | Recommended First Step |
 |--------------------------|------------------------|
@@ -91,7 +91,7 @@ For measurement, emit events via `pld_event.schema.json` and compute metrics wit
 
 ---
 
-## 📘 Theory & Research (for Joint R&D)
+## Theory & Research (for Joint R&D)
 
 > *This section connects PLD to academic frameworks and formal models.*
 
@@ -120,18 +120,18 @@ For measurement, emit events via `pld_event.schema.json` and compute metrics wit
 
 ---
 
-## 📐 Core Principles
+## Core Principles
 
 PLD structures interaction through rhythmic sequences:
 1. **Drift (𝒟)** — delay, ambiguity, or asynchrony  
 2. **Repair (ℛ)** — structural realignment or co-presence gesture  
 3. **Resonance (𝓛₅)** — recursive echo or affective attunement  
 
-📌 *Drift is not deviation — it's rhythm under construction.*
+*Drift is not deviation — it's rhythm under construction.*
 
 ---
 
-### 📜 Origin Story  
+### Origin Story  
 
 An unexpected insight from AI dialogue revealed that interaction rhythms start forming before words are spoken — this became the seed of PLD.  
 What began as open-ended questions, with no analysis in mind, unfolded into a framework now linking design, AI, and cognitive science.
@@ -140,7 +140,7 @@ What began as open-ended questions, with no analysis in mind, unfolded into a fr
 ---
 
 
-## 🧮 Mathematical Framing
+## Mathematical Framing
 
 <a href="./01_phase_loop_dynamics/diagrams/category_theory_mapping.svg">
 <img src="./01_phase_loop_dynamics/diagrams/category_theory_mapping.svg" alt="PLD Math/Formal Mapping" width="800">
@@ -164,9 +164,9 @@ What began as open-ended questions, with no analysis in mind, unfolded into a fr
 \text{Resonance} &\iff \langle \sigma_t, \sigma_{t-k} \rangle \to 1
 \end{aligned}
 ```
-## 📦 Quickstart Kit — Ready-to-Use Patterns
+## Quickstart Kit — Ready-to-Use Patterns
 
-📂 **[`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit)**  
+**[`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit)**  
 Drop-in templates and patterns for **Rasa**, **Figma**, and **LLMs** —  
 designed to improve timing alignment, repair handling, and conversation reentry in hours, not weeks.
 
@@ -183,7 +183,7 @@ Includes:
 
 ## 🛠 Bridge-Hub Modules — Detection & Measurement Backbone
 
-📂 **[`03_pld-Bridge-Hub`](./03_pld-Bridge-Hub)**  
+**[`03_pld-Bridge-Hub`](./03_pld-Bridge-Hub)**  
 Runnable tools and APIs for **detecting**, **logging**, and **classifying** PLD patterns in real-time or batch workflows.
 
 **Purpose:**  
@@ -195,7 +195,7 @@ Includes:
 - `reentry_detector.py` — Identifies return to a prior intent after a gap.
 - `DEMORUN.md` — One-command demo with event validation and metrics reporting.
 
-🔍 Use Bridge-Hub to:
+Use Bridge-Hub to:
 - Validate PLD event logs (`pld_event.schema.json`)
 - Measure before/after metrics (`metrics_schema.yaml`)
 - Run proof-of-concept detection without a full system rebuild
@@ -203,23 +203,24 @@ Includes:
 ---
 
 
-## 📩 Contact & Collaboration
+## Contact & Collaboration
 
 We welcome **industry partners, research collaborators, and open-source contributors**.
 
-### 🤝 Collaboration Models
+### Collaboration Models
 | Type | What You Get | First Step |
 |------|--------------|------------|
 | **Pilot Project** | Joint Proof-of-Concept with core PLD modules | Read [`05_field_stewardship/_index.md`](./05_field_stewardship) |
 | **Production Integration** | Full PLD deployment with calibration support | Contact us to discuss system context |
 | **Joint R&D** | Co-author research papers and prototypes | Review [`01_phase_loop_dynamics`](./01_phase_loop_dynamics) |
 
-### 📬 Get in Touch
+### Get in Touch
 - Email: **deepzenspace[at]gmail[dot]com**
 - License: **Creative Commons BY-NC 4.0**
 
 - ### Connect
-🌐 [X (Twitter): @DeepZenSpace](https://x.com/DeepZenSpace)
+- [X (Twitter): @DeepZenSpace](https://x.com/DeepZenSpace)
+- email:deepzenspace[at]gmail[dot]com
 
-> 💡 Most partners start with the [Quickstart Kit](./02_quickstart_kit) or a **Pilot Project** — both are low-barrier entry points.
+> Most partners start with the [Quickstart Kit](./02_quickstart_kit) or a **Pilot Project** — both are low-barrier entry points.
 
