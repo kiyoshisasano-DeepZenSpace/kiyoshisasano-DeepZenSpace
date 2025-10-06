@@ -22,9 +22,9 @@ It provides ready-to-run demos, schema validation pipelines, and event-metric co
 
 ```text
 03_pld-Bridge-Hub/
-├── README.md                ← You are here
-├── bootstrap_demo.py        ← One-command demo (event generation + validation)
-├── demo_quick/              ← Output of the demo (events + report)
+├── _brige_hub_start.md      ← You are here
+├── top-level-files/  
+│   ├── bootstrap_demo.py    ← One-command demo (event generation + validation)
 ├── demo_pld_trace/          ← Conversational trace analyzer
 │   ├── generate_trace.py
 │   ├── input_trace.txt
