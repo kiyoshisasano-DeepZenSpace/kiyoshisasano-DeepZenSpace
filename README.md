@@ -109,7 +109,7 @@ The **Meta-Intelligence Integration Framework** models how heterogeneous AI syst
 ### Quick Links
 - [Framework Overview](./04_meta-intelligence-framework/PROJECT_OVERVIEW.md)  
 - [Theoretical Paper](./04_meta-intelligence-framework/docs/framework-overview.md)  
-- [Applied Examples](./04_meta-intelligence-framework/phase1_individual_research/docs/basic-examples.md)  
+- [Applied Examples](./04_meta-intelligence-framework/docs/basic-examples.md)  
 - [Contributing Guide](./04_meta-intelligence-framework/CONTRIBUTING.md)
 
 ### License
