@@ -1,6 +1,13 @@
-# Phase Loop Dynamics — Unified Framework for Structural Rhythm Architecture
+# Research Projects
 
-> **A cross-disciplinary framework for detecting, measuring, and designing interaction timing.**
+## Meta-Intelligence Integration Framework  
+A cognitive architecture for multi-AI collaboration  
+[**View Project →**](./04_meta-intelligence-framework)
+
+---
+
+## Phase Loop Dynamics
+
 
 [ Watch Demo on YouTube](https://youtu.be/nI0S8Aaywgc)  
 *(Click thumbnail below to play)*  
