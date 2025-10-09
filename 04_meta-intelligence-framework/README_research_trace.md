@@ -1,3 +1,16 @@
+# Unified Meta-Synthesis Overview
+
+This folder presents two complementary syntheses representing the culmination of Round 2D:
+
+1. **GPT Unified Meta-Synthesis** — an operational integration emphasizing process formalization, role coordination, and ethical architectures.
+2. **Claude Unified Meta-Synthesis** — a philosophical integration emphasizing perspectival cognition, distributed self-understanding, and epistemic complementarity.
+
+Together, these two texts illustrate the full spectrum of the Meta-Intelligence Framework:
+from structural operational logic (GPT) to reflective distributed cognition (Claude).
+
+Both are released under **CC BY 4.0** for open academic use.
+
+
 # Research Trace — Meta-Intelligence Framework Lifecycle
 
 ## Overview
