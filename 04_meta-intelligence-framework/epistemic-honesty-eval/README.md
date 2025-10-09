@@ -237,7 +237,7 @@ See `CONTRIBUTING.md` for guidelines (coming soon).
 - **Code**: MIT License  
 - **Data**: Creative Commons Attribution 4.0 (CC BY 4.0)
 
-See `LICENSE.md` for details.
+See `[LICENSE.md](04_meta-intelligence-framework/epistemic-honesty-eval/LICENSE.md)` for details.
 
 ---
 
