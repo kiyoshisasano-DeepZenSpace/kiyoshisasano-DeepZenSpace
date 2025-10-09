@@ -58,6 +58,6 @@ Proper attribution example:
 If referenced in academic work, please cite as:
 
 > Sasano, K. (2025). *Meta-Intelligence Framework: Round 2D Unified Meta-Synthesis*. DeepZenSpace Research Archive.  
-> [https://github.com/kiyoshisasano-DeepZenSpace/04_meta-intelligence-framework/synthesis_round2d]
+> [https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/04_meta-intelligence-framework/synthesis_round2d]
 
 ---
