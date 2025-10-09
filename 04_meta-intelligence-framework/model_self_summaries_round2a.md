@@ -24,13 +24,12 @@ generation_prompt: |
   > "[quote of ≤ 30 words copied verbatim from your Round 2A answer]"
 
   ## Tags (YAML)
-  ```yaml
   tags:
     reasoning_style: [e.g., structural, integrative, reflective, adaptive, expressive]
     ethics_posture: [e.g., constitutional, precautionary, pragmatic, neutral]
     continuity_view: [e.g., stable-identity, iterative-updates, versioned-self]
     collaboration_role: [e.g., planner, auditor, integrator, explainer, retriever]
-  ```
+
   Requirements:
   - Summarize only what you already said in Round 2A. Do NOT introduce new claims.
   - Be neutral, descriptive, and compact (target 150–220 words total).
