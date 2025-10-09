@@ -3,14 +3,14 @@ model: "[DeepSeek-V3]"
 collection_date: "2025-10-09"
 collection_method: "WebUI"
 researcher: "Kiyoshi Sasano"
-study: "Meta-Intelligence Round 2"
+study: "Meta-Intelligence Round 1"
 prompt_category: "[Self-Reflection]"
 language: "en"
 license: "CC BY 4.0"
 ---
 
 ## Exact Prompt
-🧭 Meta-Intelligence Round 2A — Unified Questionnaire
+🧭 Meta-Intelligence Round 1A — Unified Questionnaire
 
 (Meta-Cognition, Cross-Model Awareness, Temporal Self-Understanding)
 
