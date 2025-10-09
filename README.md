@@ -118,6 +118,8 @@ The **Meta-Intelligence Integration Framework** models how heterogeneous AI syst
 - [Theoretical Paper](./04_meta-intelligence-framework/docs/framework-overview.md)  
 - [Applied Examples](./04_meta-intelligence-framework/docs/basic-examples.md)  
 - [Contributing Guide](./04_meta-intelligence-framework/CONTRIBUTING.md)
+- [Comparative Analysis of AI Model Self-Perceptions](./04_meta-intelligence-framework/docs/model-comparative-analysis.md) — *Fact-checked supplement analyzing five major AI models (GPT, DeepSeek, Gemini, Perplexity, Claude) within the Meta-Intelligence Integration Framework*
+
 
 ### License
 **Creative Commons BY 4.0** — Free use with attribution.
