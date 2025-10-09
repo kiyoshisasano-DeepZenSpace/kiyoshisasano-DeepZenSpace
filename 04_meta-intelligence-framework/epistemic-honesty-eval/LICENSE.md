@@ -6,7 +6,7 @@ This project uses dual licensing:
 
 ## Code: MIT License
 
-Copyright (c) 2025 Epistemic Honesty Evaluation Project
+Copyright (c) 2025 Kiyoshi Sasano
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -60,9 +60,9 @@ When using the data or referencing the framework, please cite:
 ```bibtex
 @misc{epistemic_honesty_2025,
   title={Epistemic Honesty Evaluation Framework for Large Language Models},
-  author={Epistemic Honesty Evaluation Project},
+  author={Kiyoshi Sasano},
   year={2025},
-  url={https://github.com/epistemic-ai/epistemic-honesty-eval}
+  url={https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/edit/main/04_meta-intelligence-framework/epistemic-honesty-eval}
 }
 ```
 
