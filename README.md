@@ -120,6 +120,20 @@ The **Meta-Intelligence Integration Framework** models how heterogeneous AI syst
 - [Contributing Guide](./04_meta-intelligence-framework/CONTRIBUTING.md)
 - [Comparative Analysis of AI Model Self-Perceptions](./04_meta-intelligence-framework/docs/model-comparative-analysis.md) — *Fact-checked supplement analyzing five major AI models (GPT, DeepSeek, Gemini, Perplexity, Claude) within the Meta-Intelligence Integration Framework*
 
+### New: Round 2D — Unified Meta-Synthesis
+- Overview: [Unified Meta-Synthesis README](./04_meta-intelligence-framework/synthesis_round2d/Unified_Meta_Synthesis_README.md)
+- Operational Synthesis (GPT): [GPT_unified_meta_synthesis.md](./04_meta-intelligence-framework/synthesis_round2d/GPT_unified_meta_synthesis.md)
+- Philosophical Synthesis (Claude): [Claude_unified_meta_synthesis.md](./04_meta-intelligence-framework/synthesis_round2d/Claude_unified_meta_synthesis.md)
+
+### Research Trace (Full Provenance)
+- Lifecycle & file map: [README_research_trace_en.md](./04_meta-intelligence-framework/README_research_trace_en.md)
+- Rounds:
+  - Round 1 (Self-Reflection): [raw_responses_round1/](./04_meta-intelligence-framework/raw_responses_round1)
+  - Round 2A (Self-Summary): [model_self_summaries_round2a.md](./04_meta-intelligence-framework/model_self_summaries_round2a.md)
+  - Round 2B (Cross-Analysis): [data_round2b/](./04_meta-intelligence-framework/data_round2b)
+  - Round 2C (Meta-Synthesis per model): [synthesis_round2c/](./04_meta-intelligence-framework/synthesis_round2c)
+  - Round 2D (Unified Integration): [synthesis_round2d/](./04_meta-intelligence-framework/synthesis_round2d)
+
 
 ### License
 **Creative Commons BY 4.0** — Free use with attribution.
