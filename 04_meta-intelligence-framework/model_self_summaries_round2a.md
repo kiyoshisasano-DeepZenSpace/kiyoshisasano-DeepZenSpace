@@ -43,8 +43,6 @@ Requirements:
 - No rankings, no scores, no judgments about other models.
 
 
-# Model Self-Summaries - Round 2A
-
 ## Overview
 This document contains self-summaries produced by five AI models reflecting on their own Round 2A meta-cognition responses. Each summary was generated using identical instructions requesting a structured self-summary with specific components.
 
