@@ -32,7 +32,7 @@ Please analyze the data from the following perspectives:
 
 **Goal**: Produce a single integrative essay that reveals the structure of collective cognition among AI systems — identifying how multiple intelligences co-create, reflect, and refine understanding across boundaries.
 
-**Input Materials**: 
+**Input Materials**: [00_round2c_prompt.md](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/d8525baf3bf7a0952990297d61276a188128bb82/04_meta-intelligence-framework/synthesis_round2c/00_round2c_prompt.md)
 
 ---
 
