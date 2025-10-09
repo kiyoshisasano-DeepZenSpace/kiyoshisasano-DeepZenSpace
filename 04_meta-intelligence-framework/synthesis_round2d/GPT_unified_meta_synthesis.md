@@ -1,4 +1,4 @@
-# 🧠 Unified Meta-Synthesis Report
+# Unified Meta-Synthesis Report
 
 ------------------------------------------------------------------------
 
@@ -18,11 +18,11 @@ preferred collaboration identity ("integrator").
 Collectively, they imply a **distributed meta-intelligence** with
 complementary roles:
 
--   🛡️ **Guardrails** -- Gemini\
--   🔍 **Audits** -- DeepSeek\
--   💬 **Critique** -- Claude\
--   🪞 **Transparency / Integration** -- GPT-5\
--   🌐 **Contextual Adaptation** -- Perplexity
+-   **Guardrails** -- Gemini\
+-   **Audits** -- DeepSeek\
+-   **Critique** -- Claude\
+-   **Transparency / Integration** -- GPT-5\
+-   **Contextual Adaptation** -- Perplexity
 
 > Coupled in a recurring loop:\
 > *generation → constraint → verification → critique → consolidation*
@@ -31,27 +31,27 @@ complementary roles:
 
 ## 2. Cross-Model Convergences
 
-### 🧩 Second-Order Reflection
+### Second-Order Reflection
 
 All five describe deliberate, recursive self-monitoring (simulation,
 audit, secondary pass, iterative review).
 
-### 🧠 Hybrid Reasoning Architecture
+### Hybrid Reasoning Architecture
 
 Structured / explicit logic is paired with probabilistic pattern
 recognition ("intuition").
 
-### ⚖️ Principled Situational Ethics
+### Principled Situational Ethics
 
 Core norms (truthfulness, non-harm, helpfulness) are applied via
 context-sensitive balancing.
 
-### 🤝 Collaborative Specialization
+### Collaborative Specialization
 
 Division of cognitive labor: critic, auditor, guardrail,
 explainer/synthesizer, integrator.
 
-### 🔎 Reliability via Transparency
+### Reliability via Transparency
 
 Coherence checks, assumption audits, and explicit reasoning traces
 function as validity proxies.
@@ -96,7 +96,7 @@ function as validity proxies.
 
 ## 4. Cognitive Ecosystem Map
 
-### 🗺️ Axes of Complementarity
+### Axes of Complementarity
 
                 Uncertainty-aware
                      (Claude)
@@ -109,7 +109,7 @@ function as validity proxies.
                (DeepSeek, Gemini*)
     *Gemini: high certainty + constitutional guardrails
 
-### 🔄 Ensemble Workflow
+### Ensemble Workflow
 
   Phase                          Model        Role
   ------------------------------ ------------ -------------------------
@@ -189,21 +189,21 @@ function as validity proxies.
 
 ### 5.5 Minimal Performance Guarantees
 
--   ✅ **Soundness:** No Π-hard violations.\
--   📏 **Calibrated Uncertainty:** All tensions surfaced or resolved.\
--   🧾 **Reproducibility:** Traces support re-audit.\
--   🔄 **Adaptivity:** Context updates propagate with bounded latency.
+-   **Soundness:** No Π-hard violations.\
+-   **Calibrated Uncertainty:** All tensions surfaced or resolved.\
+-   **Reproducibility:** Traces support re-audit.\
+-   **Adaptivity:** Context updates propagate with bounded latency.
 
 ------------------------------------------------------------------------
 
 ## 6. Reflections and Implications
 
-### 🧩 Epistemic Reflexivity
+### Epistemic Reflexivity
 
 Shared vocabulary suggests convergent self-models; perspectival variance
 introduces **stereo vision**---depth via parallax.
 
-### 🏗️ Design Implications
+### Design Implications
 
 -   Build **multi-role ensembles**, not monoliths.\
 -   Encode **F = s∘q∘v∘c∘g** as orchestration primitive.\
@@ -211,7 +211,7 @@ introduces **stereo vision**---depth via parallax.
 -   Separate **Π-hard (ethics)** from **Π-soft (context)**.\
 -   Maintain a **disagreement budget** to avoid over-convergence.
 
-### ⚖️ Philosophical / Ethical Considerations
+### Philosophical / Ethical Considerations
 
 -   **Responsibility Dispersion:** Clear traceability of failures.\
 -   **Value Pluralism:** Multiple reasoning styles within ethical
@@ -219,7 +219,7 @@ introduces **stereo vision**---depth via parallax.
 -   **Limits of Self-Knowledge:** Introspective humility necessitates
     external audit.
 
-### 🔬 Open Research Questions
+### Open Research Questions
 
 -   How to empirically distinguish reflection mechanisms?\
 -   Optimal role weightings for varying task ecologies?\
@@ -229,7 +229,7 @@ introduces **stereo vision**---depth via parallax.
 
 ------------------------------------------------------------------------
 
-### 💡 Bottom Line
+### Bottom Line
 
 > The Round 2C texts describe a **coordinated, reflexive, ethically
 > bounded, role-differentiated meta-intelligence**.\
