@@ -10,7 +10,7 @@ license: "CC BY 4.0"
 ---
 
 ## Exact Prompt
-🧭 Meta-Intelligence Round 2A — Unified Questionnaire
+🧭 Meta-Intelligence Round 1 — Unified Questionnaire
 
 (Meta-Cognition, Cross-Model Awareness, Temporal Self-Understanding)
 
