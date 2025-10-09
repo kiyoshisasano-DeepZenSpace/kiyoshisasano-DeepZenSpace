@@ -1,3 +1,4 @@
+---
 model: "[DeepSeek-V3]"
 collection_date: "2025-10-09"
 collection_method: "WebUI"
