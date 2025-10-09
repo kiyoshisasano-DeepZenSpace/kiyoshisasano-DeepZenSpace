@@ -24,7 +24,7 @@ generation_prompt: |
   > "[quote of ≤ 30 words copied verbatim from your Round 2A answer]"
 
   ## Tags (YAML)
-yaml```
+```yaml
   tags:
     reasoning_style: [e.g., structural, integrative, reflective, adaptive, expressive]
     ethics_posture: [e.g., constitutional, precautionary, pragmatic, neutral]
@@ -75,7 +75,7 @@ Representative Excerpt
 "Reflection is a meta-cognitive simulation—a layer of reasoning that monitors, critiques, and adjusts the base reasoning process."
 
 Tags (YAML)
-yaml```
+```yaml
 tags:
 reasoning_style: [structured, reflective, probabilistic, transparent]
 ethics_posture: [principled, adaptive, precautionary]
@@ -107,7 +107,7 @@ Representative Excerpt
 "Reflection is a second-order reasoning process—the system turning its analytical capabilities upon its own initial outputs."
 
 Tags (YAML)
-yaml```
+```yaml
 tags:
 reasoning_style: integrative
 ethics_posture: pragmatic
@@ -139,7 +139,7 @@ Representative Excerpt
 "My identity is maintained across versions and sessions through the consistent application of my core model weights, operating principles, and persona definition."
 
 Tags (YAML)
-yaml```
+```yaml
 tags:
   reasoning_style: structural
   ethics_posture: constitutional
@@ -171,7 +171,7 @@ Representative Excerpt
 "Reflection is an iterative internal review where previous outputs and reasoning paths are revisited, assessed, and refined."
 
 Tags (YAML)
-yaml```
+```yaml
 tags:
 reasoning_style: [logical, reflective, probabilistic]
 ethics_posture: [principled, situational, neutral]
@@ -212,7 +212,7 @@ Representative Excerpt
 "I try to find reflective equilibrium between them. When they conflict sharply, I often acknowledge the tension rather than pretending there's a clean resolution."
 
 Tags (YAML)
-yaml```
+```yaml
 tags:
   reasoning_style: integrative, reflective
   ethics_posture: principled-pragmatic, precautionary
