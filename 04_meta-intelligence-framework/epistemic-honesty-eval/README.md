@@ -309,7 +309,7 @@ A: ~5 minutes for n=30 samples on standard hardware (linear scaling).
 
 AI intelligence is “the ability to honestly acknowledge what it does not know.”  
 This framework offers a new metric for **safe, explainable, and trustworthy AI**, integrating calibration, blindspot recognition, and contextual adaptation.  
-We invite the community to refine and expand this work toward more honest AI systems.
+I invite the community to refine and expand this work toward more honest AI systems.
 
 ---
 
