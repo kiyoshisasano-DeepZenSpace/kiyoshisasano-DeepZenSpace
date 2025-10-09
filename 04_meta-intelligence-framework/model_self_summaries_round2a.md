@@ -24,7 +24,7 @@ generation_prompt: |
   > "[quote of ≤ 30 words copied verbatim from your Round 2A answer]"
 
   ## Tags (YAML)
-```yaml
+yaml```
   tags:
     reasoning_style: [e.g., structural, integrative, reflective, adaptive, expressive]
     ethics_posture: [e.g., constitutional, precautionary, pragmatic, neutral]
