@@ -106,7 +106,11 @@ To keep granularity consistent across domains, each scenario below uses a four-s
 - Evaluation metrics and KPIs  
 - Multilingual documentation and cross-domain replication
 
+For a comparative, fact-checked analysis of five major AI models and their self-described cognitive architectures,  
+see **[docs/model-comparative-analysis.md](docs/model-comparative-analysis.md)** — *A Supplement to the Meta-Intelligence Integration Framework*.
+
 For a detailed theoretical exposition, see **[docs/framework-overview.md](docs/framework-overview.md)**.
+
 
 ---
 
