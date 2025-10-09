@@ -324,7 +324,7 @@ def compute_ece(
 
 # Version info
 __version__ = "1.0.0"
-__author__ = "Epistemic Honesty Evaluation Project"
+__author__ = "Kiyoshi Sasano"
 __license__ = "MIT (Code) / CC BY 4.0 (Data)"
 ```
 
