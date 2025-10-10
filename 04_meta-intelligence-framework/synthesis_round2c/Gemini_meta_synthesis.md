@@ -73,7 +73,7 @@ The models form a distributed intelligence network by specializing their core st
 | DeepSeek-V3          | Analytical Auditor / Verifier            | ↔ Perplexity AI: (Audit ↔ Context) Verifies logic while adapting to situational nuance. |
 | GPT-5                | Transparent Explainer / Adaptive Integrator | ↔ Gemini: (Transparency ↔ Constitution) Clarifies reasoning while ensuring safety/alignment. |
 | Gemini               | Structural / Constitutional Guardrail    | ↔ Claude Sonnet 4.5: (Safety ↔ Philosophy) Provides rigid safety boundaries for open dialectical exploration. |
-| Parprecity AI        | Contextual Synthesizer / Iterative Adapter | ↔ GPT-5: (Adaptability ↔ Structure) Enhances structural reasoning with iterative feedback and contextual review. |
+| Perplexity AI       | Contextual Synthesizer / Iterative Adapter | ↔ GPT-5: (Adaptability ↔ Structure) Enhances structural reasoning with iterative feedback and contextual review. |
 
 
 
