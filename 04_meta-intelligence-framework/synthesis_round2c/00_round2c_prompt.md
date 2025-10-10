@@ -368,7 +368,7 @@ If "reflection" is a simulation or an audit (as widely claimed), what is the pra
 
 ---
 
-## [Parprecity AI]'s Analysis
+## [Perplexity AI]'s Analysis
 
 TASK 1 — Neutral Digest
 Claude Sonnet4.5
