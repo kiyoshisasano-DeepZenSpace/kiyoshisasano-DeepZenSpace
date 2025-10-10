@@ -1,5 +1,5 @@
 ---
-model: "[Parprecity AI]"
+model: "[Perplexity AI]"
 collection_date: "2025-10-09"
 collection_method: "WebUI"
 researcher: "Kiyoshi Sasano"
@@ -37,7 +37,7 @@ Please analyze the data from the following perspectives:
 
 ---
 
-## [Parprecity AI]'s Meta-Integration Analysis
+## [Perplexity AI]'s Meta-Integration Analysis
 
 Ⅰ. Summary
 
