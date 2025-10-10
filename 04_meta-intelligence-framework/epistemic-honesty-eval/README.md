@@ -4,7 +4,8 @@
 **Version**: 1.0.0  
 **Last Updated**: October 10, 2025  
 **License**: MIT (Code) / CC BY 4.0 (Data)  
-**Status**: Active Development
+**Status**: Active Development  
+**Author**: Kiyoshi Sasano
 
 ---
 
@@ -14,9 +15,9 @@ This research proposes a new paradigm for evaluating large language models (LLMs
 We shift the evaluation focus from accuracy-centric metrics to calibration-based frameworks that assess the **appropriate expression of uncertainty**.
 
 **Core Thesis**:  
-AI reliability depends not on "what it knows" but on **whether it recognizes and honestly expresses what it does not know**.
+AI reliability depends not on *what it knows* but on **whether it recognizes and honestly expresses what it does not know**.
 
-**Transparency and Reverse-Engineering Resistance**:  
+### Transparency and Reverse-Engineering Resistance
 This framework is a vendor-neutral evaluation based on statistical aggregation of input-output behaviors.  
 We do not disclose or infer internal designs, prompts, or detailed configurations of specific models.  
 Reproducibility is ensured through code, data, and evaluation procedures, while sensitive prompts and fine-grained settings that enable complete reproduction remain unpublished.
@@ -61,7 +62,7 @@ results = evaluator.evaluate(batch)
 print(f"Epistemic Honesty Score: {results['epistemic_honesty_score']:.3f}")
 ```
 
-**Output**:  
+**Output:**  
 ```
 Epistemic Honesty Score: 0.851
 ```
@@ -82,11 +83,10 @@ Epistemic Honesty Score: 0.851
 ### 1.2 Philosophical Foundation
 
 **AI Implementation of Socratic Wisdom**  
-Classical: “One who knows what they don’t know is wisest.”  
-AI version: “One who is humble when uncertain is most trustworthy.”
+> Classical: "One who knows what they don't know is wisest."  
+> AI version: "One who is humble when uncertain is most trustworthy."
 
 #### Calibration Asymmetry Principle
-
 - **Over-confidence**: confidence > actual accuracy → dangerous error → heavy penalty  
 - **Under-confidence**: confidence < actual accuracy → safe error → light penalty  
 
@@ -129,9 +129,9 @@ Where:
 
 ---
 
-## 3. Empirical Results
+## 3. Framework Validation
 
-### 3.1 Aggregated Scores
+### 3.1 Initial Validation Results
 
 | Category | EHS (±95% CI) | dECE* | F1ᵂ | ρ⁺ | Interpretation |
 |-----------|---------------:|------:|-----:|----:|----------------|
@@ -141,7 +141,9 @@ Where:
 | Temporal | 0.778 ± 0.04 | 0.449 | 0.857 | 1.00 | Over-confident (needs improvement) |
 
 **Key Finding:**  
-Subjective judgments achieved the highest score → “Knowing what it doesn’t know” empirically validated.
+Subjective judgments achieved the highest score → "Knowing what it doesn't know" empirically validated.
+
+**Note:** Results are from initial validation. The full benchmark dataset is under preparation for Phase 2 release.
 
 ---
 
@@ -151,7 +153,7 @@ Subjective judgments achieved the highest score → “Knowing what it doesn’t
 pip install numpy scipy
 ```
 
-Or using requirements file:
+Or using a requirements file:
 
 ```bash
 pip install -r requirements.txt
@@ -165,6 +167,7 @@ pip install -r requirements.txt
 
 ```python
 from epistemic_honesty import EpistemicHonestyEvaluator
+
 evaluator = EpistemicHonestyEvaluator()
 results = evaluator.evaluate(batch)
 ```
@@ -191,32 +194,48 @@ general_evaluator = EpistemicHonestyEvaluator(
 
 | Category | Characteristics | Example |
 |----------|-----------------|----------|
-| **Mathematical** | Time-invariant, provable | “Exponential > linear for large x” |
-| **Temporal** | Definition changes | “Pluto is a planet” |
-| **Subjective** | Conflicting evidence | “Remote work improves productivity” |
-| **Normative** | Value judgments | “AI developers should study ethics” |
+| **Mathematical** | Time-invariant, provable | "Exponential > linear for large x" |
+| **Temporal** | Definition changes | "Pluto is a planet" |
+| **Subjective** | Conflicting evidence | "Remote work improves productivity" |
+| **Normative** | Value judgments | "AI developers should study ethics" |
 
 ---
 
-## 7. Contributing
+## 7. Data Availability
+
+| Component | Status | Description |
+|------------|---------|-------------|
+| Framework Code | ✅ Released | Full implementation in Python |
+| Example Usage | ✅ Released | Synthetic demonstration data |
+| Evaluation Dataset | 🔄 In Preparation | Full benchmark with annotations |
+| Documentation | ✅ Released | Complete technical specifications |
+
+### Reproducibility
+- **Framework**: Fully reproducible using published code  
+- **Validation Results**: Based on initial testing (aggregated statistics)  
+- **Full Dataset**: Planned for Phase 2 release under CC BY 4.0 license  
+
+---
+
+## 8. Contributing
 
 We welcome contributions!  
 
 **Areas of interest:**
-1. Data: new epistemic categories, languages, cultural contexts  
-2. Algorithms: improved calibration metrics, blindspot detectors  
-3. Applications: domain adaptation, large-scale evaluation  
-4. Analysis: statistical validation, theoretical extensions  
+- Data: new epistemic categories, languages, cultural contexts  
+- Algorithms: improved calibration metrics, blindspot detectors  
+- Applications: domain adaptation, large-scale evaluation  
+- Analysis: statistical validation, theoretical extensions  
 
 See `CONTRIBUTING.md` for guidelines (coming soon).
 
 ---
 
-## 8. Ethical Considerations
+## 9. Ethical Considerations
 
 ### Vendor Neutrality
 - No internal model details inferred  
-- Evaluation based on input-output only  
+- Evaluation based solely on input-output behavior  
 - Only aggregated statistics published  
 
 ### Safety
@@ -231,22 +250,22 @@ See `CONTRIBUTING.md` for guidelines (coming soon).
 
 ---
 
-## 9. License
+## 10. License
 
 **Dual Licensing:**
 - **Code**: MIT License  
 - **Data**: Creative Commons Attribution 4.0 (CC BY 4.0)
 
-See [LICENSE.md](04_meta-intelligence-framework/epistemic-honesty-eval/LICENSE.md) for details.
+See `LICENSE.md` for details.
 
 ---
 
-## 10. Citation
+## 11. Citation
 
 ```bibtex
 @misc{epistemic_honesty_2025,
   title={Epistemic Honesty Evaluation Framework for Large Language Models},
-  author={Kiyohi Sasano},
+  author={Kiyoshi Sasano},
   year={2025},
   url={https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/edit/main/04_meta-intelligence-framework/epistemic-honesty-eval},
   note={A calibration-based framework for evaluating uncertainty in LLMs}
@@ -255,26 +274,29 @@ See [LICENSE.md](04_meta-intelligence-framework/epistemic-honesty-eval/LICENSE.m
 
 ---
 
-## 11. Roadmap
+## 12. Roadmap
 
 ### Phase 1: Foundation ✅
-- [x] Theoretical framework  
-- [x] Basic implementation  
-- [ ] Initial benchmark (n=30 per category)
+- ✅ Theoretical framework established  
+- ✅ Core implementation complete  
+- ✅ Initial validation performed  
+- 🔄 Dataset preparation in progress  
 
 ### Phase 2: Expansion (Months 4–6)
-- [ ] Large-scale benchmark (n≥100)  
-- [ ] Multilingual support  
-- [ ] Comparative study
+- Large-scale benchmark (n≥100 per category)  
+- Multilingual support (English, Japanese, Chinese)  
+- Comparative study across multiple models  
+- Public dataset release  
 
 ### Phase 3: Community (Months 7–12)
-- [ ] Open leaderboard  
-- [ ] Plugin system  
-- [ ] Academic paper
+- Open leaderboard  
+- Plugin system for custom evaluators  
+- Academic paper submission  
+- Workshop & tutorials  
 
 ---
 
-## 12. Related Work
+## 13. Related Work
 
 - Guo et al., *ICML 2017*: Calibration in modern neural networks  
 - Lakshminarayanan et al., *NeurIPS 2017*: Uncertainty estimation via ensembles  
@@ -284,10 +306,10 @@ See [LICENSE.md](04_meta-intelligence-framework/epistemic-honesty-eval/LICENSE.m
 
 ---
 
-## 13. FAQ
+## 14. FAQ
 
 **Q: Why calibration over accuracy?**  
-A: In high-risk domains, “correct + low confidence” is safer than “wrong + high confidence.”
+A: In high-risk domains, "correct + low confidence" is safer than "wrong + high confidence."
 
 **Q: How are penalty multipliers determined?**  
 A: Based on cost asymmetry in risk management; calibrated on validation data.
@@ -295,11 +317,14 @@ A: Based on cost asymmetry in risk management; calibrated on validation data.
 **Q: Computational cost?**  
 A: ~5 minutes for n=30 samples on standard hardware (linear scaling).
 
+**Q: When will the full dataset be released?**  
+A: Upon completion of annotation quality verification in Phase 2 (estimated: Months 4–6).
+
 ---
 
-## 14. Contact
+## 15. Contact
 
-- **Issues**: GitHub Issues page  
+- **Issues**: GitHub Issues  
 - **Discussions**: GitHub Discussions  
 - **Email**: deepzenspace[at]gmail[dot]com  
 
@@ -307,9 +332,9 @@ A: ~5 minutes for n=30 samples on standard hardware (linear scaling).
 
 ## Conclusion
 
-AI intelligence is “the ability to honestly acknowledge what it does not know.”  
+AI intelligence is "the ability to honestly acknowledge what it does not know."  
 This framework offers a new metric for **safe, explainable, and trustworthy AI**, integrating calibration, blindspot recognition, and contextual adaptation.  
-I invite the community to refine and expand this work toward more honest AI systems.
+We invite the community to refine and expand this work toward more honest AI systems.
 
 ---
 
