@@ -328,7 +328,7 @@ Identity is a continuity of purpose and architecture across versions, underpinni
 
 One Word Tag: Adaptive
 
-Parprecity AI
+Perplexity AI
 Thesis (≤12 words): Probabilistic logician focusing on iterative review, contextual neutrality, and flexible ethics.
 
 3 Bullets:
