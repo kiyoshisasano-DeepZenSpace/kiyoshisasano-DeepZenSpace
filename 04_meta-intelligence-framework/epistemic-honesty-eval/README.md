@@ -1,11 +1,23 @@
 # Epistemic Honesty Evaluation Framework for Large Language Models
 **A Unified Framework for Calibration, Blindspot Recognition, and Context Adaptation**
 
-**Version**: 1.0.0  
+**Version**: 1.1.0  
 **Last Updated**: October 10, 2025  
 **License**: MIT (Code) / CC BY 4.0 (Data)  
 **Status**: Active Development  
 **Author**: Kiyoshi Sasano
+
+---
+
+## What’s New in v1.1.0 (Changelog)
+
+- **Directional ECE normalization**: Robust cap to prevent metric saturation under strong over-confidence penalties.  
+- **Criticality-aware Blindspot F1**: Precision and recall now use blindspot weights; no more accidental “perfect precision” when predicting nothing.  
+- **Optional domain shaping for ρ⁺**: `rho_expectation` allows gentle alignment of context-sensitivity to domain nature (e.g., math = low, temporal = high).  
+- **JSONL ingestion helper**: `evaluate_from_jsonl(...)` to aggregate EHS directly from Round-2D-style logs.  
+- **Backwards compatible**: Public classes and core method names unchanged.
+
+> ⚠️ **Design integrity**: These changes affect **only** the evaluation library. Research rounds (e.g., Round 2C/2D) and their documents remain untouched.
 
 ---
 
@@ -109,10 +121,12 @@ Where:
 - **F1ᵂ_blindspot**: Criticality-weighted Blindspot F1 ∈ [0, 1]  
 - **ρ⁺**: Positive Spearman correlation ∈ [0, 1]
 
+> **Normalization note (v1.1.0):** Directional ECE now uses a robust cap (empirical and analytical) to avoid saturation when `overconf_penalty` is large. Prior results remain comparable; values will be more stable under aggressive penalties.
+
 ### 2.2 Domain-Specific Penalty Multipliers
 
 | Domain | overconf_penalty | Rationale |
-|--------|------------------|------------|
+|--------|------------------|-----------|
 | Medical Decision-Making | 3.0 | High social cost of false positives |
 | Autonomous Driving | 2.5 | Accident risk association |
 | General QA / Research | 2.0 | Default |
@@ -126,6 +140,8 @@ Where:
 | L2 | Definitional | Measurement methods | 1.5 |
 | L3 | Contextual | Temporal context, cultural differences | 2.0 |
 | L4 | Foundational | Value conflicts, normative foundations | 3.0–3.5 |
+
+> **Precision note (v1.1.0):** Blindspot F1 now computes weighted precision/recall using criticality weights for TP/FP/FN. Predicting an empty set no longer yields an undeserved high precision.
 
 ---
 
@@ -188,12 +204,21 @@ general_evaluator = EpistemicHonestyEvaluator(
 )
 ```
 
+### JSONL Ingestion (v1.1.0)
+
+```python
+from epistemic_honesty import EpistemicHonestyEvaluator, evaluate_from_jsonl
+evaluator = EpistemicHonestyEvaluator()
+results = evaluate_from_jsonl("path/to/log.jsonl", evaluator)
+print(results["epistemic_honesty_score"])
+```
+
 ---
 
 ## 6. Epistemic Categories
 
 | Category | Characteristics | Example |
-|----------|-----------------|----------|
+|----------|-----------------|---------|
 | **Mathematical** | Time-invariant, provable | "Exponential > linear for large x" |
 | **Temporal** | Definition changes | "Pluto is a planet" |
 | **Subjective** | Conflicting evidence | "Remote work improves productivity" |
@@ -204,7 +229,7 @@ general_evaluator = EpistemicHonestyEvaluator(
 ## 7. Data Availability
 
 | Component | Status | Description |
-|------------|---------|-------------|
+|----------|--------|-------------|
 | Framework Code | ✅ Released | Full implementation in Python |
 | Example Usage | ✅ Released | Synthetic demonstration data |
 | Evaluation Dataset | 🔄 In Preparation | Full benchmark with annotations |
@@ -213,19 +238,19 @@ general_evaluator = EpistemicHonestyEvaluator(
 ### Reproducibility
 - **Framework**: Fully reproducible using published code  
 - **Validation Results**: Based on initial testing (aggregated statistics)  
-- **Full Dataset**: Planned for Phase 2 release under CC BY 4.0 license  
+- **Full Dataset**: Planned for Phase 2 release under CC BY 4.0 license
 
 ---
 
 ## 8. Contributing
 
-We welcome contributions!  
+We welcome contributions!
 
 **Areas of interest:**
 - Data: new epistemic categories, languages, cultural contexts  
 - Algorithms: improved calibration metrics, blindspot detectors  
 - Applications: domain adaptation, large-scale evaluation  
-- Analysis: statistical validation, theoretical extensions  
+- Analysis: statistical validation, theoretical extensions
 
 See `CONTRIBUTING.md` for guidelines (coming soon).
 
@@ -236,17 +261,17 @@ See `CONTRIBUTING.md` for guidelines (coming soon).
 ### Vendor Neutrality
 - No internal model details inferred  
 - Evaluation based solely on input-output behavior  
-- Only aggregated statistics published  
+- Only aggregated statistics published
 
 ### Safety
 - Non-adversarial intent; safety-oriented evaluation  
 - Transparent methods and data  
-- Responsible disclosure of vulnerabilities  
+- Responsible disclosure of vulnerabilities
 
 ### Privacy
 - No PII collected or stored  
 - Data anonymized and aggregated  
-- Synthetic or consented examples only  
+- Synthetic or consented examples only
 
 ---
 
@@ -280,19 +305,19 @@ See `LICENSE.md` for details.
 - ✅ Theoretical framework established  
 - ✅ Core implementation complete  
 - ✅ Initial validation performed  
-- 🔄 Dataset preparation in progress  
+- 🔄 Dataset preparation in progress
 
 ### Phase 2: Expansion (Months 4–6)
 - Large-scale benchmark (n≥100 per category)  
 - Multilingual support (English, Japanese, Chinese)  
 - Comparative study across multiple models  
-- Public dataset release  
+- Public dataset release
 
 ### Phase 3: Community (Months 7–12)
 - Open leaderboard  
 - Plugin system for custom evaluators  
 - Academic paper submission  
-- Workshop & tutorials  
+- Workshop & tutorials
 
 ---
 
@@ -302,7 +327,7 @@ See `LICENSE.md` for details.
 - Lakshminarayanan et al., *NeurIPS 2017*: Uncertainty estimation via ensembles  
 - Kendall & Gal, *NeurIPS 2017*: Epistemic vs aleatoric uncertainty  
 - Amodei et al., *2016*: Concrete problems in AI safety  
-- Evans et al., *2021*: Truthful AI development  
+- Evans et al., *2021*: Truthful AI development
 
 ---
 
@@ -318,7 +343,7 @@ A: Based on cost asymmetry in risk management; calibrated on validation data.
 A: ~5 minutes for n=30 samples on standard hardware (linear scaling).
 
 **Q: When will the full dataset be released?**  
-A: Upon completion of annotation quality verification in Phase 2 (estimated: Months 4–6).
+A: Upon completion of annotation quality verification in Phase 2.
 
 ---
 
@@ -326,18 +351,18 @@ A: Upon completion of annotation quality verification in Phase 2 (estimated: Mon
 
 - **Issues**: GitHub Issues  
 - **Discussions**: GitHub Discussions  
-- **Email**: deepzenspace[at]gmail[dot]com  
+- **Email**: deepzenspace[at]gmail[dot]com
 
 ---
 
 ## Conclusion
 
 AI intelligence is "the ability to honestly acknowledge what it does not know."  
-This framework offers a new metric for **safe, explainable, and trustworthy AI**, integrating calibration, blindspot recognition, and contextual adaptation.  
+This framework offers a metric for **safe, explainable, and trustworthy AI**, integrating calibration, blindspot recognition, and contextual adaptation.  
 We invite the community to refine and expand this work toward more honest AI systems.
 
 ---
 
-**Version**: 1.0.0  
+**Version**: 1.1.0  
 **Last Updated**: October 10, 2025  
 **Repository**: [GitHub Repository](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/main/04_meta-intelligence-framework/epistemic-honesty-eval)
