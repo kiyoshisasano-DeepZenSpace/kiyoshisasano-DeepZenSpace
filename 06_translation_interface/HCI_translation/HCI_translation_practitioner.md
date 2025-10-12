@@ -212,3 +212,17 @@ def tai(trust_input, measured_accuracy):
 - Zhang (2024, arXiv): timing & entrainment measurements.
 
 ---
+
+---
+
+## License
+
+This document and accompanying figures are licensed under  
+**Creative Commons Attribution–NonCommercial 4.0 International (CC BY-NC 4.0)**.  
+
+You are free to share and adapt the material for any non-commercial purpose,  
+provided that appropriate credit is given to the original author.  
+
+**Commercial or for-profit use requires prior written permission or a formal collaboration agreement with the author.**
+
+© 2025 [Kiyoshi Sasano / Organization]
