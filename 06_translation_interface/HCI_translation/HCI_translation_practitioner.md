@@ -213,8 +213,6 @@ def tai(trust_input, measured_accuracy):
 
 ---
 
----
-
 ## License
 
 This document and accompanying figures are licensed under  
