@@ -1,4 +1,4 @@
-# abstract: |
+# abstract:
   I propose *Calibrated Transparency* (CT), a formal framework
   integrating recursive value learning, adversarially robust
   verification, and cryptographic auditability to operationalize AI
@@ -19,10 +19,8 @@
   operational assurance against known failure modes---hallucination,
   specification gaming, and oversight collapse---while explicitly
   acknowledging limitations for existential-risk scenarios.
-title: |
   Implementable Calibrated Transparency for Frontier AI:\
   Mechanistic Safety Architectures with Adversarial-Robust Verification
-  (CT v4.3)
 ---
 
 # Introduction: The Calibration--Safety Gap
