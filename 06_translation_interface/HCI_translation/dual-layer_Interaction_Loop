@@ -1,0 +1,110 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景と全体構造 -->
+  <rect x="0" y="0" width="600" height="400" fill="#f8f9fa"/>
+  
+  <!-- タイトル -->
+  <text x="300" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">
+    Figure 1: Dual-Layer Interaction Framework
+  </text>
+  
+  <!-- メインの相互作用ループ -->
+  <g transform="translate(300, 200)">
+    <!-- 外側の透明性層ループ -->
+    <ellipse cx="0" cy="0" rx="180" ry="120" fill="none" stroke="#3498db" stroke-width="3" stroke-dasharray="5,5"/>
+    <text x="-200" y="-140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3498db">
+      Epistemic Transparency Layer
+    </text>
+    
+    <!-- 内側のリズム層ループ -->
+    <ellipse cx="0" cy="0" rx="120" ry="80" fill="none" stroke="#e74c3c" stroke-width="3"/>
+    <text x="-150" y="-90" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e74c3c">
+      Interaction Rhythm Layer
+    </text>
+    
+    <!-- 中心のAIシステム -->
+    <circle cx="0" cy="0" r="40" fill="#2c3e50" stroke="#34495e" stroke-width="2"/>
+    <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+      AI System
+    </text>
+    
+    <!-- ユーザー要素 -->
+    <g transform="translate(-200, 0)">
+      <rect x="-30" y="-20" width="60" height="40" rx="5" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+      <text x="0" y="5" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">User</text>
+    </g>
+    
+    <!-- リズム層の要素 -->
+    <g transform="rotate(-45)">
+      <circle cx="0" cy="-100" r="8" fill="#e74c3c"/>
+      <text x="0" y="-115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Query</text>
+      <line x1="0" y1="-40" x2="0" y2="-92" stroke="#e74c3c" stroke-width="2"/>
+    </g>
+    
+    <g transform="rotate(45)">
+      <circle cx="0" cy="-100" r="8" fill="#e74c3c"/>
+      <text x="0" y="-115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Pause & Repair</text>
+      <line x1="0" y1="-40" x2="0" y2="-92" stroke="#e74c3c" stroke-width="2"/>
+    </g>
+    
+    <g transform="rotate(135)">
+      <circle cx="0" cy="-100" r="8" fill="#e74c3c"/>
+      <text x="0" y="-115" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Latency</text>
+      <line x1="0" y1="-40" x2="0" y2="-92" stroke="#e74c3c" stroke-width="2"/>
+    </g>
+    
+    <!-- 透明性層の要素 -->
+    <g transform="rotate(-20)">
+      <circle cx="0" cy="-160" r="8" fill="#3498db"/>
+      <text x="0" y="-175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Uncertainty Cues</text>
+      <line x1="0" y1="-120" x2="0" y2="-152" stroke="#3498db" stroke-width="2" stroke-dasharray="3,3"/>
+    </g>
+    
+    <g transform="rotate(70)">
+      <circle cx="0" cy="-160" r="8" fill="#3498db"/>
+      <text x="0" y="-175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">System Explanation</text>
+      <line x1="0" y1="-120" x2="0" y2="-152" stroke="#3498db" stroke-width="2" stroke-dasharray="3,3"/>
+    </g>
+    
+    <g transform="rotate(160)">
+      <circle cx="0" cy="-160" r="8" fill="#3498db"/>
+      <text x="0" y="-175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Confidence Calibration</text>
+      <line x1="0" y1="-120" x2="0" y2="-152" stroke="#3498db" stroke-width="2" stroke-dasharray="3,3"/>
+    </g>
+    
+    <!-- 相互作用矢印 -->
+    <g transform="translate(-200, 0)">
+      <path d="M 30 0 L 150 0" stroke="#27ae60" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+      <path d="M -150 0 L -30 0" stroke="#3498db" stroke-width="2" fill="none" marker-end="url(#arrowhead2)"/>
+    </g>
+    
+    <!-- 層間の双方向矢印 -->
+    <path d="M 0 80 L 0 120" stroke="#9b59b6" stroke-width="2" fill="none" marker-end="url(#arrowhead3)" marker-start="url(#arrowhead3)"/>
+    <text x="15" y="105" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">Temporal Transparency</text>
+    <text x="15" y="115" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">Feedback Loop</text>
+  </g>
+  
+  <!-- 矢印のマーカー定義 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3498db"/>
+    </marker>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9b59b6"/>
+    </marker>
+  </defs>
+  
+  <!-- 凡例 -->
+  <g transform="translate(20, 350)">
+    <rect x="0" y="0" width="15" height="15" fill="#e74c3c"/>
+    <text x="25" y="12" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">Rhythm Elements</text>
+    
+    <rect x="120" y="0" width="15" height="15" fill="#3498db"/>
+    <text x="145" y="12" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">Transparency Elements</text>
+    
+    <rect x="270" y="0" width="15" height="15" fill="#9b59b6"/>
+    <text x="295" y="12" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">Coupling Mechanism</text>
+  </g>
+</svg>
