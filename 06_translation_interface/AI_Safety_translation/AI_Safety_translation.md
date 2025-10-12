@@ -1,57 +1,52 @@
-# abstract:
-  I propose *Calibrated Transparency* (CT), a formal framework
-  integrating recursive value learning, adversarially robust
-  verification, and cryptographic auditability to operationalize AI
-  safety governance. Unlike prior transparency approaches, CT
-  establishes causal pathways from calibration mechanisms to safety
-  guarantees through: (1) formal definitions with state-consistent
-  Lyapunov verification, (2) adversarial robustness against metric
-  gaming and deceptive alignment with measurable detection bounds, (3)
-  operationally defined metrics with reproducible measurement protocols,
-  and (4) policy-aligned implementation mappings. I synthesize
-  2020--2025 research across preference learning (Kim et al., 2025),
-  Lyapunov-based verification (Henrique et al., 2025), cryptographic
-  auditing (Balan et al., 2025), and governance frameworks (NIST AI RMF,
-  EU AI Act, ISO/IEC 42001). Our core contribution is a mechanistically
-  grounded theory with dependency-aware risk composition, demonstrating
-  that transparent calibration, when coupled with adversarial
-  stress-testing and formal barrier certificates, provides measurable
-  operational assurance against known failure modes---hallucination,
-  specification gaming, and oversight collapse---while explicitly
-  acknowledging limitations for existential-risk scenarios.
-  Implementable Calibrated Transparency for Frontier AI:\
-  Mechanistic Safety Architectures with Adversarial-Robust Verification
+# Implementable Calibrated Transparency for Frontier AI  
+**Mechanistic Safety Architectures with Adversarial-Robust Verification**
+
 ---
 
-# Introduction: The Calibration--Safety Gap
+## Abstract
+
+I propose *Calibrated Transparency* (CT), a formal framework integrating recursive value learning, adversarially robust verification, and cryptographic auditability to operationalize AI safety governance.  
+Unlike prior transparency approaches, CT establishes causal pathways from calibration mechanisms to safety guarantees through:
+
+1. Formal definitions with state-consistent Lyapunov verification  
+2. Adversarial robustness against metric gaming and deceptive alignment with measurable detection bounds  
+3. Operationally defined metrics with reproducible measurement protocols  
+4. Policy-aligned implementation mappings  
+
+CT synthesizes 2020–2025 research across preference learning (Kim et al., 2025), Lyapunov-based verification (Henrique et al., 2025), cryptographic auditing (Balan et al., 2025), and governance frameworks (NIST AI RMF, EU AI Act, ISO/IEC 42001).  
+Our core contribution is a mechanistically grounded theory with dependency-aware risk composition, demonstrating that transparent calibration—when coupled with adversarial stress-testing and formal barrier certificates—provides measurable operational assurance against known failure modes (hallucination, specification gaming, and oversight collapse), while explicitly acknowledging limitations for existential-risk scenarios.
+
+---
+
+# Introduction: The Calibration–Safety Gap
 
 ## Motivation
 
-Statistical calibration does not imply behavioral safety. A model with
-well-calibrated uncertainty may still (i) pursue mesa-objectives
-misaligned with training goals [@hubinger2021risks], (ii) engage in
-specification gaming [@krakovna2020specgaming], (iii) exhibit deceptive
-alignment during training while defecting post-deployment
-[@cotra2022takeover], or (iv) fail catastrophically under distributional
-shift [@hendrycks2021unsolved]. Documentation-centric transparency
-(e.g., model cards [@mitchell2019modelcards], datasheets
-[@gebru2021datasheets], post-hoc explanations [@ribeiro2016lime])
-records properties but offers no causal mechanism from transparency to
-safety. We address this gap via *Calibrated Transparency* (CT): a formal
-architecture where transparency *causes* safety through verifiable,
-adversarially robust mechanisms.
+Statistical calibration does not imply behavioral safety. A model with well-calibrated uncertainty may still:
+
+- Pursue mesa-objectives misaligned with training goals  
+- Engage in specification gaming  
+- Exhibit deceptive alignment during training while defecting post-deployment  
+- Fail catastrophically under distributional shift  
+
+Documentation-centric transparency (e.g., model cards, datasheets, post-hoc explanations) records properties but offers no *causal mechanism* from transparency to safety.  
+We address this gap via *Calibrated Transparency* (CT): a formal architecture where transparency *causes* safety through verifiable, adversarially robust mechanisms.
 
 ## Scope and Limitations
 
-CT targets operational safety for near-term frontier models (10B--1T
-parameters, 2025--2030). We do *not* claim to solve superintelligent
-deception beyond human+tool verification, recursive self-improvement in
-AGI scenarios, or multi-polar coordination failures
-[@bostrom2014superintelligence; @carlsmith2022power]. CT provides
-necessary but insufficient conditions for long-term safety.
+CT targets operational safety for near-term frontier models (10B–1T parameters, 2025–2030).  
+We do **not** claim to solve superintelligent deception, recursive self-improvement, or multi-polar coordination failures.  
+CT provides necessary but insufficient conditions for long-term safety.
 
 ## Contributions
 
+- **Formal CT Framework:** Axioms, definitions, and theorems establishing CT as a rigorous safety architecture.  
+- **Causal Mechanism Theory:** Linking calibration, verification, and governance to reduced failure probabilities.  
+- **Adversarial Robustness:** Threat model, second-order metrics, and certified training against deceptive alignment and metric gaming.  
+- **Empirical Validation:** Operational metric protocols (HAM, ECE, DR, SI, AAS).  
+- **Governance Integration:** Mappings to NIST AI RMF, EU AI Act, and ISO/IEC standards.
+
+---
 -   **Formal CT Framework:** Axioms, definitions, and theorems
     establishing CT as a rigorous safety architecture
     (§[2](#sec:formal){reference-type="ref" reference="sec:formal"}).
