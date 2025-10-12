@@ -6,7 +6,7 @@
 > **Epistemic Transparency** is treated as a **synonym** in academic contexts. When you see "CTT", read it as the concrete, product-facing form of epistemic transparency.
 
 **Figure 1:** *Dual-Layer Interaction Loop* (Rhythm ↔ CTT)  
-`06_translation_interface/HCI_translation/dual-layer_Interaction_Loop.svg`
+`06_translation_interface//HCI_translation/dual_layer_interaction_loop_v2.svg`
 
 ---
 
