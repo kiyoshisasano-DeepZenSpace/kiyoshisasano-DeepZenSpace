@@ -1,4 +1,4 @@
-abstract: |
+# abstract: |
   I propose *Calibrated Transparency* (CT), a formal framework
   integrating recursive value learning, adversarially robust
   verification, and cryptographic auditability to operationalize AI
