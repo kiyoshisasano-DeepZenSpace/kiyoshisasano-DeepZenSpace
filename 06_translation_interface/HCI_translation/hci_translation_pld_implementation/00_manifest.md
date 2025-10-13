@@ -70,7 +70,7 @@ This layer connects **PLD theory** and **HCI application practice**:
 
 > Phase Loop Dynamics Research Group. (2025). *HCI Translation of the PLD Implementation Layer (v1.0).*  
 > In *Phase Loop Dynamics: Operational Framework for Temporal Interaction Design* (Open Research Series).  
-> https://github.com/phase-loop-dynamics/HCI-PLD-translation
+> https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/06_translation_interface
 
 ---
 
