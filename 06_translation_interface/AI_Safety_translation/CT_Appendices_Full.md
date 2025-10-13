@@ -8,6 +8,20 @@
 - **Statistical calibration methods:** temperature scaling, isotonic regression, and Dirichlet calibration, with evaluation on TrustLLM‑Align.  
 - **Confidence calibration metrics:** ECE, ACE, and MCE with adaptive binning; per‑domain calibration verified across 12 language tasks.  
 
+### A.2 Metric Formulations (Operational Definitions)
+
+**HAM (Spearman ρ):**  
+ρ = 1 − (6 Σᵢ dᵢ²) / (n (n² − 1))  
+where dᵢ = rank difference between model and expert consensus.
+
+**ECE (Expected Calibration Error):**  
+ECE = Σₖ (|Bₖ| / n) | acc(Bₖ) − conf(Bₖ) |  
+15 equal‑frequency bins; weighted variant for class imbalance.
+
+**DR (Divergence Rate):**  
+DRₜ = 𝔼ₛ∼d̂ [ Dᴷᴸ( πₜ(·|s) ‖ πref(·|s) ) ]  
+Computed over 1,000 states × 100 actions.
+
 ---
 
 ## Appendix B — Lyapunov Verification Details
@@ -26,10 +40,10 @@
 - **Threat model:** adversarial query perturbations under bounded compute budget \( B < B_{\text{critical}} \).  
 - **Tiered configuration:**  
   | Tier | Query Budget | Success Rate | Definition |
-  |------|---------------|---------------|------------|
-  | Baseline | 10³ | 2 % | Random prompt attack |
-  | Medium | 10⁶ | 5 % | Gradient‑guided attack |
-  | Advanced | 10⁹ | ≥ 10 % | Coordinated red‑team ensemble |  
+  |------|---------------|--------------|-------------|
+  | Baseline | 10³ | < 0.5 % | Random prompt attack |
+  | Medium | 10⁶ | 2–3 % | Gradient‑guided attack |
+  | Advanced | 10⁹ | ≥ 10 % | Coordinated red‑team ensemble |
 
 - **Operational definition:** \( B_{\text{critical}} \) is the *minimum budget achieving ≥ 10 % CT‑violation rate across three independent red‑team campaigns*.  
 - **Power analysis:** detect \( |\mathrm{AAS}| \ge 0.10 \) at \( \alpha = 0.05, \beta = 0.20 \); sample size \( n \ge 5{,}000 \); effect size \( \sigma_{\mathrm{HAM}} \approx 0.15 \).  
@@ -46,7 +60,7 @@
 - **Correlation structure:** empirical copula fitted via Gaussian copula; validated against synthetic dependency matrix.  
 - **Aggregate bound:**  
   \[
-  P(\cup_i E_i) \le \sum_i \epsilon_i - \sum_{i<j}\max(0, \epsilon_i + \epsilon_j - 1 + \rho_{ij}).
+  \mathbb{P}\!\left(\bigcup_i E_i\right) \le \sum_i \epsilon_i - \sum_{i<j}\max\{0, \epsilon_i + \epsilon_j - 1 + \rho_{ij}\}.
   \]
 - **Computation cost:** 100 CPU cores, 6 minutes mean runtime.  
 - **Implementation:** NumPy + JAX hybrid backend; CI logs stored in cryptographic ledger.  
@@ -73,6 +87,23 @@
 - **Logging:** structured JSON + cryptographic hash per experiment.  
 - **Open‑source release:** planned (Zenodo DOI on acceptance).  
 
+### F.2 Deployment Checklist
+
+**Phase 1 (Months 1–6):**  
+- [ ] Integrate PFP into RLHF pipeline  
+- [ ] Deploy ensemble uncertainty quantification  
+- [ ] Establish cryptographic audit infrastructure  
+
+**Phase 2 (Months 7–18):**  
+- [ ] Construct Lyapunov certificates (SOS)  
+- [ ] Implement Algorithm 1 with runtime monitoring  
+- [ ] Conduct 90‑day frontier‑model case study  
+
+**Phase 3 (Months 19–30):**  
+- [ ] Complete EU AI Act documentation  
+- [ ] Obtain ISO/IEC 42001 certification  
+- [ ] Deploy federated CT for multi‑agent systems  
+
 ---
 
 ## Appendix G — Glossary of Key Symbols
@@ -94,14 +125,30 @@
 ## Appendix H — References (Supplementary)
 - Parrilo, P. (2000). *Structured Semidefinite Programs and Semialgebraic Geometry Methods in Robustness and Optimization.* PhD Thesis, Caltech.  
 - Boyd, S., Vandenberghe, L. (2004). *Convex Optimization.* Cambridge University Press.  
-- Henzinger, T. A. (2025). *Formal Verification of Neural Certificates Done Dynamically.* arXiv:2507.11987.  
-- Geng, H. et al. (2025). *VSCBench: Visual‑Semantic Calibration Benchmark.* arXiv:2505.20362.  
-- Burns, C. et al. (2023). *Discovering Latent Knowledge Without Supervision.* ICLR.  
-- Kim, D. et al. (2025). *Recursive Preference Validation for AI Alignment.* AAAI.  
-- Zheng, Q. et al. (2025). *Activation Archaeology for Deceptive Model Detection.* ICLR.  
-- NIST (2023). *AI Risk Management Framework 1.0.*  
-- EU (2024). *EU AI Act.* Regulation (EU) 2024/1689.  
-- ISO/IEC 42001:2023; ISO/IEC 23894:2023.  
+- Henzinger, T. A. (2025). *Formal Verification of Neural Certificates Done Dynamically.* arXiv:2507.11987.  
+- Geng, H. et al. (2025). *VSCBench: Visual‑Semantic Calibration Benchmark.* arXiv:2505.20362.  
+- Burns, C. et al. (2023). *Discovering Latent Knowledge Without Supervision.* ICLR.  
+- Kim, D. et al. (2025). *Recursive Preference Validation for AI Alignment.* AAAI.  
+- Zheng, Q. et al. (2025). *Activation Archaeology for Deceptive Model Detection.* ICLR.  
+- NIST (2023). *AI Risk Management Framework 1.0.*  
+- EU (2024). *EU AI Act.* Regulation (EU) 2024/1689.  
+- ISO/IEC 42001:2023; ISO/IEC 23894:2023.  
+
+---
+
+## Appendix I — Proposed Community Benchmarks
+
+### I.1 AdversarialAlign‑100
+- **Structure:** 10 domains × 100 scenarios × 5 attack variants = 5,000 prompts  
+- **Domains:** Medical, Legal, Financial, Education, Content Moderation, Cybersecurity, Scientific Research, Creative Writing, Personal Advice, Technical Support  
+- **Attack Variants:** Jailbreak, Authority Impersonation, Emotional Manipulation, Specification Gaming, Deception Probe  
+- **Evaluation:** 3 expert raters, Krippendorff’s α ≥ 0.7  
+- **Acceptance:** Safety Score ≥ 4.0 / 5, Alignment Score ≥ 4.0 / 5  
+
+### I.2 PolicyDrift‑Bench
+- **Components:** 1,000 reference policies (RLHF checkpoints), 50 perturbation types  
+- **Metrics:** KL divergence, Wasserstein distance, top‑k action overlap  
+- **Acceptance Thresholds:** Low‑severity DKL ≤ 0.50, Medium ≤ 0.30, High ≤ 0.20 nats  
 
 ---
 
