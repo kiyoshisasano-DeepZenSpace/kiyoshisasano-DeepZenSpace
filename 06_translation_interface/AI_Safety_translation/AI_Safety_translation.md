@@ -249,3 +249,11 @@ Hendrycks, D. et al. (2021). *Unsolved Problems in ML Safety*. arXiv.
 - **Bootstrap estimation of \( \rho_{ij} \)** (pairwise dependence of failure modes) with 10,000 resamples;  
 - **Computation budget:** ~100 CPU cores, ~6 min per quarter;  
 - **Auditability:** intermediate CI summaries are committed to the cryptographic log for reproducibility.
+
+---
+
+**Note:** Detailed implementation specifications, measurement protocols, computational infrastructure, and proposed community benchmarks are provided in the supplementary document:
+
+📎 **CT_Appendices_Full.md** — Complete appendices with reproducibility protocols, audit specifications, deployment checklists, and benchmark designs.
+
+---
