@@ -129,6 +129,66 @@ Example enforcement:
 
 ---
 
+## 🧩 Gradient Metrics Overview (2025 Extension)
+
+### Theoretical Motivation
+The Bridge Hub now supports *gradient-based coherence estimation* for conversational systems, inspired by:
+
+\[
+𝒟(σ,t) = 1 - \frac{‖∇C(σ,t)‖}{K_{drift}}
+\]
+
+where **C(σ,t)** represents the turn-to-turn coherence potential,  
+and **‖∇C(σ,t)‖** approximates the instantaneous structural drift in dialogue flow.
+
+This quantifies how *stable* or *unstable* a conversational state is,  
+mapping discrete heuristic cues (“wait”, “sorry”, “retry”) into a continuous coherence score.
+
+---
+
+### Implementation Mapping
+
+| Module | Function | Corresponding Term |
+|---------|-----------|-------------------|
+| `pause_classifier_bot.py` | `compute_drift_intensity()` | ‖∇C(σ,t)‖ — gradient magnitude (textual drift proxy) |
+| `pause_classifier_bot.py` | `compute_D_sigma_t()` | 𝒟(σ,t) — normalized coherence score |
+| `latency_tracker.py` | `delta_D` | Δ𝒟 — temporal change in coherence |
+| `latency_tracker.py` | `gradient_metrics` (JSON field) | serialized gradient dynamics |
+
+---
+
+### Practical Use
+
+- Each **pause event** now includes `D_sigma_t` (drift-normalized coherence).
+- Each **latency event** carries `Δ𝒟`, showing how coherence evolves over time.
+- These values enable cross-phase pattern analysis and model calibration.
+
+Example:
+
+```json
+"gradient_metrics": {
+  "D_sigma_t": 0.781,
+  "delta_D": -0.079,
+  "K_drift": 5.0
+}
+```
+
+---
+
+### Interpretation
+
+| Metric | Meaning |
+|---------|---------|
+| **High 𝒟(σ,t)** | Stable alignment (low drift) |
+| **Low 𝒟(σ,t)** | Breakdown or phase mismatch |
+| **Δ𝒟 < 0** | Degradation (repair failure or latency-induced loss) |
+| **Δ𝒟 > 0** | Recovery (successful realignment) |
+
+This establishes a lightweight *computational bridge* between theoretical coherence dynamics  
+and runtime event tracking within the PLD ecosystem.
+
+---
+
 ## 🧭 Navigation by Role
 
 | Role | Recommended Path |
