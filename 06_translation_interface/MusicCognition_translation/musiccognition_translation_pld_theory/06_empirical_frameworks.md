@@ -153,3 +153,26 @@ This enables a **neurodynamic understanding** of rhythm and communication that u
 - Madison, G. (2011). *Explaining the experience of groove.* Empirical Studies of the Arts.  
 - Keller, P. E. (2012). *Ensemble performance: Interpersonal coordination in musical contexts.* Psychology of Music.  
 - Sasano, K. (2025). *Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance.*
+
+
+## Pilot Study Proposal
+
+### Objective
+To empirically test the predictions of Phase Loop Dynamics (PLD) within the domain of rhythm cognition.
+
+### Experimental Design
+A **perturbed tapping paradigm** incorporating **intermittent silent gaps** will be used to examine temporal prediction and correction mechanisms.
+
+- **Task:** Participants synchronize taps with a metronomic sequence that occasionally introduces phase perturbations and silent intervals.  
+- **Measures:**  
+  - **Drift rate (𝒟):** accumulated temporal deviation  
+  - **Correction gain (ℛ):** magnitude of phase re-alignment  
+  - **Latency (𝓛₃):** response delay following silence  
+
+### Hypothesis
+PLD predicts that **repair dynamics** (phase correction following perturbation) exhibit characteristic asymmetries—rapid correction after short gaps, but delayed stabilization following latent (silent) phases.
+
+### Expected Outcomes
+Evidence of distinct **drift–repair coupling** patterns would support the idea that **linguistic and musical timing share a common phase-regulatory mechanism**.
+
+**Estimated Duration:** 2–3 months (pilot stage)
