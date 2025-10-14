@@ -10,12 +10,12 @@ PLD Bridge Hub — One-Command Demo Bootstrap
 Usage:
   python bootstrap_demo.py
 """
-
-import json, sys, os, datetime
+import json, sys, datetime
 from pathlib import Path
 
 # ---------- Paths ----------
 HERE = Path(__file__).resolve().parent
+# Bridge Hub 直下に置く前提：リポジトリ直下の 02_quickstart_kit を参照
 REPO_SCHEMA = (HERE / "../02_quickstart_kit/30_metrics/schemas/pld_event.schema.json").resolve()
 OUT_DIR = HERE / "demo_quick"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -27,7 +27,7 @@ try:
     import jsonschema
     from jsonschema import Draft7Validator
     HAS_JSONSCHEMA = True
-except Exception as e:
+except Exception:
     HAS_JSONSCHEMA = False
 
 # ---------- Embedded minimal fallback schema ----------
@@ -49,7 +49,7 @@ FALLBACK_SCHEMA = {
         "latency_hold"
       ]
     },
-    "timestamp": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
     "session_id": { "type": "string" },
     "metadata": { "type": "object" }
   },
@@ -92,21 +92,16 @@ def write_demo_events():
     sid = "sess_demo_001"
     uid = "user_demo_001"
     rows = [
-        # A small drift, then repair
         {"event_type":"drift_detected","timestamp":now_iso(),"session_id":sid,
          "metadata":{"user_id":uid,"context_id":"screen:search","drift_type":"silence","confidence_score":0.31,"attempt":1}},
         {"event_type":"repair_triggered","timestamp":now_iso(),"session_id":sid,
          "metadata":{"strategy":"soft_repair","latency_before_repair":1.4,"context_id":"screen:search","attempt":1}},
-        # System adds a pacing hold (must include session_id + duration_ms)
         {"event_type":"latency_hold","timestamp":now_iso(),"session_id":sid,
          "metadata":{"duration_ms": 900.0, "reason":"soft_repair_probe","context":"search_shimmer","user_cancelled": False}},
-        # User reenters successfully
         {"event_type":"reentry_success","timestamp":now_iso(),"session_id":sid,
          "metadata":{"previous_context_id":"screen:search","reentry_lag":2.3,"reentry_method":"user_initiated","goal_completed": True}},
-        # Another drift without repair (to show ratios)
         {"event_type":"drift_detected","timestamp":now_iso(),"session_id":sid,
          "metadata":{"user_id":uid,"context_id":"screen:checkout","drift_type":"ambiguity","confidence_score":0.29,"attempt":1}},
-        # Optional: repair escalation example
         {"event_type":"repair_escalation","timestamp":now_iso(),"session_id":sid,
          "metadata":{"from":"soft_repair","to":"hard_repair","reason":"no_response"}}
     ]
@@ -141,7 +136,6 @@ def summarize(rows):
     for r in rows:
         by_type[r["event_type"]] = by_type.get(r["event_type"], 0) + 1
 
-    # Metrics
     drift = by_type.get("drift_detected", 0)
     repair = by_type.get("repair_triggered", 0) or 1  # avoid div by zero for demo
     drift_to_repair_ratio = drift / repair
@@ -151,8 +145,7 @@ def summarize(rows):
     avg_latency_hold = mean(latency_values) if latency_values else 0.0
 
     reentry_success = by_type.get("reentry_success", 0)
-    # In a real system you'd divide by total attempts; demo keeps numerator only.
-    reentry_success_rate_demo = reentry_success
+    reentry_success_rate_demo = reentry_success  # demo: numerator only
 
     return by_type, drift_to_repair_ratio, avg_latency_hold, reentry_success_rate_demo
 
@@ -160,6 +153,8 @@ def write_report(by_type, dtr, avg_lat, re_rate, valid, total, errors):
     lines = []
     lines.append("# PLD Demo Report\n")
     lines.append(f"- Valid events: **{valid}/{total}**")
+    if not HAS_JSONSCHEMA:
+         lines.append("> NOTE: Validation was skipped because 'jsonschema' is not installed.")
     if errors:
         lines.append("## Validation errors")
         for ln, msg in errors:
@@ -171,6 +166,9 @@ def write_report(by_type, dtr, avg_lat, re_rate, valid, total, errors):
     lines.append(f"- drift_to_repair_ratio: `{dtr:.2f}`")
     lines.append(f"- avg_latency_hold (ms): `{avg_lat:.1f}`")
     lines.append(f"- reentry_success_rate (demo numerator): `{re_rate}`")
+    lines.append("\n> NOTE: `reentry_success_rate` is a demo placeholder (numerator only).")
+    lines.append("> NOTE: `drift_to_repair_ratio` uses 1 as denominator fallback when no repair events are present.")
+    lines.append("\n---\n_This demo writes UTC ISO8601 timestamps (RFC3339)._")
     REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 def main():
