@@ -7,8 +7,6 @@
 
 ---
 
----
-
 ## Purpose and Translation Intent
 
 This repository presents the **HCI-oriented epistemic translation** of the *Phase Loop Dynamics (PLD)* theoretical framework.  
