@@ -85,7 +85,7 @@ PLD treats coordination as motion through recurrent states; each state transitio
 
 ```mermaid
 flowchart LR
-  D[Drift (𝒟)] --> R[Repair (ℛ)] --> L3[Latency (𝓛₃)] --> L5[Resonance (𝓛₅)] -- disturbance --> D
+  D["Drift (𝒟)"] --> R["Repair (ℛ)"] --> L3["Latency (𝓛₃)"] --> L5["Resonance (𝓛₅)"] -- disturbance --> D
 ```
 
 ---
