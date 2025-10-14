@@ -92,30 +92,27 @@ flowchart LR
 
 ### 1.3 Novel Contributions of This Translation
 
-1.Formalizes coordination as a phase-loop cycle, bridging qualitative and quantitative HCI.
+1. Formalizes coordination as a phase-loop cycle, bridging qualitative and quantitative HCI.
+2. Defines operational metrics (δ, t(ℛ), Δt₍L₃₎, ρ) for empirical validation.
+3. Integrates temporal affordance into feedback timing.
+4. Establishes a lexically stable framework (drift / repair / resonance) for design analysis.
 
-2.Defines operational metrics (δ, t(ℛ), Δt₍L₃₎, ρ) for empirical validation.
-
-3.Integrates temporal affordance into feedback timing.
-
-4.Establishes a lexically stable framework (drift / repair / resonance) for design analysis.
+---
 
 ### 1.4 Scope and Limitations
 
 The translation addresses theoretical constructs and measurable indicators only.
 Implementation, algorithmic optimization, and application-specific evaluation are beyond scope.
 
+---
+
 ### 1.5 Reading Roadmap
 
 The following sections develop the translation progressively:
 
 - Part 2: Situates PLD within HCI foundations.
-
 - Part 3: Defines core constructs.
-
 - Part 4: Models the temporal cycle.
-
 - Part 5: Operationalizes measurement.
-
 - Part 6: Synthesizes implications and future work.
- Appendices provide term governance and conceptual maps.
+  Appendices provide term governance and conceptual maps.
