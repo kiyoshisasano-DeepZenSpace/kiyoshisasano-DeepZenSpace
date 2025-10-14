@@ -86,6 +86,11 @@ Formally:
 This can be encoded in **temporal logic** (e.g., LTL or CTL*)  
 and checked via standard **model-checking frameworks**.
 
+In the current prototype, the temporal coherence measure 𝒟(σ,t) = 1 − (‖∇C(σ,t)‖ / K_drift)  
+operationally quantifies local stability, making the system’s drift-repair transitions  
+computationally traceable as gradient-normalized coherence shifts.
+
+
 ---
 
 ## 6. Relation to Existing Work
