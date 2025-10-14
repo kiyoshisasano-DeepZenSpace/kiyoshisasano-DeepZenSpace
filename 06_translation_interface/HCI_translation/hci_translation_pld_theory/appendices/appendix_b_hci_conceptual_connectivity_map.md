@@ -131,8 +131,8 @@ All extensions must comply with lexical stability standards (see Appendix A).
 
 ## B.7 Citation
 
-**Phase Loop Dynamics — HCI Conceptual Connectivity Map (v1.0)**  
-<https://github.com/kiyoshisasano-DeepZenSpacekiyoshisasano-DeepZenSpace>
+**Phase Loop Dynamics — HCI Conceptual Connectivity Map (v0.6)**  
+<https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/main/PLD_Lexicon_Connectivity_Map.md>
 
 > “Coordination is not a line of dialogue but a loop of timing.”
 
