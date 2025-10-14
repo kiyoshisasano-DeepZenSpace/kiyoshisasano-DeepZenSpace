@@ -1,4 +1,37 @@
-# Part 5 — Measurement Framework and Empirical Modeling in HCI Terms
+\# Part 5 — Measurement Framework and Empirical Modeling in HCI Terms
+*(v1.1 – Added Orientation, Reading Guide, and Visual Summary)*
+
+---
+
+## 5.0 Reading Orientation
+
+**Estimated time:** ≈ 25 min **Difficulty:** 🔴 (core empirical section)
+
+| Section | Time | Focus | **How to Approach** |
+|----------|------|--------|---------------------|
+| 5.1–5.3 | 5 min | Core metrics overview | Read carefully – anchors all later figures |
+| 5.4–5.7 | 10 min | Methods + models | Skim equations first → then examples |
+| 5.8–5.10 | 5 min | Interpretation & ethics | Review for discussion section |
+| 5.11 | Reference | For replication | Use for citations |
+
+**Fastest Path note:**   
+If you need a 10-minute overview for review or presentation:  
+read **5.1 Overview**, **5.3 Metrics Table**, and **5.10 Summary of Contributions** only.  
+
+**Goal:** Understand how PLD’s formal operators (δ, t(ℛ), ρ, Δt₍L₃₎, S) translate into empirical measurement and modeling frameworks for HCI.
+
+---
+
+```mermaid
+flowchart TD
+  A["PLD Operators (𝒟, ℛ, 𝓛₅, 𝓛₃)"] --> B["Operational Metrics (δ, t(ℛ), ρ, Δt₍L₃₎, S)"]
+  B --> C["Empirical Paradigms (Dialog, Interface, Collaborative Task)"]
+  C --> D["Analytical Models (Markov, Regression, Decay)"]
+  D --> E["Design & Ethics → Temporal Coherence Evaluation"]
+```
+**Figure 5.1 – From PLD operators to measurement and ethical evaluation pipeline.**
+
+---
 
 ## 5.1 Overview
 
@@ -159,9 +192,9 @@ Quantifying timing introduces responsibilities:
 
 ## 5.11 References (Indicative)
 
-Clark, H. H. (1996). *Using Language.* Cambridge University Press.  
-Dourish, P. (2001). *Where the Action Is.* MIT Press.  
-Norman, D. A. (2013). *The Design of Everyday Things* (Rev. ed.). Basic Books.  
-Schegloff, E. A. (1977). Repair and Structure in Conversation. *Linguistic Inquiry, 8*(3).  
-Stivers, T. (2009). How Important Is the Gap? *Discourse Processes, 46*(1).  
-Winograd, T., & Flores, F. (1986). *Understanding Computers and Cognition.* Ablex.
+- Clark, H. H. (1996). *Using Language.* Cambridge University Press.  
+- Dourish, P. (2001). *Where the Action Is.* MIT Press.  
+- Norman, D. A. (2013). *The Design of Everyday Things* (Rev. ed.). Basic Books.  
+- Schegloff, E. A. (1977). Repair and Structure in Conversation. *Linguistic Inquiry, 8*(3).  
+- Stivers, T. (2009). How Important Is the Gap? *Discourse Processes, 46*(1).  
+- Winograd, T., & Flores, F. (1986). *Understanding Computers and Cognition.* Ablex.
