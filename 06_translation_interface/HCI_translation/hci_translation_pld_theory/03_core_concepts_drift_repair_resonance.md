@@ -1,23 +1,54 @@
 # Part 3 — The Drift–Repair–Resonance (DRR) Cycle
+*(v1.1 – Added Orientation, Approach Table, and Visual Flow Diagram)*
+
+---
+
+## 3.0 Reading Orientation
+
+**Estimated time:** ≈ 30 min **Difficulty:** 🔴 (core section)
+
+| Section | Time | Focus | **How to Approach** |
+|----------|------|--------|---------------------|
+| 3.1 – Overview | 5 min | Conceptual outline | Read fully – sets theoretical rhythm |
+| 3.2 – Cycle Components | 5 min | Mapping to HCI constructs | Review table; mark familiar terms |
+| 3.3–3.7 | 15 min | Transitions + timing rules | Follow Fig 3.1 while reading |
+| 3.8–3.10 | 5 min | Examples + metrics | Use as reference |
+| 3.11 | Optional | Theory recap | Skim on first pass |
+
+**Fastest Path note:** For the 90-minute route, read only Sections 3.1–3.5 and 3.8; skip formal notation on first pass.  
+
+**Goal:** Understand how drift, repair, and resonance form a temporal grammar governing interaction stability.  
+
+---
 
 ## 3.1 Overview
 
 The Drift–Repair–Resonance (DRR) cycle forms the dynamic backbone of Phase Loop Dynamics (PLD) in HCI.  
-It formalizes how breakdown, correction, and re-alignment unfold over time within any interactive system—spoken, gestural, or digital.  
-Where classical HCI treated breakdowns as anomalies (Suchman 1987; Norman 1988), PLD reframes them as structural rhythms: every coordinated exchange oscillates through predictable states of drift (𝒟), repair (ℛ), and resonance (𝓛₅), punctuated by latency (𝓛₃) that enables recovery.
+It formalizes how breakdown, correction, and re-alignment unfold over time within any interactive system — spoken, gestural, or digital.  
+Where classical HCI treated breakdowns as anomalies (Suchman 1987; Norman 1988), PLD reframes them as structural rhythms:  
+every coordinated exchange oscillates through predictable states of **drift (𝒟)**, **repair (ℛ)**, and **resonance (𝓛₅)**, punctuated by **latency (𝓛₃)** that enables recovery.
+
+```mermaid
+flowchart LR
+  D["Drift (𝒟)"] -- detect loss --> R["Repair (ℛ)"]
+  R -- confirmation --> L5["Resonance (𝓛₅)"]
+  L5 -- decay / context shift --> L3["Latency (𝓛₃)"]
+  L3 -- renewed initiative --> D
+```
+**Figure 3.1 – The Drift–Repair–Resonance Cycle with Latency as temporal buffer.**
 
 ---
 
 ## 3.2 Cycle Components in HCI Terms
 
 | Phase | Interactional Function | Core HCI Construct | Temporal Marker |
-|--------|-------------------------|--------------------|------------------|
+|--------|------------------------|--------------------|-----------------|
 | Drift (𝒟) | Deviation from shared reference or pacing | Breakdown / Misalignment | Anomaly onset |
 | Repair (ℛ) | Restoring mutual intelligibility | Grounding / Error Recovery | Clarification turn |
 | Resonance (𝓛₅) | Re-establishing rhythmic coordination | Entrainment / Alignment | Flow stabilization |
 | Latency (𝓛₃) | Pause enabling re-synchronization | Temporal Articulation | Silence or delay segment |
 
-Boundaries are fuzzy; detection relies on transitional cues—pause length, reformulation, timing correlation, etc.
+Boundaries are fuzzy; detection relies on transitional cues — pause length, reformulation, timing correlation, etc.
 
 ---
 
@@ -169,10 +200,10 @@ PLD thus unifies the descriptive depth of conversation analysis with the quantit
 
 ## 3.12 References (Indicative)
 
-Clark, H. H. (1996). *Using Language.* Cambridge University Press.  
-Csikszentmihalyi, M. (1990). *Flow: The Psychology of Optimal Experience.* Harper & Row.  
-Dourish, P. (2001). *Where the Action Is.* MIT Press.  
-Hassenzahl, M. (2004). The thing and I: Understanding the relationship between user and product. *Funology*, 31–42.  
-Norman, D. A. (2013). *The Design of Everyday Things* (Rev. ed.). Basic Books.  
-Suchman, L. A. (1987). *Plans and Situated Actions.* Cambridge University Press.  
-Stivers, T. (2009). How important is the gap? *Discourse Processes, 46*(2–3), 117–149.
+- Clark, H. H. (1996). *Using Language.* Cambridge University Press.  
+- Csikszentmihalyi, M. (1990). *Flow: The Psychology of Optimal Experience.* Harper & Row.  
+- Dourish, P. (2001). *Where the Action Is.* MIT Press.  
+- Hassenzahl, M. (2004). The thing and I: Understanding the relationship between user and product. *Funology*, 31–42.  
+- Norman, D. A. (2013). *The Design of Everyday Things* (Rev. ed.). Basic Books.  
+- Suchman, L. A. (1987). *Plans and Situated Actions.* Cambridge University Press.  
+- Stivers, T. (2009). How important is the gap? *Discourse Processes, 46*(2–3), 117–149.
