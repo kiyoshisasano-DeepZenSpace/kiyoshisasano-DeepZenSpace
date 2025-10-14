@@ -1,13 +1,46 @@
 # Part 4 — Theoretical Contributions of Phase Loop Dynamics to HCI
+*(v1.1 – Added Orientation, Comparison Matrix, and Visual Summary)*
+
+---
+
+## 4.0 Reading Orientation
+
+**Estimated time:** ≈ 25 min **Difficulty:** 🟡–🔴 (conceptually dense)
+
+| Section | Time | Focus | **How to Approach** |
+|----------|------|--------|---------------------|
+| 4.1–4.2 | 5 min | Theoretical overview | Read carefully – defines PLD’s novelty |
+| 4.3–4.5 | 10 min | Core contribution tables | Compare side-by-side with Part 2/3 |
+| 4.6–4.7 | 5 min | Design implications & open questions | Skim if theory-focused |
+| 4.8–4.9 | 5 min | Cross-scale unification | Read last for synthesis |
+
+**Fastest Path note:**  
+For evaluators or reviewers, read **4.1–4.3** and **4.6** only (≈ 10 min) to grasp PLD’s theoretical distinctiveness.  
+
+**Goal:**  
+Understand *how PLD unifies fragmented HCI theories into a temporal mechanics of coordination*, and how this reframing yields measurable design principles.
+
+---
 
 ## 4.1 Overview
 
-Phase Loop Dynamics (PLD) reframes HCI as an ecology of temporal coordination. Rather than discrete input–output steps, joint activity is maintained by recurrent loops—drift (𝒟), repair (ℛ), resonance (𝓛₅), latency (𝓛₃)—that continually re-synchronize interaction. PLD contributes at four levels:  
+Phase Loop Dynamics (PLD) reframes HCI as an ecology of temporal coordination.  
+Rather than discrete input–output steps, joint activity is maintained by recurrent loops—**drift (𝒟)**, **repair (ℛ)**, **resonance (𝓛₅)**, **latency (𝓛₃)**—that continually re-synchronize interaction.  
+PLD contributes at four levels:  
 (i) conceptual unification of scattered theories,  
 (ii) temporal formalization of grounding and feedback,  
 (iii) a measurable schema for coordination quality, and  
 (iv) an extension of design theory toward temporal affordances.  
 (See Part 2 for definitions; Part 5 for metrics.)
+
+```mermaid
+flowchart TD
+  A["Classical HCI Theories"] --> B["Temporal Unification via PLD"]
+  B --> C["Drift–Repair–Resonance Loops"]
+  C --> D["Temporal Metrics (δ, t(ℛ), ρ, Δt₍L₃₎, S)"]
+  D --> E["Design Implications: Temporal Affordances"]
+```
+**Figure 4.1 – From fragmented models to a unified temporal mechanics.**
 
 ---
 
@@ -122,12 +155,18 @@ Collectively, PLD supplies a unifying, measurable theory of coordination rhythm 
 
 ---
 
+**Cross-reference Note**  
+This part completes PLD’s theoretical foundation.  
+Proceed to Part 5 (Measurement Framework) for empirical calibration, or Part 6 (Discussion) for ethical and design-practice implications.
+
+---
+
 ## 4.10 References (Indicative)
 
-Clark, H. H. (1996). *Using Language.* Cambridge University Press.  
-Dourish, P. (2001). *Where the Action Is: The Foundations of Embodied Interaction.* MIT Press.  
-Hassenzahl, M. (2004). The interplay of beauty, goodness and usability. *Human–Computer Interaction, 19*(4), 319–349.  
-Hutchins, E. (1995). *Cognition in the Wild.* MIT Press.  
-Norman, D. A. (2013). *The Design of Everyday Things* (Rev. ed.). Basic Books.  
-Suchman, L. A. (1987). *Plans and Situated Actions.* Cambridge University Press.  
-Winograd, T., & Flores, F. (1986). *Understanding Computers and Cognition.* Ablex.
+- Clark, H. H. (1996). *Using Language.* Cambridge University Press.  
+- Dourish, P. (2001). *Where the Action Is: The Foundations of Embodied Interaction.* MIT Press.  
+- Hassenzahl, M. (2004). The interplay of beauty, goodness and usability. *Human–Computer Interaction, 19*(4), 319–349.  
+- Hutchins, E. (1995). *Cognition in the Wild.* MIT Press.  
+- Norman, D. A. (2013). *The Design of Everyday Things* (Rev. ed.). Basic Books.  
+- Suchman, L. A. (1987). *Plans and Situated Actions.* Cambridge University Press.  
+- Winograd, T., & Flores, F. (1986). *Understanding Computers and Cognition.* Ablex.
