@@ -1,4 +1,36 @@
-# Appendix B — HCI Conceptual Connectivity Map (v1.0)
+# Appendix B — HCI Conceptual Connectivity Map (v 1.1)
+*(Added Orientation, Reading Guide, and Cross-Reference Links)*
+
+---
+
+## B.0 Reading Orientation
+
+**Estimated time:** ≈ 8 min **Difficulty:** 🟢 (reference / visualization)
+
+| Section | Time | Focus | **How to Approach** |
+|-----------|-------|--------|---------------------|
+| B.1–B.3 | 4 min | Legend + Connectivity Diagram | Read once to grasp map structure |
+| B.4–B.5 | 3 min | Interpretive and Usage notes | Skim for examples relevant to your domain |
+| B.6–B.7 | 1 min | Version & Citation info | Use when referencing in reports |
+
+**Fastest Path (≈ 4 min):**  
+1. Glance at B.1 Legend → B.2 Diagram → B.3 Table.  
+2. Optionally scan B.4 for causality clarifications.
+
+---
+
+```mermaid
+flowchart TD
+  A["@core Layer – Interaction Primitives"] --> B["@support Layer – Temporal Modulators"]
+  B --> C["@derived Layer – Emergent Phenomena"]
+  A --> D["Measurement Anchors (δ, t(ℛ), ρ, Δt₍L₃₎)"]
+  D --> E["Empirical Models (Part 5)"]
+  E --> F["Design + Ethics (Part 6)"]
+  F --> G["Lexicon Governance (Appendix A)"]
+```
+**Figure B.1 – How conceptual connectivity links to measurement and design across the PLD framework.**
+
+---
 
 ## Purpose
 
@@ -35,12 +67,7 @@ graph TD
     Coherence["@derived Coherence 🟡"] --> Phase
     Latency["@derived Latency (anticipatory pause) 🟡"] --> Coherence
 ```
-
-### Interpretation
-
-- **Drift → Repair → Resonance** forms the *temporal recovery loop*: misalignment triggers re-alignment, which stabilizes into synchrony.  
-- **Phase / Phase Boundary** organize these transitions, while **Rhythm** and **Silence** modulate their pacing.  
-- **Coherence** evaluates alignment within a phase; **Latency** sustains predictive readiness between turns.
+**Figure B.2 – Conceptual connectivity map of PLD constructs in HCI.**
 
 ---
 
@@ -105,6 +132,17 @@ All extensions must comply with lexical stability standards (see Appendix A).
 ## B.7 Citation
 
 **Phase Loop Dynamics — HCI Conceptual Connectivity Map (v1.0)**  
-<https://github.com/kiyoshisasano-DeepZenSpace>
+<https://github.com/kiyoshisasano-DeepZenSpacekiyoshisasano-DeepZenSpace>
 
 > “Coordination is not a line of dialogue but a loop of timing.”
+
+---
+
+### Cross-Reference Note
+Appendix B completes the translation suite:
+
+- **Appendix A** → Lexical governance and term stability.  
+- **Appendix B** → Conceptual connectivity and visual ontology.  
+Together they support **Part 5 (Measurement)** and **Part 6 (Discussion)** by ensuring terminological and conceptual consistency across all PLD documents.
+
+---
