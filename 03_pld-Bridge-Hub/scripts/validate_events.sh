@@ -6,12 +6,6 @@
 #
 #   ./scripts/validate_events.sh /path/to/events.jsonl [/path/to/pld_event.schema.json]
 #     -> validates an existing JSONL against the schema (jsonschema required)
-#
-# Notes:
-# - Tries to resolve repo root from this script's location, so you can call from anywhere.
-# - If schema path is omitted, it attempts to use:
-#     ../02_quickstart_kit/30_metrics/schemas/pld_event.schema.json   (relative to repo root)
-#   and falls back to the embedded minimal schema from the inline validator (latency_hold rule only).
 
 set -euo pipefail
 
@@ -41,14 +35,11 @@ if [ ! -f "${EVENTS_PATH}" ]; then
   exit 2
 fi
 
-# Use an inline Python validator to avoid extra files.
 python - "$EVENTS_PATH" "$SCHEMA_PATH" <<'PY'
 import sys, json, pathlib
-
 events_path = pathlib.Path(sys.argv[1]).resolve()
 schema_path = pathlib.Path(sys.argv[2]).resolve()
 
-# Minimal fallback schema (mirrors bootstrap_demo.py)
 FALLBACK_SCHEMA = {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
@@ -57,17 +48,12 @@ FALLBACK_SCHEMA = {
     "event_type": {
       "type": "string",
       "enum": [
-        "drift_detected",
-        "repair_triggered",
-        "repair_failed",
-        "reentry_success",
-        "reentry_anchor_set",
-        "reentry_missing_anchor",
-        "repair_escalation",
-        "latency_hold"
+        "drift_detected","repair_triggered","repair_failed",
+        "reentry_success","reentry_anchor_set","reentry_missing_anchor",
+        "repair_escalation","latency_hold"
       ]
     },
-    "timestamp": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
     "session_id": { "type": "string" },
     "metadata": { "type": "object" }
   },
@@ -76,7 +62,7 @@ FALLBACK_SCHEMA = {
     {
       "if": { "properties": { "event_type": { "const": "latency_hold" } } },
       "then": {
-        "required": ["event_type", "timestamp", "session_id"],
+        "required": ["event_type","timestamp","session_id"],
         "properties": {
           "metadata": {
             "type": "object",
@@ -117,25 +103,28 @@ validator = Draft7Validator(schema)
 valid = 0
 errors = []
 counts = {}
+total_lines = 0
 
 with events_path.open("r", encoding="utf-8") as f:
     for i, line in enumerate(f, 1):
         if not line.strip():
             continue
+        total_lines += 1
         try:
             obj = json.loads(line)
         except Exception as e:
             errors.append((i, f"Invalid JSON: {e}"))
             continue
-        for err in validator.iter_errors(obj):
-            errors.append((i, err.message))
+        errs = list(validator.iter_errors(obj))
+        if errs:
+            for err in errs:
+                errors.append((i, err.message))
         else:
             valid += 1
             et = obj.get("event_type", "<none>")
             counts[et] = counts.get(et, 0) + 1
 
-total = valid + len(errors)
-print(f"[ok] Valid events: {valid}/{total}")
+print(f"[ok] Valid events: {valid}/{total_lines}")
 if errors:
     print("[fail] Validation errors:")
     for ln, msg in errors:
