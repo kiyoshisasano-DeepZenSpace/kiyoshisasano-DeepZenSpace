@@ -1,4 +1,40 @@
 # Part 6 — Discussion and Future Directions
+*(v1.1 – Added Orientation, Fastest-Path Guide, and Temporal-Ecology Diagram)*
+
+---
+
+## 6.0 Reading Orientation
+
+**Estimated time:** ≈ 20 min **Difficulty:** 🟡 (interpretive synthesis)
+
+| Section | Time | Focus | **How to Approach** |
+|----------|------|--------|---------------------|
+| 6.1–6.3 | 8 min | Research + Design implications | Read carefully – closes empirical arc |
+| 6.4–6.6 | 8 min | Cross-disciplinary links + future work | Skim table → read 6.6 for agenda |
+| 6.7–6.8 | 4 min | Synthesis + conclusion | Read fully – articulation of “temporal ecology” |
+| 6.9 | Reference | For citation | optional |
+
+**Fastest Path (≈ 10 min):**
+1. Read 6.1 Overview + 6.2 Implications for HCI Research (5 min)  
+2. Skim 6.3 Design Implications (2 min)  
+3. Read 6.7–6.8 Synthesis & Conclusion (3 min)
+
+**Goal:**  
+Grasp PLD’s broader impact—how timing becomes an ethical and designable dimension, and where empirical research should go next.
+
+---
+
+```mermaid
+flowchart TD
+  A["PLD Core Loops (𝒟, ℛ, 𝓛₅, 𝓛₃)"] --> B["Measurement & Modeling (Part 5 Metrics)"]
+  B --> C["Design Implications (Temporal Affordance, Rhythmic Feedback)"]
+  C --> D["Ethical Framework (User Autonomy in Timing)"]
+  D --> E["Future Research (Cross-modal, Cultural, Neural)"]
+  E --> F["Temporal Ecology (Interaction as Co-Regulation)"]
+```
+**Figure 6.1 – From loop metrics to temporal-ecology agenda.**
+
+---
 
 ## 6.1 Overview
 
@@ -121,10 +157,10 @@ Future research will refine these measures, integrate them into adaptive systems
 
 ## 6.9 References (Indicative)
 
-Clark, H. H. (1996). *Using Language.* Cambridge University Press.  
-Dourish, P. (2001). *Where the Action Is.* MIT Press.  
-Hutchins, E. (1995). *Cognition in the Wild.* MIT Press.  
-Norman, D. A. (2013). *The Design of Everyday Things* (Rev. ed.). Basic Books.  
-Suchman, L. A. (1987). *Plans and Situated Actions.* Cambridge University Press.  
-Stivers, T. (2009). Timing as a Resource for Interdependence in Conversation. *Discourse Processes, 46*(1).  
-Winograd, T., & Flores, F. (1986). *Understanding Computers and Cognition.* Ablex.
+- Clark, H. H. (1996). *Using Language.* Cambridge University Press.  
+- Dourish, P. (2001). *Where the Action Is.* MIT Press.  
+- Hutchins, E. (1995). *Cognition in the Wild.* MIT Press.  
+- Norman, D. A. (2013). *The Design of Everyday Things* (Rev. ed.). Basic Books.  
+- Suchman, L. A. (1987). *Plans and Situated Actions.* Cambridge University Press.  
+- Stivers, T. (2009). Timing as a Resource for Interdependence in Conversation. *Discourse Processes, 46*(1).  
+- Winograd, T., & Flores, F. (1986). *Understanding Computers and Cognition.* Ablex.
