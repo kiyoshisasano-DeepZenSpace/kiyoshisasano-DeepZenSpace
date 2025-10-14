@@ -1,11 +1,9 @@
-# demo_pld_trace/utils/reentry_detector.py (simplified)
+import re
 def detect_reentry(past_segments, current_input):
     """Simplified reentry detection"""
-    for seg in past_segments:
-        if any(word in current_input.lower() for word in ["never mind", "go back", "previous"]):
-            return {
-                'is_reentry': True,
-                'reason': 'User is resuming previous intent',
-                'matching_segment': seg
-            }
+    t = (current_input or "").lower()
+    if not past_segments:
+        return {'is_reentry': False, 'reason': '', 'matching_segment': ''}
+    if re.search(r"\b(never\s+mind|go\s+back|previous)\b", t, re.I):
+        return {'is_reentry': True,'reason': 'User is resuming previous intent','matching_segment': past_segments[-1]}
     return {'is_reentry': False, 'reason': '', 'matching_segment': ''}
