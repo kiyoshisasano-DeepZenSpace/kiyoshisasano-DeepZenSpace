@@ -56,3 +56,18 @@ The goal is not literal translation, but a **paradigmatic reconstruction**: mapp
 
 > *"Every silence carries a beat. Every drift, a pulse seeking return."*  
 > — *Music Cognition Translation of PLD (v1.0)*
+
+
+## Relation to Existing Frameworks
+
+Phase Loop Dynamics (PLD) connects and extends key paradigms in temporal and cognitive modeling:
+
+- **Dynamic Attending Theory** (Large & Jones) — attention as oscillatory entrainment  
+- **Sensorimotor Synchronization** (Repp) — timing adaptation in performance and perception  
+- **Coupled Oscillator Models** (Kuramoto, Large, Kelso) — inter-agent phase coordination  
+
+### Novel Contributions of PLD
+- Establishes a **unified loop-based grammar** across linguistic and musical domains  
+- Introduces **explicit formalization of the latent phase**, bridging silence and anticipation  
+- Provides a **cross-domain feedback architecture** linking syntax, rhythm, and cognition  
+- Frames both language and music as **recursive phase fields**, not discrete symbol systems
