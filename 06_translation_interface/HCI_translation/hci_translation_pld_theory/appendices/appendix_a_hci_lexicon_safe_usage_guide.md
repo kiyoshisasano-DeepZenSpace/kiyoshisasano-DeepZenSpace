@@ -1,4 +1,38 @@
-# Appendix A — HCI Lexicon Safe Usage Guide (v1.0)
+# Appendix A — HCI Lexicon Safe Usage Guide (v 1.1)
+*(Added Orientation, Visual Summary, and Cross-References)*
+
+---
+
+## A.0 Reading Orientation
+
+**Estimated time:** ≈ 10 min **Difficulty:** 🟢 (terminology reference)
+
+| Section | Time | Focus | **How to Approach** |
+|-----------|-------|--------|---------------------|
+| A.1–A.3 | 4 min | Tier + Stability system | Read once — foundation for all usage |
+| A.4–A.5 | 4 min | Validated & context tables | Use as reference while writing |
+| A.6–A.7 | 2 min | Operational + ethical rules | Check before publication |
+| A.8 | Reference | For citation | — |
+
+**Fastest Path (≈ 5 min):**
+1. Read A.1 (Lexical Tier System)  
+2. Skim A.2 (Stability Levels)  
+3. Consult A.3 for core terms δ, ℛ, ρ, Δt₍L₃₎ if needed.
+
+---
+
+```mermaid
+flowchart TD
+  A["@core Terms (e.g., Phase, Repair)"] --> B["Empirical Metrics Part 5"]
+  A --> C["@support Terms (e.g., Rhythm, Timing)"]
+  A --> D["@derived Terms (e.g., Resonance, Coherence)"]
+  B --> E["Stability Index (🟢/🟡/🔴)"]
+  E --> F["Usage Contexts (A.5)"]
+  F --> G["Ethical Rules (A.7)"]
+```
+**Figure A.1 – Lexical governance pipeline from core terms to ethical use.**
+
+---
 
 ## Purpose
 
@@ -102,10 +136,22 @@ A term qualifies as **safe for HCI discourse** when it:
 
 ## A.8 References (Indicative)
 
-Clark, H. H. (1996). *Using Language.* Cambridge University Press.  
-Dourish, P. (2001). *Where the Action Is.* MIT Press.  
-Hearst, M. (1997). “TextTiling: Segmenting Text into Multi-Paragraph Subtopic Passages.” *Computational Linguistics.*  
-Sacks, H., Schegloff, E., & Jefferson, G. (1974). “A Simplest Systematics for the Organization of Turn-Taking.” *Language.*  
-Stivers, T. (2009). “How Important Is the Gap?” *Discourse Processes, 46*(1).  
-Wilson, M., & Wilson, T. (2005). “An Oscillator Model of Timing in Turn-Taking.” *Psychonomic Bulletin & Review.*  
-Winograd, T., & Flores, F. (1986). *Understanding Computers and Cognition.* Ablex.
+- Clark, H. H. (1996). *Using Language.* Cambridge University Press.  
+- Dourish, P. (2001). *Where the Action Is.* MIT Press.  
+- Hearst, M. (1997). “TextTiling: Segmenting Text into Multi-Paragraph Subtopic Passages.” *Computational Linguistics.*  
+- Sacks, H., Schegloff, E., & Jefferson, G. (1974). “A Simplest Systematics for the Organization of Turn-Taking.” *Language.*  
+- Stivers, T. (2009). “How Important Is the Gap?” *Discourse Processes, 46*(1).  
+- Wilson, M., & Wilson, T. (2005). “An Oscillator Model of Timing in Turn-Taking.” *Psychonomic Bulletin & Review.*  
+- Winograd, T., & Flores, F. (1986). *Understanding Computers and Cognition.* Ablex.
+
+---
+
+### Cross-reference Note
+Appendix A complements:
+
+- **Part 5** — for operational definitions of δ, t(ℛ), ρ, Δt₍L₃₎ and S.  
+- **Appendix B** — for conceptual connectivity maps linking these terms to HCI and CA constructs.  
+
+Together they form the **lexicon + ontology layer** of the PLD translation suite.
+
+---
