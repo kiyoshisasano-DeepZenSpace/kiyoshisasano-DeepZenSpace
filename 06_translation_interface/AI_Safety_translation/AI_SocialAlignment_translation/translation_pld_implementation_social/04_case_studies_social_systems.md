@@ -114,10 +114,10 @@ graph TD
 
 ```mermaid
 flowchart LR
-  A[Drift delta up] --> B[Repair Activation (R)]
-  B --> C[Latency Phase t(R)]
-  C --> D[Resonance rho up]
-  D --> E[Stability S up]
+  A[Drift: delta up] --> B[Repair activation]
+  B --> C[Latency phase tR]
+  C --> D[Resonance: rho up]
+  D --> E[Stability: S up]
   E --> A
 ```
 Each system perpetually cycles through these dynamics, exhibiting social autopoiesis via feedback.
