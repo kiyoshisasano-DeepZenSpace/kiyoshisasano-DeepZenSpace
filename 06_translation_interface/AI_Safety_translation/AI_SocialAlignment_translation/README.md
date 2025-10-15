@@ -1,7 +1,7 @@
 # 🧠 AI Social Alignment Translation — Phase Loop Dynamics (v1.0)
 
 > “Social alignment is not imposed; it emerges through loops of drift, repair, and resonance.”  
-> — *Translation Team, 2025*
+> — *Kiyoshi Sasano, 2025*
 
 ---
 
