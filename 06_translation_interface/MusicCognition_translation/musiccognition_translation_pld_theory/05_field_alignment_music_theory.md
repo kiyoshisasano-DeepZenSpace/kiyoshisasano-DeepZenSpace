@@ -2,10 +2,10 @@
 
 ## 1. Introduction
 
-In *Phase Loop Dynamics (PLD)*, “field” refers to the global topological structure in which loops of drift, repair, and resonance unfold.  
-When translated into **music theory and rhythm cognition**, this field represents the **dynamic landscape of tonal and temporal forces** — where phase interactions correspond to harmonic tension, rhythmic entrainment, and cognitive expectation.
+Within *Phase Loop Dynamics (PLD)*, the term **field** designates the global topology through which loops of drift (𝒟), repair (ℛ), and resonance (𝓛₅) operate.  
+In a **music-cognitive reinterpretation**, the field becomes a *tonal–temporal manifold* — a structured space where **expectation, entrainment, and harmonic motion** co-emerge.
 
-Rather than treating “field” as an abstract metaphor, this translation interprets it as an operational space analogous to **tonal fields**, **temporal entrainment networks**, and **sensorimotor coupling systems**.
+Rather than an abstract metaphor, the field is treated as an **operational environment** linking *tonal attraction*, *temporal synchronization*, and *cognitive prediction* into a unified model of musical coherence.
 
 ---
 
@@ -13,130 +13,126 @@ Rather than treating “field” as an abstract metaphor, this translation inter
 
 | PLD Concept | Music-Theoretic Equivalent | Description |
 |--------------|----------------------------|--------------|
-| Drift (𝒟) | Tonal drift / rhythmic deviation | Movement away from the tonal or metric center; modulation, syncopation |
-| Repair (ℛ) | Cadential or phase correction | Re-stabilization of tonal or rhythmic expectation |
-| Resonance (𝓛₅) | Harmonic reinforcement / entrainment stabilization | Emergence of coherence through coupling |
-| Phase (Σ) | Tonal or temporal field | Structural configuration of tonal/meteral relations |
-| Coherence C(σ,t) | Phase alignment / inter-part synchrony | Degree of temporal or harmonic integration |
+| Drift (𝒟) | Tonal modulation / rhythmic deviation | Movement away from a tonal or metric attractor |
+| Repair (ℛ) | Cadential closure / phase correction | Restabilization of expectation and synchrony |
+| Resonance (𝓛₅) | Harmonic or rhythmic coherence | Sustained coupling and perceptual flow |
+| Field (Σ) | Tonal–temporal space | Dynamic configuration of harmonic and metric relations |
+| Coherence C(σ,t) | Synchrony measure | Degree of alignment across tonal, rhythmic, and attentional axes |
 
-In this reading, musical form becomes a **field of attraction and drift**, where perceived stability and motion are products of interactive feedback between cognitive, rhythmic, and tonal components.
+In this translation, musical form becomes a **phase ecology** — an evolving balance of drift and restoration across coupled temporal and harmonic dimensions.
 
 ---
 
 ## 3. Harmonic Field as Phase Space
 
-In tonal theory, key relations (C → G → D → A) can be represented as a **phase manifold**, analogous to Σ in PLD.  
-Each modulation represents a **phase transition** with an associated “energy” cost reflecting perceptual tension.
+Tonal relations (e.g., C → G → D → A) can be described as motion within a **phase manifold Σ**, where each modulation constitutes a **phase transition** between potential minima.  
+Transition energy reflects perceptual tension:
 
 \[
 E_{ij} = -\log(T_{ij}) + C
 \]
 
-Where \(T_{ij}\) is the probability of transitioning between tonal centers *i* and *j*, estimated from corpus or perceptual data.  
-Empirical parallels exist in tonal attraction models (Lerdahl, 2001) and sensorimotor coupling studies showing synchronized phase transitions.
+Here \(T_{ij}\) denotes the empirical probability of moving from tonal center *i* to *j* (cf. Lerdahl, 2001).  
+This formalism parallels PLD’s loop energy functions, aligning harmonic motion with **phase trajectory dynamics** in temporal cognition.
 
 ---
 
-## 4. Drift–Repair–Resonance Cycle in Harmony and Rhythm
+## 4. Drift–Repair–Resonance Cycle Across Domains
 
-This triadic loop manifests in both harmonic and temporal domains:
+| PLD Process | Harmonic Analogue | Rhythmic Analogue |
+|--------------|------------------|-------------------|
+| Drift (𝒟) | Tension, chromatic modulation, deceptive cadence | Phase deviation, syncopation, rubato |
+| Repair (ℛ) | Cadential resolution (V–I, ii–V–I) | Tempo correction, phase alignment |
+| Resonance (𝓛₅) | Tonal stability, consonant reinforcement | Groove stabilization, entrainment plateau |
 
-| PLD Process | Harmonic Equivalent | Rhythmic Equivalent |
-|--------------|--------------------|---------------------|
-| Drift (𝒟) | Tension, modulation, deceptive progression | Phase deviation, syncopation, rubato |
-| Repair (ℛ) | Cadence (V–I, ii–V–I) | Phase correction or tempo re-locking |
-| Resonance (𝓛₅) | Consonant reinforcement / stability | Groove stabilization / phase coupling |
-
-Musically, this cycle models how **expectation, deviation, and return** form the essential structure of perceived musical movement.
+Thus, harmonic closure and rhythmic resynchronization instantiate the same **temporal grammar of deviation and return**.
 
 ---
 
-## 5. Tonal and Temporal Alignment as Field Coupling
+## 5. Tonal–Temporal Field Coupling
 
-Field alignment occurs when **multiple dynamic subsystems** — tonal, temporal, and expressive — achieve a **phase-locked state**.  
-This reflects empirical findings in groove research (Madison, 2011; Clayton, 2013), where entrainment is sustained by mutual adaptation across levels.
+Field alignment arises when **temporal and harmonic oscillators** become phase-locked, forming a multi-level entrainment structure.
 
-### Example mappings:
-- **Tempo field ↔ Tonal field coupling**: harmonic rhythm aligning with pulse period.
-- **Amplitude envelope ↔ Expectation field**: dynamic phrasing reinforcing perceived downbeats.
-- **Neural oscillation ↔ Musical meter**: cortical phase-locking with metric hierarchy.
+| Coupled Dimensions | Example Alignment |
+|--------------------|-------------------|
+| Tempo field ↔ Tonal field | Harmonic rhythm synchronized with metric period |
+| Dynamic field ↔ Expectancy field | Phrase intensity reinforcing metrical accent |
+| Neural oscillator ↔ Metric structure | Cortical phase-locking with musical meter |
+
+This coupling reflects the *joint optimization* of harmonic tension and rhythmic stability — a condition analogous to resonance equilibrium in PLD.
 
 ---
 
 ## 6. Phase Coherence in Polyphonic Texture
 
-Polyphonic music provides a natural analog to PLD’s **coherence field C(σ,t)**.  
-Here, **temporal and harmonic alignment** across voices produces resonance states.
+Polyphonic ensembles exhibit **multi-voice phase coherence**, corresponding to PLD’s \(C(σ,t)\):
 
-| Parameter | Cognitive / Musical Interpretation |
-|------------|------------------------------------|
-| Phase variance ↓ | Improved ensemble synchrony |
-| Inter-voice coherence ↑ | Stronger tonal center perception |
-| Drift magnitude ↑ | Expressive rubato, heterophony |
-| Repair gain ↑ | Adaptive re-synchronization |
+| Parameter | Musical–Cognitive Interpretation |
+|------------|---------------------------------|
+| Phase variance ↓ | Enhanced ensemble synchrony |
+| Inter-voice coherence ↑ | Stronger tonal grounding |
+| Drift amplitude ↑ | Expressive elasticity or heterophony |
+| Repair gain ↑ | Adaptive recovery of alignment |
 
-These correspond to PLD’s quantifiable parameters — coherence, drift, and repair — within ensemble and listener cognition contexts.
+These relations translate PLD’s dynamics into measurable indices of musical coordination.
 
 ---
 
-## 7. Mathematical Harmony Field
+## 7. Mathematical Tonal Field
 
-Let \(\Phi(x,t)\) denote a *tonal potential field*, where minima represent stable tonal centers (I, IV, V).  
-The gradient \(\nabla_x \Phi\) defines the *direction of harmonic drift*.  
-Repair operations correspond to minimizing \(\|\nabla_x \Phi\|\), i.e., reducing tonal tension.
+Let \(\Phi(x,t)\) represent a *tonal potential field* whose minima correspond to stable keys (I, IV, V).  
+The gradient \(\nabla_x \Phi\) defines tonal drift direction, and repair acts to minimize it:
 
 \[
 \mathcal{R}(t) = -k \nabla_x \Phi(x,t)
 \]
 
-This formalization bridges PLD’s operator dynamics with established physical and informational analogies in tonal tension modeling (Herzog, 2018; Chew, 2019).
+This formulation connects PLD’s operator algebra with computational models of harmonic tension (Chew, 2019; Herzog, 2018), allowing cross-domain simulation of tonal and temporal forces.
 
 ---
 
-## 8. Groove as Field Resonance
+## 8. Groove as Resonant Field Alignment
 
-“Groove” represents a **resonant alignment** of internal predictive oscillators with external rhythmic structure.  
-In PLD terms, this corresponds to **𝓛₅ Resonance loops**, where phase coupling stabilizes over time.  
-Mathematically, the **phase-locking index (PLI)** quantifies resonance strength:
+“Groove” denotes a **phase-synchronous attractor state** between predictive oscillation and external pulse — a direct instantiation of the **𝓛₅ Resonance loop**.  
+Its coherence can be quantified by the **phase-locking index (PLI):**
 
 \[
 PLI = |\langle e^{i(\phi_1 - \phi_2)} \rangle|
 \]
 
-Empirically, groove strength increases as drift decreases and repair gain stabilizes — paralleling entrainment resilience and harmonic consonance.
+Higher PLI reflects convergence of rhythmic, motoric, and harmonic oscillations, producing the experiential continuity of groove.
 
 ---
 
-## 9. Integrative View: Tonal–Rhythmic Ecology
-
-PLD’s field alignment, reinterpreted through music theory, unifies tonal, rhythmic, and cognitive coordination under one structural lens:
+## 9. Integrative Ecology of Tonal–Rhythmic Alignment
 
 | Domain | Structural Unit | Field Function |
 |---------|----------------|----------------|
-| Tonal | Key / Mode | Harmonic potential landscape |
+| Tonal | Key / Mode | Harmonic potential topology |
 | Rhythmic | Beat / Meter | Temporal attractor network |
-| Cognitive | Expectation / Attention | Predictive coupling oscillator |
+| Cognitive | Expectation / Attention | Predictive oscillator coupling |
 
-Thus, the musical “field” becomes a **multi-dimensional attractor topology**, mediating the interplay between harmonic motion and temporal entrainment.
+Together these define a **multi-dimensional field ecology**, in which harmonic and rhythmic processes are distinct projections of a shared phase manifold.
 
 ---
 
 ## 10. Implications
 
-- Provides a **formal bridge** between harmonic theory and temporal cognition.  
-- Reframes groove and tonal stability as **phase coupling phenomena**.  
-- Enables empirical modeling of harmonic–temporal coherence using entrainment metrics.  
-- Suggests a unified **field-theoretic view** of music perception, linking PLD and cognitive rhythm theory.
+- Establishes a **formal correspondence** between PLD’s topological field and tonal–temporal theory.  
+- Models harmony and rhythm as coupled oscillatory systems governed by drift, repair, and resonance.  
+- Offers a unified perspective on **coherence** across perception, performance, and compositional structure.  
+- Suggests an analytical framework where **tonal attraction** and **entrainment stability** are measurable correlates of phase alignment.
 
-> *“Harmony and rhythm are not separate forces — they are different cross-sections of the same field.”*
+> *“Harmony and rhythm are not separate forces — they are resonant dimensions of the same field.”*
 
 ---
 
 ## References
 
 - Lerdahl, F. (2001). *Tonal Pitch Space.* Oxford University Press.  
-- Large, E. W. & Jones, M. R. (1999). *The dynamics of attending.* Psychological Review.  
-- Clayton, M. (2013). *Entrainment, interaction, and cultural dynamics in music performance.*  
-- Chew, E. (2019). *Mathematical models of tonality and tension.* Music Perception.  
-- Madison, G. (2011). *Explaining the experience of groove.* Empirical Studies of the Arts.  
+- Large, E. W. & Jones, M. R. (1999). *The dynamics of attending.* *Psychological Review.*  
+- Chew, E. (2019). *Mathematical models of tonality and tension.* *Music Perception.*  
+- Madison, G. (2011). *Explaining the experience of groove.* *Empirical Studies of the Arts.*  
+- Clayton, M. (2013). *Entrainment and interaction in music performance.*  
+- Herzog, F. (2018). *Field models of harmonic energy in tonal motion.*  
 - Sasano, K. (2025). *Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance.*
