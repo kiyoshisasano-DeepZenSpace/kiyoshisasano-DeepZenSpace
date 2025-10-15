@@ -62,23 +62,23 @@ Each variable is mapped to both a theoretical construct and a computational obse
 
 ```mermaid
 graph TD
-  subgraph Theory_Domain
+  subgraph Theory Domain
     T1[Luhmannian Feedback Cycles]
     T2[Trust Repair Models]
   end
-  subgraph Data_Domain
+  subgraph Data Domain
     D1[Interaction Logs]
     D2[Survey Panels]
     D3[Online Network Graphs]
   end
-  subgraph Modeling_Layer
-    M1[Drift Rate Estimation (δ)]
-    M2[Repair Latency Regression (t(ℛ))]
-    M3[Kuramoto Simulation (ρ)]
+  subgraph Modeling Layer
+    M1[Drift Rate Estimation delta]
+    M2[Repair Latency Regression tR]
+    M3[Kuramoto Simulation rho]
   end
-  subgraph Validation_Layer
-    V1[Cross-Case Calibration]
-    V2[Stability Metrics (S)]
+  subgraph Validation Layer
+    V1[Cross Case Calibration]
+    V2[Stability Metrics S]
   end
 
   T1 --> M1
@@ -89,6 +89,7 @@ graph TD
   M1 --> V1
   M2 --> V1
   M3 --> V2
+
 ```
 **Theory informs modeling structure**, while **data constrains interpretability** —  
 forming a *closed analytical feedback loop.*
