@@ -2,128 +2,126 @@
 
 ## 1. Introduction
 
-In the *Phase Loop Dynamics (PLD)* framework, the **Latent Phase (𝓛₃)** describes a pre-expression state — structure that exists before articulation.  
-In music cognition, this corresponds directly to **internal timekeeping** during periods of silence, delay, or anticipatory pause.
+Within *Phase Loop Dynamics (PLD)*, the **Latent Phase (𝓛₃)** denotes a pre-articulatory temporal state — a moment when rhythm persists **without sound**.  
+In music cognition, this corresponds to **internal timekeeping** during rests, delays, or pauses preceding re-entry.
 
-This chapter reinterprets the latent phase as a **cognitive state of silent entrainment**, linking it to phenomena such as continuation tapping, pulse imagery, and temporal expectation maintenance.
+Here, the latent phase is reinterpreted as a **state of silent entrainment**: a condition in which temporal expectancy continues to oscillate despite the absence of auditory input.
 
-> *“Silence in rhythm is not emptiness — it is continuity without sound.”*
+> *“Silence in rhythm is continuity without sound.”*
 
 ---
 
 ## 2. Conceptual Mapping
 
-| PLD Concept | Music Cognition Equivalent | Description |
+| PLD Concept | Music-Cognitive Equivalent | Description |
 |--------------|----------------------------|--------------|
-| Latent Phase (𝓛₃) | Silent pulse maintenance | Internal continuation of beat in absence of auditory input |
-| Silence | Temporal gap or rest | Structured interval contributing to rhythm expectancy |
-| Cue | Re-entry onset or phase reset | Predictive event signaling the next cycle |
-| Segment | Re-emerging pulse | Surface reappearance of internal timing |
+| **Latent Phase (𝓛₃)** | Silent pulse maintenance | Internal continuation of beat during silence |
+| **Silence** | Temporal rest interval | Structured absence that sustains expectation |
+| **Cue** | Phase reset or re-entry marker | Predictive event initiating the next cycle |
+| **Segment** | Beat re-emergence | Reinstatement of overt rhythmic structure |
+
+Latent time is thus not a gap in rhythm, but a **bridge between pulses**, maintaining coherence through expectation.
 
 ---
 
-## 3. Silence as Temporal Structure
+## 3. Silence as Structured Time
 
-Silence in musical rhythm is not the absence of timing — it is the **continuation of predictive oscillation**.  
-Listeners maintain internal temporal regularity during rests, supported by neural oscillations that persist even when sound ceases.
+In musical experience, silence operates as **temporal structure** rather than void.  
+Listeners sustain internal regularity, anticipating the next beat through rhythmic memory and expectancy.
 
-**Empirical findings:**
-- Beta-band (13–30 Hz) and low-gamma oscillations persist through silence.  
-- Motor regions (SMA, basal ganglia) remain phase-locked to the “imagined beat.”  
-- Continuation tapping studies show minimal drift over silent intervals < 2 s.  
+**Behavioral evidence:**
+- Temporal accuracy in continuation tapping remains stable for pauses < 2 s.  
+- Perceived “beat continuity” persists even when acoustic input ceases.  
+- Rhythmic predictability decays gradually with increasing silence duration.
 
-**Interpretation:** Latent phases act as *bridging intervals* between overt temporal events, allowing rhythm to survive absence.
+Silence, therefore, serves as a **medium of rhythmic endurance**, not interruption.
 
 ---
 
 ## 4. Internal Pulse Dynamics
 
-The **latent oscillator** \(\psi_{int}(t)\) continues to evolve even when external stimuli are withheld:
+The **latent oscillator** \(\psi_{int}(t)\) evolves continuously even in the absence of sound:
 
 \[
 \frac{d\psi_{int}}{dt} = \omega + \xi(t)
 \]
-where:
-- \(\omega\): intrinsic frequency (internal tempo)
-- \(\xi(t)\): stochastic fluctuation (timing noise)
 
-The stability of \(\psi_{int}\) defines **temporal resilience** — the capacity to preserve beat memory during silence.
+where  
+- \(\omega\): intrinsic tempo of internal clocking  
+- \(\xi(t)\): stochastic variation in timing noise  
+
+The persistence of \(\psi_{int}(t)\) defines **temporal resilience**—the system’s capacity to preserve pulse alignment during absence.
 
 ---
 
 ## 5. Latent Phase Chain in Musical Terms
 
-PLD sequence: \(\mathcal{L}_3 \to \text{Cue} \to \mathcal{L}_1 \to \mathcal{L}_5\)  
-can be expressed musically as:
+The canonical PLD sequence  
+\(\mathcal{L}_3 \rightarrow \text{Cue} \rightarrow \mathcal{L}_1 \rightarrow \mathcal{L}_5\)  
+corresponds to a musical cycle of **silence → cue → beat → resonance**.
 
-| Stage | Rhythm Cognition Equivalent | Description |
-|--------|-----------------------------|-------------|
-| 𝓛₃ – Latent | Silent continuation | Beat imagery or internal timekeeping |
-| Cue | Event onset | Predictive reset of phase |
-| 𝓛₁ – Segment | Beat re-entry | Externalized timing structure |
-| 𝓛₅ – Resonance | Stabilized entrainment | Sustained flow or groove after reentry |
+| Stage | Music-Cognitive Equivalent | Description |
+|--------|----------------------------|-------------|
+| **𝓛₃ – Latent** | Silent continuation | Internal pulse maintained without sound |
+| **Cue** | Anticipatory onset | Predictive marker guiding phase re-entry |
+| **𝓛₁ – Segment** | Beat re-entry | Reinstatement of temporal order |
+| **𝓛₅ – Resonance** | Entrainment stabilization | Flow regained through synchrony |
 
----
-
-## 6. Temporal Prediction and Delay Thresholds
-
-Latency thresholds determine when silence transitions from *predictive* to *disruptive*.  
-Behaviorally, continuation accuracy decays when silence exceeds **2–3 seconds** at moderate tempos (≈120 BPM).  
-This mirrors PLD’s notion of **phase reentry failure** when drift surpasses stability limits.
-
-| Tempo | Silence Duration | Expected Continuation Accuracy |
-|--------|------------------|--------------------------------|
-| 120 BPM | 1 s | > 90% phase accuracy |
-| 120 BPM | 2 s | 70–80% |
-| 120 BPM | 3 s | < 50% (phase reset likely) |
+This chain formalizes how rhythm **restarts after silence**—a process of predictive continuity and re-entrainment.
 
 ---
 
-## 7. Neural Correlates of Latent Entrainment
+## 6. Temporal Prediction and Duration Thresholds
 
-### 7.1 EEG Findings
-- Sustained beta oscillations during auditory omission (Fujioka et al., 2012)  
-- SMA and cerebellar synchronization to imagined beats (Nozaradan et al., 2016)
+The transition from “predictive silence” to “disrupted silence” depends on the duration of absence relative to tempo.  
+Behaviorally, timing accuracy declines beyond the **2–3 second** threshold at moderate tempi (~120 BPM).
 
-### 7.2 fMRI Findings
-- Activation persists in auditory–motor loops during silent continuation tasks.  
-- Correlation between **BOLD persistence** and subjective sense of pulse continuity (r² ≈ 0.7).
+| Tempo | Silence Duration | Expected Phase Accuracy |
+|--------|------------------|-------------------------|
+| 120 BPM | 1 s | > 90% (predictive continuity) |
+| 120 BPM | 2 s | 70–80% (incipient drift) |
+| 120 BPM | 3 s | < 50% (phase re-entry required) |
 
----
-
-## 8. Measurement Framework
-
-| Measure | Cognitive Construct | Typical Method |
-|----------|--------------------|----------------|
-| Beat persistence ratio | Internal timekeeping stability | Continuation tapping |
-| Temporal prediction error | Anticipatory accuracy | Gap detection, sync-to-omit |
-| Oscillatory power (β-band) | Motor entrainment strength | EEG/MEG |
-| Phase-locking index (PLI) | Silent phase coherence | Cross-trial coherence analysis |
+This relationship parallels PLD’s concept of **phase instability**: drift accumulation exceeding the re-entrainment window (Δt₍L₃₎).
 
 ---
 
-## 9. Theoretical Implications
+## 7. Measurement Framework
 
-1. **Latent phase ≠ silence** — silence becomes meaningful only when rhythm persists internally.  
-2. **Latent continuation** links temporal perception to predictive coding frameworks.  
-3. **Phase reentry** after silence parallels *repair dynamics* in discourse: a return from suspended structure.  
-4. **Cognitive resilience** in timing can be quantified as *phase stability over absence*.
+| Measure | Cognitive Construct | Experimental Paradigm |
+|----------|--------------------|-----------------------|
+| **Beat persistence ratio** | Internal pulse stability | Continuation tapping |
+| **Temporal prediction error** | Expectancy precision | Gap completion, sync-to-omit |
+| **Phase deviation (δ)** | Timing drift over silence | IOI comparison before/after gap |
+| **Re-entry latency (t(ℛ))** | Correction delay after pause | Post-silence tapping onset |
+
+These indices operationalize **latent rhythmic endurance**—the measurable persistence of internal timing through absence.
 
 ---
 
-## 10. Synthesis
+## 8. Theoretical Implications
 
-The latent phase forms the **hidden infrastructure of rhythm** — sustaining temporal coherence across silence, hesitation, and delay.  
-It allows rhythm to exist not as continuous sound, but as a **continuous expectation**.
+1. **Latent ≠ absence** — rhythm continues as expectancy, not as sound.  
+2. **Silent continuation** integrates predictive and mnemonic timing mechanisms.  
+3. **Phase re-entry** after silence parallels expressive *repair*: restoring continuity after suspension.  
+4. **Cognitive resilience** in timing is quantifiable through drift variance and correction latency.
 
-> *“Between beats, the mind continues to count.”*
+---
+
+## 9. Synthesis
+
+The **latent phase** constitutes the invisible scaffolding of rhythm—  
+a continuity of temporal imagination linking silence to sound.  
+It preserves structure when articulation ceases, ensuring that rhythm is perceived as **a field of expectancy**, not a series of events.
+
+> *“Between beats, the pulse endures in thought.”*
 
 ---
 
 ## References
 
-- Fujioka, T., Trainor, L. J., Large, E. W., & Ross, B. (2012). *Beta-band oscillations represent auditory beat prediction.* Journal of Neuroscience.  
-- Nozaradan, S. et al. (2016). *Neural entrainment to missing beats: The role of temporal prediction.* Cerebral Cortex.  
-- Large, E. W. & Jones, M. R. (1999). *The dynamics of attending: How people track time-varying events.* Psychological Review.  
-- Repp, B. H. (2005). *Sensorimotor synchronization: A review of the tapping literature.* Psychonomic Bulletin & Review.  
+- Large, E. W. & Jones, M. R. (1999). *The dynamics of attending: How people track time-varying events.* *Psychological Review.*  
+- Repp, B. H. (2005). *Sensorimotor synchronization: A review of the tapping literature.* *Psychonomic Bulletin & Review.*  
+- Jones, M. R., Moynihan, H., MacKenzie, N., & Puente, J. (2002). *Temporal aspects of stimulus-driven attending in dynamic arrays.* *Psychological Science.*  
+- Palmer, C. (1997). *Music performance.* *Annual Review of Psychology.*  
 - Sasano, K. (2025). *Phase Loop Dynamics: A Syntax of Drift, Repair, and Resonance.*
