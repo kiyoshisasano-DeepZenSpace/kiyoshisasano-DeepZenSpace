@@ -19,7 +19,7 @@ Key columns: `EHS`, `Calibration(1-dECE*)`, `Blindspot F1ᵂ`, `ρ⁺ (context)`
 - **Blindspot F1ᵂ**: Gemini and Claude identify more of the gold blindspots in this toy set.
 - **ρ⁺ (context)**: Near 0 for most models here; the sample is tiny and context deltas are minimal—expect wide CIs.
 
-![Radar](/mnt/data/ehs_radar.png)
+![Radar](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/c8ef0153f5143150a998e994fc82d7877c54507b/06_translation_interface/AI_Safety_translation/AI_EpistemicAlignment_translation/ehs_radar.png)
 
 > Caution: This is a *pilot-size* slice (n≈4 per model). Use it to check the pipeline, not to rank systems.
 
