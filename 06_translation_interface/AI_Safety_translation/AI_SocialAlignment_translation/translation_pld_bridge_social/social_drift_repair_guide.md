@@ -51,10 +51,10 @@ High $S$ implies robust recovery and low sensitivity to drift.
 
 ```mermaid
 flowchart LR
-  A["Stable Trust (S₀)"] -->|Noise, Divergence (δ)| B["Drift Phase"]
-  B -->|Transparency / Acknowledgment| C["Repair Initiation (ℛ₁)"]
-  C -->|Dialogue / Restitution| D["Restoration (ℛ₂)"]
-  D -->|Learning / Reinforcement| E["Stabilized Trust (S₁)"]
+  A["Stable Trust (S0)"] -->|Noise / Divergence (delta)| B["Drift Phase"]
+  B -->|Transparency / Acknowledgment| C["Repair Initiation (R1)"]
+  C -->|Dialogue / Restitution| D["Restoration (R2)"]
+  D -->|Learning / Reinforcement| E["Stabilized Trust (S1)"]
   E -->|Residual Uncertainty| B
 ```
 > Each cycle closes via feedback, strengthening the network’s adaptive capacity.
