@@ -38,11 +38,12 @@ It reframes “miscommunication” and “restoration” as measurable, recursiv
 | **S** | Stability coefficient | Degree of system resilience after repair. |
 
 Mathematically:
-\[
-S = 1 - \frac{\delta}{t(ℛ)} \quad \text{where} \quad 0 < S \le 1
-\]
 
-High \(S\) implies robust recovery and low sensitivity to drift.
+$$
+S = 1 - \frac{\delta}{t(ℛ)} \quad \text{where} \quad 0 < S \le 1
+$$
+
+High $S$ implies robust recovery and low sensitivity to drift.
 
 ---
 
@@ -95,20 +96,29 @@ flowchart LR
 
 Drift–Repair can be expressed as a damped oscillation model:
 
-\[
+$$
 T(t) = T_0 e^{-\delta t} + (1 - e^{-t/t(ℛ)})T_{repair}
-\]
+$$
 
 where:  
-- \(T(t)\) = trust level at time *t*  
-- \(T_0\) = baseline trust before drift  
-- \(T_{repair}\) = asymptotic trust after repair  
+- $T(t)$ = trust level at time *t*  
+- $T_0$ = baseline trust before drift  
+- $T_{repair}$ = asymptotic trust after repair  
 
 **Simulation Insight:** sustained minor drifts with short repair times increase system adaptability.
 
 ---
 
-## 8. Reading Path
+## 8. Meta-Cognitive Checkpoints
+
+- Can social “trust repair” be modeled as a **Markov transition** between {aligned, drifted, repaired} states?  
+- How does *repair latency* (Δt₍L₃₎) relate to social resilience (S)?  
+- Could network clustering coefficient (C) predict drift propagation velocity (δ)?  
+- Is repair frequency a better predictor of long-term coherence than repair magnitude?
+
+---
+
+## 9. Reading Path
 
 1. Begin here to understand the **Drift–Repair cycle** in social translation of PLD.  
 2. Continue with `trust_resonance_patterns.md` to explore emergent synchronization post-repair.  
