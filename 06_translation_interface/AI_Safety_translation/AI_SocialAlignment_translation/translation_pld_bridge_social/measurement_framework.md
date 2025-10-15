@@ -73,10 +73,10 @@ for drift–repair analysis.
 ```mermaid
 flowchart LR
   A[Raw Log Data] --> B[Sentiment and Reciprocity Extraction]
-  B --> C[Trust Signal T(t)]
-  C --> D[Drift Detection - delta threshold]
-  D --> E[Repair Event Identification - latency window L3]
-  E --> F[Model Fitting and Coherence Curve S(t)]
+  B --> C[Trust Signal Tt]
+  C --> D[Drift Detection Delta Threshold]
+  D --> E[Repair Event Identification Latency Window L3]
+  E --> F[Model Fitting and Coherence Curve St]
 ```
 
 Output metrics:
