@@ -89,8 +89,6 @@ PLD isn’t cosmetic — **it changes how the system behaves over time.**
 
 ## 📂 Repository Overview
 
-## 📂 Repository Overview
-
 ```txt
 /
 ├── quickstart/                   # Start here — working scaffold in ~20–30 min (no model changes required)
