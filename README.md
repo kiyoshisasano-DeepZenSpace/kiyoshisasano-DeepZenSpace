@@ -47,21 +47,32 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 
 ---
 
-**Illustrative Impact (Scenario, Not Measured)**  
+---
 
-Typical ranges observed in similar scenarios when adding **Bridge-Hub modules**  
-(`pause_classifier`, `latency_tracker`, `reentry_detector`) to a baseline without them:
+## [New] Measured Performance & Empirical Insights (N=200)
 
-| Metric                | Typical Range     |
-|-----------------------|-------------------|
-| Repair detection rate | **+3 – 15 pts**   |
-| Drop-off rate         | **–2 – 10%**      |
-| Reentry success rate  | **+2 – 12 pts**   |
+The first empirical validation of the Phase Loop Dynamics (PLD) model using 200 task-oriented dialogues from the MultiWOZ 2.4 dataset. This section replaces previous illustrative metrics with measured data.
 
-**Note:**  
-These figures are **illustrative only** — not measured for this repository.  
-For measurement, emit events via `pld_event.schema.json` and compute metrics with  
-`metrics_schema.yaml` as shown in [`03_pld-Bridge-Hub/DEMORUN.md`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/a76c1514ae3a6c6b2b5023f64ac1f9f5117a6cca/03_pld-Bridge-Hub/DEMORUN.md).
+### Key Performance Metrics (KPIs)
+
+| Metric | Measured Value | Insight |
+|---|---|---|
+| **Outcome-Complete Rate** | **75.0%** | Standard task success rate. |
+| **Hard Repair Rate** | **10.0%** | **CRITICAL:** 10% of dialogues required a full context reset (e.g., system self-correction). |
+| **Drift-Information** | **Highest Frequency** | The single largest cause of Hard Repair: DB search failures ("not found"). |
+| **UX Repair Rate** | **60.0%** | System uses Soft Repair patterns effectively as a safety net. |
+
+### Core Insight: The Hard Repair Trap (Drift-Information)
+
+The primary threat to system trust is the **"Information Drift Trap"** (DB error), where a system incorrectly reports "no results" and is later forced to issue a **Hard Repair** (self-correction) under user pressure.
+
+### Practical Solution & Quickstart Link
+
+We propose standardizing the **Soft Repair** strategy to prevent this: **Prohibit generic "not found" responses.** Instead, systems must default to **Repair-AddInfo** (proposing a relaxed alternative) to preserve **Resonance** and user trust.
+
+[**→ View Full Analysis Reports & Code Examples**](./07_empirical_studies/multiwoz_2.4_n200)
+
+---
 
 ---
 
