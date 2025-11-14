@@ -89,22 +89,40 @@ PLD isn’t cosmetic — **it changes how the system behaves over time.**
 
 ## 📂 Repository Overview
 
-```
+## 📂 Repository Overview
+
+```txt
 /
-├── quickstart/              # Start here — first working scaffold in ~20–30 min (no model change required)
-│   ├── overview/            # Short conceptual introduction
-│   ├── operator_primitives/ # Drift → Repair → Reentry building blocks
-│   ├── patterns/            # Plug-and-play LLM + UX patterns
-│   ├── metrics/             # Logging schema + evaluation dashboards
-│   └── examples/            # Minimal runnable demo
-│       └── minimal_pld_demo.py
-│   └── _meta/               # Migration rules (quickstart only)
+├── quickstart/                   # Start here — working scaffold in ~20–30 min (no model changes required)
+│   ├── overview/                 # Short conceptual introduction
+│   ├── operator_primitives/      # Drift → Repair → Reentry building blocks
+│   ├── patterns/                 # Plug-and-play LLM + UX patterns
+│   ├── metrics/                  # Logging schema + evaluation dashboards
+│   ├── examples/                 # Minimal runnable demo
+│   │   └── minimal_pld_demo.py
+│   └── _meta/                    # Migration rules (quickstart only)
 │
-├── docs/                    # Definitions, rationale, taxonomy, edge cases
+├── pld_runtime/                  # Full runtime architecture for production adoption
+│   ├── 01_schemas/              # Event schema + protocol specifications
+│   ├── 02_ingestion/            # Raw event → structured PLD signals
+│   ├── 03_detection/            # Soft/Hard drift detection mechanisms
+│   ├── 04_enforcement/          # Repair policy enforcement logic
+│   ├── 05_controllers/          # System coordination & interaction state machine
+│   ├── 06_logging/              # Runtime logging adapters and emitters
+│   └── 07_failover/             # Recovery, fallback & continuity behaviors
+│   # Full documentation: `pld_runtime/README.md`
 │
-├── analytics/               # Dataset + results (MultiWOZ 2.4 N=200)
+├── docs/                         # Definitions, rationale, taxonomy, model diagrams
 │
-└── _meta/                   # Repo-level governance + future extensions
+├── analytics/                    # Dataset + benchmark results (MultiWOZ 2.4 N=200)
+│
+└── field/                        # Collaboration + PoC onboarding for teams
+    ├── README.md                 
+    ├── protocol.md              
+    ├── onboarding.md            
+    └── examples/
+        ├── trace_examples.md    
+        └── anti_patterns.md     
 ```
 
 ---
