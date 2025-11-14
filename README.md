@@ -1,6 +1,22 @@
 # PLD: Phase Loop Dynamics  
 ### *A Practical Runtime Framework for Stable Multi-Turn LLM Systems*
 
+## 🧠 Why PLD Exists — 10 Seconds
+
+Modern multi-turn LLM systems don’t fail because they lack capability —  
+they fail because alignment **drifts over time**.
+
+PLD provides a runtime loop that:
+
+- Detects drift early  
+- Repairs and confirms alignment  
+- Keeps agents stable across turns  
+
+```powershell
+Detect → Repair → Reenter → Continue → Complete
+```
+
+
 PLD helps AI systems stay aligned across multi-turn interactions — even when tools, memory, or intent shift.
 
 Modern LLM systems rarely fail because they lack capability.  
