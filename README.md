@@ -1,6 +1,9 @@
 # PLD: Phase Loop Dynamics  
 ### *A Practical Runtime Framework for Stable Multi-Turn LLM Systems*
 
+# PLD: Phase Loop Dynamics  
+### *A Practical Runtime Framework for Stable Multi-Turn LLM Systems*
+
 ## 🧠 Why PLD Exists — 10 Seconds
 
 Modern multi-turn LLM systems don’t fail because they lack capability —  
@@ -36,8 +39,8 @@ PLD is:
 
 - 🧠 A runtime model for multi-turn LLM alignment  
 - 🔍 A method for early detection of conversational drift  
-- 🧩 A framework integrating detection, repair, reentry, and outcome tracking  
-- ⚙️ Model-agnostic and compatible with agents, RAG, and orchestrators  
+- 🧩 A framework integrating detection, repair, re-entry, and outcome tracking  
+- ⚙️ Model-agnostic and compatible with RAG, agents, and tool orchestrators  
 
 If you're building multi-turn systems with reasoning, memory, or tools — **PLD applies.**
 
