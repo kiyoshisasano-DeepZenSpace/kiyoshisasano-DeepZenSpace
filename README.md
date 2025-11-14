@@ -1,10 +1,14 @@
 # 🚀 Phase Loop Dynamics (PLD) & Meta-Intelligence Research Hub  
-*A unified space for timing-aware interaction design, multi-AI cognition, and empirical validation.*
+*A unified space for timing-aware interaction design, multi-AI cognition, and empirical validation.*  
+*(“Timing-aware” = detecting and correcting interaction state mismatches such as latency drift, LLM inconsistency, or lost intent.)*
 
 This repository brings together two major research tracks:
 
 1. **Phase Loop Dynamics (PLD)** — A timing-aware model for Drift → Repair → Resonance in AI/UX interactions, backed by empirical data.  
-2. **Meta-Intelligence Integration Framework** — A multi-layer cognitive architecture for coordinating heterogeneous AI systems.
+   *(Drift = timing/state mismatch; Repair = corrective adjustment; Resonance = restored stable pattern)*  
+
+2. **Meta-Intelligence Integration Framework** — A multi-layer cognitive architecture for coordinating heterogeneous AI systems.  
+   *(Designed for orchestrating multi-agent pipelines or model ensembles.)*
 
 If you’re new here, start with the **Quickstart Kit**.
 
@@ -28,9 +32,16 @@ If you’re new here, start with the **Quickstart Kit**.
 Ready-to-use patterns for:
 
 - **Rasa** — Soft repair templates, intent reentry flows  
+  *(Soft Repair = small correction without losing context; Reentry = restoring user intent after drift)*  
+
 - **Figma** — Latency-hold UI patterns  
+  *(Prevent perceived errors during backend delays)*  
+
 - **LLMs** — Drift/Repair prompts & timing-aware templates  
-- **Logging** — Drift / Repair / Reentry event formats
+  *(Drift detection via prompt structure & state grounding)*  
+
+- **Logging** — Drift / Repair / Reentry event formats  
+  *(Standard schemas for timing-aware analytics)*
 
 **Purpose:**  
 Get from theory → working prototype *immediately*.
@@ -44,14 +55,14 @@ Get from theory → working prototype *immediately*.
 | Metric | Value | Insight |
 |--------|-------|---------|
 | **Outcome-Complete Rate** | **75.0%** | Standard task success rate |
-| **Hard Repair Rate** | **10.0%** | **Critical:** 1 in 10 dialogues required full context reset |
-| **Highest Drift Type** | **Drift–Information** | **#1 System Risk:** DB errors / “no result” artifacts |
-| **UX Repair Rate** | **60.0%** | Soft Repair frequently stabilizes the dialogue |
+| **Hard Repair Rate** | **10.0%** | **Critical:** 1 in 10 dialogues required full context reset *(Hard Repair = forced fallback when AI state becomes unrecoverable)* |
+| **Highest Drift Type** | **Drift–Information** | **#1 System Risk:** DB errors / “no result” artifacts *(Information Drift = mismatch between system assumptions and true DB/knowledge-state)* |
+| **UX Repair Rate** | **60.0%** | Soft Repair frequently stabilizes the dialogue *(Soft Repair = lightweight elaboration to keep user aligned)* |
 
 ### 📌 Core Mandate: Eliminate the *Information Drift Trap*
 
 The largest structural failure arises when a system says *“no result”* and later contradicts itself.  
-→ Users instantly lose trust.
+→ Users instantly lose trust. *(A typical Drift–Information pattern)*
 
 ### ✔ Mandatory Fix (Operational Recommendation)
 **Ban generic “not found” responses.**  
@@ -70,13 +81,13 @@ See full analysis:
 
 Includes:
 
-- `pause_classifier_bot.py`  
-- `latency_tracker.py`  
-- `reentry_detector.py`  
+- `pause_classifier_bot.py` *(classifies pause types: latency vs cognitive vs drift)*  
+- `latency_tracker.py` *(detects backend-induced timing mismatches)*  
+- `reentry_detector.py` *(identifies when a user tries to restore earlier intent)*  
 - Validation tools (`pld_event.schema.json`, `metrics_schema.yaml`)  
 - Demo tools (`DEMORUN.md`)
 
-Use this to build **timing-aware agents**.
+Use this to build **timing-aware agents** that avoid cascading drift.
 
 ---
 
@@ -84,25 +95,25 @@ Use this to build **timing-aware agents**.
 
 ### For Industry
 - Reduce drop-offs  
-- Prevent drift failures  
-- Embed repair loops  
+- Prevent drift failures *before* they propagate  
+- Embed repair loops that stabilize multi-turn flows  
 
 ### For Designers
-- Latency-hold UI patterns  
-- Rhythm-friendly transitions  
+- Latency-hell UI patterns (prevent user mistrust)  
+- Rhythm-friendly transitions (smooth pacing)  
 
 ### For Developers
 - Rasa soft repair patterns  
-- LLM drift/repair/reentry patterns  
+- LLM drift/repair/reentry patterns *(implemented with state-grounding prompts)*  
 
 ---
 
 # 🔬 Big Picture — PLD in 4 Stages
 
-1. **Observation**  
-2. **Structural Model**  
-3. **Implementation Kit**  
-4. **Applications**  
+1. **Observation** *(detect timing/state anomalies)*  
+2. **Structural Model** *(formal Drift/Repair/Resonance loops)*  
+3. **Implementation Kit** *(patterns, detectors, event schemas)*  
+4. **Applications** *(AI agents, multimodal systems, real-time UX)*  
 
 ---
 
@@ -110,7 +121,8 @@ Use this to build **timing-aware agents**.
 
 [**View Project →**](./04_meta-intelligence-framework)
 
-A four-layer cognitive system enabling systematic multi-AI collaboration.
+A four-layer cognitive system enabling **systematic multi-AI collaboration**  
+*(model orchestration, role-based pipelines, and reflective oversight)*.
 
 ---
 
@@ -125,11 +137,12 @@ Located in `01_phase_loop_dynamics/`.
 
 ---
 
-# 📚 Structural Rhythm — Core Concepts
+# 📚 Structural Rhythm — Core Concepts  
+*(with Applied-AI supplements)*
 
-1. **Drift (𝒟)**  
-2. **Repair (ℛ)**  
-3. **Resonance (𝓛₅)**  
+1. **Drift (𝒟)** — *timing/state mismatch; delay, hallucination, or misalignment*  
+2. **Repair (ℛ)** — *corrective adjustment; adding info, clarifying, or re-grounding*  
+3. **Resonance (𝓛₅)** — *stable repeating interaction pattern that reinforces coherence*  
 
 ---
 
