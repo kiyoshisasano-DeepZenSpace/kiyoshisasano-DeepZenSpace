@@ -99,6 +99,7 @@ PLD isn’t cosmetic — **it changes how the system behaves over time.**
 - /field — Adoption guides & onboarding
 
 ➡ Full structure: /docs/repo_structure.md
+```
 
 ---
 
