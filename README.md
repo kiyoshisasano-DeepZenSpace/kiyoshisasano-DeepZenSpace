@@ -6,7 +6,7 @@ This repository brings together two major research tracks:
 1. **Phase Loop Dynamics (PLD)** — A timing-aware model for Drift → Repair → Resonance in AI/UX interactions, backed by empirical data.  
 2. **Meta-Intelligence Integration Framework** — A multi-layer cognitive architecture for coordinating heterogeneous AI systems.
 
-If you’re new here, start with the **Quickstart Kit** or watch the **PLD Demo Video**.
+If you’re new here, start with the **Quickstart Kit**.
 
 ---
 
@@ -15,28 +15,9 @@ If you’re new here, start with the **Quickstart Kit** or watch the **PLD Demo 
 | Goal | Start Here |
 |------|------------|
 | **Build or fix real-time AI interactions** | [▶︎ Quickstart Kit](./02_quickstart_kit/README_quickstart.md) |
-| **Understand PLD in 5 minutes** | [YouTube Demo](https://youtu.be/nI0S8Aaywgc) |
 | **See measured system performance (N=200)** | [Operational Insights](#-measured-performance--operational-insights-n200) |
-| **Explore formal theory / academic mapping** | [Theory & Research](#-theory--research-for-joint-rd) |
+| **Explore formal theory / academic mapping** | [Theory & Research](#-Theory--Research-for-joint-rd) |
 | **Work with multiple AI agents** | [Meta-Intelligence Cognitive Framework](./04_meta-intelligence-framework) |
-
----
-
-# 🎥 Phase Loop Dynamics — Overview & Demo
-
-[📺 Watch Demo on YouTube](https://youtu.be/nI0S8Aaywgc)  
-*(Click to play)*  
-[![thumbnail](https://img.youtube.com/vi/nI0S8Aaywgc/0.jpg)](https://youtu.be/nI0S8Aaywgc)
-
-**Phase Loop Dynamics (PLD)** models the *rhythm* of interaction:  
-**Drift → Repair → Resonance**
-
-It transforms delays, hesitations, and pacing irregularities into **designable signals**, integrating:
-
-- Conversation Analysis  
-- Cognitive Science  
-- Human–Computer Interaction  
-- Multimodal Timing Models  
 
 ---
 
@@ -89,128 +70,92 @@ See full analysis:
 
 Includes:
 
-- `pause_classifier_bot.py` — Classifies pause types (cognitive, friction, repair…)  
-- `latency_tracker.py` — Measures latency-induced drift  
-- `reentry_detector.py` — Detects return-to-intent behavior  
-- Validation tools: `pld_event.schema.json`, `metrics_schema.yaml`  
-- One-command demo: `DEMORUN.md`
+- `pause_classifier_bot.py`  
+- `latency_tracker.py`  
+- `reentry_detector.py`  
+- Validation tools (`pld_event.schema.json`, `metrics_schema.yaml`)  
+- Demo tools (`DEMORUN.md`)
 
-Use this to build **timing-aware agents** that detect and react to rhythm changes.
+Use this to build **timing-aware agents**.
 
 ---
 
 # 🎨 Design & Development Patterns
 
-Perfect for UX / AI / Interaction teams:
-
 ### For Industry
-- Reduce user drop-offs by smoothing latency gaps  
-- Prevent system drift before it becomes failure  
-- Embed repair loops to recover intent mid-conversation  
+- Reduce drop-offs  
+- Prevent drift failures  
+- Embed repair loops  
 
 ### For Designers
-- Figma-friendly latency-hold patterns  
-- Rhythm-friendly UI transitions  
+- Latency-hold UI patterns  
+- Rhythm-friendly transitions  
 
 ### For Developers
-- Rasa-compatible soft repair templates  
-- Drift → Repair → Reentry patterns for LLMs  
+- Rasa soft repair patterns  
+- LLM drift/repair/reentry patterns  
 
 ---
 
 # 🔬 Big Picture — PLD in 4 Stages
 
-<a href="./01_phase_loop_dynamics/10_phase_loop_dynamics.svg">
-<img src="./01_phase_loop_dynamics/10_phase_loop_dynamics.svg" width="800">
-</a>
-
-1. **Observation** — detect hesitations, timing irregularities  
-2. **Structural Model** — Drift / Repair / Resonance loops  
-3. **Implementation Kit** — detection + logging tools  
-4. **Applications** — real-time agents, UX, multimodal systems  
+1. **Observation**  
+2. **Structural Model**  
+3. **Implementation Kit**  
+4. **Applications**  
 
 ---
 
-# 🧠 Meta-Intelligence Integration Framework  
-*A multi-layer architecture for coordinated multi-AI cognition*
+# 🧠 Meta-Intelligence Integration Framework
 
 [**View Project →**](./04_meta-intelligence-framework)
 
-A four-layer cognitive system enabling **systematic collaboration across AI models**:
-
-| Layer | Function | Analogue |
-|-------|----------|----------|
-| **I — Structural** | Knowledge & coherence | Rational |
-| **II — Contextual** | Situational adaptation | Intuitive |
-| **III — Integrative** | Multimodal synthesis | Deliberative |
-| **IV — Reflective** | Ethics & oversight | Meta-cognitive |
-
-### Applications
-- Education design  
-- Healthcare decision support  
-- Governance & policy  
-- Multimodal reasoning pipelines  
-
-### Status
-**Phase 1 (alpha)** — Open for case studies / contributions.
+A four-layer cognitive system enabling systematic multi-AI collaboration.
 
 ---
 
 # 🧩 Theory & Research (for Joint R&D)
 
-> Connecting PLD to academic literature, formal models, and mathematics.
+- Glossary & Academic Mapping  
+- Mathematical Appendix  
+- Academic-to-PLD Reverse Mapping  
+- Category-theory mappings  
 
-- **Glossary & Academic Mapping**  
-- **Mathematical Appendix** — operators, phase space, loop generators  
-- **Academic-to-PLD Reverse Mapping**  
-- **Category-theory visual mappings**
-
-All available under:  
-`01_phase_loop_dynamics/`
+Located in `01_phase_loop_dynamics/`.
 
 ---
 
 # 📚 Structural Rhythm — Core Concepts
 
-PLD models interaction as a rhythmic loop:
-
-1. **Drift (𝒟)** — delay / ambiguity / async shift  
-2. **Repair (ℛ)** — alignment restoration  
-3. **Resonance (𝓛₅)** — stabilizing echo / affective attunement  
-
-> Drift is not deviation — it is *rhythm under construction*.
+1. **Drift (𝒟)**  
+2. **Repair (ℛ)**  
+3. **Resonance (𝓛₅)**  
 
 ---
 
-# 🧮 Mathematical Framing
+# 🎥 Supplemental Link Only — Minimal Demo (13s)
 
-<a href="./01_phase_loop_dynamics/diagrams/category_theory_mapping.svg">
-<img src="./01_phase_loop_dynamics/diagrams/category_theory_mapping.svg" width="800">
-</a>
+*This is a minimal execution preview, included only for completeness.*  
+**[YouTube: Minimal Demo](https://youtu.be/nI0S8Aaywgc)**
 
 ---
 
 # 🤝 Collaboration
 
-We welcome partners from **industry**, **academia**, and **open-source**.
-
 | Role | First Step |
 |------|------------|
-| Industry Partner | Pilot Project Model |
-| UX Researcher | Try Quickstart Patterns |
-| Academic Collaborator | Review Academic Mapping |
+| Industry Partner | Pilot Project |
+| UX Researcher | Quickstart Kit |
+| Academic Collaborator | Academic Mapping |
 
-**Contact:**  
-📩 deepzenspace[at]gmail[dot]com  
-🐦 X: [@DeepZenSpace](https://x.com/DeepZenSpace)
+Contact: deepzenspace[at]gmail[dot]com  
+X: @DeepZenSpace
 
 ---
 
 # 📄 License
 
-Licensed under:  
-**Creative Commons Attribution–NonCommercial 4.0 (CC BY-NC 4.0)**
-
-Commercial use requires written permission.
+Creative Commons BY-NC 4.0  
+Commercial use requires permission.
 
 © 2025 Your Name / Organization
