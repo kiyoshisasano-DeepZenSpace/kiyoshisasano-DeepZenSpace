@@ -47,32 +47,29 @@ improve timing alignment, repair handling, and conversation reentry in hours, no
 
 ---
 
----
+## [New] Measured Performance & Operational Insights (N=200)
 
-## [New] Measured Performance & Empirical Insights (N=200)
-
-The first empirical validation of the Phase Loop Dynamics (PLD) model using 200 task-oriented dialogues from the MultiWOZ 2.4 dataset. This section replaces previous illustrative metrics with measured data.
+This section presents the **first empirical validation** of the PLD/HCI model using 200 task-oriented dialogues from the MultiWOZ 2.4 dataset. This data replaces previous illustrative metrics with **measured, actionable performance data**—the results submitted to technical media.
 
 ### Key Performance Metrics (KPIs)
 
-| Metric | Measured Value | Insight |
+| Metric | Measured Value | Operational Insight |
 |---|---|---|
 | **Outcome-Complete Rate** | **75.0%** | Standard task success rate. |
-| **Hard Repair Rate** | **10.0%** | **CRITICAL:** 10% of dialogues required a full context reset (e.g., system self-correction). |
-| **Drift-Information** | **Highest Frequency** | The single largest cause of Hard Repair: DB search failures ("not found"). |
+| **Hard Repair Rate** | **10.0%** | **CRITICAL FAILURE:** 1 in 10 dialogues required a full context reset (e.g., system self-correction). |
+| **Highest Drift Type** | **Drift-Information** | **The #1 System Threat:** Database errors or "no result" responses. |
 | **UX Repair Rate** | **60.0%** | System uses Soft Repair patterns effectively as a safety net. |
 
-### Core Insight: The Hard Repair Trap (Drift-Information)
+### Core Practical Mandate: Eliminate the Information Drift Trap
 
-The primary threat to system trust is the **"Information Drift Trap"** (DB error), where a system incorrectly reports "no results" and is later forced to issue a **Hard Repair** (self-correction) under user pressure.
+The single largest cause of structural failure (`Hard Repair`) is the **"Information Drift Trap"** (a system reporting "no results" and later correcting itself). This severely damages user trust (e.g., "I find that very hard to believe!").
 
-### Practical Solution & Quickstart Link
+**Mandatory Solution (See Op. Proposal):**
+Prohibit generic "not found" responses. Systems must default to **Soft Repair (Repair-AddInfo)** by proposing a viable, slightly relaxed alternative (e.g., "We found no 4-star hotels in the medium price range, but would you consider a lower price range?").
 
-We propose standardizing the **Soft Repair** strategy to prevent this: **Prohibit generic "not found" responses.** Instead, systems must default to **Repair-AddInfo** (proposing a relaxed alternative) to preserve **Resonance** and user trust.
+This directly implements **Proposal 1** from the *PLD/HCI Comprehensive Analysis Report - Operational Improvement Proposal*.
 
 [**→ View Full Analysis Reports & Code Examples**](./07_empirical_studies/multiwoz_2.4_n200)
-
----
 
 ---
 
