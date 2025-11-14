@@ -1,306 +1,216 @@
-# Research Projects
+# 🚀 Phase Loop Dynamics (PLD) & Meta-Intelligence Research Hub  
+*A unified space for timing-aware interaction design, multi-AI cognition, and empirical validation.*
 
-## Meta-Intelligence Integration Framework  
-A cognitive architecture for multi-AI collaboration  
-[**View Project →**](./04_meta-intelligence-framework)
+This repository brings together two major research tracks:
 
----
+1. **Phase Loop Dynamics (PLD)** — A timing-aware model for Drift → Repair → Resonance in AI/UX interactions, backed by empirical data.  
+2. **Meta-Intelligence Integration Framework** — A multi-layer cognitive architecture for coordinating heterogeneous AI systems.
 
-## Phase Loop Dynamics
-
-
-[ Watch Demo on YouTube](https://youtu.be/nI0S8Aaywgc)  
-*(Click thumbnail below to play)*  
-[![Watch the video](https://img.youtube.com/vi/nI0S8Aaywgc/0.jpg)](https://youtu.be/nI0S8Aaywgc)
-
-Phase Loop Dynamics (PLD) models the *rhythms* of interaction —  
-**Drift → Repair → Resonance** — to keep AI dialogues, UX flows, and multimodal systems in sync.
-
-**Key Idea:** Pauses, delays, and hesitations are not just noise — they are designable signals.  
-By treating these as measurable patterns, PLD bridges **conversation analysis, cognitive science, and HCI** into a unified timing-aware architecture.
-
-**What you’ll find here**
-- **Quickstart Kit** – ready-to-use patterns for Rasa, Figma, and LLMs
-- **Bridge-Hub** – real-time event detection, metrics, and dashboards
-- **Interdisciplinary mapping** – 8+ academic domains linked to OSS modules
-
-[One-Page Visual Overview (PDF)](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/d739436a07bf72334445f2c559bc56d0a793231b/06_translation_interface/zenodo/docs/PLD_OnePage_PressSheet_EN.pdf) |
-[DOI Publication](https://doi.org/10.5281/zenodo.16794452)
-
-
-
+If you’re new here, start with the **Quickstart Kit** or watch the **PLD Demo Video**.
 
 ---
 
-##  Start Here — Quick Collaboration Entry
+# 📌 Quick Navigation
 
-**[▶︎ Quickstart Kit](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit/README_quickstart.md)**  
-Ready-to-use patterns for **Rasa**, **Figma**, and **LLMs** —  
-improve timing alignment, repair handling, and conversation reentry in hours, not weeks.
-
----
-
-### For Industry & Applied Teams
-- **Reduce drop-offs** in real-time AI agents by addressing latency and rhythm gaps.
-- **Embed repair loops** to recover user intent mid-interaction.
-- **Turn silence into signal** — leverage hesitation as a design feature, not a failure.
+| Goal | Start Here |
+|------|------------|
+| **Build or fix real-time AI interactions** | [▶︎ Quickstart Kit](./02_quickstart_kit/README_quickstart.md) |
+| **Understand PLD in 5 minutes** | [YouTube Demo](https://youtu.be/nI0S8Aaywgc) |
+| **See measured system performance (N=200)** | [Operational Insights](#-measured-performance--operational-insights-n200) |
+| **Explore formal theory / academic mapping** | [Theory & Research](#-theory--research-for-joint-rd) |
+| **Work with multiple AI agents** | [Meta-Intelligence Cognitive Framework](./04_meta-intelligence-framework) |
 
 ---
 
-## [New] Measured Performance & Operational Insights (N=200)
+# 🎥 Phase Loop Dynamics — Overview & Demo
 
-This section presents the **first empirical validation** of the PLD/HCI model using 200 task-oriented dialogues from the MultiWOZ 2.4 dataset. This data replaces previous illustrative metrics with **measured, actionable performance data**—the results submitted to technical media.
+[📺 Watch Demo on YouTube](https://youtu.be/nI0S8Aaywgc)  
+*(Click to play)*  
+[![thumbnail](https://img.youtube.com/vi/nI0S8Aaywgc/0.jpg)](https://youtu.be/nI0S8Aaywgc)
 
-### Key Performance Metrics (KPIs)
+**Phase Loop Dynamics (PLD)** models the *rhythm* of interaction:  
+**Drift → Repair → Resonance**
 
-| Metric | Measured Value | Operational Insight |
-|---|---|---|
-| **Outcome-Complete Rate** | **75.0%** | Standard task success rate. |
-| **Hard Repair Rate** | **10.0%** | **CRITICAL FAILURE:** 1 in 10 dialogues required a full context reset (e.g., system self-correction). |
-| **Highest Drift Type** | **Drift-Information** | **The #1 System Threat:** Database errors or "no result" responses. |
-| **UX Repair Rate** | **60.0%** | System uses Soft Repair patterns effectively as a safety net. |
+It transforms delays, hesitations, and pacing irregularities into **designable signals**, integrating:
 
-### Core Practical Mandate: Eliminate the Information Drift Trap
-
-The single largest cause of structural failure (`Hard Repair`) is the **"Information Drift Trap"** (a system reporting "no results" and later correcting itself). This severely damages user trust (e.g., "I find that very hard to believe!").
-
-**Mandatory Solution (See Op. Proposal):**
-Prohibit generic "not found" responses. Systems must default to **Soft Repair (Repair-AddInfo)** by proposing a viable, slightly relaxed alternative (e.g., "We found no 4-star hotels in the medium price range, but would you consider a lower price range?").
-
-This directly implements **Proposal 1** from the *PLD/HCI Comprehensive Analysis Report - Operational Improvement Proposal*.
-
-[**→ View Full Analysis Reports & Code Examples**](./07_empirical_studies/multiwoz_2.4_n200)
+- Conversation Analysis  
+- Cognitive Science  
+- Human–Computer Interaction  
+- Multimodal Timing Models  
 
 ---
 
-### For Designers & Developers
-- **Rasa soft repair templates** – avoid premature conversation drops
-- **Figma latency hold patterns** – keep attention during backend delays
-- **LLM reentry prompts** – improve multi-turn coherence
+# ⚡ Quickstart — Build Better Interactive Systems in Hours
 
-See: [`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit)
+**[`02_quickstart_kit`](./02_quickstart_kit)**  
+
+Ready-to-use patterns for:
+
+- **Rasa** — Soft repair templates, intent reentry flows  
+- **Figma** — Latency-hold UI patterns  
+- **LLMs** — Drift/Repair prompts & timing-aware templates  
+- **Logging** — Drift / Repair / Reentry event formats
+
+**Purpose:**  
+Get from theory → working prototype *immediately*.
 
 ---
 
+# 📊 Measured Performance & Operational Insights (N=200)
 
-## Big Picture — PLD in 4 Stages
+*First empirical validation of the PLD/HCI model using 200 task-oriented dialogues (MultiWOZ 2.4).*
+
+| Metric | Value | Insight |
+|--------|-------|---------|
+| **Outcome-Complete Rate** | **75.0%** | Standard task success rate |
+| **Hard Repair Rate** | **10.0%** | **Critical:** 1 in 10 dialogues required full context reset |
+| **Highest Drift Type** | **Drift–Information** | **#1 System Risk:** DB errors / “no result” artifacts |
+| **UX Repair Rate** | **60.0%** | Soft Repair frequently stabilizes the dialogue |
+
+### 📌 Core Mandate: Eliminate the *Information Drift Trap*
+
+The largest structural failure arises when a system says *“no result”* and later contradicts itself.  
+→ Users instantly lose trust.
+
+### ✔ Mandatory Fix (Operational Recommendation)
+**Ban generic “not found” responses.**  
+Default to **Soft Repair (Repair–AddInfo)** with a viable alternative:
+
+> “No 4-star hotels in the medium range — would a lower price range work?”
+
+See full analysis:  
+**→ [`07_empirical_studies/multiwoz_2.4_n200`](./07_empirical_studies/multiwoz_2.4_n200)**
+
+---
+
+# 🧰 Bridge-Hub — Detection & Measurement Engine
+
+**[`03_pld-Bridge-Hub`](./03_pld-Bridge-Hub)** provides the analytics backbone:
+
+Includes:
+
+- `pause_classifier_bot.py` — Classifies pause types (cognitive, friction, repair…)  
+- `latency_tracker.py` — Measures latency-induced drift  
+- `reentry_detector.py` — Detects return-to-intent behavior  
+- Validation tools: `pld_event.schema.json`, `metrics_schema.yaml`  
+- One-command demo: `DEMORUN.md`
+
+Use this to build **timing-aware agents** that detect and react to rhythm changes.
+
+---
+
+# 🎨 Design & Development Patterns
+
+Perfect for UX / AI / Interaction teams:
+
+### For Industry
+- Reduce user drop-offs by smoothing latency gaps  
+- Prevent system drift before it becomes failure  
+- Embed repair loops to recover intent mid-conversation  
+
+### For Designers
+- Figma-friendly latency-hold patterns  
+- Rhythm-friendly UI transitions  
+
+### For Developers
+- Rasa-compatible soft repair templates  
+- Drift → Repair → Reentry patterns for LLMs  
+
+---
+
+# 🔬 Big Picture — PLD in 4 Stages
 
 <a href="./01_phase_loop_dynamics/10_phase_loop_dynamics.svg">
-<img src="./01_phase_loop_dynamics/10_phase_loop_dynamics.svg" alt="PLD Flow Diagram" width="800">
-</a>  
+<img src="./01_phase_loop_dynamics/10_phase_loop_dynamics.svg" width="800">
+</a>
 
-1. **Observation** – Detect hesitations, drifts, and timing irregularities  
-2. **Structural Model** – Formalize patterns into Drift / Repair / Resonance loops  
-3. **Implementation Kit** – Tools for detection, logging, and integration  
-4. **Applications** – Real-time systems, UX, and multi-modal environments
+1. **Observation** — detect hesitations, timing irregularities  
+2. **Structural Model** — Drift / Repair / Resonance loops  
+3. **Implementation Kit** — detection + logging tools  
+4. **Applications** — real-time agents, UX, multimodal systems  
 
 ---
 
-## Meta-Intelligence Integration Framework
+# 🧠 Meta-Intelligence Integration Framework  
+*A multi-layer architecture for coordinated multi-AI cognition*
 
-**Coordinating multiple AI systems through structured cognitive layers**
+[**View Project →**](./04_meta-intelligence-framework)
 
-**[View Project →](./04_meta-intelligence-framework)**
+A four-layer cognitive system enabling **systematic collaboration across AI models**:
 
-The **Meta-Intelligence Integration Framework** models how heterogeneous AI systems — each with distinct cognitive strengths — can collaborate *systematically* rather than through ad-hoc model switching.
+| Layer | Function | Analogue |
+|-------|----------|----------|
+| **I — Structural** | Knowledge & coherence | Rational |
+| **II — Contextual** | Situational adaptation | Intuitive |
+| **III — Integrative** | Multimodal synthesis | Deliberative |
+| **IV — Reflective** | Ethics & oversight | Meta-cognitive |
 
-### Four-Layer Cognitive Architecture
-| Layer | Core Function | Cognitive Analogue |
-|-------|----------------|--------------------|
-| **I — Structural** | Knowledge organization, theoretical coherence | System-1 Rational |
-| **II — Contextual** | Situational adaptation, stakeholder translation | System-2 Intuitive |
-| **III — Integrative** | Multimodal synthesis, feasibility planning | System-3 Deliberative |
-| **IV — Reflective** | Ethical validation, meta-cognitive oversight | System-R Reflective |
-
-### Key Applications
-- Education curriculum design  
+### Applications
+- Education design  
 - Healthcare decision support  
-- Policy development and governance  
+- Governance & policy  
 - Multimodal reasoning pipelines  
 
-### Current Status
-**Phase 1 (alpha)** — Theoretical framework and documentation complete; open for case studies and contributions.
-
-### Quick Links
-- [Framework Overview](./04_meta-intelligence-framework/PROJECT_OVERVIEW.md)  
-- [Theoretical Paper](./04_meta-intelligence-framework/docs/framework-overview.md)  
-- [Applied Examples](./04_meta-intelligence-framework/docs/basic-examples.md)  
-- [Contributing Guide](./04_meta-intelligence-framework/CONTRIBUTING.md)
-- [Comparative Analysis of AI Model Self-Perceptions](./04_meta-intelligence-framework/docs/model-comparative-analysis.md) — *Fact-checked supplement analyzing five major AI models (GPT, DeepSeek, Gemini, Perplexity, Claude) within the Meta-Intelligence Integration Framework*
-
-### New: Round 2D — Unified Meta-Synthesis
-- Overview: [Unified Meta-Synthesis README](./04_meta-intelligence-framework/synthesis_round2d/Unified_Meta_Synthesis_README.md)
-- Operational Synthesis (GPT): [GPT_unified_meta_synthesis.md](./04_meta-intelligence-framework/synthesis_round2d/GPT_unified_meta_synthesis.md)
-- Philosophical Synthesis (Claude): [Claude_unified_meta_synthesis.md](./04_meta-intelligence-framework/synthesis_round2d/Claude_unified_meta_synthesis.md)
-
-### Research Trace (Full Provenance)
-- Lifecycle & file map: [README_research_trace_en.md](./04_meta-intelligence-framework/README_research_trace_en.md)
-- Rounds:
-  - Round 1 (Self-Reflection): [raw_responses_round1/](./04_meta-intelligence-framework/raw_responses_round1)
-  - Round 2A (Self-Summary): [model_self_summaries_round2a.md](./04_meta-intelligence-framework/model_self_summaries_round2a.md)
-  - Round 2B (Cross-Analysis): [data_round2b/](./04_meta-intelligence-framework/data_round2b)
-  - Round 2C (Meta-Synthesis per model): [synthesis_round2c/](./04_meta-intelligence-framework/synthesis_round2c)
-  - Round 2D (Unified Integration): [synthesis_round2d/](./04_meta-intelligence-framework/synthesis_round2d)
-
-
-### License
----
-
-## License
-
-This document and accompanying figures are licensed under  
-**Creative Commons Attribution–NonCommercial 4.0 International (CC BY-NC 4.0)**.  
-
-You are free to share and adapt the material for any non-commercial purpose,  
-provided that appropriate credit is given to the original author.  
-
-**Commercial or for-profit use requires prior written permission or a formal collaboration agreement with the author.**
-
-© 2025 [Your Name / Organization]
-
+### Status
+**Phase 1 (alpha)** — Open for case studies / contributions.
 
 ---
 
-## Collaboration Paths
+# 🧩 Theory & Research (for Joint R&D)
 
-| Role / Team              | Recommended First Step |
-|--------------------------|------------------------|
-| **Industry Partner**     | [Pilot Project Model](#pilot-project-model) |
-| **UX Researcher**        | Try [Quickstart Patterns](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit) |
-| **Academic Collaborator**| See [Glossary & Academic Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/01_phase_loop_dynamics/09_academic_mapping_index.md) |
+> Connecting PLD to academic literature, formal models, and mathematics.
 
----
+- **Glossary & Academic Mapping**  
+- **Mathematical Appendix** — operators, phase space, loop generators  
+- **Academic-to-PLD Reverse Mapping**  
+- **Category-theory visual mappings**
 
-## Theory & Research (for Joint R&D)
-
-> *This section connects PLD to academic frameworks and formal models.*
-
-- **[Glossary & Academic Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/01_phase_loop_dynamics/09_academic_mapping_index.md)** — Cross-disciplinary concept alignment  
-- **[Mathematical Appendix](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/01_phase_loop_dynamics/PLD_Mathematical_Appendix.md)** — Formal operators, phase space, and loop generators  
-- **[Academic-to-PLD Reverse Mapping](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/blob/1273de1ae451a80a71818f6bcac893dca42117f2/01_phase_loop_dynamics/related_work/academic_to_pld_reverse.md)** — How existing literature maps back into PLD
+All available under:  
+`01_phase_loop_dynamics/`
 
 ---
 
-## Structural Rhythm
+# 📚 Structural Rhythm — Core Concepts
 
-- Focuses on **observable interaction rhythms** — timing patterns, pauses, and changes in pace that occur during exchanges.
+PLD models interaction as a rhythmic loop:
 
-- **PLD core** models these through:
-  - **Drift (𝒟):** emerging delays or irregularities
-  - **Repair (ℛ):** adjustments restoring smooth flow
-  - **Resonance (𝓛₅):** repetition of stabilizing patterns
+1. **Drift (𝒟)** — delay / ambiguity / async shift  
+2. **Repair (ℛ)** — alignment restoration  
+3. **Resonance (𝓛₅)** — stabilizing echo / affective attunement  
 
-- **Multi-disciplinary analogies:**
-  - *Information theory:* drift = entropy rise; repair = entropy drop  
-  - *Network science:* drift = temporary fragmentation; repair = re-linking  
-  - *Dynamics:* drift = moving off track; repair = returning to stable path
-
-- **Bottom line:**  
-  PLD offers a structured way to detect, adjust, and reinforce interaction rhythms for more effective communication.
+> Drift is not deviation — it is *rhythm under construction*.
 
 ---
 
-## Core Principles
-
-PLD structures interaction through rhythmic sequences:
-1. **Drift (𝒟)** — delay, ambiguity, or asynchrony  
-2. **Repair (ℛ)** — structural realignment or co-presence gesture  
-3. **Resonance (𝓛₅)** — recursive echo or affective attunement  
-
-*Drift is not deviation — it's rhythm under construction.*
-
----
-
-### Origin Story  
-
-An unexpected insight from AI dialogue revealed that interaction rhythms start forming before words are spoken — this became the seed of PLD.  
-What began as open-ended questions, with no analysis in mind, unfolded into a framework now linking design, AI, and cognitive science.
-
-
----
-
-
-## Mathematical Framing
+# 🧮 Mathematical Framing
 
 <a href="./01_phase_loop_dynamics/diagrams/category_theory_mapping.svg">
-<img src="./01_phase_loop_dynamics/diagrams/category_theory_mapping.svg" alt="PLD Math/Formal Mapping" width="800">
-</a>  
-
-**Plain-language interpretation:**  
-- **Drift:** When timing shifts enough to feel different, due to delay or async events.  
-- **Repair:** Adjustment to realign interaction state.  
-- **Reentry:** Return to a prior state after a disruption.  
-- **Resonance:** Alignment between current and past state, creating rhythm.
-
-**Optional LaTeX code (for MathJax viewers):**  
-
-```latex
-\Sigma = \mathcal{S} \times \mathcal{T} \times \mathcal{P}
-
-\begin{aligned}
-\text{Drift} &\sim \frac{\partial \Psi}{\partial t} > \theta \\
-\text{Repair} &= \mathcal{R}(\sigma) \in \Sigma \\
-\text{Reentry} &\iff \exists t_r : \Sigma(t_r) \approx \Sigma(t_0) \\
-\text{Resonance} &\iff \langle \sigma_t, \sigma_{t-k} \rangle \to 1
-\end{aligned}
-```
-## Quickstart Kit — Ready-to-Use Patterns
-
-**[`02_quickstart_kit`](https://github.com/kiyoshisasano-DeepZenSpace/kiyoshisasano-DeepZenSpace/tree/1273de1ae451a80a71818f6bcac893dca42117f2/02_quickstart_kit)**  
-Drop-in templates and patterns for **Rasa**, **Figma**, and **LLMs** —  
-designed to improve timing alignment, repair handling, and conversation reentry in hours, not weeks.
-
-**Purpose:**  
-Get from theory to working prototype *immediately* by using pre-built interaction patterns.
-
-Includes:
-- Soft repair flows for Rasa
-- Latency-hold UI patterns for Figma
-- Reentry prompts for LLMs
-- Drift / Repair / Reentry logging templates
+<img src="./01_phase_loop_dynamics/diagrams/category_theory_mapping.svg" width="800">
+</a>
 
 ---
 
-## Bridge-Hub Modules — Detection & Measurement Backbone
+# 🤝 Collaboration
 
-**[`03_pld-Bridge-Hub`](./03_pld-Bridge-Hub)**  
-Runnable tools and APIs for **detecting**, **logging**, and **classifying** PLD patterns in real-time or batch workflows.
+We welcome partners from **industry**, **academia**, and **open-source**.
 
-**Purpose:**  
-Provide the *instrumentation and analytics layer* that lets you measure and tune interaction rhythms.
+| Role | First Step |
+|------|------------|
+| Industry Partner | Pilot Project Model |
+| UX Researcher | Try Quickstart Patterns |
+| Academic Collaborator | Review Academic Mapping |
 
-Includes:
-- `pause_classifier_bot.py` — Classifies pauses into cognitive, UI friction, disengagement, repair, etc.
-- `latency_tracker.py` — Detects latency-induced pauses and logs them.
-- `reentry_detector.py` — Identifies return to a prior intent after a gap.
-- `DEMORUN.md` — One-command demo with event validation and metrics reporting.
-
-Use Bridge-Hub to:
-- Validate PLD event logs (`pld_event.schema.json`)
-- Measure before/after metrics (`metrics_schema.yaml`)
-- Run proof-of-concept detection without a full system rebuild
+**Contact:**  
+📩 deepzenspace[at]gmail[dot]com  
+🐦 X: [@DeepZenSpace](https://x.com/DeepZenSpace)
 
 ---
 
+# 📄 License
 
-## Contact & Collaboration
+Licensed under:  
+**Creative Commons Attribution–NonCommercial 4.0 (CC BY-NC 4.0)**
 
-We welcome **industry partners, research collaborators, and open-source contributors**.
+Commercial use requires written permission.
 
-### Collaboration Models
-| Type | What You Get | First Step |
-|------|--------------|------------|
-| **Pilot Project** | Joint Proof-of-Concept with core PLD modules | Read [`05_field_stewardship/_index.md`](./05_field_stewardship) |
-| **Production Integration** | Full PLD deployment with calibration support | Contact us to discuss system context |
-| **Joint R&D** | Co-author research papers and prototypes | Review [`01_phase_loop_dynamics`](./01_phase_loop_dynamics) |
-
-### Get in Touch
-- Email: **deepzenspace[at]gmail[dot]com**
-- License: **Creative Commons BY-NC 4.0**
-
-### Connect
-- [X (Twitter): @DeepZenSpace](https://x.com/DeepZenSpace)
-- email:deepzenspace[at]gmail[dot]com
-
-> Most partners start with the [Quickstart Kit](./02_quickstart_kit) or a **Pilot Project** — both are low-barrier entry points.
-
+© 2025 Your Name / Organization
