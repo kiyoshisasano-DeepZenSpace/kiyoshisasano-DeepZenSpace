@@ -1,9 +1,6 @@
 # PLD: Phase Loop Dynamics  
 ### *A Practical Runtime Framework for Stable Multi-Turn LLM Systems*
 
-# PLD: Phase Loop Dynamics  
-### *A Practical Runtime Framework for Stable Multi-Turn LLM Systems*
-
 ## 🧠 Why PLD Exists — 10 Seconds
 
 Modern multi-turn LLM systems don’t fail because they lack capability —  
