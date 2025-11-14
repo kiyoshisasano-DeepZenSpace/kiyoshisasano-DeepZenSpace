@@ -59,26 +59,26 @@ flowchart LR
     U[User]
 
     %% === PLD Runtime Loop ===
-    subgraph R[Phase Loop Dynamics (PLD Runtime Loop)]
+    subgraph R["Phase Loop Dynamics (PLD Runtime Loop)"]
         Start([Turn n input])
         Drift{Drift detected?}
-        Soft[Soft Repair<br/>(clarify / correct)]
-        Hard[Hard Repair<br/>(reset / change path)]
-        Reentry[Reentry Checkpoint<br/>(confirm alignment)]
+        Soft["Soft Repair<br/>(clarify / correct)"]
+        Hard["Hard Repair<br/>(reset / change path)"]
+        Reentry["Reentry Checkpoint<br/>(confirm alignment)]
         Continue[Continue Task]
-        Outcome[(Outcome<br/>complete / partial / fail)]
+        Outcome["Outcome<br/>complete / partial / fail"]
     end
 
     %% === UX & Latency Layer ===
-    subgraph UX[Latency & UX Patterns]
-        Latency[Latency holds,<br/>typing indicators,<br/>expectation messages]
+    subgraph UX["Latency & UX Patterns"]
+        Latency["Latency holds,<br/>typing indicators,<br/>expectation messages"]
     end
 
     %% === Metrics & Analytics Layer ===
-    subgraph M[Logging → Metrics → Analytics]
-        Log[(PLD Event Log<br/>(drift, repair,<br/>reentry, outcome, latency))]
+    subgraph M["Logging → Metrics → Analytics"]
+        Log["PLD Event Log<br/>(drift, repair,<br/>reentry, outcome, latency)"]
         Metrics[Metrics & Dashboards]
-        Bench[analytics/ benchmarks<br/>(e.g. MultiWOZ 2.4 N=200)]
+        Bench["Analytics / benchmarks<br/>(e.g. MultiWOZ 2.4 N=200)"]
     end
 
     %% --- User ↔ Runtime ---
@@ -111,7 +111,7 @@ flowchart LR
     Outcome --> Log
 
     Log --> Metrics --> Bench
-```
+
 
 ---
 
