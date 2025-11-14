@@ -62,23 +62,23 @@ flowchart LR
     subgraph PLD_Runtime_Loop
         Start([Turn n input])
         Drift{Drift detected?}
-        Soft['Soft Repair<br/>(clarify / correct)']
-        Hard['Hard Repair<br/>(reset / change path)']
-        Reentry['Reentry Checkpoint<br/>(confirm alignment)']
+        Soft["Soft Repair\n(clarify / correct)"]
+        Hard["Hard Repair\n(reset / change path)"]
+        Reentry["Reentry Checkpoint\n(confirm alignment)"]
         Continue[Continue Task]
-        Outcome['Outcome<br/>complete / partial / fail']
+        Outcome["Outcome\ncomplete / partial / fail"]
     end
 
     %% === UX & Latency Layer ===
     subgraph Latency_UX_Patterns
-        Latency['Latency holds,<br/>typing indicators,<br/>expectation messages]
+        Latency["Latency holds,\ntyping indicators,\nexpectation messages"]
     end
 
     %% === Metrics & Analytics Layer ===
     subgraph Metrics_Analytics
-        Log['PLD Event Log<br/>(drift, repair,<br/>reentry, outcome, latency)']
+        Log["PLD Event Log\n(drift, repair,\nreentry, outcome, latency)"]
         Metrics[Metrics & Dashboards]
-        Bench['Analytics / benchmarks<br/>(e.g. MultiWOZ 2.4 N=200)']
+        Bench["Analytics / benchmarks\n(e.g. MultiWOZ 2.4 N=200)"]
     end
 
     %% --- User ↔ Runtime ---
@@ -111,6 +111,7 @@ flowchart LR
     Outcome --> Log
 
     Log --> Metrics --> Bench
+
 ```
 
 
