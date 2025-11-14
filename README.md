@@ -59,7 +59,7 @@ flowchart LR
     U[User]
 
     %% === PLD Runtime Loop ===
-    subgraph R['Phase Loop Dynamics (PLD Runtime Loop)']
+    subgraph PLD_Runtime_Loop
         Start([Turn n input])
         Drift{Drift detected?}
         Soft['Soft Repair<br/>(clarify / correct)']
@@ -70,12 +70,12 @@ flowchart LR
     end
 
     %% === UX & Latency Layer ===
-    subgraph UX['Latency & UX Patterns']
-        Latency['Latency holds,<br/>typing indicators,<br/>expectation messages']
+    subgraph Latency_UX_Patterns
+        Latency['Latency holds,<br/>typing indicators,<br/>expectation messages]
     end
 
     %% === Metrics & Analytics Layer ===
-    subgraph M['Logging → Metrics → Analytics']
+    subgraph Metrics_Analytics
         Log['PLD Event Log<br/>(drift, repair,<br/>reentry, outcome, latency)']
         Metrics[Metrics & Dashboards]
         Bench['Analytics / benchmarks<br/>(e.g. MultiWOZ 2.4 N=200)']
