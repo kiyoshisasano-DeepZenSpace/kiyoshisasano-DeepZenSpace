@@ -68,6 +68,8 @@ flowchart LR
     Reentry -->|Not aligned| Drift
 
 ```
+📌 Full diagram (zoomable):  
+➡ `/docs/model_diagram.md`
 
 
 ---
