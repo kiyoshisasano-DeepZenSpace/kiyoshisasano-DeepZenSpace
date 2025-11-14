@@ -1,0 +1,10 @@
+{"session_id": "DEMO-001", "turn_id": 1, "speaker": "user", "text": "I need a 4-star hotel in Cambridge.", "drift": null, "repair": null, "latency_ms": 812}
+{"session_id": "DEMO-001", "turn_id": 2, "speaker": "system", "text": "Okay, checking hotels now...", "drift": null, "repair": null, "latency_ms": 2420}
+{"session_id": "DEMO-001", "turn_id": 3, "speaker": "system", "text": "There are no 4-star hotels available.", "drift": "Drift-Information", "repair": null, "latency_ms": 3104}
+{"session_id": "DEMO-001", "turn_id": 4, "speaker": "user", "text": "Are you sure? I think some exist.", "drift": null, "repair": null, "latency_ms": 645}
+{"session_id": "DEMO-001", "turn_id": 5, "speaker": "system", "text": "My mistake — there are 4-star hotels available. Would you prefer the north or city center?", "drift": "Drift-Information", "repair": "SoftRepair-AddOptions", "latency_ms": 4021}
+{"session_id": "DEMO-001", "turn_id": 6, "speaker": "user", "text": "City center please.", "drift": null, "repair": null, "latency_ms": 521}
+{"session_id": "DEMO-001", "turn_id": 7, "speaker": "system", "text": "I found The University Arms. Should I book it?", "drift": null, "repair": "Reentry-IntentConfirmation", "latency_ms": 2100}
+{"session_id": "DEMO-001", "turn_id": 8, "speaker": "user", "text": "Yes, please book it.", "drift": null, "repair": null, "latency_ms": 588}
+{"session_id": "DEMO-001", "turn_id": 9, "speaker": "system", "text": "Done — booking confirmed. Anything else?", "drift": null, "repair": null, "latency_ms": 1550}
+{"session_id": "DEMO-001", "turn_id": 10, "speaker": "user", "text": "No, that's all.", "drift": null, "repair": null, "latency_ms": 430}

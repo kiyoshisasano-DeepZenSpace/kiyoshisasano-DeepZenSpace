@@ -1,0 +1,142 @@
+version: "3.1"
+
+# ======================================================
+# RASA — Soft Repair Policy (PLD Applied-AI Edition)
+# Purpose: Stabilize dialogue after Drift without reset
+# ======================================================
+
+intents:
+  - request_info
+  - provide_constraints
+  - deny
+  - affirm
+  - change_mind
+  - repeat_request
+  - fallback
+
+slots:
+  user_goal:
+    type: text
+  constraint_price:
+    type: text
+  constraint_category:
+    type: text
+  repair_state:
+    type: text
+    initial_value: null
+
+responses:
+
+  # ------------------------------
+  # Soft Repair — AddOptions
+  # ------------------------------
+  utter_soft_repair_add_options:
+    - text: >
+        Looks like there may not be an exact match for that.
+        Would one of these alternatives work instead?
+        • {repair_option_1}
+        • {repair_option_2}
+
+  # ------------------------------
+  # Soft Repair — Clarify
+  # ------------------------------
+  utter_soft_repair_clarify:
+    - text: >
+        Just to confirm — you're looking for **{user_goal}**, with
+        price around **{constraint_price}**, correct?
+        If not, I can adjust the search.
+
+  # ------------------------------
+  # Soft Repair — Constraint Relaxation
+  # ------------------------------
+  utter_soft_repair_relax_constraints:
+    - text: >
+        I couldn't find results under the current filters.
+        Would you like to try:
+        • A lower price range?
+        • A different area?
+        • More flexible options?
+
+  # ------------------------------
+  # Reentry Confirmation (after repair)
+  # ------------------------------
+  utter_reentry_confirmation:
+    - text: >
+        Thanks — we’re aligned again.
+        Continuing the search now with updated constraints.
+
+  # ------------------------------
+  # Controlled Failure (when Soft Repair fails)
+  # ------------------------------
+  utter_structured_failure:
+    - text: >
+        It looks like we still don’t have a workable match.
+        I can restart or refine—what would you prefer?
+
+actions:
+  - action_detect_drift
+  - action_apply_soft_repair
+  - action_reentry_guard
+
+policies:
+  - name: MemoizationPolicy
+    max_history: 6
+
+  - name: RulePolicy
+    core_fallback_action_name: action_apply_soft_repair
+    enable_fallback_prediction: true
+
+
+# ======================================================
+# RULES — Drift → Soft Repair → Reentry (Applied PLD)
+# ======================================================
+
+rules:
+
+  # --------------------------------------------------
+  # 1) Detect Drift (weak signal → clarify)
+  # --------------------------------------------------
+  - rule: Trigger soft repair when unclear or conflicting input
+    steps:
+      - intent: fallback
+      - action: action_detect_drift
+      - action: utter_soft_repair_clarify
+
+  # --------------------------------------------------
+  # 2) Constraint mismatch → offer options
+  # --------------------------------------------------
+  - rule: Offer alternatives after failed match
+    condition:
+      - slot_was_set:
+          - repair_state: "drift_information"
+    steps:
+      - action: utter_soft_repair_add_options
+
+  # --------------------------------------------------
+  # 3) Multiple failed clarifications → relax constraints
+  # --------------------------------------------------
+  - rule: Relax constraints if drift persists
+    condition:
+      - slot_was_set:
+          - repair_state: "drift_repeated"
+    steps:
+      - action: utter_soft_repair_relax_constraints
+
+  # --------------------------------------------------
+  # 4) Successful clarification → reentry guard
+  # --------------------------------------------------
+  - rule: Confirm aligned state
+    steps:
+      - intent: affirm
+      - action: action_reentry_guard
+      - action: utter_reentry_confirmation
+
+  # --------------------------------------------------
+  # 5) Escalation: structured graceful failure
+  # --------------------------------------------------
+  - rule: Controlled failure when repair exhausted
+    condition:
+      - slot_was_set:
+          - repair_state: "soft_repair_exhausted"
+    steps:
+      - action: utter_structured_failure

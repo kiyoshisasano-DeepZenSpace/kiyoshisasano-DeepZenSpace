@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PLD Runtime Event Envelope",
+  "type": "object",
+
+  "required": [
+    "envelope_id",
+    "timestamp",
+    "session",
+    "trace",
+    "runtime",
+    "event"
+  ],
+
+  "properties": {
+
+    "envelope_id": {
+      "type": "string",
+      "description": "UUIDv4 unique identifier for the envelope instance"
+    },
+
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "session": {
+      "type": "object",
+      "required": ["session_id"],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "description": "Conversation or agent process identifier"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string",
+          "enum": [
+            "assistants_api",
+            "langgraph",
+            "vertex_ai",
+            "rasa",
+            "open_webchat",
+            "batch_eval",
+            "unknown"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "trace": {
+      "type": "object",
+      "required": [
+        "trace_id",
+        "turn_index"
+      ],
+      "properties": {
+        "trace_id": {
+          "type": "string",
+          "description": "Grouping key representing a continuous conversational flow"
+        },
+        "turn_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "parent_trace_id": {
+          "type": "string",
+          "description": "Optional reference for fork/branch operations"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "runtime": {
+      "type": "object",
+      "required": ["environment", "mode"],
+      "properties": {
+        "environment": {
+          "type": "string",
+          "enum": [
+            "production",
+            "staging",
+            "sandbox",
+            "local"
+          ]
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "stream",
+            "batch",
+            "debug",
+            "audit"
+          ]
+        },
+        "latency_ms": {
+          "type": "number"
+        },
+        "model": {
+          "type": "string"
+        },
+        "agent_state": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "event": {
+      "$ref": "pld_event.schema.json"
+    }
+  },
+
+  "additionalProperties": false
+}

@@ -1,0 +1,156 @@
+# ============================================================================
+# PLD Metrics Schema (Quickstart Applied Edition)
+# ----------------------------------------------------------------------------
+# This schema defines required and optional metric fields for storing,
+# aggregating, and visualizing PLD telemetry across sessions.
+#
+# It is aligned with:
+#  - schemas/pld_event.schema.json   (atomic event structure)
+#  - quickstart/metrics/pipelines/   (aggregation scripts)
+#  - quickstart/patterns/            (repair detection + logging)
+# ============================================================================
+
+version: "1.0"
+schema_family: "PLD_Applied_Metrics"
+
+requires:
+  - session_id
+  - total_turns
+  - drift_metrics
+  - repair_metrics
+  - reentry_metrics
+  - outcome_metrics
+
+optional:
+  - system_info
+  - model_info
+  - tagging_stats
+  - timestamps
+
+
+# ============================================================================
+# 🔹 Metadata About the Logged Run
+# ============================================================================
+session_metadata:
+  session_id:
+    type: string
+    description: "Unique identifier for the evaluation session."
+
+  source_system:
+    type: string
+    examples: ["rasa", "langgraph", "openai_assistants", "cli", "custom_framework"]
+    description: "Optional label identifying the orchestrator or execution stack."
+
+  model_info:
+    model_name: string
+    model_revision: string
+
+
+# ============================================================================
+# 🔹 Drift Metrics (D1–D5 taxonomy)
+# ============================================================================
+drift_metrics:
+  total_drift_count:
+    type: integer
+    description: "How many drift events occurred (sum across D1–D5)."
+
+  drift_distribution:
+    D1_information_drift: integer
+    D2_context_drift: integer
+    D3_intent_drift: integer
+    D4_procedural_drift: integer
+    D5_pacing_latency_drift: integer
+
+  drift_rate_per_turn:
+    type: number
+    format: float
+    description: "total_drift_count / total_turns"
+
+
+# ============================================================================
+# 🔹 Repair Metrics (Soft vs Hard)
+# ============================================================================
+repair_metrics:
+  total_repairs:
+    type: integer
+
+  soft_repair_count:
+    type: integer
+
+  hard_repair_count:
+    type: integer
+
+  repair_success_rate:
+    type: number
+    format: float
+    description: "Proportion of repairs that led to successful reentry (0–1)."
+
+
+# ============================================================================
+# 🔹 Reentry Metrics (RE1–RE3)
+# ============================================================================
+reentry_metrics:
+  total_reentries:
+    type: integer
+  reentry_success_rate:
+    type: number
+    format: float
+  breakdown:
+    RE1_intent_reentry: integer
+    RE2_constraint_reentry: integer
+    RE3_workflow_reentry: integer
+
+
+# ============================================================================
+# 🔹 Latency Metrics
+# ============================================================================
+latency_metrics:
+  avg_latency_ms: number
+  max_latency_ms: number
+  high_latency_events: integer
+  latency_triggered_repairs: integer   # e.g., pacing → soft repair
+
+
+# ============================================================================
+# 🔹 Outcome Metrics (final state of the dialogue)
+# ============================================================================
+outcome_metrics:
+  outcome_type:
+    type: string
+    enum: ["complete", "incomplete", "reset", "abandoned", "handoff"]
+
+  outcome_confidence_score:
+    type: number
+    format: float
+    description: "Optional model-reported or evaluator confidence score (0–1)."
+
+
+# ============================================================================
+# 🔹 Derived Performance Indicators (automatically computed)
+# ============================================================================
+kpis:
+  drift_per_100_turns: number
+  repair_overuse_flag: boolean       # e.g. > 3 repairs consecutively
+  failure_mode_label:
+    type: string
+    enum: [
+      "stable",
+      "drift-heavy",
+      "repair-loop",
+      "latency-collapse",
+      "incomplete-recovery"
+    ]
+
+
+# ============================================================================
+# 🔹 Timestamps (optional, recommended)
+# ============================================================================
+timestamps:
+  session_start: string   # ISO-8601
+  session_end: string     # ISO-8601
+  processing_time_seconds: number
+
+
+# ============================================================================
+# END OF FILE
+# ============================================================================

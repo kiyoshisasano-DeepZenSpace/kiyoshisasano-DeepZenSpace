@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PLD Event (Quickstart Applied Edition)",
+  "description": "Single interaction event record for Phase Loop Dynamics (PLD) telemetry. Used in quickstart/metrics as the canonical event schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "session_id",
+    "turn_id",
+    "event_type",
+    "timestamp"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "description": "Unique identifier for a dialogue / session / run. Stable across all events in the same interaction."
+    },
+    "turn_id": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Monotonic integer representing the local turn index within a session."
+    },
+    "event_id": {
+      "type": "string",
+      "description": "Optional globally unique ID for this event (UUID, ULID, etc.)."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC timestamp when this event was produced, in ISO 8601 format."
+    },
+
+    "speaker": {
+      "type": "string",
+      "enum": [
+        "user",
+        "system",
+        "tool",
+        "orchestrator",
+        "other"
+      ],
+      "description": "Who produced the turn or action associated with this event."
+    },
+
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "turn",
+        "drift_detected",
+        "repair_triggered",
+        "reentry",
+        "latency",
+        "tool_call",
+        "outcome",
+        "note"
+      ],
+      "description": "High-level event category for PLD analytics."
+    },
+
+    "text": {
+      "type": "string",
+      "description": "Surface text associated with this event (user input or system output). Optional for non-linguistic events."
+    },
+
+    "tool_name": {
+      "type": "string",
+      "description": "Name of the tool, API, or subsystem invoked (for tool_call / latency events)."
+    },
+
+    "latency_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "End-to-end latency in milliseconds associated with this event (if applicable)."
+    },
+
+    "drift_type": {
+      "type": "string",
+      "enum": [
+        "none",
+        "D1_information_drift",
+        "D2_context_drift",
+        "D3_intent_drift",
+        "D4_procedural_drift",
+        "D5_pacing_latency_drift"
+      ],
+      "description": "Drift category according to the PLD Applied Drift Taxonomy. Usually populated when event_type = 'drift_detected'."
+    },
+
+    "repair_type": {
+      "type": "string",
+      "enum": [
+        "none",
+        "R1_local_soft_repair",
+        "R2_structural_repair",
+        "R3_ux_repair",
+        "R4_hard_reset"
+      ],
+      "description": "Repair category according to the PLD Applied Repair Taxonomy. Usually populated when event_type = 'repair_triggered'."
+    },
+
+    "reentry_type": {
+      "type": "string",
+      "enum": [
+        "none",
+        "RE1_intent_reentry",
+        "RE2_constraint_reentry",
+        "RE3_workflow_reentry"
+      ],
+      "description": "Reentry category (if any) associated with this event. Usually populated when event_type = 'reentry'."
+    },
+
+    "outcome_type": {
+      "type": "string",
+      "enum": [
+        "none",
+        "complete",
+        "incomplete",
+        "reset",
+        "abandoned",
+        "handoff"
+      ],
+      "description": "Dialogue-level outcome status. Typically used when event_type = 'outcome'."
+    },
+
+    "channel": {
+      "type": "string",
+      "description": "Optional channel or surface (e.g., 'web', 'voice', 'cli', 'internal')."
+    },
+
+    "source_system": {
+      "type": "string",
+      "description": "Optional system identifier (e.g., 'rasa', 'langgraph', 'custom_orchestrator')."
+    },
+
+    "metadata": {
+      "type": "object",
+      "description": "Free-form metadata for implementation-specific fields (e.g., tool arguments, model name, prompt hash).",
+      "additionalProperties": true
+    }
+  }
+}

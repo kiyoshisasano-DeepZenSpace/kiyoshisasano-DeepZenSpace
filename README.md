@@ -1,174 +1,270 @@
-# 🚀 Phase Loop Dynamics (PLD) & Meta-Intelligence Research Hub  
-*A unified space for timing-aware interaction design, multi-AI cognition, and empirical validation.*  
-*(“Timing-aware” = detecting and correcting interaction state mismatches such as latency drift, LLM inconsistency, or lost intent.)*
+# PLD: Phase Loop Dynamics  
+### *A Practical Runtime Framework for Stable Multi-Turn LLM Systems*
 
-This repository brings together two major research tracks:
+PLD helps AI systems stay aligned across multi-turn interactions — even when tools, memory, or intent shift.
 
-1. **Phase Loop Dynamics (PLD)** — A timing-aware model for Drift → Repair → Resonance in AI/UX interactions, backed by empirical data.  
-   *(Drift = timing/state mismatch; Repair = corrective adjustment; Resonance = restored stable pattern)*  
+Modern LLM systems rarely fail because they lack capability.  
+They fail because the interaction **drifts**.
 
-2. **Meta-Intelligence Integration Framework** — A multi-layer cognitive architecture for coordinating heterogeneous AI systems.  
-   *(Designed for orchestrating multi-agent pipelines or model ensembles.)*
+> **PLD detects drift early, repairs it, confirms alignment, and keeps the system synchronized with the user.**
 
-If you’re new here, start with the **Quickstart Kit**.
-
----
-
-# 📌 Quick Navigation
-
-| Goal | Start Here |
-|------|------------|
-| **Build or fix real-time AI interactions** | [▶︎ Quickstart Kit](./02_quickstart_kit/README_quickstart.md) |
-| **See measured system performance (N=200)** | [Operational Insights](#-measured-performance--operational-insights-n200) |
-| **Explore formal theory / academic mapping** | [Theory & Research](#-Theory--Research-for-joint-rd) |
-| **Work with multiple AI agents** | [Meta-Intelligence Cognitive Framework](./04_meta-intelligence-framework) |
+```
+Detect Drift → Repair → Reenter Context → Continue → Complete
+```
 
 ---
 
-# ⚡ Quickstart — Build Better Interactive Systems in Hours
+## 🧩 What PLD *Is* — 30-Second Understanding
 
-**[`02_quickstart_kit`](./02_quickstart_kit)**  
+PLD is:
 
-Ready-to-use patterns for:
+- 🧠 A runtime model for multi-turn LLM alignment  
+- 🔍 A method for early detection of conversational drift  
+- 🧩 A framework integrating detection, repair, reentry, and outcome tracking  
+- ⚙️ Model-agnostic and compatible with agents, RAG, and orchestrators  
 
-- **Rasa** — Soft repair templates, intent reentry flows  
-  *(Soft Repair = small correction without losing context; Reentry = restoring user intent after drift)*  
-
-- **Figma** — Latency-hold UI patterns  
-  *(Prevent perceived errors during backend delays)*  
-
-- **LLMs** — Drift/Repair prompts & timing-aware templates  
-  *(Drift detection via prompt structure & state grounding)*  
-
-- **Logging** — Drift / Repair / Reentry event formats  
-  *(Standard schemas for timing-aware analytics)*
-
-**Purpose:**  
-Get from theory → working prototype *immediately*.
+If you're building multi-turn systems with reasoning, memory, or tools — **PLD applies.**
 
 ---
 
-# 📊 Measured Performance & Operational Insights (N=200)
+## 🚀 Who Should Use PLD
 
-*First empirical validation of the PLD/HCI model using 200 task-oriented dialogues (MultiWOZ 2.4).*
-
-| Metric | Value | Insight |
-|--------|-------|---------|
-| **Outcome-Complete Rate** | **75.0%** | Standard task success rate |
-| **Hard Repair Rate** | **10.0%** | **Critical:** 1 in 10 dialogues required full context reset *(Hard Repair = forced fallback when AI state becomes unrecoverable)* |
-| **Highest Drift Type** | **Drift–Information** | **#1 System Risk:** DB errors / “no result” artifacts *(Information Drift = mismatch between system assumptions and true DB/knowledge-state)* |
-| **UX Repair Rate** | **60.0%** | Soft Repair frequently stabilizes the dialogue *(Soft Repair = lightweight elaboration to keep user aligned)* |
-
-### 📌 Core Mandate: Eliminate the *Information Drift Trap*
-
-The largest structural failure arises when a system says *“no result”* and later contradicts itself.  
-→ Users instantly lose trust. *(A typical Drift–Information pattern)*
-
-### ✔ Mandatory Fix (Operational Recommendation)
-**Ban generic “not found” responses.**  
-Default to **Soft Repair (Repair–AddInfo)** with a viable alternative:
-
-> “No 4-star hotels in the medium range — would a lower price range work?”
-
-See full analysis:  
-**→ [`07_empirical_studies/multiwoz_2.4_n200`](./07_empirical_studies/multiwoz_2.4_n200)**
+| Role | What PLD Improves |
+|---|---|
+| **LLM / Agent Engineers** | Tool invocation stability, reduced hallucination cascades |
+| **Conversation & UX Designers** | Predictable recovery, confidence signaling, latency-aware behavior |
+| **Evaluation / QA / AgentOps** | Structured behavioral metrics and repeatable test harnesses |
 
 ---
 
-# 🧰 Bridge-Hub — Detection & Measurement Engine
+## 🧭 The PLD Runtime Loop
 
-**[`03_pld-Bridge-Hub`](./03_pld-Bridge-Hub)** provides the analytics backbone:
+| Phase | Purpose | Example Signals |
+|---|---|---|
+| **Drift** | System diverges from goal or shared state | contradiction, wrong tool, mis-memory, task confusion |
+| **Repair** | Apply soft or hard corrective action | correction, clarification, constraint restatement, reset |
+| **Reentry** | Confirm alignment before proceeding | confirmation question, summary, checkpoint |
+| **Continue** | Resume task execution | next step or subtask |
+| **Outcome** | Success, partial, failure, or abandonment | measurable terminal state |
 
-Includes:
-
-- `pause_classifier_bot.py` *(classifies pause types: latency vs cognitive vs drift)*  
-- `latency_tracker.py` *(detects backend-induced timing mismatches)*  
-- `reentry_detector.py` *(identifies when a user tries to restore earlier intent)*  
-- Validation tools (`pld_event.schema.json`, `metrics_schema.yaml`)  
-- Demo tools (`DEMORUN.md`)
-
-Use this to build **timing-aware agents** that avoid cascading drift.
+> PLD is framework-agnostic — works with proprietary LLMs, OSS models, scripted agents, or tool orchestrators.
 
 ---
 
-# 🎨 Design & Development Patterns
+### 📈 PLD Runtime Loop Diagram
 
-### For Industry
-- Reduce drop-offs  
-- Prevent drift failures *before* they propagate  
-- Embed repair loops that stabilize multi-turn flows  
+```mermaid
+flowchart LR
+    %% === User Side ===
+    U[User]
 
-### For Designers
-- Latency-hell UI patterns (prevent user mistrust)  
-- Rhythm-friendly transitions (smooth pacing)  
+    %% === PLD Runtime Loop ===
+    subgraph R[Phase Loop Dynamics (PLD Runtime Loop)]
+        Start([Turn n input])
+        Drift{Drift detected?}
+        Soft[Soft Repair<br/>(clarify / correct)]
+        Hard[Hard Repair<br/>(reset / change path)]
+        Reentry[Reentry Checkpoint<br/>(confirm alignment)]
+        Continue[Continue Task]
+        Outcome[(Outcome<br/>complete / partial / fail)]
+    end
 
-### For Developers
-- Rasa soft repair patterns  
-- LLM drift/repair/reentry patterns *(implemented with state-grounding prompts)*  
+    %% === UX & Latency Layer ===
+    subgraph UX[Latency & UX Patterns]
+        Latency[Latency holds,<br/>typing indicators,<br/>expectation messages]
+    end
 
----
+    %% === Metrics & Analytics Layer ===
+    subgraph M[Logging → Metrics → Analytics]
+        Log[(PLD Event Log<br/>(drift, repair,<br/>reentry, outcome, latency))]
+        Metrics[Metrics & Dashboards]
+        Bench[analytics/ benchmarks<br/>(e.g. MultiWOZ 2.4 N=200)]
+    end
 
-# 🔬 Big Picture — PLD in 4 Stages
+    %% --- User ↔ Runtime ---
+    U <-->|messages, confirmations| Start
+    U <-->|clarifications, repairs| Soft
+    U <-->|alignment checks| Reentry
 
-1. **Observation** *(detect timing/state anomalies)*  
-2. **Structural Model** *(formal Drift/Repair/Resonance loops)*  
-3. **Implementation Kit** *(patterns, detectors, event schemas)*  
-4. **Applications** *(AI agents, multimodal systems, real-time UX)*  
+    %% --- Core Runtime Flow ---
+    Start --> Drift
+    Drift -->|No| Continue
+    Drift -->|Yes| Soft
+    Soft -->|resolved| Reentry
+    Soft -->|not resolved| Hard
+    Hard --> Reentry
+    Reentry -->|aligned| Continue
+    Reentry -->|not aligned| Drift
+    Continue --> Outcome
+    Continue --> Start
 
----
+    %% --- Latency & UX influence ---
+    Latency -. influences .- Drift
+    Latency -. informs .- Soft
+    Latency -. informs .- Reentry
 
-# 🧠 Meta-Intelligence Integration Framework
+    %% --- Logging & Evaluation ---
+    Drift --> Log
+    Soft --> Log
+    Hard --> Log
+    Reentry --> Log
+    Outcome --> Log
 
-[**View Project →**](./04_meta-intelligence-framework)
-
-A four-layer cognitive system enabling **systematic multi-AI collaboration**  
-*(model orchestration, role-based pipelines, and reflective oversight)*.
-
----
-
-# 🧩 Theory & Research (for Joint R&D)
-
-- Glossary & Academic Mapping  
-- Mathematical Appendix  
-- Academic-to-PLD Reverse Mapping  
-- Category-theory mappings  
-
-Located in `01_phase_loop_dynamics/`.
-
----
-
-# 📚 Structural Rhythm — Core Concepts  
-*(with Applied-AI supplements)*
-
-1. **Drift (𝒟)** — *timing/state mismatch; delay, hallucination, or misalignment*  
-2. **Repair (ℛ)** — *corrective adjustment; adding info, clarifying, or re-grounding*  
-3. **Resonance (𝓛₅)** — *stable repeating interaction pattern that reinforces coherence*  
-
----
-
-# 🎥 Supplemental Link Only — Minimal Demo (13s)
-
-*This is a minimal execution preview, included only for completeness.*  
-**[YouTube: Minimal Demo](https://youtu.be/nI0S8Aaywgc)**
-
----
-
-# 🤝 Collaboration
-
-| Role | First Step |
-|------|------------|
-| Industry Partner | Pilot Project |
-| UX Researcher | Quickstart Kit |
-| Academic Collaborator | Academic Mapping |
-
-Contact: deepzenspace[at]gmail[dot]com  
-X: @DeepZenSpace
+    Log --> Metrics --> Bench
+```
 
 ---
 
-# 📄 License
+## 🆚 Before / After — What Changes With PLD?
 
-Creative Commons BY-NC 4.0  
-Commercial use requires permission.
+| Scenario | Without PLD | With PLD |
+|---|---|---|
+| Tool call drift | Model repeats incorrect calls | System detects drift → clarifies → retries |
+| Context loss | Prior constraints forgotten | Repair + reentry keep context anchored |
+| Silent failure | Interaction collapses | Runtime triggers recovery or graceful exit |
+| User trust | Unpredictable responses | Visible correction + confirmation → confidence |
 
-© 2025 Your Name / Organization
+PLD isn’t cosmetic — **it changes how the system behaves over time.**
+
+---
+
+## 📂 Repository Overview
+
+```
+/
+├── quickstart/              # Start here — first working scaffold in ~20–30 min (no model change required)
+│   ├── overview/            # Short conceptual introduction
+│   ├── operator_primitives/ # Drift → Repair → Reentry building blocks
+│   ├── patterns/            # Plug-and-play LLM + UX patterns
+│   ├── metrics/             # Logging schema + evaluation dashboards
+│   └── examples/            # Minimal runnable demo
+│       └── minimal_pld_demo.py
+│   └── _meta/               # Migration rules (quickstart only)
+│
+├── docs/                    # Definitions, rationale, taxonomy, edge cases
+│
+├── analytics/               # Dataset + results (MultiWOZ 2.4 N=200)
+│
+└── _meta/                   # Repo-level governance + future extensions
+```
+
+---
+
+## 🧪 Getting Started (Fast Path)
+
+This repository includes everything from conceptual overview to full integration examples.  
+If you prefer starting hands-on, the fastest entry point is below:
+
+| Step | Folder | Purpose |
+|---|---|---|
+| **1** | `/quickstart/overview/` | Learn the PLD runtime model |
+| **2** | `/quickstart/operator_primitives/` | Use drift, repair, and reentry operators |
+| **3** | `/quickstart/patterns/` | Apply drop-in templates for agents and UX |
+| **4** | `/quickstart/metrics/` | Log drift → repair → reentry → outcome |
+| **5** | `/analytics/` | Benchmark behavioral improvements |
+
+---
+
+### ▶ Minimal Runnable Example
+
+If you'd like to **see the PLD loop in action immediately**, a standalone executable demo is provided:
+
+```bash
+python quickstart/examples/minimal_pld_demo.py
+```
+
+This script illustrates:
+
+- Drift detection  
+- A soft repair action  
+- A reentry confirmation step  
+- JSON event logging aligned to the PLD schema  
+
+It runs without any external model or configuration (a stub LLM is included).  
+Use it if you want a concrete reference point before exploring the rest of the quickstart.
+
+
+---
+
+## 📌 Where PLD Is Useful — Practical Use Cases
+
+| Domain / System Type | Where PLD Helps | Failure Without PLD |
+|----------------------|-----------------|----------------------|
+| **Customer Support Assistants** | Prevents looped clarifications and drifting tone | Escalation loops, inconsistent answers |
+| **Tool-Using Agents (ReAct / LangGraph / Swarm)** | Stops recursive mis-invocations and invalid tool calls | Compounding errors, runaway retries |
+| **RAG Assistants** | Maintains grounding across retrieval cycles and memory refresh | Evidence drift, hallucinated citations |
+| **Workflow / Automation Agents** | Supports predictable repair and restart checkpoints | Partial execution, silent resets |
+| **AgentOps / Evaluation Pipelines** | Standardizes behavior comparison across models and versions | No reproducibility, subjective evaluation |
+
+> If your system uses **memory, retrieval, multi-step reasoning, or external tools**, PLD improves runtime stability.
+
+---
+
+## 📊 Evidence & Benchmarking
+
+Validated with:
+
+- MultiWOZ 2.4 dataset — **200 labeled conversations**
+- Tool-using autonomous agents  
+- Memory-enabled orchestration systems  
+- Prototype production systems  
+
+Observed outcomes:
+
+- ↓ Drift Events  
+- ↓ Abandonment / collapse  
+- ↑ Successful Re-entry confirmation  
+- ↓ Invalid / repeated tool calls  
+
+📁 Results available in: `analytics/`
+
+---
+
+## 🔌 Integrations
+
+Compatible with:
+
+- LangGraph  
+- AutoGen / CrewAI  
+- Assistants API  
+- Swarm  
+- ReAct  
+- Rasa actions  
+- Custom orchestration stacks  
+
+No lock-in — **only the loop matters.**
+
+---
+
+## 🤝 Contribution
+
+We welcome contributions focused on **practical adoption**, including:
+
+- Runtime adapters (LangGraph, Swarm, Assistants API, Rasa, ReAct, etc.)  
+- Additional PLD-labeled datasets  
+- Metrics extensions and dashboards  
+- Alternative repair strategies or timing heuristics  
+
+Before modifying quickstart behavior, check:
+
+```
+quickstart/_meta/MIGRATION.md  
+quickstart/_meta/CHANGELOG.md  
+```
+
+---
+
+## 📜 License
+
+```
+CC BY-NC 4.0 — free for internal development, research, and experimentation.
+Commercial deployment requires permission.
+```
+
+---
+
+Maintainer: **Kiyoshi Sasano**
+
+> **PLD is behavioral infrastructure —  
+not just evaluation.  
+It keeps systems aligned continuously, not just at initialization.**

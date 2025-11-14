@@ -1,0 +1,39 @@
+dataset_id: multiwoz_2.4_n200
+dataset_name: MultiWOZ 2.4
+subset: 200_samples
+source:
+  repo: https://github.com/smartyfh/MultiWOZ2.4
+  license: CC BY-SA 4.0
+  note: "Raw dialog content is derived from MultiWOZ 2.4; see upstream repo for full details."
+
+files:
+  conversations:
+    path: conversations.json
+    format: json
+    description: "Curated 200-dialog subset used for PLD analysis."
+    structure:
+      top_level: "list_of_dialogs"
+      dialog_keys:
+        - log_id
+        - turns
+      turn_structure:
+        - turn_id
+        - user
+        - system
+
+roles:
+  - user
+  - system
+
+indexing:
+  type: sequential_by_turn
+  session_key: log_id
+  turn_key: turn_id
+
+pld_annotations:
+  casebook_raw: ../03_pld_casebook.md
+  casebook_unified: ../04_pld_casebook_unified.md
+  compatible_runtime_schemas: "../../pld_runtime/01_schemas/"
+  notes: "Annotations follow Drift → Repair → Reentry → Outcome PLD model."
+
+generated_at: 2025-11-15   # update when finalizing
