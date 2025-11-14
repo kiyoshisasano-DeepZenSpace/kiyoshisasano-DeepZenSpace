@@ -57,8 +57,8 @@ If you're building multi-turn systems with reasoning, memory, or tools — **PLD
 flowchart LR
     Start([Turn])
     Drift{Drift?}
-    Repair[Repair\n(soft/hard)]
-    Reentry[Reentry\n(confirm)]
+    Repair["Repair\n(soft/hard)"]
+    Reentry["Reentry\n(confirm)"]
     Continue[Continue]
     Outcome[(Outcome)]
 
@@ -66,6 +66,7 @@ flowchart LR
     Drift -->|No| Continue
     Drift -->|Yes| Repair --> Reentry -->|Aligned| Continue --> Outcome --> Start
     Reentry -->|Not aligned| Drift
+
 ```
 
 
