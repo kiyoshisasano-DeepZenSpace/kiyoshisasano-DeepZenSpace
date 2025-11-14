@@ -16,18 +16,6 @@ PLD provides a runtime loop that:
 Detect → Repair → Reenter → Continue → Complete
 ```
 
-
-PLD helps AI systems stay aligned across multi-turn interactions — even when tools, memory, or intent shift.
-
-Modern LLM systems rarely fail because they lack capability.  
-They fail because the interaction **drifts**.
-
-> **PLD detects drift early, repairs it, confirms alignment, and keeps the system synchronized with the user.**
-
-```
-Detect Drift → Repair → Reenter Context → Continue → Complete
-```
-
 ---
 
 ## 🧩 What PLD *Is* — 30-Second Understanding
