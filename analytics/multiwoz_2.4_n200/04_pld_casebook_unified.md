@@ -7,13 +7,17 @@ Maintainer: Kiyoshi Sasano
 
 ## 1. Purpose
 
-This document provides a standardized case structure for evaluating multi-turn agent behavior using the PLD Applied-AI framework.  
-It enables:
+This document provides a **standardized case structure** for evaluating multi-turn agent behavior.
 
-- consistent failure pattern documentation  
-- repeatable evaluation across datasets  
-- machine-readable structure for tooling and analytics  
-- actionable engineering feedback loops  
+⚠️ **Important:**
+- This is a **documentation template**, not a code implementation standard
+- YAML/JSON snippets are **examples only** - your implementation may differ
+- PLD is a runtime governance pattern; this template helps you record behavioral observations
+
+The template enables:
+- Consistent failure pattern documentation across teams
+- Machine-readable event logging for observability
+- Actionable engineering insights
 
 The evaluation pipeline follows the PLD operational cycle:
 
@@ -209,7 +213,7 @@ The Information-Drift Trap triggered premature certainty.
 #### ENGINEERING RECOMMENDATION  
 Ban plain “no result.” Fallback to constraint relaxation or clarification request.
 
-#### MACHINE RULE (YAML)
+#### Example Implementation Snippet (YAML)
 
 ```yaml
 no_result_policy:
@@ -269,5 +273,6 @@ Academic Use | ⚠ requires context
 ```
 metrics/multiwoz_2.4_n200/04_pld_casebook_unified.md
 ```
+
 
 Maintainer: **Kiyoshi Sasano**
