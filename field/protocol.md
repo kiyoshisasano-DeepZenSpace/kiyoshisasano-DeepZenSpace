@@ -3,7 +3,7 @@
 This document describes a **minimal, practical protocol** for running a shared PoC or field study with PLD.
 
 **Note:** PLD terms describe observable conversational behavior —  
- not model psychology, internal reasoning, or intention inference.
+  not model psychology, internal reasoning, or intention inference.
 
 
 It is meant to answer:
@@ -191,5 +191,6 @@ Add this summary to your shared collaboration document.
 
 Minimal protocol = minimal friction.  
 The goal is shared interpretation — not imposed process.
+
 
 
