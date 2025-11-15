@@ -130,4 +130,37 @@ Evaluation requires:
 
 ---
 
+## 10. Study Limitations
+
+### Sample Size and Domain
+- N=200 dialogues (task-oriented only)
+- Single domain: MultiWOZ 2.4
+- Language: English
+- Context: Hotel/restaurant/train booking
+
+### Generalization Constraints
+⚠️ **These patterns may not generalize to:**
+- Open-domain conversation
+- Code generation agents
+- Creative/subjective tasks
+- Non-English languages
+
+### Statistical Considerations
+- Confidence intervals not computed (descriptive analysis)
+- Correlation ≠ Causation
+- Effect sizes are observational, not experimental
+
+### Recommended Use
+✅ Use this data to:
+- Validate PLD methodology in similar domains
+- Establish baseline behavioral metrics
+- Guide implementation decisions
+
+❌ Do not use to:
+- Claim universal performance improvements
+- Guarantee production outcomes
+- Compare across fundamentally different domains
+
 Maintainer: **Kiyoshi Sasano**
+
+---
