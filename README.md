@@ -195,7 +195,7 @@ No lock-in — **only the loop matters.**
 
 ## 🤝 Contribution
 
-We welcome contributions focused on **practical adoption**, including:
+I welcome contributions focused on **practical adoption**, including:
 
 - Runtime adapters (LangGraph, Swarm, Assistants API, Rasa, ReAct, etc.)  
 - Additional PLD-labeled datasets  
