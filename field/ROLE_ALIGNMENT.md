@@ -105,4 +105,62 @@ They typically do **not**:
 ## 5. Change Governance
 
 To maintain consistency, changes follow:
+```text
+Proposal → Review → Approval → Adoption → Version Note
+```
+
+Changes affecting:
+
+- terminology
+- runtime structure
+- event semantics
+- metrics schema
+
+require review by the architect.
+
+Changes affecting:
+
+- code implementation
+- adapters or integrations
+- dataset extensions
+- UX variants
+
+may proceed via PR with light governance.
+
+---
+
+## 6. Why This Alignment Exists
+
+PLD is a **runtime interaction model**, not a single implementation.
+
+Without role clarity:
+
+- Organizations may treat PLD as a product instead of an execution model  
+- Implementers may attempt private interpretations that break compatibility  
+- Collaboration may stall due to unclear ownership of decisions  
+
+This document ensures:
+
+> **Shared language, shared expectations, shared contribution structure — without role collision.**
+
+---
+
+## 7. Summary
+
+- The architect **defines and maintains PLD.**
+- Implementers **apply and operationalize PLD.**
+- Collaborators **evaluate and contextualize results.**
+
+This alignment preserves:
+
+- conceptual integrity  
+- reproducibility  
+- interoperability  
+- responsible iteration  
+
+---
+
+> PLD succeeds when roles complement — not overlap.  
+> The framework is the shared spine, not the implementation.
+
 
