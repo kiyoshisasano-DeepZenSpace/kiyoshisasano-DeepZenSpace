@@ -25,6 +25,12 @@ After reading the core documents, continue into:
 | Logging and evaluation | `/quickstart/metrics/` | Track drift frequency, repair outcomes, and stability over time. |
 | Applied examples | `/metrics/multiwoz_2.4_n200/` | See real annotated dialogues and analysis patterns. |
 
+> **Optional but recommended:**  
+For a higher-level architectural understanding before implementation, see:
+
+📄 `architecture_layers.md` — PLD as a layered runtime governance model  
+(Helps map phases → responsibilities → implementation boundaries.)
+
 ---
 
 ## File Overview
@@ -34,6 +40,8 @@ After reading the core documents, continue into:
 | `01_pld_for_agent_engineers.md` | Core | Starting point — conceptual and practical overview. |
 | `02_pld_drift_repair_reference.md` | Core | Source of truth for all labeled codes. |
 | `04_pld_labeling_prompt_llm.md` | Core | The official machine-usable labeling prompt template. |
+| `architecture_layers.md` | Reference | High-level conceptual architecture (not implementation-specific). |
+
 
 Additional files may be added in future versions, but the **core three documents will remain stable** and form the basis of:
 
@@ -89,5 +97,6 @@ docs/
 ```
 
 ---
+
 
 Maintainer: Kiyoshi Sasano
