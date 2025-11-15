@@ -6,6 +6,8 @@ Status: **Reference Metrics (Operational Decision Support)**
 
 ---
 
+> _These metrics are optional operational extensions. They are not required to use PLD, but they help teams measure stability, compare repair strategies, and make informed release and tuning decisions._
+
 ## 1. Purpose — Why This Exists
 
 Once PLD logging is active, most teams reach a stage where raw drift and repair counts are no longer enough to guide decisions.
@@ -151,4 +153,58 @@ These metrics turn PLD logs into **actionable operational insight**:
 Add PRDR and REI into release evaluation, and track VRL where UX matters.
 
 This document may evolve based on field results and implementation feedback.
+
+---
+
+## 📎 Appendix A — Reference Starting Points (Operational Setup)
+
+This appendix provides **example baselines** for teams incorporating PLD metrics into production workflows.
+
+These values are intentionally non-prescriptive — they exist to remove ambiguity during early adoption. Teams should adjust based on domain constraints, user expectations, and tolerance for recovery behavior.
+
+---
+
+### 1. Operational Maturity Levels
+
+| Level | State | Suggested Metrics | Primary Focus |
+|-------|-------|------------------|---------------|
+| **Level 1 — Logging Only** | PLD events are consistently recorded | None | Establish dashboards and data quality baseline |
+| **Level 2 — Monitoring** | Drift and repair patterns observable over time | Example: PRDR | Identify recurring failure modes |
+| **Level 3 — Optimization** | Repair strategies evaluated for impact and cost | Example: PRDR + REI | A/B strategy refinement and release decisions |
+| **Level 4 — Experience Management** | UX-perceived stability monitored | Example: PRDR + REI + VRL | Balance correctness, efficiency, and trust perception |
+
+> Recommendation: Transition between levels only after metrics remain stable for **2–4 weeks**.  
+> ⚠️ These levels are **guidance**, not requirements — teams may define their own maturity path.
+
+---
+
+### 2. Example Alert Thresholds
+
+⚠️ These are **reference values**, not universal standards.  
+Use them as starting points, then calibrate against real-world usage and operational risk.
+
+| Metric | Example Threshold | Alert Type | Notes |
+|--------|------------------|------------|-------|
+| PRDR > 0.30 (rolling 50 sessions) | Warning | Suggests partially effective repairs or recurring drift |
+| PRDR > 0.45 (rolling 50 sessions) | Critical | Indicates systemic failure or persistent misalignment |
+| REI < baseline − 15% | Regression Gate | Used in release approvals, rollback criteria, or A/B selections |
+| VRL > 18 per 100 turns | UX Review | May indicate perceptible instability despite functional correctness |
+
+> Thresholds should evolve alongside product maturity, scale, and user expectations.
+
+---
+
+### 3. When to Reduce Monitoring
+
+PLD metrics are operational signals, not permanent KPIs.
+
+Monitoring cadence may be reduced when:
+
+- Metrics stay within expected ranges for **4–6 consecutive weeks**, and  
+- No regression is observed across releases or environment changes.
+
+At that point, teams may shift from continuous monitoring to periodic audits (e.g., weekly reviews, release checkpoints), reducing operational overhead while retaining observability.
+
+---
+
 
