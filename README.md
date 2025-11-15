@@ -201,6 +201,45 @@ quickstart/_meta/CHANGELOG.md
 
 ---
 
+## 📍 Where PLD Applies
+
+PLD is intended for systems where:
+
+- ✔️ Conversations span multiple turns  
+- ✔️ Context or shared state must persist  
+- ✔️ Tools, memory, or multi-step reasoning are involved  
+- ✔️ Controlled recovery from drift is required  
+
+PLD is **not required** or may provide limited value in:
+
+- ⚠️ Single-turn Q&A systems  
+- ⚠️ Stateless or strictly scripted flows  
+- ⚠️ Systems where drift recovery is irrelevant or intentionally uncontrolled  
+
+---
+
+## 📍 What PLD Provides
+
+- **Shared vocabulary**  
+  Drift types, repair strategies, reentry patterns  
+- **A runtime phase model**  
+  Detect → Repair → Reenter → Continue → Outcome  
+- **An observability structure**  
+  Behavioral event schema and evaluation methodology
+
+---
+
+### What PLD does *not* provide:
+
+- ❌ A prescribed implementation  
+- ❌ A universal prompt or template set  
+- ❌ A production-ready library to install  
+
+PLD is a **runtime governance pattern** —  
+implementations will vary based on the system, workflow, and orchestration stack.
+
+---
+
 ## 📜 License
 
 ```
