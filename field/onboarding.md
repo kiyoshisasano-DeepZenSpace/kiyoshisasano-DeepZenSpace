@@ -3,6 +3,9 @@
 This document is a **practical onboarding and first-diagnostics guide**  
 for teams who want to collaborate on PLD-based systems.
 
+**Note:** PLD terminology refers to observable conversational behavior,  
+ not model psychology, intention inference, or emotional state attribution.
+
 It answers:
 
 - How do we get a new team “PLD-literate” quickly?
@@ -159,3 +162,4 @@ Instead, focus on:
 > Onboarding is not about teaching PLD in full.  
 > It is about giving collaborators **just enough structure**  
 > so their intuition lines up with the PLD runtime loop.
+
