@@ -175,7 +175,10 @@ PARTIAL — task proceeds, but trust degradation occurs.
 Silent contradiction before acknowledgment.
 
 #### ENGINEERING RECOMMENDATION  
-Always explicitly acknowledge contradiction before correction.
+Consider: Display placeholder if response time exceeds 2–2.5 seconds.
+
+Rationale: Observed in this case - latency without feedback led to perceived breakdown.
+Trade-offs: Adds UX overhead; may not be needed for all interaction types.
 
 ---
 
@@ -276,3 +279,4 @@ metrics/multiwoz_2.4_n200/04_pld_casebook_unified.md
 
 
 Maintainer: **Kiyoshi Sasano**
+
