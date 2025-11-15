@@ -115,7 +115,7 @@ PLD is **not cosmetic** — it governs how behavior evolves.
 |---|---|---|
 | 1 | `/quickstart/overview/` | Understand the runtime phases |
 | 2 | `/quickstart/operator_primitives/` | Apply drift/repair/reentry primitives |
-| 3 | `/quickstart/patterns/` | Integration with agent frameworks |
+3 | `/quickstart/patterns/` | Examples of *how PLD can be applied* (not required)
 | 4 | `/quickstart/metrics/` | Log drift → repair → reentry → outcome |
 | 5 | `/analytics/` | Compare results against validated traces |
 
