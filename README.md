@@ -76,6 +76,7 @@ flowchart LR
     Drift -->|No| Continue
     Drift -->|Yes| Repair --> Reentry -->|Aligned| Continue --> Outcome --> Start
     Reentry -->|Not aligned| Drift
+
 ```
 
 📁 Full: `/docs/model_diagram.md`
@@ -91,7 +92,7 @@ flowchart LR
 | Silent failure | Controlled outcome or fallback |
 | Unpredictable UX | Observable corrective behavior |
 
-PLD is **not cosmetic** — it governs how behavior evolves.
+> PLD is not cosmetic — it governs **how behavior evolves**.
 
 ---
 
@@ -113,17 +114,17 @@ PLD is **not cosmetic** — it governs how behavior evolves.
 
 | Step | Folder | Purpose |
 |---|---|---|
-| 1 | `/quickstart/overview/` | Understand the runtime phases |
-| 2 | `/quickstart/operator_primitives/` | Apply drift/repair/reentry primitives |
-3 | `/quickstart/patterns/` | Examples of *how PLD can be applied* (not required)
-| 4 | `/quickstart/metrics/` | Log drift → repair → reentry → outcome |
-| 5 | `/analytics/` | Compare results against validated traces |
+| **1** | `/quickstart/overview/` | Understand the runtime phases |
+| **2** | `/quickstart/operator_primitives/` | Apply drift/repair/reentry primitives |
+| **3** | `/quickstart/patterns/` | Examples of how PLD can be applied (not required) |
+| **4** | `/quickstart/metrics/` | Log drift → repair → reentry → outcome |
+| **5** | `/analytics/` | Compare results against validated traces |
 
 ---
 
 ### ▶ Conceptual Demonstration
 
-> **This is a conceptual illustration of phase transitions — not an implementation.**
+> This is a conceptual illustration of phase transitions — **not an implementation.**
 
 ```python
 # PLD Phase Model (Conceptual)
@@ -139,9 +140,9 @@ if current_phase == Phase.REPAIR:
         current_phase = Phase.CONTINUE
     else:
         current_phase = Phase.DRIFT  # Restart the phase loop
-
-# Actual implementation depends on your orchestrator and tool stack.
 ```
+
+> Actual implementation depends on your orchestrator and tool stack.
 
 ---
 
@@ -149,12 +150,12 @@ if current_phase == Phase.REPAIR:
 
 Validated with:
 
-- MultiWOZ 2.4 (200 labeled dialogs)
+- MultiWOZ 2.4 (200 labeled dialogs)  
 - Tool-enabled agents  
 - Memory-integrated systems  
 - Prototype production deployments  
 
-Observed changes:
+Observed improvements:
 
 - ↓ Drift frequency  
 - ↓ Abandonment  
@@ -177,22 +178,26 @@ Supports:
 - ReAct-style routing  
 - Custom frameworks  
 
-No lock-in — **only the loop matters.**
+> No lock-in — only the **loop** matters.
 
 ---
 
-## 🤝 Contribution
+## 🤝 Contribution & Collaboration
 
-Preferred contributions:
+Contributions welcome, especially:
 
 - Runtime adapters  
 - PLD-formatted datasets  
 - Metrics dashboards  
-- Alternative repair heuristics  
+- Repair heuristics  
 
-📄 Roles and governance: `field/ROLE_ALIGNMENT.md`
+For shared PoCs or joint evaluation → see `/field/` for:
 
-Before modifying behavior:
+- Role alignment  
+- Shared terminology  
+- Collaboration structure  
+
+Before modifying quickstart behavior:
 
 ```
 quickstart/_meta/MIGRATION.md
@@ -201,42 +206,33 @@ quickstart/_meta/CHANGELOG.md
 
 ---
 
-## 📍 Where PLD Applies
+## 📍 When PLD Makes Sense
 
-PLD is intended for systems where:
+Best when:
 
-- ✔️ Conversations span multiple turns  
-- ✔️ Context or shared state must persist  
-- ✔️ Tools, memory, or multi-step reasoning are involved  
-- ✔️ Controlled recovery from drift is required  
+✔ Multi-turn interactions retain shared state  
+✔ Tools, retrieval, memory or reasoning loops exist  
+✔ Recovery matters more than one-shot answers  
 
-PLD is **not required** or may provide limited value in:
+Less useful when:
 
-- ⚠️ Single-turn Q&A systems  
-- ⚠️ Stateless or strictly scripted flows  
-- ⚠️ Systems where drift recovery is irrelevant or intentionally uncontrolled  
+⚠ Single-turn Q&A  
+⚠ Fully scripted flows  
+⚠ Failure recovery irrelevant  
 
 ---
 
 ## 📍 What PLD Provides
 
-- **Shared vocabulary**  
-  Drift types, repair strategies, reentry patterns  
-- **A runtime phase model**  
-  Detect → Repair → Reenter → Continue → Outcome  
-- **An observability structure**  
-  Behavioral event schema and evaluation methodology
+- Shared behavioral vocabulary  
+- Runtime phase loop  
+- Observability structure  
 
----
+PLD does **not** provide:
 
-### What PLD does *not* provide:
-
-- ❌ A prescribed implementation  
-- ❌ A universal prompt or template set  
-- ❌ A production-ready library to install  
-
-PLD is a **runtime governance pattern** —  
-implementations will vary based on the system, workflow, and orchestration stack.
+- ❌ One fixed implementation  
+- ❌ A universal prompt  
+- ❌ A package to install  
 
 ---
 
@@ -245,21 +241,11 @@ implementations will vary based on the system, workflow, and orchestration stack
 ```
 CC BY-NC 4.0 — internal use, research, experimentation allowed.
 Commercial deployment requires permission.
+Maintainer: Kiyoshi Sasano
 ```
 
 ---
 
-Maintainer: **Kiyoshi Sasano**
-
-
-> PLD is a runtime governance pattern —  
-not an installable framework or fixed implementation.  
-Different teams will implement PLD differently.  
-What remains constant is the shared language, the loop, and the observability structure.
-
----
-
-Together, these principles define how PLD should be adopted—not copied, but applied.
-
-> PLD is behavioral infrastructure —  
-it governs alignment persistence across interaction, not initialization.
+> **PLD is behavioral infrastructure —  
+it governs alignment persistence across interaction —  
+not just correctness at initialization.**
