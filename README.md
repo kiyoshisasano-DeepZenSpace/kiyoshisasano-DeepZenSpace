@@ -202,6 +202,9 @@ I welcome contributions focused on **practical adoption**, including:
 - Metrics extensions and dashboards  
 - Alternative repair strategies or timing heuristics  
 
+> 🔹 For collaboration roles and contribution boundaries, see:  
+> `field/ROLE_ALIGNMENT.md`
+
 Before modifying quickstart behavior, check:
 
 ```
