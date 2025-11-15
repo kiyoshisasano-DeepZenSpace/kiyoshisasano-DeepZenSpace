@@ -212,5 +212,15 @@ Commercial deployment requires permission.
 
 Maintainer: **Kiyoshi Sasano**
 
-> **PLD is behavioral infrastructure —  
-it governs alignment persistence across interaction, not initialization.**
+
+> PLD is a runtime governance pattern —  
+not an installable framework or fixed implementation.  
+Different teams will implement PLD differently.  
+What remains constant is the shared language, the loop, and the observability structure.
+
+---
+
+Together, these principles define how PLD should be adopted—not copied, but applied.
+
+> PLD is behavioral infrastructure —  
+it governs alignment persistence across interaction, not initialization.
