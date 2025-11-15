@@ -118,6 +118,15 @@ If you prefer a **layered systems perspective** before exploring the runtime loo
 
 ---
 
+### Operational Metrics (Optional)
+
+Once PLD is running in production, you may want to evaluate the impact of drift detection and repair strategies over time.  
+For teams at that stage, see the companion document:
+
+👉 `docs/07_pld_operational_metrics_cookbook.md` — _Metrics for evaluating stability, cost trade-offs, and user experience impact._
+
+---
+
 ## 🧪 Getting Started
 
 | Step | Folder | Purpose |
