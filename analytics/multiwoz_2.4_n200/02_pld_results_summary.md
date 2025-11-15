@@ -99,10 +99,10 @@ Reentry success increased significantly when the agent used:
 
 ## 7. Correlation Highlights
 
-| Pattern | Result |
-|---------|--------|
-| Early Soft Repair (R2) → OUT1 | **+28.4% improvement** |
-| Tool error + no Soft Repair → OUT3/OUT4 | **4.6× more likely** |
+| Observed Pattern | Association |
+|------------------|------------|
+| Early Soft Repair (R2) | OUT1 success rate: 28.4% higher than late/no repair |
+| Tool error + no Soft Repair | OUT3/OUT4: 4.6× more frequent |
 | Reentry applied after R5 → Resonance | Rare (≈8%) |
 | Latency Drift + no acknowledgment | High probability of hallucination continuation |
 
