@@ -64,6 +64,8 @@ local prototype → shared PoC → field deployment
 > PLD is a runtime model — but collaboration around it is social.  
 > `field/` exists to make that collaboration predictable, lightweight, and repeatable.
 
+> Note: PLD terminology refers to observable conversational behavior, not model psychology, intention inference, or emotional state attribution.
+
 ---
 
 ## `field/pld_minimal_collaboration_protocol.md`
@@ -242,3 +244,4 @@ Minimal protocol = minimal friction.
 The goal is shared **interpretation**, not shared infrastructure.
 
 ```
+
