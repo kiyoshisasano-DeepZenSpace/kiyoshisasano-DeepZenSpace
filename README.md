@@ -96,6 +96,14 @@ flowchart LR
 
 ---
 
+### 🏗 Optional: Architecture View  
+
+If you prefer a **layered systems perspective** before exploring the runtime loop or implementation paths, see:
+
+📄 `/docs/architecture_layers.md` — *How PLD maps signals → analysis → decisions → execution as a behavioral control system.*
+
+---
+
 ## 📂 Repository Overview
 
 ```
