@@ -1,35 +1,41 @@
-# LangGraph Integration Example — PLD Applied Framework  
-*(2025 Edition | Implementation Scaffold)*
+---
+title: "Canonical LangGraph Pattern — PLD Runtime Loop"
+version: "1.1"
+status: "Standard Scaffold"
+maintainer: "Kiyoshi Sasano"
+updated: "2025-01-15"
+visibility: "Public"
+scope: "System Pattern (Baseline)"
+---
 
-This document demonstrates how to integrate **Phase Loop Dynamics (PLD)** into a LangGraph-based LLM agent.
+# Canonical LangGraph Example — PLD Runtime Loop  
+*(Standardized Scaffold — aligned to Integration Recipes)*
 
-The goal is not domain content — but a **generalized operational blueprint** supporting:
+This file represents the **canonical baseline pattern** for implementing  
+**Phase Loop Dynamics (PLD)** using LangGraph.
 
-- Drift detection  
-- Soft / Hard Repair routing  
-- Reentry checkpoints  
-- Structured PLD event logging  
-- Stability during multi-turn reasoning  
+It now reflects the full runtime model:
+
+> **Drift → Repair → Reentry → Continue → Outcome**
+
+This version replaces the earlier lightweight scaffold.
 
 ---
 
-## 1. Architecture Overview
+## 1. Purpose
 
-PLD introduces operational checkpoints into the reasoning graph.
+This file exists to provide a:
 
-```
-User Input
-   ↓
-[ DRIFT DETECTION NODE ]
-     ↳ drift detected → [ SOFT REPAIR ] → [ REENTRY ]
-     ↳ no drift → continue
-   ↓
-[ TASK EXECUTION / TOOLING ]
-   ↓
-[ OUTCOME + TELEMETRY ]
-```
+- **Stable starting point**
+- **Framework-consistent runtime loop**
+- **Telemetry-ready execution pattern**
+- **Compatible anchor for:**
+  - `rag_repair_recipe.md`
+  - `tool_agent_recipe.md`
+  - `memory_alignment_recipe.md`
+  - `reentry_orchestration_recipe.md`
 
-Each node is modular and replaceable.
+This scaffold is intentionally **minimal**, yet **PLD-complete**.
 
 ---
 
@@ -38,98 +44,89 @@ Each node is modular and replaceable.
 ```bash
 pip install langchain langgraph openai
 ```
-
 Optional (recommended):
-
 ```bash
-pip install pydantic pandas opentelemetry-api
+pip install pydantic opentelemetry-api pandas
 ```
 
 ---
 
-## 3. Shared Utilities
-
+## 3. Shared PLD Utilities (Runtime Vocabulary)
 ```python
-# pld_utils.py — shared utilities for LangGraph + PLD
-
 from enum import Enum
 from typing import Optional, Dict
 
-class DriftType(str, Enum):
-    NONE = "none"
-    INFORMATION = "drift_information"
-    AMBIGUOUS = "drift_ambiguous"
-    REPEATED = "drift_repeated"
 
-def detect_drift(turn: str, last_turn: Optional[str] = None) -> DriftType:
-    """Lightweight drift classifier (placeholder — replace with model rule stack later)."""
+class DriftCode(str, Enum):
+    """Canonical PLD drift codes (Tier 1 alignment)."""
+    NONE = "D0_none"
+    INFORMATION = "D5_information"
+    TOOL = "D4_tool"
+    CONTEXT = "D2_context"
 
-    if not turn:
-        return DriftType.NONE
 
-    if last_turn and turn.strip().lower() == last_turn.strip().lower():
-        return DriftType.REPEATED
+class ReentryCode(str, Enum):
+    AUTO = "RE3_auto"
+    FAILED = "RE2_failed"
 
-    if "sorry" in turn.lower() or "no results" in turn.lower():
-        return DriftType.INFORMATION
 
-    if "?" in turn and len(turn.split()) <= 2:
-        return DriftType.AMBIGUOUS
+def detect_drift(turn: str) -> DriftCode:
+    """Stub rule — Integration Recipes replace this."""
+    if "error" in turn.lower():
+        return DriftCode.TOOL
+    if "no results" in turn.lower():
+        return DriftCode.INFORMATION
+    if "wait what" in turn.lower():
+        return DriftCode.CONTEXT
+    return DriftCode.NONE
 
-    return DriftType.NONE
 
-def build_pld_event(event_type: str, metadata: Dict):
-    """Standardized PLD event log shape."""
+def log_event(event_type: str, pld_code: str, payload: Dict = None):
+    """PLD-structured event aligned to pld_event.schema.json."""
     return {
         "event_type": event_type,
-        "metadata": metadata,
+        "pld": {
+            "phase": event_type.split("_")[0] if "_" in event_type else "none",
+            "code": pld_code,
+            "confidence": 0.95
+        },
+        "payload": payload or {}
     }
 ```
 
 ---
 
-## 4. LangGraph Nodes
-
-### 🧩 4.1 — Drift Detection Node
-
+## 4. LangGraph Nodes (Aligned with Integration Recipes)
+# 🧩 4.1 — Drift Detection Node
 ```python
-from langgraph.graph import StateGraph, END
-from pld_utils import detect_drift, DriftType, build_pld_event
-
-def drift_detection_node(state):
+def detect_drift_node(state):
     user_input = state["input"]
-    last_output = state.get("last_output", None)
+    drift_code = detect_drift(user_input)
 
-    drift = detect_drift(user_input, last_output)
-
-    state["repair_state"] = drift
+    state["drift"] = drift_code
     state.setdefault("pld_events", []).append(
-        build_pld_event("drift_detected", {"drift": drift})
+        log_event("drift_detected", drift_code, {"input": user_input})
     )
 
     return state
 ```
-
 ---
 
-### 🧩 4.2 — Soft Repair Node
-
+# 🧩 4.2 — Soft Repair Node (Visible Repair — default)
+> Behavior matches RAG / Tool / Memory recipes, not custom phrasing.
 ```python
-SOFT_REPAIR_TEXT = {
-    DriftType.AMBIGUOUS: "Just to clarify — what outcome are you aiming for?",
-    DriftType.REPEATED: "It looks like we may be repeating — should we adjust constraints?",
-    DriftType.INFORMATION: "It seems the previous information may not apply — here are alternative options."
+SOFT_REPAIR_MAP = {
+    DriftCode.INFORMATION: "Let me adjust the search strategy based on that.",
+    DriftCode.TOOL: "It looks like the tool call may have failed — retrying.",
+    DriftCode.CONTEXT: "Let's re-anchor the shared context before we continue."
 }
 
 def soft_repair_node(state):
-    drift = state["repair_state"]
-
-    state["output"] = SOFT_REPAIR_TEXT.get(
-        drift, "Let’s reset the context slightly — what should we focus on?"
-    )
+    repair_code = f"R1_soft_repair:{state['drift']}"
+    state["output"] = SOFT_REPAIR_MAP.get(state["drift"], "Repairing alignment...")
 
     state["pld_events"].append(
-        build_pld_event("soft_repair", {"strategy": drift})
+        log_event("repair_triggered", repair_code, {"strategy": "soft"})
     )
 
     return state
@@ -137,98 +134,79 @@ def soft_repair_node(state):
 
 ---
 
-### 🧩 4.3 — Reentry Confirmation Node
-
+# 🧩 4.3 — Reentry Check Node
 ```python
 def reentry_node(state):
+    # standard rule: assume success (visible repair) unless drift recurs
     state["pld_events"].append(
-        build_pld_event("reentry_check", {"previous_state": state["repair_state"]})
+        log_event("reentry_observed", ReentryCode.AUTO, {"after": state["drift"]})
     )
-    state["repair_state"] = DriftType.NONE
+    state["drift"] = DriftCode.NONE
     return state
 ```
 
 ---
 
-### 🧩 4.4 — Main Task Node (replace with toolchain)
-
+# 🧩 4.4 — Core Task Node (Replace per domain)
 ```python
-def main_task_node(state):
+def task_node(state):
     query = state["input"]
-    response = f"Executing task with query: {query}"
-
-    state["output"] = response
+    state["output"] = f"[TASK EXECUTION] → {query}"
 
     state["pld_events"].append(
-        build_pld_event("task_execution", {"query": query})
+        log_event("outcome_event", "OUT1_in_progress", {"query": query})
     )
-
     return state
 ```
 
 ---
 
-## 5. Routing Logic
-
+## 5. Routing Logic — Full PLD Loop
 ```python
+from langgraph.graph import StateGraph
+
 workflow = StateGraph()
 
-workflow.add_node("detect_drift", drift_detection_node)
-workflow.add_node("soft_repair", soft_repair_node)
+workflow.add_node("detect", detect_drift_node)
+workflow.add_node("repair", soft_repair_node)
 workflow.add_node("reentry", reentry_node)
-workflow.add_node("task", main_task_node)
+workflow.add_node("task", task_node)
 
-workflow.add_edge("detect_drift", "soft_repair", condition=lambda s: s["repair_state"] != DriftType.NONE)
-workflow.add_edge("detect_drift", "task", condition=lambda s: s["repair_state"] == DriftType.NONE)
+workflow.add_edge("detect", "repair", condition=lambda s: s["drift"] != DriftCode.NONE)
+workflow.add_edge("detect", "task",   condition=lambda s: s["drift"] == DriftCode.NONE)
 
-workflow.add_edge("soft_repair", "reentry")
+workflow.add_edge("repair", "reentry")
 workflow.add_edge("reentry", "task")
 
-workflow.set_entry_point("detect_drift")
-workflow.set_finish_point("task")
-
+workflow.set_entry_point("detect")
 graph = workflow.compile()
 ```
 
 ---
 
-## 6. Running the Agent
-
+## 6.Running the System
 ```python
-state = {"input": "No hotels match that price."}
-result = graph.invoke(state)
-
+result = graph.invoke({"input": "No results found error."})
 print(result["output"])
 print(result["pld_events"])
 ```
+---
+
+### 7. Alignment Notes
+
+| Behavior | Source |
+|----------|--------|
+| Drift Signals | `docs/06_pld_concept_reference_map.md` |
+| Repair Semantics | Integration Recipes (Tier 1) |
+| Reentry Routing | `reentry_orchestration_recipe.md` (Tier 2) |
+| Logging Format | `pld_runtime/schema/pld_event.schema.json` |
 
 ---
 
-## 7. Extensions & Roadmap
+#### Final Principle
 
-| Feature | Path |
-|--------|------|
-| Replace rule-based drift classifier | LLM-based + rule hybrid detector |
-| Persist telemetry | SQLite, Mixpanel, OpenTelemetry |
-| Domain tuning | Configurable repair/goal policies |
-| Multi-agent orchestration | Use Reentry → Turn-Hand-off Pattern |
+> This file is the default implementation pattern for **LangGraph + PLD**.  
+> All other recipes extend — not replace — this scaffold.
 
----
-
-## License
-
-**Creative Commons BY-NC 4.0**  
-© 2025 — DeepZenSpace / Contributors
-
----
-
-### Summary
-
-This integration establishes:
-
-✔ A reusable **Drift → Repair → Reentry** control loop  
-✔ A modular LangGraph pipeline  
-✔ PLD event telemetry for debugging, evaluation, and stability tracking  
-✔ A future-proof scaffold for real tool-using agents  
-
----
+Maintainer: **Kiyoshi Sasano**  
+License: **CC-BY-NC-4.0**
