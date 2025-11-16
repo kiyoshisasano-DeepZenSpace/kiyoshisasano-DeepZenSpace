@@ -14,6 +14,8 @@ tags:
 # 🚀 PLD Applied Quickstart Kit  
 **For LLM Agents, Orchestrators, and Conversational Systems (2025 Edition)**  
 
+> PLD is easiest to understand when experienced, not read.
+
 This kit provides practical materials for implementing **Phase Loop Dynamics (PLD)** in real AI systems — including drift detection, repair workflows, reentry logic, and runtime evaluation.
 
 PLD is not just a conceptual framework —  
