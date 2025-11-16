@@ -1,14 +1,16 @@
 ---
-title: "PLD Runtime Package"
-version: "2025.1"
-status: stable
-maintainer: "Kiyoshi Sasano"
-tags:
-  - runtime
-  - pld
-  - agent-governance
-  - orchestration
-license: "CC BY-NC 4.0"
+# Copyright 2025 Kiyoshi Sasano
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at:
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
 ---
 
 # PLD Runtime Package  
@@ -214,10 +216,11 @@ raw input → ingestion → detection → enforcement → controller
 ## 5 — Versioning & License
 
 - Versioning: **semantic with migration notes**
-- License: **CC BY-NC 4.0**
+- License: **Apache License, Version 2.0**
 - Maintainer: **Kiyoshi Sasano**
 
 ---
 
 > The runtime ensures alignment persists across the full interaction —  
 > not only within the model, but across the agent’s lifecycle.
+
