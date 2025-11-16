@@ -40,8 +40,8 @@ flowchart LR
     Respond["Generate Response"]
 
     UserQuery --> RAGNode --> Detect
-    Detect -->|No (D0_none)| Respond
-    Detect -->|Yes (D5_information)| Repair
+    Detect -->|"No (D0_none)"| Respond
+    Detect -->|"Yes (D5_information)"| Repair
     Repair --> Reentry
     Reentry --> RAGNode
 ```
