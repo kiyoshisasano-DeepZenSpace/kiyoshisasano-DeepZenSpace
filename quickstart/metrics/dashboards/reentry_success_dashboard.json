@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: CC-BY-SA-4.0
 # Copyright (c) 2025 Kiyoshi Sasano
+
 {
   "dashboard_id": "pld_reentry_success_dashboard_v1",
   "title": "PLD Reentry & Stability Dashboard (Quickstart)",
