@@ -2,90 +2,120 @@
 hello_pld_runtime.py
 --------------------
 Minimal runnable demonstration of Phase Loop Dynamics (PLD).
-Supports:
-- default example
-- custom input (`python hello_pld_runtime.py "your text"`)
-- scenario mode (`python hello_pld_runtime.py --examples`)
+
+This script provides a simple, interactive example illustrating the core
+runtime sequence:
+
+    Drift → Repair → Reentry → Continue → Outcome
+
+It is intentionally minimal and not meant to represent a full implementation.
+Its purpose is to provide "first contact" intuition of PLD runtime behavior.
+
+Usage:
+
+    # Default example
+    python hello_pld_runtime.py
+
+    # Custom example
+    python hello_pld_runtime.py "Can we switch topics and talk about cooking?"
+
+    # Run multiple preset cases
+    python hello_pld_runtime.py --examples
 """
 
-import sys
 from dataclasses import dataclass
+from typing import Optional
+import sys
 
 
 # -------------------------------------------------------------------------
-# Result model
+# Core Data Model
 # -------------------------------------------------------------------------
 @dataclass
 class PLDResult:
-    drift: bool
-    repaired: bool
-    reentered: bool
-    outcome: str
+    drift_detected: bool
+    repair_applied: bool
+    reentry_confirmed: bool
+    outcome: str  # e.g., "continue_after_repair", "continue_no_repair", "empty_input"
 
 
 # -------------------------------------------------------------------------
-# Mock PLD runtime (teaching-grade, not production)
+# Minimal Runtime Logic (Mock Implementation)
 # -------------------------------------------------------------------------
 class MockPldRuntime:
     """
-    A simplified runtime model illustrating the drift → repair → reentry → continue logic.
-    This version uses naive heuristics — the goal is feel, not correctness.
+    Minimal demonstration runtime.
+
+    Drift detection here uses a simple keyword check.
+    A real implementation would leverage:
+        - Embeddings / semantic similarity
+        - LLM-based classification
+        - Tool validation and session context alignment
     """
 
     def detect_drift(self, text: str) -> bool:
-        """Return True if user appears off-task based on simple keyword rules."""
-        drift_keywords = ["recipe", "cooking", "off-topic", "unrelated"]
+        """
+        Return True if user appears off-task based on simple keyword rules.
+
+        Args:
+            text: Input text from user
+
+        Returns:
+            Boolean indicating whether drift is detected.
+        """
+        drift_keywords = [
+            "recipe",
+            "cooking",
+            "off-topic",
+            "unrelated",
+            "switch",  # added for phrases like "switch topics"
+        ]
+
         return any(k in text.lower() for k in drift_keywords)
 
-    def apply_repair(self) -> bool:
-        """Simulate repairing the detected drift."""
-        return True
-
-    def confirm_reentry(self) -> bool:
-        """Simulate verifying alignment after repair."""
-        return True
-
     def run(self, user_input: str) -> PLDResult:
-        """Execute the runtime lifecycle."""
-        if not user_input.strip():
+        """
+        Process a single user turn and return a minimal PLDResult object.
+        """
+
+        if not user_input or not user_input.strip():
             return PLDResult(False, False, False, "empty_input")
 
         drift = self.detect_drift(user_input)
 
+        # In a real implementation, this event would be logged here.
+        # Example pseudo-log:
+        #
+        # log_pld_event({
+        #     "event_type": "drift_detected" if drift else "no_drift",
+        #     "source_text": user_input,
+        #     "timestamp": datetime.now()
+        # })
+
         if not drift:
-            return PLDResult(False, False, False, "continue")
+            return PLDResult(False, False, True, "continue_no_repair")
 
-        repaired = self.apply_repair()
-        reentered = self.confirm_reentry()
-
-        return PLDResult(
-            drift=True,
-            repaired=repaired,
-            reentered=reentered,
-            outcome="continue_after_repair"
-        )
+        return PLDResult(True, True, True, "continue_after_repair")
 
 
 # -------------------------------------------------------------------------
-# CLI Output formatting
+# Output Renderer
 # -------------------------------------------------------------------------
-def render_output(result: PLDResult):
-    """Print formatted runtime state."""
-    print("\n--- PLD Runtime Result ---\n")
+def render_output(result: PLDResult) -> None:
+    """Print user-friendly interpretation of PLD result."""
 
     if result.outcome == "empty_input":
-        print("⚠️ No content provided.\n")
+        print("⚠️ Empty input — nothing to process.\n")
         return
 
-    if not result.drift:
-        print("🟢 No drift detected — continuing as normal.\n")
-        return
+    if result.drift_detected:
+        print("🚨 Drift Detected")
+        print("🔧 Repair Applied")
+        print("🛂 Reentry Confirmed")
+    else:
+        print("✅ No drift — task continuity preserved")
 
-    print("🚨 Drift Detected")
-    print("🔧 Repair Applied" if result.repaired else "⚠️ Repair Failed")
-    print("✅ Reentry Confirmed\n" if result.reentered else "❌ Reentry Failed\n")
-
-    print(f"Outcome: {result.outcome}\n")
+    print(f"\nOutcome: {result.outcome}\n")
 
 
 # -------------------------------------------------------------------------
@@ -95,34 +125,42 @@ def run_examples():
     runtime = MockPldRuntime()
 
     scenarios = [
-        ("No drift", "I understand. Continuing the task now."),
-        ("Explicit drift", "Let me talk about a cooking recipe instead."),
-        ("Implicit drift", "Okay wait — what if we discuss something unrelated?")
+        ("Aligned continuation", "I understand the task. Let me continue scheduling the booking."),
+        ("Direct drift", "That's irrelevant to what we're discussing."),
+        ("Topic switching", "Can we switch topics and talk about cooking?"),
+        ("Off-topic trivia", "Did you know penguins have knees?"),
     ]
 
     for name, text in scenarios:
-        print("\n" + "=" * 60)
+        print(f"\n{'=' * 60}")
         print(f"Scenario: {name}")
-        print("=" * 60)
-        print(f"Input: {text}")
+        print(f"{'=' * 60}")
+        print(f"Input: {text}\n")
         result = runtime.run(text)
         render_output(result)
 
 
 # -------------------------------------------------------------------------
-# CLI Entry Point
+# Entry Point
 # -------------------------------------------------------------------------
 if __name__ == "__main__":
     runtime = MockPldRuntime()
 
+    # Scenario mode
     if "--examples" in sys.argv:
         run_examples()
         sys.exit(0)
 
+    # Custom input mode
     if len(sys.argv) > 1:
-        user_input = " ".join(arg for arg in sys.argv[1:] if arg != "--examples")
+        test_input = " ".join(arg for arg in sys.argv[1:] if arg != "--examples")
     else:
-        user_input = "Okay, understood — but let me talk about an irrelevant recipe now."
+        test_input = "Okay, understood — but let me talk about an irrelevant recipe now."
 
-    result = runtime.run(user_input)
+    print("\nUser Input:")
+    print(test_input)
+    print("\n--- Runtime Result ---\n")
+
+    result = runtime.run(test_input)
     render_output(result)
+
