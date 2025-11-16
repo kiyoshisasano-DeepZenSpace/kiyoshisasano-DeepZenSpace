@@ -1,7 +1,7 @@
 ---
 title: "End-to-End Case Study: Stabilizing a SaaS Support Agent Using PLD Runtime"
 version: "1.1"
-status: "Canonical Case Study"
+status: "Reference Case Study"
 maintainer: "Kiyoshi Sasano"
 updated: "2025-01-26"
 visibility: "Public"
