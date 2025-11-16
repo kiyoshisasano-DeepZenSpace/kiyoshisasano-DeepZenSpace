@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025 Kiyoshi Sasano
 """
 minimal_pld_demo.py
 
@@ -218,3 +220,4 @@ def run_demo() -> None:
 
 if __name__ == "__main__":
     run_demo()
+
