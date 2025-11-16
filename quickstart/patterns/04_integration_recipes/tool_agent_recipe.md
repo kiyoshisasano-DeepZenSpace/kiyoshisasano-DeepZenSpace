@@ -44,8 +44,10 @@ flowchart LR
     Respond["Final Output"]
 
     UserQuery --> ToolNode --> Detect
-    Detect -->|No (D0_none)| Respond
-    Detect -->|Yes (D4_tool)| Repair --> Reentry --> ToolNode
+    Detect -->|"No (D0_none)"| Respond
+    Detect -->|"Yes (D4_tool)"| Repair
+    Repair --> Reentry
+    Reentry --> ToolNode
 ```
 
 ---
