@@ -128,7 +128,7 @@ python quickstart/hello_pld_runtime.py --examples
 > Drift → Repair → Reentry → Continue
 > (in a minimal mock runtime environment)
 
-For deeper usage patterns, continue with:
+For deeper usage patterns, continue with:  
 ➡️ ` quickstart/README_quickstart.md` 
 
 ---
