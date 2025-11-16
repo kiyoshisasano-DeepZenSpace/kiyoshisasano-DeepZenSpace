@@ -129,7 +129,7 @@ python quickstart/hello_pld_runtime.py --examples
 > (in a minimal mock runtime environment)
 
 For deeper usage patterns, continue with:  
-➡️ ` quickstart/README_quickstart.md` 
+➡️` quickstart/README_quickstart.md` 
 
 ---
 
