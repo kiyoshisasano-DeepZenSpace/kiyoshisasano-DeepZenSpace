@@ -14,24 +14,24 @@ tags:
 # 🚀 PLD Applied Quickstart Kit  
 **For LLM Agents, Orchestrators, and Conversational Systems (2025 Edition)**  
 
-This kit contains everything needed to implement **Phase Loop Dynamics (PLD)** in real AI systems — including drift detection, repair workflows, reentry control, and runtime evaluation.
+This kit provides practical materials for implementing **Phase Loop Dynamics (PLD)** in real AI systems — including drift detection, repair workflows, reentry logic, and runtime evaluation.
 
-PLD is not theory.  
-It is a **runtime interaction control model** built for applied AI systems.
+PLD is not just a conceptual framework —  
+it is a **runtime interaction control model** for applied AI.
 
 ---
 
 ## 1 — Why PLD Exists
 
-LLMs fail not because they lack knowledge —  
-but because they fail to **maintain coherent task state across turns.**
+LLMs rarely fail because they lack knowledge —  
+they fail because they lose **task alignment across turns.**
 
 | Failure Mode | Result |
 |--------------|--------|
 | Loss of grounding | User distrust |
 | Incorrect propagation of prior context | Cascading errors |
 | Tool/API mismatch without acknowledgement | Workflow stalls |
-| Full resets | Lost session state & user patience |
+| Full resets | Lost session state & user confidence |
 
 PLD formalizes the lifecycle to prevent collapse:
 
@@ -41,20 +41,19 @@ PLD formalizes the lifecycle to prevent collapse:
 
 ## 2 — How to Use This Folder
 
-Follow the structure in this order:
+The structure supports multiple entry points based on your goals.  
+One suggested learning path is:
 
-| Step | Folder | Purpose |
-|------|--------|---------|
-| **1** | `overview/` | Learn the model quickly |
-| **2** | `operator_primitives/` | Use drift, repair, latency, reentry operators |
-| **3** | `patterns/` | Drop-in templates for LLM, UX, and orchestration |
-| **4** | `04_integration_recipes/` | **Turn patterns into runnable agents with PLD behavior** |
-| **5** | `metrics/` | Logging schemas and evaluation dashboards |
-| **6** | `_meta/` | Versioning, change logs, migration notes |
+| Step | Folder | Focus |
+|------|--------|--------|
+| **1** | `overview/` | High-level mental model |
+| **2** | `operator_primitives/` | Drift, repair, and reentry operators |
+| **3** | `patterns/` | Drop-in patterns for LLMs and orchestrators |
+| **4** | `04_integration_recipes/` | **Reference examples showing PLD applied to real agent components** |
+| **5** | `metrics/` | Logging schemas + evaluation dashboards |
+| **6** | `_meta/` | Versioning, migration, design notes |
 
-This mirrors **real engineering adoption** from conceptual understanding → implementation → measurement.
-
-> 📌 *If you're ready to build a working agent, the next stop is:*  
+> 📌 If you'd like to see PLD applied in runnable examples, explore:  
 > `quickstart/patterns/04_integration_recipes/README_recipes.md`
 
 ---
@@ -74,7 +73,6 @@ print(event)
 ```
 
 Example output:
-
 ```json
 {
   "event_type": "soft_repair",
@@ -82,11 +80,9 @@ Example output:
   "strategy": "option_expansion"
 }
 ```
-
 ---
 
-## 4 — Runtime Logging Schema (Aligned with `metrics/schemas/`)
-
+## 4 — Runtime Logging Schema (Aligned with metrics/schemas/)
 ```json
 {
   "session_id": "MWZ-001",
@@ -99,11 +95,13 @@ Example output:
 ```
 
 Compatible with:
+- LangGraph / LangChain memory stores
 
-- LangGraph / LangChain memory stores  
-- OpenAI Assistants + Tools API event streams  
-- Autogen / Multi-agent orchestration  
-- OpenTelemetry / Mixpanel / PostHog / Elastic  
+- OpenAI Assistants + Tools API event streams
+
+- Autogen / multi-agent orchestrators
+
+- OpenTelemetry / Mixpanel / PostHog / Elastic
 
 ---
 
@@ -116,9 +114,9 @@ Compatible with:
 | Hard Repair Escalation Rate | Cost of failed soft repair |
 | Reentry Confirmation Success | Continuity + alignment |
 | Outcome Completion | End-to-end task success |
-| Latency Drift Penalty | Impact of delays on stability |
+| Latency Drift Penalty | Stability impact of delays |
 
-These metrics support both **behavioral evaluation and engineering validation.**
+These support both **behavioral evaluation** and **engineering validation**.
 
 ---
 
@@ -126,37 +124,36 @@ These metrics support both **behavioral evaluation and engineering validation.**
 
 A separate dataset exists in:
 
-```
-analytics/multiwoz_2.4_n200/
-```
+`analytics/multiwoz_2.4_n200/`
 
 - This quickstart focuses on **implementation**
-- The dataset focuses on **measurement and validation**
+- The dataset supports **measurement and benchmarking**
 
-Together they support prototype → production → benchmark alignment.
+Using both enables:
+
+**prototype → evaluation → iteration**
 
 ---
 
 ## 7 — Linked Core References
 
-| File | Use |
-|------|-----|
-| `docs/02_pld_event_schema.md` | Core taxonomy + event definitions |
+| File | Purpose |
+|------|---------|
+| `docs/02_pld_event_schema.md` | PLD taxonomy + event definitions |
 | `quickstart/operator_primitives/` | Drift → Repair → Reentry logic |
-| `quickstart/patterns/04_integration_recipes/` | **Runnable examples with PLD runtime behavior** |
-| `quickstart/metrics/` | Logging, dashboards, evaluation |
-| `analytics/multiwoz_2.4_n200/` | Applied benchmark + scoring |
+| `quickstart/patterns/04_integration_recipes/` | Runnable agent examples |
+| `quickstart/metrics/` | Logging → dashboards → evaluation |
+| `analytics/multiwoz_2.4_n200/` | Applied benchmark dataset |
 
 ---
 
-## License & Attribution
+### License & Attribution
 
-```
-Creative Commons BY-NC 4.0
-Maintainer: Kiyoshi Sasano
-```
+Creative Commons **BY-NC 4.0**  
+Maintainer: **Kiyoshi Sasano**
+
+---
 
 > PLD is not static rules —  
-> **it is a runtime discipline for maintaining shared reality with the user.**
+> it is a runtime discipline for maintaining shared reality with the user.
 
----
