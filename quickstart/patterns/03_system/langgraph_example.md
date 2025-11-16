@@ -8,6 +8,20 @@ visibility: "Public"
 scope: "System Pattern (Baseline)"
 ---
 
+## Framework Context
+
+⚠️ **This example uses LangGraph for demonstration purposes.**
+
+PLD is framework-agnostic — the same runtime loop can be implemented in:
+
+- Assistants API
+- AutoGen / CrewAI
+- Rasa
+- Custom orchestration loops
+
+LangGraph is simply **one possible implementation path**, not a requirement.
+
+
 # Canonical LangGraph Example — PLD Runtime Loop  
 *(Standardized Scaffold — aligned to Integration Recipes)*
 
@@ -210,4 +224,5 @@ print(result["pld_events"])
 
 Maintainer: **Kiyoshi Sasano**  
 License: **CC-BY-NC-4.0**
+
 
