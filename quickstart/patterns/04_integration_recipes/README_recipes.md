@@ -1,6 +1,6 @@
 ---
 title: "Integration Recipes Index"
-version: "1.1"
+version: "1.0"
 status: "Entry Point"
 maintainer: "Kiyoshi Sasano"
 updated: "2025-01-15"
