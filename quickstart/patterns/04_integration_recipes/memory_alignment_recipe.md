@@ -1,6 +1,6 @@
 ---
 title: "Memory Alignment Repair Recipe (PLD Integration)"
-version: "1.0"
+version: "1.1"
 status: "Reference Example"
 maintainer: "Kiyoshi Sasano"
 updated: "2025-01-15"
