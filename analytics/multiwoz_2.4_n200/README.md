@@ -2,6 +2,7 @@
 
 Note: For an applied end-to-end implementation case (including runtime logging and repair orchestration), see `/analytics/case_study_end_to_end.md`.
 
+---
 
 **Evaluation Reference Set for Phase Loop Dynamics (PLD) Runtime**
 
@@ -80,13 +81,25 @@ All annotations follow the canonical **PLD phase taxonomy**:
 | Reentry | Verification that alignment has been restored |
 | Outcome | Terminal state: success or failure |
 
-These phases are compatible with runtime schemas in:
+These annotations are compatible with runtime schemas in:
 
 ```
 pld_runtime/01_schemas/
 ```
 
 and can be parsed directly by the PLD runtime pipeline.
+
+---
+
+#### 🔗 Metric Continuity
+
+For operational metrics derived from these annotations, see:
+
+```
+/docs/07_pld_operational_metrics_cookbook.md
+```
+
+(PRDR, REI, VRL definitions and evaluation strategy)
 
 ---
 
@@ -134,6 +147,12 @@ Typical use cases include:
 - repair timing evaluation  
 - benchmark scoring  
 - comparative agent evaluation (LLM / rule-based / hybrid)  
+
+For runnable examples demonstrating runtime + repair orchestration, see:
+
+```
+/quickstart/patterns/04_integration_recipes/
+```
 
 ---
 
