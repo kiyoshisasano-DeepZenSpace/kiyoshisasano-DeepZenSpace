@@ -1,14 +1,15 @@
-# Copyright 2025 Kiyoshi Sasano
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at:
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+---
+license: "Apache License 2.0"
+spdx: "Apache-2.0"
+copyright:
+  holder: "Kiyoshi Sasano"
+  year: 2025
+terms:
+  - "Use of this software is permitted under the Apache License, Version 2.0."
+  - "You may obtain a copy of the license at: http://www.apache.org/licenses/LICENSE-2.0"
+  - "Distributed on an 'AS IS' basis WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND."
+---
+
 
 
 # PLD Runtime Package  
@@ -221,6 +222,7 @@ raw input → ingestion → detection → enforcement → controller
 
 > The runtime ensures alignment persists across the full interaction —  
 > not only within the model, but across the agent’s lifecycle.
+
 
 
 
