@@ -9,7 +9,7 @@ scope: "Research → Implementation → Observability → Outcome"
 ---
 
 # End-to-End Case Study  
-### *How PLD Transforms a SaaS Support Agent from Reaction → Regulation → Reliability*
+### *Applying PLD to a SaaS Support Agent: Observed Changes in Runtime Alignment*
 
 > **Version 1.1 Update**
 > - Synchronized taxonomy with Integration Recipes v1.1 (`D*`, `R*`, `RE*`, `OUT*`)
@@ -49,6 +49,22 @@ Each capability introduces a distinct drift surface:
 | Retrieval | empty, irrelevant, or hallucinated results | `D5_information` |
 | Tool Execution | missing/invalid arguments, hallucinated tools | `D4_tool` |
 | Memory Use | outdated, incorrect, contradictory recall | `D2_context` |
+
+---
+
+## 2.1 Deployment Context
+
+⚠️ This case study reflects a specific deployment environment:
+
+- Domain: SaaS customer support
+- Interaction style: Multi-turn troubleshooting and task execution
+- Memory: Short-term session memory
+- Tools: Ticket generation + documentation lookup
+- Retrieval: Lightweight vector search
+- Language: English
+
+Different industries (e.g., healthcare, finance, design assistants)  
+will exhibit different drift signatures and operational behavior.
 
 ---
 
@@ -182,14 +198,17 @@ Key transition:
 
 ---
 
-## 6 — Outcome Metrics (Before → After)
-```md
-| Metric | Before | After PLD | Interpretation |
-|--------|--------|-----------|----------------|
-| PRDR | **0.78 → 0.21** | Repairs succeed instead of escalating |
-| VRL | **0.04 → 0.63** | Repair reasoning is now visible rather than silent |
-| REI | **0.00 → 0.84** | System reliably realigns after drift |
-```
+## 6 — Outcome Metrics (Observed Results)
+
+⚠️ **These numbers reflect one deployment context.**
+They are not benchmarks — your operational results will vary based on model, tools, memory strategy, user behavior, and domain constraints.
+
+| Metric | Before (Observed) | After PLD (Observed) | Interpretation |
+|--------|-------------------|----------------------|----------------|
+| PRDR | **0.78 → 0.21** | Repairs succeeded rather than escalating |
+| VRL | **0.04 → 0.63** | Repairs became visible and interpretable |
+| REI | **0.00 → 0.84** | Successful structured reentry regained stable state |
+
 
 PLD does not eliminate failure —
 it ensures failure becomes:
