@@ -1,13 +1,16 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2025 Kiyoshi Sasano
-# patterns/03_system/rasa_actions.py
-# PLD Applied-AI Edition
 #
-# Soft Repair / Drift Detection / Reentry Guard actions for Rasa
-# --------------------------------------------------------------
-# Depends on:
-#   - slots: user_goal, constraint_price, constraint_category, repair_state
-#   - responses: see rasa_soft_repair.yml
+# Rasa Action Implementation for Phase Loop Dynamics (PLD)
+# Part of: quickstart/patterns/03_system
+#
+# Purpose:
+#   Soft Repair / Drift Detection / Reentry Guard actions for Rasa Assistant workflows.
+#
+# Dependencies:
+#   - Rasa 3.6+
+#   - domain.yml slots: user_goal, constraint_price, constraint_category, repair_state
+#   - response templates defined in: rasa_soft_repair.yml
 #
 # Maintainer: Kiyoshi Sasano
 
@@ -183,5 +186,6 @@ class ActionReentryGuard(Action):
         # )
 
         return events
+
 
 
