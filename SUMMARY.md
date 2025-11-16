@@ -27,7 +27,7 @@ Without runtime governance, agents develop:
 
 PLD introduces a structured runtime loop that detects misalignment early, repairs behavior, and confirms recovery before continuing.
 
-```txt
+```
 Drift → Repair → Reentry → Continue → Outcome
 ```
 
@@ -82,7 +82,7 @@ Rather, PLD provides a **governance layer**, not architectural lock-in.
 
 The repository is organized into five main areas:
 
-txt```
+```
 /quickstart — Learning path + implementation patterns (start here)
 /pld_runtime — Reference implementation (optional)
 /docs — Conceptual model, taxonomy, diagrams, definitions
