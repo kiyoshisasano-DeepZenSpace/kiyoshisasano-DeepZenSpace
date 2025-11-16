@@ -54,8 +54,25 @@ flowchart LR
 
 ## 4 — Minimal Runnable Code Example (LangGraph-Compatible)
 
-> This example uses an in-memory JSON store.  
-> No external memory service required.
+⚠️ **Implementation Note**
+
+This example uses **LangGraph** as one possible implementation approach.
+
+The PLD behavior demonstrated here —  
+**Drift → Repair → Reentry → Continue → Outcome** —  
+is **framework-neutral** and may be adapted to:
+
+- Assistants API
+- AutoGen / CrewAI
+- Rasa
+- Custom orchestration loops
+
+Use this structure as a reference and adapt based on your agent stack, memory architecture, and UX goals.
+
+> **Dependencies:**  
+> - `langgraph`, `langchain-core`  
+> - No external memory backend required (mock memory store included)
+
 
 ```python
 from langgraph.graph import StateGraph, MessagesState
