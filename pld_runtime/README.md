@@ -10,7 +10,6 @@
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
----
 
 # PLD Runtime Package  
 Operational Engine for Phase Loop Dynamics
@@ -222,5 +221,6 @@ raw input → ingestion → detection → enforcement → controller
 
 > The runtime ensures alignment persists across the full interaction —  
 > not only within the model, but across the agent’s lifecycle.
+
 
 
