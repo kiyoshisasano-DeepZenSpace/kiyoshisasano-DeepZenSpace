@@ -1,0 +1,53 @@
+# License
+
+This repository uses hybrid licensing to balance adoption and intellectual property protection.
+
+## Quick Reference
+
+- **Code & Runtime**: Apache License 2.0 → [LICENSE-APACHE-2.0.txt](LICENSE-APACHE-2.0.txt)
+- **Documentation & Methodology**: CC BY-SA 4.0 → [LICENSE-CC-BY-SA-4.0.txt](LICENSE-CC-BY-SA-4.0.txt)
+
+## What This Means
+
+### You Can:
+- ✅ Use the code commercially (Apache 2.0)
+- ✅ Modify and distribute the code
+- ✅ Use and adapt the documentation (CC BY-SA 4.0)
+- ✅ Use PLD concepts in commercial products
+
+### You Must:
+- ✅ Include the Apache 2.0 license with code distributions
+- ✅ Provide attribution when using documentation or concepts
+- ✅ Share modifications to documentation under CC BY-SA 4.0
+- ✅ Include copyright notice
+
+### You Cannot:
+- ❌ Use trademarks without permission
+- ❌ Hold the author liable
+
+## Details
+
+### Code Components (Apache 2.0)
+- All `.py` files
+- `/pld_runtime/` (entire folder)
+- JSON schemas and configuration files
+- Runnable examples
+
+### Documentation (CC BY-SA 4.0)
+- All `.md` files
+- All `.svg` files
+- `/docs/`, `/analytics/`, `/field/` folders
+- PLD methodology and metrics (PRDR, REI, VRL)
+
+## Attribution
+
+See [README.md#license](README.md#license) for attribution templates.
+
+## Contact
+
+For commercial licensing or enterprise support:
+deepzenspace[at]gmail.com
+
+---
+
+Copyright © 2025 Kiyoshi Sasano
