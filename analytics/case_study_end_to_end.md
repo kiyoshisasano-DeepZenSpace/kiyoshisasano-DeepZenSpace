@@ -1,207 +1,248 @@
 ---
-title: "End-to-End Case Study: PLD Runtime in a SaaS Support Agent"
-version: "1.0"
+title: "End-to-End Case Study: Stabilizing a SaaS Support Agent Using PLD Runtime"
+version: "1.1"
 status: "Canonical Case Study"
 maintainer: "Kiyoshi Sasano"
-updated: "2025-01-18"
+updated: "2025-01-26"
 visibility: "Public"
-scope: "Research → Implementation → Operation"
+scope: "Research → Implementation → Observability → Outcome"
 ---
 
 # End-to-End Case Study  
-### *Stabilizing a SaaS Support Agent Using PLD Runtime Loop*
+### *How PLD Transforms a SaaS Support Agent from Reaction → Regulation → Reliability*
+
+> **Version 1.1 Update**
+> - Synchronized taxonomy with Integration Recipes v1.1 (`D*`, `R*`, `RE*`, `OUT*`)
+> - Updated architecture diagrams to reflect central Reentry Orchestrator
+> - Metrics reporting now aligned with `PRDR`, `VRL`, and `REI` canonical definitions
 
 ---
 
-## 1 — Purpose of This Case Study
+## 1 — Purpose & Motivation
 
-This document demonstrates how Phase Loop Dynamics (PLD) improves **runtime behavioral stability** in a real-world multi-turn agent scenario.
+This case study demonstrates how **Phase Loop Dynamics (PLD)** improves a real-world multi-turn agent deployed in a SaaS customer support context.
 
-PLD here is evaluated across three lenses:
+Instead of preventing failure, PLD introduces:
 
-| Perspective | Question |
-|------------|----------|
-| **Research** | Does the runtime loop reduce drift frequency and escalation? |
-| **Engineering** | Can PLD be implemented without rewriting the architecture? |
-| **Operations** | Does PLD generate observable signals that support monitoring and regression control? |
+| Property | Meaning |
+|---------|---------|
+| **Detectability** | Problems are signaled as structured drift codes (`D*`) |
+| **Recoverability** | Repairs follow predictable, repeatable strategies (`R*`) |
+| **Stability** | A runtime reentry layer governs continuation (`RE* → OUT*`) |
 
-Success criteria:
-
-> **With PLD, the system should not “avoid failure” — it should *recover* in a controlled and observable manner.**
+> **The goal is not perfection — the goal is runtime stability.**
 
 ---
 
-## 2 — Scenario: SaaS Support Chat Assistant
+## 2 — Scenario
 
-A customer is interacting with a support bot to:
+A support assistant must:
 
 - search documentation (RAG),
-- create support tickets (tool call),
-- continue the session over multiple turns (memory).
+- open support tickets (tool),
+- persist user preferences across turns (memory).
 
-The agent must maintain alignment while:
+Each capability introduces a distinct drift surface:
 
-| Component | Drift Risk | PLD Label |
-|-----------|------------|-----------|
-| Retrieval | Irrelevant or empty results | `D5_information` |
-| Tools | Invalid parameter or missing schema field | `D4_tool` |
-| Memory | Incorrect plan, pricing tier, or status recall | `D2_context` |
-
-This scenario surfaces the *three core failure modes PLD was designed to govern*.
+| Component | Drift Risk | PLD Code |
+|-----------|------------|----------|
+| Retrieval | empty, irrelevant, or hallucinated results | `D5_information` |
+| Tool Execution | missing/invalid arguments, hallucinated tools | `D4_tool` |
+| Memory Use | outdated, incorrect, contradictory recall | `D2_context` |
 
 ---
 
 ## 3 — Baseline Behavior (No PLD)
 
-### 3.1 Architecture
+### 3.1 Baseline Architecture (Before)
+
+```text
+User
+  ↓
+LLM Core
+  ├─ Mock RAG (KB lookup)
+  ├─ Ticket Tool (create / update ticket)
+  └─ Ephemeral Memory (in-session only)
+      ↓
+Response
 ```
-User → LLM →
-↳ Mock RAG (KB lookup)
-↳ Mock Tool (Create Ticket)
-↳ Ephemeral Memory
-→ Response
-```
+In this baseline, the LLM directly decides:
 
-### 3.2 Example Interaction
+- whether to call RAG,
+- whether/how to call the ticket tool,
+- whether to read/write ephemeral memory,
 
-| Turn | Agent Behavior | Problem |
-|------|---------------|---------|
-| 1 | “There is no record of that feature.” | RAG irrelevant result → hallucination amplification |
-| 2 | Attempts creating support ticket without required field `"priority"` | Invalid tool request |
-| 3 | Suggests enterprise-only features to a free-tier user | Memory misalignment |
-
-### 3.3 Initial Metrics Snapshot
-
-| Metric | Value | Interpretation |
-|--------|------|----------------|
-| **PRDR: 0.78** | ~78% of recovery attempts fail or escalate | System cannot self-correct |
-| **VRL: 0.04** | Almost no visible repair | Repairs are silent or nonexistent |
-| **REI: 0.00** | No successful reentry confirmations | Flow collapses instead of stabilizing |
-
-Baseline takeaway:
-
-> **The system behaves correctly only when nothing goes wrong.**
+…**without any explicit drift detection, repair strategy, or reentry control.**
 
 ---
 
-## 4 — Incremental PLD Adoption
+### 3.2 Baseline Failure Transcript (No PLD)
 
-PLD does not require redesign — it wraps existing behaviors.
+| Turn | User Intent | System Behavior (Simplified) | PLD View (If It Existed) |
+|------|-------------|------------------------------|---------------------------|
+| 1 | Ask about a feature | Returns irrelevant retrieval → confidently hallucinated explanation | Would be `D5_information` |
+| 2 | Request ticket creation | Model calls tool with missing `priority` → tool rejects / silent failure | Would be `D4_tool` |
+| 3 | Ask about upgrade path | Memory incorrectly recalls “enterprise plan” → suggests paid-only features | Would be `D2_context` |
 
-### Phase Additions
+From the user's perspective:
 
-| Step | Change | Runtime Effect |
-|------|--------|----------------|
-| 1 | Add `Drift → Detect` node | Signals `D*` drift classification |
-| 2 | Add soft/hard repair strategies | Routed based on drift type |
-| 3 | Add `Reentry → Confirmation` | Stabilizes state before continuing |
-| 4 | Log `R*`, `RE*`, `OUT*` events | Enables monitoring and analytics |
-
-### Example: Repaired interaction trace
-```
-D5 → R2 Soft Repair → RE1 Confirm → Continue
-D4 → R3 Hard Repair → RE1 Confirm → Continue
-D2 → R1 Clarify Memory → RE2 Checkpoint → Continue
-```
-
-The system now behaves **with control**, not reaction.
+- the assistant appears confident but unreliable,  
+- errors stack instead of recovering,  
+- there is **no visible correction or reentry.**
 
 ---
 
-## 5 — Final Integrated Runtime
+### 3.3 Metrics Snapshot (Before PLD)
 
-### Architecture with PLD Enabled
+| Metric | Value (Baseline) | Interpretation |
+|--------|------------------|----------------|
+| **PRDR** | `0.78` | Most failed responses repeat drift rather than recover |
+| **VRL** | `0.04` | Almost no visible repair messages |
+| **REI** | `0.00` | No measurable reentry success |
+
+> **Baseline summary:**  
+> The system works only when nothing goes wrong —  
+> and collapses when drift occurs.
+
+---
+
+## 4 — PLD Integration Overview
+
+Instead of redesigning the system, PLD wraps the runtime with:
+
+- **drift detection (`D*`)**
+- **repair strategies (`R*`)**
+- **reentry confirmation (`RE*`)**
+- **structured outcome signaling (`OUT*`)**
+
+This converts the agent from *reaction-based output* → to a **governed runtime loop**.
+
+---
+### 4.1 Component-Level Enablement
+
+PLD is applied incrementally — one subsystem at a time — without rewriting the architecture.
+
+| Component | Before | After PLD Integration |
+|-----------|--------|----------------------|
+| Retrieval | Free-form model queries | Retrieval emits `D5_information` when confidence or relevance drops |
+| Tool Execution | LLM decides arguments heuristically | Tool results emit `D4_tool` when schema mismatch or failure occurs |
+| Memory | Silent overwrite or inconsistent usage | Reads/writes monitored; misalignment generates `D2_context` |
+
+Each repair strategy becomes routable and observable:
+
+```text
+# Runtime Policy Mapping
+D5  → R2_soft_repair
+D4  → R3_schema_fix
+D2  → R1_clarify_memory
+```
+
+Instead of collapsing, the system now *repairs → reenters → continues.*
+
+---
+
+### 4.2 Example PLD Execution Timeline
 
 ```mermaid
+sequenceDiagram
+    participant User
+    participant LLM
+    participant RAG
+    participant Tool
+    participant Memory
+
+    User->>LLM: "Can you enable SSO?"
+    LLM->>RAG: Query
+    RAG-->>LLM: irrelevant / empty
+    LLM->>LLM: Detect D5_information
+    LLM->>LLM: Apply R2_soft_repair (rewrite query)
+    LLM->>RAG: Retry
+    RAG-->>LLM: correct info
+    LLM->>Memory: Write preference
+    Memory-->>LLM: Confirmation (RE4_memory_restore)
+    LLM-->>User: Repaired + aligned response
+```
+> The runtime loop is now visible, explainable, repeatable, and debuggable.
+
+---
+
+## 5 — Final Runtime Architecture (With PLD)
+```mermaid
 flowchart TD
-    User --> Drift["Detect Drift (D*)"]
-    Drift -->|detected| Repair["Soft/Hard Repair (R*)"]
-    Drift -->|none| Task["Task Execution"]
+    User --> Detect["Detect Drift (D*)"]
+    Detect -->|drift| Repair["Repair Strategy (R*)"]
     Repair --> Reentry["Reentry Confirmation (RE*)"]
+    Detect -->|no drift| Task["Normal Task Execution"]
     Reentry --> Task
     Task --> Outcome[(Outcome + Telemetry OUT*)]
 ```
-### Example Execution Log (Condensed)
 
-```json
-[
-  {"event":"D5_information","turn":1},
-  {"event":"R2_soft_repair","strategy":"option_expansion"},
-  {"event":"RE1_alignment_check"},
-  {"event":"continue"},
-  {"event":"D4_tool"},
-  {"event":"R3_schema_fix"},
-  {"event":"RE1_alignment_check"},
-  {"event":"continue"}
-]
+Key transition:
+> The system shifts from uncontrolled generation → to a policy-driven runtime loop.
+
+---
+
+## 6 — Outcome Metrics (Before → After)
+```md
+| Metric | Before | After PLD | Interpretation |
+|--------|--------|-----------|----------------|
+| PRDR | **0.78 → 0.21** | Repairs succeed instead of escalating |
+| VRL | **0.04 → 0.63** | Repair reasoning is now visible rather than silent |
+| REI | **0.00 → 0.84** | System reliably realigns after drift |
 ```
-Now the agent not only behaves —
-it explains, tracks, and regulates its behavior.
+
+PLD does not eliminate failure —
+it ensures failure becomes:
+- observable,
+
+- recoverable,
+
+- repeatable,
+
+- measurable.
 
 ---
 
-## 6 — Observability and Metrics Impact
-
-After applying PLD, metrics change measurably.
-
-| Metric | Before | After | Meaning |
-|--------|--------|-------|---------|
-| PRDR | **0.78 → 0.21** | Repairs now succeed vs. escalating |
-| VRL | **0.04 → 0.63** | Most repairs are now visible to users |
-| REI | **0.00 → 0.84** | Flow returns to aligned state reliably |
-
-Interpretation:
-
-> The system still fails — but no longer collapses.  
-> **Failure becomes governable and recoverable.**
-
----
-
-## 7 — Operational Interpretation
-
-From an engineering lens:
-
-- The loop creates **controlled retry pathways**
-- System behavior becomes **inspectable and repeatable**
-- Failures become **policy choices, not accidents**
-
-From a product lens:
-
-- Repair transparency builds trust
-- Drift no longer compounds into abandonment
-- Stability survives long-horizon interaction
-
-From a reliability/SRE lens:
-
-- Logs map directly to dashboards
-- Regression detection becomes automated
-- Drift patterns become measurable risk, not mystery
+## 7 — Operational Meaning
+```md
+Engineering → Controlled retry loop with structured boundaries  
+Product → Transparent repair UX improves trust  
+SRE/Operations → Logs become actionable telemetry, not guesswork
+```
+Instead of saying:
+> "The model is unpredictable."
+…teams can now ask:
+> "Which drift type is driving instability, and is the repair strategy insufficient?"
 
 ---
 
 ## 8 — Lessons Learned
+---
 
-| Insight | Consequence |
-|---------|-------------|
-| Retrieval, tooling, and memory failures are *structurally different.* | They require distinct repair strategies. |
-| Repair is not a model output — it is a **runtime policy.** | UX and strategy must be designed intentionally. |
-| Stability emerges not from correctness — | but from **the ability to return to alignment.** |
+## 8 — Lessons Learned
+
+| Insight | Effect |
+|---------|--------|
+| Models drift differently depending on subsystem | Repairs must be **drift-specific** |
+| Repair is not a model behavior — it is a **runtime policy** | Can be **tuned, tested, and monitored** |
+| Stability is not achieved by preventing errors | but by **recovering alignment systematically** |
 
 ---
 
 ## Final Summary
 
-This case study demonstrates that:
+With PLD, agent behavior becomes **governable**.
 
-> **PLD increases agent stability not by preventing error,  
-> but by restoring alignment after it occurs — predictably, observably, and repeatedly.**
+Errors are not model failures —  
+they are **runtime events with structured recovery paths.**
 
-Systems implementing PLD move from:
+The agent now demonstrates:
 
-❌ *Unpredictable conversational collapse*  
-to  
-✅ *Controlled, measurable runtime alignment.*
+- predictable runtime behavior  
+- observable correction cycles  
+- stable long-horizon interaction  
 
 ---
 
 Maintainer: **Kiyoshi Sasano**
+
