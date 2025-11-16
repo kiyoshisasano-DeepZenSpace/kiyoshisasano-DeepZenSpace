@@ -28,6 +28,9 @@ it is a **runtime interaction control model** for applied AI.
 
 ### 🏁 Start Here — Run the Minimal Runtime
 
+> `hello_pld_runtime.py` is intentionally located inside `quickstart/` —  
+> it is a learning-oriented runtime demonstration, not part of the PLD engine source.
+
 You can run the minimal working example immediately:
 
 ```bash
