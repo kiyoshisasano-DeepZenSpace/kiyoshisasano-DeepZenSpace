@@ -52,9 +52,25 @@ flowchart LR
 
 ## 4 — Minimal Runnable Code Example (LangGraph-Compatible)
 
+⚠️ **Implementation Note**
+
+This example uses **LangGraph** as one possible implementation approach.
+
+The underlying PLD runtime behavior —  
+**Drift → Repair → Reentry → Continue → Outcome** —  
+is **framework-neutral** and can be adapted to:
+
+- Assistants API
+- AutoGen / CrewAI
+- Rasa
+- Custom orchestration loops
+
+You may reuse this structure or adapt it based on your existing orchestration layer.
+
 > **Dependencies:**  
 > - `langgraph`, `langchain-core`, `uuid`  
 > - No external API or tool registry required.
+
 
 ```python
 from langgraph.graph import StateGraph, MessagesState
