@@ -247,8 +247,7 @@ Less relevant when:
 
 ```
 CC BY-NC 4.0 — research, experimentation, and internal use permitted.
-- Commercial deployment requires permission.
-- Commercial deployment requires written permission.
+Commercial deployment requires written permission.
 
 Maintainer: Kiyoshi Sasano
 ```
