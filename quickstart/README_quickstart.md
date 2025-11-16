@@ -75,8 +75,8 @@ One suggested learning path is:
 | Step | Folder | Focus |
 |------|--------|--------|
 | **1** | `overview/` | High-level mental model |
-| **2** | `operator_primitives/` | Drift, repair, and reentry operators |
-| **3** | `patterns/` | Drop-in patterns for LLMs and orchestrators |
+| **2** | `hello_pld_runtime.py` | First runnable runtime experience |
+| **3** | `operator_primitives/` | Drift, repair, and reentry operators |
 | **4** | `04_integration_recipes/` | Examples showing how PLD can be applied to real agent components |
 | **5** | `metrics/` | Logging schemas + evaluation dashboards |
 | **6** | `_meta/` | Versioning, migration, design notes |
@@ -113,9 +113,13 @@ After running it, continue with the sections below.
 
 ---
 
-## 3 — Minimal Conceptual Code (Not Runtime)
+## 3 — Conceptual Logic (For Reference)
 
-This sample illustrates the logic conceptually — not as a runnable system.
+This example is intentionally minimal — it illustrates the PLD lifecycle,
+not a production implementation.
+
+👉 For a runnable implementation, use:  
+`hello_pld_runtime.py`
 
 ---
 
