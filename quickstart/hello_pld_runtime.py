@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2025 Kiyoshi Sasano
+
 """
 hello_pld_runtime.py
 --------------------
@@ -58,41 +59,28 @@ class MockPldRuntime:
     def detect_drift(self, text: str) -> bool:
         """
         Return True if user appears off-task based on simple keyword rules.
-
-        Args:
-            text: Input text from user
-
-        Returns:
-            Boolean indicating whether drift is detected.
         """
+
+        # Updated to match provided example scenarios more directly
         drift_keywords = [
             "recipe",
             "cooking",
             "off-topic",
             "unrelated",
-            "switch",  # added for phrases like "switch topics"
+            "irrelevant",
+            "switch",
+            "penguin",
+            "topic",
         ]
 
         return any(k in text.lower() for k in drift_keywords)
 
     def run(self, user_input: str) -> PLDResult:
-        """
-        Process a single user turn and return a minimal PLDResult object.
-        """
-
+        """Process a single user turn and return a minimal PLDResult."""
         if not user_input or not user_input.strip():
             return PLDResult(False, False, False, "empty_input")
 
         drift = self.detect_drift(user_input)
-
-        # In a real implementation, this event would be logged here.
-        # Example pseudo-log:
-        #
-        # log_pld_event({
-        #     "event_type": "drift_detected" if drift else "no_drift",
-        #     "source_text": user_input,
-        #     "timestamp": datetime.now()
-        # })
 
         if not drift:
             return PLDResult(False, False, True, "continue_no_repair")
@@ -104,7 +92,7 @@ class MockPldRuntime:
 # Output Renderer
 # -------------------------------------------------------------------------
 def render_output(result: PLDResult) -> None:
-    """Print user-friendly interpretation of PLD result."""
+    """Print human-readable interpretation of the PLD result."""
 
     if result.outcome == "empty_input":
         print("⚠️ Empty input — nothing to process.\n")
@@ -117,7 +105,10 @@ def render_output(result: PLDResult) -> None:
     else:
         print("✅ No drift — task continuity preserved")
 
-    print(f"\nOutcome: {result.outcome}\n")
+    print(f"\nOutcome: {result.outcome}")
+
+    # NEW: Debug visibility for learning purposes
+    print(f"🧪 Debug: {result}\n")
 
 
 # -------------------------------------------------------------------------
@@ -130,7 +121,7 @@ def run_examples():
         ("Aligned continuation", "I understand the task. Let me continue scheduling the booking."),
         ("Direct drift", "That's irrelevant to what we're discussing."),
         ("Topic switching", "Can we switch topics and talk about cooking?"),
-        ("Off-topic trivia", "Did you know penguins have knees?"),
+        ("Off-topic trivia", "This is random penguin trivia for no reason."),
     ]
 
     for name, text in scenarios:
@@ -138,6 +129,7 @@ def run_examples():
         print(f"Scenario: {name}")
         print(f"{'=' * 60}")
         print(f"Input: {text}\n")
+
         result = runtime.run(text)
         render_output(result)
 
@@ -148,16 +140,14 @@ def run_examples():
 if __name__ == "__main__":
     runtime = MockPldRuntime()
 
-    # Scenario mode
     if "--examples" in sys.argv:
         run_examples()
         sys.exit(0)
 
-    # Custom input mode
     if len(sys.argv) > 1:
         test_input = " ".join(arg for arg in sys.argv[1:] if arg != "--examples")
     else:
-        test_input = "Okay, understood — but let me talk about an irrelevant recipe now."
+        test_input = "Okay — understood, but let me talk about an unrelated recipe now."
 
     print("\nUser Input:")
     print(test_input)
