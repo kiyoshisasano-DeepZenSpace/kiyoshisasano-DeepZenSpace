@@ -4,7 +4,6 @@
 ![License: Apache-2.0 | CC-BY-SA-4.0](https://img.shields.io/badge/license-Apache%202.0%20%7C%20CC--BY--SA--4.0-blue)
 ![Status: Active](https://img.shields.io/badge/status-active-brightgreen)
 
----
 
 > PLD is not a framework or agent library.  
 > Instead, it is a **runtime behavioral governance layer** that works *alongside* systems like LangGraph, AutoGen, Assistants API, Rasa, or custom orchestration — ensuring alignment persists across turns.
