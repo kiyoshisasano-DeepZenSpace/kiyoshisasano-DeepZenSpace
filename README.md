@@ -1,6 +1,9 @@
 # PLD: Phase Loop Dynamics  
 *A Runtime Phase Model for Stable Multi-Turn LLM Systems*
 
+![License: Apache-2.0 | CC-BY-SA-4.0](https://img.shields.io/badge/license-Apache%202.0%20%7C%20CC--BY--SA--4.0-blue)
+![Status: Active](https://img.shields.io/badge/status-active-brightgreen)
+
 ---
 
 ## 🧠 Why PLD Exists — 10-Second Summary
@@ -279,21 +282,32 @@ Less relevant when:
 
 ---
 
+---
+
 ## 📜 License
 
-This project uses a **dual-license model**:
+This project uses a **dual-license model** designed to balance open adoption and protection of methodology.
 
-| Scope | License |
-|--------|--------|
-| Code | Apache License 2.0 |
-| Documentation & Methodology | CC BY-SA 4.0 |
+| Scope | License | Applicable To |
+|-------|---------|---------------|
+| **Code & Runtime Artifacts** | **Apache License 2.0** | `/pld_runtime/`, `.py`, `.json`, configuration files, executable examples |
+| **Documentation & Methodology** | **CC BY-SA 4.0** | `.md`, `.svg`, analytical reports, PLD framework terminology & metrics (PRDR, REI, VRL) |
 
-Full license details and attribution guidance are available in:
+Full legal terms, attribution templates, and compliance details are available at:
 
 ➡ `LICENSES/LICENSES.md`
 
-For commercial licensing or OEM integration:  
-📩 deepzenspace[at]gmail.com
+Trademark usage is governed separately under:
+
+➡ `LICENSES/TRADEMARK_POLICY.md`
+
+For commercial licensing, OEM integration, or enterprise support:  
+📩 **deepzenspace[at]gmail.com**
+
+---
+Maintainer: **Kiyoshi Sasano**  
+Copyright © 2025 Kiyoshi Sasano
+
 
 ---
 
