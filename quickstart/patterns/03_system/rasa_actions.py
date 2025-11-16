@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025 Kiyoshi Sasano
+
 # patterns/03_system/rasa_actions.py
 # PLD Applied-AI Edition
 #
@@ -181,3 +184,4 @@ class ActionReentryGuard(Action):
         # )
 
         return events
+
