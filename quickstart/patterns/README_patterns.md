@@ -6,9 +6,9 @@ This folder provides ready-to-use implementation patterns for integrating
 into LLM agents, tool-using systems, TOD frameworks, and conversational UX.
 
 Unlike theory or taxonomy, this folder is **practical**.  
-Every pattern answers one question:
+Each pattern focuses on a single applied question:
 
-> **How do I make my system behave correctly when interaction state changes?**
+> **How can a system respond effectively when interaction state shifts or drifts?**
 
 ---
 
@@ -20,7 +20,7 @@ Every pattern answers one question:
 | **UX Patterns** | Maintain pacing, timing, and user trust | Designers, PMs, conversation UX |
 | **System Patterns** | Execute recovery logic + telemetry in frameworks | LangChain/LangGraph, Rasa, custom runtimes |
 
-Patterns are modular and stackable — adopt one or integrate all as a **behavior policy layer**.
+Patterns are modular and stackable — they can be adopted individually or combined as a **behavior policy layer**.
 
 ---
 
@@ -29,42 +29,43 @@ Patterns are modular and stackable — adopt one or integrate all as a **behavio
 ```
 patterns/
 │
-├── 01_llm/                       ← Prompt + agent behavior patterns
-│   ├── drift_detection_prompts.md
-│   ├── soft_repair_templates.md
-│   └── reentry_confirmation_patterns.md
+├── 01_llm/ ← Prompt + agent behavior patterns
+│ ├── drift_detection_prompts.md
+│ ├── soft_repair_templates.md
+│ └── reentry_confirmation_patterns.md
 │
-├── 02_ux/                        ← Timing + interaction design patterns
-│   ├── figma_latency_hold.md
-│   ├── failure_states_design.md
-│   └── timing_patterns_catalog.md
+├── 02_ux/ ← Timing + interaction design patterns
+│ ├── figma_latency_hold.md
+│ ├── failure_states_design.md
+│ └── timing_patterns_catalog.md
 │
-├── 03_system/                    ← Executable patterns for frameworks
-│   ├── rasa_soft_repair.yml
-│   ├── rasa_actions.py
-│   ├── langgraph_example.md
-│   └── logging_examples.md
+├── 03_system/ ← Executable patterns for frameworks
+│ ├── rasa_soft_repair.yml
+│ ├── rasa_actions.py
+│ ├── langgraph_example.md
+│ └── logging_examples.md
 │
-└── 04_integration_recipes/       ← (Next stage — runnable agents)
-    └── README_recipes.md
+└── 04_integration_recipes/ ← (Optional next step: runnable examples)
+└── README_recipes.md
 ```
 
-> 📌 If patterns feel like **behavioral building blocks**,  
-> recipes are where they become **runnable agents with PLD runtime logic.**
+
+> 📌 If patterns are the **behavior building blocks**,  
+> recipes provide **examples of how they may be assembled into a working runtime.**
 
 ---
 
 ## 🧩 Pattern Design Principles
 
-All patterns follow five core PLD rules:
+All patterns follow five core PLD principles:
 
 | Rule | Meaning | Example |
 |------|---------|---------|
 | **Minimal Intrusion** | Repair without breaking flow | Soft repair before reset |
 | **State Awareness** | Never assume memory is correct | Confirm constraints after repair |
-| **Predictable Rhythm** | Timing prevents perceived failure | Latency hold → progressive update |
-| **Explicit Recovery** | Users must know when repair happened | Reentry checkpoint phrasing |
-| **Operational Logging** | All behavior emits telemetry | `pld_event.schema.json` compatible |
+| **Predictable Rhythm** | Timing reduces perceived failure | Latency hold → progressive update |
+| **Explicit Recovery** | Recovery should be acknowledgeable | Reentry checkpoint phrasing |
+| **Operational Logging** | Everything emits telemetry | `pld_event.schema.json` compatible |
 
 ---
 
@@ -73,9 +74,9 @@ All patterns follow five core PLD rules:
 | Situation | Recommended Pattern | Folder |
 |----------|----------------------|--------|
 | Output contradicts prior state | Soft Repair + Reentry | `01_llm/` |
-| User hesitates or pause is long | Latency + UX Timing Pattern | `02_ux/` |
-| Pipeline/tool/system failure | Hard Repair + Logging Pattern | `03_system/` |
-| Multi-turn reasoning drift risk | Periodic State Confirmation | `01_llm/` |
+| User hesitates or pauses long | Latency + UX Timing Pattern | `02_ux/` |
+| Tool or API execution fails | Hard Repair + Logging Pattern | `03_system/` |
+| Multi-turn alignment risk | Periodic State Confirmation | `01_llm/` |
 
 ---
 
@@ -85,47 +86,48 @@ All patterns align with:
 
 - `metrics_schema.yaml`  
 - `pld_event.schema.json`  
-- MultiWOZ Applied Interaction baselines  
-  (`multiwoz_2.4_n200/`)
+- MultiWOZ Applied Interaction baselines (`multiwoz_2.4_n200/`)
 
 Meaning:  
-**Implementing a pattern automatically generates measurable stability signals.**
+**Using a pattern automatically produces measurable stability signals.**
 
 ---
 
-## 🧪 Incremental Adoption Guide
+## 🧪 Optional Adoption Path
+
+The following order is one common way to adopt patterns incrementally:
 
 | Phase | Action |
 |-------|--------|
 | **Step 1** | Add soft repair templates |
-| **Step 2** | Add drift detection + confirmation checkpoints |
+| **Step 2** | Add drift detection + reentry checkpoints |
 | **Step 3** | Add UX latency + pacing behaviors |
 | **Step 4** | Enable telemetry mapping |
-| **Step 5** | Activate reentry policies |
-| **Step 6** | **Move to Integration Recipes to build a working PLD agent → `/04_integration_recipes/`** |
+| **Step 5** | Add reentry policies |
+| **Step 6 (Optional)** | Explore integration recipes to build a full PLD-enabled runtime |
 
-> Patterns teach stability.  
-> Recipes apply stability to a **full agent runtime.**
+> Patterns support stability.  
+> Recipes show how stability can be applied to a working agent.
 
 ---
 
 ## 🔚 Summary
 
-This folder is **not documentation — it’s a toolkit.**
+This folder is **not abstract documentation — it’s a toolkit.**
 
 Use these patterns to:
 
-✔ stabilize agent behavior  
+✔ stabilize behavior across turns  
 ✔ prevent cascading drift  
-✔ ensure transparent recovery  
-✔ preserve shared context  
-✔ increase task completion + user trust  
+✔ ensure recoverable state alignment  
+✔ maintain transparency and user trust  
+✔ increase task continuity and completion rates  
 
-Patterns are designed to be copied, automated, integrated, and extended into internal libraries.
+Patterns are designed to be copied, adapted, versioned, and integrated into internal libraries.
 
-> When ready, continue to:  
+> When ready, you *may* continue to:  
 > 👉 `quickstart/patterns/04_integration_recipes/README_recipes.md`  
-> to turn these patterns into a **functioning PLD-enabled agent.**
+> to explore how patterns can operate as part of a runnable PLD agent.
 
 ---
 
