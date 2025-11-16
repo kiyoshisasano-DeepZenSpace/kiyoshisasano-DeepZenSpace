@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2025 Kiyoshi Sasano
 """
 hello_pld_runtime.py
 --------------------
