@@ -48,6 +48,19 @@ flowchart LR
 
 ## 4 — Minimal Runnable Code Example (LangGraph-Compatible)
 
+⚠️ **Implementation Note**
+
+This example uses **LangGraph** as one possible implementation approach.
+
+The PLD runtime pattern —  
+**Drift → Repair → Reentry → Continue → Outcome** —  
+is **framework-neutral** and may be adapted to:
+
+- Assistants API
+- AutoGen / CrewAI
+- Rasa
+- Custom orchestration loops
+
 > **Dependencies:**  
 > - `langgraph`, `langchain-core`, `uuid`  
 > - No external vector DB required.
