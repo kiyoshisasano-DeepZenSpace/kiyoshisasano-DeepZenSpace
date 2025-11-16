@@ -320,6 +320,11 @@ This license allows you to **share and adapt** this knowledge, *even commerciall
 ---
 Maintainer: **Kiyoshi Sasano**
 
+Copyright © 2025 Kiyoshi Sasano. All rights reserved where applicable.
+
+For commercial licensing, enterprise support, or OEM integration,
+contact: <deepzenspace[at]gmail.com>.
+
 ---
 
 > **PLD is behavioral infrastructure —  
