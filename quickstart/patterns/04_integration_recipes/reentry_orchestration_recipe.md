@@ -1,6 +1,6 @@
 ---
 title: "Reentry Orchestration Recipe (PLD Integration)"
-version: "1.0"
+version: "1.1"
 status: "Reference Example"
 maintainer: "Kiyoshi Sasano"
 updated: "2025-01-15"
@@ -63,8 +63,25 @@ flowchart LR
 
 ## 4 — Minimal Runnable Code Example (LangGraph-Compatible)
 
-> This example simulates three upstream components (RAG / Tool / Memory) by encoding their **drift source** in the user message, and demonstrates a **single reentry orchestrator** node that routes based on `RE*` codes.  
-> No external dependencies beyond `langgraph` and standard Python.
+⚠️ **Implementation Note**
+
+This example demonstrates Reentry Orchestration using **LangGraph**, but the PLD pattern shown here is **framework-neutral**.
+
+The orchestration behavior —  
+**Detect → Repair → Reentry → Route → Continue/Outcome** —  
+can be adapted to any agent stack, including:
+
+- Assistants API  
+- AutoGen / CrewAI  
+- Rasa  
+- Custom orchestrators / hand-built loops
+
+Use this implementation as a **reference pattern**, not a strict requirement.
+
+> **Dependencies:**  
+> - `langgraph`, standard Python  
+> - No vector DB, external memory service, or tool registry required.
+
 
 ```python
 from langgraph.graph import StateGraph, MessagesState
