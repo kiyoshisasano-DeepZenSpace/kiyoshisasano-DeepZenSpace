@@ -1,5 +1,5 @@
 # PLD: Phase Loop Dynamics  
-### *A Runtime Phase Model for Stable Multi-Turn LLM Systems*
+*A Runtime Phase Model for Stable Multi-Turn LLM Systems*
 
 ---
 
@@ -20,7 +20,16 @@ Detect → Repair → Reenter → Continue → Complete
 
 ---
 
+### 📍 High-Level Runtime Model (Visual Summary)
+
+> A compact view of the runtime loop, metrics integration, and conceptual role of PLD.
+
+<img src="./README_model.svg" width="100%" />
+
+---
+
 ## 🧩 What PLD *Is* — In 30 Seconds
+
 
 PLD is:
 
