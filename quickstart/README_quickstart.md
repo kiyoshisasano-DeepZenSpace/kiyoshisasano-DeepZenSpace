@@ -58,31 +58,37 @@ One suggested learning path is:
 
 ---
 
-## 3 — Minimal Working Example
+----
+## ⭐ Start Here — Run the Minimal Example
 
-This example is intentionally minimal — it illustrates the PLD lifecycle,
-not a production implementation.
+Before reading, **run the runtime loop once.**
+This creates the first “behavioral intuition” for PLD:
 
-```python
-from pld import detect_drift, soft_repair, classify_event
-
-turn = "I don't have any hotels at that price."
-
-drift = detect_drift(turn)
-repair = soft_repair(drift)
-
-event = classify_event(turn, drift, repair)
-print(event)
+```
+python hello_pld_runtime.py
 ```
 
-Example output:
-```json
-{
-  "event_type": "soft_repair",
-  "drift": "information",
-  "strategy": "option_expansion"
-}
+Expected output:
+
 ```
+🚨 Drift Detected
+🔧 Repair Applied
+✅ Reentry Confirmed
+
+Outcome: continue_after_repair
+```
+
+> This script demonstrates the core runtime lifecycle:
+> **Drift → Repair → Reentry → Continue**
+
+After running it, continue with the sections below.
+
+---
+
+## 3 — Minimal Conceptual Code (Not Runtime)
+
+This sample illustrates the logic conceptually — not as a runnable system.
+
 ---
 
 ## 4 — Runtime Logging Schema (Aligned with metrics/schemas/)
