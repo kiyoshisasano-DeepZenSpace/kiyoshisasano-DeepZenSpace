@@ -1,66 +1,68 @@
 # PLD Documentation Index (Applied-AI)
 
-This folder contains the core documentation required to understand, label, evaluate, and integrate Phase Loop Dynamics (PLD) into applied LLM systems, tool-based agents, and multi-turn orchestration workflows.
+This folder contains the core documentation required to understand, label, evaluate, and integrate **Phase Loop Dynamics (PLD)** into applied LLM systems, tool-based agents, and multi-turn orchestration workflows.
 
-The documents are structured so that engineers can read them **in order**, apply them to real systems, and return as needed while building or evaluating agents.
+These documents serve as a **reference set**.  
+They can be read in sequence or selectively depending on your goals—whether you're labeling transcripts, implementing runtime policies, or evaluating an agent's stability.
 
 ---
 
-## How to Use This Folder
+## 📘 How to Use This Folder
 
-If you are new to PLD or implementing it for the first time, follow this reading order:
+If you are new to PLD or implementing it for the first time, the following reading sequence may help:
 
 | Step | File | Purpose |
 |------|------|---------|
-| **1** | `01_pld_for_agent_engineers.md` | Entry strategy: what PLD solves, how it works, and how to integrate it. |
-| **2** | `02_pld_drift_repair_reference.md` | Canonical dictionary of Drift, Repair, and Reentry codes — used in labeling and detection. |
-| **3** | `04_pld_labeling_prompt_llm.md` | LLM-ready prompt for automated PLD annotation of logs and transcripts. |
-| **4** | (optional) future: evaluation schemas or human annotation guidance | Only needed if extending PLD to datasets or research. |
+| **1** | `01_pld_for_agent_engineers.md` | Starting point — what PLD solves and how it applies to real systems. |
+| **2** | `02_pld_drift_repair_reference.md` | Source of truth: Drift, Repair, Reentry codes used in runtime and analysis. |
+| **3** | `06_pld_concept_reference_map.md` | High-level taxonomy relationships and conceptual overview. |
+| **4** | `07_pld_operational_metrics_cookbook.md` | How to measure runtime behavior: PRDR, REI, VRL, and evaluation strategy. |
+| **5** | `04_pld_labeling_prompt_llm.md` | Official prompt for machine-assisted labeling of transcripts and logs. |
 
-After reading the core documents, continue into:
+> You may move between these documents based on your role—  
+> engineering, research, UX, or evaluation.
+
+---
+
+## 🔄 After Core Reading: Where to Continue
 
 | Category | Destination | Purpose |
 |----------|------------|---------|
-| Runtime integration | `/quickstart/operator_primitives/` | Add repair/reflex logic into control loops. |
-| Logging and evaluation | `/quickstart/metrics/` | Track drift frequency, repair outcomes, and stability over time. |
-| Applied examples | `/metrics/multiwoz_2.4_n200/` | See real annotated dialogues and analysis patterns. |
+| Runtime integration | `/quickstart/operator_primitives/` | Add drift detection, repair, and reentry logic into a control loop. |
+| Reference examples | `/quickstart/patterns/04_integration_recipes/` | See PLD applied to RAG, tools, memory, and orchestration. |
+| Logging and evaluation | `/quickstart/metrics/` | Map runtime behavior into telemetry and dashboards. |
+| Operational metrics | `/docs/07_pld_operational_metrics_cookbook.md` | Measure stability, cost-effectiveness, and repair visibility. |
+| Applied examples | `/analytics/multiwoz_2.4_n200/` | Explore annotated dialogues and pattern recognition. |
 
-> **Optional but recommended:**  
-For a higher-level architectural understanding before implementation, see:
+Optional but helpful:
 
-📄 `architecture_layers.md` — PLD as a layered runtime governance model  
-(Helps map phases → responsibilities → implementation boundaries.)
+📄 `architecture_layers.md` —  
+A conceptual view of PLD as a layered runtime governance model.
 
 ---
 
-## File Overview
+## 📄 File Overview
 
 | File | Status | Role |
 |------|--------|------|
-| `01_pld_for_agent_engineers.md` | Core | Starting point — conceptual and practical overview. |
-| `02_pld_drift_repair_reference.md` | Core | Source of truth for all labeled codes. |
-| `04_pld_labeling_prompt_llm.md` | Core | The official machine-usable labeling prompt template. |
-| `architecture_layers.md` | Reference | High-level conceptual architecture (not implementation-specific). |
-
-
-Additional files may be added in future versions, but the **core three documents will remain stable** and form the basis of:
-
-- PLD metrics
-- operator behaviors
-- dataset labeling
-- debugging frameworks
-- workflow validation
+| `01_pld_for_agent_engineers.md` | Core | Conceptual + practical introduction. |
+| `02_pld_drift_repair_reference.md` | Core | Source of truth for PLD event codes. |
+| `06_pld_concept_reference_map.md` | Reference | Taxonomy relationships and model overview. |
+| `07_pld_operational_metrics_cookbook.md` | Reference | Metrics framework (PRDR, VRL, REI). |
+| `04_pld_labeling_prompt_llm.md` | Core | Machine-usable labeling template. |
+| `architecture_layers.md` | Reference | Conceptual runtime architecture. |
+| `model_diagram.md` | Reference | Visual model of runtime phases. |
 
 ---
 
-## Update Rules
+## 📐 Documentation Principles
 
-All files in this directory must follow:
+Core documents in this directory follow these principles:
 
-- **Stable terminology**: values must match the taxonomy file (`02_...`).
-- **No hidden synonyms**: code values must remain single-source-of-truth.
-- **Reverse compatibility**: if a code is deprecated, document it explicitly.
-- **Footer required**: each file ends with:
+- **Stable terminology** — values align with the official taxonomy file.  
+- **No hidden synonyms** — code values remain single source of truth.  
+- **Reverse compatibility** — deprecations are explicit, never silent.  
+- **Consistent footer** — each file ends with:
 
 ```
 Maintainer: Kiyoshi Sasano
@@ -68,35 +70,33 @@ Maintainer: Kiyoshi Sasano
 
 ---
 
-## Contribution Notes
+## 🧩 Contribution Notes
 
-If adding new documentation, ask:
+Before adding or modifying documentation, consider:
 
-- Does this change a definition or code value?  
-  → If yes, update `02_pld_drift_repair_reference.md`.
-
-- Does this describe how to apply PLD?  
-  → If yes, ensure consistency with `01_pld_for_agent_engineers.md`.
-
-- Is this instructions for annotation or automation?  
-  → Place it next to (not inside) `04_pld_labeling_prompt_llm.md`.
-
-- Is it experimental or early research?  
-  → Place in `/research/` or do **not** include in core docs.
+| Question | Action |
+|---------|--------|
+| Does it change a code value or definition? | Update `02_pld_drift_repair_reference.md`. |
+| Does it describe applied usage or implementation? | Check consistency with `01_pld_for_agent_engineers.md`. |
+| Is it about labeling or automation? | Place near `04_pld_labeling_prompt_llm.md`. |
+| Is it experimental or research-focused? | Place under `/research/` rather than core docs. |
 
 ---
 
-## Placement
+## 📁 Directory Layout
 
 ```
 docs/
-  ├── README_docs.md                ← (this file)
+  ├── README_docs.md        ← (this file)
   ├── 01_pld_for_agent_engineers.md
   ├── 02_pld_drift_repair_reference.md
-  └── 04_pld_labeling_prompt_llm.md
+  ├── 04_pld_labeling_prompt_llm.md
+  ├── 06_pld_concept_reference_map.md
+  ├── 07_pld_operational_metrics_cookbook.md
+  ├── architecture_layers.md
+  └── model_diagram.md
 ```
 
 ---
 
-
-Maintainer: Kiyoshi Sasano
+Maintainer: **Kiyoshi Sasano**
