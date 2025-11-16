@@ -19,6 +19,34 @@ This kit provides practical materials for implementing **Phase Loop Dynamics (PL
 PLD is not just a conceptual framework —  
 it is a **runtime interaction control model** for applied AI.
 
+--- After title and introduction ---
+
+ PLD is not just a conceptual framework —
+ it is a runtime interaction control model for applied AI.
+
+### 🏁 Start Here — Run the Minimal Runtime
+
+You can run the minimal working example immediately:
+
+```bash
+python hello_pld_runtime.py
+```
+
+Try custom input:
+
+```bash
+python hello_pld_runtime.py "Can we switch topics and talk about cooking?"
+```
+
+Run all example scenarios:
+
+```bash
+python hello_pld_runtime.py --examples
+```
+
+➡️ This is the fastest path to understanding what PLD *feels like* in runtime.
+
+
 ---
 
 ## 1 — Why PLD Exists
