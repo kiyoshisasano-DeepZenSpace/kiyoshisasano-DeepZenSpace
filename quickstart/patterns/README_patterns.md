@@ -134,3 +134,16 @@ Patterns are designed to be copied, adapted, versioned, and integrated into inte
 Maintainer: **Kiyoshi Sasano**  
 Edition: **PLD Applied 2025**  
 License: **CC-BY-NC-4.0**
+
+> Licensing Notice
+
+All implementation `.py` files in this directory are provided under the **Apache License 2.0**
+to allow reuse in production systems.
+
+All documentation, patterns, recipes, and prompt design materials (`.md`, `.yml`, `.yaml`)
+are licensed under **CC BY-SA 4.0** as part of the PLD methodology.
+
+This ensures:
+- Free and open reuse of implementation code
+- Attribution-preserving propagation of the conceptual framework
+
