@@ -45,8 +45,12 @@ patterns/
 │   ├── langgraph_example.md
 │   └── logging_examples.md
 │
-└── README_patterns.md            ← (this file)
+└── 04_integration_recipes/       ← (Next stage — runnable agents)
+    └── README_recipes.md
 ```
+
+> 📌 If patterns feel like **behavioral building blocks**,  
+> recipes are where they become **runnable agents with PLD runtime logic.**
 
 ---
 
@@ -93,13 +97,15 @@ Meaning:
 
 | Phase | Action |
 |-------|--------|
-| **Step 1** | Add Soft Repair templates |
+| **Step 1** | Add soft repair templates |
 | **Step 2** | Add drift detection + confirmation checkpoints |
 | **Step 3** | Add UX latency + pacing behaviors |
 | **Step 4** | Enable telemetry mapping |
-| **Step 5** | Activate Reentry policies |
+| **Step 5** | Activate reentry policies |
+| **Step 6** | **Move to Integration Recipes to build a working PLD agent → `/04_integration_recipes/`** |
 
-This enables **progressive**, measurable improvements rather than full rewrites.
+> Patterns teach stability.  
+> Recipes apply stability to a **full agent runtime.**
 
 ---
 
@@ -116,6 +122,10 @@ Use these patterns to:
 ✔ increase task completion + user trust  
 
 Patterns are designed to be copied, automated, integrated, and extended into internal libraries.
+
+> When ready, continue to:  
+> 👉 `quickstart/patterns/04_integration_recipes/README_recipes.md`  
+> to turn these patterns into a **functioning PLD-enabled agent.**
 
 ---
 
