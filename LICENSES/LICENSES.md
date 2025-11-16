@@ -39,10 +39,6 @@ This repository uses hybrid licensing to balance adoption and intellectual prope
 - `/docs/`, `/analytics/`, `/field/` folders
 - PLD methodology and metrics (PRDR, REI, VRL)
 
-## Attribution
-
-See [README.md#license](README.md#license) for attribution templates.
-
 ## Contact
 
 For commercial licensing or enterprise support:
