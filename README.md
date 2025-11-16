@@ -281,49 +281,19 @@ Less relevant when:
 
 ## 📜 License
 
-This repository is licensed under a **hybrid (dual-license)** model to maximize both community adoption and intellectual property protection.
+This project uses a **dual-license model**:
 
-### 1. For Code Components (Apache 2.0)
+| Scope | License |
+|--------|--------|
+| Code | Apache License 2.0 |
+| Documentation & Methodology | CC BY-SA 4.0 |
 
-All **code** components are licensed under the permissive **Apache License 2.0**.
-This applies to:
-* The entire `/pld_runtime/` engine (all `.py`, `.json` files)
-* All runnable scripts in `/quickstart/` (e.g., `hello_pld_runtime.py`)
-* All schemas (`.json`, `.yaml`) and configuration files
+Full license details and attribution guidance are available in:
 
-This allows developers and companies to freely **use, experiment with, and integrate** the PLD runtime code into their own systems (commercial or otherwise) with minimal legal friction.
+➡ `LICENSES/LICENSES.md`
 
-* **Full License Text:** **[LICENSE-APACHE-2.0.txt](LICENSE-APACHE-2.0.txt)**
-
-### 2. For Documentation & Methodology (CC BY-SA 4.0)
-
-All **documentation and conceptual assets** (the "Methodology" or "IP") are licensed under the **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.
-This applies to:
-* All `.md` files (including this `README.md`, `SUMMARY.md`, `/docs/`, `/analytics/`, `/field/`, and `/quickstart/patterns/04_integration_recipes/`)
-* All `.svg` files (`README_model.svg`, `SUMMARY.svg`)
-* The PLD methodology itself (e.g., the `PRDR`, `REI`, `VRL` metric definitions in `07_cookbook`)
-* The `analytics/` datasets and case studies
-
-This license allows you to **share and adapt** this knowledge, *even commercially*, as long as you:
-1.  **Give appropriate attribution (BY)** to Kiyoshi Sasano.
-2.  **Share your adaptations under the same (SA) license.**
-
-* **Full License Text:** **[LICENSE-CC-BY-SA-4.0.txt](LICENSE-CC-BY-SA-4.0.txt)**
-
-### Summary
-
-| Asset Type | Path(s) | License | Why? |
-| :--- | :--- | :--- | :--- |
-| **Code (Engine)** | `/pld_runtime/`, `*.py`, `*.json` | **Apache 2.0** | **Maximize Adoption** (Frictionless use) |
-| **IP (Methodology)** | `/docs/`, `/analytics/`, `*.md`, `*.svg` | **CC BY-SA 4.0** | **Protect Credit** (Prevents IP theft) |
-
----
-Maintainer: **Kiyoshi Sasano**
-
-Copyright © 2025 Kiyoshi Sasano. All rights reserved where applicable.
-
-For commercial licensing, enterprise support, or OEM integration,
-contact: <deepzenspace[at]gmail.com>.
+For commercial licensing or OEM integration:  
+📩 deepzenspace[at]gmail.com
 
 ---
 
