@@ -106,6 +106,33 @@ A higher-level view for teams mapping PLD into large orchestration stacks.
 
 ---
 
+### 🏁 Quickstart — Run the Minimal Runtime
+
+Before diving into the full documentation, you can **experience PLD behavior** in less than 10 seconds:
+
+```bash
+python quickstart/hello_pld_runtime.py
+```
+
+Try with custom input:
+```bash
+python quickstart/hello_pld_runtime.py "Can we switch topics and talk about cooking?"
+```
+Run all example scenarios:
+```bash
+python quickstart/hello_pld_runtime.py --examples
+```
+
+> PLD is best understood through interaction — not just by reading.
+> This script demonstrates the core runtime loop:
+> Drift → Repair → Reentry → Continue
+> (in a minimal mock runtime environment)
+
+For deeper usage patterns, continue with:
+➡️ quickstart/README_quickstart.md
+
+---
+
 ## 📂 Repository Overview
 
 ```
