@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: CC-BY-SA-4.0
+# Copyright (c) 2025 Kiyoshi Sasano
 {"session_id": "DEMO-001", "turn_id": 1, "speaker": "user", "text": "I need a 4-star hotel in Cambridge.", "drift": null, "repair": null, "latency_ms": 812}
 {"session_id": "DEMO-001", "turn_id": 2, "speaker": "system", "text": "Okay, checking hotels now...", "drift": null, "repair": null, "latency_ms": 2420}
 {"session_id": "DEMO-001", "turn_id": 3, "speaker": "system", "text": "There are no 4-star hotels available.", "drift": "Drift-Information", "repair": null, "latency_ms": 3104}
