@@ -142,7 +142,7 @@ Successful replication should yield:
 - Consistent reentry checkpoint timing
 - Similar distribution of **Outcome categories**
 
-Runtime variance is allowed — **label methodology must match.**
+Runtime variance is expected — **annotation methodology should match.**
 
 ---
 
@@ -173,3 +173,4 @@ _meta/CHANGELOG.md
 
 > Replication is not about matching numbers —  
 > it is about matching **methodology, signal semantics, and evaluation process.**
+
