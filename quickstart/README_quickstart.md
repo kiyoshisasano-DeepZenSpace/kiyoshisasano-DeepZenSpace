@@ -48,10 +48,14 @@ Follow the structure in this order:
 | **1** | `overview/` | Learn the model quickly |
 | **2** | `operator_primitives/` | Use drift, repair, latency, reentry operators |
 | **3** | `patterns/` | Drop-in templates for LLM, UX, and orchestration |
-| **4** | `metrics/` | Logging schemas and evaluation dashboards |
-| **5** | `_meta/` | Versioning, change logs, migration notes |
+| **4** | `04_integration_recipes/` | **Turn patterns into runnable agents with PLD behavior** |
+| **5** | `metrics/` | Logging schemas and evaluation dashboards |
+| **6** | `_meta/` | Versioning, change logs, migration notes |
 
 This mirrors **real engineering adoption** from conceptual understanding → implementation → measurement.
+
+> 📌 *If you're ready to build a working agent, the next stop is:*  
+> `quickstart/patterns/04_integration_recipes/README_recipes.md`
 
 ---
 
@@ -139,6 +143,7 @@ Together they support prototype → production → benchmark alignment.
 |------|-----|
 | `docs/02_pld_event_schema.md` | Core taxonomy + event definitions |
 | `quickstart/operator_primitives/` | Drift → Repair → Reentry logic |
+| `quickstart/patterns/04_integration_recipes/` | **Runnable examples with PLD runtime behavior** |
 | `quickstart/metrics/` | Logging, dashboards, evaluation |
 | `analytics/multiwoz_2.4_n200/` | Applied benchmark + scoring |
 
