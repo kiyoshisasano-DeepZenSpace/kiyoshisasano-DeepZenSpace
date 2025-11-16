@@ -1,5 +1,8 @@
 # 📊 PLD Benchmark Dataset (MultiWOZ 2.4 — N=200)
 
+Note: For an applied end-to-end implementation case (including runtime logging and repair orchestration), see `/analytics/case_study_end_to_end.md`.
+
+
 **Evaluation Reference Set for Phase Loop Dynamics (PLD) Runtime**
 
 This directory contains a curated evaluation set derived from:
