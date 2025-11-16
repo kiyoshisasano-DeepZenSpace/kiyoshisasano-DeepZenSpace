@@ -1,4 +1,3 @@
----
 # Copyright 2025 Kiyoshi Sasano
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -223,4 +222,5 @@ raw input → ingestion → detection → enforcement → controller
 
 > The runtime ensures alignment persists across the full interaction —  
 > not only within the model, but across the agent’s lifecycle.
+
 
