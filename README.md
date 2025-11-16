@@ -139,6 +139,38 @@ For teams at that stage, see the companion document:
 
 ---
 
+### 🧩 Next: Runnable Integration Recipes
+
+Once you understand the PLD runtime loop and operator primitives,  
+the fastest way to adopt PLD in a real system is by using the executable recipes:
+
+📁 `quickstart/patterns/04_integration_recipes/`
+
+These recipes are:
+
+| Property | Meaning |
+|----------|---------|
+| 🧪 **Runnable** | Local execution, no external infra required |
+| 🔍 **Observable** | Emits structured PLD signals (`D*`, `R*`, `RE*`, `OUT*`) |
+| 📈 **Measurable** | Compatible with `07_pld_operational_metrics_cookbook.md` |
+| 🧱 **Modular** | Works with RAG, Tooling, Memory, or any orchestration stack |
+
+#### Available Recipes
+
+| Layer | File | Purpose |
+|-------|------|---------|
+| Component | `rag_repair_recipe.md` | Detect and repair retrieval failures (D5) |
+| Component | `tool_agent_recipe.md` | Recover from invalid/failed tool execution (D4) |
+| Component | `memory_alignment_recipe.md` | Detect and correct state/persona drift (D2) |
+| System (Capstone) | `reentry_orchestration_recipe.md` | Central routing after repair → continue/fallback/complete |
+
+> 📌 These recipes turn PLD from a **model specification** into a **running agent behavior policy**.
+> If patterns are the "parts," recipes are the **assembly instructions.**
+
+---
+
+---
+
 ### ▶ Conceptual Demonstration
 
 > This is a conceptual illustration of phase transitions — **not an implementation.**
