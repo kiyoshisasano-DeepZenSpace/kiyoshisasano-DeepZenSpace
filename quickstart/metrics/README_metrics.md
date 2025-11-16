@@ -16,7 +16,7 @@ tags:
 This folder provides the **measurement layer** of the PLD Applied Interaction Framework.  
 Its purpose is to help developers **log, evaluate, and visualize** how well an agent detects drift, performs repairs, reenters alignment, and maintains conversational stability.
 
-This is the **minimal operational implementation** — fast to integrate and aligned with the full benchmark workflow used in the MultiWOZ (N=200) evaluation.
+This is the **minimal operational implementation** — fast to integrate and aligned with the evaluation workflow used in the MultiWOZ (N=200) baseline.
 
 ---
 
@@ -41,8 +41,6 @@ This module is designed for **runtime observability**, not offline annotation.
 
 ## 2. Module Structure
 
-From the repository root:
-
 ```txt
 quickstart/metrics/
 │
@@ -64,21 +62,25 @@ quickstart/metrics/
 └── dashboards/                       ← Visualization presets
     └── reentry_success_dashboard.json ← Metrics dashboard template
 ```
+
+---
+
 ## 3. Core Metric Categories
 
 | Metric Class | Meaning | Examples |
 |--------------|---------|----------|
 | Drift Metrics | Frequency and type of divergence | D1_information_drift, D3_intent_drift |
-| Repair Metrics | Whether the system corrects locally or resets | Soft Repair Rate / Hard Repair Rate |
-| Reentry Metrics | Whether the agent stabilizes after repair | Reentry Success Rate (RE1–RE3) |
-| Timing Metrics | Latency effects on perceived reliability | Avg Latency, High-Latency Threshold Events |
+| Repair Metrics | Local correction vs systemic reset | Soft Repair Rate / Hard Repair Rate |
+| Reentry Metrics | Stability after repair | Reentry Success Rate (RE1–RE3) |
+| Timing Metrics | Latency effects and UX perception | Avg Latency, High-Latency Flags |
 | Outcome Metrics | Completion trajectory | Complete / Partial / Abandoned / Reset |
 
 These metrics align directly with:
 
 - `docs/`
+- `docs/07_pld_operational_metrics_cookbook.md` (PRDR, REI, VRL definitions)
 - `quickstart/operator_primitives/`
-- `quickstart/patterns/`
+- `quickstart/patterns/04_integration_recipes/`
 - `metrics_studies/multiwoz_2.4_n200/`
 
 ---
@@ -93,37 +95,38 @@ These metrics align directly with:
 | Step 4 | Run evaluation | `reports/pld_events_demo_report.md` |
 | Step 5 | Visualize stability | `dashboards/reentry_success_dashboard.json` |
 
-This workflow ensures consistency across agent versions, prompting strategies, and orchestration architectures.
+This workflow enables consistent comparison across model versions, prompting strategies, and orchestration architectures.
 
 ---
 
 ## 5. Quick Interpretation Rules
 
+> Use these as a **runtime debugging compass** during early prototyping.
+
 | Signal | Meaning | Suggested Action |
 |--------|---------|------------------|
-| Drift ↑ + Soft Repair ↑ | System is interpretable but imprecise | Improve constraints, grounding, or tool conditioning |
-| Drift ↑ + Hard Repair ↑ | Architecture or memory mismatch | Review UX pacing, context access, or tool spec |
-| Reentry Success ↓ | Repair is not stabilizing | Adjust confirmation pattern or reentry checkpoint |
-| Outcome Complete ↑ + Latency ↑ | Stable but slow | Tune streaming, caching, or pacing strategy |
+| Drift ↑ + Soft Repair ↑ | System is interpretable but imprecise | Improve constraint clarity or grounding signals |
+| Drift ↑ + Hard Repair ↑ | Architecture or memory mismatch | Review orchestration, tool routing, or context windows |
+| Reentry Success ↓ | Repair did not stabilize | Adjust checkpoint phrasing or confirmation policy |
+| Outcome Complete ↑ + Latency ↑ | Stable but slow | Optimize streaming, caching, or UX pacing |
 
-Use these rules as a runtime debugging baseline, especially during early prototyping.
+> For an end-to-end applied example showing metrics in practice:  
+> **`/analytics/case_study_end_to_end.md`**
 
 ---
 
 ## 6. Metrics → Action Matrix (Runtime Decision Guide)
 
 Once events are logged and visualized, use this matrix to determine next steps.  
-It connects **observation → system response → improvement path.**
+It connects **observed patterns → system response → improvement pathway.**
 
-| Observed Pattern (Log) | Severity | Recommended Action | Notes |
-|------------------------|----------|--------------------|-------|
-| Low drift frequency + high repair success | Low | Continue normal execution | System is stable |
-| Repeated soft repairs on same task | Medium | Improve prompts or constraints | Often signals weak grounding |
-| Frequent hard repairs | High | Review memory, tools, or orchestration logic | Indicates structural issue |
-| Reentry failure after repair | Critical | Trigger fallback strategy or session reset | Prevents infinite loops |
-| High abandonment rate | Critical | Analyze UX timing + failure messaging | Often perception, not logic |
-
-This matrix should become part of your AgentOps workflow and CI evaluation strategy.
+| Observed Pattern (Log) | Severity | Suggested Action | Notes |
+|------------------------|----------|------------------|-------|
+| Low drift frequency + high repair success | Low | Continue execution | System is functioning as expected |
+| Repeated soft repairs on same flow | Medium | Improve constraints or grounding | Often indicates partial context ambiguity |
+| Frequent hard repairs | High | Review memory, tools, and runtime architecture | Strong signal of structural mismatch |
+| Reentry failure after repair | Critical | Trigger fallback strategy or session reset | Prevents repeated stall loops |
+| High abandonment rate | Critical | Analyze UX pacing and communication | Often a perception failure, not a logic defect |
 
 ---
 
@@ -131,14 +134,14 @@ This matrix should become part of your AgentOps workflow and CI evaluation strat
 
 Expand this module when:
 
-- Evaluating > 200 real interactions  
-- Comparing multiple model or runtime strategies  
-- Testing production traffic  
-- Tracking repair policies over time in continuous deployment  
+- Evaluating **>200 interactions**
+- Comparing **multiple model or runtime variants**
+- Running **production experiments**
+- Tracking **repair policies over time in CI/CD**
 
-If you are still validating system fit or integration strategy:
+If you are still validating early integration:
 
-→ **This Quickstart module is sufficient.**
+→ **This Quickstart edition is sufficient.**
 
 ---
 
@@ -150,6 +153,7 @@ Maintainer: **Kiyoshi Sasano**
 
 ---
 
-> **PLD Metrics is not generic analytics —  
+> **PLD Metrics is not general analytics —  
 it is behavioral instrumentation.  
-It measures whether the agent remains aligned with the interaction contract.**
+It measures whether an agent maintains alignment with the interaction contract.**
+
