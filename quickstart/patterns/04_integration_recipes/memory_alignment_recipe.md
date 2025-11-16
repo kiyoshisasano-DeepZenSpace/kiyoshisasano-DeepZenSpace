@@ -46,8 +46,10 @@ flowchart LR
     Continue["Continue Task"]
 
     User --> Retrieve --> Detect
-    Detect -->|No| Continue
-    Detect -->|Yes (D2_context)| Repair --> Reentry --> Retrieve
+    Detect -->|"No"| Continue
+    Detect -->|"Yes (D2_context)"| Repair
+    Repair --> Reentry
+    Reentry --> Retrieve
 ```
 
 ---
