@@ -49,7 +49,7 @@ One suggested learning path is:
 | **1** | `overview/` | High-level mental model |
 | **2** | `operator_primitives/` | Drift, repair, and reentry operators |
 | **3** | `patterns/` | Drop-in patterns for LLMs and orchestrators |
-| **4** | `04_integration_recipes/` | **Reference examples showing PLD applied to real agent components** |
+| **4** | `04_integration_recipes/` | Examples showing how PLD can be applied to real agent components |
 | **5** | `metrics/` | Logging schemas + evaluation dashboards |
 | **6** | `_meta/` | Versioning, migration, design notes |
 
@@ -59,6 +59,9 @@ One suggested learning path is:
 ---
 
 ## 3 — Minimal Working Example
+
+This example is intentionally minimal — it illustrates the PLD lifecycle,
+not a production implementation.
 
 ```python
 from pld import detect_drift, soft_repair, classify_event
