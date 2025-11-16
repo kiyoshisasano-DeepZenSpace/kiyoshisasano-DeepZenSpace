@@ -1,7 +1,7 @@
 ---
 title: "Canonical LangGraph Pattern — PLD Runtime Loop"
 version: "1.1"
-status: "Standard Scaffold"
+status: "Reference Case Study"
 maintainer: "Kiyoshi Sasano"
 updated: "2025-01-15"
 visibility: "Public"
@@ -210,3 +210,4 @@ print(result["pld_events"])
 
 Maintainer: **Kiyoshi Sasano**  
 License: **CC-BY-NC-4.0**
+
