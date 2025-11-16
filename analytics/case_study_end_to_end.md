@@ -115,9 +115,9 @@ The system now behaves **with control**, not reaction.
 ```mermaid
 flowchart TD
     User --> Drift["Detect Drift (D*)"]
-    Drift -->|detected| Repair[Soft/Hard Repair (R*)]
-    Drift -->|none| Task[Task Execution]
-    Repair --> Reentry[Reentry Confirmation (RE*)]
+    Drift -->|detected| Repair["Soft/Hard Repair (R*)"]
+    Drift -->|none| Task["Task Execution"]
+    Repair --> Reentry["Reentry Confirmation (RE*)"]
     Reentry --> Task
     Task --> Outcome[(Outcome + Telemetry OUT*)]
 ```
