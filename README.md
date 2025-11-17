@@ -9,6 +9,24 @@
 
 ---
 
+## 🎯 Is This For You?
+
+PLD becomes relevant when you're building **multi-turn agents** and begin seeing patterns that don't feel random—but also don't feel controllable.
+
+You may be here because your system:
+
+- ✔ Works in controlled tests, but behaves unpredictably in real interactions  
+- ✔ Repeats tool actions or enters retry loops without meaningful progress  
+- ✔ Loses alignment after repairs or context updates  
+- ✔ Breaks when migrating between models (GPT → Claude → Llama) even with identical logic  
+- ✔ Feels "stable only when untouched," rather than governed or intentional
+
+If your agent is **functional but not reliably recoverable**, PLD provides the missing layer:  
+a runtime behavioral contract that stabilizes alignment across turns—not just per response.
+
+> **If your system "almost works," PLD is designed for the stage you are entering.**
+
+---
 
 ## 🧠 Why PLD Exists — 10-Second Summary
 
