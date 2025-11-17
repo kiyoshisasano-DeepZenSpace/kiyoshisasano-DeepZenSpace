@@ -91,7 +91,13 @@ One suggested learning path is:
 
 ---
 
-----
+> After completing Tier 1 (operators + core loop), you may optionally continue with:
+> `quickstart/patterns/04_integration_recipes/failover_recipe.md`
+>
+> This enables **bounded retry + controlled termination**, preventing infinite repair loops and introducing measurable abort semantics.
+
+---
+
 ## ⭐ Start Here — Run the Minimal Example
 
 Before reading, **run the runtime loop once.**
