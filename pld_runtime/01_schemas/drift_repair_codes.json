@@ -1,5 +1,5 @@
 {
-  "version": "2025.02",
+  "version": "2025.11",
   "source": "docs/02_pld_drift_repair_reference.md",
   "drift": [
     {
@@ -106,3 +106,4 @@
     ]
   }
 }
+
