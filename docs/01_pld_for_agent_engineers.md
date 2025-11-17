@@ -1,99 +1,199 @@
 # PLD for Agent Engineers (Applied-AI Entry Doc)
 
-> **Audience:** Developers building LLM agents with tool-calling, memory systems, error-recovery, autonomy loops, or orchestration (LangGraph / Swarm / Autogen / Rasa / custom runtime).
-
-> **Goal:** Understand PLD concepts _fast_ and apply them to real agents, without theory overhead.
+> **Audience:** Developers building LLM agents with tool-calling, memory systems, error handling, orchestration logic, and multi-turn behavior.
+>  
+> **Goal:** Provide a fast, operationally useful understanding of PLD — grounded in real engineering failure modes, not abstract theory.
 
 ---
 
-## 1. Why PLD Exists — The Actual Engineering Pain
+## TL;DR
 
-If you've built an agent beyond a single prompt, you've seen one or more of these:
+PLD addresses four recurring failure patterns in real agent systems:
 
-| Symptom | What it Means |
-|---------|--------------|
-| 🔁 Tool calls repeating | The workflow state is unstable or misinterpreted |
-| 🤔 Agent contradicts tool output | Belief state and environment state diverged |
-| 💬 "Let’s start over." | Context collapse and forced reset |
-| 🕑 Long pause → weird answer | Latency drift breaks pacing assumptions |
-| 😵 Conversation drifts off topic | Goal or constraint misalignment |
+1. **Failures without explanation** → PLD provides **diagnostic labels** instead of generic model errors.
+2. **Infinite retry loops** → PLD introduces **bounded retry and failover controls**.
+3. **Fragile stability** → PLD enables **measurement and validation instead of trial-and-error tuning**.
+4. **Model lock-in and unpredictability** → PLD creates **model-agnostic behavioral contracts**.
 
-These patterns appear **across frameworks and architectures**, meaning they are not implementation bugs — they are **interaction failure modes**.
+➡ Skip to implementation:  
+`/quickstart/operator_primitives/`  
+`/quickstart/patterns/`
 
-**PLD gives a shared system to detect, label, and stabilize them.**
+---
+
+## 1. Why PLD Exists — Quick Symptom Check
+
+If you've built an agent beyond a single prompt or deterministic flow, you've seen some of these:
+
+| Symptom | What It Indicates |
+|--------|-------------------|
+| 🔁 Repeated tool calls | Workflow state drifting or misinterpreted |
+| 🤖 Model contradicts its own tool result | Belief state diverged from environment state |
+| 🌀 "Let me restart..." | Context collapse or memory corruption |
+| 🕒 Long pause → unrelated answer | Latency drift or pacing instability |
+| 🎯 Agent gradually deviates from task | Misalignment accumulating over turns |
+
+These are not random model quirks — they are patterns.
+
+---
+
+## 1.1 — The Four Engineering Realities (Deep Dive)
+
+When the above symptoms appear at scale or in production, they tend to manifest as repeatable operational challenges:
+
+---
+
+### 🧨 1) Failure Without Explanation
+
+> *“It worked yesterday. Today it fails. The logs only say: ‘Sorry, something went wrong.’”*
+
+Common causes:
+
+- Ambiguous reasoning failure  
+- Misalignment between **model assumptions** and **runtime structure**
+- Error masking (apology tokens instead of traceable cause)
+
+PLD provides structured diagnostic signals (`D1–D5`) so that failures become **categorical and explainable**, not opaque.
+
+---
+
+### 🔁 2) The Infinite Retry Loop
+
+> *“Retry logic exists... but the agent isn’t progressing — just repeating attempts until something times out.”*
+
+Typical patterns:
+
+- Repeated soft repairs that never produce a stable reentry
+- Exception handling that retries without updating context
+- Tool failures treated as temporary instead of structural
+
+PLD introduces:
+
+- **Bounded retry budgets**
+- **Failover policies**
+- Metrics like **MRBF (Mean Repairs Before Failover)**
+
+So recovery becomes governed, not accidental.
+
+---
+
+### ⚠️ 3) “It Works… but We Don’t Know Why” (Fragile Stability)
+
+> *“A small prompt tweak improves everything — but no one can explain the mechanism or guarantee it will last.”*
+
+Symptoms:
+
+- Silent degradation over multi-turn dialog
+- “Fix one case, break another”
+- Dependency on undocumented behavioral quirks of a single model
+
+PLD introduces measurable signals (e.g., **PRDR, REI**) that turn behavior tuning into an **engineering process**, not intuition.
+
+---
+
+### 🌪️ 4) Model Dependency & Migration Fragility
+
+> *“The system is functional on Model A. On Model B, everything collapses — even though API and prompt are identical.”*
+
+Why it matters:
+
+- Enterprises change models for **cost, latency, compliance, or availability**
+- Naive agent pipelines become tightly coupled to one model’s quirks
+
+PLD gives teams a **model-agnostic alignment layer**, making migration closer to:
+
+```
+Retune → Validate → Deploy
+```
+
+instead of:
+
+```
+Rewrite → Debug → Hope
+```
+
+---
+
+### 📌 When Teams Adopt PLD
+
+PLD typically becomes necessary when one of these transitions happens:
+
+| Trigger | Example |
+|---------|---------|
+| 🧪 PoC → Production | Monitoring replaces ad-hoc experimentation |
+| 🔄 Model migration | GPT-4 → Claude 3 → Llama 3 |
+| 🧩 Multi-agent orchestration | Emergent misbehavior, conflicting states |
+| 🧱 Tool/Memory Integration | Stateful interactions create divergence |
 
 ---
 
 ## 2. The Core Runtime Loop
 
-Every interactive agent can be modeled as:
+At runtime, interactive agents can be modeled as:
 
 ```
 Action (User or System)
         ↓
-    Drift (D1–D5)
+   Drift Detected (D1–D5)
         ↓
-    Repair Attempt (R1–R4)
+   Repair Attempt (R1–R4)
         ↓
-    Reentry (RE1–RE3)
+   Reentry Check (RE1–RE3)
         ↓
-    Resonance (Stable Loop)
+   Stable Progress (Resonance)
 ```
 
-PLD is **not a behavior template** — it is a **diagnostic & stabilization framework**.
+PLD is not a prompt pattern — it is a **runtime governance model** for multi-turn alignment.
 
 ---
 
-## 3. The Three Classes (Working Definitions)
+## 3. Working Definitions
 
 | Class | Meaning | Examples |
-|-------|---------|----------|
-| **Drift** | The agent deviates from expected memory, workflow, meaning, or timing | hallucinated DB states, missed constraints, tool mismatch |
-| **Repair** | Any attempt to fix or recover from drift | ask for constraint, retry tool, modify arguments |
-| **Reentry** | Returning to the intended workflow | "Continuing the booking. You wanted a 4-star under £100, right?" |
+|-------|--------|----------|
+| **Drift** | Behavior deviates from expected workflow, memory, or context | invalid tool args, forgotten constraints |
+| **Repair** | Attempt to correct the deviation | retry, clarify, constraint restatement |
+| **Reentry** | Verified return to valid operating state | “Continuing booking for 2 guests at 18:00.” |
 
-Full definitions live in:  
-➡ `/docs/02_pld_drift_repair_reference.md`
+Full taxonomy:  
+→ `/docs/02_pld_drift_repair_reference.md`
 
 ---
 
-## 4. Resonance — The Target Operating Mode
+## 4. Resonance — The Target Operating State
 
-Once drift → repair → reentry stabilizes, we reach:
+A system reaches operational stability when:
 
 ```
 Stable Latency
-+ Stable Constraints
-+ Correct Tool Beliefs
-+ No Looping
++ Consistent Tool Behavior
++ No Repeated Drift
++ Predictable Dialogue Progress
 = Resonance
 ```
 
-Resonance means:
+Resonance is measurable via:
 
-- fewer repairs over time  
-- consistent task progress  
-- predictable dialogue pacing  
-- tool usage aligned with context  
+- **PRDR**
+- **REI**
+- **VRL**
 
-Resonance is **observable**, not theoretical.
-
-See metrics in:  
-➡ `/quickstart/metrics/`
+Metrics live in:  
+→ `/quickstart/metrics/`
 
 ---
 
-## 5. How to Apply PLD in Real Systems (5-Step Integration)
+## 5. How to Apply PLD (Practical Integration Path)
 
-| Step | What You Do | Where |
-|------|-------------|-------|
-| **1. Log events** | Use unified JSON schema | `/quickstart/metrics/schemas/pld_event.schema.json` |
-| **2. Label** | Auto-label logs using LLM | `/docs/04_pld_labeling_prompt_llm.md` |
-| **3. Validate** | Check codes against taxonomy | `/docs/02_pld_drift_repair_reference.md` |
-| **4. Measure** | Run dashboards/reports | `/quickstart/metrics/` |
-| **5. Stabilize** | Add operator primitives | `/quickstart/operator_primitives/` |
+| Step | Action | Where |
+|------|--------|-------|
+| **1. Log structured events** | Use the shared event schema | `quickstart/metrics/schemas/pld_event.schema.json` |
+| **2. Label events** | Automatic labeling via LLM | `/docs/04_pld_labeling_prompt_llm.md` |
+| **3. Validate signal meaning** | Ensure taxonomy consistency | `/docs/02_pld_drift_repair_reference.md` |
+| **4. Measure behavior** | Build dashboards and observe trends | `/quickstart/metrics/` |
+| **5. Stabilize** | Apply operator primitives + patterns | `/quickstart/operator_primitives/` |
 
-After 20–50 labeled sessions, failure modes become visible and fixable.
+After ~20–50 labeled traces, failure patterns become actionable.
 
 ---
 
@@ -109,34 +209,23 @@ if event.drift:
 log_event(event)
 ```
 
-Patterns and operators live in:
-
-```
-quickstart/operator_primitives/
-bridge_hub/demo_pld_trace/
-```
+Reference implementations:  
+`quickstart/operator_primitives/`  
+`bridge_hub/demo_pld_trace/`
 
 ---
 
-## 7. Navigation Map (Where to Read Next)
+## 7. Navigation Map
 
 | Need | Go |
 |------|----|
-| Understand the allowed codes | `/docs/02_pld_drift_repair_reference.md` |
+| Understand allowed codes | `/docs/02_pld_drift_repair_reference.md` |
 | Label logs with LLM | `/docs/04_pld_labeling_prompt_llm.md` |
-| See real-world annotated examples | `/metrics/multiwoz_2.4_n200/` |
-| Implement stabilization in runtime | `/quickstart/operator_primitives/` |
-| Measure drift/repair outcomes | `/quickstart/metrics/` |
+| View annotated production traces | `/metrics/multiwoz_2.4_n200/` |
+| Implement stabilization logic | `/quickstart/operator_primitives/` |
+| Measure drift over time | `/quickstart/metrics/` |
 
 ---
 
-## 8. Version / Placement
-
-This file is the **official entry point** into PLD Applied-AI.
-
-```
-docs/01_pld_for_agent_engineers.md
-```
-
-**Version:** Applied-AI Edition — 2025-02  
+**Version:** Applied-AI Edition — 2025-11  
 **Maintainer:** Kiyoshi Sasano
