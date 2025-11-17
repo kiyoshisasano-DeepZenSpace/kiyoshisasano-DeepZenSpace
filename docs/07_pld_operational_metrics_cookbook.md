@@ -124,6 +124,7 @@ Includes messages such as: *"Let me correct that,"* or *"Just to clarify..."*
 **Use Case:** UX quality measurement and conversational design alignment.
 
 ---
+
 ### Metric 4 — Failover Rate (FR)
 
 **Purpose:** Determine how frequently drift cannot be repaired and requires a controlled abort or fallback path.
