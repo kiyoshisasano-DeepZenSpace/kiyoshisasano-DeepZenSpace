@@ -124,6 +124,47 @@ Includes messages such as: *"Let me correct that,"* or *"Just to clarify..."*
 **Use Case:** UX quality measurement and conversational design alignment.
 
 ---
+### Metric 4 — Failover Rate (FR)
+
+**Purpose:** Determine how frequently drift cannot be repaired and requires a controlled abort or fallback path.
+
+**Formula:**
+
+```
+FR = (# sessions entering failover path) / (total sessions)
+```
+
+**Interpretation:**
+
+| FR Range | Meaning | Action |
+|----------|---------|--------|
+| 0–5% | Expected | Normal in systems with unpredictable components (tools, retrieval, APIs) |
+| 5–15% | Elevated | Review repair strategy, timeout conditions, or upstream dependency reliability |
+| >15% | Problematic | Indicates systemic failure or insufficient repair paths |
+
+---
+
+### Metric 5 — Mean Repairs Before Failover (MRBF)
+
+**Purpose:** Measure **how long the system persisted before giving up**.
+
+**Formula:**
+
+```
+MRBF = Sum(repair_attempts_before_failover) / # failover sessions
+```
+
+**Interpretation:**
+
+| Value | Meaning | Question to ask |
+|-------|---------|----------------|
+| 0–1 | Rapid failure | Should fail early? Is the detector too strict? |
+| 2–3 | Reasonable persistence | ✔ Healthy bounded retry behavior |
+| ≥4 | Excessive looping | Soft repairs ineffective → consider stronger repair or new routing logic |
+
+> These metrics are only relevant when a system includes a **failover policy or abort semantics**, such as in `failover_recipe.md`.
+
+---
 
 ## 4. Recommended Reporting View
 
