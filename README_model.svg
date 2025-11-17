@@ -30,13 +30,13 @@
         fill: #4b5563;
       }
       .phase {
-        fill: #dbeafe;           /* slightly deeper blue */
-        stroke: #60a5fa;         /* more vivid border */
+        fill: #dbeafe;
+        stroke: #60a5fa;
         stroke-width: 1.2;
         rx: 10;
       }
       .folder {
-        fill: #f3f4f6;           /* slightly darker than white */
+        fill: #f3f4f6;
         stroke: #d1d5db;
         stroke-width: 1.1;
         rx: 10;
@@ -126,7 +126,7 @@
   <text x="875" y="182" class="box-title">Operational Metrics &amp; Runtime Signals</text>
   <text x="875" y="200" class="box-body">for evaluation &amp; runtime decision support</text>
   <text x="875" y="218" class="box-body">PRDR — Post-Repair Drift Recurrence</text>
-  <text x="875" y="233" class="box-body">REI; VRL — efficiency &amp; visible repair load</text>
+  <text x="875" y="233" class="box-body">REI — Repair Efficiency Index; VRL — Visible Repair Load</text>
 
   <!-- Logs from loop to metrics -->
   <line x1="840" y1="190" x2="860" y2="190" class="arrow"/>
@@ -147,7 +147,7 @@
   <!-- Middle separator title -->
   <text x="40" y="320" class="section-title">2. From Model → Code → Evidence</text>
   <text x="40" y="342" class="subtitle">
-    PLD is a runtime governance model, implemented via patterns and runtime code, and validated with metrics &amp; datasets.
+    PLD is implemented via patterns and runtime code, then validated using metrics &amp; datasets.
   </text>
 
   <!-- Footer tagline -->
