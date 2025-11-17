@@ -15,20 +15,25 @@ PLD becomes relevant when you're building **multi-turn agents** and begin seeing
 
 You may be here because your system:
 
-- 🔧 Works in controlled tests, but behaves unpredictably in real usage  
-- 🔁 Repeats tool calls or enters retry loops without meaningful progress  
-- 🧩 Recovers from drift once, then misaligns again later  
-- 🔄 Breaks when switching models (GPT → Claude → Llama) even with identical logic  
+- 🔧 Works in controlled tests, but behaves **unpredictably** in real usage  
+- 🔁 Repeats tool calls or re-enters retry loops without meaningful progress  
+- 🧩 Recovers from drift once — then misaligns later  
+- 🔄 Breaks when switching models (GPT → Claude → Llama) despite identical logic  
 - 🤷 Feels “stable only when untouched,” requiring intuition rather than governance  
 
 In other words:
 
 > **Your agent works — but not reliably, explainably, or repeatably.**
 
-If you're at the point where the system is **functional but not consistently recoverable**, PLD provides the missing layer:  
-a runtime behavioral contract that stabilizes alignment **across turns — not just per response**.
+As systems scale, drift stops being exceptional —  
+it becomes a predictable characteristic of multi-turn autonomy.  
+If your roadmap includes model migration, orchestration, or autonomous decision routing,  
+PLD shifts from **"helpful"** to **infrastructure**.
 
-👉 **If your system "almost works," PLD becomes required — not optional.**
+PLD gives you the missing layer:  
+a runtime behavioral contract that maintains alignment **across turns — not just per response.**
+
+👉 **If your system *almost works*, you're entering the stage where structured governance becomes necessary.**
 
 ---
 
