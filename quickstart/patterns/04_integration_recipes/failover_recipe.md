@@ -76,6 +76,19 @@ This diagram keeps:
 - Drift → Repair → Reentry local to the tool component
 - Retry budget + Failover routing centralized in orchestration logic
 
+  ---
+
+## Advanced Metrics — Failover & Termination
+
+The following metrics apply when implementing **bounded retry with failover policies**.  
+They are relevant when your system includes explicit termination logic, such as in:
+
+- `quickstart/patterns/04_integration_recipes/failover_recipe.md`
+
+These metrics complement the core PLD metrics (PRDR, REI, VRL) by measuring **how and when the system gives up** rather than continuing indefinitely.
+
+---
+
 ## 4 — Minimal Runnable Code Example (LangGraph-Compatible)
 
 ⚠️ **Implementation Note**  
