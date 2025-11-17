@@ -376,3 +376,24 @@ if __name__ == "__main__":
     demo("Execute booking tool but make it fail", retry_limit=1)
     
 ```
+
+---
+
+## 5 — Recommended Metrics Reference
+
+This recipe directly enables two operational metrics from the PLD metrics cookbook:
+
+From `docs/07_pld_operational_metrics_cookbook.md`:
+
+- **FR (Failover Rate)** — How often failover is triggered  
+- **MRBF (Mean Repairs Before Failover)** — Persistence before giving up  
+
+These metrics are useful when determining whether:
+
+- retry limits are too strict or too lenient  
+- repair strategies meaningfully improve stability  
+- failover paths are acting as safety valves or masking systemic defects  
+
+Refer to the cookbook for interpretation guidance and threshold recommendations.
+
+---
