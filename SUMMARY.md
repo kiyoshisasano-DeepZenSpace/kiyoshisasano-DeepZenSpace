@@ -111,6 +111,7 @@ A recommended onboarding path:
 2. Apply drift/repair/reentry primitives → `/quickstart/operator_primitives/`
 3. Use modular patterns → `/quickstart/patterns/`
 4. Run runnable integration recipes → `/quickstart/patterns/04_integration_recipes/`
+　- Optional: `quickstart/patterns/04_integration_recipes/failover_recipe.md` — bounded retry + controlled failover (recommended after mastering core loop)
 5. Log drift → repair → reentry → outcome signals → `/quickstart/metrics/`
 6. Compare against evaluated traces → `/analytics/`
 
