@@ -67,15 +67,15 @@ These recipes make individual subsystems **PLD-aware and recoverable.**
 
 ### **Tier 2 — System Pattern (Capstone)**
 
-This recipe shows **one way** to assemble Tier 1 components under a unified control loop.
+This tier shows **how PLD components behave when orchestrated as a runtime system rather than isolated techniques**.
 
 | File | System Role | Drift Focus | Integration Focus |
 |------|-------------|-------------|-------------------|
-| `reentry_orchestration_recipe.md` | **Orchestrator** | `RE* orchestration` | Central routing after repair: continue, retry, fallback, or exit |
+| `reentry_orchestration_recipe.md` | **Orchestrator** | `RE* orchestration` | Routing after repair: continue, retry, fallback, or exit |
+| `failover_recipe.md` | **Failover policy** | `D4_tool → bounded retry` | Controlled abort/fallback to prevent infinite repair loops |
 
-> 📌 If **Tier 1 = parts**, then **Tier 2 = the operational control plane.**
-
-This is where an agent becomes a **closed-loop runtime**, not just a set of behaviors.
+> 📌 If **Tier 1 = parts**, then **Tier 2 = the operational control plane.**  
+> `failover_recipe.md` formalizes the **termination behavior** of the PLD loop.
 
 ---
 
