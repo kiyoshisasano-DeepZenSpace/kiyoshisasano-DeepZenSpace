@@ -5,26 +5,30 @@
 ![Status: Active](https://img.shields.io/badge/status-active-brightgreen)
 
 > PLD is not a framework or agent library.  
-> It is a **runtime governance pattern** adopted *within* existing agent systems — such as LangGraph, AutoGen, Assistants API, Rasa, or custom orchestrators — to ensure alignment persists across multi-turn interactions.
+> It is a runtime governance model for stabilizing multi-turn agents across turns, tools, models, and environments.
 
 ---
 
 ## 🎯 Is This For You?
 
-PLD becomes relevant when you're building **multi-turn agents** and begin seeing patterns that don't feel random—but also don't feel controllable.
+PLD becomes relevant when you're building **multi-turn agents** and begin seeing patterns that don’t feel random — but don’t feel controllable.
 
 You may be here because your system:
 
-- ✔ Works in controlled tests, but behaves unpredictably in real interactions  
-- ✔ Repeats tool actions or enters retry loops without meaningful progress  
-- ✔ Loses alignment after repairs or context updates  
-- ✔ Breaks when migrating between models (GPT → Claude → Llama) even with identical logic  
-- ✔ Feels "stable only when untouched," rather than governed or intentional
+- 🔧 Works in controlled tests, but behaves unpredictably in real usage  
+- 🔁 Repeats tool calls or enters retry loops without meaningful progress  
+- 🧩 Recovers from drift once, then misaligns again later  
+- 🔄 Breaks when switching models (GPT → Claude → Llama) even with identical logic  
+- 🤷 Feels “stable only when untouched,” requiring intuition rather than governance  
 
-If your agent is **functional but not reliably recoverable**, PLD provides the missing layer:  
-a runtime behavioral contract that stabilizes alignment across turns—not just per response.
+In other words:
 
-> **If your system "almost works," PLD is designed for the stage you are entering.**
+> **Your agent works — but not reliably, explainably, or repeatably.**
+
+If you're at the point where the system is **functional but not consistently recoverable**, PLD provides the missing layer:  
+a runtime behavioral contract that stabilizes alignment **across turns — not just per response**.
+
+👉 **If your system "almost works," PLD becomes required — not optional.**
 
 ---
 
