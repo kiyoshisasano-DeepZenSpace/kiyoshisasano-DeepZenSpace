@@ -1,168 +1,151 @@
 ---
 title: "Drift Event Logging Guide — Applied-AI Edition"
-version: 2025.1
+version: 2025.1.1
 maintainer: "Kiyoshi Sasano"
 status: stable
 category: "metrics/logging"
 tags:
   - PLD
-  - logging
-  - drift detection
-  - repair logging
-  - applied AI
+  - telemetry
+  - alignment
+  - runtime logging
 ---
 
-# Drift Event Logging Guide (Applied-AI Edition)
+# Drift Event Logging Guide (Applied Runtime Edition)
 
-This guide explains **how to capture PLD-aligned interaction events** during live execution of LLM agents, tool-using systems, or multi-turn applications.
+This guide defines how to record **PLD-aligned runtime interaction events** using the canonical schema:
 
-The goal is to ensure every agent produces **structured, machine-readable evidence** of:
+📄 `quickstart/metrics/schemas/pld_event.schema.json`
 
-- Drift  
-- Repair  
-- Reentry  
-- Latency patterns  
-- Outcome signals  
+Logging with a shared schema enables:
 
-This enables **benchmarking, dashboards, and automated drift-aware improvements.**
-
----
-
-## 1. What Should Be Logged?
-
-Every interaction turn must generate a log entry following the schema:
-
-| Field | Purpose |
-|-------|---------|
-| `session_id` | Identifies conversation or task thread |
-| `turn_id` | Monotonic index of utterances |
-| `speaker` | `user` / `system` / `tool` |
-| `text` | Raw natural-language content |
-| `drift` | `null` or subtype (e.g., `Drift-Information`) |
-| `repair` | `null` or subtype (e.g., `SoftRepair-AddOptions`) |
-| `latency_ms` | Execution + response latency |
-
-📄 **Reference:** `schemas/pld_event.schema.json`
+- Drift / repair / failover tracking  
+- Operational stability metrics (PRDR, VRL, MRBF, FR, REI)
+- A/B evaluation of recovery strategies
+- Dashboard-based monitoring (`reentry_success_dashboard.json`)
 
 ---
 
-## 2. Minimal Logging Implementation
+## 1. What Must Be Logged?
+
+Every turn MUST emit a PLD event containing:
+
+| Field | Requirement | Source |
+|-------|------------|--------|
+| `event_id` | required | UUID |
+| `timestamp` | required | Runtime clock |
+| `session_id` | required | Conversation or task identifier |
+| `turn_id` | required | Monotonic sequence |
+| `event_type` | required | Drift / repair / outcome / failover / info |
+| `pld.phase` | required | none / drift / repair / reentry / failover / complete |
+| `pld.code` | required | Canonical code from taxonomy |
+
+Optional but recommended fields:
+
+| Field | Usage |
+|-------|-------|
+| `payload.text` | Debugging, UX attribution |
+| `runtime.latency_ms` | Correlation with drift / repair patterns |
+| `metrics.cost_tokens` | Enables REI + MRBF trending |
+| `tags[]` | Feature flags, rollout phases |
+
+---
+
+## 2. Logging Convention
+
+- **No missing keys** → use `null`, do not omit  
+- **Events must be chronological**  
+- **Identity continuity:** `session_id` never resets during repair loops  
+- **Event type must reflect agent intent** (not UI wording)
+
+Example mapping:
+
+| Agent behavior | event_type | example pld.code |
+|----------------|------------|------------------|
+| Drift detected | `drift_detected` | `D5_information` |
+| Soft repair | `repair_triggered` | `R2_soft_repair` |
+| Visible repair message | `repair_visible` | `R1_clarify` |
+| Successful reentry | `reentry_observed` | `RE3_auto` |
+| Hard failure / abandon | `failover_triggered` | `OUT3_abandoned` |
+
+---
+
+## 3. Minimal Logging Implementation (Python)
 
 ```python
-import json
-import time
+import uuid, time, json
+from jsonschema import validate
 from pathlib import Path
 
-LOG_PATH = Path("logs/pld_events.jsonl")
+SCHEMA_PATH = "quickstart/metrics/schemas/pld_event.schema.json"
+LOG_PATH     = Path("logs/pld_events.jsonl")
 
-def log_event(session_id, turn_id, speaker, text, drift=None, repair=None, latency_ms=None):
+schema = json.loads(Path(SCHEMA_PATH).read_text())
+
+def log_pld_event(session_id, turn_id, event_type, pld_code, payload=None, runtime=None):
     event = {
+        "event_id": str(uuid.uuid4()),
+        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "session_id": session_id,
         "turn_id": turn_id,
-        "speaker": speaker,
-        "text": text,
-        "drift": drift,
-        "repair": repair,
-        "latency_ms": latency_ms
+        "event_type": event_type,
+        "pld": {
+            "phase": pld_code.split("_")[0].lower().replace("d","drift").replace("r","repair"),
+            "code": pld_code
+        },
+        "payload": payload or {},
+        "runtime": runtime or {}
     }
-    
-    LOG_PATH.parent.mkdir(exist_ok=True)
-    if not LOG_PATH.exists():
-        LOG_PATH.write_text("", encoding="utf-8")
 
+    validate(event, schema)
+
+    LOG_PATH.parent.mkdir(exist_ok=True)
     with LOG_PATH.open("a", encoding="utf-8") as f:
         f.write(json.dumps(event) + "\n")
 ```
 
 ---
 
-## 3. Drift + Repair Detection Injection Point
-
-Example integration as middleware:
-
-```python
-def system_response(agent, session_id, turn_id, user_message):
-    start = time.time()
-    
-    response, drift_type = agent.generate(user_message)
-    repair_action = agent.detect_repair(response, drift_type)
-    latency = int((time.time() - start) * 1000)
-    
-    log_event(
-        session_id=session_id,
-        turn_id=turn_id,
-        speaker="system",
-        text=response,
-        drift=drift_type,
-        repair=repair_action,
-        latency_ms=latency
-    )
-    
-    return response
-```
-
-📌 This ensures logging happens **before output delivery**, preventing silent drift.
-
----
-
 ## 4. Recommended Logging Frequency
 
-| Event Type | Log? | Notes |
-|------------|------|-------|
-| Normal turn | ✔ | Drift may occur later |
-| Tool call execution | ✔ | Tools are high drift-risk |
-| Soft repair | ✔ | Required |
-| Hard repair | ✔ | Required |
-| Silence / timeout | ✔ | Treated as drift candidate |
+| Situation | Log event? | Notes |
+|-----------|------------|-------|
+| Every turn | ✔ | Ensures baseline |
+| Drift detection triggered | ✔ | Required |
+| Any repair attempt | ✔ | Counted in VRL + MRBF |
+| Failover / abandonment | ✔ | Mandatory |
+| Tool call execution | ✔ | High-risk drift source |
 
 ---
 
-## 5. Operational Quality Rules
-
-| Rule | Description |
-|------|------------|
-| No missing fields | Use `null`, don’t omit |
-| Controlled vocabulary | `drift` / `repair` must use taxonomy values |
-| Preserve ordering | Logs must be chronological |
-| Session continuity | Hard repair must not reset `session_id` |
-| Latency required | Strong predictor of drift and repair |
-
----
-
-## 6. Validation Workflow
-
-Use the schema validator:
+## 5. Validation Workflow
 
 ```python
 from jsonschema import validate
-import json
-
-def validate_log_line(line, schema):
-    validate(instance=line, schema=schema)
+validate(instance=event, schema=schema)
 ```
 
-Schema file path:
+For batch ingestion:
 
 ```
-quickstart/metrics/schemas/pld_event.schema.json
+duckdb  🡪  parquet 🡪 supabase table 🡪 dashboards
 ```
 
 ---
 
-## 7. Next Steps
+## 6. Next Steps
 
-Once drift logging is operational:
-
-| Next Task | Reference File |
-|-----------|---------------|
-| Aggregation | `datasets/pld_events_demo.jsonl` |
-| Schema validation | `schemas/pld_event.schema.json` |
-| Visualization | `dashboards/reentry_success_dashboard.json` |
-| Case interpretation | `../reports/pld_events_demo_report.md` |
+| Task | Reference |
+|------|----------|
+| Test logging sample | `datasets/pld_events_demo.jsonl` |
+| Confirm schema compliance | `schemas/pld_event.schema.json` |
+| Enable monitoring | `dashboards/reentry_success_dashboard.json` |
+| Interpret drift patterns | Operational Metrics Cookbook |
 
 ---
 
-### Maintainer  
-**Kiyoshi Sasano**  
-Applied-AI Interaction Systems — 2025
+Maintainer:  
+**Kiyoshi Sasano — Applied AI Runtime Systems (2025)**
+
+
 
