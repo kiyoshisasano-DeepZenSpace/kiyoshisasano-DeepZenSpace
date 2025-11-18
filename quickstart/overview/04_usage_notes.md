@@ -167,4 +167,4 @@ Most commercial agents today are between **Level 0.5 → 1.5**.
 
 Maintainer: **Kiyoshi Sasano**  
 Edition: **PLD Applied 2025**  
-License: **CC-BY-NC 4.0**
+License: **CC-BY 4.0**
