@@ -16,9 +16,12 @@ This script is intentionally simple:
 it shows how a single turn can produce a PLD event log.
 """
 
+from __future__ import annotations
+
 import json
 import uuid
 from datetime import datetime, timezone
+from typing import Any, Dict, Optional
 
 
 # ---------------------------------------------------------------------------
@@ -40,7 +43,7 @@ def fake_llm_reply(user_message: str) -> str:
 # 2. Drift detection / classification (toy heuristic)
 # ---------------------------------------------------------------------------
 
-def detect_drift(user_message: str, system_reply: str) -> dict:
+def detect_drift(user_message: str, system_reply: str) -> Dict[str, Optional[str] | bool]:
     """
     Extremely simple heuristic:
     - If user mentions 'flight' but reply talks about 'hotel', treat as intent drift.
@@ -69,7 +72,7 @@ def detect_drift(user_message: str, system_reply: str) -> dict:
 # 3. Soft Repair + Reentry (scripted for this minimal example)
 # ---------------------------------------------------------------------------
 
-def build_soft_repair_reply(user_message: str) -> str:
+def build_soft_repair_reply(user_message: str) -> str:  # noqa: ARG001
     """
     In PLD terms: a Soft Repair should be visible, minimal, and stabilizing.
     """
@@ -79,7 +82,7 @@ def build_soft_repair_reply(user_message: str) -> str:
     )
 
 
-def build_reentry_prompt(user_message: str) -> str:
+def build_reentry_prompt(user_message: str) -> str:  # noqa: ARG001
     """
     Reentry = restore shared alignment before continuing.
     """
@@ -90,18 +93,23 @@ def build_reentry_prompt(user_message: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# 4. PLD Event construction (aligned with the PLD event schema)
+# 4. PLD Event construction (aligned with the PLD event schema conceptually)
 # ---------------------------------------------------------------------------
+
+def _now_iso_utc() -> str:
+    """Return current UTC time in RFC3339 format with 'Z' suffix."""
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
 
 def build_pld_event(
     session_id: str,
     turn_index: int,
     user_message: str,
     system_reply: str,
-    drift_info: dict,
-) -> dict:
+    drift_info: Dict[str, Any],
+) -> Dict[str, Any]:
     """
-    Build a single PLD event object for this turn.
+    Build a single PLD event-like object for this turn.
 
     This is a simplified, schema-aligned example:
     - drift
@@ -110,7 +118,7 @@ def build_pld_event(
     - outcome
     - metadata
     """
-    drift_present = drift_info["present"]
+    drift_present: bool = bool(drift_info["present"])
 
     if drift_present:
         repair_block = {
@@ -137,11 +145,11 @@ def build_pld_event(
         }
         outcome_status = "complete"
 
-    event = {
+    event: Dict[str, Any] = {
         "event_id": str(uuid.uuid4()),
         "session_id": session_id,
         "turn_index": turn_index,
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "timestamp": _now_iso_utc(),
 
         "user_message": user_message,
         "system_reply": system_reply,
@@ -221,5 +229,4 @@ def run_demo() -> None:
 
 if __name__ == "__main__":
     run_demo()
-
 
