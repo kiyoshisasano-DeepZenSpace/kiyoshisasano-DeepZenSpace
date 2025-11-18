@@ -80,7 +80,7 @@ Once operationalized, the dashboard becomes a **runtime alignment contract**:
 
 ---
 
-## **1. Purpose**
+## **1. Metrics Purpose & Motivation**
 
 Once PLD logging is active, teams quickly reach a point where raw drift/repair counts don’t answer operational questions such as:
 
