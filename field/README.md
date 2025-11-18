@@ -194,4 +194,4 @@ Minimal protocol → minimal friction → high alignment.
 ---
 
 Maintainer: **Kiyoshi Sasano**  
-License: **CC BY-NC 4.0**
+
