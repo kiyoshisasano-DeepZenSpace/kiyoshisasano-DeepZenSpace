@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://pld.dev/schema/pld_event.schema.json",
-  "title": "PLD Applied Runtime Event",
-  "description": "Canonical event schema for PLD (Phase Loop Dynamics) runtime logging and metrics aggregation.",
+  "$id": "https://pld.dev/schema/pld_event.v1.1.schema.json",
+  "title": "PLD Applied Runtime Event (v1.1)",
+  "description": "Canonical event schema for PLD (Phase Loop Dynamics) runtime logging and metrics aggregation (v1.1, phase+code-based).",
 
   "type": "object",
   "additionalProperties": false,
@@ -56,7 +56,14 @@
 
     "source": {
       "type": "string",
-      "enum": ["user", "system", "assistant", "tool", "controller", "runtime"],
+      "enum": [
+        "user",
+        "system",
+        "assistant",
+        "tool",
+        "controller",
+        "runtime"
+      ],
       "description": "Origin of the event. Optional."
     },
 
@@ -74,14 +81,14 @@
             "reentry",
             "continue",
             "failover",
-            "complete"
+            "outcome"
           ],
           "description": "Phase of the PLD loop the event represents."
         },
         "code": {
           "type": "string",
-          "pattern": "^(D[1-9]|R[1-9]|RE[0-9]|F[0-9]|O[0-9]|NONE)([_A-Za-z0-9-]*)?$",
-          "description": "Phase-specific structured code (ex: D5_information, R2_soft_repair, RE3_auto)."
+          "pattern": "^(D[1-9]|R[1-9]|RE[0-9]+|F[0-9]+|O[0-9]+|NONE)([_A-Za-z0-9-]*)?$",
+          "description": "Phase-specific structured code (e.g. D5_information, D4_tool, R2_soft_repair, RE3_auto)."
         },
         "confidence": {
           "type": "number",
