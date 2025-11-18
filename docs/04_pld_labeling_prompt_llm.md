@@ -184,5 +184,5 @@ docs/labeling_prompt.md
 
 PLD Applied-AI Edition  
 Taxonomy-Aligned Release  
-2025-02  
+2025-11 
 Maintainer: DeepZenSpace
