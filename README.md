@@ -207,8 +207,6 @@ For deeper usage patterns, continue with:
 
 ---
 
----
-
 ### 📊 Operational Dashboard (Preview)
 
 Once PLD is running and metrics are emitted, the system becomes observable — not just executable.
