@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "PLD Runtime Event Envelope",
+  "title": "PLD Runtime Event Envelope (v1.1)",
+  "description": "Unified transport container for PLD event objects, including context, runtime metadata, and trace alignment.",
   "type": "object",
 
   "required": [
@@ -16,25 +17,31 @@
 
     "envelope_id": {
       "type": "string",
-      "description": "UUIDv4 unique identifier for the envelope instance"
+      "description": "Unique identifier for this envelope instance (UUIDv4 recommended)."
     },
 
     "timestamp": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the envelope was created."
     },
 
     "session": {
       "type": "object",
+      "description": "Metadata describing the logical runtime session.",
       "required": ["session_id"],
+
       "properties": {
         "session_id": {
           "type": "string",
-          "description": "Conversation or agent process identifier"
+          "description": "Identifier representing the conversational or agent runtime session."
         },
+
         "user_id": {
-          "type": "string"
+          "type": "string",
+          "description": "Optional user identifier associated with the session."
         },
+
         "platform": {
           "type": "string",
           "enum": [
@@ -45,38 +52,48 @@
             "open_webchat",
             "batch_eval",
             "unknown"
-          ]
+          ],
+          "description": "Origin platform from which the runtime event was emitted."
         }
       },
+
       "additionalProperties": false
     },
 
     "trace": {
       "type": "object",
+      "description": "Trace metadata for aligning events with conversation flow.",
       "required": [
         "trace_id",
         "turn_index"
       ],
+
       "properties": {
         "trace_id": {
           "type": "string",
-          "description": "Grouping key representing a continuous conversational flow"
+          "description": "Identifier used to logically group sequential conversation events."
         },
+
         "turn_index": {
           "type": "integer",
-          "minimum": 0
+          "minimum": 0,
+          "description": "Sequential index representing the position of this event in the trace."
         },
+
         "parent_trace_id": {
           "type": "string",
-          "description": "Optional reference for fork/branch operations"
+          "description": "Optional reference that indicates a forked or branched conversation lineage."
         }
       },
+
       "additionalProperties": false
     },
 
     "runtime": {
       "type": "object",
+      "description": "Snapshot of the runtime execution context for observability and evaluation.",
       "required": ["environment", "mode"],
+
       "properties": {
         "environment": {
           "type": "string",
@@ -85,8 +102,10 @@
             "staging",
             "sandbox",
             "local"
-          ]
+          ],
+          "description": "Execution operating environment."
         },
+
         "mode": {
           "type": "string",
           "enum": [
@@ -94,25 +113,36 @@
             "batch",
             "debug",
             "audit"
-          ]
+          ],
+          "description": "Execution mode representing the intended runtime behavior."
         },
+
         "latency_ms": {
-          "type": "number"
+          "type": "number",
+          "description": "Optional latency measurement for the associated runtime turn."
         },
+
         "model": {
-          "type": "string"
+          "type": "string",
+          "description": "Optional model identifier (if an LLM was used)."
         },
+
         "agent_state": {
-          "type": "string"
+          "type": "string",
+          "description": "Optional high-level agent state indicator."
         }
       },
+
       "additionalProperties": true
     },
 
     "event": {
-      "$ref": "pld_event.schema.json"
+      "$ref": "pld_event.schema.json",
+      "description": "Nested PLD event object describing phase, code, and metadata."
     }
   },
 
   "additionalProperties": false
 }
+
+
