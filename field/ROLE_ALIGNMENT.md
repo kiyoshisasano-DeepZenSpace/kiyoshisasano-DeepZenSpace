@@ -1,41 +1,42 @@
-# ROLE ALIGNMENT — PLD Collaboration Context
+# ROLE ALIGNMENT — PLD Collaboration Model
 
-This document clarifies the roles, responsibilities, and boundaries  
-for collaboration around PLD (Phase Loop Dynamics).
+This document clarifies how contributions, discussion, and framework evolution are handled within the PLD ecosystem.
 
-It exists to set expectations and avoid ambiguity between:
+It exists to maintain clarity and shared expectations between:
 
-- **Architect (Framework Owner / Author)**
-- **Implementers (Engineers, Applied AI Teams, Integrators)**
-- **Collaborators (Research, Ops, Evaluation, Product Stakeholders)**
+- **Architect / Maintainer**
+- **Implementers**
+- **Collaborators and Reviewers**
+
+No single individual “owns” the future of PLD —  
+the goal is to evolve it **through shared reasoning, evidence, and community practice.**
 
 ---
 
-## 1. The Role of the Architect (Repository Maintainer)
+## 1. The Role of the Architect (Maintainer / Steward)
 
-The repository owner **defines the PLD framework**, including:
+The maintainer is responsible for:
 
-- The conceptual foundation (Drift → Repair → Reentry → Outcome)
-- The runtime model and interaction logic
-- The shared vocabulary, metrics, and evaluation criteria
-- Pattern-level guidelines for implementation and operation
+- Defining the conceptual foundation (Drift → Repair → Reentry → Outcome)
+- Maintaining coherence of terminology, structure, and scope  
+- Guiding discussions about semantics, taxonomy, and core principles  
+- Ensuring changes follow a consistent design philosophy
 
-The architect:
+The maintainer:
 
-✔ designs the structure  
-✔ defines the intent and reasoning  
-✔ maintains conceptual coherence across contributions  
+✔ provides structure  
+✔ supports alignment  
+✔ safeguards conceptual clarity  
 
-The architect **does not own**:
+The maintainer **does not**:
 
-✘ implementation work for partner systems  
-✘ product-specific tuning  
-✘ infrastructure, deployment, or localization  
-✘ organizational compliance or risk acceptance
+✘ control adoption  
+✘ gate domain-specific implementations  
+✘ dictate product usage or risk tolerance  
 
-Instead, the architect acts as:
+Instead, the role is:
 
-> **A system-level thinker who provides structure, language, and alignment — not execution.**
+> **A steward of shared language and reasoning — not a gatekeeper of implementation.**
 
 ---
 
@@ -43,124 +44,109 @@ Instead, the architect acts as:
 
 Implementers include:
 
-- LLM/Agent engineers  
-- Tooling and orchestration developers  
-- RAG + agent integrators  
-- Conversation system owners  
+- Applied AI engineers  
+- Agent orchestration developers  
+- RAG / agent integration teams  
+- Conversation runtime owners  
 
-Their role is to:
+Their responsibilities:
 
-- Apply PLD operators to their systems
-- Build runtime implementations
-- Collect logs and metrics
-- Adapt PLD to domain constraints and UX expectations
+- Apply PLD patterns to real systems  
+- Build and refine implementations
+- Generate logs and evidence
+- Contribute feedback and improvements
 
-They:
-
-✔ write code  
-✔ deploy systems  
-✔ validate runtime behavior  
-✔ contribute improvements or operational patterns  
-
-They **do not** modify the conceptual model without governance review.
+Implementers may propose changes to the model, but these follow the shared governance process.
 
 ---
 
-## 3. The Role of Collaborators (Optional)
+## 3. The Role of Collaborators (Optional but Welcome)
 
-Some projects involve additional roles:
+Collaborators often include:
 
-- Evaluation teams  
-- Applied AI researchers  
-- Product owners  
-- AgentOps / QA reviewers  
+- Evaluation / QA teams  
+- Research contributors  
+- UX and trust stakeholders  
+- AgentOps observability teams  
 
-Their role is to:
+Their contributions focus on:
 
-- Analyze traces and metrics
-- Provide behavioral feedback
-- Compare PLD performance to baselines
-- Recommend adjustments based on risk, UX, or operational constraints
-
-They typically do **not**:
-
-- modify runtime code  
-- define PLD taxonomy  
-- change framework semantics  
+- Behavioral analysis
+- Field validation
+- Comparisons against baselines
+- Recommendations based on operational experience
 
 ---
 
 ## 4. Collaboration Boundaries
 
-| Area | Architect | Implementer | Collaborator |
-|-------|----------|-------------|--------------|
-| PLD conceptual model | **Owner** | Contributor (via proposals) | Optional |
-| Code / runtime implementation | Advisor | **Owner** | Optional |
-| Metrics and evaluation | Defines schema | Generates logs | **Interprets or compares** |
-| Operational decisions | No | Yes | Yes (shared) |
-| Final go/no-go for product usage | No | **Yes** | Yes (context-dependent) |
+| Area | Maintainer | Implementer | Collaborator |
+|------|-----------|-------------|--------------|
+| Conceptual model & taxonomy | Guides | Proposes | Advises |
+| Runtime implementation | Advises | Leads | Optional |
+| Metrics & evaluation schema | Guides | Generates data | Interprets |
+| Production usage decisions | No | **Yes** | Yes (context-based) |
 
 ---
 
 ## 5. Change Governance
 
-To maintain consistency, changes follow:
-```text
-Proposal → Review → Approval → Adoption → Version Note
+Updates follow:
+
+```
+Proposal → Discussion → Community Review → Merge → Version Note
 ```
 
-Changes affecting:
+Changes involving:
 
-- terminology
-- runtime structure
-- event semantics
-- metrics schema
+- core terminology  
+- event semantics  
+- runtime structure  
+- evaluation schema  
 
-require review by the architect.
+→ require discussion and alignment.
 
-Changes affecting:
+Changes involving:
 
-- code implementation
-- adapters or integrations
-- dataset extensions
-- UX variants
+- code improvements  
+- adapters or integrations  
+- examples and recipes  
+- dataset extensions  
 
-may proceed via PR with light governance.
+→ may proceed via PR with review.
 
 ---
 
-## 6. Why This Alignment Exists
+## 6. Why Alignment Matters
 
-PLD is a **runtime interaction model**, not a single implementation.
+PLD is a **runtime reasoning model**, not a library or product.
 
-Without role clarity:
+Clear roles avoid:
 
-- Organizations may treat PLD as a product instead of an execution model  
-- Implementers may attempt private interpretations that break compatibility  
-- Collaboration may stall due to unclear ownership of decisions  
+- private forks redefining semantics  
+- uncertainty about contribution paths  
+- misalignment across implementations  
 
-This document ensures:
+Instead, this structure supports:
 
-> **Shared language, shared expectations, shared contribution structure — without role collision.**
+> **Shared understanding, responsible iteration, and interoperability across ecosystems.**
 
 ---
 
 ## 7. Summary
 
-- The architect **defines and maintains PLD.**
-- Implementers **apply and operationalize PLD.**
-- Collaborators **evaluate and contextualize results.**
+- The maintainer **guides the conceptual direction.**
+- Implementers **bring PLD into practice.**
+- Collaborators **validate and inform refinement.**
 
-This alignment preserves:
+Together, the community evolves PLD through:
 
-- conceptual integrity  
-- reproducibility  
-- interoperability  
-- responsible iteration  
+- evidence  
+- discussion  
+- practical application  
+- shared wisdom  
 
 ---
 
-> PLD succeeds when roles complement — not overlap.  
-> The framework is the shared spine, not the implementation.
-
-
+> PLD grows through collaboration — not ownership.  
+> The model is shared; the ecosystem builds it together.
