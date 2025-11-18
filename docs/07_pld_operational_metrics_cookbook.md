@@ -14,6 +14,72 @@ Metrics should be used during rollout, tuning, and regression analysis, then red
 
 ---
 
+---
+
+### 📊 Operational Dashboard Preview
+
+The dashboard below represents the **end-state visualization** of the metrics defined in this cookbook.  
+It provides an at-a-glance understanding of whether a system is stable, drifting, cost-efficient, or entering failure-prone behavior.
+
+<p align="center">
+  <img src="../assets/dashboard_mockup.svg" width="100%" />
+</p>
+
+> This dashboard is a **reference implementation target**, not a requirement during early rollout.  
+> It exists to provide a visual north star for teams integrating monitoring into Supabase, Grafana, Looker, Metabase, or similar platforms.
+
+---
+
+### How to Use This Dashboard
+
+| Phase of rollout | Primary metrics | Purpose |
+|-----------------|----------------|---------|
+| **Early rollout** | PRDR, VRL, FR | Detect regressions, fragile repairs, and unstable drift loops |
+| **Mid rollout** | REI, MRBF | Compare strategies, cost/benefit tradeoffs, and intervention timing |
+| **Post stabilization** | FR + periodic PRDR scans | Low-noise monitoring for regressions or release effects |
+
+---
+
+### Interpretation Guidance
+
+All metrics in the dashboard follow a standard operational classification:
+
+| Marker | Meaning |
+|--------|---------|
+| 🟢 **Healthy Range** | Behavior stable, predictable, and cost-aligned |
+| ⚠️ **Elevated / Watch** | Acceptable but may require tuning |
+| 🔴 **Critical** | Indicates systemic drift, looping repairs, or user-visible instability |
+
+Metrics are **signals** — not evaluation scores. They should guide intervention, not optimization targets.
+
+---
+
+### Why This Dashboard Matters
+
+These metrics shift PLD from _logging_ to _governance_ by answering questions such as:
+
+- _“Do repairs prevent future drift, or only delay it?”_
+- _“Are visible repairs creating UX friction?”_
+- _“Is the system giving up too early — or trying too long?”_
+- _“Does the cost of repair justify the benefit?”_
+
+Once operationalized, the dashboard becomes a **runtime alignment contract**:
+
+> **Stable system behavior across turns — not just per response.**
+
+---
+
+### Export Targets
+
+| Export Format | Status | Notes |
+|---------------|--------|-------|
+| Supabase dashboard | **Recommended baseline** | Matches mock layout |
+| Grafana JSON | Planned | Requires schema mapping |
+| Looker model | Optional | For enterprise analytics teams |
+| CSV / notebook workflow | Built-in via queries | Useful for offline experimentation |
+
+---
+
 ## **1. Purpose**
 
 Once PLD logging is active, teams quickly reach a point where raw drift/repair counts don’t answer operational questions such as:
