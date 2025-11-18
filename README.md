@@ -198,6 +198,8 @@ python quickstart/metrics/verify_metrics_local.py
 - MRBF — Mean Repairs Before Failover
 - FR — Failover Rate
 
+➡ Detailed guide: `quickstart/metrics/README_metrics.md`
+
 ---
  
 For deeper usage patterns, continue with:  
