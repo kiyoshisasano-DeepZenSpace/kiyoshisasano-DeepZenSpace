@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.detection.runtime_signal_bridge
+pld_runtime.detection.runtime_signal_bridge (v1.1 Canonical Edition)
 
 Bridge between normalized runtime signals (turns, tool calls, latency info)
 and PLD detection modules.
@@ -23,6 +23,12 @@ Non-goals
 - No policy decisions (handled by enforcement/response_policy.py)
 - No temporal reasoning (handled by enforcement/sequence_rules.py)
 - No schema enforcement (handled by enforcement/schema_validator.py)
+
+Canonical Alignment
+-------------------
+- Event schema: quickstart/metrics/schemas/pld_event.schema.json
+- Runtime schema: pld_runtime/01_schemas/pld_event.schema.json
+- PLD codes:     pld_runtime/01_schemas/drift_repair_codes.json
 """
 
 from __future__ import annotations
@@ -102,12 +108,27 @@ class NormalizedTurn:
 @dataclass
 class BridgeConfig:
     """
-    Configuration for runtime_signal_bridge.
+    Configuration for RuntimeSignalBridge.
 
-    Flags:
-      - enable_drift: run DriftDetector
-      - enable_repair: run RepairDetector
-      - enable_pattern_classifier: run PatternClassifier
+    Flags
+    -----
+    enable_drift:
+        Run DriftDetector when True.
+
+    enable_repair:
+        Run RepairDetector when True.
+
+    enable_pattern_classifier:
+        Run PatternClassifier when True.
+
+    drift:
+        Configuration for DriftDetector.
+
+    repair:
+        Configuration for RepairDetector.
+
+    pattern:
+        Configuration for PatternClassifier.
     """
 
     enable_drift: bool = True
@@ -203,11 +224,11 @@ class RuntimeSignalBridge:
             if drift_res.has_drift:
                 strongest = drift_res.strongest()
                 if strongest:
+                    # Drift events are emitted with canonical D* codes.
                     events.append(
                         drift_signal_to_pld_event(
                             strongest,
                             session_id=turn.session_id,
-                            turn_id=turn.turn_id,
                         )
                     )
 
@@ -230,7 +251,7 @@ class RuntimeSignalBridge:
                         repair_signal_to_pld_event(
                             strongest,
                             session_id=turn.session_id,
-                            turn_id=turn.turn_id,
+                            turn_id=None,  # turn index may be populated by caller if needed
                         )
                     )
 
@@ -242,7 +263,10 @@ class RuntimeSignalBridge:
             )
             # Only emit an extra event if classifier is confident enough and
             # the phase is non-trivial.
-            if pattern_res.phase != "none" and pattern_res.confidence >= self.config.pattern.min_confidence:
+            if (
+                pattern_res.phase != "none"
+                and pattern_res.confidence >= self.config.pattern.min_confidence
+            ):
                 events.append(
                     _pattern_to_pld_event(
                         pattern_res,
@@ -275,20 +299,25 @@ def _pattern_to_pld_event(
     Convert a pattern classification into a PLD event.
 
     This is intentionally generic: the specific drift/repair/reentry codes
-    are passed through directly from the classifier.
+    are passed through directly from the classifier, and must conform to
+    the canonical v1.1 PLD taxonomy.
     """
-    if cls.phase not in {"drift", "repair", "reentry", "outcome"}:
-        phase = "none"
-    else:
+    if cls.phase in {"drift", "repair", "reentry", "outcome"}:
         phase = cls.phase
+    else:
+        phase = "none"
 
-    event_type = {
-        "drift": "drift_detected",
-        "repair": "repair_triggered",
-        "reentry": "reentry_observed",
-        "outcome": "evaluation_pass",
-        "none": "info",
-    }[phase]
+    if phase == "drift":
+        event_type = "drift_detected"
+    elif phase == "repair":
+        event_type = "repair_triggered"
+    elif phase == "reentry":
+        event_type = "reentry_observed"
+    elif phase == "outcome":
+        event_type = "outcome_classified"
+    else:
+        # Fallback to a generic, schema-valid event type.
+        event_type = "latency_signal"
 
     return {
         "event_id": f"pattern-{phase}-{_now_iso()}",
@@ -301,16 +330,14 @@ def _pattern_to_pld_event(
             "phase": phase,
             "code": cls.code,
             "confidence": cls.confidence,
-            "metadata": {
-                "source": cls.source,
-            },
         },
         "payload": {
             "role": role,
             "rationale": cls.rationale,
+            "classification_source": cls.source,
         },
         "runtime": {
-            "detector": "pattern_classifier_v1",
+            "detector": "pattern_classifier_v1_1",
         },
     }
 
@@ -349,7 +376,7 @@ def wrap_event_in_envelope(
     platform:
         Platform string, one of:
         ["assistants_api", "langgraph", "vertex_ai", "rasa", "open_webchat",
-         "batch_eval", "unknown"]
+         "batch_eval", "unknown"].
 
     environment:
         "production", "staging", "sandbox", or "local".
