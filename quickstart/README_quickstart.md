@@ -54,6 +54,23 @@ python hello_pld_runtime.py --examples
 
 ---
 
+#### Next Step — Run the Real Engine
+
+Once you've run `hello_pld_runtime.py` and understand the lifecycle,
+you can validate the *actual runtime controller* using:
+
+```bash
+python run_minimal_engine.py
+```
+
+- Uses the real controller & enforcement logic
+- Runs a simulated drift event (`rag_empty`)
+- Produces observable policy decisions and runtime trace IDs
+
+  👉 This script is the first real checkpoint confirming PLD is working correctly in your environment.
+
+---
+
 ## 1 — Why PLD Exists
 
 LLMs rarely fail because they lack knowledge —  
