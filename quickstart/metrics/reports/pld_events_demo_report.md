@@ -155,4 +155,4 @@ To operationalize scaling:
 
 Generated using the **PLD Quickstart Metrics Framework**.  
 © 2025 — Kiyoshi Sasano / Contributors  
-License: CC BY-NC 4.0
+License: CC BY 4.0
