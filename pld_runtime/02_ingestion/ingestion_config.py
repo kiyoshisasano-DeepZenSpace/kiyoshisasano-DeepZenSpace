@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.ingestion.ingestion_config
+pld_runtime.ingestion.ingestion_config (v1.1 Canonical Edition)
 
 Concept
 -------
@@ -29,15 +29,15 @@ Procedure
 
 Implementation
 --------------
-This file only contains dataclasses and enums describing configuration.
+This file only contains dataclasses, enums, and protocols describing
+configuration. It is intentionally framework-agnostic and side-effect free.
 """
-
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field, asdict
 from enum import Enum
-from typing import Any, Dict, Optional, TypedDict, Callable, Protocol, Iterable
+from typing import Any, Dict, Optional, TypedDict, Protocol, Iterable
 
 from ..detection.runtime_signal_bridge import NormalizedTurn
 
@@ -79,7 +79,7 @@ class IngestionSourceKind(str, Enum):
 
 class DialogIterator(Protocol):
     """
-    Protocol for adapter functions that yield dialogs as NormalizedTurn lists.
+    Protocol for adapter functions that yield dialogs as lists of NormalizedTurn.
 
     Implementations may read from files, APIs, or in-memory objects,
     but the interface remains simple:
@@ -162,6 +162,10 @@ class IngestionConfig:
     extra_metadata: Dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> Dict[str, Any]:
+        """
+        Serialize this configuration as a plain dictionary with a stable shape.
+        Enum values are represented by their underlying string values.
+        """
         data = asdict(self)
         data["source_kind"] = self.source_kind.value
         return data
