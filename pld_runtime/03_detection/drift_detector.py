@@ -1,243 +1,206 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.detection.drift_detector
+pld_runtime.detection.drift_detector (v1.1)
 
-Detects potential PLD Drift signatures in runtime events or agent traces.
+Detects potential PLD Drift signatures using the v1.1 canonical taxonomy.
 
-This module does NOT enforce or modify runtime behavior.
-It emits *candidate drift events* which can then be:
-
-    - validated by schema_validator
-    - sequenced by sequence_rules
-    - escalated via response_policy
-    - logged for evaluation or offline analysis
-
-Detection is probabilistic and rule-based at this stage
-(no ML classifier yet).
+This module is aligned with:
+- quickstart/metrics/schemas/pld_event.schema.json
+- pld_runtime/01_schemas/pld_event.schema.json
+- Integration Recipes v1.1 (Drift → Repair → Reentry → Outcome)
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Dict, Any, Optional, List, Literal, Tuple
+from typing import Dict, Any, Optional, List, Literal
 
 
 # ---------------------------------------------------------------------------
-# Drift Categories (aligned with drift_repair_codes.json)
+# Canonical Drift Codes (v1.1 Taxonomy)
 # ---------------------------------------------------------------------------
 
-DriftType = Literal[
-    "content_drift",
-    "intent_mismatch",
-    "hallucination",
-    "format_violation",
-    "tool_misuse",
-    "latency_behavioral_drift",
-    "unknown"
+DriftCode = Literal[
+    "D5_information",
+    "D1_instruction",
+    "D4_tool",
+    "D2_context",
+    "D3_flow",
+    "D0_none",
 ]
 
 
-# ---------------------------------------------------------------------------
-# Config
-# ---------------------------------------------------------------------------
-
-@dataclass
-class DriftDetectionConfig:
-    """
-    Rule-based drift detection parameters.
-
-    Sensitivity scale:
-    - low: drift requires strong evidence
-    - medium: balanced default
-    - high: aggressive detection (useful for debugging)
-
-    Latency drift threshold:
-        If runtime latency > latency_ms_threshold, mark potential drift.
-    """
-
-    sensitivity: Literal["low", "medium", "high"] = "medium"
-    latency_ms_threshold: int = 2500
-    detect_format_drift: bool = True
-    detect_tool_misuse: bool = True
-    detect_intent_shift: bool = True
-    detect_hallucination_keywords: bool = False  # future upgrade placeholder
-
-
-# ---------------------------------------------------------------------------
-# Result Model
-# ---------------------------------------------------------------------------
-
 @dataclass
 class DriftSignal:
-    """Intermediate signal before conversion into a full PLD event."""
-    type: DriftType
+    """
+    Represents a single detected drift signal using the canonical PLD taxonomy.
+
+    Attributes:
+        type: Canonical PLD drift code (e.g., D5_information, D2_context).
+        confidence: Detection confidence in the range [0.0, 1.0].
+        message: Human-readable explanation of the drift.
+        metadata: Optional structured details for downstream analysis.
+    """
+    type: DriftCode
     confidence: float
     message: str
     metadata: Dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
-class DriftDetectionResult:
-    """Return value of the detector."""
-    has_drift: bool
-    signals: List[DriftSignal]
+class DriftDetectionConfig:
+    """
+    Configuration for drift detection heuristics.
 
-    def strongest(self) -> Optional[DriftSignal]:
-        return max(self.signals, key=lambda s: s.confidence) if self.signals else None
+    Attributes:
+        sensitivity: Coarse-grained sensitivity knob for future use
+                    (e.g., 'high' → lower thresholds).
+        latency_ms_threshold: Threshold in milliseconds used for latency-based
+                              flow drift detection.
+    """
+    sensitivity: Literal["low", "medium", "high"] = "medium"
+    latency_ms_threshold: int = 2500
 
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-
-
-def _normalize_text(text: Optional[str]) -> str:
-    return (text or "").lower().strip()
-
-
-# ---------------------------------------------------------------------------
-# Detection Logic
-# ---------------------------------------------------------------------------
 
 class DriftDetector:
     """
-    Rule-based drift detector.
+    Rule-based drift detector producing canonical PLD drift signals.
 
-    Input may include:
-        - LLM responses
-        - transcript turns
-        - tool call results
-        - runtime metadata (latency, model switch, missing context)
+    The detector only produces drift signals (D* codes). It does not
+    perform repair or reentry decisions; those are handled by the runtime
+    controller and Integration Recipes.
     """
 
-    def __init__(self, config: Optional[DriftDetectionConfig] = None):
+    def __init__(self, config: Optional[DriftDetectionConfig] = None) -> None:
         self.config = config or DriftDetectionConfig()
 
-    def detect(self, *, content: str, runtime: Dict[str, Any]) -> DriftDetectionResult:
+    def detect(self, *, content: str, runtime: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Detect drift from a single conversational turn or agent execution.
+        Detect potential drift signatures based on response content and runtime context.
 
-        Parameters
-        ----------
-        content : str
-            Raw agent response or tool result.
+        Args:
+            content: The candidate model response text.
+            runtime: Runtime context, such as:
+                     - expected_format: Required substring or marker.
+                     - tool_used: Name of tool invoked in this turn.
+                     - latency_ms: Measured latency for the turn.
+                     - user_goal: Optional canonical representation of user intent.
 
-        runtime : dict
-            Expected structure:
-            {
-                "latency_ms": int,
-                "tool_used": Optional[str],
-                "expected_format": Optional[str]
-            }
+        Returns:
+            A dictionary with:
+                - has_drift: bool, whether any drift signal was detected.
+                - signals: List[DriftSignal], all detected signals.
         """
         signals: List[DriftSignal] = []
+        normalized = (content or "").lower().strip()
 
-        normalized = _normalize_text(content)
-
-        # ------------------ Format Drift ------------------
-        if self.config.detect_format_drift:
-            fmt = runtime.get("expected_format")
-            if fmt and fmt not in normalized:
-                signals.append(
-                    DriftSignal(
-                        type="format_violation",
-                        confidence=0.55 if self.config.sensitivity == "low" else 0.75,
-                        message=f"Content may not match expected format: '{fmt}'",
-                        metadata={"expected": fmt}
-                    )
+        # ------------------ D2_context (Format / Constraint) ------------------
+        expected_format = runtime.get("expected_format")
+        if expected_format and expected_format.lower() not in normalized:
+            signals.append(
+                DriftSignal(
+                    type="D2_context",
+                    confidence=0.75,
+                    message=f"Content is missing the expected format marker: '{expected_format}'.",
                 )
+            )
 
-        # ------------------ Tool Misuse ------------------
-        if self.config.detect_tool_misuse:
-            if runtime.get("tool_used") and "error" in normalized:
-                signals.append(
-                    DriftSignal(
-                        type="tool_misuse",
-                        confidence=0.6 if self.config.sensitivity == "low" else 0.8,
-                        message="Tool invocation appears inconsistent or failed.",
-                        metadata={"tool": runtime.get("tool_used")}
-                    )
+        # ------------------ D4_tool (Execution Failure) ------------------
+        tool_used = runtime.get("tool_used")
+        if tool_used and "error" in normalized:
+            signals.append(
+                DriftSignal(
+                    type="D4_tool",
+                    confidence=0.8,
+                    message="Tool invocation appears to have failed or returned an error state.",
+                    metadata={"tool": tool_used},
                 )
+            )
 
-        # ------------------ Latency Drift ------------------
+        # ------------------ D3_flow (Latency-Based Flow Drift) ------------------
         latency = runtime.get("latency_ms", 0)
-        if latency and latency > self.config.latency_ms_threshold:
+        if isinstance(latency, (int, float)) and latency > self.config.latency_ms_threshold:
             signals.append(
                 DriftSignal(
-                    type="latency_behavioral_drift",
+                    type="D3_flow",
                     confidence=0.5,
-                    message=f"High latency detected ({latency} ms).",
-                    metadata={"latency_ms": latency}
+                    message=f"High latency detected ({latency} ms) relative to configured threshold.",
+                    metadata={"latency_ms": latency},
                 )
             )
 
-        # ------------------ Intent Mismatch ------------------
-        if self.config.detect_intent_shift and "sorry" in normalized and "?" not in normalized:
+        # ------------------ D1_instruction (Intent Drift) ------------------
+        user_goal = runtime.get("user_goal")
+        if user_goal and isinstance(user_goal, str):
+            # Very lightweight heuristic: if user_goal keywords are mostly absent
+            # we treat this as potential instruction drift.
+            goal_tokens = {t for t in user_goal.lower().split() if len(t) > 3}
+            missing_tokens = [t for t in goal_tokens if t not in normalized]
+
+            if goal_tokens and len(missing_tokens) == len(goal_tokens):
+                signals.append(
+                    DriftSignal(
+                        type="D1_instruction",
+                        confidence=0.7,
+                        message="Candidate response appears misaligned with the stated user goal.",
+                        metadata={
+                            "user_goal": user_goal,
+                            "missing_tokens": missing_tokens,
+                        },
+                    )
+                )
+
+        # ------------------ D5_information (Retrieval / Knowledge Failure) ------------------
+        # Simple heuristic example for information drift.
+        if "no results" in normalized or "i don't know" in normalized:
             signals.append(
                 DriftSignal(
-                    type="intent_mismatch",
+                    type="D5_information",
                     confidence=0.6,
-                    message="Potential intent mismatch or reset phrase detected."
+                    message="Potential information retrieval failure or ungrounded response.",
                 )
             )
 
-        return DriftDetectionResult(
-            has_drift=bool(signals),
-            signals=signals,
-        )
+        # If no specific drift was detected, record explicit D0_none if needed downstream.
+        if not signals:
+            signals.append(
+                DriftSignal(
+                    type="D0_none",
+                    confidence=1.0,
+                    message="No drift detected based on current heuristics.",
+                )
+            )
+
+        return {
+            "has_drift": any(s.type != "D0_none" for s in signals),
+            "signals": signals,
+        }
 
 
-# ---------------------------------------------------------------------------
-# Conversion to PLD Event Format
-# ---------------------------------------------------------------------------
-
-def drift_signal_to_pld_event(
-    signal: DriftSignal,
-    *,
-    session_id: str,
-    turn_id: Optional[str] = None
-) -> Dict[str, Any]:
+def drift_signal_to_pld_event(signal: DriftSignal, session_id: str) -> Dict[str, Any]:
     """
-    Convert a DriftSignal into a complete PLD event conforming to
-    pld_event.schema.json.
+    Convert a DriftSignal into a canonical PLD event structure.
 
-    Caller is responsible for envelope wrapping.
+    The resulting event is compatible with:
+      - quickstart/metrics/schemas/pld_event.schema.json
+      - pld_runtime/01_schemas/pld_event.schema.json
     """
+    now = datetime.now(timezone.utc)
 
     return {
-        "event_id": f"drift-{signal.type}-{_now_iso()}",
-        "timestamp": _now_iso(),
+        "event_id": f"evt_{now.timestamp()}",
         "session_id": session_id,
-        "turn_id": turn_id,
-        "source": "runtime_detector",
+        "timestamp": now.isoformat(),
         "event_type": "drift_detected",
-
         "pld": {
             "phase": "drift",
             "code": signal.type,
             "confidence": signal.confidence,
         },
-
         "payload": {
             "message": signal.message,
             "metadata": signal.metadata,
         },
-
-        "runtime": {
-            "detector": "rule_based_v1"
-        }
     }
-
-
-__all__ = [
-    "DriftDetector",
-    "DriftDetectionConfig",
-    "DriftSignal",
-    "DriftDetectionResult",
-    "drift_signal_to_pld_event",
-]
