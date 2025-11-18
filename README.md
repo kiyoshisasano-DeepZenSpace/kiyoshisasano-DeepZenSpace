@@ -311,6 +311,8 @@ Less relevant when:
 ⚠ Single-turn answers  
 ⚠ Fully deterministic scripted flows  
 
+---
+
 ## 📜 License
 
 This project uses a dual-license model:
@@ -323,8 +325,6 @@ This project uses a dual-license model:
 Full details: `LICENSES/LICENSES.md`  
 Trademark usage: `LICENSES/TRADEMARK_POLICY.md`
 
-Attribution is appreciated but not required when using the methodology.
-
 For enterprise licensing or collaboration:  
 📩 deepzenspace[at]gmail.com
 
@@ -333,7 +333,7 @@ For enterprise licensing or collaboration:
 "Phase Loop Dynamics" and "PLD" are claimed as common law trademarks of Kiyoshi Sasano.  
 Use of the marks is governed by the project's trademark policy.
 
-Maintainer: **Kiyoshi Sasano**  
+Maintainer: **Kiyoshi Sasano** Copyright © 2025
 Copyright © 2025
 
 ---
