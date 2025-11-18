@@ -207,6 +207,47 @@ For deeper usage patterns, continue with:
 
 ---
 
+---
+
+### 📊 Operational Dashboard (Preview)
+
+Once PLD is running and metrics are emitted, the system becomes observable — not just executable.
+
+<p align="center">
+  <img src="./docs/assets/dashboard_mockup.svg" width="100%" />
+</p>
+
+> This dashboard represents the **end-state goal**: a stable monitoring layer that makes system behavior measurable and governable — not assumed.
+
+This visualization corresponds to the five operational metrics defined in:
+
+➡ `docs/07_pld_operational_metrics_cookbook.md`
+
+| Metric | What it answers |
+|--------|----------------|
+| **PRDR** | Do repairs *stick*, or does drift recur? |
+| **REI** | Are repairs *worth the cost*? |
+| **VRL** | Does the system *feel stable* to users? |
+| **FR** | How often does the system reach failure fallback? |
+| **MRBF** | How long does the system try before giving up? |
+
+---
+
+#### When this dashboard becomes useful
+
+| Stage | Value |
+|-------|-------|
+| **Early prototyping** | Optional — behavior is still unpredictable |
+| **Beta rollout (10–200 users)** | 🔥 Most value — detects convergence vs fragility |
+| **Production** | Used for regression tracking and release gating |
+| **Mature system** | Moves from real-time monitoring → weekly health check |
+
+> The goal is not to chase perfect metrics —  
+> but to **make runtime behavior visible, measurable, and governable.**
+
+---
+
+
 ## 📂 Repository Overview
 
 ```
