@@ -140,18 +140,21 @@ A higher-level view for teams mapping PLD into large orchestration stacks.
 
 ---
 
-### 🏁 Quickstart — Run the Minimal Runtime
+### 🏁 Quickstart — Run PLD in Under 10 Seconds
 
-Before diving into the full documentation, you can **experience PLD behavior** in less than 10 seconds:
+Before diving into the full documentation, you can **experience PLD behavior immediately**.
+
+#### Step 1 — Run the Teaching Runtime (Recommended First)
 
 ```bash
 python quickstart/hello_pld_runtime.py
 ```
 
-Try with custom input:
+Try custom input::
 ```bash
 python quickstart/hello_pld_runtime.py "Can we switch topics and talk about cooking?"
 ```
+
 Run all example scenarios:
 ```bash
 python quickstart/hello_pld_runtime.py --examples
@@ -162,6 +165,25 @@ python quickstart/hello_pld_runtime.py --examples
 > Drift → Repair → Reentry → Continue
 > (in a minimal mock runtime environment)
 
+---
+
+#### Step 2 — Run the Real Runtime Engine
+
+Once the lifecycle makes sense conceptually, you can execute the actual runtime controller:
+
+```bash
+python quickstart/run_minimal_engine.py
+```
+
+- Uses real ingestion, controller, and enforcement logic
+
+- Simulates a drift condition (e.g., empty RAG result)
+
+- Outputs policy decisions, trace IDs, and next-action recommendations
+
+> 🛠️ This step verifies PLD is installed and running as a *real runtime, not just a mock demonstration.>
+
+ 
 For deeper usage patterns, continue with:  
 ➡️` quickstart/README_quickstart.md` 
 
