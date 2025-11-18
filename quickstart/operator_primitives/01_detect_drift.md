@@ -1,170 +1,169 @@
 # 01 — Detect Drift  
-*Operator Primitive
+*Operator Primitive*
 
-> **Purpose:** Detect when an agent has deviated from the intended task state, user constraints, or previously established context — *before repair becomes expensive.*
+> **Purpose:** Detect when an agent deviates from the intended task state, meaning, constraints, or previously established shared reality — before repair becomes expensive.
 
 ---
 
-## **1 — What This Primitive Solves**
+## **1 — Why Drift Detection Exists**
 
-LLM-based agents rarely fail because the answer is *incorrect* —  
-they fail because they silently drift away from:
+Failure in multi-turn systems rarely occurs because the model is *wrong* —  
+failure happens because the agent silently drifts away from:
 
-- user constraints (price, location, timing, preferences)  
-- system state (tool results, validated memory, workflow)  
-- reasoning thread (goal, steps, or commitments)
+- verified facts  
+- user constraints  
+- established memory  
+- task intent or plan  
 
-**Drift detection is the first safeguard**, preventing:
+Early drift detection prevents:
 
 - cascading hallucination  
-- tool retry loops  
+- repeated invalid tool calls  
 - unnecessary resets  
-- user frustration and distrust  
+- user distrust and UX collapse  
 
-This primitive installs **early detection hooks**, allowing the system to initiate **Soft Repair proactively**, not reactively.
-
----
-
-## **2 — PLD Taxonomy Alignment**
-
-| Drift Type | Detectable via | Typical Trigger |
-|-----------|----------------|----------------|
-| **Drift-Information** | mismatch between belief state & tool output | DB/API returns evidence contradicting the agent |
-| **Drift-Constraint** | user’s boundaries violated | agent proposes invalid option |
-| **Drift-Intent** | divergence from original user goal | response shifts topic or objective |
-| **Drift-Memory** | context loss or overwritten facts | forgotten key detail |
-| **Drift-Procedural** | deviation from expected workflow | skipped check or reordered step |
+Drift detection enables proactive **R1 (Clarify)** or **R2 (Soft Repair)** instead of late-stage damage control.
 
 ---
 
-## **3 — Detection Signals & Rules**
+## **2 — PLD Canonical Taxonomy Alignment (v2.1)**
 
-Drift detection uses both:
+| Drift Category (Old Name) | Canonical Code | Type | Trigger Example |
+|---------------------------|---------------|------|----------------|
+| Drift-Intent | **D1_instruction** | Instruction Drift | System output no longer answers user goal |
+| Drift-Constraint / Drift-Memory | **D2_context** | Context Drift | Constraint or remembered fact violated |
+| — | D3_reasoning *(reserved)* | Reasoning Drift | (Used in planners/tool-enabled systems) |
+| Drift-Tool | **D4_tool** | Tool State Drift | Output contradicts tool result |
+| Drift-Information | **D5_information** | Information Drift | Evidence contradicts previous verified state |
 
-- **local signals** (current turn), and  
-- **global signals** (conversation memory + tool state).
-
-| Signal Category | Example Trigger | Operational Rule |
-|----------------|-----------------|-----------------|
-| **Semantic Contradiction** | “No hotels available” → “Here are 3 hotels” | Compare response vs verified memory |
-| **Constraint Break** | user: ≤ $100 → agent: $240 option | Validate against stored constraints |
-| **Plan Interruption** | agent restarts workflow without reason | Compare next action to plan graph |
-| **Intent Loss** | response ignores request | Topic shift beyond embedding threshold |
-| **Latency-Driven Hallucination Risk** | delay followed by filler or invention | Mark high-latency uncertainty |
-
-**Base rule format:**
-
-```
-IF system_output conflicts with verified memory OR tool_state  
-THEN mark drift (type = detected dimension)
-```
+> ❗ Previous long-form labels remain valid for analysis,  
+> but **canonical codes MUST be logged in new implementations.**
 
 ---
 
-## **4 — Implementation Examples**
+## **3 — Detection Signals**
 
-### **A. LangChain (Pseudo-Real)**
+Drift detection draws from:
+
+- local turn semantics  
+- global conversation memory  
+- tool state  
+- constraint store  
+- explicit checkpoints  
+
+| Signal Type | Example | Rule |
+|-------------|---------|------|
+| Semantic contradiction | `"no results"` vs `"found options"` | compare vs verified tool memory |
+| Constraint violation | user: `< $100` → agent: `$400` | constraint store enforcement |
+| Intent loss | agent answers a different question | compare vs stored user goal |
+| Tool disagreement | tool failure but agent infers success | outcome mismatch |
+| State regression | reset without reason | break in plan or checkpoint |
+
+---
+
+## **4 — Implementation Examples (Updated with Canonical Codes)**
+
+### A. **LangChain (pseudo-real)**
 
 ```python
-def detect_drift(turn, memory, constraints, last_tool_result):
-    signals = []
+def detect_drift(turn: str, memory: dict, constraints: dict, last_tool_result: str):
+    drift_codes = []
 
     if last_tool_result and "no result" in last_tool_result and "found" in turn.lower():
-        signals.append("Drift-Information")
+        drift_codes.append("D5_information")
 
-    if constraints and any(value not in turn for value in constraints.values()):
-        signals.append("Drift-Constraint")
+    if constraints and any(str(v).lower() not in turn.lower() for v in constraints.values()):
+        drift_codes.append("D2_context")
 
-    if memory and memory.get("goal") and memory["goal"].lower() not in turn.lower():
-        signals.append("Drift-Intent")
+    if memory.get("goal") and memory["goal"].lower() not in turn.lower():
+        drift_codes.append("D1_instruction")
 
-    return signals or None
+    return drift_codes or None
 ```
 
 ---
 
-### **B. Autogen (Callback-Based)**
-
+### B. Autogen (callback)
 ```python
 class DriftMonitor:
     def after_agent_turn(self, response, state):
         if response.contradicts(state.tool_memory):
-            return {"drift": "Drift-Information"}
+            return {"code": "D4_tool"}
         if response.breaks(state.constraints):
-            return {"drift": "Drift-Constraint"}
+            return {"code": "D2_context"}
         return None
 ```
 
 ---
 
-### **C. OpenAI Assistants (Tools + Memory Signals)**
-
+### C. OpenAI Assistants (Tools + Memory)
 ```python
+drift_code = "D5_information" if contradiction else None
+
 event = {
-  "turn_id": turn_id,
-  "drift": "Drift-Information" if contradiction else None,
+  "event_type": "drift_detected",
+  "pld": {
+    "phase": "drift",
+    "code": drift_code
+  },
   "confidence": score
 }
 ```
-
 ---
 
-## **5 — Logging Format (PLD Schema Compatible)**
+### 5 — Logging Format (Schema Compliant)
 
-```json
 {
+  "event_type": "drift_detected",
   "turn_id": 7,
-  "speaker": "system",
-  "detected_drift": "Drift-Information",
-  "evidence": "Previous tool said 'no hotels found', response suggests availability.",
-  "confidence": 0.87
+  "pld": {
+    "phase": "drift",
+    "code": "D5_information"
+  },
+  "evidence": {
+    "reason": "Tool said 'no hotels found', response claimed availability.",
+    "source": "tool_output"
+  },
+  "confidence": 0.87,
+  "timestamp": "2025-01-14T12:03:22Z"
 }
+
+---
+
+### 6 — Expected System Response
+
+| Detected Code     | Repair Path                                  |
+| ----------------- | -------------------------------------------- |
+| D1_instruction    | → **R1_clarify**                             |
+| D2_context        | → **R2_soft_repair**                         |
+| D4_tool           | → **R2_soft_repair** + tool retry policy     |
+| D5_information    | → confirm source of truth or escalate        |
+| Severe / repeated | → Hard Repair (reset checkpoint or failover) |
+
+---
+
+### 7 — Anti-Patterns
+
+🚫 Treating all drift as equivalent
+🚫 Logging drift without recording type or canonical code
+🚫 Detecting drift but skipping repair confirmation (Reentry)
+
+---
+
+### 8 — Quick Test
+#### Input:
+> "There are no 4-star hotels available."
+> (But previous tool output returned: 4 matches.)
+
+#### Expected Detection Result:
+```csharp
+[D5_information detected]
 ```
 
 ---
 
-## **6 — Expected System Response Flow**
-
-This primitive **does not fix** drift —  
-it triggers downstream operators.
-
-| Drift Detected | Next Step (Triggered Operator) |
-|---------------|--------------------------------|
-| Drift-Information | → Soft Repair (validate or offer updated options) |
-| Drift-Constraint | → Soft Repair (clarify or relax constraint) |
-| Drift-Intent | → Reentry control |
-| Severe or repeated drift | → Hard Repair escalation |
+Maintainer: Kiyoshi Sasano
+Edition: PLD Canonical Codes 2025
+License: CC-BY-4.0
 
 ---
-
-## **7 — Anti-Patterns (Avoid These)**
-
-🚫 Allowing drift to accumulate  
-→ leads to runaway hallucination.
-
-🚫 Treating all drift as equal  
-→ minor mismatch ↑ ≠ full reset.
-
-🚫 Detecting drift without logging  
-→ destroys observability and debugging.
-
----
-
-## **8 — Quick Sanity Test**
-
-**Input:**
-
-> “There are no 4-star hotels available.”  
-(But previous API returned: 4 matches.)
-
-**Expected Output:**
-
-```
-[ Drift-Information Detected ]
-```
-
----
-
-Maintainer: **Kiyoshi Sasano**  
-Edition: **PLD Applied 2025**  
-License: **CC-BY 4.0**
