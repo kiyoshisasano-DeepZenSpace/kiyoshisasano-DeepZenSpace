@@ -21,45 +21,6 @@ In PLD terms this is tightly linked to:
     Drift → Repair → Reentry → Outcome
 
 Reconciliation focuses on the **Reentry** side after a failover.
-
-Procedure
----------
-Given:
-    - current PLDState
-    - FailoverDecision (which strategy was chosen)
-    - optional StrategySpec (semantics / hints)
-
-we derive a ReconciliationPlan that tells the host system:
-
-    - what kind of reentry is intended
-    - whether to reset internal PLD state
-    - whether isolation should be lifted
-    - whether previous degradation should be relaxed
-
-Implementation
---------------
-This module is pure logic:
-
-- no I/O
-- no logging
-- no timers or sleeps
-
-Host systems are expected to interpret ReconciliationPlan and
-apply the actual changes (model switch, reset, session unlock, etc.).
-
-Validation
-----------
-Unit tests should verify:
-
-- SAFE_RESET_SESSION → fresh session reentry
-- HUMAN_HANDOFF → guarded reentry until human release
-- ISOLATE_AND_AUDIT → no automatic reentry
-- SOFT_DEGRADE / FALLBACK_TOOL_ONLY → soft reentry once conditions improve
-
-Next Step
----------
-If more complex policies are needed (time-based, metric-based),
-host systems can wrap this module and add their own gating logic.
 """
 
 from __future__ import annotations
@@ -76,6 +37,7 @@ from ..controllers.state_machine import PLDState
 # ---------------------------------------------------------------------------
 # Reentry / reconciliation model
 # ---------------------------------------------------------------------------
+
 
 class ReentryMode(str, Enum):
     """
@@ -153,8 +115,39 @@ class ReconciliationPlan:
 
 
 # ---------------------------------------------------------------------------
+# Internal helpers
+# ---------------------------------------------------------------------------
+
+
+def _strategy_hints(spec: Optional[StrategySpec]) -> Dict[str, Any]:
+    """
+    Safely extract a hints dict from StrategySpec.
+
+    This keeps reconciliation robust even if the registry returns None
+    or a spec without .hints.
+    """
+    if spec is None:
+        return {}
+    hints = getattr(spec, "hints", None)
+    if hints is None:
+        return {}
+    if not isinstance(hints, dict):
+        return {}
+    return hints
+
+
+def _triggered_by(decision: FailoverDecision) -> Any:
+    """
+    Safely extract a list (or other payload) describing which codes
+    triggered this failover decision.
+    """
+    return getattr(decision, "triggered_by_codes", None)
+
+
+# ---------------------------------------------------------------------------
 # Core reconciliation logic
 # ---------------------------------------------------------------------------
+
 
 def plan_reconciliation(
     *,
@@ -166,31 +159,32 @@ def plan_reconciliation(
     Compute a ReconciliationPlan for a given PLDState and FailoverDecision.
 
     If StrategySpec is not provided, it is looked up from the registry.
+    Missing specs degrade gracefully (assumed empty hints).
     """
     if spec is None:
         spec = get_strategy_spec(decision.strategy)
 
     strategy = decision.strategy
 
-    if strategy is FailoverStrategy.NONE:
+    if strategy == FailoverStrategy.NONE:
         return _plan_for_none(state, decision, spec)
 
-    if strategy is FailoverStrategy.SOFT_DEGRADE:
+    if strategy == FailoverStrategy.SOFT_DEGRADE:
         return _plan_for_soft_degrade(state, decision, spec)
 
-    if strategy is FailoverStrategy.SAFE_RESET_SESSION:
+    if strategy == FailoverStrategy.SAFE_RESET_SESSION:
         return _plan_for_safe_reset(state, decision, spec)
 
-    if strategy is FailoverStrategy.SWITCH_MODEL_SHADOW:
+    if strategy == FailoverStrategy.SWITCH_MODEL_SHADOW:
         return _plan_for_switch_model(state, decision, spec)
 
-    if strategy is FailoverStrategy.FALLBACK_TOOL_ONLY:
+    if strategy == FailoverStrategy.FALLBACK_TOOL_ONLY:
         return _plan_for_fallback_tool(state, decision, spec)
 
-    if strategy is FailoverStrategy.HUMAN_HANDOFF:
+    if strategy == FailoverStrategy.HUMAN_HANDOFF:
         return _plan_for_human_handoff(state, decision, spec)
 
-    if strategy is FailoverStrategy.ISOLATE_AND_AUDIT:
+    if strategy == FailoverStrategy.ISOLATE_AND_AUDIT:
         return _plan_for_isolate_and_audit(state, decision, spec)
 
     # Fallback: conservative, no automatic reentry
@@ -200,8 +194,13 @@ def plan_reconciliation(
         keep_session_history=True,
         relax_degradation=False,
         allow_isolation_release=False,
-        notes=f"Unknown strategy {strategy.value}; reconciliation disabled.",
-        metadata={"phase": state.phase, "cycles_completed": state.cycles_completed},
+        notes=f"Unknown strategy {getattr(strategy, 'value', strategy)}; "
+        "reconciliation disabled.",
+        metadata={
+            "phase": state.phase,
+            "cycles_completed": state.cycles_completed,
+            "triggered_by": _triggered_by(decision),
+        },
     )
 
 
@@ -209,15 +208,19 @@ def plan_reconciliation(
 # Strategy-specific planning helpers
 # ---------------------------------------------------------------------------
 
+
 def _plan_for_none(
     state: PLDState,
     decision: FailoverDecision,
-    spec: StrategySpec,
+    spec: Optional[StrategySpec],
 ) -> ReconciliationPlan:
+    hints = _strategy_hints(spec)
     return ReconciliationPlan(
-        reentry_mode=ReentryMode.SOFT_REENTRY
-        if state.phase in {"repair", "reentry"}
-        else ReentryMode.GUARDED_REENTRY,
+        reentry_mode=(
+            ReentryMode.SOFT_REENTRY
+            if state.phase in {"repair", "reentry"}
+            else ReentryMode.GUARDED_REENTRY
+        ),
         reset_pld_state=False,
         keep_session_history=True,
         relax_degradation=True,
@@ -226,7 +229,8 @@ def _plan_for_none(
         metadata={
             "phase": state.phase,
             "cycles_completed": state.cycles_completed,
-            "triggered_by": decision.triggered_by_codes,
+            "triggered_by": _triggered_by(decision),
+            "hints": hints,
         },
     )
 
@@ -234,7 +238,7 @@ def _plan_for_none(
 def _plan_for_soft_degrade(
     state: PLDState,
     decision: FailoverDecision,
-    spec: StrategySpec,
+    spec: Optional[StrategySpec],
 ) -> ReconciliationPlan:
     """
     SOFT_DEGRADE → allow gradual return if system stabilizes.
@@ -243,6 +247,7 @@ def _plan_for_soft_degrade(
         - keep PLDState
         - require a small number of stable turns before relaxing
     """
+    hints = _strategy_hints(spec)
     min_stable_turns = max(2, 3 - state.cycles_completed)
 
     return ReconciliationPlan(
@@ -256,7 +261,8 @@ def _plan_for_soft_degrade(
             "min_stable_turns": min_stable_turns,
             "phase": state.phase,
             "cycles_completed": state.cycles_completed,
-            "backoff_profile": spec.hints.get("backoff_profile"),
+            "backoff_profile": hints.get("backoff_profile"),
+            "triggered_by": _triggered_by(decision),
         },
     )
 
@@ -264,26 +270,31 @@ def _plan_for_soft_degrade(
 def _plan_for_safe_reset(
     state: PLDState,
     decision: FailoverDecision,
-    spec: StrategySpec,
+    spec: Optional[StrategySpec],
 ) -> ReconciliationPlan:
     """
     SAFE_RESET_SESSION → require a fresh conversational context,
     but keep history for audit / debugging.
     """
+    hints = _strategy_hints(spec)
     return ReconciliationPlan(
         reentry_mode=ReentryMode.FRESH_SESSION,
         reset_pld_state=True,
         keep_session_history=True,
         relax_degradation=True,
         allow_isolation_release=True,
-        notes="Session should be restarted with fresh PLD state; "
-              "previous history retained for audit.",
+        notes=(
+            "Session should be restarted with fresh PLD state; "
+            "previous history retained for audit."
+        ),
         metadata={
-            "require_user_ack": spec.hints.get("require_user_ack", True),
-            "allow_resume_with_new_session": spec.hints.get(
+            "require_user_ack": hints.get("require_user_ack", True),
+            "allow_resume_with_new_session": hints.get(
                 "allow_resume_with_new_session", True
             ),
-            "triggered_by": decision.triggered_by_codes,
+            "triggered_by": _triggered_by(decision),
+            "phase": state.phase,
+            "cycles_completed": state.cycles_completed,
         },
     )
 
@@ -291,7 +302,7 @@ def _plan_for_safe_reset(
 def _plan_for_switch_model(
     state: PLDState,
     decision: FailoverDecision,
-    spec: StrategySpec,
+    spec: Optional[StrategySpec],
 ) -> ReconciliationPlan:
     """
     SWITCH_MODEL_SHADOW → reentry continues in a guarded mode
@@ -300,6 +311,7 @@ def _plan_for_switch_model(
     PLDState is preserved, but we may require more stable cycles before
     relaxing back to the original model.
     """
+    hints = _strategy_hints(spec)
     min_stable_turns = max(3, 5 - state.cycles_completed)
 
     return ReconciliationPlan(
@@ -308,13 +320,17 @@ def _plan_for_switch_model(
         keep_session_history=True,
         relax_degradation=False,  # stay conservative for a while
         allow_isolation_release=True,
-        notes="Operating under shadow model; stay in guarded reentry "
-              "until enough stable turns are observed.",
+        notes=(
+            "Operating under shadow model; stay in guarded reentry "
+            "until enough stable turns are observed."
+        ),
         metadata={
-            "prefer_shadow_model": spec.hints.get("prefer_shadow_model", True),
-            "shadow_model_tier": spec.hints.get("shadow_model_tier", "conservative"),
+            "prefer_shadow_model": hints.get("prefer_shadow_model", True),
+            "shadow_model_tier": hints.get("shadow_model_tier", "conservative"),
             "min_stable_turns": min_stable_turns,
             "cycles_completed": state.cycles_completed,
+            "phase": state.phase,
+            "triggered_by": _triggered_by(decision),
         },
     )
 
@@ -322,7 +338,7 @@ def _plan_for_switch_model(
 def _plan_for_fallback_tool(
     state: PLDState,
     decision: FailoverDecision,
-    spec: StrategySpec,
+    spec: Optional[StrategySpec],
 ) -> ReconciliationPlan:
     """
     FALLBACK_TOOL_ONLY → tool-first operation with soft reentry.
@@ -331,6 +347,7 @@ def _plan_for_fallback_tool(
         - keep PLDState
         - require tool-success-based stability before re-enabling full generation
     """
+    hints = _strategy_hints(spec)
     return ReconciliationPlan(
         reentry_mode=ReentryMode.SOFT_REENTRY,
         reset_pld_state=False,
@@ -342,12 +359,14 @@ def _plan_for_fallback_tool(
             "after tools have produced stable results."
         ),
         metadata={
-            "tool_first_policy": spec.hints.get("tool_first_policy", True),
-            "disable_freeform_generation": spec.hints.get(
+            "tool_first_policy": hints.get("tool_first_policy", True),
+            "disable_freeform_generation": hints.get(
                 "disable_freeform_generation", True
             ),
             "min_tool_success_turns": 2,
             "phase": state.phase,
+            "cycles_completed": state.cycles_completed,
+            "triggered_by": _triggered_by(decision),
         },
     )
 
@@ -355,7 +374,7 @@ def _plan_for_fallback_tool(
 def _plan_for_human_handoff(
     state: PLDState,
     decision: FailoverDecision,
-    spec: StrategySpec,
+    spec: Optional[StrategySpec],
 ) -> ReconciliationPlan:
     """
     HUMAN_HANDOFF → reentry depends on human operator.
@@ -363,6 +382,7 @@ def _plan_for_human_handoff(
     By default we require explicit human release before returning
     to autonomous operation.
     """
+    hints = _strategy_hints(spec)
     return ReconciliationPlan(
         reentry_mode=ReentryMode.GUARDED_REENTRY,
         reset_pld_state=False,
@@ -372,9 +392,11 @@ def _plan_for_human_handoff(
         notes="Human handoff in effect; reentry requires human release/approval.",
         metadata={
             "require_human_release": True,
-            "expose_session_trace": spec.hints.get("expose_session_trace", True),
-            "notify_human_channel": spec.hints.get("notify_human_channel", True),
+            "expose_session_trace": hints.get("expose_session_trace", True),
+            "notify_human_channel": hints.get("notify_human_channel", True),
             "phase": state.phase,
+            "cycles_completed": state.cycles_completed,
+            "triggered_by": _triggered_by(decision),
         },
     )
 
@@ -382,7 +404,7 @@ def _plan_for_human_handoff(
 def _plan_for_isolate_and_audit(
     state: PLDState,
     decision: FailoverDecision,
-    spec: StrategySpec,
+    spec: Optional[StrategySpec],
 ) -> ReconciliationPlan:
     """
     ISOLATE_AND_AUDIT → no automatic reentry.
@@ -390,6 +412,7 @@ def _plan_for_isolate_and_audit(
     The system should remain in isolation until an external audit or
     manual override is performed.
     """
+    hints = _strategy_hints(spec)
     return ReconciliationPlan(
         reentry_mode=ReentryMode.NONE,
         reset_pld_state=False,  # decision to reset is up to auditors
@@ -401,10 +424,12 @@ def _plan_for_isolate_and_audit(
             "Manual review and explicit release are required."
         ),
         metadata={
-            "lock_session": spec.hints.get("lock_session", True),
-            "require_manual_release": spec.hints.get("require_manual_release", True),
-            "mark_for_audit": spec.hints.get("mark_for_audit", True),
-            "triggered_by": decision.triggered_by_codes,
+            "lock_session": hints.get("lock_session", True),
+            "require_manual_release": hints.get("require_manual_release", True),
+            "mark_for_audit": hints.get("mark_for_audit", True),
+            "phase": state.phase,
+            "cycles_completed": state.cycles_completed,
+            "triggered_by": _triggered_by(decision),
         },
     )
 
