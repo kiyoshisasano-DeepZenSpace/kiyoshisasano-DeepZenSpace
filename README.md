@@ -323,6 +323,7 @@ This project uses a dual-license model:
 | Documentation and methodology | CC BY 4.0 |  
 
 Full details: `LICENSES/LICENSES.md`
+See LICENSES/TRADEMARK_POLICY.md for details on the use of the PLD name and logos.
 
 For enterprise licensing or collaboration:  
 📩 deepzenspace[at]gmail.com
