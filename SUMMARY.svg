@@ -126,11 +126,10 @@
   </text>
 
   <!-- Metrics pill -->
-  <rect x="860" y="160" width="280" height="92" class="folder"/>
-  <text x="875" y="182" class="box-title">Operational Metrics &amp; Runtime Signals</text>
-  <text x="875" y="200" class="box-body">for evaluation &amp; runtime decision support</text>
-  <text x="875" y="218" class="box-body">PRDR — Post-Repair Drift Recurrence (stability)</text>
-  <text x="875" y="233" class="box-body">REI — value vs cost; VRL — UX perception</text>
+  <text x="875" y="182" class="box-title">Operational Metrics Framework</text>
+  <text x="875" y="200" class="box-body">PRDR — stability</text>
+  <text x="875" y="218" class="box-body">REI — cost efficiency</text>
+  <text x="875" y="236" class="box-body">VRL — perceived repair friction</text>
 
   <!-- Logs from loop to metrics -->
   <line x1="840" y1="190" x2="860" y2="190" class="arrow"/>
