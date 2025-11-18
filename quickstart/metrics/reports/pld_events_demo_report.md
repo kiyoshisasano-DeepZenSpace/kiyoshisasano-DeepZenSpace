@@ -1,158 +1,143 @@
 ---
-title: "PLD Event Log — Demo Analysis Report"
-version: 2025.1
+title: "PLD Runtime Metrics — Demo Analysis Report"
+version: 2025.1.1
 status: reference
 maintainer: "Kiyoshi Sasano"
 source_dataset: "datasets/pld_events_demo.jsonl"
 category: "metrics/reports"
 tags:
   - PLD
-  - metrics
-  - analysis
+  - runtime telemetry
   - drift
   - repair
-  - reentry
+  - failover
+  - metrics
 ---
 
-# 📊 PLD Event Log — Demo Analysis Report (Sample Dataset)
+# 📊 PLD Runtime Metrics — Demo Analysis Report  
+_Sample Dataset Evaluation (Schema-Aligned)_
 
-This document demonstrates how to interpret logged PLD interaction events using the sample dataset located in:
+This report demonstrates how to interpret PLD-structured runtime logs using the demo dataset:
 
 ```
 datasets/pld_events_demo.jsonl
 ```
 
-The goal is to illustrate **how drift, repair, reentry, and timing signatures** can be extracted and summarized from raw logs.
+The purpose is to illustrate:
+
+- Drift frequency and patterns  
+- Repair behavior effectiveness  
+- Reentry success signals  
+- Failover risk signatures  
+- Operational metrics from the PLD cookbook (PRDR, VRL, FR, MRBF)
 
 ---
 
-## 1. Dataset Overview
+## 1. Dataset Summary
 
 | Metric | Value |
 |--------|-------|
-| Total sessions | **10** |
-| Total turns | **124** |
-| Drift events | **27** |
-| Repair events | **21** |
-| Hard repairs | **4** |
-| Reentry attempts | **18** |
-| Average latency | **2.1s** |
+| Total sessions | **4** |
+| Total logged events | **22** |
+| Drift events (`event_type = drift_detected`) | **3** |
+| Repair attempts (`event_type = repair_triggered`) | **10** |
+| Reentry observations | **1** |
+| Failovers | **1** |
 
-This dataset represents a **controlled simulation**, intended for validating:
-
-- schema integrity  
-- ingestion pipelines  
-- metric extraction logic  
-
-before scaling to production or benchmark datasets (e.g., MultiWOZ-based evaluation).
+> Note: This dataset is intentionally small and designed for schema validation—not benchmarking.
 
 ---
 
-## 2. Drift Distribution
+## 2. Operational Metrics (Cookbook-Aligned)
 
-| Drift Type | Count | Share |
-|------------|-------|-------|
-| Drift-Information | 13 | 48% |
-| Drift-Procedure | 7 | 26% |
-| Drift-Intent | 5 | 18% |
-| Drift-Contradiction | 2 | 8% |
+| Metric | Result | Status |
+|--------|--------|--------|
+| **PRDR — Post-Repair Drift Recurrence** | **50%** | ⚠ Elevated |
+| **VRL — Visible Repair Load** | **12%** | ⚠ Noticeable |
+| **FR — Failover Rate** | **25%** | 🔴 Critical |
+| **MRBF — Mean Repairs Before Failover** | **7.0** | ⚠ High Persistence |
+| **REI — Repair Efficiency Index** | _Not computable_ | (Requires baseline) |
 
-> **Interpretation:** Most drift stems from assumption errors and incorrect information rather than instruction misunderstanding.
+📌 Interpretation:
 
-This suggests the model **believes it is correct before context is stable** — a known risk pattern in PLD systems.
-
----
-
-## 3. Repair Behavior
-
-| Repair Type | Count | Success Rate |
-|-------------|-------|--------------|
-| SoftRepair-AddOptions | 9 | 78% |
-| SoftRepair-Clarify | 5 | 60% |
-| SoftRepair-ConstraintConfirm | 3 | **100%** |
-| HardRepair-ResetSession | 4 | 50% |
-
-📌 Key Insight:
-
-> **Soft repair is highly effective when triggered early.**  
-Delays increase the escalation path toward hard reset.
+> Repairs occur — but do not reliably prevent repeated drift, and escalation continues until failover.
 
 ---
 
-## 4. Reentry Outcome Analysis
+## 3. Drift Pattern Analysis
 
-| Result | Count |
-|--------|-------|
-| Successful Reentry | **12** |
-| Partial Recovery | **4** |
-| Failed Reentry | **2** |
+| Code | Count | Notes |
+|------|-------|-------|
+| `D4_tool` | 2 | Tool execution failure recurring |
+| `D5_information` | 1 | Interpretation mismatch |
 
-Observed patterns:
-
-- Silent correction → ❌ higher failure rate  
-- Explicit acknowledgment → ✔ better alignment  
-- Confirmation phrasing boosted success probability
-
-Example of high-performing phrasing:
-
-```
-“Let me correct that — here are the available hotels under your selected budget.”
-```
+**Observation:**  
+Most drift originates from **tool execution failures**, not user intent ambiguity.
 
 ---
 
-## 5. Latency Correlation
+## 4. Repair Pipeline Behavior
 
-Latency strongly influenced drift and repair patterns:
+| Repair Code | Instances | Type | Escalation Outcome |
+|-------------|-----------|------|--------------------|
+| `R2_soft_repair` | 9 | Automated retry-based soft repair | Did not prevent eventual failover |
+| `R1_clarify` | 1 | Visible clarification | Followed by successful reentry |
 
-- Drift clusters emerged when latency exceeded **3.2s**
-- Hard repair likelihood doubled after latency spike + drift pairing
-- Reentry success highest when response time post-repair was **< 1.5s**
+Key Finding:
 
-⏱ Latency functions as a **secondary destabilizer** — even when logic is correct.
-
----
-
-## 6. Summary of Findings
-
-### ✔ System Strengths
-
-- Drift was detected in most cases rather than ignored  
-- Early-stage soft repair preserved conversational continuity  
-- Reentry patterns successfully stabilized the task flow  
-
-### ⚠ Weaknesses Observed
-
-- Repair triggers lacked consistency across drift types  
-- Some repairs occurred **multiple turns** after the drift signal  
-- Latency spikes amplified perceived unreliability  
+> Visible clarifying repairs (`repair_visible`) correlate with successful reentry, while repeated silent soft repair loops correlate with failover.
 
 ---
 
-## 7. Engineering Recommendations
+## 5. Reentry Stability
 
-| Priority | Recommendation |
-|----------|---------------|
-| ⭐⭐⭐ Enable drift prediction **before tool execution** |
-| ⭐⭐ Standardize thresholds for triggering soft repair |
-| ⭐ Improve latency smoothing + pacing microcopy |
+| Session | Event | Result |
+|---------|-------|--------|
+| `SESS-OK-01` | `reentry_observed (RE3_auto)` | ✔ Stable continuation |
+
+Takeaway:
+
+> Reentry success appears strongly influenced by **repair transparency + low latency.**
+
+---
+
+## 6. Failover Signals
+
+Failover occurred in session: **`SESS-FAIL-01`**  
+Characteristics:
+
+- 7 consecutive soft repairs  
+- No reentry attempt  
+- Failover code: `OUT3_abandoned`
+
+**Pattern matches:** _repair loop → no stabilization → abandonment_
+
+---
+
+## 7. Recommendations
+
+| Priority | Action |
+|----------|--------|
+| ⭐⭐⭐ Introduce escalation threshold to prevent 7+ repair loops |
+| ⭐⭐ Increase visibility of soft repairs to improve VRL → reentry success |
+| ⭐ Evaluate tool failure detection timing |
 
 ---
 
 ## 8. Next Steps
 
-To operationalize scaling:
+To operationalize:
 
-1. Deploy runtime logging to match schema  
-2. Record at least **≥ 1,000 live conversations**  
-3. Compute continuous metrics from logs  
-4. Load `dashboards/reentry_success_dashboard.json`  
-5. Compare system variants against baseline checkpoints  
+1. Connect logging to live runtime  
+2. Accumulate ≥ **500–1000 real sessions**  
+3. Feed into:  
+   ```
+   dashboards/reentry_success_dashboard.json
+   ```  
+4. Compare variants with PRDR + FR as gating metrics.
 
 ---
 
-## Attribution
+Report generated using the **PLD Metrics Quickstart Framework (v2025.1.1)**.  
+License: **CC BY 4.0**
 
-Generated using the **PLD Quickstart Metrics Framework**.  
-© 2025 — Kiyoshi Sasano / Contributors  
-License: CC BY 4.0
