@@ -35,8 +35,8 @@ The following names and marks are claimed by Kiyoshi Sasano:
 Registration may be pursued as the project matures. The absence of ® does not 
 diminish the trademark claims or this policy.
 
-**Note on Metrics:** The PRDR, REI, and VRL metrics are protected under copyright 
-(CC BY 4.0) rather than trademark law. You may reference and use these metrics with proper attribution per the license, including in commercial systems.
+**Note on Metrics:** The PRDR, REI, and VRL metrics are protected under copyright (CC BY 4.0) rather than trademark law.
+You may reference and use these metrics with proper attribution per the license, including in commercial systems.
 
 ---
 
