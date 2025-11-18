@@ -1,4 +1,4 @@
-# PLD: Phase Loop Dynamics  
+# Phase Loop Dynamics™ (PLD) 
 *A Runtime Phase Model for Stable Multi-Turn LLM Systems*
 
 ![License: Apache-2.0 | CC-BY-4.0](https://img.shields.io/badge/license-Apache%202.0%20%7C%20CC--BY--4.0-blue)
