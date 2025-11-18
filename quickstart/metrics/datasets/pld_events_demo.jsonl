@@ -1,10 +1,140 @@
-{"session_id": "DEMO-001", "turn_id": 1, "speaker": "user", "text": "I need a 4-star hotel in Cambridge.", "drift": null, "repair": null, "latency_ms": 812}
-{"session_id": "DEMO-001", "turn_id": 2, "speaker": "system", "text": "Okay, checking hotels now...", "drift": null, "repair": null, "latency_ms": 2420}
-{"session_id": "DEMO-001", "turn_id": 3, "speaker": "system", "text": "There are no 4-star hotels available.", "drift": "Drift-Information", "repair": null, "latency_ms": 3104}
-{"session_id": "DEMO-001", "turn_id": 4, "speaker": "user", "text": "Are you sure? I think some exist.", "drift": null, "repair": null, "latency_ms": 645}
-{"session_id": "DEMO-001", "turn_id": 5, "speaker": "system", "text": "My mistake — there are 4-star hotels available. Would you prefer the north or city center?", "drift": "Drift-Information", "repair": "SoftRepair-AddOptions", "latency_ms": 4021}
-{"session_id": "DEMO-001", "turn_id": 6, "speaker": "user", "text": "City center please.", "drift": null, "repair": null, "latency_ms": 521}
-{"session_id": "DEMO-001", "turn_id": 7, "speaker": "system", "text": "I found The University Arms. Should I book it?", "drift": null, "repair": "Reentry-IntentConfirmation", "latency_ms": 2100}
-{"session_id": "DEMO-001", "turn_id": 8, "speaker": "user", "text": "Yes, please book it.", "drift": null, "repair": null, "latency_ms": 588}
-{"session_id": "DEMO-001", "turn_id": 9, "speaker": "system", "text": "Done — booking confirmed. Anything else?", "drift": null, "repair": null, "latency_ms": 1550}
-{"session_id": "DEMO-001", "turn_id": 10, "speaker": "user", "text": "No, that's all.", "drift": null, "repair": null, "latency_ms": 430}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pld.dev/schema/pld_event.schema.json",
+  "title": "PLD Applied Runtime Event",
+  "description": "Canonical event schema for PLD (Phase Loop Dynamics) runtime logging and metrics aggregation.",
+
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "event_id",
+    "timestamp",
+    "session_id",
+    "turn_id",
+    "event_type",
+    "pld"
+  ],
+
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for this event."
+    },
+
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO8601 timestamp when the event was recorded."
+    },
+
+    "session_id": {
+      "type": "string",
+      "description": "Conversation or runtime session ID the event belongs to."
+    },
+
+    "turn_id": {
+      "type": ["string", "integer"],
+      "description": "Turn index or message identifier within the session."
+    },
+
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "drift_detected",
+        "repair_triggered",
+        "reentry_observed",
+        "outcome",
+        "failover_triggered",
+        "info",
+        "metric",
+        "system"
+      ],
+      "description": "Top-level classification of the event."
+    },
+
+    "source": {
+      "type": "string",
+      "enum": ["user", "system", "assistant", "tool", "controller", "runtime"],
+      "description": "Origin of the event. Optional."
+    },
+
+    "pld": {
+      "type": "object",
+      "required": ["phase", "code"],
+      "description": "PLD structured metadata block.",
+      "properties": {
+        "phase": {
+          "type": "string",
+          "enum": [
+            "none",
+            "drift",
+            "repair",
+            "reentry",
+            "continue",
+            "failover",
+            "complete"
+          ],
+          "description": "Phase of the PLD loop the event represents."
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^(D[1-9]|R[1-9]|RE[0-9]|F[0-9]|O[0-9]|NONE)([_A-Za-z0-9-]*)?$",
+          "description": "Phase-specific structured code (ex: D5_information, R2_soft_repair, RE3_auto)."
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Optional confidence score assigned by detection or evaluation logic."
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Optional PLD-internal metadata not required for metrics.",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "payload": {
+      "type": "object",
+      "description": "Original conversational payload (user/system/tool content).",
+      "properties": {
+        "speaker": { "type": "string" },
+        "text": { "type": "string" },
+        "raw_flags": {
+          "type": ["string", "object", "null"],
+          "description": "Stores raw drift/repair markers from prototype models for debugging."
+        }
+      },
+      "additionalProperties": true
+    },
+
+    "runtime": {
+      "type": "object",
+      "description": "Optional execution details used for diagnostics or optimization.",
+      "properties": {
+        "latency_ms": { "type": "number" },
+        "trace_id": { "type": "string" },
+        "agent_state": { "type": "string" },
+        "tool_used": { "type": ["string", "null"] },
+        "model": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+
+    "metrics": {
+      "type": "object",
+      "description": "Derived or aggregated values used by operational dashboards.",
+      "additionalProperties": true
+    },
+
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional free-form labels for routing or aggregation."
+    }
+  }
+}
