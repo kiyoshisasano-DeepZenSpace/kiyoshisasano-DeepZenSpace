@@ -31,7 +31,7 @@ If you are new to PLD or implementing it for the first time, the following readi
 | Runtime integration | `/quickstart/operator_primitives/` | Add drift detection, repair, and reentry logic into a control loop. |
 | Reference examples | `/quickstart/patterns/04_integration_recipes/` | See PLD applied to RAG, tools, memory, and orchestration. |
 | Logging and evaluation | `/quickstart/metrics/` | Map runtime behavior into telemetry and dashboards. |
-| Operational metrics | `/docs/07_pld_operational_metrics_cookbook.md` | Measure stability, cost-effectiveness, and repair visibility. |
+| Operational metrics | `/docs/07_pld_operational_metrics_cookbook.md` | Operational signals for release decisions, regression monitoring, and repair strategy evaluation. |
 | Applied examples | `/analytics/multiwoz_2.4_n200/` | Explore annotated dialogues and pattern recognition. |
 
 Optional but helpful:
@@ -100,3 +100,4 @@ docs/
 ---
 
 Maintainer: **Kiyoshi Sasano**
+
