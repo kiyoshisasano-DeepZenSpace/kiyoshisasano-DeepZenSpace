@@ -229,6 +229,7 @@ Full operational framework including PRDR, REI, VRL and evaluation workflow:
 | **4** | `/quickstart/patterns/04_integration_recipes/` | **Runnable reference examples** |
 | **5** | `/quickstart/metrics/` | Log drift → repair → reentry → outcome |
 | **6** | `/analytics/` | Compare results against evaluated traces |
+| **7** | `/docs/07_pld_operational_metrics_cookbook.md` | Apply runtime metrics to optimize repairs and stability |
 
 ---
 
