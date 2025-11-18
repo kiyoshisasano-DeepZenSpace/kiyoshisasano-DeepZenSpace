@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.logging.event_writer
+pld_runtime.logging.event_writer (v1.1 Canonical Edition)
 
 Thin abstraction layer for writing structured PLD records to sinks.
 
@@ -11,13 +11,18 @@ This module focuses on *how to emit a dict record*:
 
 It is intentionally minimal:
 
-- no knowledge of PLD internals
-- no schema validation
+- no knowledge of PLD internals or phases
+- no schema validation (see enforcement.schema_validator)
 - no retry / backoff
 - no queueing
 
-Higher layers (StructuredLogger, exporters/*) handle structure and
-export formats; this layer only implements concrete "writers".
+Higher layers (StructuredLogger, controllers, exporters/*) handle:
+
+- adherence to pld_event.schema.json / runtime_event_envelope.json
+- PLD phase/code semantics (Drift → Repair → Reentry → Outcome)
+- batching, buffering, and transport
+
+This layer only implements concrete "writers".
 """
 
 from __future__ import annotations
@@ -42,7 +47,12 @@ class EventWriter(Protocol):
         def writer(record: Dict[str, Any]) -> None:
             ...
 
-    StructuredLogger accepts this interface.
+    Typical records are either:
+
+        - PLD events (pld_event.schema.json)
+        - Runtime envelopes (runtime_event_envelope.json)
+
+    StructuredLogger and controllers accept this interface.
     """
 
     def __call__(self, record: Dict[str, Any]) -> None:  # pragma: no cover - protocol
@@ -161,6 +171,14 @@ class StreamWriter:
     stream:
         File-like object with a .write(str) method.
         Default: sys.stdout
+
+    Notes
+    -----
+    This is commonly used in:
+
+        - local debugging (PLD events to console)
+        - container logs (stdout/stderr collectors)
+        - simple evaluation scripts
     """
 
     stream: Any = sys.stdout
@@ -205,6 +223,14 @@ def wrap_callable(func: Callable[[Dict[str, Any]], None]) -> EventWriter:
     Wrap an arbitrary callable as an EventWriter.
 
     This exists mainly to make typings explicit; at runtime it is a no-op.
+
+    Example
+    -------
+    >>> def send_to_bus(record: Dict[str, Any]) -> None:
+    ...     publish("pld-events", record)
+    ...
+    >>> writer = wrap_callable(send_to_bus)
+    >>> writer({"event_id": "...", "pld": {...}})
     """
     def _wrapped(record: Dict[str, Any]) -> None:
         func(record)
