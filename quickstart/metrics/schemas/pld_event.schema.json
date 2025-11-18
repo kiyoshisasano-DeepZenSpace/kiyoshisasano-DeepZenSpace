@@ -1,141 +1,92 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "PLD Event (Quickstart Applied Edition)",
-  "description": "Single interaction event record for Phase Loop Dynamics (PLD) telemetry. Used in quickstart/metrics as the canonical event schema.",
+  "title": "PLD Event (v1.1 Canonical Edition)",
+  "description": "Standard telemetry event for Phase Loop Dynamics (PLD). Aligned with Integration Recipes v1.1 and Operational Metrics Cookbook.",
   "type": "object",
-  "additionalProperties": false,
   "required": [
+    "event_id",
     "session_id",
-    "turn_id",
+    "timestamp",
     "event_type",
-    "timestamp"
+    "pld"
   ],
   "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Globally unique ID for this event (UUIDv4 recommended)."
+    },
     "session_id": {
       "type": "string",
-      "description": "Unique identifier for a dialogue / session / run. Stable across all events in the same interaction."
+      "description": "Unique identifier for the conversation session."
     },
     "turn_id": {
       "type": "integer",
-      "minimum": 0,
-      "description": "Monotonic integer representing the local turn index within a session."
-    },
-    "event_id": {
-      "type": "string",
-      "description": "Optional globally unique ID for this event (UUID, ULID, etc.)."
+      "description": "Local monotonic turn index (0, 1, 2...)."
     },
     "timestamp": {
       "type": "string",
       "format": "date-time",
-      "description": "UTC timestamp when this event was produced, in ISO 8601 format."
+      "description": "ISO 8601 UTC timestamp."
     },
-
-    "speaker": {
-      "type": "string",
-      "enum": [
-        "user",
-        "system",
-        "tool",
-        "orchestrator",
-        "other"
-      ],
-      "description": "Who produced the turn or action associated with this event."
-    },
-
     "event_type": {
       "type": "string",
       "enum": [
         "turn",
         "drift_detected",
         "repair_triggered",
-        "reentry",
-        "latency",
-        "tool_call",
-        "outcome",
-        "note"
+        "reentry_observed",
+        "outcome_classified",
+        "tool_execution",
+        "latency_signal"
       ],
-      "description": "High-level event category for PLD analytics."
+      "description": "High-level event category."
     },
-
-    "text": {
-      "type": "string",
-      "description": "Surface text associated with this event (user input or system output). Optional for non-linguistic events."
-    },
-
-    "tool_name": {
-      "type": "string",
-      "description": "Name of the tool, API, or subsystem invoked (for tool_call / latency events)."
-    },
-
-    "latency_ms": {
-      "type": "integer",
-      "minimum": 0,
-      "description": "End-to-end latency in milliseconds associated with this event (if applicable)."
-    },
-
-    "drift_type": {
-      "type": "string",
-      "enum": [
-        "none",
-        "D1_information_drift",
-        "D2_context_drift",
-        "D3_intent_drift",
-        "D4_procedural_drift",
-        "D5_pacing_latency_drift"
-      ],
-      "description": "Drift category according to the PLD Applied Drift Taxonomy. Usually populated when event_type = 'drift_detected'."
-    },
-
-    "repair_type": {
-      "type": "string",
-      "enum": [
-        "none",
-        "R1_local_soft_repair",
-        "R2_structural_repair",
-        "R3_ux_repair",
-        "R4_hard_reset"
-      ],
-      "description": "Repair category according to the PLD Applied Repair Taxonomy. Usually populated when event_type = 'repair_triggered'."
-    },
-
-    "reentry_type": {
-      "type": "string",
-      "enum": [
-        "none",
-        "RE1_intent_reentry",
-        "RE2_constraint_reentry",
-        "RE3_workflow_reentry"
-      ],
-      "description": "Reentry category (if any) associated with this event. Usually populated when event_type = 'reentry'."
-    },
-
-    "outcome_type": {
-      "type": "string",
-      "enum": [
-        "none",
-        "complete",
-        "incomplete",
-        "reset",
-        "abandoned",
-        "handoff"
-      ],
-      "description": "Dialogue-level outcome status. Typically used when event_type = 'outcome'."
-    },
-
-    "channel": {
-      "type": "string",
-      "description": "Optional channel or surface (e.g., 'web', 'voice', 'cli', 'internal')."
-    },
-
-    "source_system": {
-      "type": "string",
-      "description": "Optional system identifier (e.g., 'rasa', 'langgraph', 'custom_orchestrator')."
-    },
-
-    "metadata": {
+    "pld": {
       "type": "object",
-      "description": "Free-form metadata for implementation-specific fields (e.g., tool arguments, model name, prompt hash).",
+      "required": ["phase", "code"],
+      "properties": {
+        "phase": {
+          "type": "string",
+          "enum": ["drift", "repair", "reentry", "outcome", "none"],
+          "description": "Current phase in the PLD runtime loop."
+        },
+        "code": {
+          "type": "string",
+          "description": "Canonical PLD Code (v1.1 Taxonomy).",
+          "enum": [
+            "D0_none",
+            "D1_instruction",
+            "D2_context",
+            "D3_flow",
+            "D4_tool",
+            "D5_information",
+            "R1_clarify",
+            "R2_soft_repair",
+            "R3_rewrite",
+            "R4_request_clarification",
+            "R5_hard_reset",
+            "RE0_none",
+            "RE1_failed",
+            "RE2_partial",
+            "RE3_auto",
+            "RE4_memory_restore",
+            "OUT1_complete",
+            "OUT2_partial",
+            "OUT3_abandoned"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      }
+    },
+    "payload": {
+      "type": "object",
+      "description": "Context-specific data (e.g. text, tool inputs, error messages).",
       "additionalProperties": true
     }
-  }
+  },
+  "additionalProperties": true
 }
