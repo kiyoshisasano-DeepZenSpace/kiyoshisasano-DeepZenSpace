@@ -121,7 +121,7 @@ or in ways suggesting official affiliation.
 
 **You may:**
 
-✅ Include diagrams in presentations, papers, tutorials (CC BY-SA 4.0)  
+✅ Include diagrams in presentations, papers, tutorials (CC BY 4.0)  
 ✅ Adapt or remix visuals with attribution maintained  
 ✅ Use in documentation or educational materials  
 
