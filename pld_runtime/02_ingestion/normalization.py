@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.ingestion.normalization
+pld_runtime.ingestion.normalization (v1.1 Canonical Edition)
 
 Normalization utilities for converting heterogeneous runtime inputs into
 `NormalizedTurn` objects.
@@ -310,7 +310,7 @@ def from_dialog_turn_dict(
     for k, v in turn.items():
         if not k.startswith(runtime_prefix):
             continue
-        runtime_key = k[len(runtime_prefix) :]
+        runtime_key = k[len(runtime_prefix):]
         runtime[runtime_key] = v
 
     return make_turn(
