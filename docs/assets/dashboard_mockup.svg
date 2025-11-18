@@ -1,0 +1,91 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+  .title { font-family: Inter, sans-serif; font-weight: 600; font-size: 22px; fill: #E9ECEF; }
+  .subtitle { font-family: Inter, sans-serif; font-weight: 400; font-size: 14px; fill: #9BA4AE; }
+  .metric-label { font-family: Inter, sans-serif; font-weight: 500; font-size: 14px; fill: #DDE2E8; }
+  .metric-value { font-family: Inter, sans-serif; font-weight: 600; font-size: 26px; fill: #FFFFFF; }
+  .badge-green { font-family: Inter, sans-serif; font-size: 14px; font-weight: 500; fill: #4ADE80; }
+  .badge-yellow { font-family: Inter, sans-serif; font-size: 14px; font-weight: 500; fill: #FACC15; }
+  .badge-red { font-family: Inter, sans-serif; font-size: 14px; font-weight: 500; fill: #EF4444; }
+  .grid-label { font-family: Inter, sans-serif; font-size: 11px; fill: #7D8893; }
+</style>
+
+<!-- Background -->
+<rect width="1200" height="720" rx="20" fill="#111417"/>
+
+<!-- Header -->
+<text x="40" y="60" class="title">PLD Operational Dashboard</text>
+<text x="40" y="90" class="subtitle">Monitoring runtime alignment stability and repair effectiveness</text>
+
+<!-- ⋮ menu -->
+<circle cx="1140" cy="50" r="3" fill="#495057"/>
+<circle cx="1140" cy="65" r="3" fill="#495057"/>
+<circle cx="1140" cy="80" r="3" fill="#495057"/>
+
+
+<!-- TILE 1 — PRDR -->
+<rect x="40" y="130" width="360" height="230" rx="16" fill="#1A1F23"/>
+<text x="60" y="165" class="metric-label">PRDR — Post-Repair Drift Recurrence</text>
+<text x="60" y="210" class="metric-value">8%</text>
+<text x="60" y="235" class="badge-green">✅ Stable (0–10%)</text>
+
+<polyline points="60,260 120,240 180,290 240,245 300,270 360,235"
+ stroke="#5AC8FA" stroke-width="3" fill="none" stroke-linecap="round"/>
+<text x="60" y="315" class="grid-label">Time (last 7 days) →</text>
+
+
+<!-- TILE 2 — REI -->
+<rect x="420" y="130" width="360" height="230" rx="16" fill="#1A1F23"/>
+<text x="440" y="165" class="metric-label">REI — Repair Efficiency Index</text>
+<text x="440" y="210" class="metric-value">+15%</text>
+<text x="440" y="235" class="badge-green">↑ Efficient</text>
+
+<!-- Before/After simple bars -->
+<rect x="440" y="270" width="60" height="40" rx="6" fill="#6B7280"/>
+<rect x="520" y="250" width="60" height="60" rx="6" fill="#22C55E"/>
+
+<text x="440" y="320" class="grid-label">Baseline vs Improved →</text>
+
+
+<!-- TILE 3 — VRL -->
+<rect x="800" y="130" width="360" height="230" rx="16" fill="#1A1F23"/>
+<text x="820" y="165" class="metric-label">VRL — Visible Repair Load</text>
+<text x="820" y="210" class="metric-value">12%</text>
+<text x="820" y="235" class="badge-yellow">⚠ Noticeable (5–20%)</text>
+
+<!-- Progress bar -->
+<rect x="820" y="275" width="260" height="14" rx="7" fill="#3B3F45"/>
+<rect x="820" y="275" width="120" height="14" rx="7" fill="#FACC15"/>
+
+<text x="820" y="315" class="grid-label">User-visible repairs per 100 turns</text>
+
+
+<!-- TILE 4 — FR -->
+<rect x="40" y="390" width="360" height="230" rx="16" fill="#1A1F23"/>
+<text x="60" y="425" class="metric-label">FR — Failover Rate</text>
+<text x="60" y="470" class="metric-value">3.2%</text>
+<text x="60" y="495" class="badge-green">🟢 Expected (0–5%)</text>
+
+<polyline points="60,520 120,510 180,485 240,530 300,495 360,470"
+ stroke="#A855F7" stroke-width="3" fill="none" stroke-linecap="round"/>
+<text x="60" y="580" class="grid-label">Time (last 7 days) →</text>
+
+
+<!-- TILE 5 — MRBF -->
+<rect x="420" y="390" width="360" height="230" rx="16" fill="#1A1F23"/>
+<text x="440" y="425" class="metric-label">MRBF — Mean Repairs Before Failover</text>
+<text x="440" y="470" class="metric-value">7.0</text>
+<text x="440" y="495" class="badge-yellow">⚠ High persistence (>4)</text>
+
+<text x="440" y="540" class="grid-label">Higher means repeated unsuccessful correction before failover.</text>
+
+
+<!-- TILE 6 — NEW: Metric Health Summary -->
+<rect x="800" y="390" width="360" height="230" rx="16" fill="#1A1F23"/>
+<text x="820" y="425" class="metric-label">Metric Health Summary</text>
+
+<text x="820" y="470" class="badge-green">🟢 4 metrics healthy</text>
+<text x="820" y="500" class="badge-yellow">⚠ 1 requires attention</text>
+<text x="820" y="535" class="grid-label">Based on thresholds defined in Operational Metrics Cookbook.</text>
+
+</svg>
