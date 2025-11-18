@@ -1,278 +1,298 @@
 <!-- License: CC BY 4.0 -->
 
-📄 **07 — PLD Operational Metrics Cookbook**  
-_For SRE, AgentOps, and Product Owners_  
-Version: **1.1 (Operational Edition)**  
-Maintainer: **Kiyoshi Sasano**  
-Status: **Operational Reference — Used for Release, Monitoring, and Tuning**
+# 📄 07 — PLD Operational Metrics Cookbook  
+_For SRE, AgentOps, Data Engineering, and Product Owners_  
+
+**Version:** 1.1 (Runtime Alignment Edition)  
+**Maintainer:** Kiyoshi Sasano  
+**Status:** ✔ Operational — Production Ready  
 
 ---
 
-> **These metrics are operational signals — not permanent KPIs.**  
-They support release gating, anomaly detection, failure pattern tracking, and repair strategy evaluation — not scorekeeping.  
-Metrics should be used during rollout, tuning, and regression analysis, then reduced once stability is proven.
+> **PLD metrics are operational signals — not product KPIs.**  
+They help teams detect drift loops, evaluate repair strategy effectiveness, reduce user-visible instability, and prevent runaway retries.
+
+Metrics should guide **rollout safety, debugging, release gating, and regression detection** — not leaderboard optimization.
 
 ---
 
-### 📊 Operational Dashboard Preview
+## 📊 Operational Dashboard Reference
 
-The dashboard below represents the **end-state visualization** of the metrics defined in this cookbook.  
-It provides an at-a-glance understanding of whether a system is stable, drifting, cost-efficient, or entering failure-prone behavior.
+This cookbook defines the metrics used in the operational dashboard below.  
+BI teams (Supabase, Grafana, Datadog, Kibana, Looker, Metabase) should reference this document when implementing dashboards.
 
 <p align="center">
 <img src="assets/dashboard_mockup.svg" width="100%" />
 </p>
 
-> This dashboard is a **reference implementation target**, not a requirement during early rollout.  
-> It exists to provide a visual north star for teams integrating monitoring into Supabase, Grafana, Looker, Metabase, or similar platforms.
+> This visualization is a **reference target** — teams may start with single queries and evolve toward the full dashboard.
 
 ---
 
-### How to Use This Dashboard
+## 🧭 How to Use This Dashboard
 
-| Phase of rollout | Primary metrics | Purpose |
+| Deployment Phase | Primary Metrics | Purpose |
 |-----------------|----------------|---------|
-| **Early rollout** | PRDR, VRL, FR | Detect regressions, fragile repairs, and unstable drift loops |
-| **Mid rollout** | REI, MRBF | Compare strategies, cost/benefit tradeoffs, and intervention timing |
-| **Post stabilization** | FR + periodic PRDR scans | Low-noise monitoring for regressions or release effects |
+| **Early rollout** | PRDR, VRL, FR | Detect regressions and unstable repair loops |
+| **Mid rollout** | REI, MRBF | Compare repair strategies and measure cost/benefit |
+| **Stabilized** | FR + periodic PRDR | Low-noise regression monitoring |
 
 ---
 
-### Interpretation Guidance
+## 🧪 Interpretation Standard
 
-All metrics in the dashboard follow a standard operational classification:
+All metrics in this cookbook follow a consistent semantic structure:
 
 | Marker | Meaning |
 |--------|---------|
-| 🟢 **Healthy Range** | Behavior stable, predictable, and cost-aligned |
-| ⚠️ **Elevated / Watch** | Acceptable but may require tuning |
-| 🔴 **Critical** | Indicates systemic drift, looping repairs, or user-visible instability |
+| 🟢 Healthy | Expected, stable runtime behavior |
+| ⚠ Elevated | Acceptable but requires observation |
+| 🔴 Critical | Drift instability, persistent looping, or failure patterns |
 
-Metrics are **signals** — not evaluation scores. They should guide intervention, not optimization targets.
-
----
-
-### Why This Dashboard Matters
-
-These metrics shift PLD from _logging_ to _governance_ by answering questions such as:
-
-- _“Do repairs prevent future drift, or only delay it?”_
-- _“Are visible repairs creating UX friction?”_
-- _“Is the system giving up too early — or trying too long?”_
-- _“Does the cost of repair justify the benefit?”_
-
-Once operationalized, the dashboard becomes a **runtime alignment contract**:
-
-> **Stable system behavior across turns — not just per response.**
+> Metrics guide action — they are **not optimization targets**.
 
 ---
 
-### Export Targets
+## 🔌 Schema Requirements
 
-| Export Format | Status | Notes |
-|---------------|--------|-------|
-| Supabase dashboard | **Recommended baseline** | Matches mock layout |
-| Grafana JSON | Planned | Requires schema mapping |
-| Looker model | Optional | For enterprise analytics teams |
-| CSV / notebook workflow | Built-in via queries | Useful for offline experimentation |
+Metrics require PLD logging with the `v1.1` schema:
 
----
+📄 **Schema:** `quickstart/metrics/schemas/pld_event.schema.json`  
+📦 **Dataset Example:** `quickstart/metrics/datasets/pld_events_demo.jsonl`
 
-## **1. Metrics Purpose & Motivation**
+### Event Mapping (v1.1)
 
-Once PLD logging is active, teams quickly reach a point where raw drift/repair counts don’t answer operational questions such as:
-
-- _“Are repairs actually improving outcomes?”_  
-- _“Which repair strategies are worth the cost?”_  
-- _“Why does the system appear technically stable yet feel unstable to users?”_
-
-This cookbook provides **operationally meaningful metrics** derived from PLD runtime logs to support **monitoring, decision-making, and optimization.**
+| Logical Category | `event_type` | PLD Phase | Code Prefix |
+|------------------|-------------|-----------|------------|
+| Drift detection | `drift_detected` | `drift` | `D*` |
+| Repair attempt | `repair_triggered` | `repair` | `R*` |
+| Visible repair | `repair_visible` | `repair` | `R*` |
+| Reentry success | `reentry_observed` | `reentry` | `RE*` |
+| Failover | `failover_triggered` | `failover` | `OUT*` or `F*` |
 
 ---
 
-## **2. Prerequisites**
+## 📐 Metric 1 — Post-Repair Drift Recurrence (PRDR)
 
-| Requirement | Description |
-|------------|-------------|
-| PLD structured logs | Conforms to `pld_event.schema.json` |
-| Turn context | Includes session, turn index, event_type metadata |
-| Query capability | SQL engine (Postgres, DuckDB, Snowflake, BigQuery, OpenSearch SQL mode) |
-| Reporting | Grafana, Looker, Metabase, DataDog, Kibana, or equivalent |
-
----
-
-## **3. Metrics**
-
----
-
-### **Metric 1 — Post-Repair Drift Recurrence (PRDR)**  
-**Purpose:** Measure whether repairs are **durable** or merely **delay drift recurrence**.
+**Purpose:**  
+Measure whether repairs permanently resolve drift or merely delay recurrence.
 
 ```
-PRDR = (# of repeated drift events within N turns after a repair)
-        / (total # of repairs)
+PRDR = repeated drift events (within N turns after repair)
+        ÷ total repair events
 ```
 
-Recommended window: **N = 3–5 turns**
+**Recommended Window:** `N = 3–5 turns`
 
-#### Interpretation
+### Classification
 
-| Value | Meaning | Action |
-|-------|---------|--------|
-| 0–10% | Repairs holding | No action |
-| 10–30% | Repairs partially effective | Review repair tone/selection thresholds |
-| >30% | Repairs fragile | Investigate upstream: RAG, tools, context injection |
+| Rate | Meaning | Action |
+|------|---------|--------|
+| 🟢 0–10% | Durable repairs | No changes required |
+| ⚠ 10–30% | Partial improvement | Adjust tone/threshold/tooling |
+| 🔴 >30% | Fragile repair strategy | Investigate upstream (RAG, tools) |
 
-#### Example Query (Generic SQL)
+### PostgreSQL Query
 
 ```sql
 WITH repairs AS (
-  SELECT session_id, turn_index AS repair_turn
+  SELECT session_id, turn_id AS repair_turn
   FROM pld_events
-  WHERE event_type = 'repair'
+  WHERE event_type = 'repair_triggered'
 ),
-drift_after AS (
-  SELECT r.session_id, COUNT(*) AS repeated_drifts
+drifts AS (
+  SELECT r.session_id, COUNT(*) AS repeated_drift
   FROM repairs r
-  JOIN pld_events e ON e.session_id = r.session_id
-   AND e.turn_index BETWEEN r.repair_turn + 1 AND r.repair_turn + 5
-   AND e.event_type = 'drift'
+  JOIN pld_events e
+    ON e.session_id = r.session_id
+   AND e.turn_id BETWEEN r.repair_turn + 1 AND r.repair_turn + 5
+   AND e.event_type = 'drift_detected'
   GROUP BY r.session_id
 )
-SELECT SUM(repeated_drifts)::float / COUNT(*) AS PRDR
-FROM drift_after;
+SELECT
+  COALESCE(SUM(repeated_drift), 0)::float / NULLIF(COUNT(*), 0) AS prdr
+FROM drifts;
 ```
 
 ---
 
-## Metric 2 — Repair Efficiency Index (REI)
-Purpose: Measure cost-benefit tradeoff of repair strategies.
-```matlab
-% improvement = (success_with_repairs - success_baseline) / success_baseline
+## ⚙ Metric 2 — Repair Efficiency Index (REI)
 
-REI = % improvement / cost_per_session
+**Purpose:** Evaluate whether repairs provide a net benefit relative to operational cost.
+
 ```
-📌 Baseline must come from A/B test, rollout comparison, or historical stable window.  
-
-Example cost model:  
-```ini
-cost = (tokens * w_tokens) + (latency_ms * w_latency) + (tool_calls * w_tool)
+REI = (performance improvement %) ÷ operational cost per session
 ```
 
-#### Interpretation
+Cost may include: tokens, latency, hallucination risk, tool usage, or user experience penalties.
+
+### Interpretation
+
 | Trend | Meaning | Action |
 |-------|---------|--------|
-| ↑ Increasing | Efficient repairs | Candidate for rollout |
-| → Flat | Neutral | Monitor |
-| ↓ Declining | High cost for low gain | Simplify or disable |
+| ↑ Increasing | Efficient strategy | Candidate for broader rollout |
+| → Flat | Neutral | Monitor only |
+| ↓ Declining | Cost > benefit | Simplify or disable strategy |
 
-Example Query
+### Query Template (PostgreSQL Example)
+
+Requires a baseline value (A/B, staged rollout, or historical window).
+
 ```sql
 SELECT
-  ((AVG(success_variant) - AVG(success_baseline)) / AVG(success_baseline)) 
-    AS improvement_ratio,
-  AVG(cost_per_session) AS avg_cost,
   ((AVG(success_variant) - AVG(success_baseline)) / AVG(success_baseline))
-    / AVG(cost_per_session) AS REI
+    AS improvement_ratio,
+  AVG(cost_score) AS avg_cost,
+  ((AVG(success_variant) - AVG(success_baseline)) / AVG(success_baseline))
+    / AVG(cost_score) AS rei
 FROM experiment_sessions;
 ```
 
 ---
 
-## Metric 3 — Visible Repair Load (VRL)
-Purpose: Quantify perceived stability from user experience.
-```ini
+## 👁 Metric 3 — Visible Repair Load (VRL)
+
+**Purpose:** Measure user-visible instability.
+
+```
 VRL = (# visible repair messages per 100 turns)
 ```
-#### Count if:
-| event_type             | Count? | Example                                |
-| ---------------------- | ------ | -------------------------------------- |
-| `repair_visible`       | ✔      | “Let me correct that.”                 |
-| `clarification_prompt` | ✔      | “Before I continue, can you confirm…?” |
-| `repair_silent`        | ✖      | Internal repair only                   |
 
-Query 
+### Included Signals:
+
+| event_type | Count? | Example |
+|------------|--------|---------|
+| `repair_visible` | ✔ | "Let me fix that…" |
+| `clarification_prompt` | ✔ | "Before I continue…" |
+| `repair_triggered` only | ✖ | Internal-only repair |
+
+### Query
+
 ```sql
 SELECT
- (COUNT(*) FILTER (WHERE event_type IN ('repair_visible','clarification_prompt')) * 100.0)
-   / COUNT(*) AS VRL
+  (COUNT(*) FILTER (WHERE event_type IN ('repair_visible', 'clarification_prompt')) * 100.0)
+    / COUNT(*) AS vrl
 FROM pld_events;
 ```
 
-Interpretation
-| Score | UX Perception             | Action                                                 |
-| ----- | ------------------------- | ------------------------------------------------------ |
-| 0–5   | Feels smooth              | Ideal                                                  |
-| 5–20  | Noticeable but acceptable | Adjust tone / routing                                  |
-| >20   | Feels unstable            | Reduce visible repairs or adjust detection sensitivity |
+### Classification
+
+| Score | UX Interpretation | Action |
+|-------|------------------|--------|
+| 🟢 0–5 | Feels smooth | Ideal |
+| ⚠ 5–20 | Noticeable | Adjust tone or trigger sensitivity |
+| 🔴 >20 | Unstable UX | Reduce repair visibility |
 
 ---
 
-## Metric 4 — Failover Rate (FR)
-Purpose: Detect when the agent abandons a task because repairs cannot resolve drift.
-```ini
-FR = (# failover sessions) / (total sessions)
-```
-#### Interpretation
-| Value | Meaning  | Action                                       |
-| ----- | -------- | -------------------------------------------- |
-| 0–5%  | Expected | Normal variance                              |
-| 5–15% | Elevated | Inspect failure signatures                   |
-| >15%  | Systemic | Investigate detectors, upstream dependencies |
+## 🛑 Metric 4 — Failover Rate (FR)
 
-#### Implementation Note:
-Failover requires explicit logging (example):
-```python
-log_event({
-  "event_type": "failover",
-  "session_id": session,
-  "repair_attempts": repair_count
-})
+**Purpose:** Detect when the agent abandons tasks due to unresolvable drift.
+
+```
+FR = # failover sessions ÷ total sessions
 ```
 
----
+### Query
 
-## Metric 5 — Mean Repairs Before Failover (MRBF)
-Purpose: Measure persistence before giving up.
-```ini
-MRBF = SUM(repair_attempts_before_failover) / # failover sessions
+```sql
+SELECT
+  COUNT(DISTINCT session_id) FILTER (WHERE event_type = 'failover_triggered')::float
+  / COUNT(DISTINCT session_id) AS failover_rate
+FROM pld_events;
 ```
 
-Example dataset:
-| session_id | repair_attempts | failover |
-| ---------- | --------------- | -------- |
-| s1         | 1               | ✔        |
-| s2         | 3               | ✔        |
-| s3         | 0               | ✖        |
-→ `MRBF = (1 + 3) / 2 = 2.0`
+### Thresholds
 
-#### Interpretation
-| Value | Meaning               | Action                                   |
-| ----- | --------------------- | ---------------------------------------- |
-| 0–1   | Premature fail        | Relax repair trigger?                    |
-| 2–3   | Healthy bounded retry | ✔ Recommended                            |
-| ≥4    | Looping               | Escalate repair strength or fail earlier |
+| Value | Meaning | Action |
+|-------|---------|--------|
+| 🟢 0–5% | Expected | Normal variance |
+| ⚠ 5–15% | Elevated | Inspect failure patterns |
+| 🔴 >15% | Systemic | Investigate drift detectors and repair design |
 
 ---
 
-## **4. Summary**
-| Metric | Category    | Purpose                                   |
-| ------ | ----------- | ----------------------------------------- |
-| PRDR   | Stability   | Detect fragile repairs                    |
-| REI    | ROI         | Compare repair strategies                 |
-| VRL    | UX          | Measure perceived stability               |
-| FR     | Risk        | Failover frequency                        |
-| MRBF   | Persistence | How long the agent tries before giving up |
+## 🔁 Metric 5 — Mean Repairs Before Failover (MRBF)
+
+**Purpose:** Measure persistence before system abandonment.
+
+```
+MRBF = total repairs before failover ÷ number of failover sessions
+```
+
+### Query
+
+```sql
+WITH failovers AS (
+  SELECT session_id
+  FROM pld_events
+  WHERE event_type = 'failover_triggered'
+)
+SELECT
+  AVG(
+    (SELECT COUNT(*) FROM pld_events e
+     WHERE e.session_id = f.session_id
+       AND e.event_type = 'repair_triggered')
+  ) AS mrbf
+FROM failovers f;
+```
+
+### Interpretation
+
+| Value | Meaning | Action |
+|-------|---------|--------|
+| 🟢 0–1 | Premature fail | Loosen thresholds |
+| 🟡 2–3 | Healthy retry window | Recommended |
+| 🔴 ≥4 | Repair loop | Escalate strength or fail earlier |
 
 ---
 
-## 5. **When to Reduce Monitoring**
-Reduce dashboard frequency when:
-- Metrics remain stable for 4–6 weeks, and
-- No regressions occur across releases or configuration changes.
-At that stage, metrics shift from active monitoring → periodic health checks.
+## 🧪 Quickstart: Run Metrics on Demo Dataset
+
+1. Load demo data:
+
+```sql
+CREATE TABLE pld_events_raw (data jsonb);
+
+\copy pld_events_raw (data)
+FROM 'quickstart/metrics/datasets/pld_events_demo.jsonl';
+```
+
+2. Normalize into a queryable view:
+
+```sql
+CREATE VIEW pld_events AS
+SELECT
+  data->>'event_id' AS event_id,
+  data->>'session_id' AS session_id,
+  (data->>'turn_id')::int AS turn_id,
+  data->>'event_type' AS event_type,
+  data->'pld'->>'phase' AS phase,
+  data->'pld'->>'code' AS code,
+  (data->'runtime'->>'latency_ms')::numeric AS latency_ms,
+  data
+FROM pld_events_raw;
+```
+
+3. Run metric queries (PRDR, VRL, FR, MRBF).
+4. Import `quickstart/metrics/dashboards/reentry_success_dashboard.json` into your BI tool.
 
 ---
 
-> These metrics turn PLD logging into repeatable, operational decision-making.
-> They are tools for governance — not targets for optimization.
+## Summary
+
+| Metric | Category | Purpose |
+|--------|----------|---------|
+| **PRDR** | Stability | Detect fragile repair behavior |
+| **REI** | ROI | Evaluate cost vs benefit |
+| **VRL** | UX | Track visible instability |
+| **FR** | Failure tolerance | Detect unresolved drift |
+| **MRBF** | Persistence | Identify looping repair patterns |
+
+---
+
+> **When metrics flatten and remain healthy for 4–6 weeks, monitoring shifts from continuous to periodic validation.**
+
+---
+
+**End of Document**
