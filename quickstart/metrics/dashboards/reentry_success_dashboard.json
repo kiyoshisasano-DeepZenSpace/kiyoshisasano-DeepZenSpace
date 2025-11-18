@@ -1,104 +1,155 @@
 {
-  "dashboard_id": "pld_reentry_success_dashboard_v1",
-  "title": "PLD Reentry & Stability Dashboard (Quickstart, PostgreSQL)",
-  "description": "Reference dashboard for monitoring drift, repair, reentry, latency, and outcome metrics using the PLD Applied Event Schema (phase+code).",
+  "dashboard_id": "pld_reentry_success_dashboard_v1_pg",
+  "title": "PLD Operational Dashboard",
+  "description": "PostgreSQL-oriented reference dashboard for monitoring drift, repair, reentry, latency, and failover metrics using the PLD Applied Event Schema (quickstart/metrics/schemas/pld_event.schema.json).",
   "version": "1.1",
   "data_source": {
     "type": "table_or_view",
     "name": "pld_events",
-    "notes": "Expected schema aligned with quickstart/metrics/schemas/pld_event.schema.json (pld.phase + pld.code, runtime.latency_ms)."
+    "notes": "Assumes a PostgreSQL table or view `pld_events` whose columns match the top-level fields from pld_event.schema.json. `pld` and `runtime` are stored as JSON/JSONB and accessed via -> / ->> operators."
   },
   "layout": {
     "grid_columns": 12,
     "panels": [
       {
-        "id": "kpi_reentry_success",
-        "title": "Reentry Success Rate",
+        "id": "kpi_prdr",
+        "title": "PRDR — Post-Repair Drift Recurrence",
         "type": "kpi",
         "position": { "x": 0, "y": 0, "w": 4, "h": 3 },
         "query": {
-          "sql": "SELECT\n  COUNT(*) FILTER (\n    WHERE event_type = 'reentry_observed'\n      AND pld->>'code' <> 'RE0_none'\n  ) AS reentry_events,\n  COUNT(*) FILTER (\n    WHERE event_type = 'reentry_observed'\n  ) AS total_reentry\nFROM pld_events;",
-          "value_expression": "CASE WHEN total_reentry = 0 THEN 0 ELSE reentry_events * 1.0 / total_reentry END"
+          "sql": "WITH repairs AS (\n  SELECT session_id, (turn_id)::int AS repair_turn\n  FROM pld_events\n  WHERE event_type = 'repair_triggered'\n),\ndrift_after AS (\n  SELECT r.session_id,\n         r.repair_turn,\n         COUNT(e.*) AS repeated_drifts\n  FROM repairs r\n  LEFT JOIN pld_events e\n    ON e.session_id = r.session_id\n   AND e.event_type = 'drift_detected'\n   AND (e.turn_id)::int BETWEEN r.repair_turn + 1 AND r.repair_turn + 5\n  GROUP BY r.session_id, r.repair_turn\n)\nSELECT\n  COALESCE(SUM(repeated_drifts), 0) AS repeated_drifts,\n  COUNT(*) AS total_repairs\nFROM drift_after;",
+          "value_expression": "CASE WHEN total_repairs = 0 THEN 0 ELSE repeated_drifts * 1.0 / total_repairs END"
         },
         "format": {
           "unit": "percent",
           "decimals": 2
-        }
+        },
+        "notes": "Post-Repair Drift Recurrence (PRDR) = repeated drift events within 3–5 turns after a repair, divided by total repairs."
       },
       {
-        "id": "kpi_drift_information_rate",
-        "title": "D5 Information Drift Rate per Session",
+        "id": "kpi_rei",
+        "title": "REI — Repair Efficiency Index (success ratio)",
         "type": "kpi",
         "position": { "x": 4, "y": 0, "w": 4, "h": 3 },
         "query": {
-          "sql": "SELECT\n  COUNT(*) AS d5_count,\n  COUNT(DISTINCT session_id) AS sessions\nFROM pld_events\nWHERE event_type = 'drift_detected'\n  AND pld->>'code' LIKE 'D5_%';",
-          "value_expression": "CASE WHEN sessions = 0 THEN 0 ELSE d5_count * 1.0 / sessions END"
+          "sql": "SELECT\n  COUNT(*) FILTER (WHERE event_type = 'reentry_observed' AND pld->>'phase' = 'reentry') AS successful_reentries,\n  COUNT(*) FILTER (WHERE event_type = 'repair_triggered') AS total_repairs;",
+          "value_expression": "CASE WHEN total_repairs = 0 THEN 0 ELSE (successful_reentries * 1.0 / total_repairs) * 100 END"
+        },
+        "format": {
+          "unit": "percent",
+          "decimals": 2
+        },
+        "notes": "Operational approximation of Repair Efficiency: proportion of repairs that lead to a reentry event."
+      },
+      {
+        "id": "kpi_vrl",
+        "title": "VRL — Visible Repair Load",
+        "type": "kpi",
+        "position": { "x": 8, "y": 0, "w": 4, "h": 3 },
+        "query": {
+          "sql": "SELECT\n  (COUNT(*) FILTER (\n     WHERE event_type IN ('repair_visible', 'clarification_prompt')\n        OR (event_type = 'repair_triggered'\n            AND COALESCE((pld->'metadata'->>'visibility'), 'visible') = 'visible')\n   ) * 100.0 / GREATEST(COUNT(*), 1)) AS vrl_value\nFROM pld_events;",
+          "value_expression": "vrl_value"
+        },
+        "format": {
+          "unit": "percent",
+          "decimals": 1
+        },
+        "notes": "Visible Repair Load = user-visible repair/clarification messages per 100 turns."
+      },
+      {
+        "id": "kpi_fr",
+        "title": "FR — Failover Rate",
+        "type": "kpi",
+        "position": { "x": 0, "y": 3, "w": 4, "h": 3 },
+        "query": {
+          "sql": "SELECT\n  COUNT(DISTINCT session_id) FILTER (WHERE event_type = 'failover_triggered') AS failover_sessions,\n  COUNT(DISTINCT session_id) AS total_sessions;",
+          "value_expression": "CASE WHEN total_sessions = 0 THEN 0 ELSE failover_sessions * 100.0 / total_sessions END"
+        },
+        "format": {
+          "unit": "percent",
+          "decimals": 2
+        },
+        "notes": "Failover Rate = sessions that triggered failover / total sessions."
+      },
+      {
+        "id": "kpi_mrbf",
+        "title": "MRBF — Mean Repairs Before Failover",
+        "type": "kpi",
+        "position": { "x": 4, "y": 3, "w": 4, "h": 3 },
+        "query": {
+          "sql": "WITH failover_turns AS (\n  SELECT session_id, MIN((turn_id)::int) AS failover_turn\n  FROM pld_events\n  WHERE event_type = 'failover_triggered'\n  GROUP BY session_id\n),\nrepairs_before AS (\n  SELECT f.session_id, COUNT(e.*) AS repairs_before_failover\n  FROM failover_turns f\n  JOIN pld_events e\n    ON e.session_id = f.session_id\n   AND e.event_type = 'repair_triggered'\n   AND (e.turn_id)::int < f.failover_turn\n  GROUP BY f.session_id\n)\nSELECT\n  COALESCE(AVG(repairs_before_failover)::float, 0.0) AS mrbf_value\nFROM repairs_before;",
+          "value_expression": "mrbf_value"
+        },
+        "format": {
+          "unit": "number",
+          "decimals": 1
+        },
+        "notes": "Mean number of repairs attempted before a session fails over."
+      },
+      {
+        "id": "kpi_info_drift_rate",
+        "title": "Information Drift Rate per Session (D5_information)",
+        "type": "kpi",
+        "position": { "x": 8, "y": 3, "w": 4, "h": 3 },
+        "query": {
+          "sql": "SELECT\n  COUNT(*) FILTER (\n    WHERE event_type = 'drift_detected'\n      AND pld->>'phase' = 'drift'\n      AND pld->>'code' LIKE 'D5_%'\n  ) AS info_drift_events,\n  COUNT(DISTINCT session_id) AS sessions;",
+          "value_expression": "CASE WHEN sessions = 0 THEN 0 ELSE info_drift_events * 1.0 / sessions END"
         },
         "format": {
           "unit": "number",
           "decimals": 2
-        }
-      },
-      {
-        "id": "kpi_hard_repair_rate",
-        "title": "Hard Repair Rate (R4_hard_reset)",
-        "type": "kpi",
-        "position": { "x": 8, "y": 0, "w": 4, "h": 3 },
-        "query": {
-          "sql": "SELECT\n  COUNT(*) FILTER (\n    WHERE event_type = 'repair_triggered'\n      AND pld->>'code' = 'R4_hard_reset'\n  ) AS hard_repairs,\n  COUNT(*) FILTER (\n    WHERE event_type = 'repair_triggered'\n  ) AS total_repairs\nFROM pld_events;",
-          "value_expression": "CASE WHEN total_repairs = 0 THEN 0 ELSE hard_repairs * 1.0 / total_repairs END"
         },
-        "format": {
-          "unit": "percent",
-          "decimals": 2
-        }
+        "notes": "Average number of D5_information drifts per session."
       },
       {
         "id": "chart_drift_distribution",
-        "title": "Drift Type Distribution (by PLD code)",
+        "title": "Drift Code Distribution",
         "type": "bar",
-        "position": { "x": 0, "y": 3, "w": 6, "h": 4 },
+        "position": { "x": 0, "y": 6, "w": 6, "h": 4 },
         "query": {
-          "sql": "SELECT\n  pld->>'code' AS drift_code,\n  COUNT(*) AS count\nFROM pld_events\nWHERE event_type = 'drift_detected'\nGROUP BY pld->>'code'\nORDER BY count DESC;"
+          "sql": "SELECT\n  pld->>'code' AS pld_code,\n  COUNT(*) AS count\nFROM pld_events\nWHERE event_type = 'drift_detected'\nGROUP BY pld_code\nORDER BY count DESC;"
         },
         "encoding": {
-          "x": "drift_code",
+          "x": "pld_code",
           "y": "count"
-        }
+        },
+        "notes": "Distribution of drift codes (D*, e.g., D4_tool, D5_information)."
       },
       {
         "id": "chart_repair_distribution",
-        "title": "Repair Type Distribution (by PLD code)",
+        "title": "Repair Code Distribution",
         "type": "bar",
-        "position": { "x": 6, "y": 3, "w": 6, "h": 4 },
+        "position": { "x": 6, "y": 6, "w": 6, "h": 4 },
         "query": {
-          "sql": "SELECT\n  pld->>'code' AS repair_code,\n  COUNT(*) AS count\nFROM pld_events\nWHERE pld->>'phase' = 'repair'\nGROUP BY pld->>'code'\nORDER BY count DESC;"
+          "sql": "SELECT\n  pld->>'code' AS pld_code,\n  COUNT(*) AS count\nFROM pld_events\nWHERE event_type IN ('repair_triggered', 'repair_visible')\nGROUP BY pld_code\nORDER BY count DESC;"
         },
         "encoding": {
-          "x": "repair_code",
+          "x": "pld_code",
           "y": "count"
-        }
+        },
+        "notes": "Distribution of repair codes (R*, e.g., R1_clarify, R2_soft_repair)."
       },
       {
         "id": "timeseries_reentry_over_time",
         "title": "Reentry Events Over Time",
         "type": "timeseries",
-        "position": { "x": 0, "y": 7, "w": 6, "h": 4 },
+        "position": { "x": 0, "y": 10, "w": 6, "h": 4 },
         "query": {
-          "sql": "SELECT\n  DATE_TRUNC('hour', timestamp) AS bucket,\n  COUNT(*) AS reentries\nFROM pld_events\nWHERE event_type = 'reentry_observed'\n  AND pld->>'code' <> 'RE0_none'\nGROUP BY bucket\nORDER BY bucket;"
+          "sql": "SELECT\n  DATE_TRUNC('hour', timestamp) AS bucket,\n  COUNT(*) AS reentries\nFROM pld_events\nWHERE event_type = 'reentry_observed'\n  AND pld->>'phase' = 'reentry'\n  AND (pld->>'code') NOT LIKE 'RE0%'\nGROUP BY bucket\nORDER BY bucket;"
         },
         "encoding": {
           "time": "bucket",
           "value": "reentries"
-        }
+        },
+        "notes": "Successful reentry events grouped by hour."
       },
       {
         "id": "timeseries_latency_vs_drift",
         "title": "Average Latency vs Drift Count",
         "type": "timeseries_dual_axis",
-        "position": { "x": 6, "y": 7, "w": 6, "h": 4 },
+        "position": { "x": 6, "y": 10, "w": 6, "h": 4 },
         "query_primary": {
-          "sql": "SELECT\n  DATE_TRUNC('hour', timestamp) AS bucket,\n  AVG((runtime->>'latency_ms')::numeric) AS avg_latency_ms\nFROM pld_events\nWHERE runtime->>'latency_ms' IS NOT NULL\nGROUP BY bucket\nORDER BY bucket;"
+          "sql": "SELECT\n  DATE_TRUNC('hour', timestamp) AS bucket,\n  AVG((runtime->>'latency_ms')::numeric) AS avg_latency_ms\nFROM pld_events\nWHERE runtime ? 'latency_ms'\nGROUP BY bucket\nORDER BY bucket;"
         },
         "query_secondary": {
           "sql": "SELECT\n  DATE_TRUNC('hour', timestamp) AS bucket,\n  COUNT(*) AS drift_events\nFROM pld_events\nWHERE event_type = 'drift_detected'\nGROUP BY bucket\nORDER BY bucket;"
@@ -112,22 +163,38 @@
           "time": "bucket",
           "value": "drift_events",
           "label": "Drift events"
-        }
+        },
+        "notes": "Correlates latency with drift frequency over time."
       },
       {
         "id": "table_outcome_summary",
-        "title": "Outcome Summary by Session",
+        "title": "Outcome & Drift Summary by Session",
         "type": "table",
-        "position": { "x": 0, "y": 11, "w": 12, "h": 4 },
+        "position": { "x": 0, "y": 14, "w": 12, "h": 4 },
         "query": {
-          "sql": "SELECT\n  session_id,\n  CASE\n    WHEN BOOL_OR(event_type = 'failover_triggered') THEN 'abandoned'\n    WHEN BOOL_OR(event_type = 'outcome') THEN 'complete'\n    WHEN BOOL_OR(event_type = 'reentry_observed') THEN 'complete'\n    ELSE 'incomplete'\n  END AS outcome_type,\n  COUNT(*) FILTER (\n    WHERE event_type = 'drift_detected'\n  ) AS drift_events,\n  COUNT(*) FILTER (\n    WHERE event_type = 'repair_triggered'\n      AND pld->>'code' = 'R4_hard_reset'\n  ) AS hard_resets\nFROM pld_events\nGROUP BY session_id\nORDER BY session_id;"
+          "sql": "SELECT\n  session_id,\n  COALESCE(\n    MAX(CASE WHEN event_type = 'outcome' THEN pld->>'code' END),\n    MAX(CASE WHEN event_type = 'failover_triggered' THEN pld->>'code' END),\n    'NONE'\n  ) AS outcome_code,\n  COUNT(*) FILTER (WHERE event_type = 'drift_detected') AS drift_events,\n  COUNT(*) FILTER (WHERE event_type = 'repair_triggered' AND pld->>'code' LIKE 'R4_%') AS hard_repairs\nFROM pld_events\nGROUP BY session_id\nORDER BY session_id;"
         },
         "columns": [
           { "field": "session_id", "title": "Session" },
-          { "field": "outcome_type", "title": "Outcome" },
+          { "field": "outcome_code", "title": "Outcome Code" },
           { "field": "drift_events", "title": "Drift Events" },
-          { "field": "hard_resets", "title": "Hard Resets" }
+          { "field": "hard_repairs", "title": "Hard Repairs (R4_*)" }
         ]
+      },
+      {
+        "id": "metric_health_summary",
+        "title": "Metric Health Summary",
+        "type": "summary",
+        "position": { "x": 8, "y": 18, "w": 4, "h": 3 },
+        "query": {
+          "sql": "WITH repairs AS (\n  SELECT session_id, (turn_id)::int AS repair_turn\n  FROM pld_events\n  WHERE event_type = 'repair_triggered'\n),\ndrift_after AS (\n  SELECT r.session_id,\n         r.repair_turn,\n         COUNT(e.*) AS repeated_drifts\n  FROM repairs r\n  LEFT JOIN pld_events e\n    ON e.session_id = r.session_id\n   AND e.event_type = 'drift_detected'\n   AND (e.turn_id)::int BETWEEN r.repair_turn + 1 AND r.repair_turn + 5\n  GROUP BY r.session_id, r.repair_turn\n),\nprdr_metric AS (\n  SELECT\n    CASE\n      WHEN COUNT(*) = 0 THEN 0.0\n      ELSE COALESCE(SUM(repeated_drifts), 0)::float / COUNT(*)\n    END AS prdr_value\n  FROM drift_after\n),\nvrl_metric AS (\n  SELECT\n    (COUNT(*) FILTER (\n       WHERE event_type IN ('repair_visible', 'clarification_prompt')\n          OR (event_type = 'repair_triggered'\n              AND COALESCE((pld->'metadata'->>'visibility'), 'visible') = 'visible')\n     ) * 100.0 / GREATEST(COUNT(*), 1)) AS vrl_value\n  FROM pld_events\n),\nfr_metric AS (\n  SELECT\n    CASE WHEN COUNT(DISTINCT session_id) = 0 THEN 0.0\n         ELSE COUNT(DISTINCT session_id) FILTER (WHERE event_type = 'failover_triggered') * 100.0\n              / COUNT(DISTINCT session_id)\n    END AS fr_value\n  FROM pld_events\n),\nmrbf_metric AS (\n  WITH failover_turns AS (\n    SELECT session_id, MIN((turn_id)::int) AS failover_turn\n    FROM pld_events\n    WHERE event_type = 'failover_triggered'\n    GROUP BY session_id\n  ),\n  repairs_before AS (\n    SELECT f.session_id, COUNT(e.*) AS repairs_before_failover\n    FROM failover_turns f\n    JOIN pld_events e\n      ON e.session_id = f.session_id\n     AND e.event_type = 'repair_triggered'\n     AND (e.turn_id)::int < f.failover_turn\n    GROUP BY f.session_id\n  )\n  SELECT COALESCE(AVG(repairs_before_failover)::float, 0.0) AS mrbf_value\n  FROM repairs_before\n)\nSELECT\n  (CASE WHEN prdr_value BETWEEN 0 AND 0.10 THEN 1 ELSE 0 END\n   + CASE WHEN vrl_value BETWEEN 0 AND 5 THEN 1 ELSE 0 END\n   + CASE WHEN fr_value BETWEEN 0 AND 5 THEN 1 ELSE 0 END\n   + CASE WHEN mrbf_value BETWEEN 2 AND 3 THEN 1 ELSE 0 END\n  ) AS healthy_metrics,\n  (4\n   - (CASE WHEN prdr_value BETWEEN 0 AND 0.10 THEN 1 ELSE 0 END\n      + CASE WHEN vrl_value BETWEEN 0 AND 5 THEN 1 ELSE 0 END\n      + CASE WHEN fr_value BETWEEN 0 AND 5 THEN 1 ELSE 0 END\n      + CASE WHEN mrbf_value BETWEEN 2 AND 3 THEN 1 ELSE 0 END)\n  ) AS requires_attention\nFROM prdr_metric, vrl_metric, fr_metric, mrbf_metric;",
+          "value_expression": null
+        },
+        "fields": {
+          "healthy": "healthy_metrics",
+          "requires_attention": "requires_attention"
+        },
+        "notes": "Classifies PRDR, VRL, FR, and MRBF into healthy vs attention based on thresholds from the Operational Metrics Cookbook."
       }
     ]
   }
