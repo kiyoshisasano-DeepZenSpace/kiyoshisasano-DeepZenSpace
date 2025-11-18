@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.controllers.controller_config
+pld_runtime.controllers.controller_config (v1.1 Canonical Edition)
 
-Centralized configuration definition for PLD runtime controllers.
+Centralized configuration model for PLD runtime controllers.
 
-This file exists to:
+This file provides:
 
-- Provide a *single stable config model* for controller-level behavior
-- Allow typed, documented parameters for runtime tuning
-- Support environment-based overrides while preserving deterministic defaults
-- Avoid scattered implicit config inside controllers/action_router/etc.
+- A single authoritative configuration structure for runtime controllers  
+- Typed, documented fields to support predictable runtime tuning  
+- Environment-aware extension without implicit mutation or hidden defaults  
+- A declarative, stable surface for deployment manifests and orchestrators  
 
-This is intentionally lightweight and declarative.
+This module is intentionally minimal and framework-agnostic.
 """
 
 from __future__ import annotations
@@ -27,39 +27,42 @@ from .action_router import ActionRouterConfig
 
 
 # ---------------------------------------------------------------------------
-# Execution Mode / Personality
+# Controller Personality — Runtime Behavior Posture (High-Level)
 # ---------------------------------------------------------------------------
 
 class ControllerPersonality(str, Enum):
     """
-    Defines how the runtime controller should behave at a systemic level.
+    Describes the systemic execution posture of the runtime controller.
+
+    The selected personality influences:
+
+        - enforcement aggressiveness
+        - allowed drift tolerance
+        - verbosity and telemetry visibility
+        - router escalation patterns
+
+    Personality does NOT directly adjust logic. Instead, it configures:
+
+        - `EnforcementMode`
+        - `ActionRouterConfig`
+        - `RuntimeSignalBridge` sensitivity
 
     Modes
     -----
     diagnostic:
-        Verbose events, relaxed enforcement, runtime telemetry exposed.
-        Best for development and debugging.
+        High verbosity, relaxed enforcement, transparent execution.
+        Ideal for debugging and development.
 
     operational:
-        Production mode: balanced enforcement, limited noise, stable outputs.
+        Balanced and stable posture suitable for production deployment.
 
     guarded:
-        Strict enforcement: minimal drift tolerance.
-        Designed for high-risk or compliance-bound systems.
+        Low tolerance for drift signals. Strong enforcement and escalation.
+        Intended for compliance-critical or safety-sensitive environments.
 
     experimental:
-        Allows incomplete enforcement or experimental logic without failing.
-        Intended for R&D or testing new detectors/policies.
-
-    Notes
-    -----
-    Personality does NOT directly modify logic — it maps into:
-
-        - enforcement mode
-        - router behavior
-        - bridge sensitivity
-
-    The caller may override these individually even if personality is set.
+        Allows partial or incomplete enforcement logic.
+        Suitable for research pilots or A/B runtime evaluation.
     """
 
     DIAGNOSTIC = "diagnostic"
@@ -69,58 +72,62 @@ class ControllerPersonality(str, Enum):
 
 
 # ---------------------------------------------------------------------------
-# Controller Runtime Configuration Model
+# Runtime Controller Configuration Model
 # ---------------------------------------------------------------------------
 
 @dataclass
 class RuntimeControllerConfig:
     """
-    Full configuration for PldRuntimeController.
+    Canonical configuration model for `PldRuntimeController`.
 
-    This object is intended to be passed into the controller constructor
-    and optionally persisted as part of a deployment manifest.
+    This configuration should be constructed explicitly during deployment or
+    passed through a manifest. It is intentionally stable and versioned.
 
     Parameters
     ----------
     personality:
-        High-level runtime posture preset (overridable).
+        High-level posture preset affecting enforcement and routing behavior.
 
     enforcement_mode:
-        Specific enforcement posture (strict/balanced/observational).
-        If None, defaults to the mode implied by personality.
+        Optional override for the effective enforcement setting.
+        If unset, `resolve_effective_enforcement_mode()` derives a mode
+        based on the selected personality.
 
     platform:
-        System identifier for envelope metadata.
+        Identifies the execution platform or agent environment.
 
     environment:
-        Runtime environment value (prod/staging/local/test).
+        Execution environment label (e.g., production/staging/local/test).
 
     mode:
-        Additional runtime metadata tag, set by operators.
+        Optional modifier conveying runtime metadata or operator intent.
 
     enable_schema_validation:
-        If True, validation for events + envelopes is active.
+        If True, PLD event envelopes and payloads are validated
+        against canonical schemas.
 
     enable_sequence_checks:
-        If True, event stream order is evaluated via sequence rules.
+        If True, enforces ordering guarantees and phase validity rules.
 
     auto_wrap_envelope:
-        Controls whether envelope creation happens automatically.
+        If True, the runtime automatically generates event envelopes.
 
     bridge:
-        Configuration for RuntimeSignalBridge (thresholds, turn mapping).
+        Configuration for the RuntimeSignalBridge, responsible for converting
+        raw signals into phase transitions and telemetry events.
 
     router:
-        Configuration for ActionRouter (target behavior and escalation).
+        Configuration for the ActionRouter, controlling repair strategy
+        selection, escalation, and execution routing.
     """
 
-    # high-level personality
+    # high-level posture
     personality: ControllerPersonality = ControllerPersonality.OPERATIONAL
 
-    # lower-level overrides
+    # explicit override (optional)
     enforcement_mode: Optional[EnforcementMode] = None
 
-    # metadata fields applied to envelopes
+    # metadata identifiers
     platform: str = "unknown"
     environment: str = "production"
     mode: str = "runtime"
@@ -130,23 +137,26 @@ class RuntimeControllerConfig:
     enable_sequence_checks: bool = True
     auto_wrap_envelope: bool = True
 
-    # nested config areas
+    # nested system configuration
     bridge: BridgeConfig = BridgeConfig()
     router: ActionRouterConfig = ActionRouterConfig()
 
 
 # ---------------------------------------------------------------------------
-# Personality → Effective Enforcement Mapping
+# Enforcement Resolution Logic
 # ---------------------------------------------------------------------------
 
 def resolve_effective_enforcement_mode(config: RuntimeControllerConfig) -> EnforcementMode:
     """
-    Compute the resolved enforcement mode based on:
+    Resolve the final enforcement mode applied to the runtime controller.
 
-        - explicit override (`config.enforcement_mode`)
-        - global personality preset
+    Priority Rules
+    --------------
+    1. If `config.enforcement_mode` is explicitly set → return as-is.
+    2. Otherwise derive the setting based on the configured personality.
 
-    This keeps enforced behavior consistent and predictable.
+    The result ensures consistent operational behavior and prevents implicit,
+    uncontrolled policy drift.
     """
 
     if config.enforcement_mode is not None:
@@ -162,7 +172,7 @@ def resolve_effective_enforcement_mode(config: RuntimeControllerConfig) -> Enfor
         case ControllerPersonality.EXPERIMENTAL:
             return EnforcementMode.OBSERVATIONAL
 
-    # Fallback (unlikely)
+    # Defensive fallback (not expected under normal configuration)
     return EnforcementMode.BALANCED
 
 
@@ -171,3 +181,4 @@ __all__ = [
     "RuntimeControllerConfig",
     "resolve_effective_enforcement_mode",
 ]
+
