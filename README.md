@@ -330,13 +330,6 @@ Contributions are welcome, especially:
 
 For shared PoCs or partnership work → see `/field/`.
 
-Before altering terminology or behavior semantics:
-
-```
-quickstart/_meta/MIGRATION.md
-quickstart/_meta/CHANGELOG.md
-```
-
 ---
 
 ## 📍 When PLD Applies
