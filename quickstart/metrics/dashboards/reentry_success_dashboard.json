@@ -1,12 +1,12 @@
 {
   "dashboard_id": "pld_reentry_success_dashboard_v1",
-  "title": "PLD Reentry & Stability Dashboard (Quickstart)",
-  "description": "Reference dashboard for monitoring drift, repair, reentry, latency, and outcome metrics using the PLD Applied Event Schema.",
-  "version": "1.0",
+  "title": "PLD Reentry & Stability Dashboard (Quickstart, PostgreSQL)",
+  "description": "Reference dashboard for monitoring drift, repair, reentry, latency, and outcome metrics using the PLD Applied Event Schema (phase+code).",
+  "version": "1.1",
   "data_source": {
     "type": "table_or_view",
     "name": "pld_events",
-    "notes": "Expected schema aligned with quickstart/metrics/schemas/pld_event.schema.json"
+    "notes": "Expected schema aligned with quickstart/metrics/schemas/pld_event.schema.json (pld.phase + pld.code, runtime.latency_ms)."
   },
   "layout": {
     "grid_columns": 12,
@@ -17,7 +17,7 @@
         "type": "kpi",
         "position": { "x": 0, "y": 0, "w": 4, "h": 3 },
         "query": {
-          "sql": "SELECT COUNT(*) FILTER (WHERE event_type = 'reentry' AND reentry_type <> 'none') AS reentry_events, COUNT(*) FILTER (WHERE event_type = 'reentry') AS total_reentry FROM pld_events",
+          "sql": "SELECT\n  COUNT(*) FILTER (\n    WHERE event_type = 'reentry_observed'\n      AND pld->>'code' <> 'RE0_none'\n  ) AS reentry_events,\n  COUNT(*) FILTER (\n    WHERE event_type = 'reentry_observed'\n  ) AS total_reentry\nFROM pld_events;",
           "value_expression": "CASE WHEN total_reentry = 0 THEN 0 ELSE reentry_events * 1.0 / total_reentry END"
         },
         "format": {
@@ -27,12 +27,12 @@
       },
       {
         "id": "kpi_drift_information_rate",
-        "title": "D1 Information Drift Rate per Session",
+        "title": "D5 Information Drift Rate per Session",
         "type": "kpi",
         "position": { "x": 4, "y": 0, "w": 4, "h": 3 },
         "query": {
-          "sql": "SELECT COUNT(*) AS d1_count, COUNT(DISTINCT session_id) AS sessions FROM pld_events WHERE event_type = 'drift_detected' AND drift_type = 'D1_information_drift'",
-          "value_expression": "CASE WHEN sessions = 0 THEN 0 ELSE d1_count * 1.0 / sessions END"
+          "sql": "SELECT\n  COUNT(*) AS d5_count,\n  COUNT(DISTINCT session_id) AS sessions\nFROM pld_events\nWHERE event_type = 'drift_detected'\n  AND pld->>'code' LIKE 'D5_%';",
+          "value_expression": "CASE WHEN sessions = 0 THEN 0 ELSE d5_count * 1.0 / sessions END"
         },
         "format": {
           "unit": "number",
@@ -41,11 +41,11 @@
       },
       {
         "id": "kpi_hard_repair_rate",
-        "title": "Hard Repair Rate",
+        "title": "Hard Repair Rate (R4_hard_reset)",
         "type": "kpi",
         "position": { "x": 8, "y": 0, "w": 4, "h": 3 },
         "query": {
-          "sql": "SELECT COUNT(*) FILTER (WHERE event_type = 'repair_triggered' AND repair_type = 'R4_hard_reset') AS hard_repairs, COUNT(*) FILTER (WHERE event_type = 'repair_triggered') AS total_repairs FROM pld_events",
+          "sql": "SELECT\n  COUNT(*) FILTER (\n    WHERE event_type = 'repair_triggered'\n      AND pld->>'code' = 'R4_hard_reset'\n  ) AS hard_repairs,\n  COUNT(*) FILTER (\n    WHERE event_type = 'repair_triggered'\n  ) AS total_repairs\nFROM pld_events;",
           "value_expression": "CASE WHEN total_repairs = 0 THEN 0 ELSE hard_repairs * 1.0 / total_repairs END"
         },
         "format": {
@@ -55,27 +55,27 @@
       },
       {
         "id": "chart_drift_distribution",
-        "title": "Drift Type Distribution",
+        "title": "Drift Type Distribution (by PLD code)",
         "type": "bar",
         "position": { "x": 0, "y": 3, "w": 6, "h": 4 },
         "query": {
-          "sql": "SELECT drift_type, COUNT(*) AS count FROM pld_events WHERE event_type = 'drift_detected' GROUP BY drift_type ORDER BY count DESC"
+          "sql": "SELECT\n  pld->>'code' AS drift_code,\n  COUNT(*) AS count\nFROM pld_events\nWHERE event_type = 'drift_detected'\nGROUP BY pld->>'code'\nORDER BY count DESC;"
         },
         "encoding": {
-          "x": "drift_type",
+          "x": "drift_code",
           "y": "count"
         }
       },
       {
         "id": "chart_repair_distribution",
-        "title": "Repair Type Distribution",
+        "title": "Repair Type Distribution (by PLD code)",
         "type": "bar",
         "position": { "x": 6, "y": 3, "w": 6, "h": 4 },
         "query": {
-          "sql": "SELECT repair_type, COUNT(*) AS count FROM pld_events WHERE event_type = 'repair_triggered' GROUP BY repair_type ORDER BY count DESC"
+          "sql": "SELECT\n  pld->>'code' AS repair_code,\n  COUNT(*) AS count\nFROM pld_events\nWHERE pld->>'phase' = 'repair'\nGROUP BY pld->>'code'\nORDER BY count DESC;"
         },
         "encoding": {
-          "x": "repair_type",
+          "x": "repair_code",
           "y": "count"
         }
       },
@@ -85,7 +85,7 @@
         "type": "timeseries",
         "position": { "x": 0, "y": 7, "w": 6, "h": 4 },
         "query": {
-          "sql": "SELECT DATE_TRUNC('hour', timestamp) AS bucket, COUNT(*) AS reentries FROM pld_events WHERE event_type = 'reentry' AND reentry_type <> 'none' GROUP BY bucket ORDER BY bucket"
+          "sql": "SELECT\n  DATE_TRUNC('hour', timestamp) AS bucket,\n  COUNT(*) AS reentries\nFROM pld_events\nWHERE event_type = 'reentry_observed'\n  AND pld->>'code' <> 'RE0_none'\nGROUP BY bucket\nORDER BY bucket;"
         },
         "encoding": {
           "time": "bucket",
@@ -98,10 +98,10 @@
         "type": "timeseries_dual_axis",
         "position": { "x": 6, "y": 7, "w": 6, "h": 4 },
         "query_primary": {
-          "sql": "SELECT DATE_TRUNC('hour', timestamp) AS bucket, AVG(latency_ms) AS avg_latency_ms FROM pld_events WHERE latency_ms IS NOT NULL GROUP BY bucket ORDER BY bucket"
+          "sql": "SELECT\n  DATE_TRUNC('hour', timestamp) AS bucket,\n  AVG((runtime->>'latency_ms')::numeric) AS avg_latency_ms\nFROM pld_events\nWHERE runtime->>'latency_ms' IS NOT NULL\nGROUP BY bucket\nORDER BY bucket;"
         },
         "query_secondary": {
-          "sql": "SELECT DATE_TRUNC('hour', timestamp) AS bucket, COUNT(*) AS drift_events FROM pld_events WHERE event_type = 'drift_detected' GROUP BY bucket ORDER BY bucket"
+          "sql": "SELECT\n  DATE_TRUNC('hour', timestamp) AS bucket,\n  COUNT(*) AS drift_events\nFROM pld_events\nWHERE event_type = 'drift_detected'\nGROUP BY bucket\nORDER BY bucket;"
         },
         "encoding_primary": {
           "time": "bucket",
@@ -120,7 +120,7 @@
         "type": "table",
         "position": { "x": 0, "y": 11, "w": 12, "h": 4 },
         "query": {
-          "sql": "SELECT session_id, MAX(CASE WHEN event_type = 'outcome' THEN outcome_type ELSE 'none' END) AS outcome_type, COUNT(*) FILTER (WHERE event_type = 'drift_detected') AS drift_events, COUNT(*) FILTER (WHERE event_type = 'repair_triggered' AND repair_type = 'R4_hard_reset') AS hard_resets FROM pld_events GROUP BY session_id ORDER BY session_id"
+          "sql": "SELECT\n  session_id,\n  CASE\n    WHEN BOOL_OR(event_type = 'failover_triggered') THEN 'abandoned'\n    WHEN BOOL_OR(event_type = 'outcome') THEN 'complete'\n    WHEN BOOL_OR(event_type = 'reentry_observed') THEN 'complete'\n    ELSE 'incomplete'\n  END AS outcome_type,\n  COUNT(*) FILTER (\n    WHERE event_type = 'drift_detected'\n  ) AS drift_events,\n  COUNT(*) FILTER (\n    WHERE event_type = 'repair_triggered'\n      AND pld->>'code' = 'R4_hard_reset'\n  ) AS hard_resets\nFROM pld_events\nGROUP BY session_id\nORDER BY session_id;"
         },
         "columns": [
           { "field": "session_id", "title": "Session" },
