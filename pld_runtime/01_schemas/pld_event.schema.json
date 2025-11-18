@@ -1,7 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "PLD Runtime Event",
+  "title": "PLD Runtime Event (v1.1)",
+  "description": "Canonical schema definition for PLD runtime event objects.",
   "type": "object",
+
   "required": [
     "event_id",
     "timestamp",
@@ -16,22 +18,23 @@
 
     "event_id": {
       "type": "string",
-      "description": "UUIDv4 for event traceability"
+      "description": "Unique identifier for event traceability (UUIDv4 recommended)."
     },
 
     "timestamp": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "ISO8601 timestamp for when the event was generated."
     },
 
     "session_id": {
       "type": "string",
-      "description": "Conversation / agent runtime identifier"
+      "description": "Conversation / agent execution runtime identifier."
     },
 
     "turn_id": {
       "type": "string",
-      "description": "Optional conversational turn mapping"
+      "description": "Optional conversational turn mapping linking event to runtime turn index."
     },
 
     "source": {
@@ -43,7 +46,8 @@
         "runtime",
         "detector",
         "controller"
-      ]
+      ],
+      "description": "Origin that generated the PLD event."
     },
 
     "event_type": {
@@ -60,12 +64,15 @@
         "fallback_executed",
         "session_close",
         "info"
-      ]
+      ],
+      "description": "Category defining the operational meaning of the event."
     },
 
     "pld": {
       "type": "object",
+      "description": "Primary PLD classification payload.",
       "required": ["phase", "code", "confidence"],
+
       "properties": {
 
         "phase": {
@@ -76,22 +83,25 @@
             "reentry",
             "outcome",
             "none"
-          ]
+          ],
+          "description": "High-level PLD lifecycle phase."
         },
 
         "code": {
           "type": "string",
-          "description": "Drift/Repair/Reentry label from drift_repair_codes.json"
+          "description": "Fine-grained drift/repair/reentry label sourced from drift_repair_codes.json."
         },
 
         "confidence": {
           "type": "number",
           "minimum": 0,
-          "maximum": 1
+          "maximum": 1,
+          "description": "Confidence scored between 0–1 from classifier or detector."
         },
 
         "metadata": {
           "type": "object",
+          "description": "Optional extension field for detector-specific information.",
           "additionalProperties": true
         }
       }
@@ -99,19 +109,21 @@
 
     "payload": {
       "type": "object",
-      "description": "Raw data relevant to event",
+      "description": "Raw contextual data relevant to this PLD event.",
       "additionalProperties": true
     },
 
     "runtime": {
       "type": "object",
-      "description": "Execution context snapshot",
+      "description": "Snapshot of the execution environment at event time.",
+      
       "properties": {
-        "latency_ms": { "type": "number" },
-        "model": { "type": "string" },
-        "tool": { "type": "string" },
-        "agent_state": { "type": "string" }
+        "latency_ms": { "type": "number", "description": "Measured execution latency." },
+        "model": { "type": "string", "description": "Model identifier if an LLM was used." },
+        "tool": { "type": "string", "description": "Tool identifier if triggered." },
+        "agent_state": { "type": "string", "description": "Optional high-level agent state tag." }
       },
+
       "additionalProperties": true
     }
   },
