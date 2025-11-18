@@ -17,7 +17,7 @@
         "type": "kpi",
         "position": { "x": 0, "y": 0, "w": 4, "h": 3 },
         "query": {
-          "sql": "SELECT COALESCE(SUM(CASE WHEN event_type = 'reentry' AND reentry_type <> 'none' THEN 1 ELSE 0 END), 0) AS reentry_events, COALESCE(COUNT(CASE WHEN event_type = 'reentry' THEN 1 END), 0) AS total_reentry FROM pld_events",
+          "sql": "SELECT COUNT(*) FILTER (WHERE event_type = 'reentry' AND reentry_type <> 'none') AS reentry_events, COUNT(*) FILTER (WHERE event_type = 'reentry') AS total_reentry FROM pld_events",
           "value_expression": "CASE WHEN total_reentry = 0 THEN 0 ELSE reentry_events * 1.0 / total_reentry END"
         },
         "format": {
@@ -45,7 +45,7 @@
         "type": "kpi",
         "position": { "x": 8, "y": 0, "w": 4, "h": 3 },
         "query": {
-          "sql": "SELECT COUNT(*) AS hard_repairs, COUNT(*) FILTER (WHERE event_type = 'repair_triggered') AS total_repairs FROM pld_events WHERE event_type = 'repair_triggered'",
+          "sql": "SELECT COUNT(*) FILTER (WHERE event_type = 'repair_triggered' AND repair_type = 'R4_hard_reset') AS hard_repairs, COUNT(*) FILTER (WHERE event_type = 'repair_triggered') AS total_repairs FROM pld_events",
           "value_expression": "CASE WHEN total_repairs = 0 THEN 0 ELSE hard_repairs * 1.0 / total_repairs END"
         },
         "format": {
