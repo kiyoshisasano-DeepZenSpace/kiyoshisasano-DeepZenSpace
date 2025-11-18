@@ -20,6 +20,18 @@ This is the **minimal operational implementation** — fast to integrate and ali
 
 ---
 
+### 🚀 Quick Validation — Run Metrics Locally
+
+If you want to run the PLD metrics against the bundled demo dataset:
+
+```bash
+cd quickstart/metrics
+pip install duckdb
+python verify_metrics_local.py
+```
+This script demonstrates how PLD runtime events turn into measurable
+stability metrics.
+
 ## 1. What This Module Enables
 
 Once integrated, you can:
@@ -156,5 +168,6 @@ Maintainer: **Kiyoshi Sasano**
 > **PLD Metrics is not general analytics —  
 it is behavioral instrumentation.  
 It measures whether an agent maintains alignment with the interaction contract.**
+
 
 
