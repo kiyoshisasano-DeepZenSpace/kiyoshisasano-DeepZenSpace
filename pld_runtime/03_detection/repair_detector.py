@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.detection.repair_detector
+pld_runtime.detection.repair_detector (v1.1 Canonical Edition)
 
 Detects PLD Repair behavior in runtime traces.
 
@@ -17,6 +17,15 @@ It does NOT:
 
 Responsibility:
     detection only → enforcement/response_policy.py decides what to do.
+
+Canonical Alignment:
+- Repair codes follow the v1.1 taxonomy:
+
+    R1_clarify
+    R2_soft_repair
+    R3_rewrite
+    R4_request_clarification
+    R5_hard_reset
 """
 
 from __future__ import annotations
@@ -27,14 +36,15 @@ from typing import Any, Dict, List, Literal, Optional
 
 
 # ---------------------------------------------------------------------------
-# Repair Categories (aligned conceptually with R1–R4)
+# Repair Categories (aligned with R1–R5 canonical codes)
 # ---------------------------------------------------------------------------
 
 RepairType = Literal[
-    "local_soft_repair",     # R1-like
-    "structural_repair",     # R2-like
-    "ux_repair",             # R3-like
-    "hard_reset_repair",     # R4-like
+    "R1_clarify",
+    "R2_soft_repair",
+    "R3_rewrite",
+    "R4_request_clarification",
+    "R5_hard_reset",
     "unknown",
 ]
 
@@ -49,19 +59,22 @@ class RepairDetectionConfig:
     Heuristic repair detection parameters.
 
     sensitivity:
-        - low: conservative, only strong evidence becomes repair
+        - low: conservative, only strong evidence is treated as repair
         - medium: balanced default
         - high: aggressive, more actions flagged as repair
 
     signals:
         - detect_ux_repair:
-            "sorry", "still checking...", latency messages, etc.
+            pacing / apology / retry language (maps to R3_rewrite by default).
         - detect_local_repair:
-            explicit corrections without full reset.
+            explicit corrections or clarifications without full reset
+            (maps to R1_clarify / R2_soft_repair).
         - detect_structural_repair:
             mentions of memory, state alignment, re-sync, recomputing, etc.
+            (maps to R2_soft_repair).
         - detect_hard_reset:
-            "let's start over", session reset, context discard.
+            "let's start over", session reset, context discard
+            (maps to R5_hard_reset).
     """
 
     sensitivity: Literal["low", "medium", "high"] = "medium"
@@ -124,14 +137,19 @@ class RepairDetector:
 
     Input:
         content:
-            agent/system message or tool result that might embody a repair.
+            Agent/system message or tool result that might embody a repair.
+
         runtime:
-            free-form dict, recommended keys:
+            Free-form dict, recommended keys:
               - latency_ms
               - previously_failed (bool)
               - previous_phase ("drift", "repair", "reentry", "none")
               - tool_used
               - reset_flag (bool)  # if runtime knows it reset context
+
+    Output:
+        RepairDetectionResult with one or more RepairSignal objects
+        classified into canonical repair types (R1–R5).
     """
 
     def __init__(self, config: Optional[RepairDetectionConfig] = None):
@@ -141,70 +159,79 @@ class RepairDetector:
         txt = _norm(content)
         signals: List[RepairSignal] = []
 
-        # ---------- UX Repair (R3-like) ----------
+        # ---------- UX Repair (R3_rewrite-like) ----------
+        # UX-facing language that smooths pacing or acknowledges issues.
         if self.config.detect_ux_repair:
-            if any(k in txt for k in ["still checking", "one moment", "hold on", "processing", "investigating"]):
+            if any(
+                k in txt
+                for k in ["still checking", "one moment", "hold on", "processing", "investigating"]
+            ):
                 signals.append(
                     RepairSignal(
-                        type="ux_repair",
+                        type="R3_rewrite",
                         confidence=_confidence(0.6, self.config.sensitivity),
-                        message="Pacing / reassurance language suggests UX repair.",
-                        metadata={"kind": "pacing_ack"}
+                        message="Pacing / reassurance language suggests UX-oriented repair.",
+                        metadata={"kind": "pacing_ack"},
                     )
                 )
             if "sorry" in txt or "apologize" in txt:
                 signals.append(
                     RepairSignal(
-                        type="ux_repair",
+                        type="R3_rewrite",
                         confidence=_confidence(0.55, self.config.sensitivity),
-                        message="Apologetic phrasing suggests UX repair.",
-                        metadata={"kind": "apology"}
+                        message="Apologetic phrasing suggests UX repair / rewrite of prior behavior.",
+                        metadata={"kind": "apology"},
                     )
                 )
 
-        # ---------- Local Repair (R1-like) ----------
+        # ---------- Local Repair (R1_clarify / R2_soft_repair-like) ----------
         if self.config.detect_local_repair:
+            # Explicit clarification
             if any(k in txt for k in ["let me correct", "to clarify", "what i meant", "small correction"]):
                 signals.append(
                     RepairSignal(
-                        type="local_soft_repair",
+                        type="R1_clarify",
                         confidence=_confidence(0.7, self.config.sensitivity),
-                        message="Explicit local correction.",
-                        metadata={"kind": "local_correction"}
+                        message="Explicit local clarification or correction.",
+                        metadata={"kind": "local_correction"},
                     )
                 )
+            # Local retry / soft adjustment
             if "retry" in txt or "try again" in txt:
                 signals.append(
                     RepairSignal(
-                        type="local_soft_repair",
+                        type="R2_soft_repair",
                         confidence=_confidence(0.6, self.config.sensitivity),
-                        message="Retry wording suggests local repair.",
-                        metadata={"kind": "retry"}
+                        message="Retry wording suggests local soft repair.",
+                        metadata={"kind": "retry"},
                     )
                 )
 
-        # ---------- Structural Repair (R2-like) ----------
+        # ---------- Structural Repair (R2_soft_repair-like) ----------
         if self.config.detect_structural_repair:
-            if any(k in txt for k in ["resync", "re-sync", "synchronize", "refreshing context", "reloading data"]):
+            if any(
+                k in txt
+                for k in ["resync", "re-sync", "synchronize", "refreshing context", "reloading data"]
+            ):
                 signals.append(
                     RepairSignal(
-                        type="structural_repair",
+                        type="R2_soft_repair",
                         confidence=_confidence(0.75, self.config.sensitivity),
-                        message="Mentions of synchronization / context refresh.",
-                        metadata={"kind": "state_sync"}
+                        message="Mentions of synchronization / context refresh indicate structural soft repair.",
+                        metadata={"kind": "state_sync"},
                     )
                 )
             if "updating memory" in txt or "rebuilding the plan" in txt:
                 signals.append(
                     RepairSignal(
-                        type="structural_repair",
+                        type="R2_soft_repair",
                         confidence=_confidence(0.7, self.config.sensitivity),
-                        message="Explicit state or plan rebuild.",
-                        metadata={"kind": "plan_rebuild"}
+                        message="Explicit state or plan rebuild indicates structural soft repair.",
+                        metadata={"kind": "plan_rebuild"},
                     )
                 )
 
-        # ---------- Hard Reset (R4-like) ----------
+        # ---------- Hard Reset (R5_hard_reset-like) ----------
         if self.config.detect_hard_reset:
             hard_reset_phrases = [
                 "let's start over",
@@ -216,10 +243,10 @@ class RepairDetector:
             if any(p in txt for p in hard_reset_phrases) or runtime.get("reset_flag"):
                 signals.append(
                     RepairSignal(
-                        type="hard_reset_repair",
+                        type="R5_hard_reset",
                         confidence=_confidence(0.8, self.config.sensitivity),
                         message="Hard reset / restart wording detected.",
-                        metadata={"reset_flag": bool(runtime.get("reset_flag"))}
+                        metadata={"reset_flag": bool(runtime.get("reset_flag"))},
                     )
                 )
 
@@ -237,30 +264,32 @@ def repair_signal_to_pld_event(
     signal: RepairSignal,
     *,
     session_id: str,
-    turn_id: Optional[str] = None,
+    turn_id: Optional[int] = None,
 ) -> Dict[str, Any]:
     """
     Convert a RepairSignal into a PLD event object compatible with
     pld_event.schema.json.
 
-    Mapping (RepairType → conceptual PLD code):
+    Mapping (RepairType → PLD code):
 
-        local_soft_repair    → R1_local_repair
-        structural_repair    → R2_structural_repair
-        ux_repair            → R3_ux_repair
-        hard_reset_repair    → R4_hard_repair
-        unknown              → "none"
+        R1_clarify             → R1_clarify
+        R2_soft_repair         → R2_soft_repair
+        R3_rewrite             → R3_rewrite
+        R4_request_clarification → R4_request_clarification
+        R5_hard_reset          → R5_hard_reset
+        unknown                → R2_soft_repair (generic soft repair fallback)
     """
-    if signal.type == "local_soft_repair":
-        pld_code = "R1_local_repair"
-    elif signal.type == "structural_repair":
-        pld_code = "R2_structural_repair"
-    elif signal.type == "ux_repair":
-        pld_code = "R3_ux_repair"
-    elif signal.type == "hard_reset_repair":
-        pld_code = "R4_hard_repair"
+    if signal.type in {
+        "R1_clarify",
+        "R2_soft_repair",
+        "R3_rewrite",
+        "R4_request_clarification",
+        "R5_hard_reset",
+    }:
+        pld_code = signal.type
     else:
-        pld_code = "none"
+        # For unknown repairs, degrade to a generic soft repair code.
+        pld_code = "R2_soft_repair"
 
     return {
         "event_id": f"repair-{signal.type}-{_now_iso()}",
@@ -269,21 +298,18 @@ def repair_signal_to_pld_event(
         "turn_id": turn_id,
         "source": "runtime_detector",
         "event_type": "repair_triggered",
-
         "pld": {
             "phase": "repair",
             "code": pld_code,
             "confidence": signal.confidence,
         },
-
         "payload": {
             "message": signal.message,
             "metadata": signal.metadata,
         },
-
         "runtime": {
-            "detector": "repair_rule_based_v1"
-        }
+            "detector": "repair_rule_based_v1_1",
+        },
     }
 
 
