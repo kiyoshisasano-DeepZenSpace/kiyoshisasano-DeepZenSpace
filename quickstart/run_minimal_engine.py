@@ -61,7 +61,7 @@ def main() -> None:
         sys.exit(1)
 
     # --- Display raw operational outcome -----------------------------------
-    print("\n--- PLD Runtime ControllerOutcome ---\n")
+    print("\n--- PLD Runtime Controller Outcome ---\n")
     print(f"Session ID:     {getattr(outcome, 'session_id', 'N/A')}")
     print(f"Phase:          {getattr(outcome, 'phase', 'N/A')}")
     print(f"Next Action:    {getattr(outcome, 'next_action', 'N/A')}")
