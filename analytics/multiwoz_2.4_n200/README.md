@@ -1,5 +1,10 @@
 # 📊 PLD Benchmark Dataset (MultiWOZ 2.4 — N=200)
 
+> This repository does not redistribute or include the original MultiWOZ 2.4 dialogue text.
+> Only derived metadata, annotations, and evaluation artifacts are included.
+> Per CC-BY-SA 4.0 interpretation guidelines, annotation layers that do not reproduce or contain original text are considered separate works and thus may carry an > independent license.
+> Users wishing to access or regenerate the evaluation dataset must obtain the original MultiWOZ dataset from the upstream repository and comply with its license.
+
 Note: For an applied end-to-end implementation case (including runtime logging and repair orchestration), see `/analytics/case_study_end_to_end.md`.
 
 ---
