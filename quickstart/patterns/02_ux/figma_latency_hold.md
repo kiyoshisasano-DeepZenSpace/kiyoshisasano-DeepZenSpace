@@ -174,4 +174,5 @@ Latency-hold is successful when:
 
 Maintainer: **Kiyoshi Sasano**  
 File: `patterns/02_ux/figma_latency_hold.md`  
-License: **CC BY-NC 4.0**
+
+License: **CC BY 4.0**
