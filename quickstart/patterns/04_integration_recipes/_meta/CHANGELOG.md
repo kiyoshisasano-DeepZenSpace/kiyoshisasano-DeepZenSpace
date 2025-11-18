@@ -16,7 +16,7 @@ This changelog documents the evolution of the integration recipe set within the 
 
 ## Version `1.1` — Terminology & Framing Refinement  
 **Status:** Applied  
-**Date:** 2025-01-18
+**Date:** 2025-11-17
 
 ### Summary
 
