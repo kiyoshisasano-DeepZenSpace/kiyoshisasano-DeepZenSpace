@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.enforcement.sequence_rules
+pld_runtime.enforcement.sequence_rules (v1.1 Canonical Edition)
 
 Temporal enforcement for Phase Loop Dynamics (PLD) event streams.
 
 This module checks that event sequences respect core PLD runtime rules, e.g.:
 
-    Drift ⇒ (within Δt) Repair ⇒ (within Δt) Reentry
+    Drift → Repair → Reentry → Continue → Outcome
 
 It operates on already-logged PLD events or envelopes and assumes that
 structural validation has been handled by schema_validator.
 
-Key ideas:
+Key ideas
+---------
 - Drift, Repair, Reentry are inferred from the PLD phase field (preferred)
   and/or event_type as a fallback.
 - Time is interpreted from RFC3339 / ISO8601 timestamps on each event.
@@ -44,25 +45,25 @@ class SequenceRuleConfig:
 
     All thresholds are in milliseconds.
 
-    Semantics:
-
-    - max_drift_to_repair_ms:
+    Semantics
+    ---------
+    max_drift_to_repair_ms:
         Upper bound Δt between a Drift and its corresponding Repair.
         If exceeded, a DRIFT_TIMEOUT violation is recorded.
 
-    - max_repair_to_reentry_ms:
+    max_repair_to_reentry_ms:
         Upper bound Δt between a Repair and its corresponding Reentry.
         If exceeded, a REPAIR_TIMEOUT violation is recorded.
 
-    - require_repair_for_drift:
+    require_repair_for_drift:
         If True, any drift that never receives a repair by the end of the
         sequence produces a DRIFT_WITHOUT_REPAIR violation.
 
-    - require_reentry_after_repair:
+    require_reentry_after_repair:
         If True, any repair that never receives reentry by the end of the
         sequence produces a REPAIR_WITHOUT_REENTRY violation.
 
-    - allow_reentry_without_repair:
+    allow_reentry_without_repair:
         If False, any reentry not preceded by a repair produces a
         REENTRY_WITHOUT_PRECEDING_REPAIR violation.
     """
@@ -203,7 +204,7 @@ def _event_codes(event: Dict[str, Any]) -> Tuple[Optional[str], Optional[str]]:
     Return (phase, code) from the event if available.
 
     phase is typically one of "drift", "repair", "reentry", "outcome", "none".
-    code is a concrete PLD code like "D1_information_drift".
+    code is a concrete PLD code like "D5_information" or "R2_soft_repair".
     """
     pld = event.get("pld") or {}
     phase = pld.get("phase")
