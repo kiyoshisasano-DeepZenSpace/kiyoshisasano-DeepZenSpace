@@ -1,7 +1,7 @@
 # Phase Loop Dynamics (PLD) — Trademark Policy
 
 **Version:** 1.0  
-**Last Updated:** 2025-01-16  
+**Last Updated:** 2025-11-18  
 **Status:** Active
 
 ---
