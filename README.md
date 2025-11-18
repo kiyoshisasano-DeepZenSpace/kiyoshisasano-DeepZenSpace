@@ -338,9 +338,6 @@ Copyright © 2025
 
 ---
 
-
----
-
 > **PLD is behavioral infrastructure —  
 it ensures alignment persists *across interaction*,  
 not just at initialization.**
