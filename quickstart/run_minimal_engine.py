@@ -19,22 +19,38 @@
 #   consider creating a separate script like `run_engine_scenarios.py`
 #   to keep this file focused and minimal.
 
+from __future__ import annotations
+
 import sys
 import uuid
+from typing import Optional
 
 
-def main() -> None:
+def main(argv: Optional[list[str]] = None) -> int:
+    """
+    Run a minimal end-to-end PLD runtime controller example.
+
+    This script intentionally uses a single hard-coded turn that simulates
+    a "RAG returned no results" scenario, just to exercise:
+
+      - controller wiring
+      - policy evaluation
+      - basic outcome fields
+    """
+    if argv is None:
+        argv = sys.argv[1:]
+
     try:
         # --- Import from the real runtime package ---------------------------
         from pld_runtime.controllers.pld_controller import PldRuntimeController
         from pld_runtime.controllers.controller_config import ControllerConfig
         from pld_runtime.ingestion.normalization import NormalizedTurn
     except ImportError as e:
-        print("❌ PLD runtime not available.")
-        print(f"   Import error: {e}")
-        print("   Tip: Ensure `pld_runtime/` is installed or on PYTHONPATH.")
-        print("   If you're exploring PLD concepts, run: `hello_pld_runtime.py`.")
-        sys.exit(1)
+        print("❌ PLD runtime not available.", file=sys.stderr)
+        print(f"   Import error: {e}", file=sys.stderr)
+        print("   Tip: Ensure `pld_runtime/` is installed or on PYTHONPATH.", file=sys.stderr)
+        print("   If you're exploring PLD concepts, run: `hello_pld_runtime.py`.", file=sys.stderr)
+        return 1
 
     try:
         # --- Initialize the PLD runtime controller --------------------------
@@ -44,7 +60,7 @@ def main() -> None:
 
         # --- Construct a simulated drift condition --------------------------
         # Example: A RAG subsystem returns no usable results.
-        turn: "NormalizedTurn" = NormalizedTurn(
+        turn: NormalizedTurn = NormalizedTurn(
             session_id=session_id,
             turn_id="turn_1",
             role="system",
@@ -56,9 +72,9 @@ def main() -> None:
         outcome = controller.process_turn(turn)
 
     except Exception as e:
-        print("❌ Runtime failure while executing controller.")
-        print(f"   Error: {e}")
-        sys.exit(1)
+        print("❌ Runtime failure while executing controller.", file=sys.stderr)
+        print(f"   Error: {e}", file=sys.stderr)
+        return 1
 
     # --- Display raw operational outcome -----------------------------------
     print("\n--- PLD Runtime Controller Outcome ---\n")
@@ -97,6 +113,8 @@ def main() -> None:
     print("  Trace ID     → Identifier for logging or replay")
     print()
 
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
