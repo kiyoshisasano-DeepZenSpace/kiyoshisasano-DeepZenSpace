@@ -181,7 +181,7 @@ python quickstart/run_minimal_engine.py
 
 - Outputs policy decisions, trace IDs, and next-action recommendations
 
-> 🛠️ This step verifies PLD is installed and running as a *real runtime, not just a mock demonstration.>
+> 🛠️ This verifies PLD is installed and running as a real runtime, not just a conceptual demonstration.
 
 ---
  
@@ -214,7 +214,7 @@ Once PLD is active in a system, evaluation may include:
 - Stability vs latency trade-offs
 - Outcome completion distribution
 
-Reference definitions:  
+Full operational framework including PRDR, REI, VRL and evaluation workflow:  
 👉 `/docs/07_pld_operational_metrics_cookbook.md`
 
 ---
