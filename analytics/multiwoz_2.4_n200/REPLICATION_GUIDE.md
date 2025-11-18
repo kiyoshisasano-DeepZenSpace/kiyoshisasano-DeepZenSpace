@@ -163,14 +163,9 @@ analytics/
     └── README.md
 
 
-This guide is version-controlled and updates follow:
-
-```
-_meta/CHANGELOG.md
-```
-
 ---
 
 > Replication is not about matching numbers —  
 > it is about matching **methodology, signal semantics, and evaluation process.**
+
 
