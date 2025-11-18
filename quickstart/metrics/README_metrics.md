@@ -1,6 +1,6 @@
 ---
 title: "PLD Metrics Module — Quickstart Edition"
-version: 2025.1
+version: 2025.1.1
 maintainer: "Kiyoshi Sasano"
 status: stable
 tags:
@@ -13,41 +13,46 @@ tags:
 
 # 📊 PLD Metrics Module — Quickstart Edition
 
-This folder provides the **measurement layer** of the PLD Applied Interaction Framework.  
-Its purpose is to help developers **log, evaluate, and visualize** how well an agent detects drift, performs repairs, reenters alignment, and maintains conversational stability.
+This module provides the **measurement layer** of the PLD Applied Interaction Framework.  
+It enables developers to **log, aggregate, and visualize** behavioral signals that reflect an agent’s runtime stability and ability to recover from misalignment.
 
-This is the **minimal operational implementation** — fast to integrate and aligned with the evaluation workflow used in the MultiWOZ (N=200) baseline.
+This edition is intended as the **minimal operational implementation** — consistent with the evaluation workflow used in the MultiWOZ-style benchmark baseline (N≈200 sessions).
 
 ---
 
 ### 🚀 Quick Validation — Run Metrics Locally
 
-If you want to run the PLD metrics against the bundled demo dataset:
+To verify schema integrity and metric computation against the bundled demo log:
 
 ```bash
 cd quickstart/metrics
 pip install duckdb
 python verify_metrics_local.py
 ```
-This script demonstrates how PLD runtime events turn into measurable
-stability metrics.
+
+This validates end-to-end flow:
+
+```metalab
+Raw PLD events → Aggregated metrics → Dashboard tiles
+```
+
+---
 
 ## 1. What This Module Enables
 
-Once integrated, you can:
+After integration, you can:
 
-- Log system events using a **standard PLD JSON schema**
-- Track Drift / Soft Repair / Hard Repair / Reentry / Outcome
+- Log runtime behaviors using a standard PLD JSON schema
+- Track Drift → Repair → Reentry → Outcome sequences
+- Measure timing effects (latency and pacing sensitivity)
 - Generate stability dashboards and longitudinal comparisons
-- Compare system versions and prompting strategies
-- Integrate metrics into:
+- Compare runtime configurations, model versions, and prompting strategies
 
-  - LangChain / LangGraph  
-  - OpenAI Assistants API  
-  - Rasa / Dialogue Managers  
-  - Custom orchestration pipelines  
+  - LangChain / LangGraph / Agents API
+  - Rasa / Orchestrated tool-use runtimes
+  - Custom controller architectures   
 
-This module is designed for **runtime observability**, not offline annotation.
+> This module is optimized for **runtime observability**, not offline annotation.
 
 ---
 
@@ -59,97 +64,81 @@ quickstart/metrics/
 ├── README_metrics.md                 ← You are here
 │
 ├── schemas/                          ← Canonical data definitions
-│   ├── pld_event.schema.json         ← PLD event-level schema
-│   └── metrics_schema.yaml           ← Field dictionary + definitions
+│   ├── pld_event.schema.json         ← Event-level logging schema
+│   └── metrics_schema.yaml           ← Aggregated session-level metrics schema
 │
-├── datasets/                         ← Example data
-│   └── pld_events_demo.jsonl         ← Sample PLD log file
+├── datasets/
+│   └── pld_events_demo.jsonl         ← Sample event log (for validation)
 │
-├── guides/                           ← Implementation guidance
-│   └── drift_event_logging.md        ← How to instrument runtime logging
+├── guides/
+│   └── drift_event_logging.md        ← Logging implementation guide
 │
-├── reports/                          ← Example evaluation outputs
-│   └── pld_events_demo_report.md     ← Summary analysis of the demo dataset
+├── reports/
+│   └── pld_events_demo_report.md     ← Example analysis output
 │
-└── dashboards/                       ← Visualization presets
-    └── reentry_success_dashboard.json ← Metrics dashboard template
+└── dashboards/
+    └── reentry_success_dashboard.json ← Operational visualization configuration
 ```
 
 ---
 
 ## 3. Core Metric Categories
 
-| Metric Class | Meaning | Examples |
-|--------------|---------|----------|
-| Drift Metrics | Frequency and type of divergence | D1_information_drift, D3_intent_drift |
-| Repair Metrics | Local correction vs systemic reset | Soft Repair Rate / Hard Repair Rate |
-| Reentry Metrics | Stability after repair | Reentry Success Rate (RE1–RE3) |
-| Timing Metrics | Latency effects and UX perception | Avg Latency, High-Latency Flags |
-| Outcome Metrics | Completion trajectory | Complete / Partial / Abandoned / Reset |
+| Class           | Purpose                                 | Example Signals                     |
+| --------------- | --------------------------------------- | ----------------------------------- |
+| Drift Metrics   | Detect and categorize divergence        | D2_context, D3_intent, D4_tool      |
+| Repair Metrics  | Understand local vs systemic correction | Soft vs Hard Repair Count           |
+| Reentry Metrics | Measure post-repair stability           | Reentry Success Rate (RE1–RE3)      |
+| Timing Metrics  | UX pacing + latency sensitivity         | P95 latency, pacing-repair triggers |
+| Outcome Metrics | Completion and trajectory               | Complete / Reset / Abandoned        |
+| Derived KPIs    | Operational decision signals            | PRDR / VRL / FR / MRBF / REI        |
 
 These metrics align directly with:
 
-- `docs/`
-- `docs/07_pld_operational_metrics_cookbook.md` (PRDR, REI, VRL definitions)
-- `quickstart/operator_primitives/`
-- `quickstart/patterns/04_integration_recipes/`
-- `metrics_studies/multiwoz_2.4_n200/`
+- `docs/07_pld_operational_metrics_cookbook.md`
+- Dashboard tiles in `dashboards/reentry_success_dashboard.json`
+- Session-level schema in `schemas/metrics_schema.yaml`
 
 ---
 
 ## 4. Adoption Workflow
 
-| Phase | Action | Reference |
-|-------|--------|-----------|
-| Step 1 | Instrument logging | `schemas/pld_event.schema.json` |
-| Step 2 | Validate schema compliance | `schemas/metrics_schema.yaml` |
-| Step 3 | Produce sample log | `datasets/pld_events_demo.jsonl` |
-| Step 4 | Run evaluation | `reports/pld_events_demo_report.md` |
-| Step 5 | Visualize stability | `dashboards/reentry_success_dashboard.json` |
+| Phase  | Action                        | Reference                                   |
+| ------ | ----------------------------- | ------------------------------------------- |
+| Step 1 | Instrument runtime logging    | `schemas/pld_event.schema.json`             |
+| Step 2 | Validate logged data          | `guides/drift_event_logging.md`             |
+| Step 3 | Aggregate per-session metrics | `schemas/metrics_schema.yaml`               |
+| Step 4 | Run analysis locally          | `reports/pld_events_demo_report.md`         |
+| Step 5 | Visualize stability at scale  | `dashboards/reentry_success_dashboard.json` |
 
-This workflow enables consistent comparison across model versions, prompting strategies, and orchestration architectures.
+
+This workflow supports CI, model comparison, regression tracking and rollout validation.
 
 ---
 
 ## 5. Quick Interpretation Rules
 
-> Use these as a **runtime debugging compass** during early prototyping.
+> Use these during development and debugging:
 
-| Signal | Meaning | Suggested Action |
-|--------|---------|------------------|
-| Drift ↑ + Soft Repair ↑ | System is interpretable but imprecise | Improve constraint clarity or grounding signals |
-| Drift ↑ + Hard Repair ↑ | Architecture or memory mismatch | Review orchestration, tool routing, or context windows |
-| Reentry Success ↓ | Repair did not stabilize | Adjust checkpoint phrasing or confirmation policy |
-| Outcome Complete ↑ + Latency ↑ | Stable but slow | Optimize streaming, caching, or UX pacing |
+| Observed Pattern           | Meaning                           | What to Adjust                            |
+| -------------------------- | --------------------------------- | ----------------------------------------- |
+| Drift ↑ + Repair Success ↑ | Interpretation OK, grounding weak | Improve constraints or RAG                |
+| Drift ↑ + Hard Repair ↑    | Systemic misalignment             | Review orchestration or memory            |
+| Reentry Success ↓          | Repair didn't resolve state       | Improve repair phrasing or reentry policy |
+| Stable but slow responses  | User-perceived fragility          | Reduce latency or pacing                  | |
 
-> For an end-to-end applied example showing metrics in practice:  
-> **`/analytics/case_study_end_to_end.md`**
-
----
-
-## 6. Metrics → Action Matrix (Runtime Decision Guide)
-
-Once events are logged and visualized, use this matrix to determine next steps.  
-It connects **observed patterns → system response → improvement pathway.**
-
-| Observed Pattern (Log) | Severity | Suggested Action | Notes |
-|------------------------|----------|------------------|-------|
-| Low drift frequency + high repair success | Low | Continue execution | System is functioning as expected |
-| Repeated soft repairs on same flow | Medium | Improve constraints or grounding | Often indicates partial context ambiguity |
-| Frequent hard repairs | High | Review memory, tools, and runtime architecture | Strong signal of structural mismatch |
-| Reentry failure after repair | Critical | Trigger fallback strategy or session reset | Prevents repeated stall loops |
-| High abandonment rate | Critical | Analyze UX pacing and communication | Often a perception failure, not a logic defect |
+> These patterns guide runtime tuning and release gating.
 
 ---
 
 ## 7. When to Expand
 
-Expand this module when:
+Expand instrumentation when:
 
 - Evaluating **>200 interactions**
-- Comparing **multiple model or runtime variants**
-- Running **production experiments**
-- Tracking **repair policies over time in CI/CD**
+- Running A/B or rollout experiments
+- Tracking multiple repair policies or model variants
+- Using dashboards as part of CI or release blocking
 
 If you are still validating early integration:
 
@@ -157,7 +146,7 @@ If you are still validating early integration:
 
 ---
 
-## 8. License
+## 7. License
 
 Creative Commons — **CC BY 4.0**  
 © 2025 — DeepZenSpace  
@@ -165,9 +154,9 @@ Maintainer: **Kiyoshi Sasano**
 
 ---
 
-> **PLD Metrics is not general analytics —  
-it is behavioral instrumentation.  
-It measures whether an agent maintains alignment with the interaction contract.**
+> **PLD Metrics measure whether the agent maintains the interaction contract across turns —
+not how smart the model is, but how stable the system behaves.**
+
 
 
 
