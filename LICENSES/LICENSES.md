@@ -18,7 +18,7 @@ This repository uses hybrid licensing to balance adoption and intellectual prope
 ### You Must:
 - ✅ Include the Apache 2.0 license with code distributions
 - ✅ Provide attribution when using documentation or concepts
-- ✅ Share modifications to documentation under CC BY-SA 4.0
+- ✅ Keep the CC BY 4.0 license notice when redistributing documentation
 - ✅ Include copyright notice
 
 ### You Cannot:
