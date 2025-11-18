@@ -1,4 +1,4 @@
-<svg width="1200" height="360" viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="330" viewBox="0 0 1200 330" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .title { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 32px; font-weight: 700; fill: #111827; }
@@ -23,46 +23,39 @@
   <text x="40" y="60" class="title">PLD: Phase Loop Dynamics</text>
   <text x="40" y="95" class="subtitle">Runtime governance for stabilizing multi-turn LLM agents</text>
 
-  <!-- section -->
-  <text x="40" y="145" class="section-title">PLD Runtime Loop</text>
-  <text x="330" y="147" class="badge">framework-agnostic semantics layer</text>
+  <text x="40" y="140" class="section-title">PLD Runtime Loop</text>
+  <text x="330" y="142" class="badge">framework-agnostic semantics layer</text>
 
   <!-- Phases -->
-  <rect x="40" y="180" width="140" height="70" class="phase"/>
-  <text x="110" y="210" text-anchor="middle" class="box-title">Drift</text>
-  <text x="110" y="230" text-anchor="middle" class="box-body">detect misalignment</text>
+  <rect x="40" y="170" width="140" height="70" class="phase"/>
+  <text x="110" y="200" text-anchor="middle" class="box-title">Drift</text>
+  <text x="110" y="220" text-anchor="middle" class="box-body">detect misalignment</text>
 
-  <rect x="230" y="180" width="140" height="70" class="phase"/>
-  <text x="300" y="210" text-anchor="middle" class="box-title">Repair</text>
-  <text x="300" y="230" text-anchor="middle" class="box-body">soft / hard correction</text>
+  <rect x="230" y="170" width="140" height="70" class="phase"/>
+  <text x="300" y="200" text-anchor="middle" class="box-title">Repair</text>
+  <text x="300" y="220" text-anchor="middle" class="box-body">soft / hard correction</text>
 
-  <rect x="420" y="180" width="140" height="70" class="phase"/>
-  <text x="490" y="210" text-anchor="middle" class="box-title">Reentry</text>
-  <text x="490" y="230" text-anchor="middle" class="box-body">confirm alignment</text>
+  <rect x="420" y="170" width="140" height="70" class="phase"/>
+  <text x="490" y="200" text-anchor="middle" class="box-title">Reentry</text>
+  <text x="490" y="220" text-anchor="middle" class="box-body">confirm alignment</text>
 
-  <rect x="610" y="180" width="140" height="70" class="phase"/>
-  <text x="680" y="210" text-anchor="middle" class="box-title">Continue</text>
-  <text x="680" y="230" text-anchor="middle" class="box-body">resume task</text>
+  <rect x="610" y="170" width="140" height="70" class="phase"/>
+  <text x="680" y="200" text-anchor="middle" class="box-title">Continue</text>
+  <text x="680" y="220" text-anchor="middle" class="box-body">resume task</text>
 
-  <rect x="800" y="180" width="140" height="70" class="phase"/>
-  <text x="870" y="210" text-anchor="middle" class="box-title">Outcome</text>
-  <text x="870" y="230" text-anchor="middle" class="box-body">complete / fail / abandon</text>
+  <rect x="800" y="170" width="140" height="70" class="phase"/>
+  <text x="870" y="200" text-anchor="middle" class="box-title">Outcome</text>
+  <text x="870" y="220" text-anchor="middle" class="box-body">complete / fail / abandon</text>
 
-  <!-- arrows -->
-  <line x1="180" y1="215" x2="230" y2="215" class="arrow"/>
-  <line x1="370" y1="215" x2="420" y2="215" class="arrow"/>
-  <line x1="560" y1="215" x2="610" y2="215" class="arrow"/>
-  <line x1="750" y1="215" x2="800" y2="215" class="arrow"/>
+  <!-- Arrows -->
+  <line x1="180" y1="205" x2="230" y2="205" class="arrow"/>
+  <line x1="370" y1="205" x2="420" y2="205" class="arrow"/>
+  <line x1="560" y1="205" x2="610" y2="205" class="arrow"/>
+  <line x1="750" y1="205" x2="800" y2="205" class="arrow"/>
 
-  <!-- loop -->
-  <path d="M870 255 C 880 310, 200 310, 110 255" class="loop-arrow" fill="none"/>
-  <rect x="420" y="300" width="260" height="30" class="pill"/>
-  <text x="550" y="320" text-anchor="middle" class="badge">multi-turn interaction loop (session continues)</text>
+  <!-- Loop -->
+  <path d="M870 245 C 880 300, 200 300, 110 245" class="loop-arrow" fill="none"/>
 
-  <!-- metrics -->
-  <rect x="990" y="170" width="270" height="100" class="folder"/>
-  <text x="1005" y="193" class="box-title">Operational Metrics</text>
-  <text x="1005" y="213" class="box-body">PRDR — stability</text>
-  <text x="1005" y="231" class="box-body">REI — value vs cost</text>
-  <text x="1005" y="249" class="box-body">VRL — perceived UX load</text>
+  <rect x="420" y="280" width="260" height="30" class="pill"/>
+  <text x="550" y="300" text-anchor="middle" class="badge">multi-turn interaction loop (session continues)</text>
 </svg>
