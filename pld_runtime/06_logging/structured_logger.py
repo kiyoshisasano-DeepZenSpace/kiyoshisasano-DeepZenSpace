@@ -32,11 +32,24 @@ from __future__ import annotations
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 from enum import Enum
-from typing import Any, Callable, Dict, List, Optional, Literal
+from typing import Any, Callable, Dict, List, Optional
 
 from ..detection.runtime_signal_bridge import NormalizedTurn
 from ..controllers.pld_controller import ControllerOutcome
 from ..controllers.action_router import RouteInstruction
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _now_iso() -> str:
+    """
+    Return current UTC time as ISO 8601 string with explicit Z suffix.
+
+    This keeps timestamps consistent with other PLD runtime modules.
+    """
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 
 # ---------------------------------------------------------------------------
@@ -306,14 +319,14 @@ class StructuredLogger:
         Log RouteInstruction list produced by ActionRouter.
 
         - DEBUG: always log.
-        - COMPACT/EVALUATION: log only non-trivial actions (non-NOOP).
+        - COMPACT/EVALUATION: log only non-trivial actions (non-metrics-only).
         - SILENT: no-op.
         """
         if self.mode is LoggingMode.SILENT:
             return
 
         for instr in instructions:
-            # basic filtering: in COMPACT/EVALUATION, drop metrics-only logs
+            # In COMPACT/EVALUATION, drop metrics-only logs to reduce noise.
             if self.mode in (LoggingMode.COMPACT, LoggingMode.EVALUATION):
                 if instr.target.value == "metrics_only":
                     continue
