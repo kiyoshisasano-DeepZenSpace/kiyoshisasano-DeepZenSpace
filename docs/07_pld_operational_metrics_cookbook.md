@@ -14,8 +14,6 @@ Metrics should be used during rollout, tuning, and regression analysis, then red
 
 ---
 
----
-
 ### 📊 Operational Dashboard Preview
 
 The dashboard below represents the **end-state visualization** of the metrics defined in this cookbook.  
@@ -257,7 +255,7 @@ Example dataset:
 
 ---
 
-## 4. Summary
+## **4. Summary**
 | Metric | Category    | Purpose                                   |
 | ------ | ----------- | ----------------------------------------- |
 | PRDR   | Stability   | Detect fragile repairs                    |
@@ -268,7 +266,7 @@ Example dataset:
 
 ---
 
-## 5. When to Reduce Monitoring
+## 5. **When to Reduce Monitoring**
 Reduce dashboard frequency when:
 - Metrics remain stable for 4–6 weeks, and
 - No regressions occur across releases or configuration changes.
