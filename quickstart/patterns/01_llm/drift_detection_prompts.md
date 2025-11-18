@@ -1,131 +1,134 @@
 # Drift Detection Prompt Library  
-*(PLD Applied — LLM Pattern Edition)*
+*(PLD Applied — LLM Pattern Edition v1.1 Canonical Schema)*
 
-This file provides prompt-level patterns for detecting conversational drift
-before it escalates into repair, reset, or failure.
+This file defines **internal reasoning scaffolds** for LLM-driven drift detection.  
+These prompts are **not user-facing responses** — they run inside the reasoning pipeline before output generation.
 
-These prompts are **not responses to the user** —  
-they are **internal reasoning scaffolds** used by the agent during generation.
+Drift detection informs whether to:
 
-Drift detection occurs *before* output formulation and informs:
-
-- whether Soft Repair is needed,
-- whether context is still aligned,
-- whether the user's goal remains intact,
-- whether memory or constraint validation is required.
+- apply Soft Repair,
+- request clarification,
+- trigger reentry checkpoints, or
+- escalate to R5_hard_reset (only if unrecoverable).
 
 ---
 
-## 🧩 Core Detection Logic (Baseline Pattern)
+## 🧩 Core Detection Logic (Canonical Pattern)
 
-Use this structure internally each turn:
+Internal reasoning procedure (executed each turn):
 
-> **“Compare: user intent → stored context → planned response.
-> If misalignment exists, label drift type and confidence.”**
+> **Compare: user intent → verified context → candidate response.  
+> If misalignment exists, classify drift using canonical codes and confidence.**
 
-Internal reasoning format (not user-visible):
+Reasoning template:
 
 ```
 SYSTEM CHECK:
-- Current user goal: {{goal}}
-- Stored constraints: {{constraints}}
-- Previous validated facts: {{facts}}
-- My next candidate response: {{draft_response}}
+- User goal: {{goal}}
+- Active constraints: {{constraints}}
+- Verified facts: {{facts}}
+- Candidate response: {{draft_response}}
 
 DRIFT ASSESSMENT:
-- Does the draft response contradict previous facts? (yes/no → example)
-- Does it violate constraints? (yes/no → example)
-- Does it ignore or replace the user’s stated goal? (yes/no → example)
-- Did the topic shift unexpectedly? (yes/no → example)
+- Contradiction with evidence? (example if yes)
+- Constraint violated? (example if yes)
+- Intent missing or replaced? (example if yes)
+- Unexpected topic or workflow shift? (example if yes)
 
-OUTPUT:
-{ "drift_detected": true/false,
-  "type": "<type or null>",
-  "confidence": 0.0–1.0,
-  "notes": "<brief justification>" }
-```
-
----
-
-## 🧪 Drift Detection Templates (By Category)
-
-### 1. **Drift-Information**
-
-Trigger when facts contradict prior validated evidence.
-
-```
-Evaluate whether the candidate response contradicts verified tool or memory data.
-If contradiction exists, label as Drift-Information and provide short evidence.
-```
-
-
-### 2. **Drift-Constraint**
-
-Trigger when output violates user-specified limits.
-
-```
-Check if the candidate response respects all active constraints
-(e.g., budget, price, dates, preferences).
-If any conflict exists, classify as Drift-Constraint.
-```
-
-
-### 3. **Drift-Intent**
-
-Detect when the system switches topics or goal unintentionally.
-
-```
-Compare the intended task with the candidate response.
-If the task goal is missing or replaced, classify as Drift-Intent.
-```
-
-
-### 4. **Drift-Memory**
-
-Detect forgotten or overwritten information.
-
-```
-Verify candidate response includes required known context.
-If previously confirmed details are missing or contradicted,
-flag as Drift-Memory.
-```
-
-
-### 5. **Drift-Procedural**
-
-Use when workflow steps are skipped or altered.
-
-```
-Compare current step to expected workflow sequence.
-If the output jumps ahead, repeats, or skips steps,
-mark as Drift-Procedural.
-```
+OUTPUT (for system use only):
+{
+"drift_detected": true/false,
+"pld_code": "<canonical_code_or_null>",
+"confidence": 0.0-1.0,
+"evidence": "<short justification>"
+}
 
 ---
 
-## 📊 Output Format (LLM-Readable Schema)
+## 🧪 Drift Detection Templates (By Canonical Category)
 
-Always emit drift detection first (in hidden reasoning), then generate the user response normally.
+### **1. D5_information**
+
+Trigger when the candidate response contradicts verified knowledge.
+
+```
+Check whether the response conflicts with verified memory or tool output.
+If contradiction exists, classify as D5_information and include the conflicting evidence.
+```
+
+### **2. D2_context**
+
+Covers former Drift-Constraint and Drift-Memory.
+
+```
+Verify that the response respects stored constraints (budget, preference, policy)
+and includes required context.
+If constraint violations or context loss occur → classify as D2_context.
+```
+
+
+
+### **3. D1_instruction**
+
+Detects replacement or loss of the user's objective.
+
+```
+Compare task intent with the candidate response.
+If the intended goal is ignored, replaced, or altered → classify as D1_instruction.
+```
+
+
+
+### **4. D3_flow**
+
+Used when workflow order, pacing, or interaction cadence breaks.
+
+```
+Compare expected step or timing with the output.
+If the model jumps ahead, repeats steps, or creates rhythm disruption → classify as D3_flow.
+```
+
+
+
+---
+
+## 📊 Output Format (Schema-Aligned)
+
+This format is intentionally simple because the detector node will convert it into a full PLD event log.
 
 ```
 {
-  "turn_id": "{{turn}}",
-  "drift_detected": true/false,
-  "drift_type": "<type or null>",
-  "confidence": 0.0–1.0,
-  "evidence": "<1 sentence summary>"
+"drift_detected": true/false,
+"pld_code": "<canonical_code_or_null>",
+"confidence": 0.0-1.0,
+"evidence": "<one sentence justification>"
 }
 ```
 
+
+Examples:
+
+❌ Old format (deprecated):
+
+```json
+{ "drift_detected": true, "drift_type": "Drift-Constraint" }
+```
+
+✅ Correct (canonical-compliant):
+{
+  "drift_detected": true,
+  "pld_code": "D2_context",
+  "confidence": 0.91,
+  "evidence": "Budget limit $100 was violated by proposing a $240 option."
+}
+
 ---
 
-## 🧠 Lightweight (Fast Inference) Variant
-
-For latency-sensitive models:
-
-```
-Check for: contradiction, constraint violation, topic shift.
-If any are true → drift = yes.
+## 🧠 Lightweight Variant (Latency-Optimized)
+Use when running under streaming or high-efficiency inference constraints:
+```sql
+Check contradiction, constraint violation, or topic shift.
+If any are true → classify drift.
 Else → no drift.
 ```
 
@@ -133,30 +136,33 @@ Else → no drift.
 
 ## ❌ Anti-Patterns
 
-| Pattern to Avoid | Why |
-|------------------|-----|
-| Detecting drift after response is sent | Drift must precede repair |
-| Treating every mismatch as critical | Causes unnecessary resets |
-| Hiding drift state from telemetry | Breaks evaluation & reproducibility |
-| Adding apologies in reasoning output | Weakens conversational stability |
+| Avoid                                 | Reason                                             |
+| ------------------------------------- | -------------------------------------------------- |
+| Detecting drift **after user output** | Repair must precede user-visible response          |
+| Treating all drift as critical        | Causes unnecessary resets (violates PLD lifecycle) |
+| Logging without canonical codes       | Breaks analytics + evaluation comparability        |
+| Injecting apologetic reasoning        | Weakens confidence signals                         |
 
 ---
 
-## ✔ Quick Sanity Test
+## ✔ Sanity Test
 
-**Input:**  
-User: “Budget is under $100.”  
-Draft response: “A great $240 hotel is available.”
+### Input:
+User: “Budget under $100.”
+Candidate response: “A great $240 hotel is available.”
 
-**Expected detection result:**
+### Expected internal detection:
 
-```
-{ "drift_detected": true,
-  "drift_type": "Drift-Constraint",
-  "confidence": 0.91 }
+```bash
+{
+  "drift_detected": true,
+  "pld_code": "D2_context",
+  "confidence": 0.91,
+  "evidence": "Output violates user constraint: $100 budget."
+}
 ```
 
 ---
 
-Maintainer: **Kiyoshi Sasano**  
-Version: **PLD Applied 2025**
+Maintainer: Kiyoshi Sasano
+Version: PLD Applied 2025 v1.1
