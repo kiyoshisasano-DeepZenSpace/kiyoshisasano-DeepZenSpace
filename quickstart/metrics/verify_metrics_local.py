@@ -24,6 +24,7 @@
 #   consider creating a separate script like `run_engine_scenarios.py`
 #   to keep this file focused and minimal.
 
+"""
 from __future__ import annotations
 
 import sys
