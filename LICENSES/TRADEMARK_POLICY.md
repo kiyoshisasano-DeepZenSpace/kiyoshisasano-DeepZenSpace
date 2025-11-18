@@ -6,8 +6,8 @@
 
 ---
 **Trademarks Notice:**  
-"PLD", "Phase Loop Dynamics", and related marks are claimed as common law trademarks  
-of Kiyoshi Sasano.Use of the marks is welcomed when referring to the methodology.  
+"PLD", "Phase Loop Dynamics", and related marks are claimed as common law trademarks of Kiyoshi Sasano.  
+Use of the marks is welcomed when referring to the methodology.  
 Commercial or branding use is governed by this policy.  
 All other trademarks are the property of their respective owners.  
 
