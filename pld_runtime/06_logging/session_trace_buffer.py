@@ -1,21 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.logging.session_trace_buffer
+pld_runtime.logging.session_trace_buffer (v1.1 Canonical Edition)
 
 In-memory buffer for PLD runtime traces, grouped by session_id.
 
-This module provides:
+This module provides a normalized structure for storing per-session traces
+across the full PLD runtime loop:
 
-- A normalized structure for storing:
-    - Normalized turns
-    - PLD events (and optional envelopes)
-    - Controller outcomes
-    - Route instructions
-- Simple APIs for:
-    - appending new items during runtime
-    - snapshotting a session trace for export
-    - clearing / trimming traces
+    Drift → Repair → Reentry → Continue → Outcome
+
+It can hold:
+
+- Normalized turns
+- PLD events (and optional envelopes)
+- Controller outcomes
+- Route instructions
+
+and offers simple APIs for:
+
+- appending new items during runtime
+- snapshotting a session trace for export
+- clearing / trimming traces
 
 It does NOT:
 
@@ -62,16 +68,31 @@ class TraceItem:
     Fields
     ------
     kind:
-        "turn", "pld_event", "controller_outcome", or "route_instruction".
+        One of:
+            - "turn"
+            - "pld_event"
+            - "controller_outcome"
+            - "route_instruction"
 
     ts:
         ISO 8601 timestamp (UTC, Z).
 
     seq:
         Monotonic sequence number within the session trace.
+        Starts at 0 for each session and increments by 1 per appended item.
 
     payload:
         Kind-specific content; always a plain dict.
+
+        Examples (non-exhaustive):
+            - kind="turn":
+                payload ← NormalizedTurn.to_dict()
+            - kind="pld_event":
+                payload ← {"event": <pld_event>, "envelope": <optional_envelope>}
+            - kind="controller_outcome":
+                payload ← ControllerOutcome.to_dict()
+            - kind="route_instruction":
+                payload ← RouteInstruction.to_dict()
     """
 
     kind: TraceItemKind
@@ -121,13 +142,13 @@ class TraceRetentionPolicy(str, Enum):
     """
     Retention behavior for the buffer.
 
-    - UNBOUNDED:
+    UNBOUNDED
         Keep all traces in memory until explicitly cleared.
 
-    - PER_SESSION_LIMIT:
+    PER_SESSION_LIMIT
         Keep up to `max_items_per_session` items per session; oldest are dropped.
 
-    - GLOBAL_LIMIT:
+    GLOBAL_LIMIT
         Keep up to `max_total_items` items globally; oldest (across sessions)
         are dropped when exceeded.
     """
@@ -182,11 +203,14 @@ class SessionTraceBuffer:
         # when a normalized turn is received:
         buffer.add_turn(turn)
 
+        # when a PLD event is generated:
+        buffer.add_pld_event(session_id, event=pld_event, envelope=envelope)
+
         # when controller outcome is produced:
         buffer.add_controller_outcome(outcome)
 
         # when route instructions are created:
-        buffer.add_route_instructions(session_id, instructions)
+        buffer.add_route_instructions(session_id=session_id, instructions=instructions)
 
         # to export a session trace:
         trace = buffer.get_trace("session-123")
@@ -220,6 +244,12 @@ class SessionTraceBuffer:
         event: Dict[str, Any],
         envelope: Optional[Dict[str, Any]] = None,
     ) -> None:
+        """
+        Append a PLD event (and optional envelope) to the session trace.
+
+        `event` is expected to follow pld_event.schema.json.
+        `envelope`, if provided, should follow runtime_event_envelope.json.
+        """
         trace = self._get_or_create_trace(session_id)
         seq = trace.next_seq()
         payload = {
@@ -280,7 +310,7 @@ class SessionTraceBuffer:
 
     def snapshot(self, session_id: str) -> Optional[Dict[str, Any]]:
         """
-        Return a serializable snapshot for a session, or None.
+        Return a serializable snapshot for a session, or None if unknown.
         """
         trace = self.get_trace(session_id)
         return trace.snapshot() if trace else None
@@ -332,11 +362,11 @@ class SessionTraceBuffer:
         for session_id, trace in list(self._traces.items()):
             if len(trace.items) <= limit:
                 continue
-            # Drop oldest items until within limit
+            # Drop oldest items until within limit.
             excess = len(trace.items) - limit
             removed = trace.items[:excess]
             trace.items = trace.items[excess:]
-            # Update global index
+            # Update global index.
             removed_seqs = {i.seq for i in removed}
             self._global_items = [
                 (sid, seq)
@@ -350,12 +380,11 @@ class SessionTraceBuffer:
         if total_items <= limit:
             return
 
-        # Compute how many items to drop
+        # Compute how many items to drop.
         to_drop = total_items - limit
         dropped = 0
 
-        # Sort global index by (append order) → _global_items is already append-ordered.
-        # We iterate from oldest to newest.
+        # _global_items is append-ordered; iterate from oldest to newest.
         for session_id, seq in list(self._global_items):
             if dropped >= to_drop:
                 break
@@ -371,13 +400,15 @@ class SessionTraceBuffer:
                     dropped += 1
                     break
 
-            # Remove from global index
+            # Remove from global index.
             self._global_items = [
-                (sid, s) for (sid, s) in self._global_items if not (sid == session_id and s == seq)
+                (sid, s)
+                for (sid, s) in self._global_items
+                if not (sid == session_id and s == seq)
             ]
 
             if not trace.items:
-                # Optionally drop empty trace
+                # Optionally drop empty trace.
                 del self._traces[session_id]
 
 
