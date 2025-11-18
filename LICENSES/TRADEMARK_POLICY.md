@@ -6,10 +6,10 @@
 
 ---
 **Trademarks Notice:**  
-"PLD", "Phase Loop Dynamics", and related marks are claimed as common law trademarks 
-of Kiyoshi Sasano.Use of the marks is welcomed when referring to the methodology.
-Commercial or branding use is governed by this policy.
-All other trademarks are the property of their respective owners.
+"PLD", "Phase Loop Dynamics", and related marks are claimed as common law trademarks  
+of Kiyoshi Sasano.Use of the marks is welcomed when referring to the methodology.  
+Commercial or branding use is governed by this policy.  
+All other trademarks are the property of their respective owners.  
 
 ---
 
@@ -176,7 +176,7 @@ Significant revisions will be versioned and dated at the top of this document.
 | Using "PLD" in product branding/identity | ⚠️ Requires approval | Avoid implying official status |
 | Claiming certification or partnership | ❌ Not permitted | Unless granted in writing |
 | Distributing packages suggesting official status | ❌ Not permitted | Use derivative naming |
-
+| Reusing or modifying visual diagrams |	✅ | Yes	Attribution required (CC BY 4.0); not for branding | 
 ---
 
 **Contact for permissions, partnerships, or questions:**  
