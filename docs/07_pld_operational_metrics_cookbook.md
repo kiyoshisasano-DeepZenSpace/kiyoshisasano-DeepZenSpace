@@ -20,7 +20,7 @@ The dashboard below represents the **end-state visualization** of the metrics de
 It provides an at-a-glance understanding of whether a system is stable, drifting, cost-efficient, or entering failure-prone behavior.
 
 <p align="center">
-  <img src="../assets/dashboard_mockup.svg" width="100%" />
+<img src="assets/dashboard_mockup.svg" width="100%" />
 </p>
 
 > This dashboard is a **reference implementation target**, not a requirement during early rollout.  
