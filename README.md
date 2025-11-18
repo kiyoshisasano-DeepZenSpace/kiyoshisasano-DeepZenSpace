@@ -333,7 +333,7 @@ For enterprise licensing or collaboration:
 ---
 
 "Phase Loop Dynamics" and "PLD" are claimed as common law trademarks of Kiyoshi Sasano.  
-Their use is permitted under the Trademark Policy in LICENSES/TRADEMARK_POLICY.md.
+Their use is permitted under the Trademark Policy in `LICENSES/TRADEMARK_POLICY.md.`
 
 Maintainer: **Kiyoshi Sasano**  
 Copyright © 2025
