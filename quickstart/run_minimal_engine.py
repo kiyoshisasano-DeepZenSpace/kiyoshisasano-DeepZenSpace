@@ -1,6 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2025 Kiyoshi Sasano
-
 #!/usr/bin/env python3
 # quickstart/run_minimal_engine.py
 #
