@@ -168,4 +168,4 @@ Latency handling is complete only once **normal pacing resumes** and the user pe
 
 Maintainer: **Kiyoshi Sasano**  
 Edition: **PLD Applied 2025**  
-License: **CC-BY-NC 4.0**
+License: **CC-BY 4.0**
