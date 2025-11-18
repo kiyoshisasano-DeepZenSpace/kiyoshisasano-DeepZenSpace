@@ -322,7 +322,7 @@ This project uses a **dual-license model** designed to balance open adoption and
 | Scope | License | Applicable To |
 |-------|---------|---------------|
 | **Code & Runtime Artifacts** | **Apache License 2.0** | `/pld_runtime/`, `.py`, `.json`, configuration files, executable examples |
-| **Documentation & Methodology** | **CC BY-SA 4.0** | `.md`, `.svg`, analytical reports, PLD framework terminology & metrics (PRDR, REI, VRL) |
+| **Documentation & Methodology** | **CC BY 4.0** | `.md`, `.svg`, analytical reports, PLD framework terminology & metrics (PRDR, REI, VRL) |
 
 Full legal terms, attribution templates, and compliance details are available at:
 
