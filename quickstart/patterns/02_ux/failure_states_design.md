@@ -171,4 +171,5 @@ A failure design is successful when:
 
 Maintainer: **Kiyoshi Sasano**  
 File: `patterns/02_ux/failure_states_design.md`  
-License: **CC BY-NC 4.0**
+
+License: **CC BY 4.0**
