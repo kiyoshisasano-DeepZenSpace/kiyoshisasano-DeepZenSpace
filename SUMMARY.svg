@@ -1,4 +1,4 @@
-<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg">
+<svg width="1600" height="960" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .title {
@@ -125,8 +125,8 @@
   <rect x="860" y="160" width="280" height="92" class="folder"/>
   <text x="875" y="182" class="box-title">Operational Metrics &amp; Runtime Signals</text>
   <text x="875" y="200" class="box-body">for evaluation &amp; runtime decision support</text>
-  <text x="875" y="218" class="box-body">PRDR — Post-Repair Drift Recurrence</text>
-  <text x="875" y="233" class="box-body">REI — Repair Efficiency Index; VRL — Visible Repair Load</text>
+  <text x="875" y="218" class="box-body">PRDR — Post-Repair Drift Recurrence (stability)</text>
+  <text x="875" y="233" class="box-body">REI — value vs cost; VRL — UX perception</text>
 
   <!-- Logs from loop to metrics -->
   <line x1="840" y1="190" x2="860" y2="190" class="arrow"/>
@@ -199,7 +199,7 @@
   <line x1="720" y1="260" x2="220" y2="540" class="arrow"/>
   <text x="260" y="330" class="badge">validates behavior</text>
 
-  <!-- Added: /field relationship -->
+  <!-- /field relationship -->
   <line x1="700" y1="260" x2="640" y2="540" class="arrow"/>
   <text x="670" y="400" class="badge">guides adoption</text>
 
