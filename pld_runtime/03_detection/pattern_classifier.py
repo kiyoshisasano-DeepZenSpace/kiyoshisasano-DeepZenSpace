@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.detection.pattern_classifier
+pld_runtime.detection.pattern_classifier (v1.1 Canonical Edition)
 
 Lightweight PLD phase/code classifier for individual turns or segments.
 
 Responsibilities:
 - Classify a text segment into:
     - phase:  drift / repair / reentry / outcome / none
-    - code:   concrete PLD code from drift_repair_codes.json, or "none"
+    - code:   concrete PLD code from 01_schemas/drift_repair_codes.json
     - confidence: 0.0–1.0
 - Provide both:
     - heuristic (no-LLM) mode
@@ -55,7 +55,8 @@ class PatternClassifierConfig:
         OpenAI model name for LLM classification.
 
     min_confidence:
-        Minimum confidence below which the classifier will degrade to "none".
+        Minimum confidence below which the classifier will degrade to a
+        `phase = "none"` result with `code = "D0_none"`.
     """
 
     use_llm: bool = False
@@ -90,7 +91,7 @@ class PatternClassificationResult:
 # ---------------------------------------------------------------------------
 
 _HERE = Path(__file__).resolve().parent
-_SCHEMAS_DIR = _HERE.parent / "schemas"
+_SCHEMAS_DIR = _HERE.parent / "01_schemas"
 _CODES_FILE = _SCHEMAS_DIR / "drift_repair_codes.json"
 
 _DRIFT_CODES: List[str] = []
@@ -100,7 +101,7 @@ _REENTRY_CODES: List[str] = []
 
 def _load_code_registry() -> None:
     """
-    Load drift/repair/reentry codes from schemas/drift_repair_codes.json
+    Load drift/repair/reentry codes from 01_schemas/drift_repair_codes.json
     if available; otherwise keep in-memory defaults.
     """
     global _DRIFT_CODES, _REPAIR_CODES, _REENTRY_CODES
@@ -110,20 +111,21 @@ def _load_code_registry() -> None:
 
     if not _CODES_FILE.exists():
         # Minimal safe defaults in case schemas are missing
-        _DRIFT_CODES = ["none"]
-        _REPAIR_CODES = ["none"]
-        _REENTRY_CODES = ["none"]
+        _DRIFT_CODES = ["D0_none"]
+        _REPAIR_CODES = ["R0_none"]
+        _REENTRY_CODES = ["RE0_none"]
         return
 
     try:
         data = json.loads(_CODES_FILE.read_text(encoding="utf-8"))
-        _DRIFT_CODES = list(map(str, data.get("allowed_values", {}).get("drift", ["none"])))
-        _REPAIR_CODES = list(map(str, data.get("allowed_values", {}).get("repair", ["none"])))
-        _REENTRY_CODES = list(map(str, data.get("allowed_values", {}).get("reentry", ["none"])))
+        allowed = data.get("allowed_values", {})
+        _DRIFT_CODES = list(map(str, allowed.get("drift", ["D0_none"])))
+        _REPAIR_CODES = list(map(str, allowed.get("repair", ["R0_none"])))
+        _REENTRY_CODES = list(map(str, allowed.get("reentry", ["RE0_none"])))
     except Exception:
-        _DRIFT_CODES = ["none"]
-        _REPAIR_CODES = ["none"]
-        _REENTRY_CODES = ["none"]
+        _DRIFT_CODES = ["D0_none"]
+        _REPAIR_CODES = ["R0_none"]
+        _REENTRY_CODES = ["RE0_none"]
 
 
 # ---------------------------------------------------------------------------
@@ -132,6 +134,17 @@ def _load_code_registry() -> None:
 
 def _normalize(text: str) -> str:
     return text.strip().lower()
+
+
+def _fallback_code(preferred: str, pool: List[str], default: str) -> str:
+    """
+    Choose a canonical code, preferring `preferred` if present in `pool`.
+    """
+    if preferred in pool:
+        return preferred
+    if pool:
+        return pool[0]
+    return default
 
 
 def _heuristic_phase_and_code(text: str) -> Tuple[Phase, str, float, str]:
@@ -144,53 +157,67 @@ def _heuristic_phase_and_code(text: str) -> Tuple[Phase, str, float, str]:
 
     t = _normalize(text)
     if not t:
-        return "none", "none", 0.0, "Empty text."
+        return "none", "D0_none", 0.0, "Empty text."
 
-    # DRIFT-ish signals
+    # -------------------- DRIFT-ish signals --------------------
+
+    # User flags incorrect or off-target information → D5_information
     if any(k in t for k in ["that's not correct", "inaccurate", "wrong", "incorrect", "not what i asked"]):
-        code = next((c for c in _DRIFT_CODES if c.startswith("D1_")), "D1_information_drift")
+        code = _fallback_code("D5_information", _DRIFT_CODES, "D0_none")
         return "drift", code, 0.7, "User explicitly flags incorrect or off-target information."
 
+    # Topic / intent mismatch → D1_instruction
     if any(k in t for k in ["off topic", "not relevant", "different topic"]):
-        code = next((c for c in _DRIFT_CODES if c.startswith("D3_")), "D3_intent_drift")
-        return "drift", code, 0.65, "User flags topic/intent mismatch."
+        code = _fallback_code("D1_instruction", _DRIFT_CODES, "D0_none")
+        return "drift", code, 0.65, "User flags topic or intent mismatch."
 
+    # Lost or inconsistent context → D2_context
     if any(k in t for k in ["we already said", "as i mentioned", "you forgot", "you lost the context"]):
-        code = next((c for c in _DRIFT_CODES if c.startswith("D2_")), "D2_context_drift")
+        code = _fallback_code("D2_context", _DRIFT_CODES, "D0_none")
         return "drift", code, 0.65, "User indicates lost or inconsistent context."
 
-    # REPAIR-ish signals
+    # -------------------- REPAIR-ish signals --------------------
+
+    # Clarification / small correction → R1_clarify
     if any(k in t for k in ["let me correct", "to clarify", "small correction", "i'll fix that"]):
-        code = next((c for c in _REPAIR_CODES if c.startswith("R1_")), "R1_local_repair")
-        return "repair", code, 0.7, "Explicit local correction phrasing."
+        code = _fallback_code("R1_clarify", _REPAIR_CODES, "R0_none")
+        return "repair", code, 0.7, "Explicit local clarification or correction phrasing."
 
+    # Hard reset / context discard → R5_hard_reset
     if any(k in t for k in ["reset this", "start over", "clear the context", "from scratch"]):
-        code = next((c for c in _REPAIR_CODES if c.startswith("R4_")), "R4_hard_repair")
-        return "repair", code, 0.75, "Hard reset or context discard phrase."
+        code = _fallback_code("R5_hard_reset", _REPAIR_CODES, "R0_none")
+        return "repair", code, 0.75, "Hard reset or context discard phrasing."
 
+    # Structural / state-level repair → R2_soft_repair (soft structural repair)
     if any(k in t for k in ["refreshing", "resync", "re-sync", "reloading data", "rebuilding the plan"]):
-        code = next((c for c in _REPAIR_CODES if c.startswith("R2_")), "R2_structural_repair")
-        return "repair", code, 0.7, "Structural / state-level repair phrasing."
+        code = _fallback_code("R2_soft_repair", _REPAIR_CODES, "R0_none")
+        return "repair", code, 0.7, "Structural or state-level repair phrasing."
 
+    # UX-oriented apology / retry → R3_rewrite
     if any(k in t for k in ["sorry about that", "apologize", "let me try again", "try again"]):
-        code = next((c for c in _REPAIR_CODES if c.startswith("R3_")), "R3_ux_repair")
-        return "repair", code, 0.6, "UX-oriented apology / retry phrasing."
+        code = _fallback_code("R3_rewrite", _REPAIR_CODES, "R0_none")
+        return "repair", code, 0.6, "UX-oriented apology or retry phrasing."
 
-    # REENTRY-ish signals
+    # -------------------- REENTRY-ish signals --------------------
+
+    # Resume or continue task → RE3_auto
     if any(k in t for k in ["back to the main task", "continue where we left", "resume", "as we were saying"]):
-        code = next((c for c in _REENTRY_CODES if c.startswith("RE1_")), "RE1_intent_reentry")
-        return "reentry", code, 0.65, "Explicit resume/continue phrasing."
+        code = _fallback_code("RE3_auto", _REENTRY_CODES, "RE0_none")
+        return "reentry", code, 0.65, "Explicit resume or continue phrasing."
 
+    # Restore previous constraints → RE4_memory_restore
     if "use the previous constraints" in t or "same conditions as before" in t:
-        code = next((c for c in _REENTRY_CODES if c.startswith("RE2_")), "RE2_constraint_reentry")
-        return "reentry", code, 0.6, "Mentions restoring earlier constraints."
+        code = _fallback_code("RE4_memory_restore", _REENTRY_CODES, "RE0_none")
+        return "reentry", code, 0.6, "Mentions restoring earlier constraints or state."
 
+    # Workflow-oriented continuation → RE3_auto
     if "continue the workflow" in t or "pick up the flow" in t:
-        code = next((c for c in _REENTRY_CODES if c.startswith("RE3_")), "RE3_workflow_reentry")
+        code = _fallback_code("RE3_auto", _REENTRY_CODES, "RE0_none")
         return "reentry", code, 0.6, "Workflow reentry phrasing."
 
-    # Otherwise: no strong signal
-    return "none", "none", 0.0, "No strong PLD pattern identified."
+    # -------------------- Otherwise: no strong signal --------------------
+
+    return "none", "D0_none", 0.0, "No strong PLD pattern identified."
 
 
 def classify_heuristic(text: str, *, min_confidence: float = 0.0) -> PatternClassificationResult:
@@ -199,7 +226,7 @@ def classify_heuristic(text: str, *, min_confidence: float = 0.0) -> PatternClas
     """
     phase, code, conf, rationale = _heuristic_phase_and_code(text)
     if conf < min_confidence:
-        phase, code, conf, rationale = "none", "none", 0.0, "Confidence below configured minimum."
+        phase, code, conf, rationale = "none", "D0_none", 0.0, "Confidence below configured minimum."
 
     return PatternClassificationResult(
         phase=phase,
@@ -216,7 +243,7 @@ def classify_heuristic(text: str, *, min_confidence: float = 0.0) -> PatternClas
 # ---------------------------------------------------------------------------
 
 def _has_openai() -> bool:
-    """Check if OpenAI client is available."""
+    """Check if OpenAI client is available and minimally usable."""
     api_key = os.getenv("OPENAI_API_KEY", "").strip()
     if not api_key:
         return False
@@ -254,7 +281,7 @@ def _classify_with_llm(text: str, config: PatternClassifierConfig) -> Optional[P
         "Given a single turn from a conversation (user or assistant), "
         "label it with:\n"
         "  - phase: one of [drift, repair, reentry, outcome, none]\n"
-        "  - code: one PLD code from the allowed sets, or 'none'\n"
+        "  - code: one PLD code from the allowed sets, or 'D0_none' if no drift/repair/reentry applies\n"
         "  - confidence: float 0.0–1.0\n"
         "  - rationale: short natural language explanation.\n\n"
         "Allowed codes (drift/repair/reentry):\n"
@@ -266,7 +293,7 @@ def _classify_with_llm(text: str, config: PatternClassifierConfig) -> Optional[P
         resp = client.chat.completions.create(
             model=config.model,
             messages=[
-                {"role": "system", "content": "You classify conversational turns into PLD phases and codes."},
+                {"role": "system", "content": "You classify conversational turns into PLD phases and canonical v1.1 PLD codes."},
                 {"role": "user", "content": prompt},
                 {"role": "user", "content": f"TEXT = {json.dumps(text, ensure_ascii=False)}"},
             ],
@@ -289,12 +316,15 @@ def _classify_with_llm(text: str, config: PatternClassifierConfig) -> Optional[P
     if phase not in {"drift", "repair", "reentry", "outcome", "none"}:
         phase = "none"
 
-    code = str(data.get("code", "none"))
-    conf = float(data.get("confidence", 0.0))
+    code = str(data.get("code", "D0_none") or "D0_none")
+    try:
+        conf = float(data.get("confidence", 0.0))
+    except (TypeError, ValueError):
+        conf = 0.0
     rationale = str(data.get("rationale", "")).strip()
 
     if conf < config.min_confidence:
-        phase, code, conf = "none", "none", 0.0
+        phase, code, conf = "none", "D0_none", 0.0
 
     return PatternClassificationResult(
         phase=phase,  # type: ignore[arg-type]
@@ -332,7 +362,7 @@ class PatternClassifier:
         """
         Classify a single turn.
 
-        Role is included for future heuristics (currently not used heavily).
+        Role is included for future heuristics (currently not heavily used).
         """
         base = classify_heuristic(text, min_confidence=0.0)
 
@@ -340,7 +370,7 @@ class PatternClassifier:
             # Heuristic only, apply threshold at the end.
             if base.confidence < self.config.min_confidence:
                 base.phase = "none"
-                base.code = "none"
+                base.code = "D0_none"
                 base.confidence = 0.0
                 base.source = "none"
                 base.rationale = "Heuristic confidence below configured minimum."
@@ -353,7 +383,7 @@ class PatternClassifier:
             base.source = "llm_fallback_heuristic" if base.confidence > 0.0 else "none"
             if base.confidence < self.config.min_confidence:
                 base.phase = "none"
-                base.code = "none"
+                base.code = "D0_none"
                 base.confidence = 0.0
                 base.rationale = "Both LLM and heuristic were below minimum confidence."
             return base
