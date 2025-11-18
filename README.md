@@ -214,7 +214,7 @@ For deeper usage patterns, continue with:
 Once PLD is running and metrics are emitted, the system becomes observable — not just executable.
 
 <p align="center">
-  <img src="./docs/assets/dashboard_mockup.svg" width="100%" />
+  <img src="./docs/assets/dashboard_mockup.svg" width="60%" />
 </p>
 
 > This dashboard represents the **end-state goal**: a stable monitoring layer that makes system behavior measurable and governable — not assumed.
