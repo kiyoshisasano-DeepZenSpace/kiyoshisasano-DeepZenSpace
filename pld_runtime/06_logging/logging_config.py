@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.logging.logging_config
+pld_runtime.logging.logging_config (v1.1 Canonical Edition)
 
 Configuration model and factory utilities for logging components.
 
@@ -9,7 +9,7 @@ This module defines how logging behavior is configured across runtime:
 
 - global logging mode
 - trace buffering strategy
-- writer backend selection (stdout, jsonl, memory, custom)
+- writer backend selection (stdout, jsonl, memory, custom, none)
 - integration with StructuredLogger and SessionTraceBuffer
 
 It does NOT:
@@ -17,7 +17,8 @@ It does NOT:
 - mutate runtime state automatically
 - auto-detect environment (caller decides)
 
-Intended usage pattern:
+Intended usage pattern
+----------------------
 
     from pld_runtime.logging.logging_config import (
         LoggingConfig,
@@ -37,7 +38,8 @@ Intended usage pattern:
     logger = logging_ctx.logger
     buffer = logging_ctx.trace_buffer
 
-This keeps logging pluggable yet standardized across environments.
+This keeps logging pluggable yet standardized across environments,
+and aligned with PLD runtime objects (events, envelopes, controllers).
 """
 
 from __future__ import annotations
@@ -75,7 +77,6 @@ WriterSelection = Literal[
     "custom_callable",
 ]
 
-
 RetentionSelection = Literal[
     "unbounded",
     "per_session",
@@ -95,7 +96,11 @@ class LoggingConfig:
     Fields
     ------
     mode:
-        LoggingMode enum value or string ("debug", "compact", "evaluation", "silent").
+        LoggingMode enum value or string:
+            - "debug"
+            - "compact"
+            - "evaluation"
+            - "silent"
 
     writer:
         How logs should be emitted:
@@ -109,7 +114,10 @@ class LoggingConfig:
         File path for jsonl mode (required if writer == "jsonl").
 
     trace_retention:
-        Strategy for session_trace_buffer.
+        Strategy for SessionTraceBuffer:
+            - "unbounded"
+            - "per_session"
+            - "global_limit"
 
     max_items_per_session:
         Used when trace_retention == "per_session".
@@ -119,6 +127,7 @@ class LoggingConfig:
 
     custom_writer:
         Optional callable to use when writer == "custom_callable".
+        Must accept a single Dict[str, Any] argument and return None.
     """
 
     mode: str | LoggingMode = "compact"
@@ -129,7 +138,7 @@ class LoggingConfig:
     max_items_per_session: int = 300
     max_total_items: int = 5000
 
-    custom_writer: Optional[Any] = None  # must accept dict → None
+    custom_writer: Optional[Any] = None  # must accept Dict[str, Any] → None
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -146,8 +155,9 @@ class LoggingContext:
 
     Contains instantiated components ready for runtime use:
 
-        - logger
-        - trace_buffer
+        - logger: StructuredLogger
+        - trace_buffer: SessionTraceBuffer
+        - config: LoggingConfig
     """
 
     logger: StructuredLogger
@@ -176,20 +186,21 @@ def _resolve_mode(mode: str | LoggingMode) -> LoggingMode:
 
 
 def _resolve_writer(cfg: LoggingConfig):
-    """Return an EventWriter based on config."""
+    """Return an EventWriter-like callable based on config."""
     match cfg.writer:
         case "stdout":
             return make_stdout_writer()
 
         case "jsonl":
             if not cfg.writer_path:
-                raise ValueError("logging_config: writer=jsonl requires writer_path.")
+                raise ValueError("logging_config: writer='jsonl' requires writer_path.")
             return make_jsonl_file_writer(cfg.writer_path)
 
         case "memory":
             return MemoryWriter()
 
         case "none":
+            # Silent sink
             return lambda rec: None
 
         case "custom_callable":
@@ -238,7 +249,6 @@ def configure_logging(cfg: LoggingConfig) -> LoggingContext:
     -------
     LoggingContext
     """
-
     mode = _resolve_mode(cfg.mode)
     writer = _resolve_writer(cfg)
     trace_buffer = _resolve_trace_buffer(cfg)
@@ -248,7 +258,7 @@ def configure_logging(cfg: LoggingConfig) -> LoggingContext:
     return LoggingContext(
         logger=logger,
         trace_buffer=trace_buffer,
-        config=cg,
+        config=cfg,
     )
 
 
