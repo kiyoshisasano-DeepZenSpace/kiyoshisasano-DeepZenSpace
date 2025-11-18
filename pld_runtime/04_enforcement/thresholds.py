@@ -1,18 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.enforcement.thresholds
+pld_runtime.enforcement.thresholds (v1.1 Canonical Edition)
 
 Central time and policy thresholds for PLD runtime enforcement.
 
-Purpose:
+Purpose
+-------
 - Unify configurable timing and behavioral tolerances for PLD traces.
-- Provide stable contract for evaluation, runtime enforcement,
+- Provide a stable contract for evaluation, runtime enforcement,
   and post-hoc analysis.
 - Support multiple strictness presets (production, research, debug).
 
 This module does NOT perform validation or sequencing itself.
 It only exposes configuration values in a controlled format.
+
+Canonical Alignment
+-------------------
+- Phases:  drift → repair → reentry → outcome → none
+- Metrics: thresholds are typically consumed by:
+    - sequence_rules.SequenceRuleConfig
+    - response_policy.evaluate_policy
+    - controller-level enforcement logic
 """
 
 from __future__ import annotations
@@ -30,19 +39,19 @@ class EnforcementMode(str, Enum):
     """
     High-level enforcement posture.
 
-    - STRICT:
+    STRICT
         Hard failures when sequence or timing rules are violated.
         Used in production models where consistency is critical.
 
-    - BALANCED:
-        Violation does NOT stop execution, but triggers repair hints or logging.
+    BALANCED
+        Violations do NOT stop execution, but trigger repair hints or logging.
         Recommended default for applied PLD operations.
 
-    - OBSERVATIONAL:
+    OBSERVATIONAL
         No enforcement, only monitoring/evaluation.
         Useful for research traces and drift baselining.
-
     """
+
     STRICT = "strict"
     BALANCED = "balanced"
     OBSERVATIONAL = "observational"
@@ -57,11 +66,21 @@ class Thresholds:
     """
     Time thresholds in milliseconds.
 
-    Naming conventions:
-    - drift_to_repair_ms:
+    Naming conventions
+    ------------------
+    drift_to_repair_ms
         Allowed latency between a drift and the required repair.
-    - repair_to_reentry_ms:
+
+    repair_to_reentry_ms
         Allowed latency between a repair and reentry confirmation.
+
+    jitter_allowance_ms
+        Additional slack for noisy runtime conditions (e.g., network jitter).
+        Typically used by higher-level analysis, not by sequence_rules directly.
+
+    grace_window_end_ms
+        Delay allowed before labeling unhandled sequences as timeout cases.
+        Can be used by batch evaluators to determine when a trace is "complete".
     """
 
     drift_to_repair_ms: int = 30000
@@ -111,7 +130,7 @@ def get_thresholds(mode: EnforcementMode | str = EnforcementMode.BALANCED) -> Th
     """
     Retrieve threshold configuration for a given enforcement mode.
 
-    Falls back to BALANCED if the input isn't recognized.
+    Falls back to BALANCED if the input is not recognized.
     """
     if isinstance(mode, str):
         try:
