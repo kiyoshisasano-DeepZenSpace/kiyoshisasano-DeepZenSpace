@@ -12,7 +12,7 @@ This repository uses hybrid licensing to balance adoption and intellectual prope
 ### You Can:
 - ✅ Use the code commercially (Apache 2.0)
 - ✅ Modify and distribute the code
-- ✅ Use and adapt the documentation (CC BY-SA 4.0)
+- ✅ Use and adapt the documentation (CC BY 4.0)
 - ✅ Use PLD concepts in commercial products
 
 ### You Must:
@@ -33,7 +33,7 @@ This repository uses hybrid licensing to balance adoption and intellectual prope
 - JSON schemas and configuration files
 - Runnable examples
 
-### Documentation (CC BY-SA 4.0)
+### Documentation (CC BY 4.0)
 - All `.md` files
 - All `.svg` files
 - `/docs/`, `/analytics/`, `/field/` folders
