@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.enforcement.schema_validator
+pld_runtime.enforcement.schema_validator (v1.1 Canonical Edition)
 
 Runtime schema validation for PLD events and envelopes.
 
-- Prefers repository schemas in pld_runtime/schemas/
+- Prefers repository schemas in pld_runtime/01_schemas/
 - Falls back to minimal internal schemas if files are missing or invalid
 - Designed for use by detectors, controllers, and CLI tools
 
@@ -34,7 +34,8 @@ except Exception:  # pragma: no cover - optional dependency
 # ---------------------------------------------------------------------------
 
 HERE = Path(__file__).resolve().parent
-SCHEMAS_DIR = HERE.parent / "schemas"
+# Canonical schema location within pld_runtime
+SCHEMAS_DIR = HERE.parent / "01_schemas"
 
 DEFAULT_EVENT_SCHEMA_PATH = SCHEMAS_DIR / "pld_event.schema.json"
 DEFAULT_ENVELOPE_SCHEMA_PATH = SCHEMAS_DIR / "runtime_event_envelope.json"
