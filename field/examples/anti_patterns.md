@@ -208,6 +208,6 @@ Major deviation → Hard Repair
 > They show where the runtime and operator logic need alignment.**
 
 Maintainer: Kiyoshi Sasano  
-License: CC BY-NC 4.0
 
 ---
+
