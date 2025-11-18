@@ -184,6 +184,21 @@ python quickstart/run_minimal_engine.py
 > 🛠️ This verifies PLD is installed and running as a real runtime, not just a conceptual demonstration.
 
 ---
+
+#### 📊 Optional Step — Verify Metrics Locally
+Once you've run the runtime and seen PLD behavior,
+you can also measure it using the included demo dataset:
+```bash
+python quickstart/metrics/verify_metrics_local.py
+```
+
+- This will calculate sample operational metrics such as:
+- PRDR — Post-Repair Drift Recurrence
+- VRL — Visible Repair Load
+- MRBF — Mean Repairs Before Failover
+- FR — Failover Rate
+
+---
  
 For deeper usage patterns, continue with:  
 ➡️` quickstart/README_quickstart.md` 
