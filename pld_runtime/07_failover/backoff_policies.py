@@ -28,12 +28,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass, asdict
 from enum import Enum
-from typing import Dict, Tuple
+from typing import Any, Dict, Tuple, Union
 
 
 # ---------------------------------------------------------------------------
 # Backoff profile definitions
 # ---------------------------------------------------------------------------
+
 
 class BackoffProfile(str, Enum):
     """
@@ -61,7 +62,7 @@ class BackoffProfile(str, Enum):
     HEAVY = "heavy"
 
 
-@dataclass
+@dataclass(frozen=True)
 class BackoffPolicy:
     """
     Configuration for a backoff policy.
@@ -72,20 +73,26 @@ class BackoffPolicy:
         Named profile.
 
     max_retries:
-        Maximum number of attempts (excluding the initial one).
-        Example: max_retries=3 → attempts 0,1,2,3 (4 total).
+        Maximum number of *retries* (excluding the initial attempt).
+
+        Example:
+            max_retries=3 → attempts with attempt_index:
+                0 (initial attempt),
+                1, 2, 3 (retries).
 
     base_delay_seconds:
         Base delay for an exponential schedule.
 
     multiplier:
         Exponential multiplier applied per attempt:
-            delay = base_delay_seconds * (multiplier ** attempt)
 
-        attempt is 1-based for the first retry:
-            attempt=0 → 0 delay (no backoff before first call)
-            attempt=1 → base_delay_seconds * multiplier
-            attempt=2 → base_delay_seconds * multiplier^2
+            delay = base_delay_seconds * (multiplier ** (retry_number - 1))
+
+        where retry_number is 1-based for the first retry:
+
+            attempt_index = 0 → first attempt (no previous failures)
+            attempt_index = 1 → first retry  (retry_number = 1)
+            attempt_index = 2 → second retry (retry_number = 2)
             ...
 
     jitter_ratio:
@@ -105,10 +112,10 @@ class BackoffPolicy:
     multiplier: float
     jitter_ratio: float = 0.1
 
-    def to_dict(self) -> Dict:
-        d = asdict(self)
-        d["profile"] = self.profile.value
-        return d
+    def to_dict(self) -> Dict[str, Any]:
+        data = asdict(self)
+        data["profile"] = self.profile.value
+        return data
 
 
 # Canonical profile registry
@@ -148,21 +155,43 @@ _BACKOFF_POLICIES: Dict[BackoffProfile, BackoffPolicy] = {
 # Public API
 # ---------------------------------------------------------------------------
 
-def get_backoff_policy(profile: str | BackoffProfile) -> BackoffPolicy:
-    """
-    Retrieve BackoffPolicy for a given profile name.
 
-    Unknown profile names default to MEDIUM to remain conservative.
+def _normalize_profile(profile: Union[str, BackoffProfile]) -> BackoffProfile:
     """
-    if isinstance(profile, str):
-        try:
-            profile_enum = BackoffProfile(profile.lower())
-        except Exception:
-            profile_enum = BackoffProfile.MEDIUM
-    else:
-        profile_enum = profile
+    Normalize an incoming profile label into a BackoffProfile enum.
 
-    return _BACKOFF_POLICIES.get(profile_enum, _BACKOFF_POLICIES[BackoffProfile.MEDIUM])
+    Unknown string values fall back to BackoffProfile.MEDIUM to remain
+    conservative.
+    """
+    if isinstance(profile, BackoffProfile):
+        return profile
+
+    # Accept either exact enum values ("light") or their upper-case names ("LIGHT").
+    label = str(profile).strip().lower()
+    for p in BackoffProfile:
+        if label in (p.value, p.name.lower()):
+            return p
+
+    return BackoffProfile.MEDIUM
+
+
+def get_backoff_policy(profile: Union[str, BackoffProfile]) -> BackoffPolicy:
+    """
+    Retrieve BackoffPolicy for a given profile name or enum.
+
+    Parameters
+    ----------
+    profile:
+        Either a BackoffProfile instance or a string such as
+        "none", "light", "medium", "heavy".
+
+    Returns
+    -------
+    BackoffPolicy
+        The corresponding policy. Unknown values default to MEDIUM.
+    """
+    normalized = _normalize_profile(profile)
+    return _BACKOFF_POLICIES.get(normalized, _BACKOFF_POLICIES[BackoffProfile.MEDIUM])
 
 
 def compute_delay(
@@ -179,10 +208,15 @@ def compute_delay(
     attempt_index:
         0-based index of the attempt.
 
-        - attempt_index = 0 → first attempt (no previous failures)
-        - attempt_index = 1 → first retry
-        - attempt_index = 2 → second retry
-        ...
+        - attempt_index = 0:
+            First attempt (no previous failures).
+            delay_seconds = 0.0, should_retry = True.
+
+        - attempt_index = 1:
+            First retry.
+
+        - attempt_index = n:
+            n-th retry.
 
     policy:
         BackoffPolicy to apply.
@@ -190,9 +224,8 @@ def compute_delay(
     Returns
     -------
     (delay_seconds, should_retry)
-
         delay_seconds:
-            Suggested delay before this attempt (not before the next).
+            Suggested delay *before this attempt* (not before the next).
 
         should_retry:
             True if this attempt is allowed under max_retries,
@@ -200,20 +233,28 @@ def compute_delay(
 
     Behavior
     --------
-    - For attempt_index == 0: delay_seconds = 0.0, should_retry=True.
-    - For attempt_index > policy.max_retries: should_retry=False
-      and delay_seconds is still returned but should be ignored.
+    - For attempt_index == 0:
+        delay_seconds = 0.0, should_retry = True.
+
+    - For attempt_index > policy.max_retries:
+        should_retry = False and delay_seconds is returned as 0.0
+        (callers should ignore the delay in this case).
+
+    - For attempt_index in [1, max_retries]:
+        Exponential backoff is applied based on base_delay_seconds
+        and multiplier.
     """
     if attempt_index < 0:
         attempt_index = 0
 
     # Check retry allowance
     if attempt_index > policy.max_retries:
-        # No more retries allowed
+        # No more retries allowed. We still return a numeric delay,
+        # but callers should ignore it when should_retry is False.
         return 0.0, False
 
     if attempt_index == 0:
-        # First call: no delay before the attempt
+        # First call: no delay before the attempt.
         return 0.0, True
 
     # Retry attempts: exponential schedule
