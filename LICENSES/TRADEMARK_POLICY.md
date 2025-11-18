@@ -127,9 +127,10 @@ or in ways suggesting official affiliation.
 
 **You may NOT:**
 
-❌ Use as logo/branding for a product named "PLD" or claiming official status  
-❌ Remove attribution or modify in ways suggesting endorsement  
-❌ Claim certification through visual similarity  
+❌ Remove or obscure the attribution required under the CC BY 4.0 license  
+❌ Modify visuals in a way that implies official status, endorsement, or certification  
+❌ Use visuals as branding for a commercial product named "PLD" or positioned as the official implementation  
+ 
 
 **Clarification:** The license governs *usage rights*; trademark law governs 
 *brand identity*. Both must be respected.
