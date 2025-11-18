@@ -1,7 +1,7 @@
 # PLD: Phase Loop Dynamics  
 *A Runtime Phase Model for Stable Multi-Turn LLM Systems*
 
-![License: Apache-2.0 | CC-BY-SA-4.0](https://img.shields.io/badge/license-Apache%202.0%20%7C%20CC--BY--SA--4.0-blue)
+![License: Apache-2.0 | CC-BY-4.0](https://img.shields.io/badge/license-Apache%202.0%20%7C%20CC--BY--4.0-blue)
 ![Status: Active](https://img.shields.io/badge/status-active-brightgreen)
 
 > PLD is not a framework or agent library.  
