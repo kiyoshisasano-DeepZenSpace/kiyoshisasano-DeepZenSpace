@@ -1,21 +1,23 @@
-# 03 — Reentry Confirmation Patterns  
-*Stability Re-Anchoring After Repair (PLD Applied)*
+# Reentry Confirmation Patterns  
+*Stability Re-Anchoring After Repair (PLD Applied v1.1)*
 
-Reentry is the moment where the system transitions from **repair mode → task execution mode**.  
-It is not just a sentence — it is a **state checkpoint**.
+Reentry marks the transition from **repair mode → aligned execution mode**.  
+Repair alone does **not** guarantee recovery — reentry ensures the system and user share the same task frame before continuing.
 
-A repair is not complete until the system has confirmed alignment and re-established task continuity.
+It acts as a **checkpoint**, not filler dialog.
 
 ---
 
 ## 1. Core Reentry Confirmation Template (Default)
 
-Use after Soft or Hard Repair unless context continuation is obvious.
+Use after Soft Repair or R5_hard_reset unless alignment is obvious.
+
+
 
 ```
 Great — correction applied.
 
-Before we continue, here’s the current task state:
+Before continuing, here's the active task state:
 
 Goal: <goal>
 Constraints: <constraints>
@@ -24,168 +26,194 @@ Next step: <planned action>
 Should I proceed? (Yes / Adjust)
 ```
 
+
 Why it works:  
-It bridges repair → action without assuming intent.
+✔ restores alignment  
+✔ eliminates ambiguity  
+✔ prevents silent drift recurrence  
 
 ---
 
-## 2. Lightweight Reentry (Minimal Impact)
+## 2. Lightweight Reentry (Minimal)
 
-Used when correction was mild and flow should remain smooth.
+Use when drift was small and continuity is safe.
+
 
 ```
 Update applied — continuing with:
-
 <next action>
 
-If anything needs adjusting, tell me anytime.
+If anything needs adjusting, just tell me.
 ```
 
-Tone: **confident, not hesitant.**
+
+Tone: **confident, not apologetic.**
 
 ---
 
-## 3. Ambiguity Collapse Reentry
+## 3. Ambiguity Collapse Pattern
 
-Used after clarification or ambiguity resolution.
+Use after clarification dialogues.
 
 ```
-Thanks — based on your confirmation, we're continuing with:
+Thanks — based on your confirmation, continuing with:
 
-<selected option>
+→ <selected option>
 
 Next: <next step>
 ```
 
-Optional: include branch name  
-(e.g., *Route A: Budget Hotels*)
+
+Helpful for **D1_instruction or D2_context** resolution.
 
 ---
 
 ## 4. Scope-Switch Reentry
 
-Used when repair involved a confirmed change of direction.
+Use when repair involved task reframing, not correction.
 
 ```
-Understood — we've switched to the new task focus:
+Understood — switching to the updated task:
 
 New goal: <goal>
-Relevant constraints: <constraints if any>
+Relevant constraints: <constraints_if_any>
 
-Would you like:
-1) Full restart with new constraints
-2) Continue using previous data
+Choose one:
+
+1. Restart using the new goal only
+2. Continue using previous information
+
 ```
 
-Prevents **silent context bleed.**
+
+Prevents *context bleed*.
 
 ---
 
-## 5. Tool/DB Correction Reentry
+## 5. Tool/Source-of-Truth Correction Reentry
 
-Used after tool conflict, API error, or corrected source-of-truth.
+Use when a tool or verified fact changed the system state.
 
 ```
-Correction applied based on the latest data.
+Correction applied — based on the latest verified data.
 
 Updated result:
-<corrected or verified information>
+<corrected output>
 
-Continuing from here — should I proceed with <next action>?
+Should I continue with <next action>?
 ```
 
-Protects **trust and grounding.**
+Useful for **D5_information** repairs.
 
 ---
 
-## 6. Latency-Aware Reentry (Voice/UI Agents)
+## 6. Latency-Aware Reentry (Voice/UI Systems)
 
-Use when delay risks user uncertainty.
+Use when delay > pacing threshold (risk of D3_flow drift).
 
 ```
-Thanks for waiting — I’m back on track.
+Thanks for waiting — I’m aligned again.
 
-We’re continuing with:
+Continuing with:
+
 <summary>
 
-Ready to proceed?
+Ready to move forward?
 ```
 
-Pairs well with typing indicators or streaming signals.
+Pairs with streaming cues.
 
 ---
 
-## 7. Partial Recovery Reentry
+## 7. Partial Recovery Pattern
 
-Used when not all constraints or details could be restored.
+Use when memory is partially restored.
 
 ```
-I resolved most of the previous issue, but one detail needs confirmation.
+Most of the previous issue is resolved — one item needs confirmation:
 
-Everything is aligned except:
-<missing or conflicting parameter>
+Missing detail:
+<parameter>
 
-Which option should we use?
+Which option should we apply?
 ```
 
-Avoid pretending everything is fixed — **partial repair must be explicit.**
+
+Avoid pretending recovery is complete when it isn't.
 
 ---
 
-## 8. Autonomous Reentry (High Confidence)
+## 8. Autonomous Reentry (High Confidence Mode)
 
-Used only when:
+Use only when:
 
-- constraints unchanged  
-- no branching ambiguity present  
-- drift fully resolved  
+- confidence ≥ threshold,  
+- no constraint modification,
+- no branching required.
 
 ```
-Adjustment made — continuing with the plan.
+Adjustment complete — continuing.
 
-<next step or result>
+→ <next step or action>
 ```
 
-This pattern is efficient but should not silence uncertainty.
+
+Should be rare and rule-driven.
 
 ---
 
-## 9. Anti-Patterns (Avoid)
+## 9. Anti-Patterns
 
-| Anti-Pattern | Risk |
-|--------------|------|
-| ❌ Silent reset | Creates invisible drift |
-| ❌ Asking user to restate everything | Increases cognitive burden |
-| ❌ Apology chains | Signals instability |
-| ❌ Continuing after changed assumptions | High cascading failure risk |
+| Pattern | Result |
+|--------|--------|
+| ❌ Silent repair | Creates hidden state mismatch |
+| ❌ Requesting full restatement | Increases cognitive load |
+| ❌ Reconfirming unnecessarily | Signals uncertainty |
+| ❌ Proceeding after ambiguity remains | High risk of repeated drift |
 
-Reentry is a **checkpoint, not a courtesy phrase.**
+Reentry must feel **controlled, minimal, confident**.
 
 ---
 
-## 10. Optional Telemetry Event (PLD Schema Compatible)
+## 10. Telemetry Event (Schema-Compatible)
 
-```
+Use this event **after reentry action is generated**.
+
+```json
 {
-  "event_type": "reentry",
-  "repair_state": "resolved",
-  "user_confirmation_required": true,
-  "confidence": 0.87
+  "event_type": "reentry_observed",
+  "pld": {
+    "phase": "reentry",
+    "code": "RE3_auto" 
+  },
+  "payload": {
+    "confirmation_required": true,
+    "confidence": 0.87
+  }
 }
+
 ```
 
+Alternative code examples:
+
+- `"RE4_memory_restore"` → used after context reconstruction
+- `"RE2_clarify_gate"` → used when user confirmation determines next branch
+  
 ---
 
 ### Summary
 
-Reentry patterns ensure:
+Reentry ensures:
 
 - ✔ Alignment is explicit  
-- ✔ Repair transitions are stabilized  
-- ✔ Task state is visible and traceable  
-- ✔ Flow resumes confidently  
+- ✔ the user and agent share the same mental model  
+- ✔ execution resumes without ambiguity  
+- ✔ drift → repair → reentry → continuation becomes a stable cycle
 
-Without Reentry, repair is not recovery — it is **just a pause.**
+Without Reentry, repair is not recovery — it is only interruption.
+
+---
 
 Maintainer: **Kiyoshi Sasano**  
+
 Edition: **PLD Applied 2025**
