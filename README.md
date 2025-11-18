@@ -165,7 +165,7 @@ python quickstart/hello_pld_runtime.py --examples
 > Drift → Repair → Reentry → Continue
 > (in a minimal mock runtime environment)
 
-```
+---
 
 #### Step 2 — Run the Real Runtime Engine
 
@@ -183,7 +183,7 @@ python quickstart/run_minimal_engine.py
 
 > 🛠️ This step verifies PLD is installed and running as a *real runtime, not just a mock demonstration.>
 
-```
+---
  
 For deeper usage patterns, continue with:  
 ➡️` quickstart/README_quickstart.md` 
