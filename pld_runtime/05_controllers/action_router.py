@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.controllers.action_router
+pld_runtime.controllers.action_router (v1.1 Canonical Edition)
 
-Translate policy decisions into *abstract route instructions* that a host
+Translate policy decisions into abstract route instructions that a host
 application can implement.
 
-This module:
+This module performs the mapping:
 
     PolicyEvaluation
         → List[RouteInstruction]
 
 It does NOT:
 
-- call tools / LLMs
+- call tools or LLMs
 - terminate sessions
 - send notifications
 - write logs or metrics
 
-Those side effects must be implemented by the caller based on the
+All concrete side effects MUST be implemented by the caller, based on the
 RouteInstruction objects returned here.
 """
 
@@ -44,23 +44,28 @@ class RouteTarget(str, Enum):
     """
     Abstract destinations for policy-driven actions.
 
-    - LOG:
-        Send to logging / telemetry sink.
+    Semantics
+    ---------
+    LOG:
+        Send to logging / telemetry sink only. No behavior change.
 
-    - AGENT_HINT:
+    AGENT_HINT:
         Provide a soft hint to the agent (e.g., adjust prompt, add guidance).
+        This is typically aligned with soft repair strategies (R1/R2).
 
-    - AGENT_CONTROL:
-        Trigger a stronger agent-side intervention (e.g., structured repair step).
+    AGENT_CONTROL:
+        Trigger a stronger agent-side intervention
+        (e.g., structured repair step, hard-reset flow).
 
-    - HUMAN_ESCALATION:
+    HUMAN_ESCALATION:
         Notify or hand off to a human operator / support channel.
 
-    - SESSION_CONTROL:
+    SESSION_CONTROL:
         Request session termination, reset, or hard recovery.
 
-    - METRICS_ONLY:
-        Record only for evaluation / dashboards; no live feedback.
+    METRICS_ONLY:
+        Record for evaluation / dashboards only; no live feedback.
+        Commonly used for PRDR / REI / VRL instrumentation.
     """
 
     LOG = "log"
@@ -80,7 +85,8 @@ class RouteInstruction:
     """
     One abstract instruction derived from a single PolicyDecision.
 
-    The host runtime is expected to map these to concrete behaviors.
+    The host runtime is responsible for mapping each instruction
+    to concrete behavior (e.g., logging, repair calls, escalations).
     """
 
     session_id: str
@@ -92,6 +98,10 @@ class RouteInstruction:
     metadata: Dict[str, Any]
 
     def to_dict(self) -> Dict[str, Any]:
+        """
+        Serialize this instruction as a plain dict, converting enums into
+        their underlying string representations.
+        """
         d = asdict(self)
         d["action"] = self.action.value
         d["severity"] = self.severity.value
@@ -111,14 +121,16 @@ class ActionRouterConfig:
     Attributes
     ----------
     emit_noop_metrics:
-        If True, even NOOP policies produce a METRICS_ONLY instruction.
+        If True, even NOOP decisions produce a METRICS_ONLY instruction
+        so that silent policies are still observable.
 
     escalate_on_critical:
-        If True, any CRITICAL severity triggers HUMAN_ESCALATION as well.
+        If True, any CRITICAL severity also generates HUMAN_ESCALATION
+        for decisions that already affect the session.
 
     agent_control_for_structural:
-        If True, STRUCTURAL_REPAIR decisions are routed to AGENT_CONTROL,
-        otherwise SESSION_CONTROL is used for high-severity cases.
+        If True, STRUCTURAL_REPAIR decisions are routed to AGENT_CONTROL.
+        If False, they are treated as SESSION_CONTROL for higher severity.
     """
 
     emit_noop_metrics: bool = True
@@ -144,7 +156,11 @@ class ActionRouter:
                 # send to logging system
             elif r.target is RouteTarget.AGENT_HINT:
                 # adjust prompt or inject hint
+            elif r.target is RouteTarget.AGENT_CONTROL:
+                # trigger structured repair or control flow
             ...
+
+    The router is intentionally deterministic and side-effect free.
     """
 
     def __init__(self, config: ActionRouterConfig | None = None) -> None:
@@ -152,7 +168,30 @@ class ActionRouter:
 
     # ---- public API ----
 
-    def route(self, *, session_id: str, policy_evaluation: PolicyEvaluation) -> List[RouteInstruction]:
+    def route(
+        self,
+        *,
+        session_id: str,
+        policy_evaluation: PolicyEvaluation,
+    ) -> List[RouteInstruction]:
+        """
+        Convert a PolicyEvaluation into a list of RouteInstruction objects.
+
+        Parameters
+        ----------
+        session_id:
+            Identifier for the current conversational session.
+
+        policy_evaluation:
+            Result from response_policy evaluation, containing
+            policy decisions and metadata.
+
+        Returns
+        -------
+        List[RouteInstruction]
+            Route instructions that a host application can interpret and
+            execute according to its environment.
+        """
         instructions: List[RouteInstruction] = []
 
         for decision in policy_evaluation.decisions:
@@ -278,6 +317,12 @@ class ActionRouter:
         decision: PolicyDecision,
         target: RouteTarget,
     ) -> RouteInstruction:
+        """
+        Build a RouteInstruction from a PolicyDecision and a target.
+
+        The original decision details are carried forward into metadata,
+        preserving policy context for logging and downstream systems.
+        """
         metadata = dict(decision.details)
         metadata.setdefault("policy_code", decision.code)
         metadata.setdefault("policy_message", decision.message)
