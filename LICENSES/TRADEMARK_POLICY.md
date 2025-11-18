@@ -113,7 +113,7 @@ require permission:
 
 ### License vs Trademark
 
-The SVG diagrams and visual materials are licensed under **CC BY-SA 4.0** 
+The SVG diagrams and visual materials are licensed under **CC BY 4.0** 
 for their *content* — you may use, adapt, and share them with attribution.
 
 However, *trademark law* separately governs using these visuals as *branding* 
