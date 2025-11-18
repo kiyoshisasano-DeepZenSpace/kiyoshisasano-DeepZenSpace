@@ -175,6 +175,6 @@ They also act as **runtime decision inputs**, including:
 ---
 
 Maintainer: **Kiyoshi Sasano**  
-License: **CC BY-NC 4.0 (commercial use requires written permission)**
+License: **CC BY 4.0 (commercial use requires written permission)**
 
 
