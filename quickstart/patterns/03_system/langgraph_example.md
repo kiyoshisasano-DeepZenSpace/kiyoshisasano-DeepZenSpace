@@ -223,7 +223,8 @@ print(result["pld_events"])
 > All other recipes extend — not replace — this scaffold.
 
 Maintainer: **Kiyoshi Sasano**  
-License: **CC-BY-NC-4.0**
+License: **CC-BY-4.0**
+
 
 
 
