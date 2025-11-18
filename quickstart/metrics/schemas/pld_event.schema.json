@@ -1,92 +1,147 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "PLD Event (v1.1 Canonical Edition)",
-  "description": "Standard telemetry event for Phase Loop Dynamics (PLD). Aligned with Integration Recipes v1.1 and Operational Metrics Cookbook.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pld.dev/schema/pld_event.v1.1.schema.json",
+  "title": "PLD Applied Runtime Event (v1.1)",
+  "description": "Canonical event schema for PLD (Phase Loop Dynamics) runtime logging and metrics aggregation (v1.1, phase+code-based).",
+
   "type": "object",
+  "additionalProperties": false,
+
   "required": [
     "event_id",
-    "session_id",
     "timestamp",
+    "session_id",
+    "turn_id",
     "event_type",
     "pld"
   ],
+
   "properties": {
     "event_id": {
       "type": "string",
-      "description": "Globally unique ID for this event (UUIDv4 recommended)."
+      "format": "uuid",
+      "description": "Unique identifier for this event."
     },
-    "session_id": {
-      "type": "string",
-      "description": "Unique identifier for the conversation session."
-    },
-    "turn_id": {
-      "type": "integer",
-      "description": "Local monotonic turn index (0, 1, 2...)."
-    },
+
     "timestamp": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 UTC timestamp."
+      "description": "ISO8601 timestamp when the event was recorded."
     },
+
+    "session_id": {
+      "type": "string",
+      "description": "Conversation or runtime session ID the event belongs to."
+    },
+
+    "turn_id": {
+      "type": ["string", "integer"],
+      "description": "Turn index or message identifier within the session."
+    },
+
     "event_type": {
       "type": "string",
       "enum": [
-        "turn",
         "drift_detected",
         "repair_triggered",
         "reentry_observed",
-        "outcome_classified",
-        "tool_execution",
-        "latency_signal"
+        "outcome",
+        "failover_triggered",
+        "info",
+        "metric",
+        "system"
       ],
-      "description": "High-level event category."
+      "description": "Top-level classification of the event."
     },
+
+    "source": {
+      "type": "string",
+      "enum": [
+        "user",
+        "system",
+        "assistant",
+        "tool",
+        "controller",
+        "runtime"
+      ],
+      "description": "Origin of the event. Optional."
+    },
+
     "pld": {
       "type": "object",
       "required": ["phase", "code"],
+      "description": "PLD structured metadata block.",
       "properties": {
         "phase": {
           "type": "string",
-          "enum": ["drift", "repair", "reentry", "outcome", "none"],
-          "description": "Current phase in the PLD runtime loop."
+          "enum": [
+            "none",
+            "drift",
+            "repair",
+            "reentry",
+            "continue",
+            "failover",
+            "outcome"
+          ],
+          "description": "Phase of the PLD loop the event represents."
         },
         "code": {
           "type": "string",
-          "description": "Canonical PLD Code (v1.1 Taxonomy).",
-          "enum": [
-            "D0_none",
-            "D1_instruction",
-            "D2_context",
-            "D3_flow",
-            "D4_tool",
-            "D5_information",
-            "R1_clarify",
-            "R2_soft_repair",
-            "R3_rewrite",
-            "R4_request_clarification",
-            "R5_hard_reset",
-            "RE0_none",
-            "RE1_failed",
-            "RE2_partial",
-            "RE3_auto",
-            "RE4_memory_restore",
-            "OUT1_complete",
-            "OUT2_partial",
-            "OUT3_abandoned"
-          ]
+          "pattern": "^(D[1-9]|R[1-9]|RE[0-9]+|F[0-9]+|O[0-9]+|NONE)([_A-Za-z0-9-]*)?$",
+          "description": "Phase-specific structured code (e.g. D5_information, D4_tool, R2_soft_repair, RE3_auto)."
         },
         "confidence": {
           "type": "number",
-          "minimum": 0.0,
-          "maximum": 1.0
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Optional confidence score assigned by detection or evaluation logic."
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Optional PLD-internal metadata not required for metrics.",
+          "additionalProperties": true
         }
-      }
+      },
+      "additionalProperties": false
     },
+
     "payload": {
       "type": "object",
-      "description": "Context-specific data (e.g. text, tool inputs, error messages).",
+      "description": "Original conversational payload (user/system/tool content).",
+      "properties": {
+        "speaker": { "type": "string" },
+        "text": { "type": "string" },
+        "raw_flags": {
+          "type": ["string", "object", "null"],
+          "description": "Stores raw drift/repair markers from prototype models for debugging."
+        }
+      },
       "additionalProperties": true
+    },
+
+    "runtime": {
+      "type": "object",
+      "description": "Optional execution details used for diagnostics or optimization.",
+      "properties": {
+        "latency_ms": { "type": "number" },
+        "trace_id": { "type": "string" },
+        "agent_state": { "type": "string" },
+        "tool_used": { "type": ["string", "null"] },
+        "model": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+
+    "metrics": {
+      "type": "object",
+      "description": "Derived or aggregated values used by operational dashboards.",
+      "additionalProperties": true
+    },
+
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional free-form labels for routing or aggregation."
     }
-  },
-  "additionalProperties": true
+  }
 }
