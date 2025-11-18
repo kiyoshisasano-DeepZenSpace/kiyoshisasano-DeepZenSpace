@@ -147,7 +147,7 @@ If you are still validating early integration:
 
 ## 8. License
 
-Creative Commons — **CC BY-NC 4.0**  
+Creative Commons — **CC BY 4.0**  
 © 2025 — DeepZenSpace  
 Maintainer: **Kiyoshi Sasano**
 
@@ -156,4 +156,5 @@ Maintainer: **Kiyoshi Sasano**
 > **PLD Metrics is not general analytics —  
 it is behavioral instrumentation.  
 It measures whether an agent maintains alignment with the interaction contract.**
+
 
