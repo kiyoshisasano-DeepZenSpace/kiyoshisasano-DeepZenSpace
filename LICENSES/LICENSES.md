@@ -5,7 +5,7 @@ This repository uses hybrid licensing to balance adoption and intellectual prope
 ## Quick Reference
 
 - **Code & Runtime**: Apache License 2.0 → [LICENSE-APACHE-2.0.txt](LICENSE-APACHE-2.0.txt)
-- **Documentation & Methodology**: CC BY-SA 4.0 → [LICENSE-CC-BY-SA-4.0.txt](LICENSE-CC-BY-SA-4.0.txt)
+- **Documentation & Methodology**: CC BY-SA 4.0 → [LICENSE-CC-BY-4.0.txt](LICENSE-CC-BY-4.0.txt)
 
 ## What This Means
 
