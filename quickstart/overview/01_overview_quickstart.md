@@ -133,4 +133,4 @@ Then continue with:
 
 Maintainer: **Kiyoshi Sasano**  
 Version: **Applied-AI Edition (2025)**  
-License: **CC-BY-NC 4.0**
+License: **CC-BY 4.0**
