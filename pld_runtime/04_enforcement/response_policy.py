@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.enforcement.response_policy
+pld_runtime.enforcement.response_policy (v1.1 Canonical Edition)
 
 Map validation / sequence analysis results to runtime-friendly
 policy decisions.
@@ -10,11 +10,17 @@ This module does NOT execute repairs or mutate state.
 It only decides *what should happen* given:
 
 - schema validation results
-- temporal sequence analysis (drift → repair → reentry)
+- temporal sequence analysis (drift → repair → reentry → outcome)
 - enforcement mode / thresholds
 
 Controllers or runtime hosts are expected to consume these decisions
 and implement concrete behavior (e.g., tool calls, resets, logging).
+
+Canonical Alignment
+-------------------
+- Phases:  drift → repair → reentry → outcome → none
+- Codes:   D*/R*/RE* taxonomy (see pld_runtime/01_schemas/drift_repair_codes.json)
+- Events:  Compatible with pld_event.schema.json
 """
 
 from __future__ import annotations
@@ -43,22 +49,37 @@ class PolicyAction(str, Enum):
     """
     High-level action categories that controllers can implement.
 
-    - LOG_ONLY:
+    These are **abstract runtime intents** that can be mapped onto
+    concrete repair behaviors using canonical PLD codes:
+
+        - R1_clarify
+        - R2_soft_repair
+        - R3_rewrite
+        - R4_request_clarification
+        - R5_hard_reset
+
+    Actions
+    -------
+    LOG_ONLY:
         Record the event / violation, but do not alter runtime behavior.
 
-    - SOFT_REPAIR:
-        Suggest or trigger soft / local repair behavior (R1/R3 domain).
+    SOFT_REPAIR:
+        Suggest or trigger soft / local repair behavior
+        (typically R1_clarify or R2_soft_repair, possibly R3_rewrite).
 
-    - STRUCTURAL_REPAIR:
-        Suggest or trigger structural repair (R2/R4 candidates).
+    STRUCTURAL_REPAIR:
+        Suggest or trigger structural repair, including more invasive
+        interventions that may map to R2_soft_repair or R5_hard_reset.
 
-    - ESCALATE:
+    ESCALATE:
         Escalate to human / supervisor / secondary pipeline.
+        Often paired with R4_request_clarification at the UX level.
 
-    - ABORT_SESSION:
-        Request session termination or hard reset.
+    ABORT_SESSION:
+        Request session termination or hard reset
+        (usually R5_hard_reset at the PLD level).
 
-    - NOOP:
+    NOOP:
         No action; everything is within tolerances.
     """
 
@@ -74,10 +95,19 @@ class Severity(str, Enum):
     """
     Severity of a policy decision.
 
-    - INFO: purely informational
-    - WARNING: may degrade interaction but not critical
-    - ERROR: clear violation, requires attention
-    - CRITICAL: severe breakdown, likely requires abort / hard repair
+    - INFO:
+        Purely informational. No direct risk to the interaction.
+
+    - WARNING:
+        May degrade interaction quality but not considered critical.
+
+    - ERROR:
+        Clear violation of expected behavior, requires attention or
+        non-trivial repair.
+
+    - CRITICAL:
+        Severe breakdown (e.g., repeated drift without repair,
+        schema corruption). Likely requires abort / hard reset.
     """
 
     INFO = "info"
@@ -90,6 +120,24 @@ class Severity(str, Enum):
 class PolicyDecision:
     """
     A single policy decision derived from validation / sequence analysis.
+
+    Fields
+    ------
+    action:
+        High-level PolicyAction recommended by enforcement.
+
+    severity:
+        Severity classification for this decision.
+
+    code:
+        Short decision code or violation key, e.g. "DRIFT_TIMEOUT",
+        "SCHEMA_INVALID_EVENT", "NO_VIOLATION".
+
+    message:
+        Human-readable explanation suitable for logs or dashboards.
+
+    details:
+        Optional contextual metadata (indexes, timings, validator info, etc).
     """
 
     action: PolicyAction
@@ -114,6 +162,21 @@ class PolicyEvaluation:
     Aggregated response policy evaluation for a session / trace.
 
     Controllers can use this as the "what should we do next?" object.
+
+    Fields
+    ------
+    ok:
+        True if all decisions are NOOP or LOG_ONLY. False otherwise.
+
+    mode:
+        Effective EnforcementMode used for this evaluation.
+
+    thresholds:
+        Thresholds object derived from mode (e.g., max drift count,
+        timeouts, severity escalation rules).
+
+    decisions:
+        List of PolicyDecision entries (may be a single NOOP).
     """
 
     ok: bool
@@ -134,7 +197,9 @@ class PolicyEvaluation:
 # Helpers: mapping violations → decisions
 # ---------------------------------------------------------------------------
 
-# Simple mapping from violation code to severity / suggested action
+# Simple mapping from violation code to severity / suggested action.
+# Sequence-related violations are expected to be emitted by sequence_rules.py
+# using canonical phases (drift/repair/reentry/outcome).
 _VIOLATION_POLICY_MAP: Dict[str, Dict[str, Any]] = {
     # Sequence rules
     "DRIFT_TIMEOUT": {
@@ -186,9 +251,14 @@ def _severity_for_mode(base: Severity, mode: EnforcementMode) -> Severity:
     """
     Adjust severity depending on enforcement mode.
 
-    - STRICT: keep or bump to more serious
-    - BALANCED: keep as-is
-    - OBSERVATIONAL: downgrade one level (except CRITICAL)
+    - STRICT:
+        Keep or bump to more serious (no downscaling).
+
+    - BALANCED:
+        Keep as-is.
+
+    - OBSERVATIONAL:
+        Downgrade one level (except CRITICAL, which stays CRITICAL).
     """
     if mode == EnforcementMode.BALANCED:
         return base
@@ -226,11 +296,12 @@ def evaluate_policy(
     Combine schema validation and sequence-rule analysis into a
     single policy evaluation.
 
-    Typical usage:
-
+    Typical usage
+    -------------
         seq = analyze_sequence(events_for_session, config=..., mode="envelope")
         event_val = validate_event(event)           # optional per-event
         env_val = validate_envelope(envelope_obj)   # optional
+
         pe = evaluate_policy(
             mode="balanced",
             sequence_result=seq,
@@ -241,8 +312,9 @@ def evaluate_policy(
     Controllers can then:
         - inspect pe.ok
         - iterate over pe.decisions
-        - map PolicyAction → concrete behavior
+        - map PolicyAction → concrete behavior (via ActionRouter, etc.)
     """
+    # Normalize mode when passed as string
     if isinstance(mode, str):
         try:
             mode = EnforcementMode(mode.lower())  # type: ignore[arg-type]
@@ -339,6 +411,13 @@ def evaluate_policy(
 def _violation_details(v: SequenceViolation) -> Dict[str, Any]:
     """
     Convert a SequenceViolation into a compact metadata dict for decisions.
+
+    The fields are designed to be directly loggable and to support
+    downstream metrics such as:
+
+        - PRDR (Post-Repair Drift Recurrence)
+        - REI  (Repair Efficiency Index)
+        - VRL  (Visible Repair Load)
     """
     return {
         "index": v.index,
