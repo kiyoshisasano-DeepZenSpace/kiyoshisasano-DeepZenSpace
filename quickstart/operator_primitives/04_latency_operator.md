@@ -1,168 +1,146 @@
 # 04 — Latency Operator  
-*Operator Primitive (Applied-AI Edition)*  
+*Operator Primitive (Applied-AI Edition v1.1 — Canonical Code Compliant)*  
 
-> **Purpose:** Maintain interaction rhythm stability during system delays, tool execution waits, processing uncertainty, or slow inference.  
-> Latency is not just wait time — it is a **temporal alignment factor** that influences trust and perceived competence.
+> **Purpose:** Prevent drift caused by timing mismatch, slow inference, or long-running tool execution.  
+> Latency management is a **pre-emptive stabilization mechanism**, not a repair action.
 
 ---
 
-## **1 — Why Latency Matters**
+## 1 — Why Latency Matters
 
-Human conversation follows implicit timing rhythms.  
-When responses exceed expected pacing, users assume:
+Human interaction relies on timing expectations.  
+When an agent responds too slowly without signaling intent, users assume:
 
-- uncertainty  
-- failure  
-- loss of control  
+- confusion  
+- instability  
 - disengagement  
+- task failure  
 
-Unmanaged latency creates drift patterns:
-
-| Latency Effect | Resulting Drift Pattern |
-|----------------|------------------------|
-| Hesitation gap | Drift-Engagement |
-| Silent processing | Drift-Expectation |
-| Tool timeout | Drift-Information |
-| Message stacking | Drift-Procedural |
-
-Latency management is therefore part of **interaction stability**, not UI decoration.
+Unmanaged latency increases risk of drift, especially during tool calls, indexing, or multi-step reasoning.
 
 ---
 
-## **2 — Human-Perception Timing Thresholds**
+## 2 — Drift Risk Model (Updated)
 
-| Delay Range | User Interpretation | System Strategy |
-|------------|---------------------|----------------|
+Latency does **not define its own drift type**.  
+Instead, it increases the likelihood of existing canonical drift categories:
+
+| Latency Effect | Risk Outcome | Canonical Code |
+|---------------|-------------|----------------|
+| Hesitation gap | Loss of rhythm / degraded engagement | **D3_flow** |
+| Silent processing | User expectation diverges from system state | **D1_instruction** |
+| Delayed tool result | User believes previous context is invalid | **D5_information** |
+| Message batching / stacking | Perceived workflow discontinuity | **D3_flow** |
+
+> **Rule:** Latency Operators run *before* drift classification to reduce avoidable repair events.
+
+---
+
+## 3 — Human Timing Thresholds
+
+| Delay Window | User Interpretation | System Action |
+|-------------|--------------------|--------------|
 | **0–700ms** | Feels instant | Normal reply |
-| **0.7–2.5s** | Slight delay | Optional micro-acknowledge |
-| **2.5–6s** | System feels uncertain | **Latency Hold required** |
-| **6s+** | Perceived breakdown | **Status message + expectation reset** |
-
-These ranges are grounded in:
-
-- conversational pause research  
-- HCI latency tolerance studies  
-- task-oriented agent evaluation  
+| **0.7–2.5s** | Slight hesitation | Optional micro-acknowledge |
+| **2.5–6s** | Uncertainty forming | **Latency Hold required** |
+| **>6s** | Perceived breakdown | **Expectation Reset** |
 
 ---
 
-## **3 — Latency Operator Forms**
+## 4 — Operator Types
 
-| Operator Type | Definition | Use Case |
-|---------------|------------|----------|
-| **Hold** | Short placeholder signaling processing | Tool calls, moderate delay |
-| **Progressive Update** | Multi-step status report | Long-running search or multi-layer action |
-| **Expectation Reset** | Clarifies upcoming waiting time as intentional | Slow inference models / large DB |
-
----
-
-## **4 — Canonical Interaction Patterns**
-
-### **A. Latency Hold (Default)**  
-Triggered at predicted delay > **2.5s**.
-
-> “One moment — checking that now…”
+| Operator | Definition | Usage |
+|---------|------------|-------|
+| **Latency Hold (default)** | Short acknowledgment | Predicted delay >2.5s |
+| **Progressive Update** | Multi-step structured status | Long-running tool or inference |
+| **Expectation Reset** | Clarifies duration and control | Slow reasoning / large datasets |
 
 ---
 
-### **B. Progressive Update**
+### Canonical Examples
 
-> “Still working — now filtering results by your price range…”
+#### A. Latency Hold
 
-Used when discrete processing stages exist.
+> “One moment — processing that…”
 
----
+#### B. Progressive Update
 
-### **C. Expectation Reset**
+> “Still working — now filtering results…”
 
-> “This may take ~10 seconds because the dataset is large.  
-> I’ll update you as soon as results are ready.”
+#### C. Expectation Reset
 
-Used when:  
-⚠ unavoidable latency  
-⚠ user-facing workflow  
-⚠ large context operations  
+> “This may take ~10 seconds. I’ll update you as results complete.”
 
 ---
 
-## **5 — Implementation Examples**
+## 5 — Implementation Examples
 
-### **Python (Async Wrapper)**
+### Python (Async Pattern)
 
 ```python
-async def run_with_latency_operator(task):
-    notify_after = 2.5
-    task_result = await task.with_timeout(notify_after)
+async def run_with_latency_operator(task, notify_at=2.5):
+    result = await task.with_timeout(notify_at)
 
-    if not task_result.ready:
+    if not result.ready:
         yield "Working on that — one moment..."
-        task_result = await task.wait()
+        result = await task.wait()
 
-    return task_result.output
+    return result.output
 ```
 
 ---
 
-### **Rasa Policy Example**
+### Rasa Rule
 
 ```yaml
 rules:
   - rule: Latency Hold
     condition:
-      - slot_was_set: { action_latency: high }
+      - slot_was_set: { predicted_delay: high }
     steps:
       - action: utter_latency_hold
 ```
 
 ---
 
-### **OpenAI Assistants API Log Schema**
-
+## 6 — Logging Format (Schema Aligned)
 ```json
 {
   "event_type": "latency_operator",
-  "strategy": "hold",
-  "delay_seconds": 3.14
+  "pld": {
+    "phase": "alignment_support",
+    "code": "latency_hold",
+    "confidence": 0.98
+  },
+  "payload": {
+    "delay_seconds": 3.14,
+    "strategy": "hold"
+  }
 }
 ```
 
 ---
 
-## **6 — Anti-Patterns**
+## 7 — Anti-Patterns
 
-| Anti-Pattern | Resulting Drift |
-|--------------|----------------|
-| ❌ Silent waiting | Drift-Expectation |
-| ❌ Multiple “typing…” cycles | Drift-Engagement |
-| ❌ Response reset mid-processing | Drift-Procedural |
-| ❌ Apology stacking | Trust erosion |
-
----
-
-## **7 — Latency × Repair Interaction Rules**
-
-Latency modifies perceived system confidence.  
-Correct handling depends on context:
-
-| Scenario | Correct Strategy |
-|----------|-----------------|
-| Delay after incorrect output | Acknowledge + Soft Repair |
-| Delay after repeated failure | Hard Repair + Expectation Reset |
-| Delay before uncertain response | Pre-Hold + Confidence Check |
+| Anti-Pattern                  | Impact                                      |
+| ----------------------------- | ------------------------------------------- |
+| ❌ silent delay                | ↑ risk of **D1_instruction** drift          |
+| ❌ typing indicator spam       | perceptual instability → **D3_flow**        |
+| ❌ abrupt reset without update | perceived failure → triggers repair cascade |
+| ❌ apology stacking            | decreases trust                             |
 
 ---
 
-## **8 — Validation Checklist**
+## 8 — Interaction Rules
 
-| Condition | Requirement |
-|-----------|------------|
-| Delay > 2.5s | ✔ Latency Operator required |
-| Context preserved | ✔ |
-| No new contradictions | ✔ |
-| Operator type matched to scenario | ✔ |
-| Interaction resumed smoothly | ✔ |
+| Situation                     | Correct Action                                               |
+| ----------------------------- | ------------------------------------------------------------ |
+| Delay before uncertain output | Latency Hold → (optional) R1_clarify                         |
+| Delay after repeated failure  | Expectation Reset → consider escalation to **R5_hard_reset** |
+| Delay during tool execution   | Progressive Update                                           |
 
-Latency handling is complete only once **normal pacing resumes** and the user perceives stability.
+Latency handling is complete only when normal pacing and task continuity resume.
 
 ---
 
