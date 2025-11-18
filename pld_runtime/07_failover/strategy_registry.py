@@ -24,7 +24,7 @@ Relationship to other modules
 -----------------------------
 - runtime_failover.decide_failover(...) chooses a FailoverStrategy.
 - strategy_registry stores metadata and intent for each strategy.
-- backoff_policies (future) may refer to StrategySpec.hints["backoff_profile"].
+- backoff_policies may refer to StrategySpec.hints["backoff_profile"].
 
 This keeps the *semantics* of each strategy centralized and documented.
 """
@@ -32,7 +32,7 @@ This keeps the *semantics* of each strategy centralized and documented.
 from __future__ import annotations
 
 from dataclasses import dataclass, asdict, field
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Mapping
 
 from .runtime_failover import FailoverStrategy
 from ..controllers.action_router import RouteTarget
@@ -41,6 +41,7 @@ from ..controllers.action_router import RouteTarget
 # ---------------------------------------------------------------------------
 # Strategy specification model
 # ---------------------------------------------------------------------------
+
 
 @dataclass
 class StrategySpec:
@@ -71,7 +72,7 @@ class StrategySpec:
 
             {
               "prefer_shadow_model": True,
-              "backoff_profile": "exponential_medium",
+              "backoff_profile": "medium",
               "limit_tools": ["search", "db_lookup"],
               "max_retries": 2,
             }
@@ -95,6 +96,10 @@ class StrategySpec:
         return d
 
 
+# Convenience alias for the registry type
+StrategyRegistry = Mapping[FailoverStrategy, StrategySpec]
+
+
 # ---------------------------------------------------------------------------
 # Canonical registry
 # ---------------------------------------------------------------------------
@@ -110,7 +115,10 @@ _STRATEGY_REGISTRY: Dict[FailoverStrategy, StrategySpec] = {
         description="No special mitigation; proceed with normal behavior.",
         default_route_target=None,
         hard_reset=False,
-        hints={"backoff_profile": "none"},
+        hints={
+            # Aligns with BackoffProfile.NONE
+            "backoff_profile": "none",
+        },
     ),
 
     FailoverStrategy.SOFT_DEGRADE: StrategySpec(
@@ -220,6 +228,7 @@ _STRATEGY_REGISTRY: Dict[FailoverStrategy, StrategySpec] = {
 # Public accessors
 # ---------------------------------------------------------------------------
 
+
 def get_strategy_spec(strategy: FailoverStrategy) -> StrategySpec:
     """
     Retrieve StrategySpec for a given FailoverStrategy.
@@ -251,6 +260,7 @@ def list_strategies() -> List[StrategySpec]:
 
 __all__ = [
     "StrategySpec",
+    "StrategyRegistry",
     "get_strategy_spec",
     "list_strategies",
 ]
