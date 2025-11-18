@@ -16,58 +16,29 @@ Inputs:
 
 Output:
     - FailoverDecision:
-        - strategy_id       (e.g., "none", "safe_reset", "human_handoff")
-        - severity          ("info" / "warning" / "error" / "critical")
-        - hard_reset        (bool)
-        - preferred_route   (optional RouteTarget)
-        - metadata          (hints for backoff, model switch, etc.)
+        - strategy         (e.g., "none", "safe_reset_session", "human_handoff")
+        - severity         ("info" / "warning" / "error" / "critical")
+        - hard_reset       (bool)
+        - preferred_route_target (optional RouteTarget)
+        - metadata         (hints for backoff, model switch, etc.)
 
-Procedure
----------
-1. Inspect PolicyEvaluation:
-      - if ok=True → no failover (strategy "none")
-      - otherwise, find the highest-severity decisions.
-2. Combine with PLDState:
-      - repeated drift cycles without successful reentry
-      - frequent repairs / resets
-3. Optionally look at SequenceAnalysisResult:
-      - missing repair / missing reentry patterns
-      - repeated DRIFT_WITHOUT_REPAIR_BEFORE_NEXT_DRIFT
-4. Map this context into a FailoverDecision:
-      - no-op / soft-degrade / safe-reset / human-handoff, etc.
-
-Implementation
---------------
 This module is *pure decision logic*:
     - no logging
     - no network calls
     - no side-effects
 Concrete behavior is implemented by:
     - controllers.action_router (RouteInstruction → runtime actions)
-    - future failover.strategy_registry, failover.backoff_policies
-
-Validation
----------
-Unit tests should assert:
-    - stable mapping from (policy, state) → strategy_id
-    - monotonicity w.r.t. severity escalation
-    - no hard_reset when severity is only INFO/WARNING
-
-Next Step
----------
-A separate `strategy_registry.py` can define named strategies and
-associate them with concrete runtime recipes (tool calls, model changes).
+    - failover.strategy_registry, failover.backoff_policies
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass, asdict, field
 from enum import Enum
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 from ..enforcement.response_policy import (
     PolicyEvaluation,
-    PolicyDecision,
     PolicyAction,
     Severity,
 )
@@ -79,6 +50,7 @@ from ..controllers.action_router import RouteInstruction, RouteTarget
 # ---------------------------------------------------------------------------
 # Failover Strategy / Severity
 # ---------------------------------------------------------------------------
+
 
 class FailoverStrategy(str, Enum):
     """
@@ -123,29 +95,6 @@ class FailoverStrategy(str, Enum):
 class FailoverDecision:
     """
     Final failover decision for a given session at a given time.
-
-    Fields
-    ------
-    strategy:
-        Chosen FailoverStrategy, or NONE.
-
-    severity:
-        Highest observed severity (from PolicyEvaluation or derived).
-
-    hard_reset:
-        True if the strategy implies losing conversational state
-        (session reset, context discard).
-
-    preferred_route_target:
-        Optional RouteTarget that is most appropriate for the strategy,
-        e.g., SESSION_CONTROL or HUMAN_ESCALATION.
-
-    triggered_by_codes:
-        Policy decision codes or sequence violation codes that led
-        to this failover.
-
-    metadata:
-        Free-form hints (e.g., suggested backoff, new model name, etc.).
     """
 
     strategy: FailoverStrategy
@@ -169,23 +118,6 @@ class FailoverDecision:
 class FailoverContext:
     """
     Aggregated context for deciding failover.
-
-    Fields
-    ------
-    session_id:
-        Session identifier.
-
-    policy:
-        PolicyEvaluation for the latest turn.
-
-    state:
-        Current PLDState (phase, cycles, active drift/repair).
-
-    sequence_result:
-        Optional SequenceAnalysisResult for the session.
-
-    routes:
-        Optional list of RouteInstruction produced for the latest turn.
     """
 
     session_id: str
@@ -196,7 +128,7 @@ class FailoverContext:
 
 
 # ---------------------------------------------------------------------------
-# Helpers: severity aggregation
+# Helpers: severity aggregation & trigger collection
 # ---------------------------------------------------------------------------
 
 _SEVERITY_ORDER: Dict[Severity, int] = {
@@ -213,13 +145,55 @@ def _max_severity(*severities: Severity) -> Severity:
     return max(severities, key=lambda s: _SEVERITY_ORDER.get(s, 0))
 
 
-def _collect_trigger_codes(policy: PolicyEvaluation) -> List[str]:
-    return [d.code for d in policy.decisions]
+def _collect_trigger_codes(ctx: FailoverContext) -> List[str]:
+    """
+    Collect codes that contributed to this failover decision.
+
+    Includes:
+        - PolicyDecision codes
+        - SequenceViolation codes (if any)
+    """
+    codes: List[str] = [d.code for d in ctx.policy.decisions]
+    if ctx.sequence_result is not None:
+        codes.extend(v.code for v in ctx.sequence_result.violations)
+    # Deduplicate while preserving order
+    seen: set[str] = set()
+    unique_codes: List[str] = []
+    for c in codes:
+        if c in seen:
+            continue
+        seen.add(c)
+        unique_codes.append(c)
+    return unique_codes
+
+
+def _has_sequence_violation(
+    ctx: FailoverContext,
+    code: str,
+) -> bool:
+    if ctx.sequence_result is None:
+        return False
+    return any(v.code == code for v in ctx.sequence_result.violations)
+
+
+def _sequence_flags(ctx: FailoverContext) -> Dict[str, bool]:
+    """
+    Convenience flags summarizing key sequence violations.
+    """
+    return {
+        "drift_without_repair": _has_sequence_violation(ctx, "DRIFT_WITHOUT_REPAIR"),
+        "drift_timeout": _has_sequence_violation(ctx, "DRIFT_TIMEOUT"),
+        "repair_timeout": _has_sequence_violation(ctx, "REPAIR_TIMEOUT"),
+        "reentry_without_repair": _has_sequence_violation(
+            ctx, "REENTRY_WITHOUT_PRECEDING_REPAIR"
+        ),
+    }
 
 
 # ---------------------------------------------------------------------------
 # Core decision logic
 # ---------------------------------------------------------------------------
+
 
 def decide_failover(ctx: FailoverContext) -> FailoverDecision:
     """
@@ -230,25 +204,19 @@ def decide_failover(ctx: FailoverContext) -> FailoverDecision:
         if policy.ok:
             → strategy NONE
         else if CRITICAL:
-            → ISOLATE_AND_AUDIT or HUMAN_HANDOFF (depending on codes)
+            → ISOLATE_AND_AUDIT or HUMAN_HANDOFF (depending on cycles)
         else if ERROR:
-            → SAFE_RESET_SESSION or SWITCH_MODEL_SHADOW
+            → SAFE_RESET_SESSION or SWITCH_MODEL_SHADOW / FALLBACK_TOOL_ONLY
         else if WARNING:
             → SOFT_DEGRADE or FALLBACK_TOOL_ONLY
 
-    PLDState is used to refine decisions, for example:
-
-        - Many cycles_completed with recurring drift
-          → stronger strategy (e.g., switch model, human handoff)
-
-        - Active drift with no repair yet
-          → prefer soft degrade over hard reset
+    PLDState and optional sequence_result are used to refine decisions.
     """
     policy = ctx.policy
     severity = _max_severity(*(d.severity for d in policy.decisions))
-    triggered_codes = _collect_trigger_codes(policy)
+    triggered_codes = _collect_trigger_codes(ctx)
 
-    # Default: no failover
+    # Default: no failover when policy.ok
     if policy.ok:
         return FailoverDecision(
             strategy=FailoverStrategy.NONE,
@@ -256,25 +224,28 @@ def decide_failover(ctx: FailoverContext) -> FailoverDecision:
             hard_reset=False,
             preferred_route_target=None,
             triggered_by_codes=triggered_codes,
-            metadata={"reason": "policy_ok"},
+            metadata={
+                "reason": "policy_ok",
+                "sequence_ok": ctx.sequence_result.ok if ctx.sequence_result else None,
+            },
         )
 
     # Determine base strategy by severity
     if severity == Severity.CRITICAL:
-        decision = _decide_for_critical(ctx, severity, triggered_codes)
-    elif severity == Severity.ERROR:
-        decision = _decide_for_error(ctx, severity, triggered_codes)
-    elif severity == Severity.WARNING:
-        decision = _decide_for_warning(ctx, severity, triggered_codes)
-    else:
-        decision = _decide_for_info(ctx, severity, triggered_codes)
+        return _decide_for_critical(ctx, severity, triggered_codes)
+    if severity == Severity.ERROR:
+        return _decide_for_error(ctx, severity, triggered_codes)
+    if severity == Severity.WARNING:
+        return _decide_for_warning(ctx, severity, triggered_codes)
 
-    return decision
+    # INFO corner case
+    return _decide_for_info(ctx, severity, triggered_codes)
 
 
 # ---------------------------------------------------------------------------
 # Strategy selection helpers by severity level
 # ---------------------------------------------------------------------------
+
 
 def _decide_for_critical(
     ctx: FailoverContext,
@@ -288,17 +259,21 @@ def _decide_for_critical(
         1. If policy contains explicit ABORT_SESSION / ESCALATE:
              → ISOLATE_AND_AUDIT or HUMAN_HANDOFF
         2. Otherwise:
-             → SAFE_RESET_SESSION with HUMAN_HANDOFF as preferred route.
+             → SAFE_RESET_SESSION with SESSION_CONTROL as preferred route.
     """
     has_abort = any(d.action == PolicyAction.ABORT_SESSION for d in ctx.policy.decisions)
     has_escalate = any(d.action == PolicyAction.ESCALATE for d in ctx.policy.decisions)
+    state = ctx.state
+
+    seq_flags = _sequence_flags(ctx)
 
     if has_abort or has_escalate:
-        # Choose between isolation vs handoff based on drift cycles
-        if ctx.state.cycles_completed >= 2:
+        # If we already have repeated cycles or strong sequence violations,
+        # prefer full isolation over a simple handoff.
+        if state.cycles_completed >= 2 or seq_flags["drift_without_repair"]:
             strategy = FailoverStrategy.ISOLATE_AND_AUDIT
             route = RouteTarget.SESSION_CONTROL
-            reason = "critical_with_repeated_cycles"
+            reason = "critical_with_repeated_cycles_or_unrepaired_drift"
         else:
             strategy = FailoverStrategy.HUMAN_HANDOFF
             route = RouteTarget.HUMAN_ESCALATION
@@ -312,12 +287,13 @@ def _decide_for_critical(
             triggered_by_codes=triggered_codes,
             metadata={
                 "reason": reason,
-                "cycles_completed": ctx.state.cycles_completed,
-                "phase": ctx.state.phase,
+                "cycles_completed": state.cycles_completed,
+                "phase": state.phase,
+                "sequence_flags": seq_flags,
             },
         )
 
-    # Fallback: safe reset + handoff
+    # Fallback: safe reset when critical but no explicit abort/escalate
     return FailoverDecision(
         strategy=FailoverStrategy.SAFE_RESET_SESSION,
         severity=severity,
@@ -326,8 +302,9 @@ def _decide_for_critical(
         triggered_by_codes=triggered_codes,
         metadata={
             "reason": "critical_without_explicit_abort",
-            "cycles_completed": ctx.state.cycles_completed,
-            "phase": ctx.state.phase,
+            "cycles_completed": state.cycles_completed,
+            "phase": state.phase,
+            "sequence_flags": seq_flags,
         },
     )
 
@@ -346,12 +323,30 @@ def _decide_for_error(
             → SWITCH_MODEL_SHADOW
         - Active drift with no repair:
             → FALLBACK_TOOL_ONLY
-        - Otherwise:
+        - Strong sequence violations (DRIFT_WITHOUT_REPAIR, timeouts):
             → SAFE_RESET_SESSION
+        - Otherwise:
+            → SAFE_RESET_SESSION (default)
     """
     state = ctx.state
     active_drift = state.active_drift_code is not None
     active_repair = state.active_repair_code is not None
+    seq_flags = _sequence_flags(ctx)
+
+    # Strong evidence of structural issues in the sequence
+    if seq_flags["drift_without_repair"] or seq_flags["drift_timeout"]:
+        return FailoverDecision(
+            strategy=FailoverStrategy.SAFE_RESET_SESSION,
+            severity=severity,
+            hard_reset=True,
+            preferred_route_target=RouteTarget.SESSION_CONTROL,
+            triggered_by_codes=triggered_codes,
+            metadata={
+                "reason": "error_with_drift_sequence_violation",
+                "phase": state.phase,
+                "sequence_flags": seq_flags,
+            },
+        )
 
     if state.cycles_completed >= 2:
         # Too many loops, consider shadow model
@@ -365,6 +360,7 @@ def _decide_for_error(
                 "reason": "error_with_repeated_cycles",
                 "cycles_completed": state.cycles_completed,
                 "phase": state.phase,
+                "sequence_flags": seq_flags,
             },
         )
 
@@ -379,6 +375,7 @@ def _decide_for_error(
             metadata={
                 "reason": "error_with_unresolved_drift",
                 "active_drift_code": state.active_drift_code,
+                "sequence_flags": seq_flags,
             },
         )
 
@@ -392,6 +389,7 @@ def _decide_for_error(
         metadata={
             "reason": "error_default_safe_reset",
             "phase": state.phase,
+            "sequence_flags": seq_flags,
         },
     )
 
