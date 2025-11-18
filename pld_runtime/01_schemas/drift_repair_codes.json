@@ -1,109 +1,126 @@
 {
   "version": "2025.11",
   "source": "docs/02_pld_drift_repair_reference.md",
+  "status": "v1.1 Canonical Standard",
+  "description": "Unified PLD taxonomy for Drift → Repair → Reentry phases. Fully aligned with `pld_event.schema.json`, Integration Recipes, and LangGraph baseline scaffold.",
+
   "drift": [
     {
-      "code": "none",
-      "name": "No Drift",
-      "description": "No detectable deviation from expected meaning, constraints, workflow, or pacing."
+      "code": "D0_none",
+      "label": "No Drift",
+      "description": "No detectable misalignment with user intent, constraints, verified memory, or workflow state."
     },
     {
-      "code": "D1_information_drift",
-      "name": "Information Drift",
-      "description": "System output contradicts available facts, tool results, or previously established truth."
+      "code": "D5_information",
+      "label": "Information Drift",
+      "description": "The agent's output contradicts verified memory, retrieval results, tools, or established facts."
     },
     {
-      "code": "D2_context_drift",
-      "name": "Context Drift",
-      "description": "Loss or misuse of previously established context or constraints."
+      "code": "D2_context",
+      "label": "Context Drift",
+      "description": "Missing or misused constraint, parameter, preference, or required state context."
     },
     {
-      "code": "D3_intent_drift",
-      "name": "Intent Drift",
-      "description": "System shifts the task direction or goal without user signal."
+      "code": "D1_instruction",
+      "label": "Instruction Drift",
+      "description": "The agent shifts or replaces the user's intended task, goal, or objective."
     },
     {
-      "code": "D4_procedural_drift",
-      "name": "Procedural Drift",
-      "description": "System diverges from expected workflow sequence or operational role."
+      "code": "D3_flow",
+      "label": "Flow / Procedural Drift",
+      "description": "The agent diverges from the expected workflow stage (skipped, repeated, or unordered steps)."
     },
     {
-      "code": "D5_latency_drift",
-      "name": "Pacing / Latency Drift",
-      "description": "Timing behavior creates confusion, expectation mismatch, or trust loss."
+      "code": "D4_tool",
+      "label": "Tool / Execution Drift",
+      "description": "Invalid tool use, malformed arguments, missing expected tool call, or hallucinated capabilities."
     }
   ],
+
   "repair": [
     {
-      "code": "none",
-      "name": "No Repair",
-      "description": "No explicit attempt to resolve drift within the labeled segment."
+      "code": "R0_none",
+      "label": "No Repair",
+      "description": "No corrective behavior was needed or initiated."
     },
     {
-      "code": "R1_local_repair",
-      "name": "Local Repair",
-      "description": "Minor correction without modifying global structure or resetting context."
+      "code": "R1_clarify",
+      "label": "Clarification",
+      "description": "The agent requests missing information to correct alignment."
     },
     {
-      "code": "R2_structural_repair",
-      "name": "Structural Repair",
-      "description": "Fixing internal state: workflow, memory, slot values, or constraint restoration."
+      "code": "R2_soft_repair",
+      "label": "Soft Repair",
+      "description": "Minor corrective rewrite, retry, or restatement without changing session structure."
     },
     {
-      "code": "R3_ux_repair",
-      "name": "UX Repair",
-      "description": "Stabilizing pacing, timing, or feedback for perceived continuity."
+      "code": "R3_rewrite",
+      "label": "Rewrite Repair",
+      "description": "Rewrite response or formatting to restore alignment (tone, policy, structure)."
     },
     {
-      "code": "R4_hard_repair",
-      "name": "Hard Repair (Reset)",
-      "description": "Discarding current context and intentionally restarting workflow."
+      "code": "R4_request_clarification",
+      "label": "Human Handoff / Clarification Request",
+      "description": "Requests user judgment or intervention when internal signals are insufficient."
+    },
+    {
+      "code": "R5_hard_reset",
+      "label": "Hard Reset",
+      "description": "Context reset due to unrecoverable drift or repeated failure to repair."
     }
   ],
+
   "reentry": [
     {
-      "code": "none",
-      "name": "No Reentry",
-      "description": "No return to intended workflow or goal within the labeled segment."
+      "code": "RE0_none",
+      "label": "No Reentry",
+      "description": "No confirmation step occurred or repair is still pending."
     },
     {
-      "code": "RE1_intent_reentry",
-      "name": "Intent Reentry",
-      "description": "User or system explicitly restores the original task or goal."
+      "code": "RE1_failed",
+      "label": "Failed Reentry",
+      "description": "Repair attempt failed and drift reoccurred immediately."
     },
     {
-      "code": "RE2_constraint_reentry",
-      "name": "Constraint Reentry",
-      "description": "Previously stated parameters or requirements are restored or re-validated."
+      "code": "RE2_partial",
+      "label": "Partial Reentry",
+      "description": "Alignment appears improved but uncertainty or degraded state remains."
     },
     {
-      "code": "RE3_workflow_reentry",
-      "name": "Workflow Reentry",
-      "description": "System resumes the intended execution sequence after correction."
+      "code": "RE3_auto",
+      "label": "Automatic Reentry",
+      "description": "Repair succeeded without requiring explicit user acknowledgment."
+    },
+    {
+      "code": "RE4_memory_restore",
+      "label": "Reentry with Memory Sync",
+      "description": "Successful reentry included memory or system-state restoration."
     }
   ],
+
   "allowed_values": {
     "drift": [
-      "none",
-      "D1_information_drift",
-      "D2_context_drift",
-      "D3_intent_drift",
-      "D4_procedural_drift",
-      "D5_latency_drift"
+      "D0_none",
+      "D5_information",
+      "D2_context",
+      "D1_instruction",
+      "D3_flow",
+      "D4_tool"
     ],
     "repair": [
-      "none",
-      "R1_local_repair",
-      "R2_structural_repair",
-      "R3_ux_repair",
-      "R4_hard_repair"
+      "R0_none",
+      "R1_clarify",
+      "R2_soft_repair",
+      "R3_rewrite",
+      "R4_request_clarification",
+      "R5_hard_reset"
     ],
     "reentry": [
-      "none",
-      "RE1_intent_reentry",
-      "RE2_constraint_reentry",
-      "RE3_workflow_reentry"
+      "RE0_none",
+      "RE1_failed",
+      "RE2_partial",
+      "RE3_auto",
+      "RE4_memory_restore"
     ]
   }
 }
-
