@@ -257,5 +257,6 @@ GROUP BY outcome.outcome_type;
 ## Attribution
 
 Maintainer: **Kiyoshi Sasano**  
-License: **CC BY-NC 4.0**
+License: **CC BY 4.0**
+
 
