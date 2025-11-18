@@ -313,32 +313,26 @@ Less relevant when:
 
 ---
 
----
-
 ## 📜 License
 
-This project uses a **dual-license model** designed to balance open adoption and protection of methodology.
+This project uses a dual-license model:
 
-| Scope | License | Applicable To |
-|-------|---------|---------------|
-| **Code & Runtime Artifacts** | **Apache License 2.0** | `/pld_runtime/`, `.py`, `.json`, configuration files, executable examples |
-| **Documentation & Methodology** | **CC BY 4.0** | `.md`, `.svg`, analytical reports, PLD framework terminology & metrics (PRDR, REI, VRL) |
+| Scope | License |
+|--------|---------|
+| Runtime and code | Apache 2.0 |
+| Documentation and methodology | CC BY 4.0 |  
 
-Full legal terms, attribution templates, and compliance details are available at:
+Full details: `LICENSES/LICENSES.md`
 
-➡ `LICENSES/LICENSES.md`
-
-Trademark usage is governed separately under:
-
-➡ `LICENSES/TRADEMARK_POLICY.md`
-
-For commercial licensing, OEM integration, or enterprise support:  
-📩 **deepzenspace[at]gmail.com**
+For enterprise licensing or collaboration:  
+📩 deepzenspace[at]gmail.com
 
 ---
-Maintainer: **Kiyoshi Sasano**  
-Copyright © 2025 Kiyoshi Sasano
 
+Phase Loop Dynamics™ and PLD™ are unregistered trademarks used to identify the methodology and runtime behavior model defined in this project.
+
+Maintainer: **Kiyoshi Sasano**  
+Copyright © 2025
 
 ---
 
