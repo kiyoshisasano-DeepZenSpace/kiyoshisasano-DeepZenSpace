@@ -1,4 +1,5 @@
 # PLD Documentation Index (Applied-AI)
+> Metrics support decision-making — they are not permanent KPIs.
 
 This folder contains the core documentation required to understand, label, evaluate, and integrate **Phase Loop Dynamics (PLD)** into applied LLM systems, tool-based agents, and multi-turn orchestration workflows.
 
@@ -100,4 +101,5 @@ docs/
 ---
 
 Maintainer: **Kiyoshi Sasano**
+
 
