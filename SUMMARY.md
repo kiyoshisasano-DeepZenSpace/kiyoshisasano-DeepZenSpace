@@ -110,29 +110,32 @@ A recommended onboarding path:
 1. Understand the runtime loop → `/quickstart/overview/`
 
 1.5 Run the teaching runtime (first contact) → `quickstart/hello_pld_runtime.py`  
-   → Experience: **Drift → Repair → Reentry → Continue**
+    → Experience: **Drift → Repair → Reentry → Continue**
 
 1.75 Run the real runtime engine → `quickstart/run_minimal_engine.py`  
-   → Verify: ingestion, controller logic, and enforcement policies
+     → Verify: ingestion, controller logic, and enforcement policies
 
 2. Apply drift/repair/reentry primitives → `/quickstart/operator_primitives/`
 
 3. Use modular patterns → `/quickstart/patterns/`
 
 4. Run runnable integration recipes → `/quickstart/patterns/04_integration_recipes/`  
-　- Optional: `failover_recipe.md` — bounded retry + controlled failover  
-　　(recommended after mastering core loop)
+　 - Optional: `failover_recipe.md` — bounded retry + controlled failover  
+　　 (recommended after mastering core loop)
 
 5. Log drift → repair → reentry → outcome signals → `/quickstart/metrics/`
 
-6. Compare against evaluated traces → `/analytics/`
+6. Compare runtime behavior against evaluated traces → `/analytics/`
+
+7. Apply operational metrics for tuning and release gating →  
+   `/docs/07_pld_operational_metrics_cookbook.md`  
+　 → Measure: **PRDR (stability) · REI (cost-effectiveness) · VRL (visible repair load)**
 
 ---
 
 This onboarding path bridges:
 
-> **Concept → Interaction → Implementation → Observability → Evaluation → Practice**
-
+> **Concept → Interaction → Implementation → Observability → Evaluation → Operationalization**
 
 ---
 
