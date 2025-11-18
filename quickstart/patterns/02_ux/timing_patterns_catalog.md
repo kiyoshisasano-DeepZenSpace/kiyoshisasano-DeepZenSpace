@@ -182,4 +182,5 @@ These map to PLD telemetry.
 
 Maintainer: **Kiyoshi Sasano**  
 File: `patterns/02_ux/timing_patterns_catalog.md`  
-License: **CC BY-NC 4.0**
+
+License: **CC BY 4.0**
