@@ -144,6 +144,16 @@ A higher-level view for teams mapping PLD into large orchestration stacks.
 
 Before diving into the full documentation, you can **experience PLD behavior immediately**.
 
+PLD is a telemetry-first paradigm.
+
+Every turn produces measurable behavioral events aligned to:
+
+- `quickstart/metrics/schemas/pld_event.schema.json`
+- `quickstart/metrics/schemas/metrics_schema.yaml`
+
+This enables governance not by intuition — but by data.
+
+
 #### Step 1 — Run the Teaching Runtime (Recommended First)
 
 ```bash
@@ -228,6 +238,10 @@ This visualization corresponds to the five operational metrics defined in:
 | **VRL** | Does the system *feel stable* to users? |
 | **FR** | How often does the system reach failure fallback? |
 | **MRBF** | How long does the system try before giving up? |
+
+PLD is designed as a closed feedback loop:
+
+Runtime → Logging → Metrics → Dashboard → Policy Adjustment → Improved Behavior → Runtime
 
 ---
 
