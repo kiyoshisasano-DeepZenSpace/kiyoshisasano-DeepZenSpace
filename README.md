@@ -407,7 +407,6 @@ For enterprise licensing or collaboration:
 Use of the marks is governed by the project's trademark policy.
 
 Maintainer: **Kiyoshi Sasano** Copyright © 2025
-Copyright © 2025
 
 ---
 
