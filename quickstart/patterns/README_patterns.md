@@ -1,6 +1,6 @@
 ---
 title: "PLD Patterns — Runtime Behavior Guide"
-version: 2025.2
+version: 1.1
 maintainer: "Kiyoshi Sasano"
 status: stable
 category: behavioral_patterns
@@ -159,4 +159,5 @@ Creative Commons — **CC BY 4.0**
 > **Patterns operationalize PLD — turning behavior into a measurable, repeatable system**.
 
 > **Patterns turn PLD from a theory into a repeatable behavior system**.
+
 
