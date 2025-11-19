@@ -1,21 +1,64 @@
 <svg width="1200" height="330" viewBox="0 0 1200 330" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <style>
-      .title { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 32px; font-weight: 700; fill: #111827; }
-      .subtitle { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 18px; fill: #4b5563; }
-      .section-title { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 20px; font-weight: 600; fill: #111827; }
-      .box-title { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; font-weight: 600; fill: #111827; }
-      .box-body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; fill: #4b5563; }
-      .phase { fill: #dbeafe; stroke: #60a5fa; stroke-width: 1.4; rx: 10; }
-      .folder { fill: #f3f4f6; stroke: #d1d5db; stroke-width: 1.1; rx: 10; }
-      .pill { fill: #eef2ff; stroke: #a5b4fc; stroke-width: 1.1; rx: 12; }
-      .arrow { stroke: #9ca3af; stroke-width: 1.6; marker-end: url(#arrowhead); }
-      .loop-arrow { stroke: #9ca3af; stroke-width: 1.4; stroke-dasharray: 4 3; marker-end: url(#arrowhead); }
-      .badge { font-family: system-ui; font-size: 12px; fill: #6b7280; }
-    </style>
+    <style><![CDATA[
+      .title {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        fill: #111827;
+      }
+      .subtitle {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 18px;
+        fill: #4b5563;
+      }
+      .section-title {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        fill: #111827;
+      }
+      .box-title {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        fill: #111827;
+      }
+      .box-body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 13px;
+        fill: #4b5563;
+      }
+      .phase {
+        fill: #dbeafe;
+        stroke: #60a5fa;
+        stroke-width: 1.4;
+      }
+      .arrow {
+        stroke: #9ca3af;
+        stroke-width: 1.6;
+        marker-end: url(#arrowhead);
+      }
+      .loop-arrow {
+        stroke: #9ca3af;
+        stroke-width: 1.4;
+        stroke-dasharray: 4 3;
+        marker-end: url(#arrowhead);
+      }
+      .pill {
+        fill: #eef2ff;
+        stroke: #a5b4fc;
+        stroke-width: 1.1;
+      }
+      .badge {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 12px;
+        fill: #6b7280;
+      }
+    ]]></style>
 
     <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L6,3 L0,6 z" fill="#9ca3af" />
+      <path d="M0,0 L6,3 L0,6 z" fill="#9ca3af"/>
     </marker>
   </defs>
 
@@ -24,26 +67,26 @@
   <text x="40" y="95" class="subtitle">Runtime governance for stabilizing multi-turn LLM agents</text>
 
   <text x="40" y="140" class="section-title">PLD Runtime Loop</text>
-  <text x="330" y="142" class="badge">framework-agnostic semantics layer</text>
+  <text x="330" y="142" class="badge">interaction lifecycle control</text>
 
   <!-- Phases -->
-  <rect x="40" y="170" width="140" height="70" class="phase"/>
+  <rect x="40" y="170" width="140" height="70" class="phase" rx="10"/>
   <text x="110" y="200" text-anchor="middle" class="box-title">Drift</text>
   <text x="110" y="220" text-anchor="middle" class="box-body">detect misalignment</text>
 
-  <rect x="230" y="170" width="140" height="70" class="phase"/>
+  <rect x="230" y="170" width="140" height="70" class="phase" rx="10"/>
   <text x="300" y="200" text-anchor="middle" class="box-title">Repair</text>
   <text x="300" y="220" text-anchor="middle" class="box-body">soft / hard correction</text>
 
-  <rect x="420" y="170" width="140" height="70" class="phase"/>
+  <rect x="420" y="170" width="140" height="70" class="phase" rx="10"/>
   <text x="490" y="200" text-anchor="middle" class="box-title">Reentry</text>
-  <text x="490" y="220" text-anchor="middle" class="box-body">confirm alignment</text>
+  <text x="490" y="220" text-anchor="middle" class="box-body">verify alignment restored</text>
 
-  <rect x="610" y="170" width="140" height="70" class="phase"/>
+  <rect x="610" y="170" width="140" height="70" class="phase" rx="10"/>
   <text x="680" y="200" text-anchor="middle" class="box-title">Continue</text>
-  <text x="680" y="220" text-anchor="middle" class="box-body">resume task</text>
+  <text x="680" y="220" text-anchor="middle" class="box-body">resume execution</text>
 
-  <rect x="800" y="170" width="140" height="70" class="phase"/>
+  <rect x="800" y="170" width="140" height="70" class="phase" rx="10"/>
   <text x="870" y="200" text-anchor="middle" class="box-title">Outcome</text>
   <text x="870" y="220" text-anchor="middle" class="box-body">complete / fail / abandon</text>
 
@@ -56,6 +99,6 @@
   <!-- Loop -->
   <path d="M870 245 C 880 300, 200 300, 110 245" class="loop-arrow" fill="none"/>
 
-  <rect x="420" y="280" width="260" height="30" class="pill"/>
+  <rect x="420" y="280" width="260" height="30" class="pill" rx="12"/>
   <text x="550" y="300" text-anchor="middle" class="badge">multi-turn interaction loop (session continues)</text>
 </svg>
