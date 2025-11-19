@@ -1,151 +1,167 @@
-# README — PLD Applied Pattern Library  
-*(Quickstart Edition for Agent Developers)*
+---
+title: "PLD Patterns — Runtime Behavior Guide"
+version: 2025.1
+maintainer: "Kiyoshi Sasano"
+status: stable
+category: behavioral_patterns
+tags:
+  - PLD
+  - conversational agents
+  - repair patterns
+  - reentry patterns
+  - applied AI design
+---
 
-This folder provides ready-to-use implementation patterns for integrating  
-**PLD behaviors — Drift → Repair → Reentry → Resonance → Outcome**  
-into LLM agents, tool-using systems, TOD frameworks, and conversational UX.
+# 🧩 PLD Patterns — Runtime Behavior Guide
 
-Unlike theory or taxonomy, this folder is **practical**.  
-Each pattern focuses on a single applied question:
+This directory provides the **practical application layer** of the Phase Loop Dynamics (PLD) framework.
 
-> **How can a system respond effectively when interaction state shifts or drifts?**
+Where the metrics and schema define **what is measured**,  
+patterns define **how an agent should behave** under drift, repair, and reentry conditions.
+
+> The purpose of this module is to make agent behavior **predictable, recoverable, and aligned** — not just performant per-turn.
 
 ---
 
-## 🔧 What This Folder Provides
+## 📌 Pattern Layer Structure
 
-| Layer | Purpose | Who Uses It |
-|-------|---------|-------------|
-| **LLM Patterns** | Detect drift, apply soft repair, confirm reentry | Prompt engineers, agent developers |
-| **UX Patterns** | Maintain pacing, timing, and user trust | Designers, PMs, conversation UX |
-| **System Patterns** | Execute recovery logic + telemetry in frameworks | LangChain/LangGraph, Rasa, custom runtimes |
-
-Patterns are modular and stackable — they can be adopted individually or combined as a **behavior policy layer**.
-
----
-
-## 📁 Folder Structure
-
-```
-patterns/
+```txt
+quickstart/patterns/
 │
-├── 01_llm/ ← Prompt + agent behavior patterns
-│ ├── drift_detection_prompts.md
-│ ├── soft_repair_templates.md
-│ └── reentry_confirmation_patterns.md
-│
-├── 02_ux/ ← Timing + interaction design patterns
-│ ├── figma_latency_hold.md
-│ ├── failure_states_design.md
-│ └── timing_patterns_catalog.md
-│
-├── 03_system/ ← Executable patterns for frameworks
-│ ├── rasa_soft_repair.yml
-│ ├── rasa_actions.py
-│ ├── langgraph_example.md
-│ └── logging_examples.md
-│
-└── 04_integration_recipes/ ← (Optional next step: runnable examples)
-└── README_recipes.md
+├── 01_llm/                  ← Model-side consistency & corrective behavior
+├── 02_ux/                   ← Repair phrasing, pacing, visible alignment cues
+├── 03_system/               ← Runtime orchestration, thresholds, failover logic
+└── 04_integration_recipes/  ← Language/framework-specific examples (final stage)
 ```
 
+Patterns are layered intentionally:
 
-> 📌 If patterns are the **behavior building blocks**,  
-> recipes provide **examples of how they may be assembled into a working runtime.**
-
----
-
-## 🧩 Pattern Design Principles
-
-All patterns follow five core PLD principles:
-
-| Rule | Meaning | Example |
-|------|---------|---------|
-| **Minimal Intrusion** | Repair without breaking flow | Soft repair before reset |
-| **State Awareness** | Never assume memory is correct | Confirm constraints after repair |
-| **Predictable Rhythm** | Timing reduces perceived failure | Latency hold → progressive update |
-| **Explicit Recovery** | Recovery should be acknowledgeable | Reentry checkpoint phrasing |
-| **Operational Logging** | Everything emits telemetry | `pld_event.schema.json` compatible |
+| Layer                   | Role                                                                  | When to Apply              |
+| ----------------------- | --------------------------------------------------------------------- | -------------------------- |
+| **LLM patterns**        | Ensure grounded generation and stable reasoning loops                 | Before user-facing testing |
+| **UX patterns**         | Communicate corrections transparently and minimize friction           | During prototype runs      |
+| **System patterns**     | Provide guardrails, retry logic, failover, and context management     | Pre-production             |
+| **Integration recipes** | Bind patterns into frameworks (LangGraph, Assistants API, Rasa, etc.) | Production rollout         |
 
 ---
 
-## 🚦 When to Use Which Pattern
+## 🔄 How Patterns Map to the PLD Loop
 
-| Situation | Recommended Pattern | Folder |
-|----------|----------------------|--------|
-| Output contradicts prior state | Soft Repair + Reentry | `01_llm/` |
-| User hesitates or pauses long | Latency + UX Timing Pattern | `02_ux/` |
-| Tool or API execution fails | Hard Repair + Logging Pattern | `03_system/` |
-| Multi-turn alignment risk | Periodic State Confirmation | `01_llm/` |
+PLD patterns drive behavior during the **runtime lifecycle**:
+```java
+        ▼ Drift Detected (D1–D5)
+    ┌───────────────────────────────┐
+    │          REPAIR (R1–R4)       │
+    └───────────────────────────────┘
+                   ▼
+         Reentry Observed (RE1–RE3)
+                   ▼
+             Continue / Outcome
+```
 
----
+Each phase corresponds to a pattern family:
 
-## 📈 Telemetry Compatibility
-
-All patterns align with:
-
-- `metrics_schema.yaml`  
-- `pld_event.schema.json`  
-- MultiWOZ Applied Interaction baselines (`multiwoz_2.4_n200/`)
-
-Meaning:  
-**Using a pattern automatically produces measurable stability signals.**
-
----
-
-## 🧪 Optional Adoption Path
-
-The following order is one common way to adopt patterns incrementally:
-
-| Phase | Action |
-|-------|--------|
-| **Step 1** | Add soft repair templates |
-| **Step 2** | Add drift detection + reentry checkpoints |
-| **Step 3** | Add UX latency + pacing behaviors |
-| **Step 4** | Enable telemetry mapping |
-| **Step 5** | Add reentry policies |
-| **Step 6 (Optional)** | Explore integration recipes to build a full PLD-enabled runtime |
-
-> Patterns support stability.  
-> Recipes show how stability can be applied to a working agent.
+| PLD Phase                 | Pattern Folder    |
+| ------------------------- | ----------------- |
+| Drift Detection + Control | 01_llm            |
+| Soft / Hard Repair        | 01_llm + 02_ux    |
+| Reentry Stabilization     | 02_ux + 03_system |
+| Failover & Completion     | 03_system         |
 
 ---
 
-## 🔚 Summary
+## 📏 Standards Alignment
 
-This folder is **not abstract documentation — it’s a toolkit.**
+This patterns library works together with:
+| Element              | File                                          |
+| -------------------- | --------------------------------------------- |
+| Event Schema         | `schemas/pld_event.schema.json`               |
+| Derived Metrics      | `schemas/metrics_schema.yaml`                 |
+| Dashboard            | `dashboards/reentry_success_dashboard.json`   |
+| Operational Cookbook | `docs/07_pld_operational_metrics_cookbook.md` |
 
-Use these patterns to:
-
-✔ stabilize behavior across turns  
-✔ prevent cascading drift  
-✔ ensure recoverable state alignment  
-✔ maintain transparency and user trust  
-✔ increase task continuity and completion rates  
-
-Patterns are designed to be copied, adapted, versioned, and integrated into internal libraries.
-
-> When ready, you *may* continue to:  
-> 👉 `quickstart/patterns/04_integration_recipes/README_recipes.md`  
-> to explore how patterns can operate as part of a runnable PLD agent.
+Patterns are not standalone — they are meant to be **observable and tuneable** using the metrics pipeline.
 
 ---
 
-Maintainer: **Kiyoshi Sasano**  
-Edition: **PLD Applied 2025**  
-License: **CC-BY-4.0**
+## 🎯 What These Patterns Solve
 
-> Licensing Notice
+Without structured runtime behavior, agents exhibit:
 
-All implementation `.py` files in this directory are provided under the **Apache License 2.0**
-to allow reuse in production systems.
+- Silent corrections
+- Repeated drift loops
+- Invisible failure states
+- Inconsistent recovery logic
+- UX instability at scale
 
-All documentation, patterns, recipes, and prompt design materials (`.md`, `.yml`, `.yaml`)
-are licensed under **CC BY 4.0** as part of the PLD methodology.
+  With patterns applied:
 
-This ensures:
-- Free and open reuse of implementation code
-- Attribution-preserving propagation of the conceptual framework
+  | Capability    | Behavior                                              |
+| ------------- | ----------------------------------------------------- |
+| Detectable    | Drift signals can be logged and measured              |
+| Corrective    | Repairs respond proportionally to failure type        |
+| Recoverable   | Reentry stabilizes and avoids looping behaviors       |
+| Communicative | User-facing phrasing is predictable and bounded       |
+| Governable    | Metrics → Policy → Runtime modification feedback loop |
 
+---
 
+## 🧪 How to Use These Patterns
 
+| Stage         | What to do                                              | Reference                 |
+| ------------- | ------------------------------------------------------- | ------------------------- |
+| Prototype     | Apply LLM patterns first                                | `01_llm/`                 |
+| Alpha testing | Add visible repair UX and timing controls               | `02_ux/`                  |
+| Stabilization | Add system enforcement (policies, thresholds, failover) | `03_system/`              |
+| Deployment    | Bind everything into a runtime framework                | `04_integration_recipes/` |
+
+---
+
+## 📝 Example: Minimal Pattern Binding
+
+```text
+User turn → Drift check → (If drift) → LLM Pattern → UX Repair → Reentry Pattern → Logging → Continue
+```
+In production:
+```text
+Event (raw) → Schema → Metrics → Dashboard → Tune Policy → Updated Patterns → Rerun
+```
+
+This creates a c**losed-loop governance model**.
+
+---
+
+## 📚 Next Steps
+
+Proceed to:
+> **01_llm/** — Model-side behavior anchoring and stable response strategies.
+This folder contains:
+- Repair-aware prompting
+- Clarification templates for D1–D5 failure modes
+- Reentry reinforcement phrasing
+- Latency-aligned pacing templates
+
+---
+
+## Maintaining Alignment Over Time
+
+Patterns should evolve when:
+- Drift categories change
+- Repair effectiveness drops
+- VRL increases beyond acceptable range
+- Failover rate (FR) exceeds baseline thresholds
+
+Metrics → inform → patterns.
+
+Patterns → guide → behavior.
+
+Behavior → produces → measurable stability.
+
+---
+
+## License
+
+Creative Commons — **CC BY 4.0**
+© 2025 — DeepZenSpace / Contributors
+
+> **Patterns turn PLD from a theory into a repeatable behavior system**.
