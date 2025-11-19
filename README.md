@@ -49,7 +49,7 @@ PLD introduces a **runtime control loop** that:
 - Confirms alignment before continuing  
 
 ```
-Detect → Repair → Reenter → Continue → Complete
+Drift → Repair → Reentry → Continue → Outcome
 ```
 
 ---
