@@ -150,7 +150,7 @@
   <!-- /quickstart -->
   <rect x="40" y="380" width="300" height="120" class="folder"/>
   <text x="60" y="405" class="box-title">/quickstart</text>
-  <text x="60" y="425" class="box-body">Learning path & patterns</text>
+  <text x="60" y="425" class="box-body">Learning path &amp; patterns</text>
   <text x="60" y="445" class="box-body">overview → operators → patterns → recipes</text>
   <text x="60" y="465" class="box-body">runnable interaction examples</text>
 
@@ -165,20 +165,20 @@
   <rect x="800" y="380" width="360" height="120" class="folder"/>
   <text x="820" y="405" class="box-title">/docs</text>
   <text x="820" y="425" class="box-body">conceptual model, taxonomy, operational metrics</text>
-  <text x="820" y="445" class="box-body">reference definitions & governance</text>
+  <text x="820" y="445" class="box-body">reference definitions &amp; governance</text>
 
   <!-- /analytics -->
   <rect x="40" y="540" width="360" height="130" class="folder"/>
   <text x="60" y="565" class="box-title">/analytics</text>
-  <text x="60" y="585" class="box-body">benchmark datasets & annotated traces</text>
+  <text x="60" y="585" class="box-body">benchmark datasets &amp; annotated traces</text>
   <text x="60" y="605" class="box-body">runtime stability comparisons</text>
   <text x="60" y="625" class="box-body">evidence layer validating alignment persistence</text>
 
   <!-- /field -->
   <rect x="460" y="540" width="360" height="130" class="folder"/>
   <text x="480" y="565" class="box-title">/field</text>
-  <text x="480" y="585" class="box-body">collaboration & rollout governance</text>
-  <text x="480" y="605" class="box-body">adoption playbooks & metrics alignment</text>
+  <text x="480" y="585" class="box-body">collaboration &amp; rollout governance</text>
+  <text x="480" y="605" class="box-body">adoption playbooks &amp; metrics alignment</text>
   <text x="480" y="625" class="box-body">production maturity framework</text>
 
   <!-- Footer -->
