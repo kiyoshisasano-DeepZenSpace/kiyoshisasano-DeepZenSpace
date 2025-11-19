@@ -1,149 +1,206 @@
-# 03 — PLD Event Schema (Applied-AI)
+---
+title: "PLD Event Schema — Runtime Event Specification"
+version: "v1.1 (2025 Edition)"
+status: stable
+target: implementation + evaluation + observability
+---
 
-This document defines the **canonical data structure** for logging Phase Loop Dynamics (PLD) events in LLM agents, tool-using workflows, and multi-turn evaluation pipelines.
-
-The schema is used when:
-- generating PLD traces during runtime
-- annotating turn-level Drift/Repair/Reentry events
-- running PLD metrics and dashboards
-- exporting datasets (e.g., MultiWOZ evaluations)
+# PLD Event Schema  
+*A unified logging format for detecting, repairing, and validating alignment across turns in multi-turn LLM agents.*
 
 ---
 
-## 1. Data Model Overview
+## 1. Purpose
 
-Each **PLD event** corresponds to one drift/repair cycle evaluation on a single turn or tool interaction.
+The PLD Event Schema defines the **runtime logging format** used to capture behavioral signals across the interaction loop:
 
-```
-Interaction → (Drift) → (Repair) → (Reentry) → Outcome check
-```
+> **Drift → Repair → Reentry → Continue → Outcome**
 
-Each logged event must contain:
+This schema serves three goals:
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `event_id` | string (UUID) | Yes | Unique per event |
-| `dialog_id` | string | Yes | Trace grouping identifier |
-| `turn_index` | integer | Yes | Incrementing; aligns with log sequence |
-| `drift` | enum D0–D5 | Yes | D0=none, D1–D5 per taxonomy |
-| `repair` | enum R0–R4 | Yes | R0=none, R1–R4 |
-| `reentry` | enum RE0–RE3 | Yes | RE0=none, RE1–RE3 |
-| `outcome_complete` | boolean | Yes | Whether task state is satisfied |
-| `confidence` | float 0.0–1.0 | Optional | Human/LLM confidence in annotation |
-| `rationale` | text | Optional | LLM/human justification |
-| `metadata` | object | Optional | Tool, timestamps, agent info |
+| Goal | Used By | Purpose |
+|------|---------|---------|
+| **Runtime control** | Orchestrators, state machines | Trigger repairs, failover, or continuation decisions |
+| **Evaluation & Metrics** | Analytics pipelines | Compute PRDR, VRL, MRBF, REI, Failover rate |
+| **Trace Transparency** | Researchers, UX teams | Understand why the agent changed state and how it recovered |
 
-**Values MUST match the reference taxonomy**  
-(`02_pld_drift_repair_reference.md`).
+The schema is implementation-agnostic and compatible with:
+
+- LangGraph / ReAct / Tool-based agents  
+- OpenAI Assistants API events  
+- Rasa / AutoGen / Swarm  
+- Custom orchestrators and multi-model controllers  
+- OpenTelemetry, PostHog, Elastic, Mixpanel
 
 ---
 
-## 2. Code Value Standards
+## 2. Core Structure
 
-| Category | None | Valid Codes |
-|---------|------|-------------|
-| Drift | `D0_none` | `D1_latency`, `D2_context`, `D3_memory`, `D4_procedural`, `D5_information` |
-| Repair | `R0_none` | `R1_local`, `R2_structural`, `R3_ux`, `R4_hard_reset` |
-| Reentry | `RE0_none` | `RE1_intent`, `RE2_constraint`, `RE3_workflow` |
+Each runtime turn emits **at least one event**.
 
-⚠ **Coding must be single-source-of-truth** and never free-text.
-
----
-
-## 3. Canonical JSON Example
+A valid PLD event contains:
 
 ```jsonc
 {
-  "event_id": "f07a359d-7765-490c-bf1b-3ec1b47d6aa1",
-  "dialog_id": "MW24-057",
-  "turn_index": 12,
-  "drift": "D5_information",
-  "repair": "R2_structural",
-  "reentry": "RE3_workflow",
-  "outcome_complete": false,
-  "confidence": 0.89,
-  "rationale": "DB returned 'no matches', later contradiction occurred. Structural fix triggered workflow recovery.",
-  "metadata": {
-    "tool_name": "db.search",
-    "latency_ms": 1840,
-    "timestamp": "2025-01-15T10:42:30Z"
+  "event_id": "uuid",
+  "session_id": "MWZ-001",
+  "turn_id": 4,
+  "timestamp": "2025-01-17T14:22:11.130Z",
+
+  "speaker": "system", // "user" | "assistant" | "tool" | "system"
+
+  "event_type": "drift_detected", 
+  "pld": {
+    "phase": "drift",
+    "code": "D4_tool" // canonical drift / repair / reentry codes
+  },
+
+  "content": {
+    "input": "search hotels in london",
+    "output": null,
+    "tool": "searchHotels",
+    "error": "missing_required_field: check_in_date"
+  },
+
+  "metrics": {
+    "latency_ms": 3120,
+    "confidence": 0.41
+  },
+
+  "meta": {
+    "model": "gpt-5.1",
+    "env": "dev",
+    "trace_id": "trace-ab12"
   }
 }
 ```
 
 ---
 
-## 4. File Format Rules
+## 3. Required Fields
 
-| Rule | Details |
+| Field | Type | Description |
+|-------|------|-------------|
+| `event_id` | string (UUID) | Unique event identifier |
+| `session_id` | string | Conversation or agent session |
+| `turn_id` | integer | Sequential identifier of the turn |
+| `timestamp` | ISO-8601 | Recorded at event creation |
+| `event_type` | enum | Defines the event category (see below) |
+| `pld.phase` | enum | One of: `drift`, `repair`, `reentry`, `continue`, `outcome`, `neutral` |
+| `pld.code` | string | Canonical event code (e.g., `D5_information`, `R2_soft_repair`) |
+
+> `pld.code` is the semantic anchor — all evaluation, repair policy, and analytics operate over this field.
+
+---
+
+## 4. Event Type Specification
+
+Event types categorize events at the system-level.  
+They map to PLD phases as shown:
+
+| event_type | phase | description |
+|-----------|-------|-------------|
+| `user_turn` | neutral | Raw user input |
+| `assistant_response` | neutral | Standard response (no detected drift) |
+| `tool_call` | continue | Valid tool operation |
+| `drift_detected` | drift | Divergence or failure state |
+| `repair_attempted` | repair | System applies correction (soft or hard) |
+| `reentry_checkpoint` | reentry | Alignment confirmation (summary/check-back) |
+| `continue_after_repair` | continue | Phase recovery success |
+| `failover_triggered` | outcome | Controlled fallback path activated |
+| `session_ended` | outcome | Conversation or task complete |
+
+---
+
+## 5. PLD Code System
+
+PLD codes provide canonical classification across implementations.
+
+### Drift Codes (`D*`)
+
+| Code | Meaning |
 |------|---------|
-| Line format | JSON Lines (`.jsonl`) for runtime logs |
-| Ordering | Sorted by `dialog_id`, then `turn_index` |
-| Export compatibility | Must pass the JSON Schema (below) |
+| `D1_contradiction` | conflicting facts |
+| `D2_memory_loss` | lost context / missing constraints |
+| `D3_instruction_divergence` | task or persona drift |
+| `D4_tool` | invalid or repeated tool call |
+| `D5_information` | hallucination, unsupported statement |
+| `D6_context_mismatch` | retrieval mismatch or irrelevant reasoning |
 
-Recommended filename convention:
+### Repair Codes (`R*`)
 
-```
-pld_events_{source}_{YYYYMMDD}.jsonl
-```
+| Code | Meaning |
+|------|---------|
+| `R1_soft_repair` | lightweight clarification / redirect |
+| `R2_hard_repair` | reset constraints or reframing |
+| `R3_partial_reset` | preserves state selectively |
+| `R4_full_reset` | restart with acknowledgment |
 
-Example:
-```
-pld_events_demo_20250218.jsonl
+### Reentry Codes (`X*`)
+
+| Code | Meaning |
+|------|---------|
+| `X1_checkpoint_summary` | summarize context before continuing |
+| `X2_confirmation_request` | ask user to confirm state |
+| `X3_continuity_verified` | successful validation — resume |
+
+### Outcome Codes (`O*`)
+
+| Code | Meaning |
+|------|---------|
+| `O1_success` | task completed |
+| `O2_partial` | incomplete but acceptable |
+| `O3_failure` | unrecoverable failure |
+| `O4_abandoned` | user terminated |
+
+---
+
+## 6. Example Log Sequence
+
+A typical 5-turn alignment event:
+
+```jsonl
+{ "event_type": "drift_detected", "pld": { "phase": "drift", "code": "D4_tool" } }
+{ "event_type": "repair_attempted", "pld": { "phase": "repair", "code": "R2_hard_repair" } }
+{ "event_type": "reentry_checkpoint", "pld": { "phase": "reentry", "code": "X1_checkpoint_summary" } }
+{ "event_type": "continue_after_repair", "pld": { "phase": "continue", "code": "X3_continuity_verified" } }
+{ "event_type": "assistant_response", "pld": { "phase": "continue", "code": null } }
 ```
 
 ---
 
-## 5. Official JSON Schema Location
+## 7. Validation and Versioning
 
-Runtime validators should import directly from:
+- Schema source: `quickstart/metrics/schemas/pld_event.schema.json`
+- Minor revisions use: `v1.1.x`  
+- Breaking changes → `v2.0`
 
-```
-quickstart/metrics/schemas/pld_event.schema.json
-```
+All downstream datasets MUST declare schema version:
 
-Do **not** duplicate schema values.  
-Schema must remain a **live contract** between:
-
-- drift detector
-- repair controller
-- evaluation dashboards
-- datasets
-
----
-
-## 6. Compatibility Checklist
-
-| Component | Integration requirement |
-|----------|------------------------|
-| Labeling prompt | Field names and enums must match exactly |
-| Metrics | Metrics use these enum categories |
-| Casebooks | Event IDs must be linkable |
-| UX latency trackers | use `metadata.latency_ms` |
-
-If you extend `metadata`, annotate reasoning in PR.
-
----
-
-## 7. Versioning Rules
-
-Increment Major version only if:
-
-- any enum code changes  
-- mandatory field changes  
-
-Otherwise → Minor version bump.
-
----
-
-## 8. Placement
-
-```
-docs/
-  ├── 03_pld_event_schema.md  ← (this file)
-  └── 02_pld_drift_repair_reference.md  ← value source
+```json
+{ "schema_version": "pld.v1.1" }
 ```
 
 ---
 
-Maintainer: Kiyoshi Sasano
+## 8. Summary
+
+> The PLD Event Schema enables **runtime governance, observability, and measurable alignment**.
+
+It is the backbone connecting:
+
+- runtime controllers  
+- metrics and dashboards  
+- evaluation datasets  
+- agent UX tuning  
+- failover and autonomy governance  
+
+When the schema is implemented, drift becomes:
+
+> **detectable → correctable → confirmable → measurable.**
+
+---
+
+Maintainer: **Kiyoshi Sasano**  
+License: **CC-BY-4.0**  
+Schema status: **stable / production-ready**
