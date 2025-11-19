@@ -1,6 +1,6 @@
 ---
 title: "PLD Patterns — Runtime Behavior Guide"
-version: 2025.1
+version: 2025.2
 maintainer: "Kiyoshi Sasano"
 status: stable
 category: behavioral_patterns
@@ -10,16 +10,17 @@ tags:
   - repair patterns
   - reentry patterns
   - applied AI design
+  - telemetry-driven runtime behavior
 ---
 
 # 🧩 PLD Patterns — Runtime Behavior Guide
 
-This directory provides the **practical application layer** of the Phase Loop Dynamics (PLD) framework.
+This directory provides the **practical behavior layer** of the Phase Loop Dynamics (PLD) framework.
 
-Where the metrics and schema define **what is measured**,  
-patterns define **how an agent should behave** under drift, repair, and reentry conditions.
+Where the metrics system defines **what is measured**,  
+patterns define **how an agent behaves** when drift, repair, and reentry conditions occur.
 
-> The purpose of this module is to make agent behavior **predictable, recoverable, and aligned** — not just performant per-turn.
+> In this edition, patterns are now **telemetry-driven** — meaning runtime behavior is instrumented, measurable, and actionable.
 
 ---
 
@@ -31,56 +32,57 @@ quickstart/patterns/
 ├── 01_llm/                  ← Model-side consistency & corrective behavior
 ├── 02_ux/                   ← Repair phrasing, pacing, visible alignment cues
 ├── 03_system/               ← Runtime orchestration, thresholds, failover logic
-└── 04_integration_recipes/  ← Language/framework-specific examples (final stage)
+│   └── implementation_guides/  ← Framework bindings (LangGraph, Assistants API, Rasa)
+└── 04_integration_recipes/  ← Applied, domain-level templates (RAG, tools, memory, etc.)
 ```
 
 Patterns are layered intentionally:
 
-| Layer                   | Role                                                                  | When to Apply              |
-| ----------------------- | --------------------------------------------------------------------- | -------------------------- |
-| **LLM patterns**        | Ensure grounded generation and stable reasoning loops                 | Before user-facing testing |
-| **UX patterns**         | Communicate corrections transparently and minimize friction           | During prototype runs      |
-| **System patterns**     | Provide guardrails, retry logic, failover, and context management     | Pre-production             |
-| **Integration recipes** | Bind patterns into frameworks (LangGraph, Assistants API, Rasa, etc.) | Production rollout         |
+| Layer                   | Role                                                     | When to Apply              |
+| ----------------------- | -------------------------------------------------------- | -------------------------- |
+| **LLM patterns**        | Ground reasoning and avoid divergence                    | Before user-facing testing |
+| **UX patterns**         | Make repairs visible and non-jarring                     | During prototyping         |
+| **System patterns**     | Enforce guardrails, failover logic, and runtime policies | Pre-production             |
+| **Integration recipes** | Bind patterns into real frameworks                       | Production rollout         |
 
 ---
 
-## 🔄 How Patterns Map to the PLD Loop
+## 🔄 Mapping Patterns to the PLD Runtime Loop
 
 PLD patterns drive behavior during the **runtime lifecycle**:
 ```java
-        ▼ Drift Detected (D1–D5)
-    ┌───────────────────────────────┐
-    │          REPAIR (R1–R4)       │
-    └───────────────────────────────┘
-                   ▼
-         Reentry Observed (RE1–RE3)
-                   ▼
-             Continue / Outcome
+User Turn
+   ↓
+Drift Detection (D1–D5)
+   ↓
+Soft/Hard Repair (R1–R4)
+   ↓
+Reentry (RE1–RE3)
+   ↓
+Outcome / Continue
 ```
 
-Each phase corresponds to a pattern family:
-
-| PLD Phase                 | Pattern Folder    |
-| ------------------------- | ----------------- |
-| Drift Detection + Control | 01_llm            |
-| Soft / Hard Repair        | 01_llm + 02_ux    |
-| Reentry Stabilization     | 02_ux + 03_system |
-| Failover & Completion     | 03_system         |
+| Phase                     | Primary Patterns                       |
+| ------------------------- | -------------------------------------- |
+| Drift Detection + Control | `01_llm`                               |
+| Repair (Soft → Hard)      | `01_llm` + `02_ux`                     |
+| Reentry Stabilization     | `02_ux` + `03_system`                  |
+| Outcome / Failover        | `03_system` + `04_integration_recipes` |
 
 ---
 
 ## 📏 Standards Alignment
 
-This patterns library works together with:
-| Element              | File                                          |
-| -------------------- | --------------------------------------------- |
-| Event Schema         | `schemas/pld_event.schema.json`               |
-| Derived Metrics      | `schemas/metrics_schema.yaml`                 |
-| Dashboard            | `dashboards/reentry_success_dashboard.json`   |
-| Operational Cookbook | `docs/07_pld_operational_metrics_cookbook.md` |
+Patterns integrate with the measurement and governance layer:
+| Component            | Reference                                                      |
+| -------------------- | -------------------------------------------------------------- |
+| Event Schema         | `quickstart/metrics/schemas/pld_event.schema.json`             |
+| Derived Metrics      | `quickstart/metrics/schemas/metrics_schema.yaml`               |
+| Dashboards           | `quickstart/metrics/dashboards/reentry_success_dashboard.json` |
+| Operational Cookbook | `docs/07_pld_operational_metrics_cookbook.md`                  |
+| Logging Baseline     | `03_system/logging_and_schema_examples.md`                     |
 
-Patterns are not standalone — they are meant to be **observable and tuneable** using the metrics pipeline.
+> Every pattern must be measurable — **if it cannot be logged, it cannot be governed**.
 
 ---
 
@@ -89,79 +91,72 @@ Patterns are not standalone — they are meant to be **observable and tuneable**
 Without structured runtime behavior, agents exhibit:
 
 - Silent corrections
-- Repeated drift loops
-- Invisible failure states
-- Inconsistent recovery logic
-- UX instability at scale
+- nmeasurable drift behavior
+- Repeated loop failures
+- UX instability under latency or tool calls
 
-  With patterns applied:
+With patterns applied:
 
-  | Capability    | Behavior                                              |
-| ------------- | ----------------------------------------------------- |
-| Detectable    | Drift signals can be logged and measured              |
-| Corrective    | Repairs respond proportionally to failure type        |
-| Recoverable   | Reentry stabilizes and avoids looping behaviors       |
-| Communicative | User-facing phrasing is predictable and bounded       |
-| Governable    | Metrics → Policy → Runtime modification feedback loop |
-
----
-
-## 🧪 How to Use These Patterns
-
-| Stage         | What to do                                              | Reference                 |
-| ------------- | ------------------------------------------------------- | ------------------------- |
-| Prototype     | Apply LLM patterns first                                | `01_llm/`                 |
-| Alpha testing | Add visible repair UX and timing controls               | `02_ux/`                  |
-| Stabilization | Add system enforcement (policies, thresholds, failover) | `03_system/`              |
-| Deployment    | Bind everything into a runtime framework                | `04_integration_recipes/` |
+| Property      | Result                                          |
+| ------------- | ----------------------------------------------- |
+| Detectable    | Drift is surfaced and classified                |
+| Corrective    | Repair strategies are proportional              |
+| Recoverable   | Reentry stabilizes and avoids looping           |
+| Communicative | User-facing phrasing is predictable and bounded |
+| Governable    | Metrics → Policy → Runtime tuning feedback loop |
 
 ---
 
-## 📝 Example: Minimal Pattern Binding
+## 🧪 Usage Workflow
+
+| Phase         | Task                                   | Folder                    |
+| ------------- | -------------------------------------- | ------------------------- |
+| Prototype     | Apply model-side patterns              | `01_llm/`                 |
+| UX Validation | Add visible repair phrasing + pacing   | `02_ux/`                  |
+| Stabilization | Add system policies and failover logic | `03_system/`              |
+| Deployment    | Bind patterns to runtime frameworks    | `04_integration_recipes/` |
+
+---
+
+## 📝 Minimal Binding Model
 
 ```text
-User turn → Drift check → (If drift) → LLM Pattern → UX Repair → Reentry Pattern → Logging → Continue
+User turn
+  → Drift check
+     → (If drift) Apply LLM repair pattern
+     → Surface visible repair (UX pattern)
+     → Reentry stabilization (system policy)
+     → Log event
+     → Continue
 ```
 In production:
 ```text
-Event (raw) → Schema → Metrics → Dashboard → Tune Policy → Updated Patterns → Rerun
+Runtime behavior → Logging → Derived metrics → Dashboard → Policy revision → Updated patterns → Rerun
 ```
-
-This creates a c**losed-loop governance model**.
-
----
-
-## 📚 Next Steps
-
-Proceed to:
-> **01_llm/** — Model-side behavior anchoring and stable response strategies.
-This folder contains:
-- Repair-aware prompting
-- Clarification templates for D1–D5 failure modes
-- Reentry reinforcement phrasing
-- Latency-aligned pacing templates
+Closed-loop governance.
 
 ---
 
-## Maintaining Alignment Over Time
+## 🧱 Version Stability Rules
+Patterns evolve when metrics show degradation:
 
-Patterns should evolve when:
-- Drift categories change
-- Repair effectiveness drops
-- VRL increases beyond acceptable range
-- Failover rate (FR) exceeds baseline thresholds
+| Trigger                              | Requires Pattern Revision |
+| ------------------------------------ | ------------------------- |
+| Reentry success drops                | Yes                       |
+| VRL increases beyond baseline        | Yes                       |
+| Hard repair exceeds soft repair rate | Yes                       |
+| Drift category distribution shifts   | Yes                       |
 
-Metrics → inform → patterns.
-
-Patterns → guide → behavior.
-
-Behavior → produces → measurable stability.
+Patterns are **living artifacts**, not static documentation.
 
 ---
 
 ## License
 
 Creative Commons — **CC BY 4.0**
-© 2025 — DeepZenSpace / Contributors
+© 2025 — KyoshiSasano
+
+> **Patterns operationalize PLD — turning behavior into a measurable, repeatable system**.
 
 > **Patterns turn PLD from a theory into a repeatable behavior system**.
+
