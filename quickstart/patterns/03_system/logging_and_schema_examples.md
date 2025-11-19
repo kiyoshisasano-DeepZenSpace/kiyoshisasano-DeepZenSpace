@@ -44,7 +44,7 @@ Use when the system emits a turn with **no drift, no repair, no tool execution**
   "event_type": "info",
   "source": "assistant",
   "pld": { "phase": "none", "code": "NONE" },
-  ```
+```
 
 ---
 
