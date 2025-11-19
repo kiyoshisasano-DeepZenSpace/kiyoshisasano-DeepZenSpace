@@ -1,37 +1,37 @@
 ---
 title: "PLD Applied Quickstart Kit"
-version: "2025 Edition"
+version: "2025.2"
 status: stable
 maintainer: "Kiyoshi Sasano"
 tags:
   - PLD
   - LLM Agents
-  - Repair Systems
-  - Drift Detection
-  - Applied AI
+  - Drift Control
+  - Runtime Repair
+  - Telemetry-Driven AI
 ---
 
 # 🚀 PLD Applied Quickstart Kit  
 **For LLM Agents, Orchestrators, and Conversational Systems (2025 Edition)**  
 
-> PLD is easiest to understand when experienced, not read.
+> PLD is best understood **through runtime experience — not theory alone.**
 
-This kit provides practical materials for implementing **Phase Loop Dynamics (PLD)** in real AI systems — including drift detection, repair workflows, reentry logic, and runtime evaluation.
+This kit provides everything needed to implement **Phase Loop Dynamics (PLD)** in a live AI agent:
 
-PLD is not just a conceptual framework —  
-it is a **runtime interaction control model** for applied AI.
+- Drift detection and classification  
+- Repair selection (soft → hard)
+- Reentry confirmation and stabilization  
+- Failover rules and bounded execution  
+- Metrics, dashboards, and runtime governance  
 
---- After title and introduction ---
+PLD is not a prompting trick.  
+It is a **runtime interaction control model** for applied AI systems.
 
- PLD is not just a conceptual framework —
- it is a runtime interaction control model for applied AI.
+---
 
-### 🏁 Start Here — Run the Minimal Runtime
+## 🏁 Start Here — Run the Minimal Runtime
 
-> `hello_pld_runtime.py` is intentionally located inside `quickstart/` —  
-> it is a learning-oriented runtime demonstration, not part of the PLD engine source.
-
-You can run the minimal working example immediately:
+`hello_pld_runtime.py` is the simplest runnable demonstration of the full PLD loop.
 
 ```bash
 python hello_pld_runtime.py
@@ -49,25 +49,26 @@ Run all example scenarios:
 python hello_pld_runtime.py --examples
 ```
 
-➡️ This is the fastest path to understanding what PLD *feels like* in runtime.
-
+💡 This establishes intuition for the runtime lifecycle:
+```bash
+Drift → Repair → Reentry → Continue
+```
 
 ---
 
-#### Next Step — Run the Real Engine
+🔧 Next: Run the Real Engine
 
-Once you've run `hello_pld_runtime.py` and understand the lifecycle,
-you can validate the *actual runtime controller* using:
+Once you understand the runtime feel, activate the full controller:
 
 ```bash
 python run_minimal_engine.py
 ```
 
-- Uses the real controller & enforcement logic
-- Runs a simulated drift event (`rag_empty`)
-- Produces observable policy decisions and runtime trace IDs
+✔ Uses the real PLD policies
+✔ Logs events using the canonical schema
+✔ Produces a trace of decisions and alignment events
 
-  👉 This script is the first real checkpoint confirming PLD is working correctly in your environment.
+This is the first verification checkpoint that your environment is correctly wired.
 
 ---
 
@@ -85,134 +86,119 @@ they fail because they lose **task alignment across turns.**
 
 PLD formalizes the lifecycle to prevent collapse:
 
-> **Drift → Repair → Reentry → Resonance → Outcome**
+> **The goal is not correctness — the goal is recoverable alignment**.
 
 ---
 
 ## 2 — How to Use This Folder
 
-The structure supports multiple entry points based on your goals.  
-One suggested learning path is:
+| Step  | Location               | What You Learn                                 |
+| ----- | ---------------------- | ---------------------------------------------- |
+| **1** | `overview/`            | High-level mental model                        |
+| **2** | `hello_pld_runtime.py` | First hands-on runtime experience              |
+| **3** | `operator_primitives/` | Drift → Repair → Reentry linguistic operators  |
+| **4** | `patterns/`            | Best-practice runtime behavior and UX phrasing |
+| **5** | `integration_recipes/` | LangGraph / Rasa / OpenAI Assistants wiring    |
+| **6** | `metrics/`             | Telemetry, dashboards, and stability analysis  |
 
-| Step | Folder | Focus |
-|------|--------|--------|
-| **1** | `overview/` | High-level mental model |
-| **2** | `hello_pld_runtime.py` | First runnable runtime experience |
-| **3** | `operator_primitives/` | Drift, repair, and reentry operators |
-| **4** | `04_integration_recipes/` | Examples showing how PLD can be applied to real agent components |
-| **5** | `metrics/` | Logging schemas + evaluation dashboards |
-| **6** | `_meta/` | Versioning, migration, design notes |
-
-> 📌 If you'd like to see PLD applied in runnable examples, explore:  
-> `quickstart/patterns/04_integration_recipes/README_recipes.md`
+➡️ For framework bindings:
+`quickstart/patterns/04_integration_recipes/`
 
 ---
 
-> After completing Tier 1 (operators + core loop), you may optionally continue with:
-> `quickstart/patterns/04_integration_recipes/failover_recipe.md`
->
-> This enables **bounded retry + controlled termination**, preventing infinite repair loops and introducing measurable abort semantics.
+## 3 — Core Runtime Lifecycle
+
+PLD operates as a deterministic runtime loop:
+```python
+User Turn
+   ↓
+Drift Detected? ── No ──▶ Continue
+         │
+        Yes
+         ↓
+Select Repair → Apply → Reentry Check → Continue / Escalate / Failover
+```
+Each step produces structured telemetry aligned with:
+```pgsql
+quickstart/metrics/schemas/pld_event.schema.json
+```
 
 ---
 
-## ⭐ Start Here — Run the Minimal Example
+## 4 — Example Logged Event
 
-Before reading, **run the runtime loop once.**
-This creates the first “behavioral intuition” for PLD:
-
-```
-python hello_pld_runtime.py
-```
-
-Expected output:
-
-```
-🚨 Drift Detected
-🔧 Repair Applied
-✅ Reentry Confirmed
-
-Outcome: continue_after_repair
-```
-
-> This script demonstrates the core runtime lifecycle:
-> **Drift → Repair → Reentry → Continue**
-
-After running it, continue with the sections below.
-
----
-
-## 3 — Conceptual Logic (For Reference)
-
-This example is intentionally minimal — it illustrates the PLD lifecycle,
-not a production implementation.
-
-👉 For a runnable implementation, use:  
-`hello_pld_runtime.py`
-
----
-
-## 4 — Runtime Logging Schema (Aligned with metrics/schemas/)
 ```json
 {
   "session_id": "MWZ-001",
   "turn_id": 4,
-  "speaker": "system",
   "event_type": "drift_detected",
-  "metadata": { "category": "information" },
-  "latency_ms": 3120
+  "pld": {
+    "phase": "drift",
+    "code": "D2_context",
+    "confidence": 0.92
+  },
+  "runtime": {
+    "latency_ms": 3120,
+    "source": "assistant"
+  }
 }
 ```
 
 Compatible with:
-- LangGraph / LangChain memory stores
-
-- OpenAI Assistants + Tools API event streams
-
-- Autogen / multi-agent orchestrators
-
-- OpenTelemetry / Mixpanel / PostHog / Elastic
+- LangGraph state stores
+- OpenAI Assistants streaming telemetry
+- Tool traces + RAG observability systems
+- OpenTelemetry spans
 
 ---
 
-## 5 — What to Measure
+## 5 — What Gets Measured
 
-| Metric | Meaning |
-|--------|---------|
-| Drift Frequency | Baseline stability indicator |
-| Soft Repair Ratio | Early correction effectiveness |
-| Hard Repair Escalation Rate | Cost of failed soft repair |
-| Reentry Confirmation Success | Continuity + alignment |
-| Outcome Completion | End-to-end task success |
-| Latency Drift Penalty | Stability impact of delays |
+| Metric                    | Meaning                               |
+| ------------------------- | ------------------------------------- |
+| Drift Frequency           | Stability baseline                    |
+| Soft vs Hard Repair Ratio | Efficiency vs escalation pressure     |
+| Reentry Success Rate      | Ability to stabilize after correction |
+| Failover Trigger Rate     | Safety boundary activation            |
+| Latency-Induced Drift     | UX-performance dependency             |
+| Outcome Distribution      | Completion vs abandonment             |
 
-These support both **behavioral evaluation** and **engineering validation**.
+These power:
 
----
-
-## 6 — Relationship to Evaluation Dataset
-
-A separate dataset exists in:
-
-`analytics/multiwoz_2.4_n200/`
-
-- This quickstart focuses on **implementation**
-- The dataset supports **measurement and benchmarking**
-
-Using both enables:
-
-**prototype → evaluation → iteration**
+- model comparisons
+- policy tuning
+- architecture iteration
+- UX alignment studies
+- Behavior is only real when measurable.
 
 ---
 
-## 7 — Linked Core References
+## 6 — Evaluation Dataset (Optional But Useful)
 
-| File | Purpose |
-|------|---------|
-| `docs/02_pld_event_schema.md` | PLD taxonomy + event definitions |
-| `quickstart/operator_primitives/` | Drift → Repair → Reentry logic |
-| `quickstart/patterns/04_integration_recipes/` | Runnable agent examples |
-| `quickstart/metrics/` | Logging → dashboards → evaluation |
-| `analytics/multiwoz_2.4_n200/` | Applied benchmark dataset |
+The dataset at:
+```bash
+analytics/multiwoz_2.4_n200/
+```
+
+allows you to:
+- benchmark models
+- test pattern changes
+- measure policy improvements
+
+This supports the cycle:
+```perl
+prototype → evaluate → tune → redeploy
+```
+
+---
+
+## 🔁 The PLD Feedback Loop
+
+Once everything is wired:
+```pgsql
+Runtime → Logging → Metrics → Dashboard → Adjust Policy → Update Patterns → Rerun
+```
+This enables **governable agent behavior**.
 
 ---
 
@@ -224,5 +210,5 @@ Maintainer: **Kiyoshi Sasano**
 ---
 
 > PLD is not static rules —  
-> it is a runtime discipline for maintaining shared reality with the user.
+> it is a sustained discipline for maintaining aligned shared reality with the user.
 
