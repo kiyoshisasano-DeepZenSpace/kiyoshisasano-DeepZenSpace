@@ -103,6 +103,7 @@ This is the canonical PLD life cycle.
 
 ## 3. Outcome Event (Session Boundary)
 Logged only **once per dialogue**.
+
 ```json
 {
   "event_id": "644e8113-2b14-4e61-b5ff-9821c5cecc1b",
