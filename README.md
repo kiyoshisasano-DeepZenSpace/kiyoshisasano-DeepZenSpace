@@ -160,7 +160,7 @@ This enables governance not by intuition — but by data.
 python quickstart/hello_pld_runtime.py
 ```
 
-Try custom input::
+Try custom input:
 ```bash
 python quickstart/hello_pld_runtime.py "Can we switch topics and talk about cooking?"
 ```
@@ -172,7 +172,7 @@ python quickstart/hello_pld_runtime.py --examples
 
 > PLD is best understood through interaction — not just by reading.
 > This script demonstrates the core runtime loop:
-> Drift → Repair → Reentry → Continue
+> Drift → Repair → Reentry → Continue → Outcome
 > (in a minimal mock runtime environment)
 
 ---
