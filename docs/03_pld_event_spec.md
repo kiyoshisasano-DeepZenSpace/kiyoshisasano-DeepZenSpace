@@ -59,11 +59,39 @@ Every PLD event includes:
 - **A user-experience impact declaration**
 
 A PLD event is considered valid **only when both conditions below are true**:
-
 ```
-additionalProperties: false
+schema_valid(event) ∧ matrix_valid(event)
 ```
 
+Where:
+- `schema_valid(event)`: The event passes JSON Schema validation (`pld_event.schema.json`)
+- `matrix_valid(event)`: The event satisfies semantic constraints (`event_matrix.yaml`)
+
+The schema enforces strict validation with `additionalProperties: false`, rejecting any fields not explicitly defined in the schema.
+
+---
+
+## 4. Required Fields
+
+Every event MUST contain the following fields exactly as defined:
+
+| Field | Type | Constraint |
+|-------|------|------------|
+| `schema_version` | string | MUST equal `"2.0"` |
+| `event_id` | string | Unique identifier, UUIDv4 recommended |
+| `timestamp` | string (ISO-8601) | MUST conform to `format="date-time"` |
+| `session_id` | string | Unique session identifier |
+| `turn_sequence` | integer ≥ 1 | Authoritative ordering index |
+| `source` | enum | One of: `user`, `assistant`, `runtime`, `controller`, `detector`, `system` |
+| `event_type` | enum | MUST follow mapping rules defined in Section 6 |
+| `pld` | object | MUST follow PLD structure rules (Section 5) |
+| `payload` | object | Arbitrary schema-agnostic content |
+| `ux` | object | MUST contain boolean field `user_visible_state_change` |
+
+Optional fields: `turn_id`, `runtime`, `metrics`, `extensions`.
+
+**Schema Constraint:**  
+The schema enforces `additionalProperties: false`, rejecting any fields not explicitly defined.
 
 ---
 
@@ -300,4 +328,5 @@ Feedback, usage reports, and improvement proposals may be submitted via:
 ---
 
 ### End of Specification
+
 
