@@ -459,3 +459,247 @@ Violations are grouped into:
 - There is no unique, safe correction consistent with Level 2 rules.
 
 ---
+
+### 8.3 Operational Guidance
+
+Recommended defaults:
+
+| Deployment Stage                 | Recommended Mode   |
+| -------------------------------- | ------------------ |
+| Production                       | `strict` or `warn` |
+| Staging / pre-production         | `warn`             |
+| Experimental self-healing agents | `normalize`        |
+
+`normalize` MUST be gated by careful monitoring, as auto-correction itself can introduce risk if misconfigured.
+
+---
+
+## 9. Alignment Checklist
+A system may be considered PLD-aligned when all of the following hold:
+
+- ☐ Schema validation is enforced (`pld_event.schema.json`).
+- ☐ Semantic matrix rules (prefix-phase and event_type-phase mappings) are enforced.
+- ☐ Exactly one validation mode is configured and documented (`strict` / `warn` / `normalize`).
+- ☐ At least one PLD event is emitted per turn.
+- ☐ Reentry logic is implemented (explicit, constraint-based, auto, or deferred where allowed).
+- ☐ Outcome state is recorded at session end (`outcome` or `failover` events).
+
+Diagnostic question:
+
+> **"When this agent drifts, what happens next — and how do we know whether the repair worked?"**
+
+If answering this requires guesswork, PLD alignment is not yet complete.
+
+---
+
+## 10. Summary Statement & Next Steps
+
+> **PLD provides the lifecycle, structure, and telemetry required to make multi-turn agents governable, resilient, and measurable over time**.
+
+
+Recommended next steps for implementers:
+
+1. Add schema + semantic validation to your logging pipeline.
+2. Integrate a minimal drift detector returning `D0_none` or `D*` codes.
+3. Implement a simple repair escalation policy and reentry pattern.
+4. Choose and document a validation mode.
+5. Add dashboards for drift, repair, and outcome metrics over real traffic.
+
+---
+
+## Appendix A — Implementation Examples (Non-Normative)
+
+> **Important**: This appendix is **non-normative**.
+> It illustrates one way to implement PLD-aligned behavior, but MUST NOT be treated as mandatory.
+
+---
+
+### A.1 Drift Detection Example: Repeated Plan
+
+An example of detecting repeated plans using a simple similarity check:
+
+```python
+import difflib
+from typing import List
+
+class Turn:
+    def __init__(self, plan_description: str):
+        self.plan_description = plan_description
+
+def detect_repeated_plan(history: List[Turn]) -> bool:
+    """Example implementation of plan repetition detection.
+    Implementers are encouraged to refine this based on their domain.
+    """
+    if len(history) < 2:
+        return False
+    
+    current = history[-1].plan_description
+    previous = history[-2].plan_description
+    
+    # Simple similarity check (can be replaced with embedding-based methods)
+    similarity = difflib.SequenceMatcher(None, current, previous).ratio()
+    return similarity > 0.9
+```
+
+This function can be plugged into `detect_drift` as shown in Section 5.1.
+
+---
+
+### A.2 Extended Repair Strategy Table
+
+A more expressive configuration-based repair strategy example:
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class RepairEscalation:
+    soft: str
+    hard: str
+    threshold: int  # max soft attempts before escalation
+
+REPAIR_STRATEGIES = {
+    "D1": RepairEscalation(
+        soft="R1_add_context",
+        hard="R2_force_different_tool",
+        threshold=3,
+    ),
+    "D2": RepairEscalation(
+        soft="R1_rephrase_goal",
+        hard="R2_regenerate_plan",
+        threshold=2,
+    ),
+    "D3": RepairEscalation(
+        soft="R1_add_constraint",
+        hard="R2_full_reset",
+        threshold=2,
+    ),
+    "D4": RepairEscalation(
+        soft="R1_retry",
+        hard="R2_fallback",
+        threshold=2,
+    ),
+    "D5": RepairEscalation(
+        soft="R1_wait_backoff",
+        hard="R2_skip_tool",
+        threshold=3,
+    ),
+}
+
+def choose_repair(drift, repair_count):
+    # Take the first two characters as a simple prefix (e.g., "D1", "D2"...)
+    drift_prefix = drift["code"][:2]
+    strategy = REPAIR_STRATEGIES.get(drift_prefix)
+    
+    if not strategy:
+        # Unknown drift type — conservative default could be failover
+        return "F1_unknown_drift"
+    
+    if repair_count == 0:
+        return strategy.soft
+    elif repair_count < strategy.threshold:
+        return strategy.hard
+    else:
+        return "F1_max_retries_exceeded"
+```
+
+This pattern allows you to centralize repair policies and adjust behavior per drift category without touching core control flow.
+
+---
+
+### A.3 `emit_pld` Helper Implementation
+
+A non-normative helper for emitting PLD events into a logging pipeline:
+
+```python
+import uuid
+from datetime import datetime
+
+def get_current_session_id() -> str:
+    # Implementation-specific: derive from context, request, or orchestration layer
+    ...
+
+def get_current_turn_sequence() -> int:
+    # Implementation-specific: monotonic counter per session
+    ...
+
+def emit_pld(event_type: str, phase: str, code: str, **kwargs):
+    """
+    Emit a PLD event to the logging pipeline.
+
+    Args:
+        event_type: One of the canonical event types (e.g., "drift_detected").
+        phase: PLD lifecycle phase (e.g., "drift", "repair").
+        code: Classification code (e.g., "D4_tool_error").
+        **kwargs: Additional fields such as payload, ux flags, metrics, etc.
+    """
+    event = {
+        "schema_version": "2.0",
+        "event_id": str(uuid.uuid4()),
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "session_id": get_current_session_id(),
+        "turn_sequence": get_current_turn_sequence(),
+        "source": kwargs.get("source", "runtime"),
+        "event_type": event_type,
+        "pld": {
+            "phase": phase,
+            "code": code,
+        },
+        "payload": kwargs.get("payload", {}),
+        "ux": {
+            "user_visible_state_change": kwargs.get("user_visible", False)
+        },
+    }
+
+    # Optional: runtime or metrics blocks
+    runtime = kwargs.get("runtime")
+    if runtime is not None:
+        event["runtime"] = runtime
+
+    metrics = kwargs.get("metrics")
+    if metrics is not None:
+        event["metrics"] = metrics
+
+    # Send to logging pipeline (example: structured logging)
+    logger = kwargs.get("logger")
+    if logger is not None:
+        logger.info("pld_event", extra=event)
+    else:
+        print(event)
+```
+
+Implementers should align this helper with:
+
+- Their logging framework (e.g., OpenTelemetry, structured logs).
+- Their schema validation and ingestion pipeline.
+
+### A.4 Reentry Patterns (Recap)
+
+For convenience, here are the three typical reentry patterns in one place:
+
+```python
+# Pattern 1: Explicit Confirmation (RE1_*)
+async def explicit_reentry(agent, repair_result):
+    ok = await agent.ask_user_or_model("Should I continue?")
+    if ok:
+        emit_pld("reentry_observed", phase="reentry", code="RE1_confirmed")
+        return True
+    return False
+
+
+# Pattern 2: Constraint Validation (RE2_*)
+def constraint_reentry(agent, state):
+    validation = agent.validate_state()
+    if validation.is_aligned:
+        emit_pld("reentry_observed", phase="reentry", code="RE2_verified")
+        return True
+    return False
+
+
+# Pattern 3: Automatic (RE3_auto)
+def auto_reentry():
+    emit_pld("reentry_observed", phase="reentry", code="RE3_auto")
+    return True
+```
+
+These patterns are **examples**, not requirements. Implementers may define additional `RE1_*`, `RE2_*`, or `RE3_*` codes as long as they remain consistent with the Level 2 semantic rules.
