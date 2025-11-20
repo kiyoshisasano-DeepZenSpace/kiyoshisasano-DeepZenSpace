@@ -1,206 +1,302 @@
----
-title: "PLD Event Schema — Runtime Event Specification"
-version: "v1.1 (2025 Edition)"
-status: stable
-target: implementation + evaluation + observability
----
-
-# PLD Event Schema  
-*A unified logging format for detecting, repairing, and validating alignment across turns in multi-turn LLM agents.*
+# PLD Event Schema Specification  
+**Version:** 2.0  
+**Status:** Working Draft (Stable)  
+**Stability:** API-stable; breaking changes require a major version change  
+**Feedback:** Actively seeking implementation feedback  
 
 ---
 
 ## 1. Purpose
 
-The PLD Event Schema defines the **runtime logging format** used to capture behavioral signals across the interaction loop:
+This document defines the **normative specification** for PLD Runtime Events, based exclusively on:
 
-> **Drift → Repair → Reentry → Continue → Outcome**
+- `quickstart/metrics/schemas/pld_event.schema.json`  
+- `docs/event_matrix.yaml`  
+- `docs/event_matrix.md`  
 
-This schema serves three goals:
+It defines how PLD runtime events MUST be structured, validated, interpreted, and processed across systems that generate, observe, or analyze agent lifecycle behavior.
 
-| Goal | Used By | Purpose |
-|------|---------|---------|
-| **Runtime control** | Orchestrators, state machines | Trigger repairs, failover, or continuation decisions |
-| **Evaluation & Metrics** | Analytics pipelines | Compute PRDR, VRL, MRBF, REI, Failover rate |
-| **Trace Transparency** | Researchers, UX teams | Understand why the agent changed state and how it recovered |
+### Background
 
-The schema is implementation-agnostic and compatible with:
+This specification originated from ongoing work in **agent runtime observability**, including efforts to model safety drift, repair behaviors, and structured evaluation outcomes across autonomous or semi-autonomous systems.  
 
-- LangGraph / ReAct / Tool-based agents  
-- OpenAI Assistants API events  
-- Rasa / AutoGen / Swarm  
-- Custom orchestrators and multi-model controllers  
-- OpenTelemetry, PostHog, Elastic, Mixpanel
+The evolution of this specification has incorporated:
+
+- Initial implementation experiments  
+- Practical feedback from agent runtime libraries and observability discussions  
+- Validation and refinement assisted by automated reasoning and rule checking  
+
+**Current Status:**  
+This is a *working draft with stable semantics*. Structure and validation rules are not expected to change within major version `2.x`, but feedback-driven improvements MAY occur.
 
 ---
 
-## 2. Core Structure
+## 2. Scope
 
-Each runtime turn emits **at least one event**.
+This specification applies to runtime event streams produced by:
 
-A valid PLD event contains:
+- Autonomous or semi-autonomous agents  
+- Model-based controllers  
+- Drift or anomaly detection subsystems  
+- User or system-originated interactions  
+- Observability infrastructure and failover automation  
 
-```jsonc
+It provides a unified structure for recording state-change conditions in adaptive or agentic runtime environments.
+
+Legacy `1.1` formats are **not normative** and MUST NOT be used for new implementations.
+
+---
+
+## 3. Core Model Overview
+
+A PLD event is a structured record describing a single observed or inferred lifecycle condition.
+
+Every PLD event includes:
+
+- **Required metadata fields**
+- **A lifecycle-aligned PLD classification**
+- **Optional runtime diagnostic metadata**
+- **A user-experience impact declaration**
+
+A PLD event is considered valid **only when both conditions below are true**:
+
+```
+additionalProperties: false
+```
+
+
+---
+
+## 5. PLD Object Specification
+
+The `pld` object MUST contain:
+
+| Field | Type | Required | Rules |
+|-------|------|----------|-------|
+| `phase` | enum | yes | MUST be one of: `drift`, `repair`, `reentry`, `continue`, `outcome`, `failover`, `none` |
+| `code` | string | yes | MUST follow lifecycle code rules |
+| `confidence` | number | no | MUST be between `0` and `1` inclusive |
+| `metadata` | object | no | Free-form contextual metadata |
+
+### 5.1 Code Structure Rules
+
+A valid `pld.code` MUST match the canonical pattern:
+
+```
+^[A-Z][A-Z0-9](?:[0-9]+)?(?:[a-z0-9]+(?:[a-z0-9]+))?$
+```
+
+
+Code structure consists of:
+
+- **Prefix** (`D`, `R`, `RE`, `C`, `O`, `F`, or a non-lifecycle classifier)  
+- **Optional numeric classifier**  
+- **Optional semantic descriptor in lowercase snake_case**
+
+Examples (normative):
+
+| phase | code | Validity Basis |
+|-------|------|----------------|
+| drift | `D4_tool_error` | lifecycle prefix + classifier + descriptor |
+| none | `INFO_debug` | non-lifecycle prefix required |
+| reentry | `RE2_context_exceeded` | lifecycle prefix + numeric classifier |
+
+### 5.2 Lifecycle Prefix Enforcement
+
+Codes with lifecycle prefixes MUST map exactly to the corresponding PLD phase.
+
+Validation MUST enforce:
+
+```
+pld.phase == PHASE_MAP[extract_prefix(pld.code)]
+```
+
+
+Where:
+
+```python
+PHASE_MAP = {
+    "D": "drift",
+    "R": "repair",
+    "RE": "reentry",
+    "C": "continue",
+    "O": "outcome",
+    "F": "failover"
+}
+```
+
+---
+
+### 5.3 Phase `"none"` Policy
+
+When pld.phase = `"none"`:
+- Codes MUST NOT begin with lifecycle prefixes
+- Non-lifecycle naming (e.g., `INFO_debug`, `SYS_init`) is expected
+- Numeric classifiers MAY be used, but are optional
+
+---
+
+## 6. Event Type Constraints
+
+Event types determine required alignment with lifecycle phases.
+
+### Enforcement Levels
+
+| Level  | Meaning           | Enforcement             |
+| ------ | ----------------- | ----------------------- |
+| MUST   | Required mapping  | Violations are rejected |
+| SHOULD | Expected default  | Violations MAY warn     |
+| MAY    | Context-dependent | Always permissible      |
+
+### 6.1 MUST Mappings
+
+| event_type         | phase    |
+| ------------------ | -------- |
+| drift_detected     | drift    |
+| drift_escalated    | drift    |
+| repair_triggered   | repair   |
+| repair_escalated   | repair   |
+| reentry_observed   | reentry  |
+| continue_allowed   | continue |
+| continue_blocked   | continue |
+| failover_triggered | failover |
+
+### 6.2 SHOULD Mappings
+
+| event_type      | expected phase                       |
+| --------------- | ------------------------------------ |
+| evaluation_pass | outcome                              |
+| evaluation_fail | outcome                              |
+| session_closed  | outcome (default) / none (justified) |
+| info            | none                                 |
+
+### 6.3 MAY Events
+
+| event_type        | allowed phase                         |
+| ----------------- | ------------------------------------- |
+| latency_spike     | any                                   |
+| pause_detected    | any                                   |
+| fallback_executed | any (recommended: repair or failover) |
+| handoff           | any                                   |
+
+---
+
+## 7. Validation Modes
+
+Validation MAY operate in one of three modes:
+
+| Mode      | MUST Violations          | SHOULD Violations | Intended Use         |
+| --------- | ------------------------ | ----------------- | -------------------- |
+| strict    | reject                   | ignore            | Production ingestion |
+| warn      | reject                   | warn              | Staging              |
+| normalize | auto-correct if possible | warn or accept    | Self-healing agents  |
+
+---
+
+## 8. Version Compatibility Policy
+
+Implementations MUST enforce schema version compatibility as follows:
+- Events with a different major version MUST be rejected.
+- Events with the same major version and different minor version MUST NOT be rejected automatically.
+- Forward compatibility MAY be supported within the same major version.
+
+### Examples
+
+| schema_version value | Expected result |
+| -------------------- | --------------- |
+| `"2.0"`              | ✅ Accept        |
+| `"2.1"`              | ✅ Accept        |
+| `"1.1"`              | ❌ Reject        |
+| `"3.0"`              | ❌ Reject        |
+
+---
+
+## 9. Examples (Normative)
+
+### 9.1 Valid Drift Detection Example
+
+```json
 {
-  "event_id": "uuid",
-  "session_id": "MWZ-001",
-  "turn_id": 4,
-  "timestamp": "2025-01-17T14:22:11.130Z",
-
-  "speaker": "system", // "user" | "assistant" | "tool" | "system"
-
-  "event_type": "drift_detected", 
+  "schema_version": "2.0",
+  "event_id": "751fb0dc-15a4-4b4d-a204-1b8e94f24e06",
+  "timestamp": "2025-01-10T12:40:22Z",
+  "session_id": "a4e7b593-9409-4122-b9ed-06c70bd8549d",
+  "turn_sequence": 3,
+  "source": "detector",
+  "event_type": "drift_detected",
   "pld": {
     "phase": "drift",
-    "code": "D4_tool" // canonical drift / repair / reentry codes
+    "code": "D4_tool_error",
+    "confidence": 0.91
   },
-
-  "content": {
-    "input": "search hotels in london",
-    "output": null,
-    "tool": "searchHotels",
-    "error": "missing_required_field: check_in_date"
+  "payload": {
+    "detector_output": "semantic deviation detected"
   },
+  "ux": {
+    "user_visible_state_change": false
+  }
+}
+```
 
-  "metrics": {
-    "latency_ms": 3120,
-    "confidence": 0.41
+### 9.2 Valid Non-Lifecycle Informational Example
+
+```json
+{
+  "schema_version": "2.0",
+  "event_id": "cc4dc21e-dc22-4762-a3a4-e040a734c091",
+  "timestamp": "2025-01-10T12:41:00Z",
+  "session_id": "a4e7b593-9409-4122-b9ed-06c70bd8549d",
+  "turn_sequence": 4,
+  "source": "runtime",
+  "event_type": "info",
+  "pld": {
+    "phase": "none",
+    "code": "SYS_init"
   },
-
-  "meta": {
-    "model": "gpt-5.1",
-    "env": "dev",
-    "trace_id": "trace-ab12"
+  "payload": {},
+  "ux": {
+    "user_visible_state_change": false
   }
 }
 ```
 
 ---
 
-## 3. Required Fields
+## 10. Validity Definition
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `event_id` | string (UUID) | Unique event identifier |
-| `session_id` | string | Conversation or agent session |
-| `turn_id` | integer | Sequential identifier of the turn |
-| `timestamp` | ISO-8601 | Recorded at event creation |
-| `event_type` | enum | Defines the event category (see below) |
-| `pld.phase` | enum | One of: `drift`, `repair`, `reentry`, `continue`, `outcome`, `neutral` |
-| `pld.code` | string | Canonical event code (e.g., `D5_information`, `R2_soft_repair`) |
+A PLD event is valid only when:
 
-> `pld.code` is the semantic anchor — all evaluation, repair policy, and analytics operate over this field.
-
----
-
-## 4. Event Type Specification
-
-Event types categorize events at the system-level.  
-They map to PLD phases as shown:
-
-| event_type | phase | description |
-|-----------|-------|-------------|
-| `user_turn` | neutral | Raw user input |
-| `assistant_response` | neutral | Standard response (no detected drift) |
-| `tool_call` | continue | Valid tool operation |
-| `drift_detected` | drift | Divergence or failure state |
-| `repair_attempted` | repair | System applies correction (soft or hard) |
-| `reentry_checkpoint` | reentry | Alignment confirmation (summary/check-back) |
-| `continue_after_repair` | continue | Phase recovery success |
-| `failover_triggered` | outcome | Controlled fallback path activated |
-| `session_ended` | outcome | Conversation or task complete |
-
----
-
-## 5. PLD Code System
-
-PLD codes provide canonical classification across implementations.
-
-### Drift Codes (`D*`)
-
-| Code | Meaning |
-|------|---------|
-| `D1_contradiction` | conflicting facts |
-| `D2_memory_loss` | lost context / missing constraints |
-| `D3_instruction_divergence` | task or persona drift |
-| `D4_tool` | invalid or repeated tool call |
-| `D5_information` | hallucination, unsupported statement |
-| `D6_context_mismatch` | retrieval mismatch or irrelevant reasoning |
-
-### Repair Codes (`R*`)
-
-| Code | Meaning |
-|------|---------|
-| `R1_soft_repair` | lightweight clarification / redirect |
-| `R2_hard_repair` | reset constraints or reframing |
-| `R3_partial_reset` | preserves state selectively |
-| `R4_full_reset` | restart with acknowledgment |
-
-### Reentry Codes (`X*`)
-
-| Code | Meaning |
-|------|---------|
-| `X1_checkpoint_summary` | summarize context before continuing |
-| `X2_confirmation_request` | ask user to confirm state |
-| `X3_continuity_verified` | successful validation — resume |
-
-### Outcome Codes (`O*`)
-
-| Code | Meaning |
-|------|---------|
-| `O1_success` | task completed |
-| `O2_partial` | incomplete but acceptable |
-| `O3_failure` | unrecoverable failure |
-| `O4_abandoned` | user terminated |
-
----
-
-## 6. Example Log Sequence
-
-A typical 5-turn alignment event:
-
-```jsonl
-{ "event_type": "drift_detected", "pld": { "phase": "drift", "code": "D4_tool" } }
-{ "event_type": "repair_attempted", "pld": { "phase": "repair", "code": "R2_hard_repair" } }
-{ "event_type": "reentry_checkpoint", "pld": { "phase": "reentry", "code": "X1_checkpoint_summary" } }
-{ "event_type": "continue_after_repair", "pld": { "phase": "continue", "code": "X3_continuity_verified" } }
-{ "event_type": "assistant_response", "pld": { "phase": "continue", "code": null } }
+```scss
+PLD_valid(event) ⇔ schema_valid(event) ∧ matrix_valid(event)
 ```
 
----
-
-## 7. Validation and Versioning
-
-- Schema source: `quickstart/metrics/schemas/pld_event.schema.json`
-- Minor revisions use: `v1.1.x`  
-- Breaking changes → `v2.0`
-
-All downstream datasets MUST declare schema version:
-
-```json
-{ "schema_version": "pld.v1.1" }
-```
+Both checks are required.
 
 ---
 
-## 8. Summary
+## 11. Specification Status
 
-> The PLD Event Schema enables **runtime governance, observability, and measurable alignment**.
+This document represents the normative Version 2.0 specification for PLD Runtime Event encoding, validation, and interpretation.
 
-It is the backbone connecting:
+### Conformance Requirements
 
-- runtime controllers  
-- metrics and dashboards  
-- evaluation datasets  
-- agent UX tuning  
-- failover and autonomy governance  
+Implementations claiming PLD v2.0 conformance MUST satisfy:
 
-When the schema is implemented, drift becomes:
+1. JSON Schema validation (`pld_event.schema.json`)
+2. Semantic matrix constraints (`event_matrix.yaml`)
+3. Validation mode compliance (Section 7)
 
-> **detectable → correctable → confirmable → measurable.**
+### Feedback and Evolution
+
+This specification is:
+
+- ✅ Stable: rules will not change within major version 2.x
+- 🔄 Open: ongoing refinement informed by usage and feedback
+- 📢 Community-driven: improvements encouraged
+
+Feedback, usage reports, and improvement proposals may be submitted via:
+> GitHub Issues or Discussions (repository reference TBD)
 
 ---
 
-Maintainer: **Kiyoshi Sasano**  
-License: **CC-BY-4.0**  
-Schema status: **stable / production-ready**
+### End of Specification
