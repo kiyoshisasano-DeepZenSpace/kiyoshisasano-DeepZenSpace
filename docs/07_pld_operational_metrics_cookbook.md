@@ -1,7 +1,7 @@
 # 📄 07 — PLD Operational Metrics Cookbook
 
 Version: 2.0.0  
-**Status: Working Draft (Candidate for Canonical Metrics) — Actively seeking implementation feedback.**  
+**Status: candidate_for_canonical 
 This document is part of an ongoing research and early adoption effort to explore operational metrics for PLD-aligned systems. The definitions and interpretations may evolve as real-world implementation feedback is collected.
 
 Authority Level: 3 — Derived operational rule (proposed canonical baseline)  
@@ -66,7 +66,7 @@ All metric formulas MUST be deterministic and computable solely from PLD-valid e
 
 ## 3. Canonical Metrics (Baseline Proposal for v2.0)
 
-These metrics represent the minimum recommended evaluation standard for PLD-aligned systems and may evolve as real production feedback is collected.
+These metrics represent the current recommended baseline for evaluating PLD-aligned systems and may be refined as broader implementation feedback emerges.
 
 ---
 
