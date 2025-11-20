@@ -3,13 +3,15 @@
 ## 📌 01 — PLD for Agent Engineers
 
 **How to build agents that remain stable, observable, and recoverable**.
-Version: `2.0`
+
+Version: `2.0`  
 Status: Candidate (Working Draft, Normative for operational rules)
+
 **Referenced authoritative sources**:
 
 - Level 1 — Schema: `quickstart/metrics/schemas/pld_event.schema.json`
-- Level 2 — Semantic rules: `docs/event_matrix.md, docs/event_matrix.yaml`
-- Level 2/3 — Specification text: `docs/03_pld_event_spec.md`
+- Level 2 — Semantic rules: `docs/event_matrix.md`, `docs/event_matrix.yaml`
+- Level 2 (Consolidated) — Specification text: `docs/03_pld_event_spec.md`
 - Level 3 — This document (derived operational rules)
 - Level 4 — Examples in Appendix A (non-normative)
   
@@ -19,42 +21,41 @@ Status: Candidate (Working Draft, Normative for operational rules)
 
 ## Table of Contents
 
-```markdowm
 0. Purpose  
 1. Why PLD Exists  
 2. Reference Model for Specification  
 3. Core Runtime Model  
 4. Engineering Requirements  
 5. Integration Pattern (Runtime Execution Model)  
-    5.1 Drift Detection Requirements  
-    5.2 Repair Strategy Selection  
-    5.3 Execution Pseudocode (Reference Only)  
-    5.4 Optional Enhancements  
+    - 5.1 Drift Detection Requirements  
+    - 5.2 Repair Strategy Selection  
+    - 5.3 Execution Pseudocode (Reference Only)  
+    - 5.4 Optional Enhancements  
 6. Logging Requirements  
 7. Reentry Requirements  
-    7.1 Classification Rules  
-    7.2 Deferred Reentry Rules  
-    7.3 Implementation Patterns  
+    - 7.1 Classification Rules  
+    - 7.2 Deferred Reentry Rules  
+    - 7.3 Implementation Patterns  
 8. Validation Modes  
-    8.1 Violation Categorization  
-    8.2 Auto-Correction Rules  
-    8.3 Operational Guidance  
+    - 8.1 Violation Categorization  
+    - 8.2 Auto-Correction Rules  
+    - 8.3 Operational Guidance  
 9. Alignment Checklist  
 10. Summary Statement & Next Steps  
 
 Appendix A — Implementation Examples (Non-Normative)  
-    A.1 Drift Detection Example: Repeated Plan  
-    A.2 Extended Repair Strategy Table  
-    A.3 `emit_pld` Helper Implementation
-    A.4 Reentry Patterns (Recap)
-```
+- A.1 Drift Detection Example: Repeated Plan  
+- A.2 Extended Repair Strategy Table  
+- A.3 `emit_pld` Helper Implementation  
+- A.4 Reentry Patterns (Recap)
 
 ---
 
 ## 0. Purpose
 
 If you're already familiar with building tools, planning systems, memory scaffolds, and LLM workflows, PLD focuses on a different question:
-> **How do we keep multi-turn agents stable and governable over time—not only when things work, but especially when they don’t?**
+
+> **How do we keep multi-turn agents stable and governable over time—not only when things work, but especially when they don't?**
 
 PLD provides:
 
@@ -64,7 +65,7 @@ PLD provides:
 - A validation and governance loop
 - Metrics indicating whether changes improved or degraded behavior
 
-PLD is **not a framework**. It is a discipline:
+PLD is **not a framework**. It is a discipline:  
 → **Structure + governance + telemetry**, layered onto whatever runtime you already use.
 
 ---
@@ -73,16 +74,17 @@ PLD is **not a framework**. It is a discipline:
 
 Multi-turn agents commonly fail in recognizable patterns:
 
--Repeating tools
--Repeating plans
--Fixing a problem, only to drift again later
--Breaking after model/tool changes
--Behaving fine in development but collapsing under real user variance
+- Repeating tools
+- Repeating plans
+- Fixing a problem, only to drift again later
+- Breaking after model/tool changes
+- Behaving fine in development but collapsing under real user variance
 
 These failures are usually not random bugs — they are symptoms of **missing runtime governance**.
+
 PLD formalizes that governance as a lifecycle:
 
-```powershell
+```
 Drift → Repair → Reentry → Continue → Outcome
 ```
 
@@ -107,10 +109,9 @@ When conflicts occur, higher levels prevail.
 | 3     | `03_pld_event_spec.md` + this document    | Operational rules — SHOULD  |
 | 4     | Examples (this doc, demo code, tutorials) | Optional reference — MAY    |
 
----
-
-This hierarchy is intended as a practical guide:
+This hierarchy is intended as a practical guide:  
 `no rule in this document may override Level 1 or Level 2.`
+
 Examples in Appendix A are always non-normative.
 
 ---
@@ -135,13 +136,16 @@ If `pld.phase = "none"`, lifecycle prefixes (`D/R/RE/C/O/F`) MUST NOT be used.
 ## 4. Engineering Requirements (Normative)
 
 A turn is considered PLD-valid when:
-```text
+
+```
 schema_valid(event) AND semantic_valid(event)
 ```
+
 Where:
 - `schema_valid(event)` enforces Level 1 (structural rules).
 - `semantic_valid(event)` enforces Level 2 (matrix + mapping rules).
-Examples of required event_type → phase mapping:
+
+Examples of required `event_type` → `phase` mapping:
 
 | event_type           | required phase |
 | -------------------- | -------------- |
@@ -160,9 +164,11 @@ Informational events (`info`, some `session_closed` cases) SHOULD use `phase = "
 ## 5. Integration Pattern (Runtime Execution Model)
 
 A PLD-aligned runtime MUST follow the sequence:
+
 > **Execute → Detect → Repair → Validate (Reentry) → Continue/Terminate → Log**
 
 Logical steps per turn:
+
 1. Execute the agent turn (LLM + tools + memory).
 2. Detect drift.
 3. If drift is present → emit a `drift_detected` event.
@@ -180,6 +186,7 @@ This pattern is framework-agnostic and applies regardless of whether you use Lan
 ### 5.1 Drift Detection Requirements
 
 A drift detector MUST always produce a structured result:
+
 - A lifecycle drift code (`D1–D5`, etc.), or
 - A neutral `"D0_none"` code indicating **no drift detected**.
 
@@ -230,6 +237,7 @@ Normative behavior:
 | Repeated failure or unsafe state      | Transition to failover (`F*`)         |
 
 Non-normative minimal example:
+
 ```python
 def choose_repair(drift, repair_count):
     if drift["code"].startswith("D4") and repair_count < 2:
@@ -320,7 +328,7 @@ A concrete helper for emitting PLD events (`emit_pld`) is provided in **Appendix
 
 ## 7. Reentry Requirements
 
-Reentry evaluates whether a repair successfully restored stable behavior.
+Reentry evaluates whether a repair successfully restored stable behavior.  
 A system MUST perform reentry evaluation after any repair action that modifies agent state or behavior.
 
 Reentry MUST:
@@ -347,14 +355,15 @@ If uncertainty exists regarding the reentry type, implementations SHOULD prefer 
 
 ### 7.2 Deferred Reentry Rules
 
-Deferred reentry is allowed only in `normalize` **mode**.
+Deferred reentry is allowed only in `normalize` mode.
 
 In this case:
 - Current turn performs repair but does not immediately assert reentry.
-- Next turn’s drift detection outcome determines whether the prior repair succeeded.
+- Next turn's drift detection outcome determines whether the prior repair succeeded.
 
 Informal rule:
-```text
+
+```
 If next turn drifts again → prior repair failed → escalate (harder repair or failover).
 If next turn does not drift → treat prior repair as successful → implicit RE3_auto.
 ```
@@ -449,7 +458,7 @@ Violations are grouped into:
   - e.g., `event_type="evaluation_pass"` but `pld.phase="drift"` → corrected to `"outcome"`.
 - **Missing descriptors** when a safe default exists.
   - e.g., `code="D"` → `"D0_unspecified"`.
-- **Prefix/phase** misalignment when prefix has a unique corresponding phase.
+- **Prefix/phase misalignment** when prefix has a unique corresponding phase.
   - e.g., `code="R1_soft_repair"` and `phase="drift"` → `phase` corrected to `"repair"`.
 
 `normalize` mode MUST NOT attempt correction when:
@@ -475,6 +484,7 @@ Recommended defaults:
 ---
 
 ## 9. Alignment Checklist
+
 A system may be considered PLD-aligned when all of the following hold:
 
 - ☐ Schema validation is enforced (`pld_event.schema.json`).
@@ -494,8 +504,7 @@ If answering this requires guesswork, PLD alignment is not yet complete.
 
 ## 10. Summary Statement & Next Steps
 
-> **PLD provides the lifecycle, structure, and telemetry required to make multi-turn agents governable, resilient, and measurable over time**.
-
+> **PLD provides the lifecycle, structure, and telemetry required to make multi-turn agents governable, resilient, and measurable over time.**
 
 Recommended next steps for implementers:
 
@@ -509,7 +518,7 @@ Recommended next steps for implementers:
 
 ## Appendix A — Implementation Examples (Non-Normative)
 
-> **Important**: This appendix is **non-normative**.
+> **Important**: This appendix is **non-normative**.  
 > It illustrates one way to implement PLD-aligned behavior, but MUST NOT be treated as mandatory.
 
 ---
@@ -673,6 +682,8 @@ Implementers should align this helper with:
 - Their logging framework (e.g., OpenTelemetry, structured logs).
 - Their schema validation and ingestion pipeline.
 
+---
+
 ### A.4 Reentry Patterns (Recap)
 
 For convenience, here are the three typical reentry patterns in one place:
@@ -703,3 +714,7 @@ def auto_reentry():
 ```
 
 These patterns are **examples**, not requirements. Implementers may define additional `RE1_*`, `RE2_*`, or `RE3_*` codes as long as they remain consistent with the Level 2 semantic rules.
+
+---
+
+**End of Document**
