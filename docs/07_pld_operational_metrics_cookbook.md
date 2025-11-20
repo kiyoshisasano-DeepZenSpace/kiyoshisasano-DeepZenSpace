@@ -1,7 +1,7 @@
 # 📄 07 — PLD Operational Metrics Cookbook
 
 Version: 2.0.0  
-**Status: candidate_for_canonical 
+*Status*: Candidate — Stabilizing based on implementation feedback
 This document is part of an ongoing research and early adoption effort to explore operational metrics for PLD-aligned systems. The definitions and interpretations may evolve as real-world implementation feedback is collected.
 
 Authority Level: 3 — Derived operational rule (proposed canonical baseline)  
