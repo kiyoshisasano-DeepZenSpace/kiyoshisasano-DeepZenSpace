@@ -23,26 +23,47 @@ The JSON Schema ensures **structural validity**, while this matrix ensures **sem
 ### Required Mapping
 
 | Prefix | Required Phase |
-|--------|---------------|
-| `D`    | drift |
-| `R`    | repair |
-| `RE`   | reentry |
-| `C`    | continue |
-| `O`    | outcome |
-| `F`    | failover |
+|--------|----------------|
+| `D`    | drift          |
+| `R`    | repair         |
+| `RE`   | reentry        |
+| `C`    | continue       |
+| `O`    | outcome        |
+| `F`    | failover       |
+
+These are **lifecycle prefixes**. They are only valid when `phase != "none"`.
 
 ---
 
 ### Hard Rule
 
+For **lifecycle prefixes only**:
+
 ```sql
-extract_prefix(pld.code) MUST correspond to pld.phase.
+If extract_prefix(pld.code) is in {D, R, RE, C, O, F},
+then it MUST correspond to pld.phase.
 ```
 
 #### Equivalent executable form:
 
 ```python
-assert PREFIX_MAP[extract_prefix(code)] == phase
+PREFIX_MAP = {
+    "D":  "drift",
+    "R":  "repair",
+    "RE": "reentry",
+    "C":  "continue",
+    "O":  "outcome",
+    "F":  "failover",
+}
+
+def assert_prefix_phase_consistency(code: str, phase: str) -> None:
+    prefix = extract_prefix(code)
+    if prefix in PREFIX_MAP:
+        # Lifecycle prefixes MUST match the lifecycle phase
+        assert PREFIX_MAP[prefix] == phase
+    else:
+        # Non-lifecycle prefixes are only allowed with phase="none"
+        assert phase == "none"
 ```
 
 #### Prefix Extraction Rules
@@ -59,15 +80,19 @@ Example: "D4_tool_error" → "D"
 Events whose `pld.phase` is `"none"`:
 
 - **MUST NOT** use lifecycle prefixes (`D/R/RE/C/O/F`)
+- **MUST** use non-lifecycle prefixes (e.g., `INFO`, `META`, `SYS`) if a prefix is present
 - **SHOULD** use free-form semantic label codes (e.g., `INFO_debug`)
+- MAY omit numeric classifier segments (e.g., `INFO_debug`, `SYS_init`) or include them (e.g., `INFO1_debug`)
+Non-lifecycle prefixes implicitly correspond to `phase="none"`.
 
 Example:
 
-| code         | phase | valid?             |
-| ------------ | ----- | ------------------ |
-| `INFO_debug` | none  | ✔                  |
-| `SYS_init`   | none  | ✔                  |
-| `D4_error`   | none  | ❌ prefix violation |
+| code          | phase | valid?             | notes                      |
+| ------------- | ----- | ------------------ | -------------------------- |
+| `INFO_debug`  | none  | ✔                  | non-lifecycle prefix       |
+| `SYS_init`    | none  | ✔                  | non-lifecycle prefix       |
+| `INFO1_debug` | none  | ✔                  | numeric classifier used    |
+| `D4_error`    | none  | ❌ prefix violation | lifecycle prefix with none |
 
 ---
 
@@ -100,12 +125,16 @@ Example:
 
 ### 2.3 Evaluative Events (SHOULD)
 
-| event_type      | recommended phase        | constraint |
-| --------------- | ------------------------ | ---------- |
-| evaluation_pass | outcome                  | SHOULD     |
-| evaluation_fail | outcome                  | SHOULD     |
-| session_closed  | outcome (default) / none | SHOULD     |
-| info            | none                     | SHOULD     |
+| event_type         | allowed phase | constraint |
+| ------------------ | ------------- | ---------- |
+| drift_detected     | drift         | MUST       |
+| drift_escalated    | drift         | MUST       |
+| repair_triggered   | repair        | MUST       |
+| repair_escalated   | repair        | MUST       |
+| reentry_observed   | reentry       | MUST       |
+| continue_allowed   | continue      | MUST       |
+| continue_blocked   | continue      | MUST       |
+| failover_triggered | failover      | MUST       |
 
 ---
 
@@ -123,7 +152,7 @@ Example:
 ## 3. Phase Inference Guidance (Reference Code)
 
 ```python
-VALID_PHASES = ["drift", "repair", "reentry", "continue", "outcome", "failover", "none"]
+**VALID_PHASES = ["drift", "repair", "reentry", "continue", "outcome", "failover", "none"]
 
 def infer_phase(event_type: str, context: dict) -> str:
     current = context.get("current_phase")
@@ -138,7 +167,7 @@ def infer_phase(event_type: str, context: dict) -> str:
     if event_type in ["latency_spike", "pause_detected", "handoff"]:
         return current or "none"
 
-    return "none"
+    return "none"**
 ```
 
 ---
@@ -160,6 +189,8 @@ docs/event_matrix.yaml
 | **strict**    | Reject ❌        | Ignore            | Production ingestion                     |
 | **warn**      | Reject ❌        | Warn ⚠            | Staging / Model tuning                   |
 | **normalize** | Auto-repair     | Warn ⚠ or accept  | Autonomous agents / runtime self-healing |
+
+These correspond directly to the `validation_modes` block in `docs/event_matrix.yaml`.
 
 ---
 
