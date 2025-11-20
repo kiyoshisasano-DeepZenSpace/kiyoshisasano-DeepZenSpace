@@ -125,8 +125,6 @@ Example:
 
 ### 2.3 Evaluative Events (SHOULD)
 
-### 2.3 Evaluative Events (SHOULD)
-
 | event_type      | recommended phase        | constraint |
 | --------------- | ------------------------ | ---------- |
 | evaluation_pass | outcome                  | SHOULD     |
