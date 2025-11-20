@@ -1,10 +1,9 @@
 ---
 title: "PLD Event Matrix Specification"
 version: "2.0"
-status: "Final"
+status: "Candidate"
 authority: "Hard Invariant (Semantic Layer)"
-applies_to: "quickstart/metrics/schemas/pld_event.schema.json"
-paired_machine_source: "docs/event_matrix.yaml"
+stability: "Stable - Breaking changes require major version bump"
 ---
 
 # PLD Event Matrix — Normative Rules
