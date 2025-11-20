@@ -13,6 +13,8 @@ valid_phases:
   - failover
   - none
 
+# Mapping for lifecycle prefixes only. These prefixes are only valid
+# when phase != "none".
 prefix_to_phase:
   D:  drift
   R:  repair
@@ -25,7 +27,10 @@ none_phase_policy:
   allow_lifecycle_prefixes: false
   description: >
     Events with phase="none" MUST NOT use lifecycle prefixes D/R/RE/C/O/F
-    in pld.code. Use non-lifecycle prefixes (e.g., INFO_*, META_*, SYS_*).
+    in pld.code. Use non-lifecycle prefixes (e.g., INFO_*, META_*, SYS_*),
+    which implicitly correspond to phase="none". The JSON Schema allows
+    both numeric and non-numeric classifier segments (e.g., INFO_debug,
+    SYS_init, INFO1_debug are all structurally valid).
 
 must_phase_map:
   drift_detected:     drift
