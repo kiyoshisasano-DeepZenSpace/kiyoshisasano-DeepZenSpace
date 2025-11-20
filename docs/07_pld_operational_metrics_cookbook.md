@@ -1,298 +1,256 @@
-<!-- License: CC BY 4.0 -->
+# 📄 07 — PLD Operational Metrics Cookbook
 
-# 📄 07 — PLD Operational Metrics Cookbook  
-_For SRE, AgentOps, Data Engineering, and Product Owners_  
+Version: 2.0.0  
+**Status: Working Draft (Candidate for Canonical Metrics) — Actively seeking implementation feedback.**  
+This document is part of an ongoing research and early adoption effort to explore operational metrics for PLD-aligned systems. The definitions and interpretations may evolve as real-world implementation feedback is collected.
 
-**Version:** 1.1 (Runtime Alignment Edition)  
-**Maintainer:** Kiyoshi Sasano  
-**Status:** ✔ Operational — Production Ready  
-
----
-
-> **PLD metrics are operational signals — not product KPIs.**  
-They help teams detect drift loops, evaluate repair strategy effectiveness, reduce user-visible instability, and prevent runaway retries.
-
-Metrics should guide **rollout safety, debugging, release gating, and regression detection** — not leaderboard optimization.
+Authority Level: 3 — Derived operational rule (proposed canonical baseline)  
+Governance Approach: Experimental dual-track metrics versioning  
+Maintainer: TBD
 
 ---
 
-## 📊 Operational Dashboard Reference
+## 0. Specification Purpose
 
-This cookbook defines the metrics used in the operational dashboard below.  
-BI teams (Supabase, Grafana, Datadog, Kibana, Looker, Metabase) should reference this document when implementing dashboards.
+This document defines the proposed canonical operational metrics used to evaluate runtime health and lifecycle stability within PLD-aligned systems.
 
-<p align="center">
-<img src="assets/dashboard_mockup.svg" width="100%" />
-</p>
+It combines:
 
-> This visualization is a **reference target** — teams may start with single queries and evolve toward the full dashboard.
+- Machine-parseable, versioned metric definitions (normative)  
+- Operational interpretation guidance such as thresholds, queries, dashboards, and rollout heuristics (non-normative and subject to iteration)
 
----
+These metrics are intended to support:
 
-## 🧭 How to Use This Dashboard
-
-| Deployment Phase | Primary Metrics | Purpose |
-|-----------------|----------------|---------|
-| **Early rollout** | PRDR, VRL, FR | Detect regressions and unstable repair loops |
-| **Mid rollout** | REI, MRBF | Compare repair strategies and measure cost/benefit |
-| **Stabilized** | FR + periodic PRDR | Low-noise regression monitoring |
+- Longitudinal benchmark comparability  
+- Runtime regression detection  
+- Drift management evaluation  
+- Observability standardization across implementations  
 
 ---
 
-## 🧪 Interpretation Standard
+## 1. Reference and Dependency Layers
 
-All metrics in this cookbook follow a consistent semantic structure:
+| Layer | Source | Enforcement |
+|-------|--------|-------------|
+| Level 1 | pld_event.schema.json | MUST pass schema validation |
+| Level 2 | event_matrix.yaml, event_matrix.md, 03_pld_event_spec.md | MUST satisfy semantic alignment |
+| Level 3 | This document | Proposed canonical operational metric definitions |
+| Level 4 | Examples, SQL queries, dashboards | Informative only (non-normative) |
 
-| Marker | Meaning |
-|--------|---------|
-| 🟢 Healthy | Expected, stable runtime behavior |
-| ⚠ Elevated | Acceptable but requires observation |
-| 🔴 Critical | Drift instability, persistent looping, or failure patterns |
+If conflicting conditions arise, apply the following resolution order:
 
-> Metrics guide action — they are **not optimization targets**.
-
----
-
-## 🔌 Schema Requirements
-
-Metrics require PLD logging with the `v1.1` schema:
-
-📄 **Schema:** `quickstart/metrics/schemas/pld_event.schema.json`  
-📦 **Dataset Example:** `quickstart/metrics/datasets/pld_events_demo.jsonl`
-
-### Event Mapping (v1.1)
-
-| Logical Category | `event_type` | PLD Phase | Code Prefix |
-|------------------|-------------|-----------|------------|
-| Drift detection | `drift_detected` | `drift` | `D*` |
-| Repair attempt | `repair_triggered` | `repair` | `R*` |
-| Visible repair | `repair_visible` | `repair` | `R*` |
-| Reentry success | `reentry_observed` | `reentry` | `RE*` |
-| Failover | `failover_triggered` | `failover` | `OUT*` or `F*` |
+> **Level 1 → Level 2 → Level 3 → Level 4**
 
 ---
 
-## 📐 Metric 1 — Post-Repair Drift Recurrence (PRDR)
+## 2. Metric Specification Format (Required)
 
-**Purpose:**  
-Measure whether repairs permanently resolve drift or merely delay recurrence.
+Each metric MUST follow this metadata template:
 
 ```
-PRDR = repeated drift events (within N turns after repair)
-        ÷ total repair events
+---
+metric: <NAME>
+version: <SEMVER>
+status: <canonical|archived|experimental|deprecated>
+validation_modes: [strict|warn|normalize]
+output_unit: <percent|seconds|ratio|count>
+output_range: <required value space>
+schema_dependency: pld_event.schema.json
+semantic_dependency: event_matrix.yaml + event_matrix.md
+---
 ```
 
-**Recommended Window:** `N = 3–5 turns`
+All metric formulas MUST be deterministic and computable solely from PLD-valid event streams.
 
-### Classification
+---
 
-| Rate | Meaning | Action |
-|------|---------|--------|
-| 🟢 0–10% | Durable repairs | No changes required |
-| ⚠ 10–30% | Partial improvement | Adjust tone/threshold/tooling |
-| 🔴 >30% | Fragile repair strategy | Investigate upstream (RAG, tools) |
+## 3. Canonical Metrics (Baseline Proposal for v2.0)
 
-### PostgreSQL Query
+These metrics represent the minimum recommended evaluation standard for PLD-aligned systems and may evolve as real production feedback is collected.
+
+---
+
+### 3.1 PRDR — Post-Repair Drift Recurrence
+
+```
+---
+metric: PRDR
+version: 2.0.0
+status: proposed_canonical
+validation_modes: [strict, warn]
+output_unit: percent
+output_range: [0.0, 100.0]
+---
+```
+
+**Normative Definition:**
+
+```
+PRDR = (# of sessions where a repair event is followed by a drift event)
+        ÷ (# of sessions containing at least one repair event)
+      × 100
+```
+
+**Required Conditions:**
+
+- Drift detection MUST occur after a repair event within the same session using strictly increasing `turn_sequence`.  
+- A recurrence time window MAY be applied, but MUST be declared in metadata.
+
+**Interpretation Guidance (Non-Normative):**
+
+| Result | Meaning | Suggested Action |
+|--------|---------|------------------|
+| 🟢 0–10% | Durable repair behavior | No action |
+| ⚠ 10–30% | Partial improvement | Evaluate drift detectors or repair policy |
+| 🔴 >30% | Fragile repair strategy | Investigation recommended |
+
+**Example SQL (Informative only):**
 
 ```sql
 WITH repairs AS (
-  SELECT session_id, turn_id AS repair_turn
+  SELECT session_id, turn_sequence AS repair_turn
   FROM pld_events
   WHERE event_type = 'repair_triggered'
 ),
 drifts AS (
-  SELECT r.session_id, COUNT(*) AS repeated_drift
+  SELECT DISTINCT r.session_id
   FROM repairs r
-  JOIN pld_events e
-    ON e.session_id = r.session_id
-   AND e.turn_id BETWEEN r.repair_turn + 1 AND r.repair_turn + 5
+  JOIN pld_events e USING(session_id)
+ WHERE e.turn_sequence > r.repair_turn
    AND e.event_type = 'drift_detected'
-  GROUP BY r.session_id
 )
-SELECT
-  COALESCE(SUM(repeated_drift), 0)::float / NULLIF(COUNT(*), 0) AS prdr
+SELECT 
+  (COUNT(*) * 100.0) / NULLIF((SELECT COUNT(*) FROM repairs), 0) AS prdr
 FROM drifts;
 ```
 
 ---
 
-## ⚙ Metric 2 — Repair Efficiency Index (REI)
+### 3.2 VRL — Recovery Latency
 
-**Purpose:** Evaluate whether repairs provide a net benefit relative to operational cost.
+Legacy VRL (“Visible Repair Load”) is archived. The revised definition measures **time to stabilization**.
 
 ```
-REI = (performance improvement %) ÷ operational cost per session
+---
+metric: VRL
+version: 2.0.0
+status: proposed_canonical
+output_unit: seconds
+output_range: [0, ∞)
+validation_modes: [strict, normalize]
+---
 ```
 
-Cost may include: tokens, latency, hallucination risk, tool usage, or user experience penalties.
+**Normative Definition:**
 
-### Interpretation
-
-| Trend | Meaning | Action |
-|-------|---------|--------|
-| ↑ Increasing | Efficient strategy | Candidate for broader rollout |
-| → Flat | Neutral | Monitor only |
-| ↓ Declining | Cost > benefit | Simplify or disable strategy |
-
-### Query Template (PostgreSQL Example)
-
-Requires a baseline value (A/B, staged rollout, or historical window).
-
-```sql
-SELECT
-  ((AVG(success_variant) - AVG(success_baseline)) / AVG(success_baseline))
-    AS improvement_ratio,
-  AVG(cost_score) AS avg_cost,
-  ((AVG(success_variant) - AVG(success_baseline)) / AVG(success_baseline))
-    / AVG(cost_score) AS rei
-FROM experiment_sessions;
 ```
+VRL = mean( timestamp(recovery_event) - timestamp(initial_drift_event) )
+```
+
+Valid recovery events MUST be one of:
+
+| event_type | phase |
+|------------|--------|
+| continue_allowed | continue |
+| reentry_observed | reentry |
+
+If no recovery occurs, serialize as `"NaN"`.
+
+**Interpretation (Informative):**
+
+| Time | Interpretation |
+|------|---------------|
+| 🟢 <2s | Fast and minimally perceptible |
+| ⚠ 2–8s | Noticeable, borderline |
+| 🔴 >8s | User-visible instability |
 
 ---
 
-## 👁 Metric 3 — Visible Repair Load (VRL)
-
-**Purpose:** Measure user-visible instability.
+### 3.3 FR — Failover Recurrence Index
 
 ```
-VRL = (# visible repair messages per 100 turns)
+---
+metric: FR
+version: 2.0.0
+status: proposed_canonical
+output_unit: ratio
+output_range: [0.0, ∞)
+validation_modes: [strict]
+---
 ```
 
-### Included Signals:
+**Normative Definition:**
 
-| event_type | Count? | Example |
-|------------|--------|---------|
-| `repair_visible` | ✔ | "Let me fix that…" |
-| `clarification_prompt` | ✔ | "Before I continue…" |
-| `repair_triggered` only | ✖ | Internal-only repair |
-
-### Query
-
-```sql
-SELECT
-  (COUNT(*) FILTER (WHERE event_type IN ('repair_visible', 'clarification_prompt')) * 100.0)
-    / COUNT(*) AS vrl
-FROM pld_events;
+```
+FR = (# failover events)
+     ÷ (# lifecycle events excluding phase="none")
 ```
 
-### Classification
+**Threshold Guidance (Non-Normative):**
 
-| Score | UX Interpretation | Action |
-|-------|------------------|--------|
-| 🟢 0–5 | Feels smooth | Ideal |
-| ⚠ 5–20 | Noticeable | Adjust tone or trigger sensitivity |
-| 🔴 >20 | Unstable UX | Reduce repair visibility |
+| Value | Meaning | Suggested Action |
+|--------|---------|------------------|
+| 🟢 0–5% | Expected variance | None |
+| ⚠ 5–15% | Elevated | Review drift → repair cycle |
+| 🔴 ≥15% | Possible systemic issue | Escalation recommended |
 
 ---
 
-## 🛑 Metric 4 — Failover Rate (FR)
+## 4. Archived Metrics
 
-**Purpose:** Detect when the agent abandons tasks due to unresolvable drift.
-
-```
-FR = # failover sessions ÷ total sessions
-```
-
-### Query
-
-```sql
-SELECT
-  COUNT(DISTINCT session_id) FILTER (WHERE event_type = 'failover_triggered')::float
-  / COUNT(DISTINCT session_id) AS failover_rate
-FROM pld_events;
-```
-
-### Thresholds
-
-| Value | Meaning | Action |
-|-------|---------|--------|
-| 🟢 0–5% | Expected | Normal variance |
-| ⚠ 5–15% | Elevated | Inspect failure patterns |
-| 🔴 >15% | Systemic | Investigate drift detectors and repair design |
+| Metric | Status | Notes |
+|--------|--------|--------|
+| REI | archived | MAY return in v2.1 depending on workload feedback |
+| MRBF | archived | Deprecated due to overlap with VRL + PRDR |
 
 ---
 
-## 🔁 Metric 5 — Mean Repairs Before Failover (MRBF)
+## 5. Dashboard + BI Integration Layer (Informative)
 
-**Purpose:** Measure persistence before system abandonment.
+This section supports implementation in:
 
-```
-MRBF = total repairs before failover ÷ number of failover sessions
-```
+- Grafana / Supabase / Looker / Metabase  
+- Alerting and rollout guardrails  
+- Visual exploration of event-driven metrics  
 
-### Query
-
-```sql
-WITH failovers AS (
-  SELECT session_id
-  FROM pld_events
-  WHERE event_type = 'failover_triggered'
-)
-SELECT
-  AVG(
-    (SELECT COUNT(*) FROM pld_events e
-     WHERE e.session_id = f.session_id
-       AND e.event_type = 'repair_triggered')
-  ) AS mrbf
-FROM failovers f;
-```
-
-### Interpretation
-
-| Value | Meaning | Action |
-|-------|---------|--------|
-| 🟢 0–1 | Premature fail | Loosen thresholds |
-| 🟡 2–3 | Healthy retry window | Recommended |
-| 🔴 ≥4 | Repair loop | Escalate strength or fail earlier |
+These artifacts operationalize metrics — they do not define them.
 
 ---
 
-## 🧪 Quickstart: Run Metrics on Demo Dataset
+### 5.1 Operational Visualization Reference (Informative)
 
-1. Load demo data:
+The following mock dashboard illustrates how the metrics defined in this document may be operationalized.  
+This visualization is **not a requirement**, but a reference target to support early implementation efforts.
 
-```sql
-CREATE TABLE pld_events_raw (data jsonb);
+<p align="center">
+<img src="assets/dashboard_mockup.svg" width="100%" />
+</p>
 
-\copy pld_events_raw (data)
-FROM 'quickstart/metrics/datasets/pld_events_demo.jsonl';
-```
+Teams may begin with individual metric queries and expand toward full dashboards depending on maturity, tooling, and operational needs.
 
-2. Normalize into a queryable view:
-
-```sql
-CREATE VIEW pld_events AS
-SELECT
-  data->>'event_id' AS event_id,
-  data->>'session_id' AS session_id,
-  (data->>'turn_id')::int AS turn_id,
-  data->>'event_type' AS event_type,
-  data->'pld'->>'phase' AS phase,
-  data->'pld'->>'code' AS code,
-  (data->'runtime'->>'latency_ms')::numeric AS latency_ms,
-  data
-FROM pld_events_raw;
-```
-
-3. Run metric queries (PRDR, VRL, FR, MRBF).
-4. Import `quickstart/metrics/dashboards/reentry_success_dashboard.json` into your BI tool.
 
 ---
 
-## Summary
+## 6. Version Lifecycle Table
 
-| Metric | Category | Purpose |
-|--------|----------|---------|
-| **PRDR** | Stability | Detect fragile repair behavior |
-| **REI** | ROI | Evaluate cost vs benefit |
-| **VRL** | UX | Track visible instability |
-| **FR** | Failure tolerance | Detect unresolved drift |
-| **MRBF** | Persistence | Identify looping repair patterns |
+| Metric | Current Version | Previous | Next Review |
+|--------|----------------|----------|-------------|
+| PRDR | 2.0.0 | 1.0.0 | 90-day |
+| VRL | 2.0.0 | semantic fork (archived) | 180-day |
+| FR | 2.0.0 | 1.0.0 | 90-day |
 
 ---
 
-> **When metrics flatten and remain healthy for 4–6 weeks, monitoring shifts from continuous to periodic validation.**
+## 7. Revision Log
+
+- v1.1: Early operational guidance version  
+- v2.0: First combined normative + operational draft with versioned metrics
 
 ---
 
-**End of Document**
+### Feedback & Iteration
+
+This document remains a working draft.  
+If you apply these metrics in real implementations or discover limitations, edge cases, or improvements, feedback is welcome and encouraged.
+
+End of Document — v2.0 Draft
