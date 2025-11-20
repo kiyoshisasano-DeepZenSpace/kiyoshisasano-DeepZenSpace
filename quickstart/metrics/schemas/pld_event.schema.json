@@ -91,8 +91,8 @@
         },
         "code": {
           "type": "string",
-          "pattern": "^(D|R|RE|C|O|F)[0-9]+(_[a-z0-9]+(_[a-z0-9]+)*)?$",
-          "description": "Format: {PREFIX}{NUMBER}[_{descriptor}]. Descriptor must be lowercase snake_case. Examples: D4_tool_error, R2_soft_repair, RE3_auto, C1."
+          "pattern": "^[A-Z][A-Z0-9_]*[0-9]+(_[a-z0-9]+(_[a-z0-9]+)*)?$",
+          "description": "Classification code. For lifecycle phases (drift, repair, reentry, continue, outcome, failover), the prefix MUST be one of D/R/RE/C/O/F. For phase='none', lifecycle prefixes MUST NOT be used. Descriptor segment (if present) MUST be lowercase snake_case. See docs/event_matrix.md for full normative rules."
         },
         "confidence": {
           "type": "number",
