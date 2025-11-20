@@ -83,7 +83,7 @@ The `pld` object MUST contain:
 A valid `pld.code` MUST match the canonical pattern:
 
 ```
-^[A-Z][A-Z0-9](?:[0-9]+)?(?:[a-z0-9]+(?:[a-z0-9]+))?$
+^[A-Z][A-Z0-9]*(?:[0-9]+)?(?:_[a-z0-9]+(?:_[a-z0-9]+)*)?$
 ```
 
 
@@ -300,3 +300,4 @@ Feedback, usage reports, and improvement proposals may be submitted via:
 ---
 
 ### End of Specification
+
