@@ -125,16 +125,14 @@ Example:
 
 ### 2.3 Evaluative Events (SHOULD)
 
-| event_type         | allowed phase | constraint |
-| ------------------ | ------------- | ---------- |
-| drift_detected     | drift         | MUST       |
-| drift_escalated    | drift         | MUST       |
-| repair_triggered   | repair        | MUST       |
-| repair_escalated   | repair        | MUST       |
-| reentry_observed   | reentry       | MUST       |
-| continue_allowed   | continue      | MUST       |
-| continue_blocked   | continue      | MUST       |
-| failover_triggered | failover      | MUST       |
+### 2.3 Evaluative Events (SHOULD)
+
+| event_type      | recommended phase        | constraint |
+| --------------- | ------------------------ | ---------- |
+| evaluation_pass | outcome                  | SHOULD     |
+| evaluation_fail | outcome                  | SHOULD     |
+| session_closed  | outcome (default) / none | SHOULD     |
+| info            | none                     | SHOULD     |
 
 ---
 
@@ -152,7 +150,7 @@ Example:
 ## 3. Phase Inference Guidance (Reference Code)
 
 ```python
-**VALID_PHASES = ["drift", "repair", "reentry", "continue", "outcome", "failover", "none"]
+VALID_PHASES = ["drift", "repair", "reentry", "continue", "outcome", "failover", "none"]
 
 def infer_phase(event_type: str, context: dict) -> str:
     current = context.get("current_phase")
@@ -167,7 +165,7 @@ def infer_phase(event_type: str, context: dict) -> str:
     if event_type in ["latency_spike", "pause_detected", "handoff"]:
         return current or "none"
 
-    return "none"**
+    return "none"
 ```
 
 ---
