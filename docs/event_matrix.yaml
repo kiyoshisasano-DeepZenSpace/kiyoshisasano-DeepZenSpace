@@ -1,0 +1,74 @@
+# docs/event_matrix.yaml
+# Normative machine-readable mapping for PLD Event Matrix v2.0
+
+version: "2.0"
+applies_to_schema: "quickstart/metrics/schemas/pld_event.schema.json"
+
+valid_phases:
+  - drift
+  - repair
+  - reentry
+  - continue
+  - outcome
+  - failover
+  - none
+
+prefix_to_phase:
+  D:  drift
+  R:  repair
+  RE: reentry
+  C:  continue
+  O:  outcome
+  F:  failover
+
+none_phase_policy:
+  allow_lifecycle_prefixes: false
+  description: >
+    Events with phase="none" MUST NOT use lifecycle prefixes D/R/RE/C/O/F
+    in pld.code. Codes for phase="none" MUST use non-lifecycle prefixes
+    (e.g., INFO_*, META_*, SYS_*), once the schema allows them.
+
+must_phase_map:
+  drift_detected:     drift
+  drift_escalated:    drift
+  repair_triggered:   repair
+  repair_escalated:   repair
+  reentry_observed:   reentry
+  continue_allowed:   continue
+  continue_blocked:   continue
+  failover_triggered: failover
+
+should_phase_map:
+  evaluation_pass: outcome
+  evaluation_fail: outcome
+  session_closed:  outcome
+  info:            none
+
+may_events:
+  - latency_spike
+  - pause_detected
+  - fallback_executed
+  - handoff
+
+session_closed_policy:
+  default_phase: outcome
+  alternative_phase: none
+  justification_required: true
+  description: >
+    Use phase="outcome" by default. phase="none" is allowed only when the
+    session closure was infrastructural (timeout, restart, system failure)
+    and NOT a semantic outcome.
+
+validation_modes:
+  strict:
+    must_violations: reject
+    should_violations: ignore
+    intended_usage: "production ingestion"
+  warn:
+    must_violations: reject
+    should_violations: warn
+    intended_usage: "integration / staging"
+  normalize:
+    must_violations: normalize
+    should_violations: warn_or_accept
+    intended_usage: "autonomous agents / adaptive runtimes"
