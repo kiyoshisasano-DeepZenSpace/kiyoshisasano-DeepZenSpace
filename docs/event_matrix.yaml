@@ -25,8 +25,7 @@ none_phase_policy:
   allow_lifecycle_prefixes: false
   description: >
     Events with phase="none" MUST NOT use lifecycle prefixes D/R/RE/C/O/F
-    in pld.code. Codes for phase="none" MUST use non-lifecycle prefixes
-    (e.g., INFO_*, META_*, SYS_*), once the schema allows them.
+    in pld.code. Use non-lifecycle prefixes (e.g., INFO_*, META_*, SYS_*).
 
 must_phase_map:
   drift_detected:     drift
