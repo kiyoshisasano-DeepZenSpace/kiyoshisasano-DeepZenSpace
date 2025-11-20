@@ -200,7 +200,7 @@ FR = (# failover events)
 
 | Metric | Status | Notes |
 |--------|--------|--------|
-| REI | archived | MAY return in v2.1 depending on workload feedback |
+| REI | archived | MAY return in v2.0 depending on workload feedback |
 | MRBF | archived | Deprecated due to overlap with VRL + PRDR |
 
 ---
