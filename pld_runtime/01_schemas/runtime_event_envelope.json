@@ -2,7 +2,9 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://example.com/schemas/runtime_event_envelope.schema.json",
   "title": "PLD Runtime Event Envelope",
-  "description": "Transport and observability envelope for PLD runtime events. The nested PLD event object remains the source of truth for lifecycle semantics.",
+  "version": "2.0",
+  "description": "A lightweight transport envelope for delivering PLD events with runtime context. The nested PLD event object remains the source of truth for lifecycle semantics.",
+
   "type": "object",
 
   "required": [
@@ -15,6 +17,7 @@
   ],
 
   "properties": {
+
     "envelope_id": {
       "type": "string",
       "description": "Unique identifier for this envelope instance (UUIDv4 recommended). Represents a single transport instance, not the semantic event identity."
@@ -23,27 +26,27 @@
     "timestamp": {
       "type": "string",
       "format": "date-time",
-      "description": "Envelope creation time in ISO 8601 format. May differ from event.timestamp (semantic event time at source)."
+      "description": "Envelope creation timestamp (ISO 8601). May differ from event.timestamp."
     },
 
     "version": {
       "type": "string",
       "enum": ["2.0"],
-      "description": "Envelope schema version (distinct from the nested PLD event schema_version)."
+      "description": "Envelope schema version (distinct from PLD event schema_version)."
     },
 
     "session": {
       "type": "object",
-      "description": "Logical session metadata. session_id MUST match event.session_id at ingestion time.",
       "required": ["session_id"],
+      "description": "Logical session metadata. Must align with the PLD event.",
       "properties": {
         "session_id": {
           "type": "string",
-          "description": "Identifier representing the conversational or agent runtime session. MUST equal event.session_id."
+          "description": "MUST equal event.session_id."
         },
         "user_id": {
           "type": "string",
-          "description": "Optional user identifier associated with the session."
+          "description": "Optional user or external system identifier."
         },
         "platform": {
           "type": "string",
@@ -57,11 +60,11 @@
             "unknown"
           ],
           "default": "unknown",
-          "description": "Canonical platform identifier. Use 'custom' when the platform is not covered by the predefined values."
+          "description": "Canonical platform type. Use `custom` when not listed."
         },
         "platform_detail": {
           "type": "string",
-          "description": "Free-form platform detail (e.g., internal service name, framework version). Recommended when platform='custom'."
+          "description": "Free-form detail such as internal system name, model version, etc."
         }
       },
       "additionalProperties": true
@@ -69,20 +72,20 @@
 
     "trace": {
       "type": "object",
-      "description": "Optional trace metadata for aligning PLD events with runtime and observability tools. Not authoritative for PLD lifecycle semantics.",
+      "description": "Optional trace metadata for debugging and observability. NOT authoritative for PLD lifecycle ordering.",
       "properties": {
         "trace_id": {
           "type": "string",
-          "description": "Identifier used to logically group related runtime execution segments (e.g., distributed trace or conversation trace ID)."
+          "description": "Logical identifier for related runtime steps or distributed trace."
         },
         "turn_index": {
           "type": "integer",
           "minimum": 0,
-          "description": "Optional zero-based index for trace-local ordering. For PLD lifecycle semantics and metrics, event.turn_sequence is authoritative; turn_index is intended for debugging/trace views only."
+          "description": "Debugging-only ordering helper. NOT authoritative—use event.turn_sequence for lifecycle ordering."
         },
         "parent_trace_id": {
           "type": "string",
-          "description": "Optional reference indicating a branched or forked lineage within the trace."
+          "description": "Optional parent identifier used for forks or conversation branches."
         }
       },
       "additionalProperties": true
@@ -90,8 +93,8 @@
 
     "runtime": {
       "type": "object",
-      "description": "Runtime execution context for observability, routing, and filtering. Must not override fields inside event.runtime.",
       "required": ["environment"],
+      "description": "Runtime execution context. May contain experimental fields.",
       "properties": {
         "environment": {
           "type": "string",
@@ -101,7 +104,7 @@
             "sandbox",
             "local"
           ],
-          "description": "Deployment environment in which the PLD event was observed."
+          "description": "Where the runtime executed."
         },
         "mode": {
           "type": "string",
@@ -112,11 +115,11 @@
             "audit"
           ],
           "default": "stream",
-          "description": "High-level execution or logging mode."
+          "description": "Execution/logging intention."
         },
         "tags": {
           "type": "object",
-          "description": "Optional arbitrary metadata used for grouping, filtering, or routing (e.g., tenant, region, experiment, shard).",
+          "description": "Optional metadata used for grouping (tenant, region, experiment, shard, etc.).",
           "additionalProperties": true
         }
       },
@@ -125,7 +128,8 @@
 
     "event": {
       "$ref": "../../docs/schemas/pld_event.schema.json",
-      "description": "Nested PLD runtime event object. MUST be structurally and semantically valid according to the PLD event specification."
+      "x-note": "Adjust the $ref path depending on your folder layout or replace with a URI registry reference.",
+      "description": "Nested PLD event. MUST be validated using the PLD event specification."
     }
   },
 
@@ -133,10 +137,9 @@
 
   "x-validation": {
     "session_id_consistency": {
-      "description": "Envelope-level invariant: session.session_id MUST equal event.session_id.",
       "rule": "session.session_id == event.session_id",
-      "on_fail": "reject",
-      "note": "This rule is NOT enforced by JSON Schema engines. It MUST be implemented in the ingestion/runtime validation layer."
+      "description": "Envelope MUST reference the same session as the contained event.",
+      "note": "This is NOT automatically enforced by JSON Schema. Implementations MUST enforce this check in the ingestion/validation layer."
     }
   }
 }
