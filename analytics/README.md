@@ -22,15 +22,40 @@ Use this folder when you are:
 This is the **analysis layer**, not a deployment or training resource.
 
 ---
-
 ## 2 — Contents
 
-| Item | Type | Purpose |
-|------|------|---------|
-| `multiwoz_2.4_n200/` | **Benchmark Dataset** | N=200 evaluation set annotated with PLD phases |
-| `case_study_end_to_end.md` | **Reference Case Study** | Applied SaaS support workflow showing stability improvements |
+This folder now contains two resource types:
 
-Each resource can be used independently — or together as a validation workflow.
+- **Applied evaluation artifacts** (datasets, case studies)
+- **Analytical frameworks** (interpretation layer for canonical metrics)
+
+### 🔹 Analytical Frameworks (New)
+
+These documents extend the formal metric definitions in  
+`/docs/metrics/PLD_metrics_spec.md` by providing:
+
+- interpretation guidance
+- observed usage patterns
+- analysis strategies
+- failure signatures
+- research questions
+
+| File | Focus |
+|------|-------|
+| `PRDR_framework.md` | Recurrence patterns after repair and stability inference |
+| `VRL_framework.md` | Temporal recovery behavior and responsiveness |
+| `continue_repair_ratio.md` | High-level alignment stability indicator |
+| `failure_mode_clustering.md` | Structural patterns of drift causes and remedies |
+| `session_closure_typology.md` | How interactions terminate and what closure implies |
+
+These documents are **informative** (not normative) and intended for:
+
+- researchers
+- model evaluators
+- system designers
+- runtime governance engineers
+
+They SHOULD be used **after** metrics are computed, not before.
 
 ---
 
