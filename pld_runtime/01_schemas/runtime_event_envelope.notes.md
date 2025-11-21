@@ -71,10 +71,21 @@ Correct behavior:
 
 Two timestamps exist intentionally and represent different concepts.
 
-| Field                | Meaning                                 | Constraints                                             |
-| -------------------- | --------------------------------------- | ------------------------------------------------------- |
+| Field                | Meaning                                                | Typical Use                                                                                     |
+| -------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| `envelope.timestamp` | Time the envelope was generated/emitted by the runtime | Ingestion latency, pipeline monitoring, debugging, ordering of arrival                          |
+| `event.timestamp`    | Time the semantic PLD event occurred                   | Conversation timelines, lifecycle metrics, PRDR/VRL, analytics, primary time-based partitioning |
+
+**Indexing guidance (non-normative but recommended):**
+
+* Use `event.timestamp` as the **primary time axis** for analytical queries and partitioning.
+* Use `envelope.timestamp` as a **secondary index** for debugging ingestion delays and pipeline health.
+
+Runtime systems MUST NOT assume these values are equal.
+
+-------|---------|-------------|
 | `envelope.timestamp` | Time the envelope was generated/emitted | Operational timestamp — may differ from event timestamp |
-| `event.timestamp`    | Time the semantic PLD event occurred    | Used for analytics, lifecycle evaluation, sequencing    |
+| `event.timestamp` | Time the semantic PLD event occurred | Used for analytics, lifecycle evaluation, sequencing |
 
 Runtime systems MUST NOT assume these values are equal.
 
@@ -131,16 +142,34 @@ This avoids schema pollution (example failure: storing typos like `seession_id`)
 
 ---
 
-## 7. Validation Strategy Models (Performance + Reliability)
+## 7. Validation Strategy Models
 
 Different environments require different validation strictness.
-Implementations SHOULD choose one of the following models:
+Implementations SHOULD choose one of the following models based on **SLOs, risk profile, and traffic volume**.
 
-| Model                  | Behavior                                                             | Use Case                                          |
-| ---------------------- | -------------------------------------------------------------------- | ------------------------------------------------- |
-| **Strict Mode**        | Every message fully validated                                        | Regulated, financial, clinical, high risk domains |
-| **Sampling Mode**      | Validate a fixed % (e.g., 1–10%)                                     | Large-scale or high-throughput systems            |
-| **Fail-Open With DLQ** | Invalid messages do not block processing; they are queued for review | Reliability-first streaming or real-time systems  |
+| Model                  | Behavior                                                                                                   | Typical Use Case                                                                                                  |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Strict Mode**        | Every message fully validated (schema + semantics)                                                         | Regulated, financial, clinical, high-risk or audit-heavy domains                                                  |
+| **Sampling Mode**      | Validate a fixed percentage (e.g., 1–10%) of messages                                                      | Large-volume systems where full validation is costly, but drift detection and quality monitoring are still needed |
+| **Fail-Open With DLQ** | Main pipeline continues even if validation fails; invalid messages are routed to a Dead Letter Queue (DLQ) | Reliability-first or low-latency streaming systems, experimentation pipelines                                     |
+
+For the purpose of this Working Draft, “large-scale” can be read as:
+
+* sustained throughput above roughly **1k–5k envelopes per second**, or
+* workloads where schema validation is demonstrably a non-trivial fraction of processing cost.
+
+**Practical guidance (research-phase deployments):**
+
+* Solo / lab research, early PoC → Sampling Mode or Fail-Open+DLQ is often acceptable.
+* Shared or multi-team environment → Prefer Strict Mode on at least one ingestion path (e.g., batch backfill).
+* Regulated / user-facing with SLAs → Strongly prefer Strict Mode with DLQ for resilience.
+
+Dead Letter Queue (DLQ) MUST retain enough metadata for replay and root-cause analysis (see Appendix).
+
+-------|----------|----------|
+| **Strict Mode** | Every message fully validated | Regulated, financial, clinical, high risk domains |
+| **Sampling Mode** | Validate a fixed % (e.g., 1–10%) | Large-scale or high-throughput systems |
+| **Fail-Open With DLQ** | Invalid messages do not block processing; they are queued for review | Reliability-first streaming or real-time systems |
 
 Dead Letter Queue (DLQ) MUST retain enough metadata for replay and root-cause analysis.
 
@@ -184,10 +213,14 @@ Fails PLD semantic validation.
 
 CI/CD pipelines SHOULD enforce:
 
-* Schema validation
-* Example compliance tests (valid must pass / invalid must fail)
-* Schema-breaking change detection
-* Confirmation prompts for required version bumps
+* Schema validation for the Envelope and PLD event schemas
+* Example-based tests (valid examples must pass / invalid examples must fail)
+* Guardrails against schema-breaking changes (or at least manual review and explicit version updates)
+
+To reduce fragmentation between teams, it is RECOMMENDED to share:
+
+* A common ingestion validator implementation (or library), and
+* A shared error taxonomy (see Appendix) for logging and DLQ routing.
 
 ---
 
@@ -201,6 +234,78 @@ CI/CD pipelines SHOULD enforce:
 | Event Timestamp     | Time the semantic event occurred                             |
 | Trace Metadata      | Debugging and observability context only — not semantic      |
 | Extension Fields    | Unknown or future fields preserved for forward compatibility |
+
+---
+
+## Appendix — Runtime Behavior & Common Questions
+
+This appendix captures typical questions from runtime engineers and provides recommended behavior.
+It is descriptive rather than exhaustive, and future revisions may refine these patterns.
+
+### A. Deduplication & Idempotency
+
+It is common to see **the same PLD event** transported in **multiple envelopes**, for example when retries or replays occur.
+
+Two identifiers exist:
+
+* `envelope_id` — identifies the envelope (transport instance)
+* `event.event_id` — identifies the semantic PLD event
+
+Recommended usage:
+
+| Layer                                          | Key to use       | Behavior                                                                                |
+| ---------------------------------------------- | ---------------- | --------------------------------------------------------------------------------------- |
+| Transport / streaming (Kafka, Pub/Sub, queues) | `envelope_id`    | Detect and manage duplicate envelopes at transport level                                |
+| Analytics / application logic / storage        | `event.event_id` | Treat as the semantic idempotency key. Use to deduplicate events with the same meaning. |
+
+Consumers SHOULD:
+
+* Use `event_id` as the primary deduplication key for semantic processing.
+* Avoid using `envelope_id` for semantic uniqueness checks.
+
+### B. Version Mismatch Handling (Forward Compatibility)
+
+Envelope and PLD event schemas may evolve at different speeds.
+Implementations need a clear policy when encountering **newer PLD event versions**.
+
+Let `supported_event_versions` be the set of PLD event schema versions known to the validator.
+
+| Case                           | Example                                                  | Recommended Behavior                                                                                            |
+| ------------------------------ | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Known version                  | `event.schema_version` in `supported_event_versions`     | Perform full schema + semantic validation                                                                       |
+| Older version                  | `event.schema_version` < min(`supported_event_versions`) | MAY validate if backwards-compatibility is maintained, or quarantine if not supported                           |
+| Newer version (forward-compat) | `event.schema_version` > max(`supported_event_versions`) | Do **not** fail ingestion by default. Store raw event, emit warning/metric, optionally route to a review queue. |
+
+In the forward-compatibility case, systems SHOULD:
+
+* Preserve the raw event for later reprocessing once validators are updated.
+* Emit structured logs or metrics indicating “unknown schema_version encountered”.
+
+### C. Dead Letter Queue (DLQ) Minimum Contents
+
+When using a DLQ, each DLQ message SHOULD include at least:
+
+* `envelope_id`
+* `event.event_id` (if present and parseable)
+* Original raw payload (or a lossless representation)
+* A machine-readable error code (see Error Taxonomy below)
+* A human-readable error message (optional but helpful)
+* Timestamp when the failure was observed
+
+This enables later replay, inspection, and remediation.
+
+### D. Error Taxonomy (Suggested)
+
+To reduce fragmentation across teams, a shared error classification is helpful.
+A simple, extensible starting point:
+
+* `INVALID_ENVELOPE_SCHEMA` — Envelope failed structural validation.
+* `INVALID_EVENT_SCHEMA` — PLD event failed schema or semantic validation.
+* `FORWARD_INCOMPATIBLE_EVENT_VERSION` — Event uses a newer `schema_version` than the validator supports.
+* `VALIDATION_TIMEOUT` — Validation did not complete in allotted time.
+* `INTERNAL_VALIDATOR_ERROR` — Unexpected failure within the validation service.
+
+Teams MAY extend this taxonomy, but reusing these codes improves searchability and dashboards.
 
 ---
 
