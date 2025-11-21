@@ -30,12 +30,13 @@ These metrics are intended to support:
 
 ## 1. Reference and Dependency Layers
 
-| Layer | Source | Enforcement |
-|-------|--------|-------------|
-| Level 1 | pld_event.schema.json | MUST pass schema validation |
-| Level 2 | event_matrix.yaml, event_matrix.md, 03_pld_event_spec.md | MUST satisfy semantic alignment |
-| Level 3 | This document | Proposed canonical operational metric definitions |
-| Level 4 | Examples, SQL queries, dashboards | Informative only (non-normative) |
+| Level       | Purpose / Role                              | Referenced Sources                                                                                                                                                               | Enforcement / Status                              |
+| ----------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| **Level 1** | **Schema Definition**                       | `docs/schemas/pld_event.schema.json`                                                                                                                                             | **MUST pass schema validation**                   |
+| **Level 2** | **Semantic Rules & Constraints**            | `docs/event_matrix.md`, `docs/schemas/event_matrix.yaml`, `docs/03_pld_event_spec.md`                                                                                            | **MUST satisfy semantic alignment**               |
+| **Level 3** | **Operational Guidance & Metric Standards** | `docs/01_pld_for_agent_engineers.md`, `docs/07_pld_operational_metrics_cookbook.md`, `docs/schemas/metrics_schema.yaml`                                                          | Proposed canonical operational metric definitions |
+| **Level 4** | **Examples and Illustrative Materials**     | `quickstart/hello_pld_runtime.py`, `quickstart/run_minimal_engine.py`, `quickstart/examples/minimal_pld_demo.py`, `quickstart/patterns/03_system/logging_and_schema_examples.md` | Informative only (non-normative)                  |
+
 
 If conflicting conditions arise, apply the following resolution order:
 
