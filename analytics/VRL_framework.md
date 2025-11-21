@@ -1,6 +1,6 @@
 # VRL Framework — Recovery Latency
 Status: Draft / Research Use
-Version: 0.1.0
+Version: 2.0
 
 ---
 
