@@ -17,13 +17,13 @@
   "properties": {
     "envelope_id": {
       "type": "string",
-      "description": "Unique identifier for this envelope instance (UUIDv4 recommended)."
+      "description": "Unique identifier for this envelope instance (UUIDv4 recommended). Represents a single transport instance, not the semantic event identity."
     },
 
     "timestamp": {
       "type": "string",
       "format": "date-time",
-      "description": "Envelope creation time in ISO 8601 format. May differ from event.timestamp (semantic event time)."
+      "description": "Envelope creation time in ISO 8601 format. May differ from event.timestamp (semantic event time at source)."
     },
 
     "version": {
@@ -78,7 +78,7 @@
         "turn_index": {
           "type": "integer",
           "minimum": 0,
-          "description": "Optional zero-based index for trace-local ordering. For PLD lifecycle semantics and metrics, event.turn_sequence is authoritative."
+          "description": "Optional zero-based index for trace-local ordering. For PLD lifecycle semantics and metrics, event.turn_sequence is authoritative; turn_index is intended for debugging/trace views only."
         },
         "parent_trace_id": {
           "type": "string",
