@@ -14,7 +14,7 @@ What this example shows:
 Relationship in the quickstart stack:
     - hello_pld_runtime.py     → first-contact conceptual demo
     - run_minimal_engine.py    → minimal but complete engine
-    - examples/minimal_pld_demo.py → usage example of the engine
+    - minimal_pld_demo.py      → usage example of the engine (this file)
 """
 
 from __future__ import annotations
@@ -79,9 +79,3 @@ def demo() -> None:
 
 if __name__ == "__main__":
     demo()
-
-
-if __name__ == "__main__":
-    run_demo()
-
-
