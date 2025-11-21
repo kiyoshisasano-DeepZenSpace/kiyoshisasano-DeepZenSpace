@@ -9,11 +9,10 @@ Status: Candidate (Working Draft, Normative for operational rules)
 
 **Referenced authoritative sources**:
 
-- Level 1 — Schema: `quickstart/metrics/schemas/pld_event.schema.json`
-- Level 2 — Semantic rules: `docs/event_matrix.md`, `docs/event_matrix.yaml`
-- Level 2 (Consolidated) — Specification text: `docs/03_pld_event_spec.md`
-- Level 3 — This document (derived operational rules)
-- Level 4 — Examples in Appendix A (non-normative)
+- **Level 1** — Schema: `docs/schemas/pld_event.schema.json`
+- **Level 2** — Semantics: `docs/event_matrix.md`, `docs/schemas/event_matrix.yaml`, `docs/03_pld_event_spec.md`
+- **Level 3** — Operations: `docs/01_pld_for_agent_engineers.md` (this document), `docs/07_pld_operational_metrics_cookbook.md`, `docs/schemas/metrics_schema.yaml`
+- **Level 4** — Examples: `quickstart/hello_pld_runtime.py`, `quickstart/run_minimal_engine.py`, `quickstart/examples/minimal_pld_demo.py`, `quickstart/patterns/03_system/logging_and_schema_examples.md`
   
 **Audience**: Engineers implementing PLD-aligned runtime behavior and logging.
 
@@ -718,3 +717,4 @@ These patterns are **examples**, not requirements. Implementers may define addit
 ---
 
 **End of Document**
+
