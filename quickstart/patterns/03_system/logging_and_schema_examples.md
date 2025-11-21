@@ -114,9 +114,13 @@ Example warning:
 
 ```json
 {
-  "event_type": "outcome",
-  "pld": { "phase": "outcome", "code": "OUT1_complete" },
-  "metrics": { "drift_count": 1, "repairs": 1 }
+  "event_type": "session_closed",
+  "pld": { "phase": "outcome", "code": "O1_session_closed" },
+  "metrics": {
+    "drift_events_count": 1,
+    "repair_events_count": 1,
+    "session_closed_outcome_count": 1
+  }
 }
 ```
 
