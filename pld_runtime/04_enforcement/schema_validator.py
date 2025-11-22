@@ -1,5 +1,5 @@
 """
-# version: 2.0.1
+# version: 2.0
 # status: runtime
 # authority: Level 5 — runtime implementation (consumes Level 1–3 specifications)
 # purpose: Validates PLD runtime event envelopes against schema, matrix, and transport rules.
@@ -919,4 +919,5 @@ def validate_jsonl_file(
 # - No additional Future-Stage Considerations have been integrated from the
 #   current technical review. This block is reserved for future items once
 #   they are formally recorded and prioritized.
+
 
