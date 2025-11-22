@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# version: 0.2.4   # ← patch bump applied
+# version: 2.0.0
 # status: draft
 # authority_scope: Level 5 — runtime implementation
 # purpose: Turn-level drift detection for PLD-aligned runtimes, producing PLD-compatible drift codes.
@@ -355,3 +355,4 @@ class DriftDetector:
 # - Model-driven drift inference
 # - Overlapping drift category handling policies
 # - Confidence calibration based on historical tuning
+
