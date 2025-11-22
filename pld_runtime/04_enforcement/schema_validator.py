@@ -1,24 +1,11 @@
 """
-pld_runtime/04_enforcement/schema_validator.py
-
-Version: 2.0.1
-Status: runtime (template)
-Authority Levels: 1, 2, 3, 5
-Scope: Envelope Rule, Transport Mapping, Event Schema + Matrix Enforcement
-Change Type: runtime-only (non-breaking if integrated as a validator layer)
-
-This module provides a PLD-aligned validation wrapper around:
-
-  - Level 1: PLD Runtime Event Schema (pld_event.schema.txt)
-  - Level 2: Event Matrix (event_matrix_schema.yaml.txt)
-  - Level 3: Metrics + Operational Rules
-  - Level 5: Runtime Event Envelope (runtime_event_envelope.json)
-
-It MUST NOT modify or regenerate any canonical schema or matrix content.
-It only *consumes* those specifications at runtime.
-
-Any behavioral changes to this file MUST be documented in
-pld_runtime/01_schemas/runtime_event_envelope.notes.md (Level 5).
+# version: 2.0.1
+# status: runtime
+# authority: Level 5 — runtime implementation (consumes Level 1–3 specifications)
+# purpose: Validates PLD runtime event envelopes against schema, matrix, and transport rules.
+# scope: Applies envelope rules, transport mapping checks, and Level 1–3 schema/matrix constraints without modification.
+# dependencies: Level 1 PLD event schema; Level 2 event matrix; Level 3 metrics/operational rules; Level 5 runtime event envelope.
+# change_classification: runtime-only, non-breaking (validator-layer behavior only)
 """
 
 from __future__ import annotations
@@ -932,3 +919,4 @@ def validate_jsonl_file(
 # - No additional Future-Stage Considerations have been integrated from the
 #   current technical review. This block is reserved for future items once
 #   they are formally recorded and prioritized.
+
