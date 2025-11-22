@@ -1,0 +1,24 @@
+code,prefix,numeric,descriptor,lifecycle_phase,event_type,source_file,normative_level,snippet
+D0_none,D,0,none,drift,drift_detected,pld_runtime/03_detection/pattern_classifier.py,runtime,Default no-drift classification code.
+D1_instruction,D,1,instruction,drift,drift_detected,pld_runtime/03_detection/pattern_classifier.py;pld_runtime/03_detection/drift_detector.py,runtime,Instruction or intent-mismatch drift.
+D2_context,D,2,context,drift,drift_detected,pld_runtime/03_detection/pattern_classifier.py;pld_runtime/03_detection/drift_detector.py,runtime,Context or expected-format related drift.
+D3_repeated_plan,D,3,repeated_plan,drift,drift_detected,pld_runtime/03_detection/pattern_classifier.py;pld_runtime/03_detection/drift_detector.py,runtime,Repeated plan detected across turns.
+D4_tool_error,D,4,tool_error,drift,drift_detected,pld_runtime/03_detection/pattern_classifier.py;pld_runtime/03_detection/drift_detector.py,runtime,Tool error or failing tool call.
+D5_latency_spike,D,5,latency_spike,drift,drift_detected,pld_runtime/03_detection/pattern_classifier.py;pld_runtime/03_detection/drift_detector.py,runtime,Latency above configured threshold.
+D5_information,D,5,information,drift,drift_detected,pld_runtime/03_detection/drift_detector.py,runtime,Information or retrieval failure style drift.
+D9_unspecified,D,9,unspecified,drift,drift_detected,pld_runtime/03_detection/pattern_classifier.py,runtime,Unspecified or catch-all drift classification.
+D0_unspecified,D,0,unspecified,drift,drift_detected,pld_runtime/03_detection/repair_detector.py,runtime,Default drift code when source_event lacks pld.code.
+C0_normal,C,0,normal,continue,continue_allowed,pld_runtime/01_schemas/runtime_event_envelope.notes.md,documentation,Example continue-phase code in envelope notes.
+C0_user_turn,C,0,user_turn,continue,continue_allowed,pld_runtime/02_ingestion/multiwoz_loader.py,runtime,Continue event for user turns in MultiWOZ adapter.
+C0_system_turn,C,0,system_turn,continue,continue_allowed,pld_runtime/02_ingestion/multiwoz_loader.py,runtime,Continue event for system or assistant turns.
+O0_session_closed,O,0,session_closed,outcome,session_closed,pld_runtime/02_ingestion/multiwoz_loader.py,runtime,Outcome event marking session closure.
+R1_clarify,R,1,clarify,repair,repair_triggered,pld_runtime/03_detection/repair_detector.py,runtime,Lightweight clarification-style repair action.
+R2_soft_repair,R,2,soft_repair,repair,repair_triggered,pld_runtime/03_detection/repair_detector.py,runtime,Default soft repair; also used as fallback mode.
+R3_rewrite,R,3,rewrite,repair,repair_triggered,pld_runtime/03_detection/repair_detector.py,runtime,Rewrite style repair after repeated drift.
+R4_request_clarification,R,4,request_clarification,repair,repair_triggered,pld_runtime/03_detection/repair_detector.py,runtime,Explicit request for more information from user.
+R5_hard_reset,R,5,hard_reset,repair,repair_triggered,pld_runtime/03_detection/repair_detector.py,runtime,Hard reset or strong recovery intervention.
+PRDR,,,post_repair_drift_recurrence,,,analytics/PRDR_framework.md,observational,Recurrence of drift after at least one repair.
+VRL,,,recovery_latency,,,analytics/VRL_framework.md,observational,Latency between drift and eventual recovery.
+continue_repair_ratio,,,continue_vs_repair_ratio,,,analytics/continue_repair_ratio.md,observational,Ratio of continue vs repair events as stability indicator.
+failure_mode_clustering,,,drift_failure_clusters,,,analytics/failure_mode_clustering.md,observational,Clustering of drift events into failure signatures.
+session_closure_typology,,,session_closure_patterns,,,analytics/session_closure_typology.md,observational,Observed typology of how sessions close.
