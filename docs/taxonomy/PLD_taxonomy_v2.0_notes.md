@@ -2,7 +2,7 @@
 
 _Last updated: Draft state — derived from v0.1 Proposal + Confidence Summary_
 
-This document reflects ongoing reasoning and should not be considered authoritative or finalized. 
+This document should be retained even in later stabilization or governance-lock phases to ensure decision traceability. 
 Content may change as implementation feedback and governance discussions evolve.
 
 
