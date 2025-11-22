@@ -6,7 +6,6 @@
 # scope: Provides session grouping, temporal semantics, and drift/repair/reentry checks for validator-layer use only.
 # dependencies: Read-only PLD lifecycle, schema, event matrix, and metrics specifications (Levels 1–3).
 # change_classification: runtime-only, non-breaking (patch-level import fix for sandbox execution)
-
 """
 
 from __future__ import annotations
@@ -504,5 +503,6 @@ __all__ = [
 #   for large-scale production logs (e.g., itertools.groupby over sorted input).
 # - Clarify and standardize handling of naive timestamps in _parse_ts, including
 #   whether PLD events MUST be timezone-aware or whether naive times imply UTC.
+
 
 
