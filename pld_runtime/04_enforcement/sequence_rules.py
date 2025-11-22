@@ -1,23 +1,12 @@
 """
-pld_runtime/04_enforcement/sequence_rules.py
+# version: 2.0
+# status: runtime
+# authority: Level 5 — runtime implementation (reads Level 1–3 specifications)
+# purpose: Enforces sequence and ordering rules for PLD events and sessions.
+# scope: Provides session grouping, temporal semantics, and drift/repair/reentry checks for validator-layer use only.
+# dependencies: Read-only PLD lifecycle, schema, event matrix, and metrics specifications (Levels 1–3).
+# change_classification: runtime-only, non-breaking (patch-level import fix for sandbox execution)
 
-Version: 2.0  # patch bump (import fix for sandbox execution)
-Status: runtime (template)
-Authority Levels: 1, 2, 3, 5
-Scope: Sequence / Ordering Rules, Session Grouping, Temporal Semantics, Metrics Support
-Change Type: runtime-only (non-breaking if integrated as validator layer)
-
-Primary basis: governance-aligned runtime template (new version).
-Selected additions merged from legacy v1.1 when functionally meaningful.
-
-Behavioral Guarantees:
-- Does NOT override Level 1–2 lifecycle or schema semantics.
-- Does NOT infer lifecycle transitions.
-- Does NOT compute metrics but MAY be consumed by metric modules.
-- Drift→Repair→Reentry time-based checks retained in opt-in config path.
-
-Any further changes MUST be logged in:
-pld_runtime/01_schemas/runtime_event_envelope.notes.md
 """
 
 from __future__ import annotations
@@ -515,4 +504,5 @@ __all__ = [
 #   for large-scale production logs (e.g., itertools.groupby over sorted input).
 # - Clarify and standardize handling of naive timestamps in _parse_ts, including
 #   whether PLD events MUST be timezone-aware or whether naive times imply UTC.
+
 
