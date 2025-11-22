@@ -1,3 +1,4 @@
+"""
 # version: 2.0
 # status: draft (runtime)
 # authority: Level 5 — runtime implementation (consumes Level 1–3 specifications)
@@ -5,6 +6,7 @@
 # scope: Provides governance-aligned defaults, legacy adapter compatibility, and immutable ingestion configuration.
 # dependencies: Level 1 schema; Level 2 event matrix; Level 3 metrics rules; Level 5 runtime event envelope.
 # change_classification: editorial + runtime-only (functional extension; migration-aligned)
+"""
 
 from __future__ import annotations
 
@@ -604,5 +606,6 @@ __all__ = [
     "make_multiwoz_config",
     "make_synthetic_config",
 ]
+
 
 
