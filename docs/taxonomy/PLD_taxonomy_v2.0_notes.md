@@ -54,9 +54,9 @@ Breakdown:
 | Numeric system and prefix rules | ⭐⭐⭐⭐☆ | Stable but with exceptions |
 | Observational / analytics items | ⭐⭐⭐⭐☆ | Not runtime, classification boundary needed |
 | Drift fallback models (D0/D9) | ⭐⭐⭐☆☆ | Requires governance clarification |
-| D5 collision (latency vs information) | ⭐⭐☆☆☆ | **Blocker for freeze** |
+| D5 collision (latency vs information) | ⭐⭐☆☆☆ | **Stabilization blocker** |
 
-This score represents **taxonomy structural maturity**, not freeze readiness.
+This score reflects taxonomy structural maturity rather than readiness for stabilization or governance locking.
 
 ---
 
