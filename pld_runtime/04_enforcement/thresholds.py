@@ -1,4 +1,4 @@
-# version: 2.0.0-rt-thresholds
+# version: 2.0.0
 # status: runtime
 # authority_level_scope: Level 5 — runtime implementation
 # purpose: Threshold policy definitions and evaluation helpers for PLD runtime metrics and runtime profiles.
@@ -358,3 +358,4 @@ class ThresholdSource:
 # - Consider enumeration or schema constraints for aggregation_scope/window.
 # - Consider replacement of dual threshold models with unified enforcement stack.
 # - Consider external configuration loading integration and governance hooks.
+
