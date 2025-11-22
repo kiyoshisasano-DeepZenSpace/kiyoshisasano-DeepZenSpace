@@ -1,26 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.normalization
-
-version: 0.1.2   # ← patch-level increment per request
-status: draft (runtime, experimental, template)
-scope: semantic PLD event normalization (Level 2) + legacy turn normalization helpers
-authority_levels: 1 (schema), 2 (event_matrix), 3 (operational)
-change_classification: runtime-only, non-breaking, example/template
-
-This module provides semantic normalization for PLD-aligned event ingestion.
-
-Primary behavior (governance-compliant):
-    - assumes Level 1 structural schema validation has already succeeded;
-    - enforces Level 2 semantic constraints (prefix-phase + event_type-phase);
-    - aligns with Level 3 validation mode rules (`strict`, `warn`, `normalize`);
-    - operates on PLD events, not chat turns or tool-call abstractions.
-
-Legacy behavior (compatibility only):
-    - retains prior NormalizedTurn constructors and role normalization helpers;
-    - these helpers are not part of PLD semantic enforcement and SHOULD be
-      treated as deprecated.
+# version: 2.0.0
+# status: draft (runtime template, experimental)
+# authority: Level 5 — runtime implementation (consumes Levels 1–3)
+# purpose: Normalizes PLD events according to semantic rules and validation modes.
+# scope: Applies Level 2 semantic alignment post-schema validation; retains legacy role/turn normalization for compatibility.
+# dependencies: Level 1 schema; Level 2 event matrix; Level 3 operational validation mode rules.
+# change_classification: runtime-only, non-breaking (example/template modernization)
 """
 
 from __future__ import annotations
@@ -401,3 +388,4 @@ Future-Stage Considerations:
 - Role mapping fidelity question: system/orchestrator/router distinctions.
 - Architecture refactor separating presentation roles from PLD-event semantics.
 """
+
