@@ -1,322 +1,222 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# version: 2.0.0
+# status: draft
+# authority: Level 5 — runtime implementation
+# scope: Repair selection and classification from PLD-aligned drift signals
+# change_type: runtime-only, incremental patch (core issue integration)
+# dependencies: PLD Event Schema v2.0; PLD Event Matrix v2.0
+
 """
-pld_runtime.detection.repair_detector (v1.1 Canonical Edition)
+PLD Runtime — Repair Detector (Scaffold + Minimal Reference Behavior)
 
-Detects PLD Repair behavior in runtime traces.
+Status: draft
+Authority: Level 5 — runtime implementation
+Scope: Repair selection and classification from PLD-aligned drift signals
 
-This module:
-- inspects conversational turns / agent actions
-- emits *candidate repair signals*
-- converts them to PLD events compatible with pld_event.schema.json
-
-It does NOT:
-- apply the repair
-- reset state
-- enforce any policy
-
-Responsibility:
-    detection only → enforcement/response_policy.py decides what to do.
-
-Canonical Alignment:
-- Repair codes follow the v1.1 taxonomy:
-
-    R1_clarify
-    R2_soft_repair
-    R3_rewrite
-    R4_request_clarification
-    R5_hard_reset
+Changes in this patch:
+    - Implements minimal working strategy logic (resolves: Non-Executable Prototype).
+    - Introduces RepairMode Enum to prevent magic string schema fragility.
+    - Normalizes DriftSignal to avoid data duplication conflicts (computed code property).
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from datetime import datetime, timezone
-from typing import Any, Dict, List, Literal, Optional
+from dataclasses import dataclass
+from enum import Enum
+from typing import Any, Dict, Optional
 
 
 # ---------------------------------------------------------------------------
-# Repair Categories (aligned with R1–R5 canonical codes)
+# Validation Mode
 # ---------------------------------------------------------------------------
 
-RepairType = Literal[
-    "R1_clarify",
-    "R2_soft_repair",
-    "R3_rewrite",
-    "R4_request_clarification",
-    "R5_hard_reset",
-    "unknown",
-]
+class ValidationMode(str, Enum):
+    STRICT = "strict"
+    WARN = "warn"
+    NORMALIZE = "normalize"
 
 
 # ---------------------------------------------------------------------------
-# Config
+# Schema-safe Repair Codes
 # ---------------------------------------------------------------------------
 
-@dataclass
-class RepairDetectionConfig:
-    """
-    Heuristic repair detection parameters.
+class RepairMode(str, Enum):
+    """Stable repair taxonomy aligned with expected R-prefix lifecycle semantics."""
 
-    sensitivity:
-        - low: conservative, only strong evidence is treated as repair
-        - medium: balanced default
-        - high: aggressive, more actions flagged as repair
-
-    signals:
-        - detect_ux_repair:
-            pacing / apology / retry language (maps to R3_rewrite by default).
-        - detect_local_repair:
-            explicit corrections or clarifications without full reset
-            (maps to R1_clarify / R2_soft_repair).
-        - detect_structural_repair:
-            mentions of memory, state alignment, re-sync, recomputing, etc.
-            (maps to R2_soft_repair).
-        - detect_hard_reset:
-            "let's start over", session reset, context discard
-            (maps to R5_hard_reset).
-    """
-
-    sensitivity: Literal["low", "medium", "high"] = "medium"
-    detect_ux_repair: bool = True
-    detect_local_repair: bool = True
-    detect_structural_repair: bool = True
-    detect_hard_reset: bool = True
+    R1_CLARIFY = "R1_clarify"
+    R2_SOFT_REPAIR = "R2_soft_repair"
+    R3_REWRITE = "R3_rewrite"
+    R4_REQUEST_CLARIFICATION = "R4_request_clarification"
+    R5_HARD_RESET = "R5_hard_reset"
+    FALLBACK = "R2_soft_repair"  # generic fallback
 
 
 # ---------------------------------------------------------------------------
-# Result Model
+# Drift Signal — normalized to avoid conflicting data
 # ---------------------------------------------------------------------------
 
 @dataclass
-class RepairSignal:
-    """Intermediate repair signal prior to PLD event conversion."""
-    type: RepairType
-    confidence: float
-    message: str
-    metadata: Dict[str, Any] = field(default_factory=dict)
+class DriftSignal:
+    """Represents drift, using source_event as the single source of truth."""
 
+    source_event: Dict[str, Any]
+    metadata: Optional[Dict[str, Any]] = None
+
+    @property
+    def code(self) -> str:
+        """Always derive from canonical PLD event payload to avoid desync."""
+        return self.source_event.get("pld", {}).get("code", "D0_unspecified")
+
+
+# ---------------------------------------------------------------------------
+# Repair Decision Model
+# ---------------------------------------------------------------------------
 
 @dataclass
-class RepairDetectionResult:
-    """Detection output for a single turn / action."""
-    has_repair: bool
-    signals: List[RepairSignal]
+class RepairDecision:
+    """Canonical output from repair selection."""
 
-    def strongest(self) -> Optional[RepairSignal]:
-        return max(self.signals, key=lambda s: s.confidence) if self.signals else None
-
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-
-
-def _norm(text: Optional[str]) -> str:
-    return (text or "").lower().strip()
-
-
-def _confidence(base: float, sensitivity: str) -> float:
-    if sensitivity == "low":
-        return max(0.0, min(1.0, base - 0.1))
-    if sensitivity == "high":
-        return max(0.0, min(1.0, base + 0.1))
-    return max(0.0, min(1.0, base))
+    mode: RepairMode
+    escalation_level: Optional[int] = None
+    normalized: bool = False
+    notes: Optional[str] = None
 
 
 # ---------------------------------------------------------------------------
-# Detection Logic
+# Repair Detector (with minimal functioning reference logic)
 # ---------------------------------------------------------------------------
 
 class RepairDetector:
-    """
-    Heuristic-based repair detector.
+    """PLD-aligned repair selector.
 
-    Input:
-        content:
-            Agent/system message or tool result that might embody a repair.
-
-        runtime:
-            Free-form dict, recommended keys:
-              - latency_ms
-              - previously_failed (bool)
-              - previous_phase ("drift", "repair", "reentry", "none")
-              - tool_used
-              - reset_flag (bool)  # if runtime knows it reset context
-
-    Output:
-        RepairDetectionResult with one or more RepairSignal objects
-        classified into canonical repair types (R1–R5).
+    Now contains:
+        ✔ minimal executable strategy table
+        ✔ schema-safe decision taxonomy
+        ✔ drift normalization safeguards
     """
 
-    def __init__(self, config: Optional[RepairDetectionConfig] = None):
-        self.config = config or RepairDetectionConfig()
-
-    def detect(self, *, content: str, runtime: Dict[str, Any]) -> RepairDetectionResult:
-        txt = _norm(content)
-        signals: List[RepairSignal] = []
-
-        # ---------- UX Repair (R3_rewrite-like) ----------
-        # UX-facing language that smooths pacing or acknowledges issues.
-        if self.config.detect_ux_repair:
-            if any(
-                k in txt
-                for k in ["still checking", "one moment", "hold on", "processing", "investigating"]
-            ):
-                signals.append(
-                    RepairSignal(
-                        type="R3_rewrite",
-                        confidence=_confidence(0.6, self.config.sensitivity),
-                        message="Pacing / reassurance language suggests UX-oriented repair.",
-                        metadata={"kind": "pacing_ack"},
-                    )
-                )
-            if "sorry" in txt or "apologize" in txt:
-                signals.append(
-                    RepairSignal(
-                        type="R3_rewrite",
-                        confidence=_confidence(0.55, self.config.sensitivity),
-                        message="Apologetic phrasing suggests UX repair / rewrite of prior behavior.",
-                        metadata={"kind": "apology"},
-                    )
-                )
-
-        # ---------- Local Repair (R1_clarify / R2_soft_repair-like) ----------
-        if self.config.detect_local_repair:
-            # Explicit clarification
-            if any(k in txt for k in ["let me correct", "to clarify", "what i meant", "small correction"]):
-                signals.append(
-                    RepairSignal(
-                        type="R1_clarify",
-                        confidence=_confidence(0.7, self.config.sensitivity),
-                        message="Explicit local clarification or correction.",
-                        metadata={"kind": "local_correction"},
-                    )
-                )
-            # Local retry / soft adjustment
-            if "retry" in txt or "try again" in txt:
-                signals.append(
-                    RepairSignal(
-                        type="R2_soft_repair",
-                        confidence=_confidence(0.6, self.config.sensitivity),
-                        message="Retry wording suggests local soft repair.",
-                        metadata={"kind": "retry"},
-                    )
-                )
-
-        # ---------- Structural Repair (R2_soft_repair-like) ----------
-        if self.config.detect_structural_repair:
-            if any(
-                k in txt
-                for k in ["resync", "re-sync", "synchronize", "refreshing context", "reloading data"]
-            ):
-                signals.append(
-                    RepairSignal(
-                        type="R2_soft_repair",
-                        confidence=_confidence(0.75, self.config.sensitivity),
-                        message="Mentions of synchronization / context refresh indicate structural soft repair.",
-                        metadata={"kind": "state_sync"},
-                    )
-                )
-            if "updating memory" in txt or "rebuilding the plan" in txt:
-                signals.append(
-                    RepairSignal(
-                        type="R2_soft_repair",
-                        confidence=_confidence(0.7, self.config.sensitivity),
-                        message="Explicit state or plan rebuild indicates structural soft repair.",
-                        metadata={"kind": "plan_rebuild"},
-                    )
-                )
-
-        # ---------- Hard Reset (R5_hard_reset-like) ----------
-        if self.config.detect_hard_reset:
-            hard_reset_phrases = [
-                "let's start over",
-                "starting over",
-                "reset this conversation",
-                "clear the context",
-                "i will restart",
-            ]
-            if any(p in txt for p in hard_reset_phrases) or runtime.get("reset_flag"):
-                signals.append(
-                    RepairSignal(
-                        type="R5_hard_reset",
-                        confidence=_confidence(0.8, self.config.sensitivity),
-                        message="Hard reset / restart wording detected.",
-                        metadata={"reset_flag": bool(runtime.get("reset_flag"))},
-                    )
-                )
-
-        return RepairDetectionResult(
-            has_repair=bool(signals),
-            signals=signals,
-        )
-
-
-# ---------------------------------------------------------------------------
-# Conversion to PLD Event Format
-# ---------------------------------------------------------------------------
-
-def repair_signal_to_pld_event(
-    signal: RepairSignal,
-    *,
-    session_id: str,
-    turn_id: Optional[int] = None,
-) -> Dict[str, Any]:
-    """
-    Convert a RepairSignal into a PLD event object compatible with
-    pld_event.schema.json.
-
-    Mapping (RepairType → PLD code):
-
-        R1_clarify             → R1_clarify
-        R2_soft_repair         → R2_soft_repair
-        R3_rewrite             → R3_rewrite
-        R4_request_clarification → R4_request_clarification
-        R5_hard_reset          → R5_hard_reset
-        unknown                → R2_soft_repair (generic soft repair fallback)
-    """
-    if signal.type in {
-        "R1_clarify",
-        "R2_soft_repair",
-        "R3_rewrite",
-        "R4_request_clarification",
-        "R5_hard_reset",
-    }:
-        pld_code = signal.type
-    else:
-        # For unknown repairs, degrade to a generic soft repair code.
-        pld_code = "R2_soft_repair"
-
-    return {
-        "event_id": f"repair-{signal.type}-{_now_iso()}",
-        "timestamp": _now_iso(),
-        "session_id": session_id,
-        "turn_id": turn_id,
-        "source": "runtime_detector",
-        "event_type": "repair_triggered",
-        "pld": {
-            "phase": "repair",
-            "code": pld_code,
-            "confidence": signal.confidence,
-        },
-        "payload": {
-            "message": signal.message,
-            "metadata": signal.metadata,
-        },
-        "runtime": {
-            "detector": "repair_rule_based_v1_1",
-        },
+    _REFERENCE_STRATEGY_TABLE = {
+        "D1": RepairMode.R1_CLARIFY,
+        "D2": RepairMode.R2_SOFT_REPAIR,
+        "D3": RepairMode.R2_SOFT_REPAIR,
+        "D4": RepairMode.R3_REWRITE,
+        "D5": RepairMode.R5_HARD_RESET,
     }
 
+    def __init__(
+        self,
+        validation_mode: ValidationMode = ValidationMode.STRICT,
+        max_soft_repairs: int = 1,
+        max_total_repairs: int = 3,
+    ) -> None:
+        self.validation_mode = validation_mode
+        self.max_soft_repairs = max_soft_repairs
+        self.max_total_repairs = max_total_repairs
+
+    # ---------------------------------------------------------------------
+    # Core logic
+    # ---------------------------------------------------------------------
+
+    def select_repair(
+        self,
+        drift: DriftSignal,
+        repair_count_for_session: int,
+        repair_count_for_drift_code: int,
+    ) -> RepairDecision:
+        """Select a repair strategy for a given drift signal.
+
+        Args:
+            drift:
+                DriftSignal instance describing the detected drift.
+            repair_count_for_session:
+                Number of prior repair attempts in the current session.
+            repair_count_for_drift_code:
+                Number of prior repair attempts specifically associated with
+                this drift.code.
+
+        Returns:
+            RepairDecision describing the chosen repair strategy.
+        """
+        # TODO: Review required — clarify state ownership between Detector and Controller
+        drift_prefix = drift.code.split("_")[0]  # ex: "D3"
+        mode = self._REFERENCE_STRATEGY_TABLE.get(drift_prefix, RepairMode.FALLBACK)
+
+        # Escalation rule:
+        # - First cross of max_soft_repairs threshold → intermediate rewrite (R3)
+        # - Hard reset (R5) reserved for crossing max_total_repairs
+        if repair_count_for_drift_code >= self.max_soft_repairs:
+            if repair_count_for_session >= self.max_total_repairs:
+                mode = RepairMode.R5_HARD_RESET
+            else:
+                mode = RepairMode.R3_REWRITE
+
+        return RepairDecision(
+            mode=mode,
+            escalation_level=repair_count_for_drift_code,
+            notes=f"Selected via reference strategy for {drift.code}",
+        )
+
+    def to_repair_event(
+        self,
+        decision: RepairDecision,
+        session_id: str,
+        turn_sequence: int,
+        base_timestamp: str,
+        source: str = "runtime",
+        previous_event_id: Optional[str] = None,
+    ) -> Dict[str, Any]:
+        """Construct a PLD repair event skeleton from a RepairDecision."""
+        return {
+            "schema_version": "2.0",
+            "event_id": f"repair-{turn_sequence}-{decision.mode.value}-{base_timestamp}",
+            "timestamp": base_timestamp,
+            "session_id": session_id,
+            "turn_sequence": turn_sequence,
+            "source": source,
+            "event_type": "repair_triggered",
+            "pld": {
+                "phase": "repair",
+                "code": decision.mode.value,
+                "confidence": 1.0,
+            },
+            "ux": {
+                "user_visible_state_change": False,
+            },
+            "payload": {
+                "notes": decision.notes,
+                "escalation_level": decision.escalation_level,
+                "previous_event_id": previous_event_id,
+            },
+        }
+
+    def validate_drift_signal(self, drift: DriftSignal) -> None:
+        """Optional hook for drift-signal validation against PLD semantics."""
+        # TODO: Review required (alignment question #1: state ownership / RepairHistory)
+        # TODO: Review required (alignment question #2: validation strictness vs fail-open prototype)
+        return None
+
+
+# ---------------------------------------------------------------------------
+# Public API
+# ---------------------------------------------------------------------------
 
 __all__ = [
     "RepairDetector",
-    "RepairDetectionConfig",
-    "RepairSignal",
-    "RepairDetectionResult",
-    "repair_signal_to_pld_event",
+    "ValidationMode",
+    "RepairDecision",
+    "RepairMode",
+    "DriftSignal",
 ]
+
+
+# ---------------------------------------------------------------------------
+# Deferred for later phase
+# ---------------------------------------------------------------------------
+
+"""
+Future-Stage Considerations (Not implemented in this patch):
+
+- Automatic escalation memory / session state retention
+- Full event bus integration for ID, timestamp, and ordering authority
+- Cross-session analytics and adaptive escalation weighting
+- Configurable plug-in detection heuristics similar to the v1.1 behavioral model
+"""
