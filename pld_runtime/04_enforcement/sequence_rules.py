@@ -1,5 +1,5 @@
 """
-# version: 2.0
+# version: 2.0.0
 # status: runtime
 # authority: Level 5 — runtime implementation (reads Level 1–3 specifications)
 # purpose: Enforces sequence and ordering rules for PLD events and sessions.
@@ -503,6 +503,7 @@ __all__ = [
 #   for large-scale production logs (e.g., itertools.groupby over sorted input).
 # - Clarify and standardize handling of naive timestamps in _parse_ts, including
 #   whether PLD events MUST be timezone-aware or whether naive times imply UTC.
+
 
 
 
