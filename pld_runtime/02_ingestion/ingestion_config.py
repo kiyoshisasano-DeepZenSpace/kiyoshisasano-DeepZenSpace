@@ -1,5 +1,5 @@
 """
-# version: 2.0
+# version: 2.0.0
 # status: draft (runtime)
 # authority: Level 5 — runtime implementation (consumes Level 1–3 specifications)
 # purpose: Defines ingestion configuration for envelope rules, transport mapping, and adapter settings.
@@ -606,6 +606,7 @@ __all__ = [
     "make_multiwoz_config",
     "make_synthetic_config",
 ]
+
 
 
 
