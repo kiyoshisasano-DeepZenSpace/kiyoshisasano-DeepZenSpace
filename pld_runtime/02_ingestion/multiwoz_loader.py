@@ -1,51 +1,11 @@
 """
-pld_runtime/02_ingestion/multiwoz_loader.py
-
-Version: 2.0
-Status: experimental (runtime_template)
-Scope: Dataset ingestion → PLD events + optional runtime envelopes
-Authority:
-  - Level 1: docs/schemas/pld_event.schema.json (hard structural invariants)
-  - Level 2: docs/schemas/event_matrix.yaml, docs/event_matrix.md,
-             docs/03_pld_event_spec.md (semantic rules)
-  - Level 3: docs/01_pld_for_agent_engineers.md, docs/metrics/PLD_metrics_spec.md
-  - Level 5: pld_runtime/01_schemas/runtime_event_envelope.json (transport envelope)
-
-This module provides a *template* adapter from a MultiWOZ-style dataset to
-PLD-aligned runtime events, optionally wrapped in the runtime envelope, and a
-DialogIterator-compatible entry point that exposes generic ingestion items.
-
-Design constraints:
-
-- Does NOT modify or reinterpret the canonical schemas.
-- Emits PLD events that are structurally compatible with `pld_event.schema.json`
-  and semantically aligned with the Event Matrix defaults:
-
-    * `continue_allowed` → phase="continue" (MUST)
-    * `session_closed`  → phase="outcome" (SHOULD, default)
-
-- Uses simple, conservative mappings:
-    * user utterances  → source="user",   event_type="continue_allowed"
-    * system utterances → source="assistant", event_type="continue_allowed"
-    * final turn in a dialogue → event_type="session_closed", phase="outcome"
-
-- Does NOT attempt drift/repair/failover inference. Those behaviors should be
-  introduced by upstream detection and control logic, which can choose to emit
-  additional PLD events (drift_detected, repair_triggered, etc.).
-
-- Does NOT perform JSON Schema or Event Matrix validation. Callers MUST run
-  their own validators after constructing events.
-
-Runtime governance notes:
-
-- This file is Level 5 (runtime implementation). Levels 1–3 override it under
-  all conditions.
-- If this template is adopted and customized, changes SHOULD be documented in:
-      pld_runtime/01_schemas/runtime_event_envelope.notes.md
-  as required by the runtime mutability policy.
-
-This module is intended to be safe to drop into a PLD-aligned runtime and then
-customized locally. All TODO hooks are explicitly marked.
+# version: 2.0.0
+# status: experimental (runtime template)
+# authority: Level 5 — runtime implementation (consumes Level 1–3 specifications)
+# purpose: Provides a template dataset adapter mapping MultiWOZ dialogues to PLD-aligned runtime events.
+# scope: Emits structurally compliant PLD events with optional runtime envelopes; no inference or validation logic included.
+# dependencies: Level 1 schema, Level 2 event matrix, Level 3 metrics rules, Level 5 runtime envelope.
+# change_classification: runtime-only, non-breaking (template; customization expected)
 """
 
 from __future__ import annotations
@@ -736,3 +696,4 @@ Projects adopting this module SHOULD:
 #   follow-up work for this ingestion adapter (e.g., moving to a PLD-Event-
 #   first ingestion protocol or introducing discriminators for mixed item
 #   streams).
+
