@@ -1,50 +1,58 @@
+# version: 2.0.0-rt-thresholds
+# status: runtime
+# authority_level_scope: Level 5 — runtime implementation
+# purpose: Threshold policy definitions and evaluation helpers for PLD runtime metrics and runtime profiles.
+# change_classification: runtime-only, non-breaking, prototype technical review patch
+# dependencies: Level 1 PLD event schema v2.x, Level 2 event matrix v2.x, Level 3 runtime metrics schema v2.x
+
 """
-pld_runtime/04_enforcement/thresholds.py
+Threshold policy module for PLD-aligned runtimes.
 
-PLD Runtime Thresholds — Merged Edition
+This module provides data structures and entry points for defining and
+evaluating metric-based enforcement thresholds (warn/alert/failover, etc.).
+It is intentionally implementation-specific and MUST NOT override Level 1–3
+specifications. All semantics derived from metrics MUST use PLD-valid events.
 
-version: 2.0.4-rt-merge
-status: runtime
-referenced_authority_levels: [1, 2, 3, 5]
-scope: Enforcement thresholds (drift detection, observability, timing windows, validation mode alignment)
-change_type: merged-from-v1.1, runtime-only, non-breaking, patch-integration
-
-PRIMARY BASIS:
-    - v2.0.0-rt1 template (authoritative runtime structure)
-MERGED CONTENT:
-    - v1.1 timing-based enforcement semantics retained selectively where still applicable
-      and not replaced by new confidence/escalation logic.
-
-GOVERNANCE RULES:
-    - No changes to Level 1 schema fields or enums.
-    - No changes to Level 2 phase–prefix or event_type–phase mapping.
-    - No changes to Level 3 metric definitions.
-    - Additions are runtime-only, safe, and do not alter canonical interpretations.
-
-# TODO: Review required (referenced_authority_levels usage — should ThresholdProfile
-# carry an explicit authority level for runtime validation?)
+# NOTE: Migration difference
+# Environment/validation-mode threshold profiles from v2.0.4-rt-merge are
+# retained as a compatibility layer. Metric-level threshold evaluation
+# (MetricThreshold + evaluate_thresholds) is the primary interface.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import Dict, Mapping, Any
+from typing import Any, Dict, Iterable, Mapping, Optional, Sequence, Tuple
 
 
 # ---------------------------------------------------------------------------
-# Validation Modes (authoritative from v2 runtime)
+# Core enums
 # ---------------------------------------------------------------------------
+
 
 class ValidationMode(str, Enum):
+    """Mirror of runtime validation modes used for PLD event/metric handling."""
+
     STRICT = "strict"
     WARN = "warn"
     NORMALIZE = "normalize"
 
 
-# ---------------------------------------------------------------------------
-# Runtime Environment (aligned with envelope)
-# ---------------------------------------------------------------------------
+class ThresholdOperator(str, Enum):
+    GT = ">"
+    GTE = ">="
+    LT = "<"
+    LTE = "<="
+    EQ = "=="
+    NE = "!="
+
+
+class ThresholdSeverity(str, Enum):
+    INFO = "info"
+    WARN = "warn"
+    CRITICAL = "critical"
+
 
 class Environment(str, Enum):
     PRODUCTION = "production"
@@ -54,8 +62,48 @@ class Environment(str, Enum):
 
 
 # ---------------------------------------------------------------------------
-# v2 Runtime Threshold Classes (updated for interface consistency)
+# Metric-level configuration structures (primary)
 # ---------------------------------------------------------------------------
+
+
+# NOTE: Core Technical Issue Addressed — semantic ambiguity:
+# Until a formal vocabulary is governed, string interpretation responsibility
+# is explicitly delegated to the consumer (runtime or policy engine).
+AGGREGATION_SCOPE_NOTE = (
+    "Interpretation of `aggregation_scope` and `window` is implementation-defined; "
+    "runtime-level consumers MUST supply normalization or validation if required."
+)
+
+
+@dataclass(frozen=True)
+class MetricThreshold:
+    metric: str
+    operator: ThresholdOperator
+    value: float
+    severity: ThresholdSeverity
+
+    # Optional configuration-layer hints
+    aggregation_scope: Optional[str] = None
+    window: Optional[str] = None
+    validation_mode: Optional[ValidationMode] = None
+    description: Optional[str] = None
+
+    # NOTE: Migration difference
+    _semantics_notice: str = AGGREGATION_SCOPE_NOTE
+
+
+@dataclass(frozen=True)
+class ThresholdBreach:
+    metric: str
+    threshold: MetricThreshold
+    observed_value: float
+    message: str
+
+
+# ---------------------------------------------------------------------------
+# Legacy-style runtime profile thresholds (compatibility layer)
+# ---------------------------------------------------------------------------
+
 
 @dataclass(frozen=True)
 class DriftThresholds:
@@ -73,19 +121,8 @@ class ObservabilityThresholds:
 
 @dataclass(frozen=True)
 class RecoveryThresholds:
-    """
-    Thresholds for recovery and reentry behavior.
-
-    # NOTE: Migration difference
-    # These thresholds are aligned with VRL semantics but do not redefine how
-    # the VRL metric is computed; they only configure runtime windows.
-    """
-
     max_recovery_turns: int
     max_recovery_seconds: int
-
-    # TODO: Review required (clarify whether recovery enforcement uses
-    # OR vs AND between max_recovery_turns and max_recovery_seconds).
 
 
 @dataclass(frozen=True)
@@ -95,31 +132,14 @@ class ValidationThresholds:
     include_should_violations_in_canonical_metrics: bool
 
 
-# ---------------------------------------------------------------------------
-# Optional Timing Thresholds
-# ---------------------------------------------------------------------------
-
 @dataclass(frozen=True)
 class TimingThresholds:
-    """
-    Retained from v1.1 to support timing-based evaluation workflows.
-
-    These are optional at the behavioral level — enforcement logic SHOULD check
-    `.enabled` to decide whether to use these limits.
-    """
-
     enabled: bool = False
     drift_to_repair_ms: int = 30000
     repair_to_reentry_ms: int = 30000
     jitter_allowance_ms: int = 5000
     grace_window_end_ms: int = 10000
 
-    # TODO: Review required (should a global configuration flag determine activation?)
-
-
-# ---------------------------------------------------------------------------
-# Unified Threshold Profile
-# ---------------------------------------------------------------------------
 
 @dataclass(frozen=True)
 class ThresholdProfile:
@@ -130,87 +150,143 @@ class ThresholdProfile:
     observability: ObservabilityThresholds
     recovery: RecoveryThresholds
     validation: ValidationThresholds
-    timing: TimingThresholds  # presence is guaranteed; optionality via `enabled` flag
+    timing: TimingThresholds
 
 
 # ---------------------------------------------------------------------------
-# Defaults
+# Evaluation helpers (metric-level)
 # ---------------------------------------------------------------------------
+
+_EPSILON = 1e-9  # NOTE: Core Technical Issue Fixed — float comparison stability
+
+
+def _compare(operator: ThresholdOperator, lhs: float, rhs: float) -> bool:
+    """Pure comparator helper (audit safe, no implicit type coercion)."""
+
+    # NOTE: Migration difference — EQ and NE now use tolerance-based comparisons.
+    if operator == ThresholdOperator.EQ:
+        return abs(lhs - rhs) < _EPSILON
+    if operator == ThresholdOperator.NE:
+        return abs(lhs - rhs) >= _EPSILON
+
+    if operator == ThresholdOperator.GT:
+        return lhs > rhs
+    if operator == ThresholdOperator.GTE:
+        return lhs >= rhs
+    if operator == ThresholdOperator.LT:
+        return lhs < rhs
+    if operator == ThresholdOperator.LTE:
+        return lhs <= rhs
+
+    raise ValueError(f"Unsupported operator: {operator!r}")
+
+
+def evaluate_thresholds(
+    metrics: Mapping[str, float],
+    thresholds: Iterable[MetricThreshold],
+    *,
+    active_mode: Optional[ValidationMode] = None,
+) -> Sequence[ThresholdBreach]:
+    """Evaluate MetricThreshold entries against provided metric values.
+
+    WARNING: This function only evaluates generic MetricThresholds.
+    It does NOT enforce legacy ThresholdProfile limits (Drift/Recovery).
+    Consumers MUST apply any profile-based checks separately.
+    """
+    breaches: list[ThresholdBreach] = []
+
+    for threshold in thresholds:
+        if threshold.validation_mode and active_mode and threshold.validation_mode is not active_mode:
+            continue
+
+        value = metrics.get(threshold.metric)
+        if value is None:
+            # NOTE: Core Technical Issue Fixed — missing metrics in STRICT mode
+            if active_mode is ValidationMode.STRICT:
+                message_parts: list[str] = [
+                    f"metric={threshold.metric}",
+                    "observed=missing",
+                    "reason=missing_metric_in_strict_mode",
+                    f"severity={threshold.severity.value}",
+                ]
+                breaches.append(
+                    ThresholdBreach(
+                        metric=threshold.metric,
+                        threshold=threshold,
+                        observed_value=float("nan"),
+                        message="; ".join(message_parts),
+                    )
+                )
+            continue
+
+        if _compare(threshold.operator, value, threshold.value):
+            message_parts: list[str] = [
+                f"metric={threshold.metric}",
+                f"observed={value}",
+                f"operator={threshold.operator.value}",
+                f"threshold={threshold.value}",
+                f"severity={threshold.severity.value}",
+            ]
+            if threshold.aggregation_scope:
+                message_parts.append(f"scope={threshold.aggregation_scope}")
+            if threshold.window:
+                message_parts.append(f"window={threshold.window}")
+            if threshold.description:
+                message_parts.append(f"desc={threshold.description}")
+
+            breaches.append(
+                ThresholdBreach(
+                    metric=threshold.metric,
+                    threshold=threshold,
+                    observed_value=value,
+                    message="; ".join(message_parts),
+                )
+            )
+
+    return breaches
+
+
+# ---------------------------------------------------------------------------
+# Default threshold sets
+# ---------------------------------------------------------------------------
+
+
+def get_default_thresholds() -> Tuple[MetricThreshold, ...]:
+    return ()
+
+
+def build_threshold_index(
+    thresholds: Iterable[MetricThreshold],
+) -> Dict[str, Tuple[MetricThreshold, ...]]:
+    index: Dict[str, list[MetricThreshold]] = {}
+    for t in thresholds:
+        index.setdefault(t.metric, []).append(t)
+    return {metric: tuple(ts) for metric, ts in index.items()}
+
+
+# ---------------------------------------------------------------------------
+# Legacy profile system (retained for compatibility)
+# ---------------------------------------------------------------------------
+
 
 _DEFAULT_VALIDATION_THRESHOLDS: Mapping[ValidationMode, ValidationThresholds] = {
-    ValidationMode.STRICT: ValidationThresholds(
-        allow_rejected_events_for_observability_metrics=False,
-        log_normalization_attempts=False,
-        include_should_violations_in_canonical_metrics=False,
-    ),
-    ValidationMode.WARN: ValidationThresholds(
-        allow_rejected_events_for_observability_metrics=True,
-        log_normalization_attempts=True,
-        include_should_violations_in_canonical_metrics=True,
-    ),
-    ValidationMode.NORMALIZE: ValidationThresholds(
-        allow_rejected_events_for_observability_metrics=True,
-        log_normalization_attempts=True,
-        include_should_violations_in_canonical_metrics=True,
-    ),
+    ValidationMode.STRICT: ValidationThresholds(False, False, False),
+    ValidationMode.WARN: ValidationThresholds(True, True, True),
+    ValidationMode.NORMALIZE: ValidationThresholds(True, True, True),
 }
 
-
-# ---------------------------------------------------------------------------
-# Named Configuration Constants (keyword-based for safety)
-# ---------------------------------------------------------------------------
-
-# Base defaults
-_BASE_DRIFT = DriftThresholds(
-    min_confidence_to_emit=0.60,
-    min_confidence_for_escalation=0.80,
-    max_soft_repairs_per_cycle=2,
-    max_drift_cycles_before_failover=3,
-)
-_BASE_OBSERVABILITY = ObservabilityThresholds(
-    latency_spike_ms=3500,
-    consecutive_spike_window=2,
-)
-_BASE_RECOVERY = RecoveryThresholds(
-    max_recovery_turns=10,
-    max_recovery_seconds=300,
-)
+_BASE_DRIFT = DriftThresholds(0.60, 0.80, 2, 3)
+_BASE_OBSERVABILITY = ObservabilityThresholds(3500, 2)
+_BASE_RECOVERY = RecoveryThresholds(10, 300)
 _BASE_TIMING = TimingThresholds(enabled=False)
 
-# Production overrides
-_PRODUCTION_DRIFT = DriftThresholds(
-    min_confidence_to_emit=0.70,
-    min_confidence_for_escalation=0.90,
-    max_soft_repairs_per_cycle=2,
-    max_drift_cycles_before_failover=2,
-)
-_PRODUCTION_OBSERVABILITY = ObservabilityThresholds(
-    latency_spike_ms=2500,
-    consecutive_spike_window=2,
-)
-_PRODUCTION_RECOVERY = RecoveryThresholds(
-    max_recovery_turns=8,
-    max_recovery_seconds=240,
-)
-_PRODUCTION_TIMING = TimingThresholds(
-    enabled=True,
-    drift_to_repair_ms=15000,
-    repair_to_reentry_ms=15000,
-    jitter_allowance_ms=3000,
-    grace_window_end_ms=5000,
-)
+_PRODUCTION_DRIFT = DriftThresholds(0.70, 0.90, 2, 2)
+_PRODUCTION_OBSERVABILITY = ObservabilityThresholds(2500, 2)
+_PRODUCTION_RECOVERY = RecoveryThresholds(8, 240)
+_PRODUCTION_TIMING = TimingThresholds(True, 15000, 15000, 3000, 5000)
 
-
-# ---------------------------------------------------------------------------
-# Profile Factory
-# ---------------------------------------------------------------------------
 
 def _make_profile(env: Environment, mode: ValidationMode) -> ThresholdProfile:
-    """
-    Construct a ThresholdProfile for a given environment and validation mode.
-
-    # NOTE: Now driven by named constants instead of literals.
-    """
     if env is Environment.PRODUCTION:
         drift = _PRODUCTION_DRIFT
         observability = _PRODUCTION_OBSERVABILITY
@@ -233,26 +309,14 @@ def _make_profile(env: Environment, mode: ValidationMode) -> ThresholdProfile:
     )
 
 
-# ---------------------------------------------------------------------------
-# Explicit full Cartesian mapping of configurations
-# ---------------------------------------------------------------------------
-
-DEFAULT_PROFILES: Dict[tuple[Environment, ValidationMode], ThresholdProfile] = {
+DEFAULT_PROFILES: Dict[Tuple[Environment, ValidationMode], ThresholdProfile] = {
     (env, mode): _make_profile(env, mode)
     for env in Environment
     for mode in ValidationMode
 }
 
 
-# ---------------------------------------------------------------------------
-# Public API
-# ---------------------------------------------------------------------------
-
 def get_threshold_profile(environment: str, validation_mode: str) -> ThresholdProfile:
-    """
-    Resolve a ThresholdProfile given runtime environment and validation mode.
-    """
-
     try:
         env_enum = Environment(environment.lower())
     except ValueError as exc:
@@ -266,25 +330,31 @@ def get_threshold_profile(environment: str, validation_mode: str) -> ThresholdPr
     return DEFAULT_PROFILES[(env_enum, mode_enum)]
 
 
-__all__ = [
-    "Environment",
-    "ValidationMode",
-    "DriftThresholds",
-    "ObservabilityThresholds",
-    "RecoveryThresholds",
-    "ValidationThresholds",
-    "TimingThresholds",
-    "ThresholdProfile",
-    "DEFAULT_PROFILES",
-    "get_threshold_profile",
-]
+# ---------------------------------------------------------------------------
+# Extension Point
+# ---------------------------------------------------------------------------
+
+
+class ThresholdSource:
+    def load(self) -> Tuple[MetricThreshold, ...]:  # pragma: no cover
+        raise NotImplementedError
+
+
+# ---------------------------------------------------------------------------
+# TODO (based on Open Questions)
+# ---------------------------------------------------------------------------
+
+# TODO: Clarify whether `metric` in MetricThreshold must map to Level 3 metric IDs.
+# TODO: Define precedence rules between MetricThreshold vs ThresholdProfile when both apply.
+# TODO: Determine expected behavior for TimingThresholds.enabled when disabled (ignore vs nullify).
+# TODO: Clarify injection and lifecycle model for concrete ThresholdSource implementations.
+# TODO: Decide whether ValidationMode.STRICT should subsume WARN thresholds or remain mutually exclusive.
 
 
 # ---------------------------------------------------------------------------
 # Deferred for later phase
 # ---------------------------------------------------------------------------
 
-# - Potential refactor: Replace _make_profile branching logic with configuration strategy map.
-# - Potential dynamic loading from external configuration bundles.
-# - Potential environment inheritance (e.g., PRE_PROD → PRODUCTION defaults).
-# - Evaluate whether optional timing should support partial overrides rather than on/off state.
+# - Consider enumeration or schema constraints for aggregation_scope/window.
+# - Consider replacement of dual threshold models with unified enforcement stack.
+# - Consider external configuration loading integration and governance hooks.
