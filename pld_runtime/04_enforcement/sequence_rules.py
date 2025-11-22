@@ -1,7 +1,7 @@
 """
 pld_runtime/04_enforcement/sequence_rules.py
 
-Version: 1.0.4  # patch bump (import fix for sandbox execution)
+Version: 2.0  # patch bump (import fix for sandbox execution)
 Status: runtime (template)
 Authority Levels: 1, 2, 3, 5
 Scope: Sequence / Ordering Rules, Session Grouping, Temporal Semantics, Metrics Support
@@ -515,3 +515,4 @@ __all__ = [
 #   for large-scale production logs (e.g., itertools.groupby over sorted input).
 # - Clarify and standardize handling of naive timestamps in _parse_ts, including
 #   whether PLD events MUST be timezone-aware or whether naive times imply UTC.
+
