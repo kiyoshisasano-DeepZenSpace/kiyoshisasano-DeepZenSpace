@@ -108,7 +108,7 @@ It formalizes the PLD code system across **detection → repair → continuation
 | **D0_none / D0_unspecified overlap** | missing-code vs no-drift cannot share same semantic space | ingestion policy + taxonomy rules | does D0 represent state or diagnostic error? |
 | **Analytics cluster elevation question** | whether metrics should become runtime summary events | governance framework | should derived metrics ever emit as event types? |
 
-> **Annotation:** These blockers must be resolved before **v0.2 freeze**.
+> **Annotation:** These blockers must be resolved before the **v0.2 stabilization milestone**.
 
 ---
 
