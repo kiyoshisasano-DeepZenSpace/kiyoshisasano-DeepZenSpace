@@ -13,7 +13,7 @@ Content may change as implementation feedback and governance discussions evolve.
 This file exists as the **historical reasoning record** behind the formation of the PLD v2 taxonomy under **Hybrid Governance mode**.
 It provides:
 
-- Context for why v2 is not yet fully frozen
+- Context for why v2 is not yet stabilized or suitable for locking
 - Rationale behind Canonical / Provisional / Pending category decisions
 - Known risks, ambiguity classes, and expected validation checkpoints
 - Notes to future governance reviewers (“why did we do it this way?”)
@@ -125,8 +125,9 @@ These criteria serve as governance gates rather than finalization or freeze requ
 | **Backward Compatibility Review** | Any renumbering or alias introduction must include a documented migration strategy and auditability plan. | Governance Gate |
 | **Tooling Readiness** | Dashboards, query templates, and monitoring rule sets must be aligned with the final taxonomy state. | Operational Gate |
 
+
 Once all above are marked complete, taxonomy enters **Formal Governance Mode** and becomes eligible for:
-- Freeze
+- Version-lock eligibility (subject to governance approval)
 - External publication
 - Compliance alignment
 - Version-controlled extension under RFC-like change framework
@@ -143,9 +144,8 @@ Once all above are marked complete, taxonomy enters **Formal Governance Mode** a
 
 ### Summary Line
 
-> **PLD v2 taxonomy is structurally sound, partially frozen, and awaiting governance resolution on classification boundaries before full standardization.**
+> **PLD v2 taxonomy is structurally mature, stabilization in progress, and awaiting governance resolution**
 
----
 ---
 
 Feedback, objections, and alternative framing proposals are welcomed at this stage.
