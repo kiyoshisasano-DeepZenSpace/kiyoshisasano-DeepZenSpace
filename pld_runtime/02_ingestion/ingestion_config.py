@@ -1,46 +1,10 @@
-# pld_runtime/02_ingestion/ingestion_config.py
-#
-# RUNTIME EXTENSION (proposal)
-# ---------------------------------------------------------------------------
-# Version: 2.0
-# Status: draft (runtime, merged)
-#
-# Scope:
-#   - Envelope Rule
-#   - Ingestion / Transport Mapping
-#   - Dataset / source adapter configuration (legacy capability)
-#
-# Authority Levels (referenced):
-#   - Level 1 — docs/schemas/pld_event.schema.json (structural invariants) :contentReference[oaicite:0]{index=0}
-#   - Level 2 — docs/schemas/event_matrix.yaml (semantic rules) :contentReference[oaicite:1]{index=1}
-#   - Level 3 — docs/schemas/metrics_schema.yaml, docs/metrics/PLD_metrics_spec.md (metrics + validation modes) 
-#   - Level 5 — pld_runtime/01_schemas/runtime_event_envelope.json (runtime envelope) :contentReference[oaicite:3]{index=3}
-#
-# Change Classification:
-#   - editorial (merged header and metadata)
-#   - runtime-only
-#   - # NOTE: Functional behavior change
-#       * IngestionConfig now includes both governance references AND
-#         source/adapter fields from the legacy ingestion config.
-#       * IngestionConfig is immutable (frozen=True).
-#   - # NOTE: Migration difference
-#       * Legacy dataset presets now build on top of governance-aligned
-#         defaults from this module.
-#
-# Rules:
-#   - This file is Level 5 (runtime implementation) and MUST NOT override
-#     any constraint defined at Levels 1–3.
-#   - Validation defaults MUST remain compatible with:
-#       * Level 1 event schema and required fields.
-#       * Level 2 event matrix (phase / event_type / prefix rules).
-#       * Level 3 metrics validation modes and strict default.
-#   - Any behavioral change introduced by this configuration MUST be
-#     documented in: pld_runtime/01_schemas/runtime_event_envelope.notes.md
-#
-# NOTE:
-#   - Changes to schema structure or semantics REQUIRE modification of
-#     Level 1 / Level 2 artefacts via formal governance, NOT this file.
-
+# version: 2.0
+# status: draft (runtime)
+# authority: Level 5 — runtime implementation (consumes Level 1–3 specifications)
+# purpose: Defines ingestion configuration for envelope rules, transport mapping, and adapter settings.
+# scope: Provides governance-aligned defaults, legacy adapter compatibility, and immutable ingestion configuration.
+# dependencies: Level 1 schema; Level 2 event matrix; Level 3 metrics rules; Level 5 runtime event envelope.
+# change_classification: editorial + runtime-only (functional extension; migration-aligned)
 
 from __future__ import annotations
 
@@ -640,4 +604,5 @@ __all__ = [
     "make_multiwoz_config",
     "make_synthetic_config",
 ]
+
 
