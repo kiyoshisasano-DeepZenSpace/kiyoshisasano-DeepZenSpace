@@ -1,71 +1,123 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-pld_runtime.enforcement.sequence_rules (v1.1 Canonical Edition)
+pld_runtime/04_enforcement/sequence_rules.py
 
-Temporal enforcement for Phase Loop Dynamics (PLD) event streams.
+Version: 1.0.3  # patch bump (standalone import + bugfix)
+Status: runtime (template)
+Authority Levels: 1, 2, 3, 5
+Scope: Sequence / Ordering Rules, Session Grouping, Temporal Semantics, Metrics Support
+Change Type: runtime-only (non-breaking if integrated as validator layer)
 
-This module checks that event sequences respect core PLD runtime rules, e.g.:
+Primary basis: governance-aligned runtime template (new version).
+Selected additions merged from legacy v1.1 when functionally meaningful.
 
-    Drift → Repair → Reentry → Continue → Outcome
+Behavioral Guarantees:
+- Does NOT override Level 1–2 lifecycle or schema semantics.
+- Does NOT infer lifecycle transitions.
+- Does NOT compute metrics but MAY be consumed by metric modules.
+- Drift→Repair→Reentry time-based checks retained in opt-in config path.
 
-It operates on already-logged PLD events or envelopes and assumes that
-structural validation has been handled by schema_validator.
-
-Key ideas
----------
-- Drift, Repair, Reentry are inferred from the PLD phase field (preferred)
-  and/or event_type as a fallback.
-- Time is interpreted from RFC3339 / ISO8601 timestamps on each event.
-- Violations are reported as structured objects, not exceptions.
-
-This module does not modify events; it only inspects them.
+Any further changes MUST be logged in:
+pld_runtime/01_schemas/runtime_event_envelope.notes.md
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from enum import Enum
 from datetime import datetime, timezone
-from typing import Any, Dict, Iterable, List, Literal, Optional, Sequence, Tuple
+from typing import Any, Dict, Iterable, List, Mapping, MutableMapping, Optional, Sequence, Tuple
+
+# ValidationMode SHOULD come from the canonical schema_validator module.
+# In sandbox / script-only environments there may be no package context,
+# so we provide a best-effort import path and finally a local fallback
+# for development and testing.
+try:  # pragma: no cover - primary package import
+    from .schema_validator import ValidationMode  # type: ignore[attr-defined]
+except ImportError:  # pragma: no cover - no known parent package
+    try:
+        # Absolute import variant when schema_validator.py is on sys.path.
+        from schema_validator import ValidationMode  # type: ignore[no-redef]
+    except ImportError:  # pragma: no cover - last-resort sandbox fallback
+        # NOTE: Migration difference
+        # This local definition exists solely so this module can be executed
+        # in isolation (e.g., notebooks, sandboxes). In production, the
+        # canonical ValidationMode from schema_validator MUST be used.
+        class ValidationMode(str, Enum):  # type: ignore[no-redef]
+            STRICT = "strict"
+            WARN = "warn"
+            NORMALIZE = "normalize"
 
 
-Role = Literal["drift", "repair", "reentry", "other", "unknown"]
+Json = Mapping[str, Any]
+MutableJson = MutableMapping[str, Any]
 
-EnvelopeMode = Literal["event", "envelope"]
+# ---------------------------------------------------------------------------
+# Issue Model (New canonical structure)
+# ---------------------------------------------------------------------------
+
+
+class SequenceIssueSeverity(str, Enum):
+    ERROR = "error"
+    WARNING = "warning"
+    INFO = "info"
+
+
+@dataclass
+class SequenceIssue:
+    """
+    A single temporal / ordering anomaly.
+
+    NOTE: normalized naming replaces v1.1 "SequenceViolation",
+    but remains semantically equivalent.
+    """
+
+    code: str
+    message: str
+    session_id: Optional[str]
+    index: Optional[int]
+    turn_sequence: Optional[int]
+    severity: SequenceIssueSeverity
+    rule: Optional[str] = None
+
+    def is_error(self) -> bool:
+        return self.severity == SequenceIssueSeverity.ERROR
+
+
+@dataclass
+class SessionSequenceView:
+    """Per-session ordered representation of validated events."""
+
+    session_id: str
+    events: List[MutableJson]
+    issues: List[SequenceIssue]
+
+
+@dataclass
+class SequenceCheckResult:
+    """Aggregate temporal validation result across sessions."""
+
+    mode: ValidationMode
+    sessions: List[SessionSequenceView]
+    issues: List[SequenceIssue]
+
+    @property
+    def valid(self) -> bool:
+        return not any(i.is_error() for i in self.issues)
 
 
 # ---------------------------------------------------------------------------
-# Configuration
+# Optional configuration (Merged from legacy)
 # ---------------------------------------------------------------------------
 
 @dataclass
-class SequenceRuleConfig:
+class TemporalRuleConfig:
     """
-    Configuration for temporal PLD sequence checks.
+    Optional timing-based lifecycle checks derived from legacy v1.1.
+
+    These rules are NOT normative and MUST be opt-in.
+    They MAY be disabled without affecting structural validity.
 
     All thresholds are in milliseconds.
-
-    Semantics
-    ---------
-    max_drift_to_repair_ms:
-        Upper bound Δt between a Drift and its corresponding Repair.
-        If exceeded, a DRIFT_TIMEOUT violation is recorded.
-
-    max_repair_to_reentry_ms:
-        Upper bound Δt between a Repair and its corresponding Reentry.
-        If exceeded, a REPAIR_TIMEOUT violation is recorded.
-
-    require_repair_for_drift:
-        If True, any drift that never receives a repair by the end of the
-        sequence produces a DRIFT_WITHOUT_REPAIR violation.
-
-    require_reentry_after_repair:
-        If True, any repair that never receives reentry by the end of the
-        sequence produces a REPAIR_WITHOUT_REENTRY violation.
-
-    allow_reentry_without_repair:
-        If False, any reentry not preceded by a repair produces a
-        REENTRY_WITHOUT_PRECEDING_REPAIR violation.
     """
 
     max_drift_to_repair_ms: int = 30000
@@ -76,140 +128,77 @@ class SequenceRuleConfig:
 
 
 # ---------------------------------------------------------------------------
-# Result types
+# Internal event helpers
 # ---------------------------------------------------------------------------
 
-@dataclass
-class SequenceViolation:
-    """
-    A single violation of PLD temporal sequence rules.
-    """
 
-    code: str
-    message: str
-    index: int
-    event_id: Optional[str] = None
-    session_id: Optional[str] = None
-    drift_code: Optional[str] = None
-    repair_code: Optional[str] = None
-    reentry_code: Optional[str] = None
-    drift_to_repair_ms: Optional[float] = None
-    repair_to_reentry_ms: Optional[float] = None
-
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            "code": self.code,
-            "message": self.message,
-            "index": self.index,
-            "event_id": self.event_id,
-            "session_id": self.session_id,
-            "drift_code": self.drift_code,
-            "repair_code": self.repair_code,
-            "reentry_code": self.reentry_code,
-            "drift_to_repair_ms": self.drift_to_repair_ms,
-            "repair_to_reentry_ms": self.repair_to_reentry_ms,
-        }
+def _get_session_id(event: Json) -> Optional[str]:
+    value = event.get("session_id")
+    return str(value) if value is not None else None
 
 
-@dataclass
-class SequenceAnalysisResult:
-    """
-    Summary results for a single event sequence (e.g., one session / trace).
+def _get_turn_sequence(event: Json) -> Optional[int]:
+    value = event.get("turn_sequence")
+    if isinstance(value, int):
+        return value
+    return None
+
+
+def _sort_events_by_turn_sequence(events: Sequence[Json]) -> List[MutableJson]:
+    """Primary authoritative ordering rule.
+
+    `turn_sequence` MUST define timeline sorting for valid events.
+
+    Events with missing or non-integer `turn_sequence` are appended at the end
+    in original order. This is a **best-effort** ordering helper for potentially
+    invalid data; strict validation is still performed separately and will flag
+    such events as errors.
     """
 
-    ok: bool
-    violations: List[SequenceViolation] = field(default_factory=list)
-    cycles_analyzed: int = 0
+    indexed: List[Tuple[int, int, Json]] = []
+    tail: List[Json] = []
 
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            "ok": self.ok,
-            "cycles_analyzed": self.cycles_analyzed,
-            "violations": [v.to_dict() for v in self.violations],
-        }
+    for idx, ev in enumerate(events):
+        ts = _get_turn_sequence(ev)
+        if ts is None:
+            tail.append(ev)
+        else:
+            indexed.append((ts, idx, ev))
+
+    indexed.sort(key=lambda t: (t[0], t[1]))
+    ordered: List[MutableJson] = [dict(ev) for (_, _, ev) in indexed]
+    ordered.extend(dict(ev) for ev in tail)
+    return ordered
 
 
 # ---------------------------------------------------------------------------
-# Helpers
+# Legacy-compatible timestamp utilities (retained where compatible)
 # ---------------------------------------------------------------------------
 
-def _parse_ts(ts: str) -> datetime:
+
+def _parse_ts(ts: Any) -> Optional[datetime]:
+    """Parse RFC3339 / ISO8601 timestamps, including 'Z'.
+
+    # TODO: Review required (uncertain alignment)
+    # Timezone Naivety:
+    # - datetime.fromisoformat handles offsets, but naive strings are interpreted
+    #   in the local system timezone when calling astimezone(timezone.utc).
+    # - Clarify whether PLD events MUST provide timezone-aware timestamps
+    #   (Z or ±offset) or whether naive timestamps should be treated as UTC.
     """
-    Parse RFC3339 / ISO8601 timestamps, including 'Z'.
-
-    This keeps behavior deterministic and avoids depending on external libs.
-    """
-    if ts.endswith("Z"):
-        ts = ts[:-1] + "+00:00"
-    return datetime.fromisoformat(ts).astimezone(timezone.utc)
-
-
-def _extract_inner_event(
-    obj: Dict[str, Any],
-    mode: EnvelopeMode,
-) -> Tuple[Dict[str, Any], Dict[str, Any]]:
-    """
-    Return (event, envelope_like) for a given object.
-
-    - In "event" mode, event == obj and envelope_like == {}.
-    - In "envelope" mode, event == obj["event"] and envelope_like == obj.
-    """
-    if mode == "event":
-        return obj, {}
-    if "event" not in obj or not isinstance(obj["event"], dict):
-        # Treat malformed envelope as a bare event to avoid hard failure.
-        return obj, obj
-    return obj["event"], obj
-
-
-def _classify_role(event: Dict[str, Any]) -> Role:
-    """
-    Infer the PLD role of an event using:
-
-    1. event["pld"]["phase"] if present and recognized
-    2. fallback heuristics on event["event_type"]
-    """
-    pld = event.get("pld") or {}
-    phase = str(pld.get("phase", "")).lower()
-    if phase in {"drift", "repair", "reentry"}:
-        return phase  # type: ignore[return-value]
-    if phase == "outcome":
-        return "other"
-    if phase == "none":
-        return "other"
-
-    et = str(event.get("event_type", "")).lower()
-    if "drift" in et:
-        return "drift"
-    if "repair" in et:
-        return "repair"
-    if "reentry" in et:
-        return "reentry"
-
-    return "unknown"
-
-
-def _event_timestamp(event: Dict[str, Any]) -> Optional[datetime]:
-    ts = event.get("timestamp")
     if not isinstance(ts, str):
         return None
     try:
-        return _parse_ts(ts)
+        s = ts
+        if s.endswith("Z"):
+            s = s[:-1] + "+00:00"
+        dt = datetime.fromisoformat(s)
+        if dt.tzinfo is None:
+            # NOTE: For now we rely on system-local interpretation; see TODO above.
+            return dt.astimezone(timezone.utc)
+        return dt.astimezone(timezone.utc)
     except Exception:
         return None
-
-
-def _event_codes(event: Dict[str, Any]) -> Tuple[Optional[str], Optional[str]]:
-    """
-    Return (phase, code) from the event if available.
-
-    phase is typically one of "drift", "repair", "reentry", "outcome", "none".
-    code is a concrete PLD code like "D5_information" or "R2_soft_repair".
-    """
-    pld = event.get("pld") or {}
-    phase = pld.get("phase")
-    code = pld.get("code")
-    return (phase, code)
 
 
 def _ms_between(a: datetime, b: datetime) -> float:
@@ -217,201 +206,316 @@ def _ms_between(a: datetime, b: datetime) -> float:
 
 
 # ---------------------------------------------------------------------------
-# Core analysis
+# Core enforcement rules
 # ---------------------------------------------------------------------------
 
-def analyze_sequence(
-    events: Sequence[Dict[str, Any]],
-    *,
-    config: Optional[SequenceRuleConfig] = None,
-    mode: EnvelopeMode = "event",
-) -> SequenceAnalysisResult:
+
+def _check_monotonic_turn_sequence(session_id: str, events: List[MutableJson]) -> List[SequenceIssue]:
+    """MUST rule: turn_sequence MUST be strictly increasing within session."""
+
+    issues: List[SequenceIssue] = []
+    last_ts: Optional[int] = None
+
+    for idx, ev in enumerate(events):
+        ts = _get_turn_sequence(ev)
+
+        if ts is None:
+            issues.append(
+                SequenceIssue(
+                    code="TURN_SEQUENCE_MISSING",
+                    message="Event missing turn_sequence; ordering ambiguous.",
+                    session_id=session_id,
+                    index=idx,
+                    turn_sequence=None,
+                    severity=SequenceIssueSeverity.ERROR,
+                    rule="pld_event.turn_sequence.required",
+                )
+            )
+            continue
+
+        if ts < 1:
+            issues.append(
+                SequenceIssue(
+                    code="TURN_SEQUENCE_OUT_OF_RANGE",
+                    message=f"turn_sequence MUST be ≥1 (found {ts}).",
+                    session_id=session_id,
+                    index=idx,
+                    turn_sequence=ts,
+                    severity=SequenceIssueSeverity.ERROR,
+                    rule="pld_event.turn_sequence.domain",
+                )
+            )
+
+        if last_ts is not None:
+            if ts == last_ts:
+                issues.append(
+                    SequenceIssue(
+                        code="TURN_SEQUENCE_DUPLICATE",
+                        message=f"Duplicate turn_sequence {ts} detected.",
+                        session_id=session_id,
+                        index=idx,
+                        turn_sequence=ts,
+                        severity=SequenceIssueSeverity.ERROR,
+                        rule="metrics.event_ordering.unique",
+                    )
+                )
+            elif ts < last_ts:
+                issues.append(
+                    SequenceIssue(
+                        code="TURN_SEQUENCE_NON_MONOTONIC",
+                        message=f"Non-monotonic ordering detected ({ts} < {last_ts}).",
+                        session_id=session_id,
+                        index=idx,
+                        turn_sequence=ts,
+                        severity=SequenceIssueSeverity.ERROR,
+                        rule="metrics.event_ordering.monotonic",
+                    )
+                )
+
+        last_ts = ts
+
+    return issues
+
+
+# ---------------------------------------------------------------------------
+# Optional lifecycle timing checks (merged from legacy v1.1)
+# ---------------------------------------------------------------------------
+
+
+def _apply_temporal_lifecycle_rules(
+    session_id: str,
+    events: List[MutableJson],
+    config: TemporalRuleConfig,
+) -> List[SequenceIssue]:
+    """Implements drift→repair→reentry timing rules from v1.1.
+
+    # NOTE: Migration difference
+    # - Only executed if explicitly enabled by caller.
     """
-    Analyze a sequence of PLD events or envelopes for temporal rule violations.
 
-    Parameters
-    ----------
-    events:
-        An ordered list of events (or envelopes if mode="envelope").
-        The order should reflect the true temporal order of emission.
+    issues: List[SequenceIssue] = []
 
-    config:
-        SequenceRuleConfig with timeouts and strictness flags.
-        If None, defaults are used.
-
-    mode:
-        - "event": each element is a PLD event (pld_event.schema.json).
-        - "envelope": each element is a runtime envelope object with an
-          "event" field containing the PLD event.
-
-    Returns
-    -------
-    SequenceAnalysisResult
-        Includes a flag indicating whether the sequence passes all checks,
-        plus a list of violations (if any).
-    """
-    cfg = config or SequenceRuleConfig()
-    violations: List[SequenceViolation] = []
-
-    active_drift_index: Optional[int] = None
     active_drift_ts: Optional[datetime] = None
-    active_drift_code: Optional[str] = None
-
-    active_repair_index: Optional[int] = None
     active_repair_ts: Optional[datetime] = None
-    active_repair_code: Optional[str] = None
 
-    active_reentry_code: Optional[str] = None
+    for idx, ev in enumerate(events):
+        pld = ev.get("pld") or {}
+        phase = str(pld.get("phase", "")).lower()
+        ts = _parse_ts(ev.get("timestamp"))
 
-    cycles = 0
-
-    for idx, raw_obj in enumerate(events):
-        event, env = _extract_inner_event(raw_obj, mode)
-        role = _classify_role(event)
-        ts = _event_timestamp(event)
-        phase, code = _event_codes(event)
-
-        event_id = event.get("event_id") or env.get("envelope_id")
-        session_id = event.get("session_id") or (env.get("session") or {}).get("session_id")
-
-        # Skip events without timestamp to avoid breaking sequence metrics.
         if ts is None:
             continue
 
-        if role == "drift":
-            # If there is a previous unresolved drift, we can optionally log that.
-            if active_drift_index is not None and cfg.require_repair_for_drift:
-                violations.append(
-                    SequenceViolation(
-                        code="DRIFT_WITHOUT_REPAIR_BEFORE_NEXT_DRIFT",
-                        message="New drift occurred before previous drift was repaired.",
-                        index=idx,
-                        event_id=event_id,
+        # Drift detected
+        if phase == "drift":
+            if active_drift_ts is not None and config.require_repair_for_drift:
+                issues.append(
+                    SequenceIssue(
+                        code="DRIFT_CHAIN",
+                        message="Drift occurred before previous drift was repaired.",
                         session_id=session_id,
-                        drift_code=active_drift_code,
+                        index=idx,
+                        turn_sequence=_get_turn_sequence(ev),
+                        severity=SequenceIssueSeverity.WARNING,
+                        rule="runtime.temporal.drift_chain",
                     )
                 )
-            active_drift_index = idx
             active_drift_ts = ts
-            active_drift_code = code
-            active_repair_index = None
             active_repair_ts = None
-            active_repair_code = None
-            active_reentry_code = None
 
-        elif role == "repair":
+        # Repair detected
+        elif phase == "repair":
             if active_drift_ts is None:
-                # Repair without preceding drift
-                if cfg.require_repair_for_drift:
-                    violations.append(
-                        SequenceViolation(
-                            code="REPAIR_WITHOUT_PRECEDING_DRIFT",
-                            message="Repair occurred without a preceding drift.",
-                            index=idx,
-                            event_id=event_id,
+                if config.require_repair_for_drift:
+                    issues.append(
+                        SequenceIssue(
+                            code="REPAIR_WITHOUT_DRIFT",
+                            message="Repair without preceding drift.",
                             session_id=session_id,
-                            repair_code=code,
+                            index=idx,
+                            turn_sequence=_get_turn_sequence(ev),
+                            severity=SequenceIssueSeverity.ERROR,
+                            rule="runtime.temporal.repair_without_drift",
                         )
                     )
             else:
-                # Drift → Repair timing
-                dt_ms = _ms_between(active_drift_ts, ts)
-                if dt_ms > cfg.max_drift_to_repair_ms:
-                    violations.append(
-                        SequenceViolation(
+                dt = _ms_between(active_drift_ts, ts)
+                if dt > config.max_drift_to_repair_ms:
+                    issues.append(
+                        SequenceIssue(
                             code="DRIFT_TIMEOUT",
-                            message=(
-                                f"Repair occurred after {dt_ms:.1f} ms (> "
-                                f"{cfg.max_drift_to_repair_ms} ms) from drift."
-                            ),
-                            index=idx,
-                            event_id=event_id,
+                            message=f"Repair occurred after {dt:.1f}ms delay.",
                             session_id=session_id,
-                            drift_code=active_drift_code,
-                            repair_code=code,
-                            drift_to_repair_ms=dt_ms,
+                            index=idx,
+                            turn_sequence=_get_turn_sequence(ev),
+                            severity=SequenceIssueSeverity.WARNING,
+                            rule="runtime.temporal.drift_timeout",
                         )
                     )
-                active_repair_index = idx
                 active_repair_ts = ts
-                active_repair_code = code
 
-        elif role == "reentry":
-            if active_repair_ts is None:
-                if not cfg.allow_reentry_without_repair:
-                    violations.append(
-                        SequenceViolation(
-                            code="REENTRY_WITHOUT_PRECEDING_REPAIR",
-                            message="Reentry occurred without a preceding repair.",
-                            index=idx,
-                            event_id=event_id,
-                            session_id=session_id,
-                            reentry_code=code,
-                        )
+        # Reentry detected
+        elif phase == "reentry":
+            if active_repair_ts is None and not config.allow_reentry_without_repair:
+                issues.append(
+                    SequenceIssue(
+                        code="REENTRY_WITHOUT_REPAIR",
+                        message="Reentry without preceding repair.",
+                        session_id=session_id,
+                        index=idx,
+                        turn_sequence=_get_turn_sequence(ev),
+                        severity=SequenceIssueSeverity.ERROR,
+                        rule="runtime.temporal.reentry_without_repair",
                     )
-            else:
-                dt_ms = _ms_between(active_repair_ts, ts)
-                if dt_ms > cfg.max_repair_to_reentry_ms:
-                    violations.append(
-                        SequenceViolation(
+                )
+            elif active_repair_ts is not None:
+                dt = _ms_between(active_repair_ts, ts)
+                if dt > config.max_repair_to_reentry_ms:
+                    issues.append(
+                        SequenceIssue(
                             code="REPAIR_TIMEOUT",
-                            message=(
-                                f"Reentry occurred after {dt_ms:.1f} ms (> "
-                                f"{cfg.max_repair_to_reentry_ms} ms) from repair."
-                            ),
-                            index=idx,
-                            event_id=event_id,
+                            message=f"Reentry occurred after {dt:.1f}ms delay.",
                             session_id=session_id,
-                            drift_code=active_drift_code,
-                            repair_code=active_repair_code,
-                            reentry_code=code,
-                            repair_to_reentry_ms=dt_ms,
+                            index=idx,
+                            turn_sequence=_get_turn_sequence(ev),
+                            severity=SequenceIssueSeverity.WARNING,
+                            rule="runtime.temporal.repair_timeout",
                         )
                     )
-                active_reentry_code = code
-                # A full drift→repair→reentry cycle has completed.
-                cycles += 1
-                active_drift_index = None
-                active_drift_ts = None
-                active_drift_code = None
-                active_repair_index = None
-                active_repair_ts = None
-                active_repair_code = None
-                active_reentry_code = None
 
-        else:
-            # other / unknown role: ignored for temporal cycle rules.
-            pass
+            active_drift_ts = None
+            active_repair_ts = None
 
-    # End-of-sequence checks
-    if active_drift_index is not None and cfg.require_repair_for_drift:
-        violations.append(
-            SequenceViolation(
-                code="DRIFT_WITHOUT_REPAIR",
-                message="Sequence ended with an unrepaired drift.",
-                index=active_drift_index,
-                drift_code=active_drift_code,
-            )
-        )
+    return issues
 
-    if active_repair_index is not None and cfg.require_reentry_after_repair:
-        violations.append(
-            SequenceViolation(
-                code="REPAIR_WITHOUT_REENTRY",
-                message="Sequence ended with a repair that never reached reentry.",
-                index=active_repair_index,
-                drift_code=active_drift_code,
-                repair_code=active_repair_code,
-            )
-        )
 
-    ok = len(violations) == 0
-    return SequenceAnalysisResult(ok=ok, violations=violations, cycles_analyzed=cycles)
+# ---------------------------------------------------------------------------
+# Public API
+# ---------------------------------------------------------------------------
 
+
+def group_events_by_session(events: Iterable[Json]) -> Dict[str, List[MutableJson]]:
+    """Group events by `session_id` and sort each group by `turn_sequence`.
+
+    # TODO: Review required (uncertain alignment)
+    # Session Grouping Memory Usage:
+    # - Current implementation buffers all events in memory per session.
+    # - For large production logs, a streaming / windowed approach may be
+    #   required (e.g., using itertools.groupby over pre-sorted input).
+    """
+    buffer: Dict[str, List[Json]] = {}
+    for ev in events:
+        sid = _get_session_id(ev) or "<unknown>"
+        buffer.setdefault(sid, []).append(ev)
+
+    grouped: Dict[str, List[MutableJson]] = {}
+    for sid, evs in buffer.items():
+        grouped[sid] = _sort_events_by_turn_sequence(evs)
+
+    return grouped
+
+
+def check_sequence_rules(
+    events: Iterable[Json],
+    *,
+    mode: ValidationMode = ValidationMode.STRICT,
+    temporal_rules: Optional[TemporalRuleConfig] = None,
+) -> SequenceCheckResult:
+    """Core validation entrypoint.
+
+    - Always enforces ordering rules.
+    - Optionally enforces lifecycle timing semantics.
+    """
+
+    grouped = group_events_by_session(events)
+    sessions: List[SessionSequenceView] = []
+    all_issues: List[SequenceIssue] = []
+
+    for sid, evs in grouped.items():
+        issues: List[SequenceIssue] = []
+
+        # MUST ordering enforcement
+        issues.extend(_check_monotonic_turn_sequence(sid, evs))
+
+        # Optional lifecycle timing rules (legacy compatibility path)
+        if temporal_rules is not None:
+            issues.extend(_apply_temporal_lifecycle_rules(sid, evs, temporal_rules))
+
+        sessions.append(SessionSequenceView(session_id=sid, events=evs, issues=issues))
+        all_issues.extend(issues)
+
+    return SequenceCheckResult(mode=mode, sessions=sessions, issues=all_issues)
+
+
+# ---------------------------------------------------------------------------
+# Simple self-checks / examples (ad hoc tests)
+# ---------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    # Basic happy-path: strictly increasing turn_sequence, no lifecycle phases.
+    events_ok = [
+        {"session_id": "s1", "turn_sequence": 1, "timestamp": "2024-01-01T00:00:00Z"},
+        {"session_id": "s1", "turn_sequence": 2, "timestamp": "2024-01-01T00:00:01Z"},
+    ]
+    result_ok = check_sequence_rules(events_ok)
+    print("[TEST] monotonic sequence valid?", result_ok.valid)
+
+    # Non-monotonic turn_sequence should produce errors.
+    events_bad = [
+        {"session_id": "s2", "turn_sequence": 2, "timestamp": "2024-01-01T00:00:01Z"},
+        {"session_id": "s2", "turn_sequence": 1, "timestamp": "2024-01-01T00:00:02Z"},
+    ]
+    result_bad = check_sequence_rules(events_bad)
+    print("[TEST] non-monotonic sequence valid?", result_bad.valid)
+    for issue in result_bad.issues:
+        print(" -", issue.code, issue.message)
+
+    # Drift→repair→reentry timing path (temporal rules enabled).
+    events_temporal = [
+        {
+            "session_id": "s3",
+            "turn_sequence": 1,
+            "timestamp": "2024-01-01T00:00:00Z",
+            "pld": {"phase": "drift"},
+        },
+        {
+            "session_id": "s3",
+            "turn_sequence": 2,
+            "timestamp": "2024-01-01T00:00:05Z",
+            "pld": {"phase": "repair"},
+        },
+        {
+            "session_id": "s3",
+            "turn_sequence": 3,
+            "timestamp": "2024-01-01T00:00:10Z",
+            "pld": {"phase": "reentry"},
+        },
+    ]
+    temporal_cfg = TemporalRuleConfig()
+    result_temporal = check_sequence_rules(events_temporal, temporal_rules=temporal_cfg)
+    print("[TEST] temporal sequence valid?", result_temporal.valid)
+    for issue in result_temporal.issues:
+        print(" -", issue.code, issue.message)
+
+
+# ---------------------------------------------------------------------------
+# Exports
+# ---------------------------------------------------------------------------
 
 __all__ = [
-    "SequenceRuleConfig",
-    "SequenceViolation",
-    "SequenceAnalysisResult",
-    "analyze_sequence",
+    "ValidationMode",
+    "SequenceIssueSeverity",
+    "SequenceIssue",
+    "SessionSequenceView",
+    "SequenceCheckResult",
+    "TemporalRuleConfig",
+    "group_events_by_session",
+    "check_sequence_rules",
 ]
+
+
+# Deferred for later phase
+# - Replace in-memory session grouping with a streaming or chunked mechanism
+#   for large-scale production logs (e.g., itertools.groupby over sorted input).
+# - Clarify and standardize handling of naive timestamps in _parse_ts, including
+#   whether PLD events MUST be timezone-aware or whether naive times imply UTC.
