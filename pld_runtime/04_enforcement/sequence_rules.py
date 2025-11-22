@@ -1,7 +1,7 @@
 """
 pld_runtime/04_enforcement/sequence_rules.py
 
-Version: 1.0.3  # patch bump (standalone import + bugfix)
+Version: 1.0.4  # patch bump (import fix for sandbox execution)
 Status: runtime (template)
 Authority Levels: 1, 2, 3, 5
 Scope: Sequence / Ordering Rules, Session Grouping, Temporal Semantics, Metrics Support
@@ -28,24 +28,20 @@ from datetime import datetime, timezone
 from typing import Any, Dict, Iterable, List, Mapping, MutableMapping, Optional, Sequence, Tuple
 
 # ValidationMode SHOULD come from the canonical schema_validator module.
-# In sandbox / script-only environments there may be no package context,
-# so we provide a best-effort import path and finally a local fallback
-# for development and testing.
-try:  # pragma: no cover - primary package import
-    from .schema_validator import ValidationMode  # type: ignore[attr-defined]
-except ImportError:  # pragma: no cover - no known parent package
-    try:
-        # Absolute import variant when schema_validator.py is on sys.path.
-        from schema_validator import ValidationMode  # type: ignore[no-redef]
-    except ImportError:  # pragma: no cover - last-resort sandbox fallback
-        # NOTE: Migration difference
-        # This local definition exists solely so this module can be executed
-        # in isolation (e.g., notebooks, sandboxes). In production, the
-        # canonical ValidationMode from schema_validator MUST be used.
-        class ValidationMode(str, Enum):  # type: ignore[no-redef]
-            STRICT = "strict"
-            WARN = "warn"
-            NORMALIZE = "normalize"
+# In sandbox / script-only environments there may be no package context, so
+# we avoid relative imports here and instead try an absolute import first,
+# then fall back to a local definition for standalone execution.
+try:  # pragma: no cover - primary absolute import
+    from schema_validator import ValidationMode  # type: ignore[attr-defined]
+except ImportError:  # pragma: no cover - sandbox / standalone fallback
+    # NOTE: Migration difference
+    # This local definition exists solely so this module can be executed
+    # in isolation (e.g., notebooks, sandboxes). In production, the
+    # canonical ValidationMode from schema_validator MUST be used.
+    class ValidationMode(str, Enum):  # type: ignore[no-redef]
+        STRICT = "strict"
+        WARN = "warn"
+        NORMALIZE = "normalize"
 
 
 Json = Mapping[str, Any]
