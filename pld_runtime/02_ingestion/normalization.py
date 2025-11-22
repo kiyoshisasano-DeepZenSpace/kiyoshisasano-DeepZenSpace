@@ -1,61 +1,213 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-pld_runtime.ingestion.normalization (v1.1 Canonical Edition)
+pld_runtime.normalization
 
-Normalization utilities for converting heterogeneous runtime inputs into
-`NormalizedTurn` objects.
+version: 0.1.2   # ← patch-level increment per request
+status: draft (runtime, experimental, template)
+scope: semantic PLD event normalization (Level 2) + legacy turn normalization helpers
+authority_levels: 1 (schema), 2 (event_matrix), 3 (operational)
+change_classification: runtime-only, non-breaking, example/template
 
-Concept
--------
-Different platforms (chat UIs, APIs, orchestration frameworks, datasets)
-have their own message / event formats. PLD Runtime expects a single
-neutral shape:
+This module provides semantic normalization for PLD-aligned event ingestion.
 
-    NormalizedTurn(session_id, turn_id, role, text, runtime)
+Primary behavior (governance-compliant):
+    - assumes Level 1 structural schema validation has already succeeded;
+    - enforces Level 2 semantic constraints (prefix-phase + event_type-phase);
+    - aligns with Level 3 validation mode rules (`strict`, `warn`, `normalize`);
+    - operates on PLD events, not chat turns or tool-call abstractions.
 
-This module centralizes that mapping logic.
-
-Procedure
----------
-1. Map raw roles (e.g., "assistant", "ai", "bot") to canonical roles:
-       "user" | "assistant" | "system"
-2. Extract or synthesize:
-       - session_id
-       - turn_id
-       - text content
-3. Build a `runtime` dict with optional metadata, e.g.:
-       latency_ms, tool_used, expected_format, reset_flag, source
-
-Implementation
---------------
-The functions here perform *pure data normalization*:
-- no I/O
-- no validation
-- no policy or PLD logic
-
-Validation
-----------
-These functions are designed to be stable across platforms.
-Callers should add their own unit tests for each log/source format
-they integrate.
-
-Next Step
----------
-Ingestion adapters (e.g., openai_assistants_adapter.py, multiwoz_loader.py)
-should use this module as the authoritative way to construct NormalizedTurn.
+Legacy behavior (compatibility only):
+    - retains prior NormalizedTurn constructors and role normalization helpers;
+    - these helpers are not part of PLD semantic enforcement and SHOULD be
+      treated as deprecated.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any, Dict, Optional, Literal, Union
+from typing import Any, Dict, List, Optional, Literal, Union
 
-from ..detection.runtime_signal_bridge import NormalizedTurn, Role
+# ---------------------------------------------------------------------------
+# Shared neutral types (Core Technical Issue: inverted dependency resolved)
+# ---------------------------------------------------------------------------
+from ..types import NormalizedTurn, Role  # NOTE: Migration target for shared runtime models
 
 
 # ---------------------------------------------------------------------------
-# Role normalization
+# Semantic normalization constants
+# ---------------------------------------------------------------------------
+
+VALID_PHASES: tuple[str, ...] = (
+    "drift",
+    "repair",
+    "reentry",
+    "continue",
+    "outcome",
+    "failover",
+    "none",
+)
+
+PREFIX_TO_PHASE: Dict[str, str] = {
+    "D": "drift",
+    "R": "repair",
+    "RE": "reentry",
+    "C": "continue",
+    "O": "outcome",
+    "F": "failover",
+}
+
+MUST_PHASE_MAP: Dict[str, str] = {
+    "drift_detected": "drift",
+    "drift_escalated": "drift",
+    "repair_triggered": "repair",
+    "repair_escalated": "repair",
+    "reentry_observed": "reentry",
+    "continue_allowed": "continue",
+    "continue_blocked": "continue",
+    "failover_triggered": "failover",
+}
+
+SHOULD_PHASE_MAP: Dict[str, str] = {
+    "evaluation_pass": "outcome",
+    "evaluation_fail": "outcome",
+    "session_closed": "outcome",
+    "info": "none",
+}
+
+MAY_EVENTS: set[str] = {
+    "latency_spike",
+    "pause_detected",
+    "fallback_executed",
+    "handoff",
+}
+
+
+# ---------------------------------------------------------------------------
+# Utility helpers
+# ---------------------------------------------------------------------------
+
+def extract_prefix(code: str) -> Optional[str]:
+    """Extract lifecycle/non-lifecycle prefix from pld.code."""
+    if not code:
+        return None
+    head = code.split("_", 1)[0]
+    i = len(head)
+    while i > 0 and head[i - 1].isdigit():
+        i -= 1
+    return (head[:i] or head) or None
+
+
+# ---------------------------------------------------------------------------
+# Issue and normalization result dataclasses
+# ---------------------------------------------------------------------------
+
+@dataclass
+class NormalizationIssue:
+    code: str
+    message: str
+    severity: Literal["info", "warning", "error"]
+    path: str
+    fixed: bool = False
+
+
+@dataclass
+class NormalizationResult:
+    event: Dict[str, Any]
+    issues: List[NormalizationIssue]
+    accepted: bool
+
+    @property
+    def has_errors(self) -> bool:
+        return any(i.severity == "error" and not i.fixed for i in self.issues)
+
+
+# ---------------------------------------------------------------------------
+# Core semantic normalizer
+# ---------------------------------------------------------------------------
+
+def normalize_event(
+    event: Dict[str, Any],
+    mode: Literal["strict", "warn", "normalize"] = "normalize",
+) -> NormalizationResult:
+    """
+    Normalize PLD event semantics based on Level 2 and Level 3 rules.
+
+    # NOTE: Migration difference from older ingestion normalization logic.
+    """
+    if mode not in ("strict", "warn", "normalize"):
+        raise ValueError(f"Unsupported validation mode: {mode!r}")
+
+    normalized = dict(event)
+    issues: List[NormalizationIssue] = []
+
+    pld = normalized.get("pld") or {}
+    event_type = normalized.get("event_type")
+    phase = pld.get("phase")
+    code = pld.get("code")
+
+    if event_type is None or phase is None or code is None:
+        issues.append(
+            NormalizationIssue(
+                code="SEMANTIC_MISSING_FIELDS",
+                message="event_type, pld.phase, and pld.code required.",
+                severity="error",
+                path=".",
+            )
+        )
+        return NormalizationResult(normalized, issues, False)
+
+    must_phase = MUST_PHASE_MAP.get(event_type)
+    if must_phase and phase != must_phase:
+        issue = NormalizationIssue(
+            code="SEMANTIC_PHASE_MISMATCH_MUST",
+            message=f"event_type={event_type!r} requires phase={must_phase!r}, found={phase!r}",
+            severity="error",
+            path="pld.phase",
+        )
+        if mode == "normalize":
+            pld = dict(pld)
+            pld["phase"] = must_phase
+            normalized["pld"] = pld
+            issue.fixed = True
+            issue.severity = "warning"
+            phase = must_phase
+        issues.append(issue)
+
+    should_phase = SHOULD_PHASE_MAP.get(event_type)
+    if should_phase and phase != should_phase:
+        issues.append(
+            NormalizationIssue(
+                code="SEMANTIC_PHASE_MISMATCH_SHOULD",
+                message=f"event_type={event_type!r} expected phase={should_phase!r}, found={phase!r}",
+                severity="warning",
+                path="pld.phase",
+            )
+        )
+
+    prefix = extract_prefix(code)
+    if prefix in PREFIX_TO_PHASE and phase != PREFIX_TO_PHASE[prefix]:
+        issue = NormalizationIssue(
+            code="SEMANTIC_PREFIX_PHASE_MISMATCH",
+            message=f"prefix={prefix!r} implies {PREFIX_TO_PHASE[prefix]!r}, found={phase!r}",
+            severity="error",
+            path="pld.phase",
+        )
+        if mode == "normalize":
+            if not must_phase or must_phase == PREFIX_TO_PHASE[prefix]:
+                pld = dict(pld)
+                pld["phase"] = PREFIX_TO_PHASE[prefix]
+                normalized["pld"] = pld
+                issue.fixed = True
+                issue.severity = "warning"
+        issues.append(issue)
+
+    accepted = not any(i.severity == "error" and not i.fixed for i in issues)
+    return NormalizationResult(normalized, issues, accepted)
+
+
+# ---------------------------------------------------------------------------
+# Legacy (deprecated) NormalizedTurn helpers
 # ---------------------------------------------------------------------------
 
 _CANONICAL_ROLES = {
@@ -63,35 +215,22 @@ _CANONICAL_ROLES = {
     "human": "user",
     "customer": "user",
     "client": "user",
-
     "assistant": "assistant",
     "ai": "assistant",
     "bot": "assistant",
     "agent": "assistant",
-
     "system": "system",
     "orchestrator": "system",
     "router": "system",
 }
 
-
+# TODO: Clarify role normalization fidelity:
+#       orchestrator/router currently collapsed into 'system'.
+#       Assess impact on PLD analysis and debugging of control-plane issues.
 def normalize_role(raw_role: str) -> Role:
-    """
-    Map various raw role strings into canonical Role:
-
-        "user" | "assistant" | "system"
-
-    Unrecognized roles default to "user", which is safer than
-    mislabeling as assistant/system.
-    """
     key = (raw_role or "").strip().lower()
-    mapped = _CANONICAL_ROLES.get(key, "user")
-    return mapped  # type: ignore[return-value]
+    return _CANONICAL_ROLES.get(key, "user")  # type: ignore[return-value]
 
-
-# ---------------------------------------------------------------------------
-# Generic constructors
-# ---------------------------------------------------------------------------
 
 def make_turn(
     *,
@@ -101,12 +240,6 @@ def make_turn(
     text: str,
     runtime: Optional[Dict[str, Any]] = None,
 ) -> NormalizedTurn:
-    """
-    Construct a NormalizedTurn from already-resolved fields.
-
-    This is the lowest-level helper; most callers should use one of the
-    higher-level factory functions below.
-    """
     canonical_role = normalize_role(role) if isinstance(role, str) else role
     return NormalizedTurn(
         session_id=str(session_id),
@@ -128,36 +261,6 @@ def from_chat_message(
     expected_format: Optional[str] = None,
     extra_runtime: Optional[Dict[str, Any]] = None,
 ) -> NormalizedTurn:
-    """
-    Normalize a simple chat message (typical chat API or UI log)
-    into a NormalizedTurn.
-
-    Parameters
-    ----------
-    session_id:
-        Conversation/session identifier.
-
-    msg_id:
-        Message identifier, used as turn_id.
-
-    role:
-        Free-form role string or Role literal.
-
-    content:
-        Text content of the message.
-
-    latency_ms:
-        Optional latency in ms for generating this message.
-
-    source:
-        Optional source label (e.g., "web_ui", "assistants_api").
-
-    expected_format:
-        Optional content format hint ("json", "markdown", etc).
-
-    extra_runtime:
-        Optional dict merged into runtime metadata.
-    """
     runtime: Dict[str, Any] = {}
     if latency_ms is not None:
         runtime["latency_ms"] = int(latency_ms)
@@ -189,32 +292,18 @@ def from_tool_call(
     success: Optional[bool] = None,
     extra_runtime: Optional[Dict[str, Any]] = None,
 ) -> NormalizedTurn:
-    """
-    Normalize a tool call into a NormalizedTurn.
-
-    Typical usage:
-        - treat tool outputs as assistant-side turns for drift detection
-        - include request/response in `text` for downstream detectors
-
-    The resulting `text` embeds a lightweight textual summary of
-    request and response to keep detectors context-aware without
-    committing to a strict schema.
-    """
-    text_parts = [
+    text = "\n".join([
         f"[TOOL_CALL] name={tool_name}",
         f"[REQUEST] {request_repr}",
         f"[RESPONSE] {response_repr}",
-    ]
-    text = "\n".join(text_parts)
+    ])
 
     runtime: Dict[str, Any] = {
         "tool_used": tool_name,
         "latency_ms": latency_ms,
         "tool_success": success,
     }
-    # remove None values to keep runtime compact
     runtime = {k: v for k, v in runtime.items() if v is not None}
-
     if extra_runtime:
         runtime.update(extra_runtime)
 
@@ -236,16 +325,6 @@ def from_system_event(
     reset_flag: bool = False,
     extra_runtime: Optional[Dict[str, Any]] = None,
 ) -> NormalizedTurn:
-    """
-    Normalize a system-level event (e.g., reset, handoff, routing decision)
-    into a NormalizedTurn with role="system".
-
-    This is primarily useful for:
-
-        - marking context resets
-        - annotating significant routing changes
-        - signaling guardrail / moderation interventions
-    """
     text = f"[SYSTEM] {description}"
     if reason:
         text += f" (reason: {reason})"
@@ -263,10 +342,6 @@ def from_system_event(
     )
 
 
-# ---------------------------------------------------------------------------
-# Dataset-like generic normalization
-# ---------------------------------------------------------------------------
-
 def from_dialog_turn_dict(
     *,
     dialog: Dict[str, Any],
@@ -277,41 +352,16 @@ def from_dialog_turn_dict(
     text_key: str = "text",
     runtime_prefix: str = "runtime_",
 ) -> NormalizedTurn:
-    """
-    Generic helper to normalize dataset-style dialog+turn dicts.
-
-    Assumes a structure like:
-
-        dialog = {
-          "dialog_id": "...",
-          ...
-        }
-        turn = {
-          "turn_id": "utt-3",
-          "role": "user",
-          "text": "hello",
-          "runtime_latency_ms": 123,
-          "runtime_source": "simulator",
-          ...
-        }
-
-    All keys of `turn` whose name starts with `runtime_prefix`
-    are added to the runtime dict with the prefix stripped.
-
-    This is intentionally generic to support MultiWOZ-like
-    datasets and custom corpora.
-    """
     session_id = str(dialog.get(session_key, "unknown"))
     turn_id = str(turn.get(turn_key, "0"))
     role = str(turn.get(role_key, "user"))
     text = str(turn.get(text_key, ""))
 
-    runtime: Dict[str, Any] = {}
-    for k, v in turn.items():
-        if not k.startswith(runtime_prefix):
-            continue
-        runtime_key = k[len(runtime_prefix):]
-        runtime[runtime_key] = v
+    runtime: Dict[str, Any] = {
+        k[len(runtime_prefix):]: v
+        for k, v in turn.items()
+        if k.startswith(runtime_prefix)
+    }
 
     return make_turn(
         session_id=session_id,
@@ -322,7 +372,14 @@ def from_dialog_turn_dict(
     )
 
 
+# ---------------------------------------------------------------------------
+# Public exports
+# ---------------------------------------------------------------------------
+
 __all__ = [
+    "NormalizationIssue",
+    "NormalizationResult",
+    "normalize_event",
     "normalize_role",
     "make_turn",
     "from_chat_message",
@@ -330,3 +387,17 @@ __all__ = [
     "from_system_event",
     "from_dialog_turn_dict",
 ]
+
+
+# ---------------------------------------------------------------------------
+# Deferred for later phase
+# ---------------------------------------------------------------------------
+"""
+Future-Stage Considerations:
+
+- Whether pld.code prefix should overwrite SHOULD-based phase mismatches
+  in normalize mode when the MUST map is also absent.
+- Whether normalization should rewrite or generate codes when invalid.
+- Role mapping fidelity question: system/orchestrator/router distinctions.
+- Architecture refactor separating presentation roles from PLD-event semantics.
+"""
